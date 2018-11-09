@@ -51,10 +51,10 @@ Which will result in the following rules:
 
 ### Caveats
 
-* Windows will automatically interpret a naked domain `example.com` as `*.example.com`.
-* RealmJoin does not allow for wildcard protocols.
-* RealmJoin will manage all protocols for a given domain.
-* RealmJoin will not manage other domains which are not specified in this setting.
+* Windows will interpret a naked domain like `file://example.com` as `file://*.example.com`.
+* RealmJoin does not allow for wildcard protocols. You must specify all protocols explicitly.
+* RealmJoin will manage all protocols for a configured domain and remove any user added protocols.
+* RealmJoin will not manage other domains which are not configured in this setting.
 
 ### Recommendations
 
