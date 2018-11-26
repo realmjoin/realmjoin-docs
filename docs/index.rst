@@ -22,6 +22,7 @@ Deployment Guide
    infrastructure
    managing-realmjoin
    policies
+   package_lifecycle
    package-types
    create-package
    core-extension
