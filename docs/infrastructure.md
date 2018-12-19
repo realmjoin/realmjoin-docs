@@ -59,12 +59,11 @@ There are three different version of the RealmJoin client available:
 ### Ports/Traffic/ASTP exceptions-->
 
 ### BranchCache
-A often encountered problem when providing software packages to a big number of devices in a WAN is creating a bottlenack and huge network loads when downloading software from a server to the devices. A solution for this problem is the *BranchCache* technologie.
-There are two BranchCache modes, *hosted* and *distributed* cache. In hosted cache mode, the content is cached on one or more local *hosted cache servers*, which increases the network load, since a download from big binaries from an internet server is not necessary. 
-RealmJoin uses BranchCache in the distributed cache mode:  
-When a client device downloads software packages for the first time, the files are divided into chunks that are significantly smaller then the original content and cached on the device. If the same package is afterwards requested from a different client device in the same network, it downloads content information instead of the complete content from the server. The content information is used to locate the desired content on other devices in the network. If found, instead of downloading packages from the server, the content in form of the chopped up chunks, is transfered to the client device. If the requested software is available on a number of devices, the load is balanced between them. 
-The RealmJoin Publishing Server has to provide the chunk identifiers, and therefore is hosted as a single Azure VM Windows 2016 IIS server with a Azure Blob Storage.  
-For a more detailed documentation of the BranchCache technologie see the [Microsoft BranchCache documentation](https://technet.microsoft.com/de-de/library/hh831696.aspx).
+A often encountered problem when providing software packages to a big number of devices in a WAN is creating a bottlenack and huge network loads when downloading software from a server to the devices. A solution for this problem is the *BranchCache* technology. There are two BranchCache modes, *hosted* and *distributed* cache. In hosted cache mode, the content is cached on one or more local *hosted cache servers*, which increases the network load, since a download from big binaries from an internet server is not necessary. RealmJoin uses BranchCache in the distributed cache mode:
+
+When a client device downloads software packages for the first time, the files are divided into chunks that are significantly smaller then the original content and cached on the device. If the same package is afterwards requested from a different client device in the same network, it downloads content information instead of the complete content from the server. The content information is used to locate the desired content on other devices in the network. If found, instead of downloading packages from the server, the content in form of the chopped up chunks, is transfered to the client device. If the requested software is available on a number of devices, the load is balanced between them.
+
+The RealmJoin Publishing Server has to provide the chunk identifiers, and therefore is hosted as a single Azure VM Windows 2016 IIS server with a Azure Blob Storage. For a more detailed documentation of the BranchCache technologie see the [Microsoft BranchCache documentation](https://technet.microsoft.com/de-de/library/hh831696.aspx).
 <!-- Es gibt tonnenweise Doku im Netz zu BranchCache. Warum sind die relevanten Teile hier nicht zitiert bzw. referenziert??-->
 
 ### Backend

@@ -9,8 +9,7 @@ If approved, the *PreRelease* flag is removed as well als the test group assignm
 ![RJ packaging workflow](./media/rj-package-workflow.png)  
 
 ## Updating an existing application 
-The new package version will be added as a *PreRelease* package to the RealmJoin portal.
-Depending on the handling of the test users, the next step may vary.  
+The new package version will be added as a *PreRelease* package to the RealmJoin portal. Depending on the handling of the test users, the next step may vary.  
 * If the test users are regular accounts that already have the application assigned and installed on the clients, the *PreRelease* version is to be assigned to those. 
 * If the test users are dedicated test users, it might be necessary to assign the already rolled out version of the application beforehand and install on the clients to allow correct updating.  
 The test users then install the application on the clients. Because of the *PreRelease* flag, *RealmJoin* will recognize the pending update.  

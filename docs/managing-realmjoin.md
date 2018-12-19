@@ -272,9 +272,7 @@ Glück & Kanja maintains an ever-expanding library of ready-to-go applications t
 ### States
 ![RJ rj-ac-statesicon](./media/rj-ac-statesicon.png)   
 The *states* detail of the client or user control panel provides a list of the devices of the user and how frequently data was upstreamed. 
-The *Branch Cache* column indicates how much this client has contributed to the package distribution over the *Branch Cache* feature (see chapter *Infrastructure*).
-Selecting the white arrow in the green circle returns the complete upstream file.
-It contains all the information about the device, OS, Defender Pattern States and installed packages that are transfered to the backend, where some of it is evaluated.   
+The *Branch Cache* column indicates how much this client has contributed to the package distribution over the *Branch Cache* feature (see chapter *Infrastructure*). Selecting the white arrow in the green circle returns the complete upstream file. It contains all the information about the device, OS, Defender Pattern States and installed packages that are transfered to the backend, where some of it is evaluated.   
   
 ![RJ rj-ac-states](./media/rj-ac-states.png)  
 
