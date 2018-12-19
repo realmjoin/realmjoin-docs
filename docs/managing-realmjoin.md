@@ -231,7 +231,7 @@ With RealmJoin version 4.13 a new feature was published: the support of multi us
 ![RJ advanced options](./media/rj-assign-advanced.png)   
 To access this plane, press the *Show Advanced Options* button on the right. All new options will be available:  
 - *Includes User Script*  
-  * In the latest generation of packages, it is not necessary anymore to create a second package for the deployment of corresponding user settings, but such a script can be part of the main package. If this is the case, it will be run automatically if this options is checked. Parameters can be transferred via arguments as established.  
+  * In the latest generation of packages, it is not necessary anymore to create a second package for the deployment of corresponding user settings, but such a script can be part of the main package. If this is the case, it will be run automatically if this options is checked. Parameters can be transferred via arguments as established. User scripts will not run for secondary users if the main application is not installed. 
 - *Main Script Restrictions*: Users
   * This options allows the RealmJoin administrator to define, if this package should be run other for just the primary device user (default) or also/exclusively secondary users.  
 - *Main Script Restrictions*: Phases  

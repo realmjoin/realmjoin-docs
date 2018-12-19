@@ -35,6 +35,34 @@ In case of a *non-AAD-joined* device, the BitLocker recovery key is not saved an
 ## Domain Passwort expiry
 RealmJoin uses the Azure AD attribute ```msDS-UserPasswordExpiryTimeComputed``` to check if the user passwort is expired. 
 
+## Intranet Zone
+
+Site may be added to the *Intranet Zone* (in *Internet Options*) by specifying a setting with the key `Policies.TrustedSites` and an array of URLs. These URLs are parsed by RealmJoin and written to a registry key called *ZoneMap*.
+
+One might specify the following JSON array:
+
+```json
+["file://example.com", "https://foo.example.com"]
+```
+
+Which will result in the following rules:
+
+![Policies.TrustedSites](./media/rj-policies-trustedSites.png)
+
+### Caveats
+
+* Windows will interpret a naked domain like `file://example.com` as `file://*.example.com`.
+* RealmJoin does not allow for wildcard protocols. You must specify all protocols explicitly.
+* RealmJoin will manage all protocols for a configured domain and remove any user added protocols.
+* RealmJoin will not manage other domains which are not configured in this setting.
+
+### Recommendations
+
+Many customers have extensive Intranet Zone list. Clean it up! Investigate whether a site works without adding it to the Intranet Zone.
+
+* Add a site using `https` protocol if it uses Integrated Windows Authentication or other legacy features like ActiveX.
+* Add a server using `file` protocol if it is accessed using SMB.
+
 ## Other Configuration Settings
 
 Comments on the individual settings in *italics*  
@@ -152,7 +180,7 @@ Comments on the individual settings in *italics*
   * "SMimeEnabled": false,
   * "OsActivationEnabled": false,
   * "SetTimeserver": ["time.windows.com", "time.apple.com"],
-  * "TrustedSites": ["file://glueckkanja.net", "https://glueckkanja.net", "https://guk.sharepoint.com", "https://guk-my.sharepoint.com"],
+  * "TrustedSites": ["file://glueckkanja.net", "https://glueckkanja.net"],
   
   * "RequireSecurityFeatures": 
     * "WinVersion": "Win7",

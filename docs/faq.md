@@ -68,3 +68,9 @@ If in the future, Microsoft Intune becomes more capable and the installation of 
 
 ## Is RealmJoin GDPR compliant?   
 Glück&Kanja takes data protection very seriously. All contracts with customers and partners take data protection into consideration. 
+
+## Does the RealmJoin Bitlocker enforcement work on virtual machines?   
+"For virtual machines the encryption is only enforced, if the virtual machine variable $env:RjDisableVmDetection=1 is set."  This setting can be bypassed in the OOBE screen with the command ``setx /m RjDisableVmDetection 1 `` in a cmd shell.  
+
+## Is it possible to see the code of store applications?  
+It is possible to request reading rights for a specific application package from Glück&Kanja. The installation script of already installed packages can be found under ``$env:ProgramData\chocolatey\lib\<packageId>\Tools`` 
