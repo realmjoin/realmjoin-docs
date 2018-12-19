@@ -71,4 +71,4 @@ The idea of organic packages is based on the experience that large infrastructur
 
 With organic packages the organization knows exactly which software based on the detailed binaries and versions is in use on the client machines. If there is a security issue with one of these versions, all information is at hand. And if the user needs a new device, the special software packages are again available. 
 
-The used binaries are scanned for maleware when transfered to the RealmJoin infrastructure. Because of their highly individualized nature and manual on-device management those packages are not maintained in a standard process, possible effects have to be addressed locally.
+The used binaries are scanned for malware when transfered to the RealmJoin infrastructure. Because of their highly individualized nature and manual on-device management those packages are not maintained in a standard process, possible effects have to be addressed locally.
