@@ -233,9 +233,9 @@ To access this plane, press the *Show Advanced Options* button on the right. All
 - *Includes User Script*  
   * In the latest generation of packages, it is not necessary anymore to create a second package for the deployment of corresponding user settings, but such a script can be part of the main package. If this is the case, it will be run automatically if this options is checked. Parameters can be transferred via arguments as established. User scripts will not run for secondary users if the main application is not installed. 
 - *Main Script Restrictions*: Users
-  * This options allows the RealmJoin administrator to define, if this package should be run other for just the primary device user (default) or also/exclusively secondary users.  
+  * This option allows the RealmJoin administrator to define whether this package should run for just the primary device user (default) or also/exclusively for secondary users.  
 - *Main Script Restrictions*: Phases  
-  *  This options allows the RealmJoin administrator to define, if this package should be run during the initial provisioning of the device or during other phases.  
+  *  This options allows the RealmJoin administrator to define whether this package should be run during the initial provisioning of the device or during other phases.  
 
 #### Duplicate a package 
 Whenever a package with identical content is needed multiple times for the same user or group, the RealmJoin portal offers the possibility to use the same package multiple times while preventing conflicting installations.  
