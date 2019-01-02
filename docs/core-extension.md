@@ -7,7 +7,16 @@
 Out of chocolatey packages, the usage of the extension CmdLets have to be enabled:  
   
 ``Import-Module (Get-ItemPropertyValue -Path "Registry::HKLM\SOFTWARE\RealmJoin\Variables" -Name RealmjoinCraftSupportModulePath)``  
-
+## Useable RealmJoin variables  
+The following variables can be used in RealmJoin powershell scripts:   
+| Variable | Content |
+| ----| ----|  
+| $RJ_PackageID |e.g. *generic-google-chrome* | 
+| $RJ_Version | | 
+| $packageName | e.g. *Google Chrome*|
+| $RJ_ChocolateyPackage ||
+| $packageTempDir | current %TEMP% for this package |
+| $packageToolsFolder | current folder where the chocoinstall.ps1 is started in |
 ## AppV Packages 
 ### Enable-ChocolateyRealmjoinAppv
 #### Syntax

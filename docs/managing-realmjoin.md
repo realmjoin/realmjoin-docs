@@ -13,7 +13,7 @@ RealmJoin “Security Requirement” assessment does some pre-checks (Encryption
   
 ![RJ Sec Check](./media/rj-sec-check.gif)
   
-If no error ocurs during deployment, RealmJoin is ready to use.
+If no error occurs during deployment, RealmJoin is ready to use.
 
 ### Client usage
 After being successfully installed, RealmJoin is automatically started on the user login and is permanent active in the background. It is represented with an ID card icon. Clicking on the icon opens up the RealmJoin client menu. It contains basic information in the lower and a number of links in the upper part. The selector *Software Packages* opens a second context menu with all the software packages that are allocated to the user.

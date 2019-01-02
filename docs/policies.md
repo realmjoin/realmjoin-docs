@@ -68,92 +68,112 @@ Many customers have extensive Intranet Zone list. Clean it up! Investigate wheth
 Comments on the individual settings in *italics*  
   
   
-- "Environment"
-  * "UpdateCheckInterval": "01:00"
-  * "ConfigCheckInterval": "00:30"
-     *Set as "hh:mm"*  
-    
-- "FirstRun"
-  * "EnableSecureDesktop": true
+- Key: "Environment"
+```JSON
+   "UpdateCheckInterval": "01:00"
+   "ConfigCheckInterval": "00:30"
+ ```
+ *Set as "hh:mm"*   
+
+- Key: "FirstRun"
+  ```JSON
+  "EnableSecureDesktop": true
+  ``` 
      *Enable the Windows *secure desktop* feature*  
     
-- "Realm"
-  * "Domain": "glueckkanja.net"
-  * "NetBIOS": "GLUECKKANJA"
+- Key: "Realm"
+  ```JSON
+   "Domain": "glueckkanja.net"
+   "NetBIOS": "GLUECKKANJA"
+  ```  
+- Key: "DomainConnect"
+  ```JSON
+   "Domain": "glueckkanja.net",
+   "NetBIOS": "GLUECKKANJA",
+   "CheckInterval": "01:00"  
+  ```  
+  
+ - Key: "CredentialManager":  
+     ```JSON
+    "Type": "wlan",  
+         * "Target": "GKEnterprise" 
+    "Type": "ntlm",
+         * "Target": "identity.glueckkanja.net", 
+    "Type": "smb",  
+         * "Target": "files.glueckkanja.net",   
+         * "Share": "Filestore"  
+     ``` 
+*Allows to configure WAN/LAN connections and manage authentication*
 
-- "DomainConnect"
-  * "Domain": "glueckkanja.net",
-  * "NetBIOS": "GLUECKKANJA",
-  * "CheckInterval": "01:00"  
-    
- - "CredentialManager":  
-     *Allows to configure WAN/LAN connections and manage authentication*
-  * "Type": "wlan",
-    * "Target": "GKEnterprise",
-  * "Type": "ntlm",
-    * "Target": "identity.glueckkanja.net"
-  * "Type": "smb",
-    * "Target": "files.glueckkanja.net",
-    * "Share": "Filestore"
-      
-- "IpSec": 
-   * "Rules":
+- Key: "IpSec": 
+```JSON
+    "Rules":
        * "Name": "Domain Controller - glueckkanja.net",
        * "Targets": "glueckkanja.net",
        * "Protocol": "tcp",
        * "Range": "135,389,445,30000-30400",
        * "RangeOSX": "135,389,445",
        * "Key": "xxxxxxxxxxxxxxxxxxxxx"  
-       
- - "Branchbox": 
-   * "RescanInterval": "00:15",  
-   * "Rules": 
+```       
+- Key: "Branchbox": 
+```JSON
+    "RescanInterval": "00:15",  
+    "Rules": 
        * "Name": "Branchbox",
        * "Target": "files.glueckkanja.net",
        * "IPs": "172.27.0.20",
        * "CheckPort": 63069,
        * "CN": "*.glueckkanja.net"  
-         
-- "CloudVPN": 
-   * "Gateway": "cloudvpn.gkdatacenter.net",
-   * "Username": "",
-   * "Password": ""  
-    
-- "WebLinks": 
-   * "Name": "GK Help",
-   * "Target": "https://help.glueckkanja.net/",
-   * "Platform": "any"  
-   
--   "BranchCache": 
-   * "Mode": "Distributed"  
-   
-- "Chocolatey": 
-   * "Version": "0.10.3",  
-   * "Sources": 
-   * "Name": "gkpackages",
-   * "Source": "https://packages.gkdatacenter.net/nuget",
-   * "User": "packages",
-   * "Password": "xxxxxxxxxxxxxxxxxxxxx",
-   * "Priority": 10   
-     
-- "SoftwarePackages": 
-   * "Package": "bcurl",
-   * "ID": "bcurl",
-   * "Platform": "winchoco",
-   * "Version": "1.0.11",
-   * "Args": "",
-   * "Name": "BcUrl",
-   * "Order": 500,
-   * "PreRelease": false,
-   * "AllowReinstall": false,
-   * "DependsOn": [],
-   * "AutoUpgrade": true,
-   * "AutoUpgradeStaggered": "",
-   * "GroupName": "Development",
-   * "Hidden": false,
-   * "Mandatory": false  
-     
-- "Location": "https://packages.gkdatacenter.net/blobs/v1.0.0.0.zip",
+```         
+- Key: "CloudVPN": 
+```JSON
+   "Gateway": "cloudvpn.gkdatacenter.net",
+   "Username": "",
+   "Password": ""  
+```   
+- Key: "WebLinks": 
+```JSON
+    "Name": "GK Help",
+    "Target": "https://help.glueckkanja.net/",
+    "Platform": "any"  
+```   
+- Key: "BranchCache": 
+```JSON
+ "Mode": "Distributed"  
+``` 
+
+- Key: "Chocolatey": 
+```JSON
+    "Version": "0.10.3",  
+    "Sources": 
+    "Name": "gkpackages",
+    "Source": "https://packages.gkdatacenter.net/nuget",
+    "User": "packages",
+    "Password": "xxxxxxxxxxxxxxxxxxxxx",
+    "Priority": 10   
+```     
+- Key: "SoftwarePackages": 
+```JSON
+    "Package": "bcurl",
+    "ID": "bcurl",
+    "Platform": "winchoco",
+    "Version": "1.0.11",
+    "Args": "",
+    "Name": "BcUrl",
+    "Order": 500,
+    "PreRelease": false,
+    "AllowReinstall": false,
+    "DependsOn": [],
+    "AutoUpgrade": true,
+    "AutoUpgradeStaggered": "",
+    "GroupName": "Development",
+    "Hidden": false,
+    "Mandatory": false  
+```
+
+- Key: 
+```JSON 
+"Location": "https://packages.gkdatacenter.net/blobs/v1.0.0.0.zip",
   * "Hash": "46298d7dfe399cc46bd62ee359ab983771f5bcf1",
   * "Scope": "user",
   * "ID": "glueckkanja-core-settings-wlan-gkenterprise",
@@ -170,64 +190,80 @@ Comments on the individual settings in *italics*
   * "GroupName": "Glueckkanja",
   * "Hidden": false,
   * "Mandatory": false  
+``` 
 
 ### Policies  
 
 Comments on the individual settings in *italics*  
   
   
-- "Policies": 
+- Key: "Policies": 
+```JSON
   * "SMimeEnabled": false,
   * "OsActivationEnabled": false,
   * "SetTimeserver": ["time.windows.com", "time.apple.com"],
   * "TrustedSites": ["file://glueckkanja.net", "https://glueckkanja.net"],
-  
-  * "RequireSecurityFeatures": 
+ ```  
+
+- Key: "RequireSecurityFeatures"
+```JSON
     * "WinVersion": "Win7",
     * "BitlockerEnabled": null,  
-         * If set to "true", BitLocker will be enforced if the device has a TPM.
-         * The following key value is changed to allow BitLocker force: *HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\BitLocker*;
+         
           Entry: *PreventDeviceEncryption*;
-          Value: *null*/*false*
+          Value: *null* / *false*
          * The BitLocker key is synced to AAD if the client is AAD-joined, otherwise no backup will be made.
     * "FirewallEnabled": true,
     * "AvEnabled": null,
     * "EnvironmentCheck": null  
-  
-  * "SetCurrentUserAdministrator":null,  
+```   
+*If set to "true", BitLocker will be enforced if the device has a TPM. 
+ The following key value is changed to allow BitLocker force:  
+ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\BitLocker*  
+
+  - Key: "SetCurrentUserAdministrator": null
+
     *Recommended setting: Set to "false" for all users. This removes the administrator privileges for all users. Set to "true" for all users that should have local admin privileges. The privileges are only granted to users on clients where they are the primary user/device owner.*  
        
-  * "SetNetworkOptimizationID": null,  
+  - Key: "SetNetworkOptimizationID": null  
     *Opt-out from using a DOGroupID from Realmjoin*      
      
-  * "AwsAccess": 
-    * "AccessKey": "AKIAIHFASK3VCX4EWCAA",
-    * "SecretKey": "xxxxxxxxxxxxxxxxxxxxx"
-      
-  * "DisableExplorerLibraries": true,
+  - Key: "AwsAccess": 
+    ```JSON 
+     "AccessKey": "AKIAIHFASK3VCX4EWCAA",
+     "SecretKey": "xxxxxxxxxxxxxxxxxxxxx"
+    ``` 
+
+- Key: "DisableExplorerLibraries": true
   
-  * "Rms": 
-    * "Enabled": null,
-    * "Hostname": "12323815-123c-123a-1230-123aab12ba3a.rms.eu.aadrm.com"
-        
-  * "OneDrive": 
-    * "Enabled": false,
-    * "DisplayName": "OneDrive Business",
-    * "FolderRedirection": false,
-    * "DisableOneDrivePersonal": false,
-    * "DisableStartupShortcut": false
-     
-   * "Office":
-     * "NoDomainKey": false,
-     * "SetGenericCredentials": false,
-     * "SetLyncUsername": false
-        
+- Key: "Rms": 
+```JSON
+     "Enabled": null,
+     "Hostname": "12323815-123c-123a-1230-123aab12ba3a.rms.eu.aadrm.com"
+```        
+- Key: "OneDrive": 
+```JSON
+     "Enabled": false,
+     "DisplayName": "OneDrive Business",
+     "FolderRedirection": false,
+     "DisableOneDrivePersonal": false,
+     "DisableStartupShortcut": false
+```     
+- Key: "Office":
+```JSON
+     "NoDomainKey": false,
+     "SetGenericCredentials": false,
+     "SetLyncUsername": false
+``` 
+
 ### Client
 
- - "Client": 
-   * "IsPrimaryOfUser": true
-     * Autogenerated by the server
-          
+ - Key: "Client": 
+```JSON
+    "IsPrimaryOfUser": true
+```  
+*Autogenerated by the server*       
+     
 The *IsPrimaryOfUser* attribute is set when the RealmJoin client on the device contacts the backend for the first time. The user who is signed on during this process is registered as primary user of the device. 
 Mandatory packages will only be installed when the primary user is logged in. If the *makeAdmin* property is set in the user/group settings, the primary user is promoted to administrator. 
 It is possibly to manually set another user to the primary of the device. If a device is decomissioned and given another user without changing the primary, the old primary user might persist in the backend.
