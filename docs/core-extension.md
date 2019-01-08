@@ -4,7 +4,7 @@
 **To ensure the extensions are correctly deployed on all clients, please add the core extensions chocolatey package to the backend with *order 1* and assign it to the global core group.**  
 
 ## Enable extension CmdLets in Craft packages  
-Out of chocolatey packages, the usage of the extension CmdLets have to be enabled:  
+Out of chocolatey packages, the usage of the extension CmdLets has to be enabled:  
   
 ``Import-Module (Get-ItemPropertyValue -Path "Registry::HKLM\SOFTWARE\RealmJoin\Variables" -Name RealmjoinCraftSupportModulePath)``  
 ## Useable RealmJoin variables  
