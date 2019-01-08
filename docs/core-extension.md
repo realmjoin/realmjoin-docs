@@ -316,6 +316,7 @@ Message None                false     false
 #### Syntax
 ```powershell
 Get-RealmjoinComputerSystemBiosVersion
+```
 ### Get-RealmjoinComputerSystemModel
 #### Syntax
 ```powershell
