@@ -6,7 +6,9 @@
 ## Enable extension CmdLets in Craft packages  
 Out of chocolatey packages, the usage of the extension CmdLets has to be enabled:  
   
-``Import-Module (Get-ItemPropertyValue -Path "Registry::HKLM\SOFTWARE\RealmJoin\Variables" -Name RealmjoinCraftSupportModulePath)``  
+```powershell
+Import-Module (Get-ItemPropertyValue -Path "Registry::HKLM\SOFTWARE\RealmJoin\Variables" -Name RealmjoinCraftSupportModulePath)
+```  
 ## Useable RealmJoin variables  
 The following variables can be used in RealmJoin powershell scripts:   
 | Variable | Content |
@@ -20,10 +22,14 @@ The following variables can be used in RealmJoin powershell scripts:
 ## AppV Packages 
 ### Enable-ChocolateyRealmjoinAppv
 #### Syntax
+```powershell
 Enable-ChocolateyRealmjoinAppv
+```
 ### Install-ChocolateyRealmjoinAppvPackage
 #### Syntax
-Install-ChocolateyRealmjoinAppvPackage \[\[-fileName\] \<string\>\] \[\[-fileChecksum\] \<string\>\] \[\[-DynamicDeploymentConfiguration\] \<string\>\] \[\<CommonParameters\>\]
+```powershell
+Install-ChocolateyRealmjoinAppvPackage [[-fileName] <string>] [[-fileChecksum] <string>] [[-DynamicDeploymentConfiguration] <string>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -36,7 +42,9 @@ fileName                       None                false     false
 
 ### Uninstall-ChocolateyRealmjoinAppvPackage
 #### Syntax
-Uninstall-ChocolateyRealmjoinAppvPackage \[\[-name\] \<string\>\] \[\<CommonParameters\>\]
+```powershell
+Uninstall-ChocolateyRealmjoinAppvPackage [[-name] <string>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -47,7 +55,9 @@ name None                false     false
 
 ### Get-ChocolateyRealmjoinAppvPackageVfsPath
 #### Syntax
-Get-ChocolateyRealmjoinAppvPackageVfsPath \[\[-appvPackage\] \<Object\>\] \[\<CommonParameters\>\]
+```powershell
+Get-ChocolateyRealmjoinAppvPackageVfsPath [[-appvPackage] <Object>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -58,7 +68,9 @@ appvPackage None                false     false
 ## Logs and Transforms
 ### Get-ChocolateyRealmjoinLocaleId
 #### Syntax
-Get-ChocolateyRealmjoinLocaleId \[\[-localeString\] \<string\>\] \[\[-defaultLocaleId\] \<int\>\] \[\<CommonParameters\>\]
+```powershell
+Get-ChocolateyRealmjoinLocaleId [[-localeString] <string>] [[-defaultLocaleId] <int>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -70,7 +82,9 @@ localeString    None                false     false
 
 ### Get-ChocolateyRealmjoinLocaleMsiTransform
 #### Syntax
-Get-ChocolateyRealmjoinLocaleMsiTransform \[\[-localeString\] \<string\>\] \[\[-localeTransformsFolder\] \<string\>\] \[\[-defaultLocaleId\] \<int\>\] \[\<CommonParameters\>\]
+```powershell
+Get-ChocolateyRealmjoinLocaleMsiTransform [[-localeString] <string>] [[-localeTransformsFolder] <string>] [[-defaultLocaleId] <int>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -83,7 +97,9 @@ localeTransformsFolder None                false     false
 
 ### Get-ChocolateyRealmjoinLogFilePath
 #### Syntax
-Get-ChocolateyRealmjoinLogFilePath \[\[-operation\] \<string\>\] \[\[-target\] \<string\>\] \[\<CommonParameters\>\]
+```powershell
+Get-ChocolateyRealmjoinLogFilePath [[-operation] <string>] [[-target] <string>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -95,7 +111,9 @@ target    None                false     false
 ## Chocolatey Packages
 ### Install-ChocolateyRealmjoinPackage
 #### Syntax
-Install-ChocolateyRealmjoinPackage \[\[-installerFileName\] \<string\>\] \[\[-installerFileChecksum\] \<string\>\] \[\[-msiTransforms\] \<string\[\]\>\] \[\[-msiTransformsCabs\] \<string\[\]\>\] \[\[-additionalArgs\] \<string\[\]\>\] \[\[-silentArgs\] \<string\[\]\>\] \[\[-validExitCodes\] \<int\[\]\>\] \[\[-installers\] \<psobject\[\]\>\] \[\[-preActions\] \<scriptblock\>\] \[\[-postActions\] \<scriptblock\>\] \[\[-installPackage\] \<bool\>\] \[\[-noInstallMessage\] \<string\>\] \[-installerFileNameIsLocalPath\] \[\<CommonParameters\>\]
+```powershell
+Install-ChocolateyRealmjoinPackage [[-installerFileName] <string>] [[-installerFileChecksum] <string>] [[-msiTransforms] <string[]>] [[-msiTransformsCabs] <string[]>] [[-additionalArgs] <string[]>] [[-silentArgs] <string[]>] [[-validExitCodes] <int[]>] [[-installers] <psobject[]>] [[-preActions] <scriptblock>] [[-postActions] <scriptblock>] [[-installPackage] <bool>] [[-noInstallMessage] <string>] [-installerFileNameIsLocalPath] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -118,7 +136,9 @@ validExitCodes               None                false     false
 
 ### Uninstall-ChocolateyRealmjoinPackage
 #### Syntax
-Uninstall-ChocolateyRealmjoinPackage \[\[-uninstallerFile\] \<string\>\] \[\[-additionalArgs\] \<string\[\]\>\] \[\[-silentArgs\] \<string\[\]\>\] \[\[-validExitCodes\] \<int\[\]\>\] \[\[-subPackageName\] \<string\>\] \[\[-uninstallers\] \<psobject\[\]\>\] \[\[-uninstallInfo\] \<Object\>\] \[-WhatIf\] \[-Confirm\] \[\<CommonParameters\>\]
+```powershell
+Uninstall-ChocolateyRealmjoinPackage [[-uninstallerFile] <string>] [[-additionalArgs] <string[]>] [[-silentArgs] <string[]>] [[-validExitCodes] <int[]>] [[-subPackageName] <string>] [[-uninstallers] <psobject[]>] [[-uninstallInfo] <Object>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -137,7 +157,9 @@ validExitCodes  None                false     false
 
 ### Import-ChocolateyRealmjoinPackageParameters
 #### Syntax
-Import-ChocolateyRealmjoinPackageParameters \[\[-params\] \<string\>\] \[-setVariables\] \[-clearVariables\] \[-returnKeyValuePairs\] \[-returnParameterHashset\] \[\<CommonParameters\>\]
+```powershell
+Import-ChocolateyRealmjoinPackageParameters [[-params] <string>] [-setVariables] [-clearVariables] [-returnKeyValuePairs] [-returnParameterHashset] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -152,7 +174,9 @@ setVariables           None                false     false
 
 ### Test-ChocolateyRealmjoinRegistryUninstallExists
 #### Syntax
-Test-ChocolateyRealmjoinRegistryUninstallExists \[\[-keyNameFilter\] \<string\>\] \[\[-displayNameFilter\] \<string\>\] \[\[-publisherFilter\] \<string\>\] \[\[-versionGe\] \<version\>\] \[\[-versionGt\] \<version\>\] \[\[-versionLe\] \<version\>\] \[\[-versionLt\] \<version\>\] \[\[-filterScriptblock\] \<scriptblock\>\] \[\<CommonParameters\>\]
+```powershell
+Test-ChocolateyRealmjoinRegistryUninstallExists [[-keyNameFilter] <string>] [[-displayNameFilter] <string>] [[-publisherFilter] <string>] [[-versionGe] <version>] [[-versionGt] <version>] [[-versionLe] <version>] [[-versionLt] <version>] [[-filterScriptblock] <scriptblock>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -170,7 +194,9 @@ versionLt         None                false     false
 
 ### Get-ChocolateyRealmjoinRegistryUninstallInfo
 #### Syntax
-Get-ChocolateyRealmjoinRegistryUninstallInfo \[\[-keyNameFilter\] \<string\>\] \[\[-displayNameFilter\] \<string\>\] \[\[-publisherFilter\] \<string\>\] \[\[-versionGe\] \<version\>\] \[\[-versionGt\] \<version\>\] \[\[-versionLe\] \<version\>\] \[\[-versionLt\] \<version\>\] \[\[-filterScriptblock\] \<scriptblock\>\] \[\<CommonParameters\>\]
+```powershell
+Get-ChocolateyRealmjoinRegistryUninstallInfo [[-keyNameFilter] <string>] [[-displayNameFilter] <string>] [[-publisherFilter] <string>] [[-versionGe] <version>] [[-versionGt] <version>] [[-versionLe] <version>] [[-versionLt] <version>] [[-filterScriptblock] <scriptblock>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -188,7 +214,9 @@ versionLt         None                false     false
 
 ### Get-ChocolateyRealmjoinRegistryUninstallStrings
 #### Syntax
-Get-ChocolateyRealmjoinRegistryUninstallStrings \[-uninstallKeyNameFilter\] \<string\> \[\<CommonParameters\>\]
+```powershell
+Get-ChocolateyRealmjoinRegistryUninstallStrings [-uninstallKeyNameFilter] <string> [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -199,7 +227,9 @@ uninstallKeyNameFilter None                true      false
 
 ### Get-ChocolateyRealmjoinWebFile
 #### Syntax
-Get-ChocolateyRealmjoinWebFile \[\[-fileName\] \<string\>\] \[\[-fileChecksum\] \<string\>\] \[\[-remoteFileName\] \<string\>\] \[-extractArchive\] \[\<CommonParameters\>\]
+```powershell
+Get-ChocolateyRealmjoinWebFile [[-fileName] <string>] [[-fileChecksum] <string>] [[-remoteFileName] <string>] [-extractArchive] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -213,7 +243,9 @@ remoteFileName None                false     false
 
 ### Invoke-RealmjoinChocoPackageInstallation
 #### Syntax
-Invoke-RealmjoinChocoPackageInstallation \[\[-packageName\] \<string\>\] \[\[-params\] \<hashtable\>\] \[\<CommonParameters\>\]
+```powershell
+Invoke-RealmjoinChocoPackageInstallation [[-packageName] <string>] [[-params] <hashtable>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -225,7 +257,9 @@ params      None                false     false
 ## Command line
 ### Join-RealmjoinCommandLine
 #### Syntax
-Join-RealmjoinCommandLine \[\[-CommandOnly\] \<string\>\] \[\[-ArgumentsOnly\] \<string\>\] \[\<CommonParameters\>\]
+```powershell
+Join-RealmjoinCommandLine [[-CommandOnly] <string>] [[-ArgumentsOnly] <string>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -237,7 +271,9 @@ CommandOnly   None                false     false
 
 ### Split-RealmjoinCommandLine
 #### Syntax
-Split-RealmjoinCommandLine \[\[-CommandLine\] \<string\>\] \[\<CommonParameters\>\]
+```powershell
+Split-RealmjoinCommandLine [[-CommandLine] <string>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -248,7 +284,9 @@ CommandLine None                false     false
 
 ### Get-RealmjoinCommandLineWithLauncher
 #### Syntax
-Get-RealmjoinCommandLineWithLauncher \[\[-CommandLine\] \<string\>\] \[\[-CommandOnly\] \<string\>\] \[\[-ArgumentsOnly\] \<string\>\] \[-ReturnSplit\] \[\<CommonParameters\>\]
+```powershell
+Get-RealmjoinCommandLineWithLauncher [[-CommandLine] <string>] [[-CommandOnly] <string>] [[-ArgumentsOnly] <string>] [-ReturnSplit] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -262,7 +300,9 @@ ReturnSplit   None                false     false
 
 ### Restart-RealmjoinComputer
 #### Syntax
-Restart-RealmjoinComputer \[\[-Delay\] \<timespan\>\] \[\[-Message\] \<string\>\] \[\<CommonParameters\>\]
+```powershell
+Restart-RealmjoinComputer [[-Delay] <timespan>] [[-Message] <string>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -274,10 +314,13 @@ Message None                false     false
 
 ### Get-RealmjoinComputerSystemBiosVersion
 #### Syntax
+```powershell
 Get-RealmjoinComputerSystemBiosVersion
 ### Get-RealmjoinComputerSystemModel
 #### Syntax
-Get-RealmjoinComputerSystemModel \[-IncludeDebugInfoIfUnsure\] \[\<CommonParameters\>\]
+```powershell
+Get-RealmjoinComputerSystemModel [-IncludeDebugInfoIfUnsure] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -288,7 +331,9 @@ IncludeDebugInfoIfUnsure None                false     false
 ## Custom States
 ### Out-RealmjoinCustomState
 #### Syntax
-Out-RealmjoinCustomState \[-Name\] \<string\> \[\[-InputObject\] \<Object\>\] \[\<CommonParameters\>\]
+```powershell
+Out-RealmjoinCustomState [-Name] <string> [[-InputObject] <Object>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -300,7 +345,9 @@ Name        None                true      false
 
 ### Remove-RealmjoinCustomState
 #### Syntax
-Remove-RealmjoinCustomState \[-Name\] \<string\> \[\<CommonParameters\>\]
+```powershell
+Remove-RealmjoinCustomState [-Name] <string> [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -312,7 +359,9 @@ Name None                true      false
 ## Scheduled Tasks  
 ### Register-RealmjoinCustomStateScheduledTask
 #### Syntax
-Register-RealmjoinCustomStateScheduledTask \[\[-RepetitionInterval\] \<timespan\>\] \[\[-TaskName\] \<string\>\] \[\[-PublishStateScriptFile\] \<string\>\]
+```powershell
+Register-RealmjoinCustomStateScheduledTask [[-RepetitionInterval] <timespan>] [[-TaskName] <string>] [[-PublishStateScriptFile] <string>]
+```
 #### Parameters
 
 ```no-highlight
@@ -325,7 +374,9 @@ TaskName               None                false     false           $env:packag
 
 ### Unregister-RealmjoinCustomStateScheduledTask
 #### Syntax
-Unregister-RealmjoinCustomStateScheduledTask \[\[-TaskName\] \<string\>\] \[\[-PublishStateScriptFile\] \<string\>\]
+```powershell
+Unregister-RealmjoinCustomStateScheduledTask [[-TaskName] <string>] [[-PublishStateScriptFile] <string>]
+```
 #### Parameters
 
 ```no-highlight
@@ -337,7 +388,9 @@ TaskName               None                false     false
 
 ### Get-RealmjoinInvocationParameters
 #### Syntax
-Get-RealmjoinInvocationParameters \[\[-Invocation\] \<InvocationInfo\>\] \[\<CommonParameters\>\]
+```powershell
+Get-RealmjoinInvocationParameters [[-Invocation] <InvocationInfo>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -348,7 +401,9 @@ Invocation None                false     false
 
 ### Get-RealmjoinPathRooted
 #### Syntax
-Get-RealmjoinPathRooted \[\[-Path\] \<string\>\] \[\<CommonParameters\>\]
+```powershell
+Get-RealmjoinPathRooted [[-Path] <string>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -359,7 +414,9 @@ Path None                false     false
 
 ### New-RealmjoinScheduledTaskBootTrigger
 #### Syntax
-New-RealmjoinScheduledTaskBootTrigger \[\[-Enabled\] \<bool\>\] \[\[-StartBoundary\] \<datetime\>\] \[\[-EndBoundary\] \<datetime\>\] \[\[-RepetitionInterval\] \<timespan\>\] \[\[-RepetitionDuration\] \<timespan\>\] \[\[-Delay\] \<timespan\>\] \[\<CommonParameters\>\]
+```powershell
+New-RealmjoinScheduledTaskBootTrigger [[-Enabled] <bool>] [[-StartBoundary] <datetime>] [[-EndBoundary] <datetime>] [[-RepetitionInterval] <timespan>] [[-RepetitionDuration] <timespan>] [[-Delay] <timespan>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -375,7 +432,9 @@ StartBoundary      None                false     false
 
 ### New-RealmjoinScheduledTaskDailyTrigger
 #### Syntax
-New-RealmjoinScheduledTaskDailyTrigger \[\[-Enabled\] \<bool\>\] \[\[-StartBoundary\] \<datetime\>\] \[\[-EndBoundary\] \<datetime\>\] \[\[-RepetitionInterval\] \<timespan\>\] \[\[-RepetitionDuration\] \<timespan\>\] \[\[-RandomDelay\] \<timespan\>\] \[\[-DaysInterval\] \<uint32\>\] \[\<CommonParameters\>\]
+```powershell
+New-RealmjoinScheduledTaskDailyTrigger [[-Enabled] <bool>] [[-StartBoundary] <datetime>] [[-EndBoundary] <datetime>] [[-RepetitionInterval] <timespan>] [[-RepetitionDuration] <timespan>] [[-RandomDelay] <timespan>] [[-DaysInterval] <uint32>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -392,7 +451,9 @@ StartBoundary      None                false     false
 
 ### New-RealmjoinScheduledTaskLogonTrigger
 #### Syntax
-New-RealmjoinScheduledTaskLogonTrigger \[\[-Enabled\] \<bool\>\] \[\[-StartBoundary\] \<datetime\>\] \[\[-EndBoundary\] \<datetime\>\] \[\[-RepetitionInterval\] \<timespan\>\] \[\[-RepetitionDuration\] \<timespan\>\] \[\[-Delay\] \<timespan\>\] \[\<CommonParameters\>\]
+```powershell
+New-RealmjoinScheduledTaskLogonTrigger [[-Enabled] <bool>] [[-StartBoundary] <datetime>] [[-EndBoundary] <datetime>] [[-RepetitionInterval] <timespan>] [[-RepetitionDuration] <timespan>] [[-Delay] <timespan>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -408,7 +469,9 @@ StartBoundary      None                false     false
 
 ### New-RealmjoinScheduledTaskTimeTrigger
 #### Syntax
-New-RealmjoinScheduledTaskTimeTrigger \[\[-DelayFromNow\] \<timespan\>\] \[\[-Enabled\] \<bool\>\] \[\[-StartBoundary\] \<datetime\>\] \[\[-EndBoundary\] \<datetime\>\] \[\[-RepetitionInterval\] \<timespan\>\] \[\[-RepetitionDuration\] \<timespan\>\] \[\[-RandomDelay\] \<timespan\>\] \[\<CommonParameters\>\]
+```powershell
+New-RealmjoinScheduledTaskTimeTrigger [[-DelayFromNow] <timespan>] [[-Enabled] <bool>] [[-StartBoundary] <datetime>] [[-EndBoundary] <datetime>] [[-RepetitionInterval] <timespan>] [[-RepetitionDuration] <timespan>] [[-RandomDelay] <timespan>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -425,7 +488,9 @@ StartBoundary      None                false     false
 
 ### New-RealmjoinScheduledTaskXml
 #### Syntax
-New-RealmjoinScheduledTaskXml \[\[-Principal\] \<ScheduledTaskPrincipal\>\] \[\[-Action\] \<Object\[\]\>\] \[\[-Trigger\] \<Object\[\]\>\] \[\[-Enabled\] \<bool\>\] \[\[-ExecutionTimeLimit\] \<timespan\>\] \[\[-TaskName\] \<string\>\] \[-DeleteAfterFirstRun\] \[-Register\] \[-StartOnce\] \[\<CommonParameters\>\]
+```powershell
+New-RealmjoinScheduledTaskXml [[-Principal] <ScheduledTaskPrincipal>] [[-Action] <Object[]>] [[-Trigger] <Object[]>] [[-Enabled] <bool>] [[-ExecutionTimeLimit] <timespan>] [[-TaskName] <string>] [-DeleteAfterFirstRun] [-Register] [-StartOnce] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -445,7 +510,9 @@ Trigger             None                false     false
 ## Shortcuts
 ### New-RealmjoinShortcut
 #### Syntax
-New-RealmjoinShortcut \[-shortcutPath\] \<string\> \[-targetPath\] \<string\> \[\[-targetArguments\] \<string\>\] \[\[-workingDirectory\] \<string\>\] \[\[-description\] \<string\>\] \[\[-iconLocation\] \<string\>\] \[\[-hotKey\] \<string\>\] \[\[-windowStyle\] \<int\>\] \[-forCurrentUser\] \[-onDesktop\] \[\<CommonParameters\>\]
+```powershell
+New-RealmjoinShortcut [-shortcutPath] <string> [-targetPath] <string> [[-targetArguments] <string>] [[-workingDirectory] <string>] [[-description] <string>] [[-iconLocation] <string>] [[-hotKey] <string>] [[-windowStyle] <int>] [-forCurrentUser] [-onDesktop] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -465,7 +532,9 @@ workingDirectory None                false     false
 
 ### Remove-RealmjoinShortcut
 #### Syntax
-Remove-RealmjoinShortcut \[-shortcutPath\] \<string\> \[-forCurrentUser\] \[-onDesktop\] \[\<CommonParameters\>\]
+```powershell
+Remove-RealmjoinShortcut [-shortcutPath] <string> [-forCurrentUser] [-onDesktop] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -478,7 +547,9 @@ shortcutPath   None                true      false
 
 ### Format-RealmjoinShortcutPath
 #### Syntax
-Format-RealmjoinShortcutPath \[-shortcutPath\] \<string\> \[-forCurrentUser\] \[-onDesktop\] \[-doNotCheckCreateFolder\] \[\<CommonParameters\>\]
+```powershell
+Format-RealmjoinShortcutPath [-shortcutPath] <string> [-forCurrentUser] [-onDesktop] [-doNotCheckCreateFolder] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
@@ -492,7 +563,9 @@ shortcutPath           None                true      false
 
 ### Start-RealmjoinSoftwarePackageInstallation
 #### Syntax
-Start-RealmjoinSoftwarePackageInstallation \[\[-packageName\] \<string\>\] \[\<CommonParameters\>\]
+```powershell
+Start-RealmjoinSoftwarePackageInstallation [[-packageName] <string>] [<CommonParameters>]
+```
 #### Parameters
 
 ```no-highlight
