@@ -58,11 +58,12 @@ The Chocolatey install command can be run with various parameters to e.g. suppre
 For a more detailed documentation of Chocolatey see the [official Chocolatey wiki on Github](https://github.com/chocolatey/choco/wiki).
 
 ## Microsoft Application Virtualization (App-V)
-APP-V is an application virtualization solution from Microsoft. The APP-V platform allows applications to be streamed to any client from a virtual application server. It is not needed to install the application locally, only the APP-V client needs to be. 
-APP-V packages, are the most exotic packages supported by RealmJoin. They are created as the difference between an out-of-the-box Windows 10 and an out-of-the-box Windows 10 with the software installed. It therefore contains all the differences in data, keys and file structure that result from the installation. 
-APP-V sandboxes the execution environment, hosting a virtual file system, registry keys, services and so on, based on the App-V package. All the data specific to the software version is enclosed in the sandbox, resulting in no changes on the clients operation system. This also allows to use different version of the same software parallel, even if they contain contradicting settings and key values. APP-V might be considered as an intermediate step towards a virtual machine.  
-Generally spoken, App-V is the most sophisticated package type in RealmJoin, while highly customized, allowing most applications to be run.  
-For a more detailed view on APP-V see the [Microsoft documentation on Application Virtualization](https://technet.microsoft.com/en-us/library/hh826068.aspx).
+App-V is an application virtualization solution from Microsoft. The App-V platform allows applications to be streamed to any client from a virtual application server. It is not needed to install the application locally, only the App-V client needs to be. 
+App-V packages, are the most exotic packages supported by RealmJoin. They are created as the difference between an out-of-the-box Windows 10 and an out-of-the-box Windows 10 with the software installed. It therefore contains all the differences in data, keys and file structure that result from the installation.
+
+App-V sandboxes the execution environment, hosting a virtual file system, registry keys, services and so on, based on the App-V package. All the data specific to the software version is enclosed in the sandbox, resulting in no changes on the clients operation system. This also allows to use different version of the same software parallel, even if they contain contradicting settings and key values. App-V might be considered as an intermediate step towards a virtual machine.
+
+Generally spoken, App-V is the most sophisticated package type in RealmJoin, while highly customized, allowing most applications to be run.   For a more detailed view on App-V see the [Microsoft documentation on Application Virtualization](https://technet.microsoft.com/en-us/library/hh826068.aspx).
 
 ## Organic
 Organic packages contain raw and unprocessed application setups. When handeling those, RealmJoin is basically just used as a transport vehicle to move the zipped container to a specified location. Depending on its payload, the installer then has to be manually started by the user (if user mode) or an remote administrator or field service. 
