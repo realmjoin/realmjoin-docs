@@ -614,7 +614,8 @@ It is possible to extend the states by custom states. See [Custom States](http:/
 To request new packages to be provided by G&K, use the uploader in the RealmJoin admin console. Please provide the necessary binaries as well as all installation requirements and additional information as a *Readme.txt*. After submitting the information (please do not forget a contact person!), you will be able to upload your zip file containing the binaries and the additional information. This will trigger a packaging request in the G&K ticketing system.   
   
  ![RJ rj-ac-uploader](./media/rj-ac-upload.png)
-   
+   **NOTE**:   
+To prevent spam and unsolicited requests, if no file is attached, the request is not processed. In case of a file-less request, a dummy.txt file hast to be attached. 
 <!--
 # TBD  
 Roles and self service in the admin console.
