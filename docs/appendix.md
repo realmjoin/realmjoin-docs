@@ -22,7 +22,7 @@ It is also possible to set this key during the installation of RealmJoin as a ar
 ## Custom States
 
 It is possible to extend the standard RealmJoin states with arbitrary custom states. *JSON* files located in *%ProgramData%\RealmJoin\CustomStates* are automatically evaluated and added to the telemetry upload in the RealmJoin portal.  
-A RealmJoin extensions allows to create custom *JSON* files using a scheduled task, therefore executing a script on regular basis and recreating the *JSON*.  
+A RealmJoin extension allows to create custom *JSON* files using a scheduled task, therefore executing a script on regular basis and recreating the *JSON*.  
 Create a chocolatey package which uses the task registration extensions:  
 ``Register-RealmjoinCustomStateScheduledTask`` 
 For optional parameters check [Register-RealmjoinCustomStateScheduledTask](http://docs.realmjoin.com/core-extension.html#a-name-regcstask-a-register-realmjoincustomstatescheduledtask) in the *core extension* section.  
