@@ -546,7 +546,7 @@ It is possible to extend the states by custom states. See [Custom States](http:/
         "ArgsHash": null
       }
     ]
-    > Software installed by other means
+    > Software installed by other means (Admin, Appx)
     "Inventory": [
       {
         "Name": "7-Zip 18.01 (x64 edition)",

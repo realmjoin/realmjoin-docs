@@ -137,6 +137,25 @@ Comments on the individual settings in *italics*
     "Target": "https://help.glueckkanja.net/",
     "Platform": "any"  
 ```   
+> [!NOTE]
+> It is possible to direct the link to a specific application or process to be started with. To do so, the Target has to be set to the process and optional args can be provided. Additionally, for edge, the protocol handler can be used: 
+- Key: "WebLinks" (directing to process): 
+```JSON
+   {
+"Name": "Citrix-Applikationen",
+"Target": "iexplore",
+"Args": "https://url.net",
+"Platform": "any"
+},
+{
+"Name": "Citrix-Applikationen",
+"Target": "microsoft-edge:https://url.net",
+"Platform": "any"
+}
+
+```
+
+
 - Key: "BranchCache": 
 ```JSON
  "Mode": "Distributed"  
@@ -144,13 +163,14 @@ Comments on the individual settings in *italics*
 
 - Key: "Chocolatey": 
 ```JSON
-    "Version": "0.10.3",  
+   { "Version": "0.10.3",  
     "Sources": 
     "Name": "gkpackages",
     "Source": "https://packages.gkdatacenter.net/nuget",
     "User": "packages",
     "Password": "xxxxxxxxxxxxxxxxxxxxx",
     "Priority": 10   
+   }
 ```     
 - Key: "SoftwarePackages": 
 ```JSON

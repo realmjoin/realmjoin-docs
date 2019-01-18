@@ -74,3 +74,22 @@ Glück&Kanja takes data protection very seriously. All contracts with customers 
 
 ## Is it possible to see the code of store applications?  
 It is possible to request reading rights for a specific application package from Glück&Kanja. The installation script of already installed packages can be found under ``$env:ProgramData\chocolatey\lib\<packageId>\Tools`` 
+
+## Can I force the Weblinks in the RealmJoin tray to use a specific process?  
+Yes. To do so, the Target has to be set to the process and optional args can be provided. Additionally, for edge, the protocol handler can be used: 
+- Key: "WebLinks" (directing to process): 
+```JSON
+   {
+"Name": "Citrix-Applikationen",
+"Target": "iexplore",
+"Args": "https://url.net",
+"Platform": "any"
+},
+{
+"Name": "Citrix-Applikationen",
+"Target": "microsoft-edge:https://url.net",
+"Platform": "any"
+}
+
+```
+See section *Settings and Policies* for further information. 
