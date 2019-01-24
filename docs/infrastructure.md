@@ -35,6 +35,7 @@ RealmJoin connects to the following URLs, that might be considered in your firew
    
 * https://cdn.realmjoin.com/  
 * https://realmjoin-backend.azurewebsites.net/  
+* https://realmjoin-backend-staging.azurewebsites.net/  
 * https://packages.gkdatacenter.net/  
 * https://enterpriseregistration.windows.net/  
 * https://gkrealmjoin.s3.amazonaws.com/  
