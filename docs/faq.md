@@ -20,7 +20,7 @@ RealmJoin v4 is only available for Windows 10.
 The sync between Azure AD and RealmJoin is scheduled every 15 minutes and based on your custom pattern rule set.
 
 ## Does RealmJoin support *Multi User Devices*? 
-Yes, starting with version 4.13 RealmJoin allows applications to be installed not only for the primary device user but also secondary users.  
+Yes, starting with version 4.13 RealmJoin allows applications to be installed not only for the primary device user but also secondary users. See section [advanced options/ multi user devices](http://docs.realmjoin.com/managing-realmjoin.html#advanced-options) for details on multi user package assignment.
 
 ## How to enter the *Debug Mode* in RealmJoin client?
 Click on the RealmJoin tray icon while pressing CTRL and Shift on the Keyboard. For a detailed description of the *debug mode* see chapter *troubleshooting*.
