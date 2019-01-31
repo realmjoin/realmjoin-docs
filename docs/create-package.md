@@ -260,20 +260,24 @@ Software packages are assigned a individual version number. It is recommended to
 **Note:** When a new version is tested, the package might be crafted as a pre release package, which, if testing is successfull and no further changes have to be done, has the same version number as the final build.
 
 ### Variables
-The following variables may be used in the RealmJoin install scripts:  
-* $Global:packagePrefix = $env:packageName.Split("-")[0]
-* $Global:packageName = $env:packageName
-* $Global:packageVersion = $env:packageVersion
-* $Global:packageVersionObject = [System.Version]$env:packageVersion
-* $Global:packageVersionNoRevisionObject = New-Object System.Version -ArgumentList $packageVersionObject.Major, $packageVersionObject.Minor, $packageVersionObject.Build
-* $Global:packageParameters = $env:packageParameters
-* $Global:packageFolder = $env:packageFolder
-* $Global:packageToolsFolder = Join-Path $env:packageFolder "tools"
-* $Global:packageTempDir = Join-Path $env:TEMP (Join-Path $env:chocolateyPackageName $env:chocolateyPackageVersion)
-* $PackageID
-* $Version
-* $UserSID
-* $RJ_DeploymentPhase = contains information on the installation. Can be:  
+**Chocolatey variables**
+* $packagePrefix = flavour prefix of this package
+* $packageName = name of this package
+* $packageVersion = version of this package
+* $packageVersionObject = [System.Version]$env:packageVersion
+* $packageVersionNoRevisionObject = New-Object System.Version -ArgumentList $packageVersionObject.Major, $packageVersionObject.Minor, $packageVersionObject.Build
+* $packageParameters = parameters as specified in the assignment arguments
+* $packageFolder = folder in which the package is extracted
+* $packageToolsFolder = sub directory "tools" of a chocolatey package, contains the install script. Defined as: Join-Path $env:packageFolder "tools"
+* $packageTempDir = temp directory which is used for the package. Defined as: Join-Path $env:TEMP (Join-Path $env:chocolateyPackageName $env:chocolateyPackageVersion)
+* $PackageID = unique ID of the package
+**Environment variables**
+* $env:RJ_Version
+* $env:RJ_UserSID = SID of the user who started this package installation. Can be used in system crafts if parameters are initialized 
+* $env:RJ_ChocolateyPackage = glueckkanja-test-choco
+* $env:RJ_InstalledVersion = 1.0.0.1
+* $envRJ_PackageID = glueckkanja-test-choco
+* $env:RJ_DeploymentPhase = contains information on the installation. Can be:  
    ```
   Blank
 
@@ -289,6 +293,7 @@ The following variables may be used in the RealmJoin install scripts:
   ManualDeployment
   # Now the installations start
     ```  
+* mehr 
 
 # Updating Packages
 
