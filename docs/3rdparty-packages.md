@@ -1,9 +1,11 @@
+
 # 3rd Party NuGet Packages on https://packages.gkdatacenter.net/
 
 ## PowerShell Modules
 
 ### PSIni
-* Used to read and write ini files from within choco or craft packages
+
+* Used to read and write ini files from within Chocolatey or craft packages
 * Source & License: https://www.powershellgallery.com/packages/PsIni
 * Project Home: http://lipkau.github.io/PsIni/
 
