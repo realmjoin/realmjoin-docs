@@ -8,7 +8,7 @@ Requesting as well as the mechanisms of adding and assigning packages will not b
 
 After subscribing/adding a new package, it is recommended to flag this package as **PreRelease**. This version is then assigned to a test user or test user group (recommended as non-mandatory).  
 This test users then install the application via RealmJoin in various scenarios.  
-If the installation and execution of the application work as planned,it is then assigned to the Application Owner (AO) and undergoing the user acceptance test (UAT).  
+If the installation and execution of the application work as planned, it is then assigned to the Application Owner (AO) and undergoing the user acceptance test (UAT).  
 If approved, the PreRelease flag is removed as well as the test group assignment and the application can then be assigned to the users group. This workflow is shown in the pictures below.
 
 [![RJ packaging workflow](./media/rj-package-workflow.png)](./media/rj-package-workflow.png)  

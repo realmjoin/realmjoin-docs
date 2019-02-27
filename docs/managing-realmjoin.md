@@ -46,7 +46,7 @@ Additionally, when the client tray menu is opened in debug mode, all software pa
 
 ## RealmJoin Portal
 
-Device provisioning and RealmJoin configuration is done with the RealmJoin portal. Designed to mirror the style of the new Microsoft administration services, it is the main tool for the management of the RealmJoin clients and users. The web application can be reached under <https://realmjoin-web.azurewebsites.net/> or the beta version under <https://realmjoin-web-staging.azurewebsites.net/>.
+Device provisioning and RealmJoin configuration is done with the RealmJoin portal. Designed to mirror the style of the new Microsoft administration services,it is the main tool for the management of the RealmJoin clients and users. The web application can be reached under <https://realmjoin-web.azurewebsites.net/> or the beta version under <https://realmjoin-web-staging.azurewebsites.net/>.
 
 [![RJ Dashboard](./media/rj-ac-dashboard.png)](./media/rj-ac-dashboard.png)  
 

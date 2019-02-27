@@ -5,7 +5,7 @@ After installing the RealmJoin client on the device, a configuration is saved lo
 
 ## Delivery Optimization for Windows Update
 
-**Windows Update Delivery Optimization** (or WUDO) is a self-organized solution for distributed caches for Windows Updates. In default mode, WUDO identifies peers as part of a WAN based on their external IP. In case of stretched out WANs with just one breakout point, this leads to a high network load and a bottleneck.  
+**Windows Update Delivery Optimization** (WUDO) is a self-organized solution for distributed caches for Windows Updates. In default mode, WUDO identifies peers as part of a WAN based on their external IP. In case of stretched out WANs with just one breakout point, this leads to a high network load and a bottleneck.  
 To improve the handling, Microsoft Intune can be used to set WUDO to **DownloadMode=2**, where peers are grouped by a groupID. The ID (GUID) is set for each device using network fingerprinting and the MAC address of the default gateway and therefore creating a more localized group. RealmJoin can be used to set the groupID for each client.
 
 The following registry key is set to define the DOGroupID:  
