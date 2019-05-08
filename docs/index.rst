@@ -27,6 +27,7 @@ Deployment Guide
    create-package
    laps
    core-extension
+   anydesk
    faq
    troubleshooting
    packaging-workflow
