@@ -25,6 +25,7 @@ Deployment Guide
    package_lifecycle
    package-types
    create-package
+   laps
    core-extension
    faq
    troubleshooting
