@@ -1,7 +1,25 @@
 
-# AnyDesk Integration
+# AnyDesk - That´s how it works
 
-AnyDesk is a remote desktop tool which allows the access to other computers. AnyDesk can be installed on Windows, macOS, Linux, mobile devices and Raspberry Pi as well.
+RealmJoin contains the remote desktop tool **AnyDesk**. It allows the access to other computers. AnyDesk can be installed on Windows, macOS, Linux, mobile devices and Raspberry Pi as well.
+
+AnyDesk uses ID numbers to establish connections between two computers. Share your ID number with an other user (this user needs AnyDesk as well). This user has to enter the ID number in the AnyDesk menu. When you accept the request, the other user will have access to your desktop.
+
+You can also select different permissions which you give to the other (remote) user. For example, you can allow or block access to your monitor, to your sound or the control of your keyboard and/or your computer mouse.
+
+## Start a remote session via RJ tray menu
+
+| Task | Image |
+| --- | --- |
+| 1. Open the RealmJoin tray menu |  |
+| 2. Click **Start remote session** | [![RJtraymenu](./media/anydesk1.png)](./media/anydesk1.png) |
+| 3. **RealmJoin AnyDesk Session** menu appears | [![RJanydesksession](./media/anydesk2.png)](./media/anydesk2.png) |
+| 4. Share the given number with the remote user | |
+| 5. Finally accept the request | |
+
+
+
+<!-- Wird noch ausgelagert auf eine eigene Seite und inhaltlich angepasst
 
 ## Install AnyDesk
 
@@ -48,9 +66,4 @@ In regular state it will be the following:
   }
 }
 ```
-
-## Start remote session via RJ tray menu
-
-1. Open the RealmJoin tray menu
-2. Click **Start remote session**
-3. **RealmJoin AnyDesk Session** menu appears
+-->
