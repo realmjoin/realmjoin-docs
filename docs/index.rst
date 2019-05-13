@@ -26,6 +26,8 @@ Deployment Guide
    package-types
    create-package
    laps
+   appinsights
+   keyvault
    core-extension
    anydesk
    faq
