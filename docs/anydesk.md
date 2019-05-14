@@ -1,5 +1,5 @@
 
-# AnyDesk - That´s how it works
+# AnyDesk - That's how it works
 
 RealmJoin contains the remote desktop tool **AnyDesk**. It allows the access to other computers. AnyDesk can be installed on Windows, macOS, Linux, mobile devices and Raspberry Pi as well.
 
