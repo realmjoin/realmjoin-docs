@@ -46,7 +46,7 @@ The RealmJoin workflow describes the detailed process after RealmJoin is deploye
 To understand how RealmJoin detects and authenticates the device and the related user we must investigate the Azure AD/Intune device enrollment process first:
 
 1. After the user successfully authenticates against Azure AD by providing username, password and MFA, the **Azure AD Device Registration Service** generates a key pair for the device certificate.
-2. Generates a **Certificate Signing Request** (CSR) using the key pair. Signs CSR data with private key plus includes public key in request.
+2. Generates a **Certificate Signing Request** (CSR) using the key pair. Signs CSR data with private key plus public key in request.
 3. Generates a second key pair that will be used to bind SSO tokens physically to the device when authenticating to Azure AD later on. This key is typically called **storage/transport key** (Kstk) and is derived from **Storage Root Key** (SRK) of the device **Trusted Platform Module** (TPM). The way the binding of the SSO token to the device is achieved by storing into the TPM a corresponding symmetric session key (encrypted to Kstk) issued along with the SSO token upon authentication to Azure AD.
 4. Send a device registration request to **Azure DRS** passing along the ID token, the generated CSR and the public portion of the Kstk along with its attestation data.
 
@@ -70,7 +70,7 @@ Having this information available out of the related certificate, RealmJoin is n
 
 As RealmJoin is aware about the Azure AD Device ID and the related user account, it will immediately start (after the regular OOBE process finished) to apply the device checks and install the users' software within the system context of the device. After completion of this initial run, RealmJoin will trigger a device restart.
 
-After a device restart RealmJoin will prompt the user for an authenticiation confirmation - no credentials like password needed here! Now RealmJoin can proceed with all user based device and software configuration settings.
+After a device restart RealmJoin will prompt the user for an authentication confirmation - no credentials like password needed here! Now RealmJoin can proceed with all user based device and software configuration settings.
 
 1. RealmJoin will ask the user for its **Second Identity** - this feature is only available when a **Legacy Active Directory Authentication Provider** should be involved into the users' network resource scope by providing **NTML tokens** for on-prem file or print services.
 2. The build in RealmJoin "Security Requirements" assessment does some **pre-checks**:
@@ -83,7 +83,7 @@ After a device restart RealmJoin will prompt the user for an authenticiation con
 > [!NOTE]
 > These checks are customizable (enforce/not enforce) and will be replaced by the **Intune Device Health Check** in future.
 
-During the inital run of RealmJoin, the **BitLocker Drive Encryption** will be enabled and enforced. User interactivity is not necessary. The related BitLocker recovery key is escrowed into Azure AD.
+During the initial run of RealmJoin, the **BitLocker Drive Encryption** will be enabled and enforced. User interactivity is not necessary. The related BitLocker recovery key is escrowed into Azure AD.
 
 > [!NOTE]
 > To find this key is required, please use this URL (admin only)
