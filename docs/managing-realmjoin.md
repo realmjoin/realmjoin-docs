@@ -7,42 +7,58 @@ Administrative users have access to the RealmJoin administrator console. As Real
 
 The RealmJoin client is enrolled on every Windows 10 device. RealmJoin seamlessly fits into the modern workplace with its focus on user self-service and mobility. Using the RealmJoin client module, the user may install provided software, get basic information on the device and membership in the tenant domain without the need of contact an IT administrative.
 
-### Initial Start
+## Initial Start since RJ v4.15
 
-When RealmJoin is enrolled and started for the first time, it asks for the user identity and then calls to the cloud service for a policy.  
+Since the release of version 4.15, RealmJoin skips the email-based discovery process that user goes through on the sign in page, leading to a slightly more streamlined user experience (RealmJoin still based on the AAD workflow - AAD sign-in and OAuth-protocol).
 
-[![RJ AAD Auth](./media/rj-aad-auth.png)](./media/rj-aad-auth.png)  
+> [!NOTE]
+> In rare cases it may happen that the user has to enter username and password manually, as a result of failures or incompatible settings.
 
-RealmJoin **Security Requirement** assessment does some pre-checks (Encryption, Patch Level, Firewall, Anti-Virus, etc. – this is optional and can be replaced in parts by Intune-Health-Check). In the last step, all mandatory software will be installed (**black screen installation**). During this installation, any interaction with the client is suppressed.  
-  
-[![RJ Sec Check](./media/rj-sec-check.gif)](./media/rj-sec-check.gif)
+To see information about the Inital Start before version 4.15, navigate to the [Appendix](./appendix.md/#InitialStartbeforeRJv4.15) <!-- Link zum Appendix einbauen. Initial Start aus Managing RJ in Appendix verschieben -->
 
-If no error occurs during deployment, RealmJoin is ready to use.
+## RealmJoin User Interface and Client menu
 
-### Client usage
+### User Interface
 
-After being successfully installed, RealmJoin is automatically started on the user login and is permanent active in the background. It is represented with an ID card icon. Clicking on the icon opens up the RealmJoin client menu.  
-It contains basic information in the lower and a number of links in the upper part. The selector **Software Packages** opens a second context menu with all the software packages that are allocated to the user.
-  
-[![RJ Tray](./media/rj-tray-menu.png)](./media/rj-tray-menu.png)
-  
-If an user wishes to install any of the listed software, he/she is only required to select the package to start the installation.
-  
-[![RJ Add Package](./media/rj-client-addpackage2.png)](./media/rj-client-addpackage2.png)  
-  
-The installation mode depends on the packages selected: If those are only user mode packages, they are installed immediately. In case of a higher permission level, RealmJoin starts a service (realmjoinservice.exe) and installs the packages with the **SYSTEM** user account.
+[![RJScreen4.15](./media/rj-ui1.png)](./media/rj-ui1.png)
 
-### Debug mode
+RealmJoin uses the **user identity** and checks with it at a Cloud-Service for an **Extended Policy** and optionally for a **Secondary Identity**, then the RealmJoin Security Assessment **checks if the system qualifies** (Encryption, Patch Level, Firewall, Anti-Virus, etc. - optionally, an Intune-Health-Check may be sufficient). If the user's device is eligible **software- and configuration-Policy** will be applied (Mandatory Applications, etc.).
 
-To open a debug window, press and hold **Shift** + **Strg** and click the RealmJoin icon. This reveals **Show Debug Window** as a further entry at the end of the context menu. Show Debug Window contains seven different diagnostic tools.  
-If a device is not able to be addressed by the server or can not connect to the back-end, this tool will provide the user with the tools for the first steps of diagnosis.
+The following screen shows the RealmJoin toast notification. It appears in the Windows notification center:
 
-Beside Show Debug Window **Retry base installation** is a further entry that reveals. Retry base installation allows an user to reinstall the RealmJoin client.  
-Additionally, when the client tray menu is opened in debug mode, all software packages are shown with a package version number.
+[![RJnotification](./media/rj-ui2.png)](./media/rj-ui2.png)
 
-[![RJ Debug Menu](./media/rj-debug-menu.png)](./media/rj-debug-menu.png)  
+This screen shows a customizable **hero image** (for more information about hero images, click [here](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts#hero-image))
 
-**Collect Logs** is a quick way to access all log files, which will be saved in a zip-file to the users desktop. See chapter [Troublehooting](troubleshooting.md) for a detailed description of the RealmJoin debug window and its features.
+Below this hero image you can see information on packages and a comment when the update will start.
+
+You can also see a progress bar and countdown. RealmJoin will start an update until this countdown is over.
+
+### Client menu
+
+After being successfully installed, RealmJoin is automatically started on the user login and is permanent active in the background. It is represented with an ID card icon. Clicking on the icon opens up the RealmJoin client menu. It contains basic information in the lower and a number of links in the upper part. These links are ordered in two different sections - **Web Links** and **Software Packages**.
+
+[![RJclientmenu](./media/rj-ui3.png)](./media/rj-ui3.png)
+
+Web Links contains customizable web links. For example, Google. When a user click the web link **Google**, RealmJoin will automatically open a Google search in your browser.
+
+Software Packages contains customizable software categories. For example, **Browser** contains links to Mozilla Firefox or Google Chrome. With a click on a link, RealmJoin will automatically start an installation or an updating process.
+
+Furthermore RealmJoin offers a remote function (**Start remote session**). For more information about this function in RealmJoin, see [AnyDesk - That's how it works](./anydesk.md)
+
+### Tray Debug
+
+To open the tray debug, click **STRT + SHIFT + Click on the RealmJoin Icon**. The Client menu will open but with a further entry at the end of the menu: **Show Debug Window**.
+
+Client menu:
+
+[![RJclientmenu2](./media/rj-ui4.png)](./media/rj-ui4.png)
+
+Tray debug:
+
+[![RJtraydebug](./media/rj-ui5.png)](./media/rj-ui5.png)
+
+Show Debug Window contains seven different diagnostic tools. If a device is not able to be addressed by the server or can not connect to the back-end, this tool will provide the user with the tools for the first steps of diagnosis.
 
 ## RealmJoin Portal
 
