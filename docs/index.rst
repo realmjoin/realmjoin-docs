@@ -17,10 +17,11 @@ Deployment Guide
    :maxdepth: 2
    :caption: Contents:
 
-   introduction
+   RealmJoin - Companion to Intune
    installation
    infrastructure
    managing-realmjoin
+   rj-portal
    policies
    package_lifecycle
    package-types
