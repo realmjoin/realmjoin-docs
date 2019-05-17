@@ -47,9 +47,13 @@ RealmJoin connects to the following URLs, that might be considered in your firew
 
 ### BranchCache
 
+An often encountered problem when providing software packages to a big number of devices in a WAN is creating a bottleneck and huge network loads when downloading software from a server to the devices. A solution for this problem is the **BranchCache** technology. There are two BranchCache modes, **hosted** and **distributed** cache. In hosted cache mode, the content is cached on one or more local **hosted cache servers**, which increases the network load, since a download from big binaries from an internet server is not necessary. RealmJoin uses BranchCache in the distributed cache mode:
+
 An often encountered problem when providing software packages to a big number of devices in a WAN is creating a bottleneck and huge network loads when downloading software from a server to the devices. A solution for this problem is the **BranchCache** technology.
 
-For more information about BranchCache see the [Microsoft BranchCache documentation](https://docs.microsoft.com/en-us/windows-server/networking/branchcache/branchcache)
+When a client device downloads software packages for the first time, the files are divided into chunks that are significantly smaller then the original content and cached on the device. If the same package is afterwards requested from a different client device in the same network, it downloads content information instead of the complete content from the server. The content information is used to locate the desired content on other devices in the network. If found, instead of downloading packages from the server, the content in form of the chopped up chunks, is transferred to the client device. If the requested software is available on a number of devices, the load is balanced between them.
+
+The RealmJoin Publishing Server has to provide the chunk identifiers, and therefore is hosted as a single Azure VM Windows 2016 IIS server with a Azure Blob Storage. For more information about BranchCache see the [Microsoft BranchCache documentation](https://docs.microsoft.com/en-us/windows-server/networking/branchcache/branchcache)
 
 ### Back-end
 

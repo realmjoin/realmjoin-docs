@@ -5,7 +5,12 @@ RealmJoin contains the remote desktop tool **AnyDesk**. It allows the access to 
 
 AnyDesk uses ID numbers to establish connections between two computers. Share your ID number with an other user (this user needs AnyDesk as well). This user has to enter the ID number in the AnyDesk menu. When you accept the request, the other user will have access to your desktop.
 
-You can also select different permissions which you give to the other (remote) user. For example, you can allow or block access to your monitor, to your sound or the control of your keyboard and/or your computer mouse.
+RealmJoin skips the whole ID number sharing process, because every AnyDesk ID numbers in an organization are linked to single users. An Administrator just needs to know the user and can request for access to the computer. Still the user has to accept this request.
+
+As a user you can select different permissions which you give to other (remote) users. For example, you can allow or block access to your monitor, to your sound or the control of your keyboard and/or your computer mouse.
+
+> [!IMPORTANT]
+> When you use the AnyDesk feature (via RealmJoin), it is not possible to start a remote session with external AnyDesk users.
 
 ## Start a remote session via RJ tray menu
 
@@ -13,9 +18,8 @@ You can also select different permissions which you give to the other (remote) u
 | --- | --- |
 | 1. Open the RealmJoin tray menu |  |
 | 2. Click **Start remote session** | [![RJtraymenu](./media/anydesk1.png)](./media/anydesk1.png) |
-| 3. **RealmJoin AnyDesk Session** menu appears | [![RJanydesksession](./media/anydesk2.png)](./media/anydesk2.png) |
-| 4. Share the given number with the remote user | |
-| 5. Finally accept the request | |
+| **Note:** It can happen that the **RealmJoin AnyDesk Sessions** screen is shown for an instant. It will skip automatically. | [![RJanydesksession](./media/anydesk2.png)](./media/anydesk2.png) |
+| 3. Finally accept the request | |
 
 
 
