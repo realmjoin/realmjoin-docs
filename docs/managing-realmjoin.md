@@ -46,9 +46,15 @@ Software Packages contains customizable software categories. For example, **Brow
 
 Furthermore RealmJoin offers a remote function (**Start remote session**). For more information about this function in RealmJoin, see [AnyDesk - That's how it works](./anydesk.md)
 
+A further useful feature is **Sync this device**.
+
+[![Sync this device](./media/rj-ui3.2.png)](./media/rj-ui3.2.png)
+
+When you click **Sync this device** RealmJoin will install or update mandatory packages. Furthermore **Sync this device** helps to speed up background processes (e. g. waiting for new weblinks or waiting for an admin account).
+
 ### Tray Debug
 
-To open the tray debug, click **STRT + SHIFT + Click on the RealmJoin Icon**. The Client menu will open but with a further entry at the end of the menu: **Show Debug Window**.
+To open the tray debug, click **STRG + SHIFT + Click on the RealmJoin Icon**. The Client menu will open but with a further entry at the end of the menu: **Show Debug Window**.
 
 Client menu:
 

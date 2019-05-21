@@ -18,9 +18,26 @@ As a user you can select different permissions which you give to other (remote) 
 | --- | --- |
 | 1. Open the RealmJoin tray menu |  |
 | 2. Click **Start remote session** | [![RJtraymenu](./media/anydesk1.png)](./media/anydesk1.png) |
-| **Note:** It can happen that the **RealmJoin AnyDesk Sessions** screen is shown for an instant. It will skip automatically. | [![RJanydesksession](./media/anydesk2.png)](./media/anydesk2.png) |
-| 3. Finally accept the request | |
+| 3. The AnyDesk client starts and its current address will be pushed to RealmJoin backend in background. In addition, its visible in the UI. | [![RJanydesksession](./media/anydesk2.png)](./media/anydesk2.png) |
+| 4. This client address will be displayed in RealmJoin portal at the corresponding client and the support staff can initiate the session via clicking **Connect** | [![AnyDeskConnect](./media/anydesk3.png)](./media/anydesk3.png) |
+| 5. This will automatically start the AnyDesk client | |
+| 6. Subsequently, the end user needs to accept the incoming remote session request | [![RJremoterequest](./media/anydesk4.png)](./media/anydesk4.png) |
+| 7. The Connection is established and the support staff can perform his tasks remotely |
+| 8. When the job is finished, please **disconnect** from the remote session |
 
+### Get elevated rights
+
+For special support scenarios administrative rights will be needed. A normal remote session starts with standard rights. That requires to elevate the permissions:
+
+| Task | Image |
+| ---- | ----- |
+| 1. Click the **lightning icon** | |
+| 2. Select **Request elevation** | |
+| 3. In the new appearing window (Request elevation) choose **Transmit authentication data** | |
+| 4. Insert corresponding credentials | |
+| 5. On the remote client, a new window **User Account Control** will appear | |
+| 6. Confirm it | |
+| 7. The support staff is now able to perform administrative tasks. | |
 
 
 <!-- Wird noch ausgelagert auf eine eigene Seite und inhaltlich angepasst
