@@ -32,9 +32,10 @@ For special support scenarios administrative rights will be needed. A normal rem
 | Task | Image |
 | ---- | ----- |
 | 1. Click the **lightning icon** | |
-| 2. Select **Request elevation** | |
+| 2. Select **Request elevation** | [![Request elevation](./media/anydesk5.png)](./media/anydesk5.png) |
 | 3. In the new appearing window (Request elevation) choose **Transmit authentication data** | |
 | 4. Insert corresponding credentials | |
+| 5. Then, click **OK** | [![Credentials](./media/anydesk6.png)](./media/anydesk6.png) |
 | 5. On the remote client, a new window **User Account Control** will appear | |
 | 6. Confirm it | |
 | 7. The support staff is now able to perform administrative tasks. | |
