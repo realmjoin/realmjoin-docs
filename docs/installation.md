@@ -113,9 +113,29 @@ The following permissions are admitted by the administrator consent and set in A
 
 After successful connection the following software packages are provided as default in RealmJoin portal:
 
+* Choco Extension RealmJoin Core
+* Google Chrome
+* Microsoft Office 365 ProPlus
+* Microsoft Teams
+* Mozilla Firefox
+* RealmJoin Core Extension
+* RealmJoin Win10 Core Settings System
+* RealmJoin Win10 Remove Suggested Apps
+* RealmJoin Win10 Update Start Layout
+* RealmJoin Win10 Pin Unpin
+* RealmJoin Win10 Remove Provisioned Apps
+* Generic RealmJoin Configure OneDrive
+* Genereic Windows Activation
 * MS Office with user settings and proofing tools  
-* 7-Zip  
-* Microsoft Teams  
-* Google Chrome  
-* Mozilla Firefox  
-* Win10PinUnpin
+* 7-Zip
+* GlueckKanja RealmJoin Publish State Computer System Information
+* GlueckKanja RealmJoin Publish State Speculation Control Settings
+
+In addition, the following policies are part of a tenant for all RJ Users:
+
+* Environment.Channel (beta)
+* Integration.AnyDesk
+* LocalAdminManagement
+* Policies.ExplorShortcuts
+* Policies.DisableNetworkLocationWizard
+* WebLinks
