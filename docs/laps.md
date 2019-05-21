@@ -17,14 +17,14 @@ Application Insights are an important part of LAPS. Click the [here](appinsights
 | --- | ------------- | ------------ | ----------- |
 | **LocalAdminManagement.EmergencyAccount** | | | |
 | .NamePattern | "ADM-{HEX:8}" | "Admin-{HEX:4}" | |
-| .DisplayName | "RealmJoin Local Administrator" | "Local Emergency Admin" | |
-| .PasswordCharSet | See notes[^1] | "0123456789ABCDEFabcdef" | |
+| .DisplayName | "RealmJoin Local Administrator" | "Local Emergency Admin" | (appears on Windosw) |
+| .PasswordCharSet | See notes[^1] | "0123456789ABCDEFabcdef" | Charset of the password |
 | .PasswordLength | 20 | 30 | |
 | .MaxStaleness | | "00:45" | Delete and recreate profile 45 min. after last use. |
 | **LocalAdminManagement.SupportAccount**| | | |
 | .NamePattern | !ADM-{HEX:8}" | "Admin-{HEX:4}"
-| .DisplayName | "RealmJoin Local Administrator" | "Local Support Admin" | |
-| .PasswordCharSet | See notes[^1] | "0123456789ABCDEFabcdef" | |
+| .DisplayName | "RealmJoin Local Administrator" | "Local Support Admin" | Display name of administrator account (appears on Windosw) |
+| .PasswordCharSet | See notes[^1] | "0123456789ABCDEFabcdef" | Charset of the password |
 | .PasswordLength | 20 | 30 | | |
 | .MaxStaleness | | "08:00" | Delete and recreate profile 8 hours after last use. |
 | .OnDemand | | true | Create support account only when requested through RealmJoin Portal. Account will expire after 12 hours. |

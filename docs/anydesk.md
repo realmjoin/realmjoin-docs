@@ -40,51 +40,36 @@ For special support scenarios administrative rights will be needed. A normal rem
 | 7. The support staff is now able to perform administrative tasks. | |
 
 
-<!-- Wird noch ausgelagert auf eine eigene Seite und inhaltlich angepasst
+<!-- Eigener Artikel oder in diesem Artikel belassen? -->
 
-## Install AnyDesk
+## AnyDesk Group Settings
 
-1. [Download](https://anydesk.com/en/downloads) anydesk.exe
-2. Start anydesk.exe
-3. Get an AnyDesk-ID. See the following code sample:
+Use a JSON policy to configure AnyDesk in RealmJoin backend (**Group Settings**). There are three different policies to configure AnyDesk.
 
-```
-@echo off
-AnyDesk.exe
-for /f "delims=" %%i in ('"AnyDesk.exe" --get-id') do set CID=%%i 
-echo AnyDesk ID is: %CID%
-pause
-```
+The following JSON contains all configurations:
 
-4. Send this AnyDesk-ID to backend (sync)
-5. Initiate a LAPS-on-demand (sync)
+**Key** = Integration  
+**Value** = {"AnyDesk: {
+          "Enabled": true,
+          "BootstrapperUrl": "https://.../.../AnyDesk.exe",
+          "Ui": {TrayMenuTextEnglish": "Start remote session} } }
 
-## Configuration
+It is also possible to split this single JSON from above, in three different JSON policies:
 
-The configuration of AnyDesk will be the following:
+**Key** = Integration.AnyDesk.Enabled  
+**Value** = true
 
-```
-{
-    "Integration": {
-      "AnyDesk": {
-        "Enabled": true,
-        "BootstrapperUrl": "https://.../.../AnyDesk.exe",
-        "UI": { // optional
-           "TrayMenuTextEnglish": "Start remote session"
-        }
-     }
-  }
+and
 
-}
-```
+**Key** = Integration.AnyDesk.BootstrapperUrl  
+**Value** = "https://.../.../AnyDesk.exe"
 
-In regular state it will be the following:
+and
 
-```
-"Integration": {
-  "AnyDesk": {
-    "LastKnownID": "12345678"
-  }
-}
-```
--->
+**Key** = Integration.AnyDesk.UI.TrayMenuTextEnglish  
+**Value** = "Start remote session"
+
+The following JSON is possible as well:
+
+**Key** = Integration.AnyDesk  
+**Value** = {"Enabled":true, BootsstrapperUrl": "https://.../.../AnyDesk.exe", "UI":{"TrayMenuTextEnglish": "Start remote session"} }
