@@ -50,9 +50,9 @@ It is also possible to enable AnyDesk with the following JSON:
 **Key** = Integration.AnyDesk.Enabled  
 **Value** = true
 
-You add AnyDesk and Enabled to the key. Separated by dots.
+You just add AnyDesk and Enabled to the key, separated by dots.
 
-Similar to this you can do it with BootstrapperUrl and TrayMenuTextEnglish as well:
+Similar to this you can add BootstrapperUrl and TrayMenuTextEnglish as well:
 
 **Key** = Integration.AnyDesk.BootstrapperUrl  
 **Value** = "https://.../.../AnyDesk.exe"
@@ -70,3 +70,26 @@ If you want neither the all in one JSON nor the three single JSON settings you c
 
 **Key** = Integration.AnyDesk  
 **Value** = {"Enabled":true, "BootstrapperUrl": "https://.../.../AnyDesk.exe", "UI":{"TrayMenuTextEnglish": "Start remote session"} }
+
+## JSON Arrays
+
+A JSON array represents a list of values. An array is rendered by square brackets ( **[]**). An array contains multiple values. The values in an array must be separated by commas.
+
+The following example shows the RealmJoin tray menu, specially the **WebLinks** section:
+
+**Key** = WebLinks  
+**Value** =  
+            [  
+              {  
+                "Name": "Google",  
+                "Target": "https://www.google.com/",  
+                "Platform": "any"  
+              }  
+              {  
+                "Name": "Azure",  
+                "Target": "https://portal.azure.com",  
+                "Platform": "any"  
+              }  
+            ]
+
+As as result of these JSON you get a **WebLinks** list which contains two links. Google and Microsoft Azure.

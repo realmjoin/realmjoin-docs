@@ -12,7 +12,7 @@ As a user you can select different permissions which you give to other (remote) 
 > [!IMPORTANT]
 > When you use the AnyDesk feature (via RealmJoin), it is not possible to start a remote session with external AnyDesk users.
 
-## Start a remote session via RJ tray menu
+## Start a remote session via RealmJoin tray menu
 
 | Task | Image |
 | --- | --- |
