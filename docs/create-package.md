@@ -324,47 +324,6 @@ Software packages are assigned an individual version number. It is recommended t
 > [!NOTE]
 > When a new version is tested, the package might be crafted as a pre release package, which, if testing is successful and no further changes have to be done, has the same version number as the final build.
 
-### Variables
-
-#### Chocolatey variables
-
-* $packagePrefix = flavour prefix of this package
-* $packageName = name of this package
-* $packageVersion = version of this package
-* $packageVersionObject = [System.Version]$env:packageVersion
-* $packageVersionNoRevisionObject = New-Object System.Version -ArgumentList $packageVersionObject.Major, $packageVersionObject.Minor, $packageVersionObject.Build
-* $packageParameters = parameters as specified in the assignment arguments
-* $packageFolder = folder in which the package is extracted
-* $packageToolsFolder = sub directory "tools" of a Chocolatey package, contains the install script. Defined as: Join-Path $env:packageFolder "tools"
-* $packageTempDir = temp directory which is used for the package. Defined as: Join-Path $env:TEMP (Join-Path $env:chocolateyPackageName $env:chocolateyPackageVersion)
-* $PackageID = unique ID of the package
-**Environment variables**
-* $env:RJ_Version
-* $env:RJ_UserSID = SID of the user who started this package installation. Can be used in system crafts if parameters are initialized
-* $env:RJ_ChocolateyPackage = glueckkanja-test-choco
-* $env:RJ_InstalledVersion = 1.0.0.1
-* $envRJ_PackageID = glueckkanja-test-choco
-* $env:RJ_DeploymentPhase = contains information on the installation.  
-Can be:
-
-  ```
-  Blank
-
-  RunningFirstDeployment
-  RunningFirstDeploymentAuto
-   - Now the installations start
-  CompletedFirstDeployment
-
-  RunningDeployment
-   - Now the installations start
-  CompletedDeployment
-
-  ManualDeployment
-   - Now the installations start
-  ```
-
-* mehr
-
 ## Updating Packages
 
 ### GitClone of current repository
