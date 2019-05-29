@@ -31,6 +31,7 @@ Deployment Guide
    keyvault
    core-extension
    anydesk
+   json-backgrounder
    faq
    troubleshooting
    packaging-workflow
