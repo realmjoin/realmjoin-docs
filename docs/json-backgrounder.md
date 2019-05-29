@@ -12,8 +12,8 @@ A JSON object is based on a key (name) and a value, that is typically rendered i
 
 A pair of a key and a value is an object. An object is surrounded by curly brackets (**{}**). You can separate information (in an object) by ":" and "," .
 
-* ":" = Separate name from value
-* "," = Separate name-value pairs
+* ":" = It separates name from value
+* "," = It separates name-value pairs
 
 ## JSON examples
 
@@ -35,7 +35,7 @@ The following example is about a configuration of AnyDesk:
 
 ### All-in-one
 
-In RealmJoin Group Settings the JSON from above looks like this:
+In RealmJoin Group Settings, the JSON from above looks like this:
 
 **Key** = Integration  
 **Value** = {"AnyDesk: {
