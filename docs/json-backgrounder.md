@@ -12,8 +12,8 @@ A JSON object is based on a key (name) and a value, that is typically rendered i
 
 A pair of a key and a value is an object. An object is surrounded by curly brackets (**{}**). You can separate information (in an object) by ":" and "," .
 
-* ":" = It separates name from value
-* "," = It separates name-value pairs
+* ":" = Separates name from value
+* "," = Separates name-value pairs
 
 ## JSON examples
 
