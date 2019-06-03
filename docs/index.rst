@@ -26,6 +26,7 @@ Deployment Guide
    package_lifecycle
    package-types
    create-package
+   dem-account
    laps
    appinsights
    keyvault
