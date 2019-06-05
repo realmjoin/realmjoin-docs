@@ -1,7 +1,9 @@
 
-# Device Enrollment Manager
+# Multi-User Devices
 
-A Device Enrollment Manager (short DEM) is an Intune permisson that can be applied to an Azure Active Directory user account and lets the user enroll up to 1,000 devices. A DEM account is useful for scenarios where devices are enrolled and prepared before handing them out to the users of the devices.
+Multi-User Devices allow an administrator to provision devices intended to be used by more than one user. A tool for Multi-User Devices is **Device Enrollment Manager** (short DEM).
+
+DEM is an Intune permisson that can be applied to an Azure Active Directory user account and lets the user enroll up to 1,000 devices. A DEM account is useful for scenarios where devices are enrolled and prepared before handing them out to the users of the devices.
 
 ## Licenses
 
@@ -51,6 +53,9 @@ Packages that should be installable by secondary users (in addition to packages 
 [![Software Packages](./media/dem4.png)](./media/dem4.png)
 
 If this setting is not set, such packages cannot be installed by secondary users (because of the default value: **Only primary**)
+
+> [!NOTE]
+> Software Packages of secondary users will also get updates, even when these packages were installed by a primary user.
 
 ## Device Setup
 

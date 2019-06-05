@@ -12,6 +12,62 @@ As a user you can select different permissions which you give to other (remote) 
 > [!IMPORTANT]
 > When you use the AnyDesk feature (via RealmJoin), it is not possible to start a remote session with external AnyDesk users.
 
+<!-- Folgende Erklärungen in einen eigenen Artikel oder in diesem Artikel belassen? -->
+
+## AnyDesk deployment
+
+Before you can start with a AnyDesk session, you have to do few settings.
+
+| Task | Image |
+| ---- | ----- |
+| 1. Log in to [AnyDesk](https://my.anydesk.com/login) | |
+| 2. Customize your AnyDesk client | [![Customize AnyDesk client](./media/anydesk7.png)](./media/anydesk7.png) |
+| 3. Select **Make download link publicly available**
+| 3. Click **Save** to confirm your settings | |
+| 4. The **Custom Client Details** page will appear | [![Custom Client Details](./media/anydesk8.png)](./media/anydesk8.png) |
+| 5. Copy or save the **Public Download** URL. You need it for **AnyDesk Group Settings** | |
+
+## AnyDesk Group Settings
+
+Use a JSON policy to configure AnyDesk in RealmJoin backend (**Group Settings**). There are three different policies to configure AnyDesk.
+
+The following JSON contains all configurations:
+
+**Key** = Integration  
+**Value** = {"AnyDesk: {
+          "Enabled": true,
+          "BootstrapperUrl": "https://.../.../AnyDesk.exe",
+          "Ui": {TrayMenuTextEnglish": "Start remote session} } }
+
+> [!IMPORTANT]
+> The BootstrapperUrl is your **Public Download** Url from AnyDesk Custom Client Details.
+
+It is also possible to split this single JSON from above, in three different JSON policies:
+
+**Key** = Integration.AnyDesk.Enabled  
+**Value** = true
+
+and
+
+**Key** = Integration.AnyDesk.BootstrapperUrl  
+**Value** = "https://.../.../AnyDesk.exe"
+
+and
+
+**Key** = Integration.AnyDesk.UI.TrayMenuTextEnglish  
+**Value** = "Start remote session"
+
+The following JSON is possible as well:
+
+**Key** = Integration.AnyDesk  
+**Value** = {"Enabled":true, BootstrapperUrl": "https://.../.../AnyDesk.exe", "UI":{"TrayMenuTextEnglish": "Start remote session"} }
+
+## Backend Integration
+
+After you customize your Client, AnyDesk will send you an email. This mail contains your **Contract ID**, your **License ID** and your **API Password**. Send these IDs and the password to the [Glück & Kanja support](mailto:support@glueckkanja.com). If you do so, Glück & Kanja will integrate a AnyDesk API in your RealmJoin Portal.
+
+[![Backend Integration](./media/anydesk9.png)](./media/anydesk9.png)
+
 ## Start a remote session via RealmJoin tray menu
 
 | Task | Image |
@@ -39,38 +95,3 @@ For special support scenarios administrative rights will be needed. A normal rem
 | 5. On the remote client, a new window **User Account Control** will appear | |
 | 6. Confirm it | |
 | 7. The support staff is now able to perform administrative tasks. | |
-
-
-<!-- Eigener Artikel oder in diesem Artikel belassen? -->
-
-## AnyDesk Group Settings
-
-Use a JSON policy to configure AnyDesk in RealmJoin backend (**Group Settings**). There are three different policies to configure AnyDesk.
-
-The following JSON contains all configurations:
-
-**Key** = Integration  
-**Value** = {"AnyDesk: {
-          "Enabled": true,
-          "BootstrapperUrl": "https://.../.../AnyDesk.exe",
-          "Ui": {TrayMenuTextEnglish": "Start remote session} } }
-
-It is also possible to split this single JSON from above, in three different JSON policies:
-
-**Key** = Integration.AnyDesk.Enabled  
-**Value** = true
-
-and
-
-**Key** = Integration.AnyDesk.BootstrapperUrl  
-**Value** = "https://.../.../AnyDesk.exe"
-
-and
-
-**Key** = Integration.AnyDesk.UI.TrayMenuTextEnglish  
-**Value** = "Start remote session"
-
-The following JSON is possible as well:
-
-**Key** = Integration.AnyDesk  
-**Value** = {"Enabled":true, BootsstrapperUrl": "https://.../.../AnyDesk.exe", "UI":{"TrayMenuTextEnglish": "Start remote session"} }
