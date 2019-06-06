@@ -25,7 +25,13 @@ Before you can start with a AnyDesk session, you have to do few settings.
 | 3. Select **Make download link publicly available**
 | 3. Click **Save** to confirm your settings | |
 | 4. The **Custom Client Details** page will appear | [![Custom Client Details](./media/anydesk8.png)](./media/anydesk8.png) |
-| 5. Copy or save the **Public Download** URL. You need it for **AnyDesk Group Settings** | |
+| 5. Select the following **Options**: | [![Options](./media/anydesk8_2.png)](./media/anydesk8_2.png) |
+| - Disable Settings | |
+| - Disable address book | |
+| - Disable TCP listen port | |
+| - Automatically register alias | |
+| - Assign to license | |
+| 6. Copy or save the **Public Download** URL. You need it for **AnyDesk Group Settings** | |
 
 ## AnyDesk Group Settings
 
