@@ -52,10 +52,11 @@ Can be:
    - Now the installations start
   ```
 
-
 ## AppV Packages
 
 ### Enable-ChocolateyRealmjoinAppv
+
+This command will enable AppV on current client with BranchCache as supported.
 
 #### Syntax
 
@@ -64,6 +65,8 @@ Enable-ChocolateyRealmjoinAppv
 ```
 
 ### Install-ChocolateyRealmjoinAppvPackage
+
+This command will add and publish an AppV package
 
 #### Syntax
 
@@ -83,6 +86,8 @@ fileName                       None                false     false
 ```
 
 ### Uninstall-ChocolateyRealmjoinAppvPackage
+
+This command will uninstall an AppV Package.
 
 #### Syntax
 
@@ -118,6 +123,8 @@ appvPackage None                false     false
 
 ### Get-ChocolateyRealmjoinLocaleId
 
+Returns the corresponding LocaleId of a given locale string
+
 #### Syntax
 
 ```powershell
@@ -134,6 +141,8 @@ localeString    None                false     false
 ```
 
 ### Get-ChocolateyRealmjoinLocaleMsiTransform
+
+Based on the given LocaleId this command will return the path of the localized transform file
 
 #### Syntax
 
@@ -153,6 +162,8 @@ localeTransformsFolder None                false     false
 
 ### Get-ChocolateyRealmjoinLogFilePath
 
+This command will return the realmjoin-specific logfile path including a package-specific logfile depending on the execution context.
+
 #### Syntax
 
 ```powershell
@@ -171,6 +182,10 @@ target    None                false     false
 ## Chocolatey Packages
 
 ### Install-ChocolateyRealmjoinPackage
+
+This command will install a software (installer file from cloud blob storage).
+
+
 
 #### Syntax
 
@@ -199,6 +214,8 @@ validExitCodes               None                false     false
 ```
 
 ### Uninstall-ChocolateyRealmjoinPackage
+
+This command will uninstall a software package.
 
 #### Syntax
 
@@ -244,6 +261,8 @@ setVariables           None                false     false
 
 ### Test-ChocolateyRealmjoinRegistryUninstallExists
 
+With this command you can test if a software exist on your system. This test based on the uninstall info from **Get-ChocolateyRealmjoinRegistryUninstallInfo**.
+
 #### Syntax
 
 ```powershell
@@ -266,6 +285,8 @@ versionLt         None                false     false
 ```
 
 ### Get-ChocolateyRealmjoinRegistryUninstallInfo
+
+With this command you can get the common uninstall infos as PSObject of all items.
 
 #### Syntax
 
@@ -290,6 +311,8 @@ versionLt         None                false     false
 
 ### Get-ChocolateyRealmjoinRegistryUninstallStrings
 
+With this command you will get an object with key name, file and arguments of an uninstall info match. You will get this info from **Get-ChocolateyRealmjoinRegistryUninstallInfo**.
+
 #### Syntax
 
 ```powershell
@@ -305,6 +328,8 @@ uninstallKeyNameFilter None                true      false
 ```
 
 ### Get-ChocolateyRealmjoinWebFile
+
+Downloads given filename (archive) from cloud blob storage.
 
 #### Syntax
 
@@ -396,6 +421,8 @@ ReturnSplit   None                false     false
 
 ### Restart-RealmjoinComputer
 
+A system restart can be initiated. By default with a delay of 10 seconds, which can be overwritten by the corresponding parameter. Optional you can provide a message by parameter. Behind the scene a scheduled task is created which performs a shutdown with parameter for restart.
+
 #### Syntax
 
 ```powershell
@@ -439,6 +466,8 @@ IncludeDebugInfoIfUnsure None                false     false
 
 ### Out-RealmjoinCustomState
 
+This command will create a custom state with a mandatory name and input object.
+
 #### Syntax
 
 ```powershell
@@ -456,6 +485,8 @@ Name        None                true      false
 
 ### Remove-RealmjoinCustomState
 
+This command will remove a custom state
+
 #### Syntax
 
 ```powershell
@@ -472,9 +503,11 @@ Name None                true      false
 
 ## Scheduled Tasks
 
-Using predefined RealmJoin cmdlets, it is possible to register scheduled tasks in system or user scope. The cmdlet provides a XML template, that is modified following the used parameters. Tasks also might be unscheduled. 
+Using predefined RealmJoin cmdlets, it is possible to register scheduled tasks in system or user scope. The cmdlet provides a XML template, that is modified following the used parameters. Tasks also might be unscheduled.
 
 ### Register-RealmjoinCustomStateScheduledTask
+
+This command will register a scheduled task with package title a its name for creation.
 
 #### Syntax
 
@@ -493,6 +526,8 @@ TaskName               None                false     false           $env:packag
 ```
 
 ### Unregister-RealmjoinCustomStateScheduledTask
+
+This command will remove the custom state scheduled task by its name.
 
 #### Syntax
 
@@ -543,6 +578,8 @@ Path None                false     false
 
 ### New-RealmjoinScheduledTaskBootTrigger
 
+This command will create a boot scheduled task trigger
+
 #### Syntax
 
 ```powershell
@@ -563,6 +600,8 @@ StartBoundary      None                false     false
 ```
 
 ### New-RealmjoinScheduledTaskDailyTrigger
+
+This command will create a daily scheduled task trigger
 
 #### Syntax
 
@@ -586,6 +625,8 @@ StartBoundary      None                false     false
 
 ### New-RealmjoinScheduledTaskLogonTrigger
 
+This command will create a logon scheduled task trigger.
+
 #### Syntax
 
 ```powershell
@@ -606,6 +647,8 @@ StartBoundary      None                false     false
 ```
 
 ### New-RealmjoinScheduledTaskTimeTrigger
+
+This command will create a custom scheduled task trigger.
 
 #### Syntax
 
@@ -628,6 +671,8 @@ StartBoundary      None                false     false
 ```
 
 ### New-RealmjoinScheduledTaskXml
+
+This command will create a scheduled task with a given action and trigger
 
 #### Syntax
 
@@ -657,6 +702,8 @@ The following cmdlets allow to remove, create or modify shortcuts ot/on the desk
 
 ### New-RealmjoinShortcut
 
+This command will create shortcuts. If you do so, this shortcut will follow a defined **TargetPath** and a defined **shortcutPath**
+
 #### Syntax
 
 ```powershell
@@ -669,10 +716,10 @@ New-RealmjoinShortcut [-shortcutPath] <string> [-targetPath] <string> [[-targetA
 Name             Aliases Description Required? Pipeline Input? Default Value
 ----             ------- ----------- --------- --------------- -------------
 description      None                false     false                        
-forCurrentUser   None                false     false                        
+forCurrentUser   None     Shortcuts are enabled for current user           false     false                        
 hotKey           None                false     false                        
 iconLocation     None                false     false                        
-onDesktop        None                false     false                        
+onDesktop        None     Path will create on the desktop           false     false                        
 shortcutPath     None                true      false                        
 targetArguments  None                false     false                        
 targetPath       None                true      false                        
@@ -681,6 +728,8 @@ workingDirectory None                false     false
 ```
 
 ### Remove-RealmjoinShortcut
+
+This command will remove shortcuts
 
 #### Syntax
 
@@ -693,8 +742,8 @@ Remove-RealmjoinShortcut [-shortcutPath] <string> [-forCurrentUser] [-onDesktop]
 ```no-highlight
 Name           Aliases Description Required? Pipeline Input? Default Value
 ----           ------- ----------- --------- --------------- -------------
-forCurrentUser None                false     false                        
-onDesktop      None                false     false                        
+forCurrentUser None      Remove and disable a shortcut for current user          false     false                        
+onDesktop      None      Remove a shortcut from desktop          false     false                        
 shortcutPath   None                true      false                        
 ```
 
