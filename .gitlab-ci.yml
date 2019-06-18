@@ -2,7 +2,7 @@ Build:
   stage: build
   image: tsgkadot/docker-docfx
   tags:
-    - docfx
+    - docker
   artifacts:
     paths:
       - build-output/
