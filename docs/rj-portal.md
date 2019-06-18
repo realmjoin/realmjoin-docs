@@ -9,11 +9,29 @@ The dashboard provides a quick and beneficial overview. All sections can be acce
 
 ## Roles
 
-There are two different roles available for the RealmJoin portal:
+There are four different roles available for the RealmJoin portal:
   
-- Administrator: Full rights within the portal.
-- Auditor: Read-only rights within the portal, access to all settings and assignments.  
-  
+- Administrator
+- Auditor
+- Supporter
+- Software Agent
+
+### Administrator
+
+A RealmJoin administrator has full rights within the RealmJoin portal.
+
+### Auditor
+
+An auditor has read-only rights within the RealmJoin portal and has access to all settings and assignments.
+
+### Software Agent
+
+A software agent can assign software to users and can change it as well and the software agent has can subscribe the RealmJoin app store. Additionally, a software agent has access to users, clients, groups, software and app store. With these role it is not possible to use AnyDesk and LAPS and it is not possible to reassign primary users.
+
+### Supporter
+
+A supporter can not manage RealmJoin software. A supporter has access to users, clients and groups (reassign primary users as well). Furthermore, a supporter has the possibility to use AnyDesk and LAPS.
+
 ## Clients
 
 ![RJ clientsicon](./media/rj-ac-clientsicon.png)
