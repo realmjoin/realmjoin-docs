@@ -7,5 +7,5 @@ Build:
     paths:
       - build-output/
   script:
-    - docfx.exe bin/docfx.json
+    - docfx bin/docfx.json
     - rm bin/obj -re -fo
