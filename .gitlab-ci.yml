@@ -1,12 +1,13 @@
 Build:
   stage: build
+  image: tsgkadot/docker-docfx
   tags:
-    - windows
+    - docfx
   artifacts:
     paths:
       - build-output/
   script:
-    - bin/docfx.exe bin/docfx.json
+    - docfx.exe bin/docfx.json
     - rm bin/obj -re -fo
 
 Deploy:
