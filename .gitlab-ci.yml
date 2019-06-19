@@ -2,26 +2,9 @@ Build:
   stage: build
   image: tsgkadot/docker-docfx
   tags:
-    - docfx
+    - docker
   artifacts:
     paths:
       - build-output/
   script:
-    - docfx.exe bin/docfx.json
-    - rm bin/obj -re -fo
-
-Deploy:
-  stage: deploy
-  image: microsoft/dotnet:2.1-sdk
-  tags:
-    - docker
-    - linux
-  dependencies:
-    - Build
-  variables:
-    GIT_STRATEGY: none
-    GIT_SUBMODULE_STRATEGY: none
-  script:
-    - export PATH="$PATH:/root/.dotnet/tools"
-    - dotnet tool install --global azzipgo --version 0.5.0
-    - #azzipgo deploy-in-place --run-from-package -d build-output -u "7cd3e66b-262e-4955-8aec-4c47eb49d0e5" -p "$SP_PASSWORD" -t "glueckkanja.com" -s "bbaa1189-e3bc-4aae-bc2b-d0fa89584140" -g generic --site gk-docs-blueprint --target-slot production
+    - docfx bin/docfx.json
