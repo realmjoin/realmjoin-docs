@@ -110,7 +110,15 @@ Before you can start with a AnyDesk session, you have to set few settings.
 
 ## AnyDesk Group Settings
 
-Use a JSON policy to configure AnyDesk in RealmJoin backend (**Group Settings**). There are three different policies to configure AnyDesk.
+Choose a group and click the number in the SE-field (SE = Settings).
+
+[![GroupSettings](./media/anydeskSE.png)](./media/anydeskSE.png)
+
+The Group Setting side will appear. Click **+Add Setting** in the upper right corner.
+
+[![GroupSettings2](./media/anydeskSE2.png)](./media/anydeskSE2.png)
+
+Use JSON to configure AnyDesk. There are three different policies to configure AnyDesk.
 
 The following JSON contains all configurations:
 
@@ -138,10 +146,12 @@ and
 **Key** = Integration.AnyDesk.UI.TrayMenuTextEnglish  
 **Value** = "Start remote session"
 
-The following JSON is possible as well:
+The following JSON is possible as well (we recommend this JSON):
 
 **Key** = Integration.AnyDesk  
 **Value** = {"Enabled":true, BootstrapperUrl": "https://.../.../AnyDesk.exe", "UI":{"TrayMenuTextEnglish": "Start remote session"} }
+
+[![GroupSettings3](./media/anydeskSE3.png)](./media/anydeskSE3.png)
 
 ## Backend Integration
 
