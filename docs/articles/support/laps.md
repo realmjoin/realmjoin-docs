@@ -21,29 +21,6 @@ With RealmJoin it is possible that you can manage administrators, either for loc
 
 Application Insights are an important part of LAPS. Click [here](../support/anydesk.md#application-insights) to see details about Application Insights:
 
-### Group Configuration
-
-| Key | Default Value | Sample Value | Description |
-| --- | ------------- | ------------ | ----------- |
-| **LocalAdminManagement.EmergencyAccount** | | | |
-| .NamePattern | "ADM-{HEX:8}" | "Admin-{HEX:4}" | |
-| .DisplayName | "RealmJoin Local Administrator" | "Local Emergency Admin" | Display name of administrator account (appears on Windows) |
-| .PasswordCharSet | See notes[^1] | "0123456789ABCDEFabcdef" | Charset of the password |
-| .PasswordLength | 20 | 30 | |
-| .MaxStaleness | | "00:45" | Delete and recreate profile 45 min. after last use. |
-| **LocalAdminManagement.SupportAccount**| | | |
-| .NamePattern | "ADM-{HEX:8}" | "Admin-{HEX:4}"
-| .DisplayName | "RealmJoin Local Administrator" | "Local Support Admin" | Display name of administrator account (appears on Windows) |
-| .PasswordCharSet | See notes[^1] | "0123456789ABCDEFabcdef" | Charset of the password |
-| .PasswordLength | 20 | 30 | | |
-| .MaxStaleness | | "08:00" | Delete and recreate profile 8 hours after last use. |
-| .OnDemand | | true | Create support account only when requested through RealmJoin Portal. Account will expire after 12 hours. |
-| LocalAdminManagement.Inactive | | true | Kill switch. Remove all accounts from all clients |
-|                               | | false | CFG - RealmJoin-EnableSupportAdmin |
-
-[^1] Excludes similar looking characters:  
-```!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz```
-
 ## Access
 
 When a support member needs to access a secret, RealmJoin will provide an interface to get account and password. When this happens, an update-secret command will be send to the client and the admin account will be recreated.
@@ -103,6 +80,29 @@ Requirements for this process:
 * Successful deployment of corresponding of client.
 * User is logged in and RealmJoin agent is running.
 * Internet connectivity.
+
+### Configuration Policies
+
+RealmJoin offers multiple policies to configure local administrator account management that are described in the following table:
+
+| Policy (Key) | Value (Sample) | Description |
+| ------------ | -------------- | ----------- |
+| LocalAdminManagement.Inactive | true/false | Deactivates or activates local administrator management |
+| LocalAdminManagement.CheckInterval | "00:30" | Interval for configuration checks (hh:ss) |
+| LocalAdminManagement.[EmergencyAccount/SupportAccount].NamePattern | "ADM-(HEX:8) | Username of the admin. HEX:8 stands for **8-digit random hex-code** |
+| LocalAdminManagement.[EmergencyAccount/SupportAccount].DisplayName | "RealmJoin Local Administrator" | Display name of administrator account (appears on Windows) |
+| LocalAdminManagement.[EmergencyAccount/SupportAccount].PasswordCharSet | "!#%+23456789:=?@ABCDEFGHJK LMNPRSTUVWXYZabcdefghijkmn opqrstuvwxyz"  | Charset of the password |
+| LocalAdminManagement.[EmergencyAccount/SupportAccount].PasswordLength | 20 | Password length |
+| LocalAdminManagement.[EmergencyAccount/SupportAccount].PasswordPreset | 1 | Predefined password templates (PasswordCharSet and PasswordLength not necessary) |
+| LocalAdminManagement.[EmergencyAccount/SupportAccount].MaxStaleness | 01:00 | Time after account will be removed/refreshed (when logged out after use) |
+| LocalAdminManagement.SupportAccount.OnDemand | true/false | Create support account on demand (account will expire after 12 hours) |
+
+It is possible to assign these policies based on user groups. E. g. deactivate local administrator management for all users except a specific group. See the following table:
+
+| Key | Value | Groupname |
+| --- | ----- | --------- |
+| Local.AdminManagement.Inactive | true | RealmJoin - All Users |
+| Local.AdminManagement.Inactive | false | CFG - RealmJoin-EnableSupportAdmin |
 
 #### Use in case of support
 
