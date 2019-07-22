@@ -61,7 +61,7 @@ Practically software packages should be configured like that:
 
 A new and clean device will be set up with the Primary User account:
 
-[![Device Setup(./media/dem5.png)](./media/dem5.png)
+[![Device Setup](./media/dem5.png)](./media/dem5.png)
 
 Depending on configuration second factor authentication will be enforced:
 
@@ -96,3 +96,49 @@ Additional software can be installed by this secondary user (see [Software packa
 [![Software Packages](./media/dem14.png)](./media/dem14.png)
 
 [![Software Packages](./media/dem15.png)](./media/dem15.png)
+
+## Use Case
+
+Your Multi-User Devices group is marked as DEM group in your RealmJoin-Backend. All rolled out devices are marked as well and the installation behavior will change too.
+
+You can see the mark in the UI:
+
+[![Use Case](./media/dem16.png)](./media/dem16.png)
+
+[![Use Case](./media/dem17.png)](./media/dem17.png)
+
+[![Use Case](./media/dem18.png)](./media/dem18.png)
+
+> [!NOTE]
+> * Mandatory assignments for DEM-Accounts result in a assignment for all users of a client
+> * Non-mandatory assignments will not be installed automatically. Neither for DEM-accounts nor for other accounts of the client
+> * You can assign directly or via groups
+> * Software assignments for regular users will not be executed.
+
+<!-- 
+
+### Multi-Factor Authentication 
+
+tbd
+
+-->
+
+### Use Case Summary
+
+1. Create user-accounts (AAD-only)  
+2. Assign users to groups  
+    a) CFG - Multi-User Clients  
+        * Intune policies  
+        * Groups are marked as "Multi-User" groups  
+    b) LIC - Intune  
+        * Intune license assignment  
+    c) APP - OD - Workforcer-ESD  
+        * Assignment of Workforce-ESD-Application
+3. Add user as DEM in Intune
+4. Add software direct to user  
+    a) Mandatory: If you want an automatically installation  
+    b) Non-mandatory: If you want an optional software installation by users
+5. MFA Setup
+    a) OOBE-Rollout of a client  
+    b) https://aka.ms/SetupMFA  
+    c) Choose auth application + mobile phone number + an alternate mobile phone number

@@ -112,7 +112,7 @@ Before you can start with a AnyDesk session, you have to set few settings.
 
 Choose a group and click the number in the SE-field (SE = Settings).
 
-[![GroupSettings](./media/anydeskSE.png)](./media/anydeskSE.png)
+[![GroupSettings](./media/anydeskSE1.png)](./media/anydeskSE1.png)
 
 The Group Setting side will appear. Click **+Add Setting** in the upper right corner.
 
