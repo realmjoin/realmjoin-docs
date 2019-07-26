@@ -1,0 +1,46 @@
+- name: Introduction
+  items:
+    - name: Installation
+      href: introduction\installation.md
+    - name: Infrastructure
+      href: introduction\infrastructure.md
+- name: Usage
+  items:
+    - name: Managing RealmJoin
+      href: usage\managing-realmjoin.md
+    - name: RealmJoin Portal
+      href: usage\realmjoin-portal.md
+- name: Packages
+  items:
+    - name: Types of RealmJoin Packages
+      href: packages\package-types.md
+    - name: Creating Packages
+      href: packages\creating-packages.md
+    - name: Package Lifecycle
+      href: packages\package-lifecycle.md
+    - name: Packaging In Depth
+      href: packages\packaging-in-depth.md
+    - name: Specialised Packages
+      href: packages\specialised-packages.md
+- name: Support Features
+  items:
+      - name: Multi-User Devices
+        href: support\multi-user-devices.md
+      - name: AnyDesk
+        href: support\anydesk.md
+      - name: LAPS
+        href: support\laps.md  
+- name: Appendix
+  items:
+      - name: Supplement
+        href: appendix\supplement.md  
+      - name: Initial Start before v4.15
+        href: appendix\initial-before-v415.md
+      - name: Troubleshooting
+        href: appendix\troubleshooting.md
+      - name: FAQ
+        href: appendix\faq.md
+      - name: JSON in RealmJoin
+        href: appendix\json-backgrounder.md
+            
+      

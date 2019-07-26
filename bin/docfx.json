@@ -1,0 +1,46 @@
+{
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/**.md",
+          "toc.yml",
+          "**/toc.yml"
+        ],
+        "src": "../docs"
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "**/media/**",
+		  "**/automation/**"
+        ],
+        "src": "../docs"
+      }
+    ],
+    "globalMetadata": {
+      "_enableSearch": "true",
+      "_appTitle": "GK",
+      "_disableContribution": false,
+      "_disableAffix": false,
+      "_gitContribute": {
+        "repo": "https://gitlab.glueckkanja.net/x/y.git",
+        "branch": "master"
+      },
+      "_gitUrlPattern": "github"
+    },
+    "dest": "../build-output",
+    "globalMetadataFiles": [],
+    "fileMetadataFiles": [],
+    "template": [
+      "defaultgk"
+    ],
+    "postProcessors": [ "ExtractSearchIndex" ],
+    "markdownEngineName": "markdig",
+    "noLangKeyword": false,
+    "keepFileLink": false,
+    "cleanupCacheHistory": true,
+    "disableGitFeatures": false
+  }
+}

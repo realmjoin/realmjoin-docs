@@ -1,0 +1,10 @@
+Build:
+  stage: build
+  image: tsgkadot/docker-docfx
+  tags:
+    - docker
+  artifacts:
+    paths:
+      - build-output/
+  script:
+    - docfx bin/docfx.json
