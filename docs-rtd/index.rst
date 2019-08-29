@@ -25,7 +25,10 @@ Deployment Guide
    policies
    package_lifecycle
    package-types
-   create-package
+   prepare-package
+   create-choco-package
+   create-craft-package
+   update-package
    dem-account
    laps
    appinsights
@@ -36,7 +39,6 @@ Deployment Guide
    faq
    troubleshooting
    packaging-workflow
-   specialised-packages
    packaging-indepth
    3rdparty-packages
    appendix

@@ -23,7 +23,7 @@ Application Insights are an important part of LAPS. Click [here](appinsights.md)
 | .MaxStaleness | | "00:45" | Delete and recreate profile 45 min. after last use. |
 | **LocalAdminManagement.SupportAccount**| | | |
 | .NamePattern | "ADM-{HEX:8}" | "Admin-{HEX:4}"
-| .DisplayName | "RealmJoin Local Administrator" | "Local Support Admin" | Display name of administrator account (appears on Windosw) |
+| .DisplayName | "RealmJoin Local Administrator" | "Local Support Admin" | Display name of administrator account (appears on Windows) |
 | .PasswordCharSet | See notes[^1] | "0123456789ABCDEFabcdef" | Charset of the password |
 | .PasswordLength | 20 | 30 | | |
 | .MaxStaleness | | "08:00" | Delete and recreate profile 8 hours after last use. |
