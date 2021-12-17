@@ -111,6 +111,47 @@ Body (in JSON-Notation):
 }
 ```
 
-The output streams are separated into different channels (`streamTypes`): `Output`, `Verbose`, `Error`. This allows to filter for errors or reduce output only to relevant information by only showing `Output`. You can get these streams after a runbook is finished using the `/api/external/runbook/jobs/{jobID}/output/streams` endpoint. (see below)
+The output streams are separated into different channels (`streamTypes`): `Output`, `Verbose`, `Error`. This allows to filter for errors or reduce output only to relevant information by only showing `Output`.&#x20;
+
+You can get these streams after a runbook is finished using the `/api/external/runbook/jobs/{jobID}/output/streams` endpoint. (see below)
 
 ## Querying a Job's status and output
+
+If a job has already beed created, you can use RealmJoin API to query its state and output.
+
+### Status
+
+Use `/api/external/runbook/jobs/{jobID}/status` to query for the current status.
+
+See [Authentication ](development-and-integration/realmjoin-api/authentication.md)on how to create an Authorization header, the following is only an example.
+
+Assume the `jobID` to be `1234545e-7a24-436a-90c9-6056b512345`
+
+**`Request`**
+
+Headers:
+
+```http
+Authorization: Basic dC0xMjM0MTIzNDpteVMzY3JldCE=
+Content-Type: application/json
+```
+
+Request / URI:
+
+```http
+GET https://realmjoin-backend.azurewebsites.net/api/external/runbook/jobs/1234545e-7a24-436a-90c9-6056b512345/status
+```
+
+This request has no body.
+
+**Response**
+
+Http Status 200 (OK)
+
+Body (Plaintext)
+
+```
+Completed
+```
+
+Other possible states include `New`, `Failed`, `Running`. See [possible Runbook states](https://docs.microsoft.com/en-us/azure/automation/automation-runbook-execution#job-statuses).&#x20;
