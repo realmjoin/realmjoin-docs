@@ -93,7 +93,7 @@ param(
 )
 ```
 
-You can prepare filters and reuse them across multiple scripts using the central [RealmJoin Customizing datastore](https://portal.realmjoin.com/settings/runbooks-customizations) . In this case just reference the filter by name using `-Filter "ref:LicenseGroup"`, where `ref:` indicates to look for a stored filter. This specific example `ref:LicenseGroup` is available by default without further configuration.
+You can prepare filters and reuse them across multiple scripts using the [central datastore](runbook-customization.md#graph-filters). In this case just reference the filter by name using `-Filter "ref:LicenseGroup"`, where `ref:` indicates to look for a stored filter. This specific example `ref:LicenseGroup` is available by default without further configuration.
 
 ![ODATA filter](../.gitbook/assets/runbook-customization-img3.png)
 
@@ -548,3 +548,17 @@ This will create the following UI:
 ![Demo - ref-location](../.gitbook/assets/runbook-customization-img7.png)
 
 ![Demo - ref-address](../.gitbook/assets/runbook-customization-img8.png)
+
+### Graph Filters
+
+You can prepare [ODATA Graph-Filters](https://docs.microsoft.com/en-us/graph/query-parameters?context=graph%2Fapi%2F1.0\&view=graph-rest-1.0#filter-parameter) to be used in multiple runbooks. Store these in a section called `GraphFilters`.
+
+The following example filters for a certain prefix in the `DisplayName` of a group, to only show licensing related groups in a group picker.
+
+```json
+"GraphFilters": {
+    "LicenseGroup": "startswith(DisplayName, 'LIC_')" // also contained in RJ code as default
+  }
+```
+
+See [Graph filtering](runbook-customization.md#graph-filtering) on how to use this from a runbook.
