@@ -33,3 +33,4 @@
 ***
 
 * [Interacting with Runbooks](interacting-with-runbooks.md)
+* [Local Admin Password Management](local-admin-password-management.md)
