@@ -93,7 +93,17 @@ param(
 )
 ```
 
-You can prepare filters and reuse them across multiple scripts using the [central datastore](runbook-customization.md#graph-filters). In this case just reference the filter by name using `-Filter "ref:LicenseGroup"`, where `ref:` indicates to look for a stored filter. This specific example `ref:LicenseGroup` is available by default without further configuration.
+You can prepare filters and reuse them across multiple scripts using the [central datastore](runbook-customization.md#graph-filters). In this case just reference the filter by name using `-Filter "ref:LicenseGroup"`, where `ref:` indicates to look for a stored filter.&#x20;
+
+```powershell
+param(
+    [Parameter(Mandatory = $true)]
+    [ValidateScript( { Use-RJInterface -Type Graph -Entity Group -Filter "ref:LicenseGroup" } )]
+    [String] $GroupID_License
+)
+```
+
+This specific example `ref:LicenseGroup` is available by default without further configuration.
 
 ![ODATA filter](../.gitbook/assets/runbook-customization-img3.png)
 
