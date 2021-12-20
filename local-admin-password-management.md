@@ -66,7 +66,7 @@ The endpoint `/api/external/LocalAdmin/RetrieveSupportAccountPassword` is used t
 
 Let us query the same `deviceId` of `9999dab9-f946-40ee-9a17-2500c8d00878` as in the example [above](local-admin-password-management.md#requesting-a-support-account).
 
-By now, a Support Account (Full Name: "Local Support Admin Account") has been created on the target device by the RealmJoin Windows Client:
+In our example a Support Account (Full Name: "Local Support Admin Account") has been created on the target device by the RealmJoin Windows Client:
 
 ![Local Accounts - Support Account is successfully created](.gitbook/assets/Laps-after.png)
 
