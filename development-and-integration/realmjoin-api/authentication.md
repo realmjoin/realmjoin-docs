@@ -1,5 +1,7 @@
 # Authentication
 
+## Overview
+
 The RealmJoin backend expects application credentials (username and secret) presented via [http basic authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication).
 
 Username and secret will be created for you from our glueckkanja-gab operations team. Please feel free to reach out if you want to integrate RealmJoin into your own tools and processes!
