@@ -119,7 +119,7 @@ You can get these streams after a runbook is finished using the `/api/external/r
 
 If a job has already beed created, you can use RealmJoin API to query its state and output.
 
-### Status
+### Querying Job Status
 
 Use `/api/external/runbook/jobs/{jobID}/status` to query for the current status.
 
@@ -138,7 +138,7 @@ Content-Type: application/json
 
 Request / URI:
 
-```http
+```html
 GET https://realmjoin-backend.azurewebsites.net/api/external/runbook/jobs/1234545e-7a24-436a-90c9-6056b512345/status
 ```
 
@@ -155,3 +155,215 @@ Completed
 ```
 
 Other possible states include `New`, `Failed`, `Running`. See [possible Runbook states](https://docs.microsoft.com/en-us/azure/automation/automation-runbook-execution#job-statuses).&#x20;
+
+### Reading Job Output
+
+Use `/api/external/runbook/jobs/{jobID}/output/text` to get a simple plaintext representation of the output of a runbook. This will not include the `Verbose` and `Error` stream. See [reading streams](interacting-with-runbooks.md#reading-specific-streams) to read other streams. [Exceptions](interacting-with-runbooks.md#reading-exceptions) are handled separately.
+
+See [Authentication ](development-and-integration/realmjoin-api/authentication.md)on how to create an Authorization header, the following is only an example.
+
+Assume the `jobID` to be `1234545e-7a24-436a-90c9-6056b512345`
+
+**Request**
+
+Headers:
+
+```http
+Authorization: Basic dC0xMjM0MTIzNDpteVMzY3JldCE=
+Content-Type: application/json
+```
+
+Request / URI:
+
+```html
+GET https://realmjoin-backend.azurewebsites.net/api/external/runbook/jobs/1234545e-7a24-436a-90c9-6056b512345/output/text
+```
+
+This request has no body.
+
+**Response**
+
+Http Status 200 (OK)
+
+Body (Plaintext)
+
+```
+## Distribution Group 'Sales Team' has been created.
+```
+
+### Reading specific Streams
+
+Use `/api/external/runbook/jobs/{jobID}/output/streams` to get a comprehensive json representation of the output of a runbook. This way you can access the `Output`, `Verbose` and `Error` stream. [Exceptions](interacting-with-runbooks.md#reading-exceptions) are handled separately.
+
+See [Authentication ](development-and-integration/realmjoin-api/authentication.md)on how to create an Authorization header, the following is only an example.
+
+Assume the `jobID` to be `1234545e-7a24-436a-90c9-6056b512345`
+
+**Request (all streams)**
+
+Headers:
+
+```http
+Authorization: Basic dC0xMjM0MTIzNDpteVMzY3JldCE=
+Content-Type: application/json
+```
+
+Request / URI:
+
+```html
+GET https://realmjoin-backend.azurewebsites.net/api/external/runbook/jobs/1234545e-7a24-436a-90c9-6056b512345/output/streams
+```
+
+This request has no body.
+
+**Response**
+
+Http Status 200 (OK)
+
+Body (JSON, array of messages)
+
+```json
+[
+    {
+        "time": "2021-12-20T08:37:46.8572747+00:00",
+        "summary": "Loading module from path 'C:\\Modules\\User\\RealmJoin.RunbookHelper\\RealmJoin.RunbookHelper.psd1'.",
+        "streamType": "Verbose",
+        "streamText": null,
+        "value": null
+    },
+    {
+        "time": "2021-12-20T08:37:46.9272241+00:00",
+        "summary": "Loading module from path 'C:\\Modules\\User\\RealmJoin.RunbookHelper\\RealmJoin.RunbookHelper.psm1'.",
+        "streamType": "Verbose",
+        "streamText": null,
+        "value": null
+    },
+    {
+        "time": "2021-12-20T08:37:47.1522235+00:00",
+        "summary": "RealmJoin.RunbookHelper: Running in Azure Automation account",
+        "streamType": "Verbose",
+        "streamText": null,
+        "value": null
+    },
+    {
+        "time": "2021-12-20T08:37:47.3122219+00:00",
+        "summary": "Regular Output",
+        "streamType": "Output",
+        "streamText": null,
+        "value": null
+    },
+    {
+        "time": "2021-12-20T08:37:47.8422225+00:00",
+        "summary": "Verbose or Debug Message",
+        "streamType": "Verbose",
+        "streamText": null,
+        "value": null
+    },
+    {
+        "time": "2021-12-20T08:37:47.7672223+00:00",
+        "summary": "Non-interrupting Error Message",
+        "streamType": "Error",
+        "streamText": null,
+        "value": null
+    }
+]
+```
+
+See below to read interrupting error messages and [exceptions](interacting-with-runbooks.md#reading-exceptions)
+
+To just receive a single stream, for example Verbose, you can add a filter to the request by adding `?streamTypes=Verbose`. You can also filter for `Output` and `Error`.
+
+**Request (filter for a single stream)**
+
+Headers:
+
+```http
+Authorization: Basic dC0xMjM0MTIzNDpteVMzY3JldCE=
+Content-Type: application/json
+```
+
+Request / URI:
+
+```html
+GET https://realmjoin-backend.azurewebsites.net/api/external/runbook/jobs/1234545e-7a24-436a-90c9-6056b512345/output/streams?streamTypes=Verbose
+```
+
+This request has no body.
+
+**Response**
+
+Http Status 200 (OK)
+
+Body (JSON, array of messages)
+
+```json
+[
+    {
+        "time": "2021-12-20T08:37:46.8572747+00:00",
+        "summary": "Loading module from path 'C:\\Modules\\User\\RealmJoin.RunbookHelper\\RealmJoin.RunbookHelper.psd1'.",
+        "streamType": "Verbose",
+        "streamText": null,
+        "value": null
+    },
+    {
+        "time": "2021-12-20T08:37:46.9272241+00:00",
+        "summary": "Loading module from path 'C:\\Modules\\User\\RealmJoin.RunbookHelper\\RealmJoin.RunbookHelper.psm1'.",
+        "streamType": "Verbose",
+        "streamText": null,
+        "value": null
+    },
+    {
+        "time": "2021-12-20T08:37:47.1522235+00:00",
+        "summary": "RealmJoin.RunbookHelper: Running in Azure Automation account",
+        "streamType": "Verbose",
+        "streamText": null,
+        "value": null
+    },
+    {
+        "time": "2021-12-20T08:37:47.8422225+00:00",
+        "summary": "Verbose or Debug Message",
+        "streamType": "Verbose",
+        "streamText": null,
+        "value": null
+    }
+]
+```
+
+### Reading Exceptions
+
+Use `/api/external/runbook/jobs/{jobID}/exception/text` to get a simple plaintext representation of a runbook's exception message (if present). This will not include the `Output`, `Verbose` and `Error` streams. See [reading streams](interacting-with-runbooks.md#reading-specific-streams) to read other streams.&#x20;
+
+Exceptions are written, when interrupting errors happen in the execution of the PowerShell script associated with the runbook. This endpoint will only read the plaintext message and does not include technical details, like at which line of code the script stopped.&#x20;
+
+In out example, an interrupting error was caused by `throw "Exception"`.
+
+See [Authentication ](development-and-integration/realmjoin-api/authentication.md)on how to create an Authorization header, the following is only an example.
+
+Assume the `jobID` to be `1234545e-7a24-436a-90c9-6056b512345`
+
+**Request**
+
+Headers:
+
+```http
+Authorization: Basic dC0xMjM0MTIzNDpteVMzY3JldCE=
+Content-Type: application/json
+```
+
+Request / URI:
+
+```html
+GET https://realmjoin-backend.azurewebsites.net/api/external/runbook/jobs/1234545e-7a24-436a-90c9-6056b512345/exception/text
+```
+
+This request has no body.
+
+**Response**
+
+Http Status 200 (OK)
+
+Body (Plaintext)
+
+```
+Exception (Exception)
+```
