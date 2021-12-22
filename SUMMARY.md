@@ -3,10 +3,6 @@
 * [Welcome](README.md)
 * [FAQ](faq.md)
 
-## Onboarding
-
-* [Onboarding RealmJoin Portal](onboarding/onboarding-realmjoin-portal.md)
-
 ## User, Group and Tenant management
 
 * [Page 1](user-group-and-tenant-management/page-1.md)
@@ -23,7 +19,11 @@
 * [Naming conventions](runbooks/naming-conventions.md)
 * [Azure AD Roles and Permissions](runbooks/azure-ad-roles-and-permissions.md)
 * [PowerShell modules](runbooks/powershell-modules.md)
-* [Connecting Azure Automation](runbooks/connecting-azure-automation.md)
+
+## Onboarding
+
+* [Onboarding RealmJoin Portal](onboarding/onboarding-realmjoin-portal.md)
+* [Connecting Azure Automation](onboarding/connecting-azure-automation.md)
 
 ## Development and Integration
 

@@ -29,3 +29,5 @@ Follow the link to [Feature selection](https://portal.realmjoin.com/organization
 Now you can choose the amount of permissions to be given to RealmJoin. If you are testing, you might want to start with "Activate Core Features (read-only)". This will not allow RealmJoin Portal to change users, groups or devices.
 
 In most cases continue by clicking "Activate Core Features".
+
+If you want to use [runbooks](broken-reference) to automate daily operations, please continue by connecting to [Azure Automation](connecting-azure-automation.md).
