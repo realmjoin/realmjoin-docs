@@ -23,7 +23,7 @@ You can define additional categories, but not contexts.
 
 ### What is the purpose of this?
 
-This allows to automagically fill and name the runbooks in the RealmJoin Portal. Also, the `rjgit-` prefix allows to avoid naming conflicts with local/customer runbooks. Also runbooks not having this prefix will not be touched by RealmJoin's import logic.
+This allows to automagically fill and name the runbooks in the RealmJoin Portal. Also, the `rjgit-` prefix allows to avoid naming conflicts with local/customer runbooks. Runbooks not having this prefix will not be touched by RealmJoin's import logic.
 
 ## Private- / Customer-specific Runbooks
 
