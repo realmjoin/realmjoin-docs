@@ -50,7 +50,7 @@ It is assumed you already finished [onboarding RealmJoin Portal](onboarding-real
 
 In RealmJoin Portal go to '[Settings -> Runbooks](https://portal.realmjoin.com/settings/runbooks-configuration)'.
 
-![Automation Account Connection in RealmJoin Portal](<../.gitbook/assets/image (1).png>)
+![Automation Account Connection in RealmJoin Portal](<../.gitbook/assets/image (1) (1).png>)
 
 Please fill in the AzureAD Tenant Id, Subscription Id and Resource Group name.
 

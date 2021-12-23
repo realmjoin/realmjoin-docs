@@ -25,6 +25,16 @@ glueckkanja-gab maintains a [shared online repository of runbooks](https://githu
 
 RealmJoin Portal allows you to import these runbooks into your environment and offers your support and administration staff an easy, non-technical interface to the tasks the runbooks cover.
 
+### Syncing from the shared repository
+
+You can trigger a sync from the shared repository to your Azure Automation account by clicking "Sync runbooks with upstream" at
+
+[https://portal.realmjoin.com/settings/general](https://portal.realmjoin.com/settings/general)
+
+![Trigger a sync of your runbooks](<../.gitbook/assets/image (1).png>)
+
+As described in the [naming convention](naming-conventions.md) this will add, update and if needed remove runbooks from the connected Azure Automation Account to be in sync with glueckkanja-gab's shared repository. This ensures that your runbooks are up to date, including improvements, fixes and new features.
+
 ## Customization
 
 You can customize existing an new runbooks to your environment. For example, you can&#x20;
