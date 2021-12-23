@@ -33,6 +33,8 @@ You can trigger a sync from the shared repository to your Azure Automation accou
 
 ![Trigger a sync of your runbooks](<../.gitbook/assets/image (1).png>)
 
+Wait for the "Sync completed" message. Please keep the browser window open while the sync process is running.
+
 As described in the [naming convention](naming-conventions.md) this will add, update and if needed remove runbooks from the connected Azure Automation Account to be in sync with glueckkanja-gab's shared repository. This ensures that your runbooks are up to date, including improvements, fixes and new features.
 
 ## Customization
