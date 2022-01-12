@@ -10,7 +10,7 @@ RealmJoin allows you to use Azure Automation Runbooks to automate day to day ope
 
 RealmJoin's API allows you to start runbooks from your application, to query the successful execution of previously triggered runs. See [RealmJoin's Swagger description](https://realmjoin-backend.azurewebsites.net/swagger/index.html#/Runbook) to see, which operations are currently supported.
 
-The following sections lay out how to use RealmJoin's API to start and track runbook jobs. It is assumed that you already have [connected an Azure Automation account](onboarding/connecting-azure-automation.md) to RealmJoin Portal. Also, make sure to [authenticate ](development-and-integration/realmjoin-api/authentication.md)every request against RealmJoin's API using an appropriate http Authorization header.
+The following sections lay out how to use RealmJoin's API to start and track runbook jobs. It is assumed that you already have [connected an Azure Automation account](../onboarding/connecting-azure-automation.md) to RealmJoin Portal. Also, make sure to [authenticate ](realmjoin-api/authentication.md)every request against RealmJoin's API using an appropriate http Authorization header.
 
 ## How does Azure Automation handle runbooks?
 
@@ -125,7 +125,7 @@ If a job has already beed created, you can use RealmJoin API to query its state 
 
 Use `/api/external/runbook/jobs/{jobID}/status` to query for the current status.
 
-See [Authentication ](development-and-integration/realmjoin-api/authentication.md)on how to create an Authorization header, the following is only an example.
+See [Authentication ](realmjoin-api/authentication.md)on how to create an Authorization header, the following is only an example.
 
 Assume the `jobID` to be `1234545e-7a24-436a-90c9-6056b512345`
 
@@ -162,7 +162,7 @@ Other possible states include `New`, `Failed`, `Running`. See [possible Runbook 
 
 Use `/api/external/runbook/jobs/{jobID}/output/text` to get a simple plaintext representation of the output of a runbook. This will not include the `Verbose` and `Error` stream. See [reading streams](interacting-with-runbooks.md#reading-specific-streams) to read other streams. [Exceptions](interacting-with-runbooks.md#reading-exceptions) are handled separately.
 
-See [Authentication ](development-and-integration/realmjoin-api/authentication.md)on how to create an Authorization header, the following is only an example.
+See [Authentication ](realmjoin-api/authentication.md)on how to create an Authorization header, the following is only an example.
 
 Assume the `jobID` to be `1234545e-7a24-436a-90c9-6056b512345`
 
@@ -197,7 +197,7 @@ Body (Plaintext)
 
 Use `/api/external/runbook/jobs/{jobID}/output/streams` to get a comprehensive json representation of the output of a runbook. This way you can access the `Output`, `Verbose` and `Error` stream. [Exceptions](interacting-with-runbooks.md#reading-exceptions) are handled separately.
 
-See [Authentication ](development-and-integration/realmjoin-api/authentication.md)on how to create an Authorization header, the following is only an example.
+See [Authentication ](realmjoin-api/authentication.md)on how to create an Authorization header, the following is only an example.
 
 Assume the `jobID` to be `1234545e-7a24-436a-90c9-6056b512345`
 
@@ -339,7 +339,7 @@ Exceptions are written, when interrupting errors happen in the execution of the 
 
 In out example, an interrupting error was caused by `throw "Exception"`.
 
-See [Authentication ](development-and-integration/realmjoin-api/authentication.md)on how to create an Authorization header, the following is only an example.
+See [Authentication ](realmjoin-api/authentication.md)on how to create an Authorization header, the following is only an example.
 
 Assume the `jobID` to be `1234545e-7a24-436a-90c9-6056b512345`
 

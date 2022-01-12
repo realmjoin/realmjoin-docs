@@ -8,7 +8,7 @@ With RealmJoin it is possible to manage secure and individualized administrative
 
 RealmJoin's API allows you to request a "Support Account" (local admin) for a given device in your tenant. See [RealmJoin's Swagger description](https://realmjoin-backend.azurewebsites.net/swagger/index.html#/LocalAdmin) to see, which operations are currently supported in detail. Using LAPS with RealmJoin requires the deployment of the RealJoin Windows Client.
 
-It is assumed you have correctly set up LAPS in your environment and deployed the RealmJoin Windows Client on your devices. Also, make sure to [authenticate ](development-and-integration/realmjoin-api/authentication.md)every request against RealmJoin's API using an appropriate http Authorization header.
+It is assumed you have correctly set up LAPS in your environment and deployed the RealmJoin Windows Client on your devices. Also, make sure to [authenticate ](realmjoin-api/authentication.md)every request against RealmJoin's API using an appropriate http Authorization header.
 
 ## Requesting a Support Account
 
@@ -25,7 +25,7 @@ Let us assume the following situation:
 
 Currently no Support Account exists on the target device.
 
-![Local Accounts - before requesting a Support Account](.gitbook/assets/Laps-before.png)
+![Local Accounts - before requesting a Support Account](../.gitbook/assets/Laps-before.png)
 
 Let us build the **request**:
 
@@ -68,7 +68,7 @@ Let us query the same `deviceId` of `9999dab9-f946-40ee-9a17-2500c8d00878` as in
 
 In our example a Support Account (Full Name: "Local Support Admin Account") has been created on the target device by the RealmJoin Windows Client:
 
-![Local Accounts - Support Account is successfully created](.gitbook/assets/Laps-after.png)
+![Local Accounts - Support Account is successfully created](../.gitbook/assets/Laps-after.png)
 
 **Request**
 

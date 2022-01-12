@@ -1,36 +1,24 @@
 # Table of contents
 
-* [Welcome](README.md)
-* [FAQ](faq.md)
-
-## User, Group and Tenant management
-
-* [Page 1](user-group-and-tenant-management/page-1.md)
-
-## Application Store
-
-* [Page 3](application-store/page-3.md)
-
-## Runbooks
-
-* [Runbooks Overview](runbooks/runbooks-overview.md)
-* [Runbook Customization](runbooks/runbook-customization.md)
-* [Runbook Permissions](runbooks/runbook-permissions.md)
-* [Naming conventions](runbooks/naming-conventions.md)
-* [Azure AD Roles and Permissions](runbooks/azure-ad-roles-and-permissions.md)
-* [PowerShell modules](runbooks/powershell-modules.md)
-
-## Onboarding
-
-* [Onboarding RealmJoin Portal](onboarding/onboarding-realmjoin-portal.md)
-* [Connecting Azure Automation](onboarding/connecting-azure-automation.md)
-
-## Development and Integration
-
-* [RealmJoin API](development-and-integration/realmjoin-api/README.md)
-  * [Authentication](development-and-integration/realmjoin-api/authentication.md)
-
-***
-
-* [Interacting with Runbooks](interacting-with-runbooks.md)
-* [Local Admin Password Management](local-admin-password-management.md)
+* [Overview](README.md)
+  * [FAQ](readme/faq.md)
+  * [What's new](readme/changelog.md)
+* [Concepts](concepts.md)
+* [How to get started](onboarding/README.md)
+  * [Onboarding RealmJoin Portal](onboarding/onboarding-realmjoin-portal.md)
+  * [Connecting Azure Automation](onboarding/connecting-azure-automation.md)
+* [User, Group and Device management](page-1.md)
+* [Application Management](page-3.md)
+* [Process Automation](runbooks/README.md)
+  * [Runbook Customization](runbooks/runbook-customization.md)
+  * [Runbook Permissions](runbooks/runbook-permissions.md)
+  * [Naming conventions](runbooks/naming-conventions.md)
+  * [Azure AD Roles and Permissions](runbooks/azure-ad-roles-and-permissions.md)
+  * [PowerShell modules](runbooks/powershell-modules.md)
+* [Developer Reference](developer-reference/README.md)
+  * [RealmJoin API](developer-reference/realmjoin-api/README.md)
+    * [Authentication](developer-reference/realmjoin-api/authentication.md)
+  * [Interacting with Runbooks](developer-reference/interacting-with-runbooks.md)
+  * [Local Admin Password Management](developer-reference/local-admin-password-management.md)
+* [Licensing](https://www.realmjoin.com/pricing/)
+* [Support](support.md)
