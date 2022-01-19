@@ -35,6 +35,7 @@ Please grant the following Graph API-Permissions to the AppRegistration
 * IdentityRiskyUser.ReadWrite.All
 * InformationProtectionPolicy.Read.All
 * Policy.Read.All
+* RoleManagement.Read.All
 * Team.Create
 * User.ReadWrite.All
 * UserAuthenticationMethod.ReadWrite.All
