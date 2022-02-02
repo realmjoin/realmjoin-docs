@@ -8,7 +8,7 @@ description: >-
 
 ## Permissions
 
-The RealmJoin shared runbooks use the deafult Azure Automation [RunAs account](https://docs.microsoft.com/en-us/azure/automation/manage-runas-account) to interact with AzureAD, Graph API etc.
+The RealmJoin shared runbooks use the default Azure Automation [RunAs account](https://docs.microsoft.com/en-us/azure/automation/manage-runas-account) to interact with AzureAD, Graph API etc.
 
 When creating the Automation Account RunAs account an AppRegistration is created in the customer's AzureAD representing this RunAs Connection. All needed permissions have to be applied App Registration.
 
