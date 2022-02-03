@@ -1,18 +1,10 @@
 # User, Group and Device management
 
-Navigation
+## Overview
 
-![](../.gitbook/assets/org.png) Will show the organization's details.
+RealmJoin allows you to review and interact with Azure Active Directory (Azure AD) objects like users, groups and devices.&#x20;
 
-![](../.gitbook/assets/user.png) Will show the [list of all users](user-list.md).
+It includes information from multiple sources such as Intune (Microsoft Endpoint Manager), Microsoft Defender, the Windows AutoPilot service and Sign-in security logs into one single view.&#x20;
 
-This includes guests, room- and shared mailboxes.
-
-![](../.gitbook/assets/group.png) Will show the [list of all groups](group-list.md).
-
-This includes Teams in Microsoft Teams, Offce365 groups and distribution groups.
-
-![](../.gitbook/assets/device.png) Will show the list of all devices.
-
-This includes all AzureAD joined client but also devices registered in AzureAD like mobile phones.
+Search and drill down accross corelated users and devices and trigger change operations directly in context.
 
