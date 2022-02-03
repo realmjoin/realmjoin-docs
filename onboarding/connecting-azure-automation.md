@@ -26,7 +26,7 @@ Choose or create an Azure Resource Group in your Azure Subscription, e.g. `rjrb-
 
 [https://portal.azure.com/#create/Microsoft.ResourceGroup](https://portal.azure.com/#create/Microsoft.ResourceGroup)&#x20;
 
-![Create an Azure Resource Group](<../.gitbook/assets/image (7).png>)
+![Create an Azure Resource Group](<../.gitbook/assets/image (7) (1).png>)
 
 Please note down the Resource Group's name as it will be needed later.
 
@@ -50,7 +50,7 @@ It is assumed you already finished [onboarding RealmJoin Portal](onboarding-real
 
 In RealmJoin Portal go to '[Settings -> Runbooks](https://portal.realmjoin.com/settings/runbooks-configuration)'.
 
-![Automation Account Connection in RealmJoin Portal](<../.gitbook/assets/image (1) (1).png>)
+![Automation Account Connection in RealmJoin Portal](<../.gitbook/assets/image (1) (1) (1).png>)
 
 Please fill in the AzureAD Tenant Id, Subscription Id and Resource Group name.
 
@@ -81,13 +81,13 @@ Please execute these two lines of code using AZ CLI with an administrative accou
 
 Tipp: You can use [Azure CloudShell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview), so you don't need to install and authenticate a local copy of AZ CLI.
 
-![Azure CloudShell - Create the App Registration](<../.gitbook/assets/image (4).png>)
+![Azure CloudShell - Create the App Registration](<../.gitbook/assets/image (4) (1).png>)
 
 The command will return multiple values. Please note down the values for `appId` and `password`.&#x20;
 
 You can review the resulting App Registration in AzureAD. It will be named "RealmJoin Runbook Management".
 
-![App Regsitrations in Azure Portal](<../.gitbook/assets/image (3).png>)
+![App Regsitrations in Azure Portal](<../.gitbook/assets/image (3) (1).png>)
 
 ### Entering Info - Part 2
 
@@ -99,8 +99,8 @@ Choose the Branch of the shared runbook repository you want to follow, wither `m
 
 Choosing the location to make sure your runbooks are executed in the correct [Azure region](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview).
 
-![Automation Account Connection in RealmJoin Portal](<../.gitbook/assets/image (9).png>)
+![Automation Account Connection in RealmJoin Portal](<../.gitbook/assets/image (9) (1).png>)
 
 Press "Save" to start the initial import of runbooks. Please leave this window open until you see the message "Sync completed".
 
-![](<../.gitbook/assets/image (5).png>)
+![](<../.gitbook/assets/image (5) (1).png>)
