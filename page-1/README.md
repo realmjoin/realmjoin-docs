@@ -14,7 +14,21 @@ The details pages share some common elements for all of these areas:
 
 ### **Object Properties**
 
+Every object details page will show an overview of the core properties like
 
+* Name
+* AzureAD Object ID
+* Status information (like "Enabled")&#x20;
+
+on the left side of the screen in a glanceable way. This part will not scroll and be always visible in any tab.
+
+![Core Object Properties](<../.gitbook/assets/image (6).png>)
+
+The right side of the screen shows the current tab, which can be&#x20;
+
+* "Overview" with more information about the object
+* "[Runbooks](./#runbooks)" showing available runbooks - as the name implies
+* Diffenrent [data sources](./#data-sources), like AzureAD, Sign in logs etc.
 
 ### Runbooks
 

@@ -8,4 +8,5 @@ This page gives you an overview about&#x20;
 * Intune (MS Endpoint Manager) and Runbook Statistics (work in progress)
 * The status of RealmJoin's features and integration
 * Recent application updates and changes
-*
+
+This page follows the same principles as the other details pages. You have core properties of your tenant visible on the left side of the UI. The right side is specific to your current tab, which can include [runbooks ](./#runbooks)and [AzureAD raw data](./#data-sources).
