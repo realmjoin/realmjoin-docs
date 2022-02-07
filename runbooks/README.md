@@ -31,7 +31,7 @@ You can trigger a sync from the shared repository to your Azure Automation accou
 
 [https://portal.realmjoin.com/settings/general](https://portal.realmjoin.com/settings/general)
 
-![Trigger a sync of your runbooks](<../.gitbook/assets/image (1) (1).png>)
+![Trigger a sync of your runbooks](<../.gitbook/assets/image (1) (1) (1).png>)
 
 Wait for the "Sync completed" message. Please keep the browser window open while the sync process is running.
 

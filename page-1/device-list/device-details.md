@@ -10,7 +10,7 @@ AAD Joined, TPM2 enabled, Autopilot Device, Company Owned, Created 8 Month ago, 
 
 ![](<../../.gitbook/assets/image (14).png>)Disk Encryption enabled
 
-![](../../.gitbook/assets/image.png)Defender ATP enabled
+![](<../../.gitbook/assets/image (1).png>)Defender ATP enabled
 
 ![](<../../.gitbook/assets/image (6).png>)A/V up-to-date
 

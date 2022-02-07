@@ -9,6 +9,8 @@
   * [Onboarding RealmJoin Portal](onboarding/onboarding-realmjoin-portal.md)
   * [Connecting Azure Automation](onboarding/connecting-azure-automation.md)
 * [User, Group and Device management](page-1/README.md)
+  * [About me](page-1/about-me.md)
+  * [Organization Details](page-1/organization-details.md)
   * [User List](page-1/user-list/README.md)
     * [User Details](page-1/user-list/user-details.md)
   * [Group List](page-1/group-list/README.md)
