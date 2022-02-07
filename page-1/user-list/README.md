@@ -4,12 +4,13 @@
 
 ### User Object Types
 
-The category "user object" also includes:
+The category "user object" includes:
 
+* AzureAD user objects
+* AzureAD external users, a.k.a. guests
 * Shared mailboxes
 * Room and Equipment mailboxes
-* Administrative users
-* AzureAD external users, a.k.a. guests
+* Administrative user accounts
 
 ### Search and Sort
 

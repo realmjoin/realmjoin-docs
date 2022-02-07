@@ -4,19 +4,21 @@
 
 ### User Object Types
 
-This page will show you detailed information about a single user object. The category "user object" also includes:
+This page will show you detailed information about a single user object. The category "user object" includes:
 
+* AzureAD user objects
+* AzureAD external users, a.k.a. guests
 * Shared mailboxes
 * Room and Equipment mailboxes
-* Administrative users
-* AzureAD external users, a.k.a. guests
+* Administrative user accounts
 
 ### **Object Properties**
 
 Every user details page will show an overview of the core properties like
 
-* Name
+* Display Name
 * AzureAD Object ID
+* Additional properties&#x20;
 
 on the left side of the screen in a glanceable way. This part will not scroll and be always visible in any tab.
 
