@@ -8,7 +8,7 @@ Depending on the permissions you have been given in RealJoin Portal, you will se
 
 The icon of the current location is highlited with a light blue.
 
-### ![](../.gitbook/assets/me.png) About me
+### ![](../.gitbook/assets/me.png) [About me](../page-1/about-me.md)
 
 See information about the signed in user, including current AzureAD directory roles.
 

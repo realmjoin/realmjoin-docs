@@ -2,6 +2,8 @@
 
 ![](<../../.gitbook/assets/image (5) (1).png>)
 
+### User Object Types
+
 This page will show you detailed information about a single user object. The category "user object" also includes:
 
 * Shared mailboxes
@@ -30,6 +32,8 @@ The core properties include some glanceable information about the status of a us
 * **DE/US**... - Two letter code designating the user's [usage location](https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/licensing-groups-resolve-problems#usage-location-isnt-allowed) which is relevant for licensing.
 * ![](<../../.gitbook/assets/image (5).png>) - When the object was created
 * ![](<../../.gitbook/assets/image (2).png>) - Last signin activity
+
+### Tabs
 
 The right side of the screen shows the contents of the current tab, which can be&#x20;
 
