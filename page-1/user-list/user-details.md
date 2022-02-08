@@ -2,9 +2,11 @@
 
 ![](<../../.gitbook/assets/image (5) (1).png>)
 
+This page will show you detailed information about a single user object.&#x20;
+
 ### User Object Types
 
-This page will show you detailed information about a single user object. The category "user object" includes:
+The category "user object" includes:
 
 * AzureAD user objects
 * AzureAD external users, a.k.a. guests

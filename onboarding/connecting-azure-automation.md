@@ -26,7 +26,7 @@ Choose or create an Azure Resource Group in your Azure Subscription, e.g. `rjrb-
 
 [https://portal.azure.com/#create/Microsoft.ResourceGroup](https://portal.azure.com/#create/Microsoft.ResourceGroup)&#x20;
 
-![Create an Azure Resource Group](<../.gitbook/assets/image (7) (1).png>)
+![Create an Azure Resource Group](<../.gitbook/assets/image (7) (1) (1).png>)
 
 Please note down the Resource Group's name as it will be needed later.
 
@@ -87,7 +87,7 @@ The command will return multiple values. Please note down the values for `appId`
 
 You can review the resulting App Registration in AzureAD. It will be named "RealmJoin Runbook Management".
 
-![App Regsitrations in Azure Portal](<../.gitbook/assets/image (3) (1).png>)
+![App Regsitrations in Azure Portal](<../.gitbook/assets/image (3) (1) (1).png>)
 
 ### Entering Info - Part 2
 

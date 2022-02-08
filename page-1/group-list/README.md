@@ -2,6 +2,8 @@
 
 ![Group List View](<../../.gitbook/assets/image (15).png>)
 
+This view offers you a simple way to search or review groups in your environment.
+
 ### Object Types
 
 The category "groups" includes:

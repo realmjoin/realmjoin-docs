@@ -1,8 +1,10 @@
 # Device Details
 
-![](<../../.gitbook/assets/image (12).png>)
+![Device Details Page](<../../.gitbook/assets/image (12).png>)
 
-![](<../../.gitbook/assets/image (3).png>)
+This page shows you details regarding a single device.
+
+![](<../../.gitbook/assets/image (3) (1).png>)
 
 AAD Joined, TPM2 enabled, Autopilot Device, Company Owned, Created 8 Month ago, last contact 45m ago
 
