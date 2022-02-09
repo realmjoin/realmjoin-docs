@@ -66,5 +66,5 @@ Press the "x" icon to remove a member. The resulting change will take a short ti
 The right side of the screen shows the contents of the current tab, which can be&#x20;
 
 * "Overview" with more information about the object
-* "[Runbooks](group-details.md#runbooks)" showing available runbooks - as the name implies
-* Raw [data sources](group-details.md#data-sources), like AzureAD, Sign in logs etc display in JSON. Only available for RealmJoin administrators.
+* "[Runbooks](../../runbooks/)" showing available runbooks - as the name implies
+* Raw [data sources](../#data-sources), like AzureAD, Sign in logs etc display in JSON. Only available for RealmJoin administrators.

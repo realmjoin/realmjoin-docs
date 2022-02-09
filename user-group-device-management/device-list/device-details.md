@@ -58,8 +58,8 @@ The right side of the screen shows the contents of the current tab, which can be
   * The currently logged on user&#x20;
   * Currently installed software, either managed bei RealmJoin or Intune
   * Security recommendations and if these are met by the device
-* "[Runbooks](device-details.md#runbooks)" showing available runbooks - as the name implies
-* Raw [data sources](device-details.md#data-sources), like AzureAD, Sign in logs etc display in JSON. Only available for RealmJoin administrators.
+* "[Runbooks](../../runbooks/)" showing available runbooks - as the name implies
+* Raw [data sources](../#data-sources), like AzureAD, Sign in logs etc display in JSON. Only available for RealmJoin administrators.
 
 ### Actions
 

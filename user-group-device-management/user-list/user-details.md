@@ -42,5 +42,5 @@ The core properties include some glanceable information about the status of a us
 The right side of the screen shows the contents of the current tab, which can be&#x20;
 
 * "Overview" with more information about the object
-* "[Runbooks](user-details.md#runbooks)" showing available runbooks - as the name implies
-* Raw [data sources](user-details.md#data-sources), like AzureAD, Sign in logs etc display in JSON. Only available for RealmJoin administrators.
+* "[Runbooks](../../runbooks/)" showing available runbooks - as the name implies
+* Raw [data sources](../#data-sources), like AzureAD, Sign in logs etc display in JSON. Only available for RealmJoin administrators.
