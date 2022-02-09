@@ -4,14 +4,6 @@
 
 This page shows you details regarding a single group.
 
-### Tabs
-
-The right side of the screen shows the contents of the current tab, which can be&#x20;
-
-* "Overview" with more information about the object
-* "[Runbooks](group-details.md#runbooks)" showing available runbooks - as the name implies
-* Raw [data sources](group-details.md#data-sources), like AzureAD, Sign in logs etc display in JSON. Only available for RealmJoin administrators.
-
 ### Object Types
 
 The category "groups" includes:
