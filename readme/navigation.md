@@ -8,23 +8,23 @@ Depending on the permissions you have been given in RealJoin Portal, you will se
 
 The icon of the current location is highlited with a light blue.
 
-### ![](../.gitbook/assets/me.png) [About me](../page-1/about-me.md)
+### ![](../.gitbook/assets/me.png) [About me](../user-group-device-management/about-me.md)
 
 See information about the signed in user, including current AzureAD directory roles.
 
-### ![](../.gitbook/assets/org.png) [Your organization's details](../page-1/organization-details.md)
+### ![](../.gitbook/assets/org.png) [Your organization's details](../user-group-device-management/organization-details.md)
 
 This will give you information about you Azure Active Directory tenant, recent application updates and RealmJoin's integration into your environment.
 
-### ![](../.gitbook/assets/user.png) [List of all users](../page-1/user-list/)
+### ![](../.gitbook/assets/user.png) [List of all users](../user-group-device-management/user-list/)
 
 "Users" includes normal users, AzureAD guests as well as Exchange room- and shared mailboxes.
 
-### ![](../.gitbook/assets/group.png) [List of all groups](../page-1/group-list/)
+### ![](../.gitbook/assets/group.png) [List of all groups](../user-group-device-management/group-list/)
 
 "Groups" includes regular AzureAD groups, Teams in Microsoft Teams, Offce365 groups as well as Exchange distribution groups.
 
-### ![](../.gitbook/assets/device.png) [List of all devices](../page-1/device-list/)
+### ![](../.gitbook/assets/device.png) [List of all devices](../user-group-device-management/device-list/)
 
 "Devices" includes all AzureAD joined clients as well as devices registered in AzureAD, like mobile phones.
 

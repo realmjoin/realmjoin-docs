@@ -18,7 +18,7 @@ RealmJoin offers functionality in the following key areas
 
 [Application management](page-3.md) - Integrates into MS Endpoint Manager and offer a ready to use catalogue of common software packages
 
-[User, Group and Device management](page-1/) - Integrates into MS Azure AD and allows to interact with objects. + LAPS
+[User, Group and Device management](user-group-device-management/) - Integrates into MS Azure AD and allows to interact with objects. + LAPS
 
 [Process Automation](runbooks/) - Leverage Azure Automation to simplify everyday IT operations tasks
 
