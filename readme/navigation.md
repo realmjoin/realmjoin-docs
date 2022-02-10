@@ -4,7 +4,7 @@ When you visit [RealmJoin Portal](https://portal.realmjoin.com), you will be pre
 
 !["About me" page](<../.gitbook/assets/image (8) (1).png>)
 
-Depending on the permissions you have been given in RealJoin Portal, you will see a subset of the following items on the left. These allow you to navigate to different areas of interest.
+Depending on the permissions you have been given in RealmJoin Portal, you will see a subset of the following items on the left. These allow you to navigate to different areas of interest.
 
 The icon of the current location is highlited with a light blue.
 
@@ -30,7 +30,7 @@ This will give you information about you Azure Active Directory tenant, recent a
 
 ### ![](../.gitbook/assets/packages.png) Your active application packages
 
-The list of current applications can include custom Intune (MS Endpoint Manager) packages, managed Intune packages from RealmJoin's application store and classic RealmJoin packages.
+The list of current applications can include custom Intune (MS Endpoint Manager) packages, managed Intune packages from RealmJoin's application store and RealmJoin Classic packages.
 
 ### ![](../.gitbook/assets/appstore.png) RealmJoin's application/package store
 

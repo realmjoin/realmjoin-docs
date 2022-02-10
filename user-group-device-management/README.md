@@ -39,7 +39,7 @@ RealmJoin offers operators to automate day to day tasks using [Runbooks](../runb
 
 ### Data sources
 
-RealmJoin Portal collect information from multiple sources. You can review the full source information for every object in source-specific tabs and is presented as JSON data.
+RealmJoin Portal collects information from multiple sources. You can review the full source information for every object in source-specific tabs and is presented as JSON data.
 
 Raw source data is only available to RealmJoin administrators.
 
