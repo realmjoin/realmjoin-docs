@@ -28,6 +28,7 @@
   * [Azure AD Roles and Permissions](runbooks/azure-ad-roles-and-permissions.md)
   * [PowerShell modules](runbooks/powershell-modules.md)
   * [Runbook Changelog](https://github.com/realmjoin/realmjoin-runbooks/blob/production/CHANGELOG.md)
+* [Settings](settings.md)
 * [Developer Reference](developer-reference/README.md)
   * [RealmJoin API](developer-reference/realmjoin-api/README.md)
     * [Authentication](developer-reference/realmjoin-api/authentication.md)

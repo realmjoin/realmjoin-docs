@@ -32,7 +32,7 @@ The core properties include some glanceable information about the status of a de
 
 ![](<../../.gitbook/assets/image (14).png>)Disk Encryption enabled
 
-![](<../../.gitbook/assets/image (1).png>)Defender ATP enabled
+![](<../../.gitbook/assets/image (1) (1).png>)Defender ATP enabled
 
 ![](<../../.gitbook/assets/image (6) (1).png>)A/V up-to-date
 
