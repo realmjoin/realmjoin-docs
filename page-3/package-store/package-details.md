@@ -1,3 +1,40 @@
 # Package Details
 
-![](<../../.gitbook/assets/image (11).png>)
+![Package Details Page](<../../.gitbook/assets/image (11).png>)
+
+This page will show detailed information for a single package from the package store and allows to provision this package to your environment.
+
+### Package Types
+
+### Package Properties
+
+Every package details page will show an overview of the core properties like the package's **Display Name**, **Description** and **Package ID** on the left side of the screen. This part will not scroll and be always visible in any tab.
+
+### Status fields
+
+Also displayed on the left side of the screen are four status fields for a package, displayed as tags.
+
+These fields are binary - they are set to one of two possible values. The text of each field changes accordingly. Some of the fields are also color-coded for easier glancability.
+
+#### Maintained / Unmaintained
+
+GKGAB will provide new versions / updates of maintained packages on a regular basis.&#x20;
+
+Automatic package management can be applied to keep the software delivered by these packages permanentely up-to-date in your environment.
+
+#### Generic / Custom
+
+"Generic" packages are available to all customers / environments.&#x20;
+
+"Custom" packages are not globally available to all customers. In most cases this is a custom software package created specifically for your environment.
+
+#### Billable / Non-billable
+
+Provisioning of this package will count towards your package usage quota - if you have one. Please see [Licensing](https://www.realmjoin.com/pricing/). Currently all publicly available packages are billable.
+
+#### Free to Use / Needs license
+
+Does this software need a commercial license to be used?
+
+#### MS Security Center Software Inventory (TVM) entry
+

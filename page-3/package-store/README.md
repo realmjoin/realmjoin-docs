@@ -4,6 +4,8 @@
 
 RealmJoin Portal has access to a large library of ready-to-use packages for Microsoft Endpoint Manager (Intune) maintend by glueckkanja-gab AG (GKGAB).&#x20;
 
+This page will list all packages available to your organization.
+
 ### Categories
 
 Packages are sorted into categories to simplify searching/exploring the catalogue. The categories are displayed as tags on the package. Example categories are **Tools**, **Office**, **Driver**
@@ -41,7 +43,7 @@ This package is available for provisioning via Intune / [Package Management](../
 
 #### Custom Package
 
-In contrast to the former types of packages, this kind of package is not globally available to all customers. In most cases this is custom software package created specifically for your environment.
+In contrast to the former types of packages, this kind of package is not globally available to all customers. In most cases this is a custom software package created specifically for your environment.
 
 This package is available for provisioning via Intune / [Package Management](../package-management.md).
 
