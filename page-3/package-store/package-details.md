@@ -4,11 +4,15 @@
 
 This page will show detailed information for a single package from the package store and allows to provision this package to your environment.
 
-### Package Types
+## Package Types
 
-### Package Properties
+Currently only Intune Win32 app packages can be provisioned using RealmJoin Portal. Other package types like Craft packages can be displayed but currently not provisioned.
 
-Every package details page will show an overview of the core properties like the package's **Display Name**, **Description** and **Package ID** on the left side of the screen. This part will not scroll and be always visible in any tab.
+## Package Properties
+
+### Core properties
+
+Every package details page will show an overview of the core properties like the package's **Display Name**, **Description** and **Package ID** ("Unique RJ ID") on the left side of the screen. This part will not scroll and be always visible in any tab.
 
 ### Status fields
 
@@ -38,5 +42,40 @@ Provisioning of this package will count towards your package usage quota - if yo
 
 Does this software need a commercial license to be used?
 
-#### MS Security Center Software Inventory (TVM) entry
+### MS Security Center Software Inventory (TVM) entry
 
+If available, a link to this software title's [MS Security Center Software Inventory (TVM)](https://security.microsoft.com/software-inventory/applications)'s entry will be displayed. There you can check for known security issues and outdated versions of this software in your organization.
+
+An appropriate license from Microsoft is needed to access TVM.
+
+### **Version**
+
+![Available Version vs Provisioned Package](<../../.gitbook/assets/image (7).png>)
+
+Also displayed on the left side of the screen is the version of the software package.&#x20;
+
+If you already provisioned the package to your environment, a link to the provisioned package in [Package Management](../package-management.md) will be displayed. The link will show the name and version of the provisioned package.
+
+## Tabs
+
+The right side of the screen shows the contents of the current tab.&#x20;
+
+The following tabs are available:
+
+### Overview / Subscribe
+
+![Overview and Provisioning](<../../.gitbook/assets/image (10).png>)
+
+#### Metadata
+
+This tab will show the long description, license and technical help information of a package.&#x20;
+
+#### Subscribe / Provisioning
+
+
+
+### Changelog
+
+### RealmJoin Store
+
+Raw JSON representation of the package object.&#x20;
