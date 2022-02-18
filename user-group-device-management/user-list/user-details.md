@@ -24,7 +24,7 @@ Every user details page will show an overview of the core properties like
 
 on the left side of the screen in a glanceable way. This part will not scroll and be always visible in any tab.
 
-![Core Object Properties](<../../.gitbook/assets/image (6).png>)
+![Core Object Properties](<../../.gitbook/assets/image (6) (1).png>)
 
 ### Status information
 

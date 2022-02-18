@@ -99,7 +99,7 @@ Choose the Branch of the shared runbook repository you want to follow, wither `m
 
 Choosing the location to make sure your runbooks are executed in the correct [Azure region](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview).
 
-![Automation Account Connection in RealmJoin Portal](<../.gitbook/assets/image (9) (1) (1).png>)
+![Automation Account Connection in RealmJoin Portal](<../.gitbook/assets/image (9) (1) (1) (1).png>)
 
 Press "Save" to start the initial import of runbooks. Please leave this window open until you see the message "Sync completed".
 

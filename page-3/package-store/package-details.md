@@ -6,7 +6,11 @@ This page will show detailed information for a single package from the package s
 
 ## Package Types
 
+The RealmJoin Store contains two types of packages. **Intune** packages and **Craft** packages. Only Intune Packages can be deployed using RealmJoin Portal at this point.
+
 Currently only Intune Win32 app packages can be provisioned using RealmJoin Portal. Other package types like Craft packages can be displayed but currently not provisioned.
+
+Craft packages can be used in conjuction with RealmJoin Client and are not delivered via Intune/Microsoft Endpoint Manager. Please visit [RealmJoin Classic](https://realmjoin-web.azurewebsites.net/home) to assign Craft packages.&#x20;
 
 ## Package Properties
 
@@ -44,11 +48,17 @@ Does this software need a commercial license to be used?
 
 ### MS Security Center Software Inventory (TVM) entry
 
+When clicking the link next to Unique TVM ID, you are redirected to this application's entry in MS Security Center.
+
 If available, a link to this software title's [MS Security Center Software Inventory (TVM)](https://security.microsoft.com/software-inventory/applications)'s entry will be displayed. There you can check for known security issues and outdated versions of this software in your organization.
+
+![An Application's TVM Entry](<../../.gitbook/assets/image (6).png>)
 
 An appropriate license from Microsoft is needed to access TVM.
 
-### **Version**
+This page allows to examine your current security posture, incl. installed versions and distribution on devices as well as security recommendations regarding this software title.
+
+### Version
 
 ![Available Version vs Provisioned Package](<../../.gitbook/assets/image (7).png>)
 
