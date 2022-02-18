@@ -48,8 +48,6 @@ Does this software need a commercial license to be used?
 
 ### MS Security Center Software Inventory (TVM) entry
 
-When clicking the link next to Unique TVM ID, you are redirected to this application's entry in MS Security Center.
-
 If available, a link to this software title's [MS Security Center Software Inventory (TVM)](https://security.microsoft.com/software-inventory/applications)'s entry will be displayed. There you can check for known security issues and outdated versions of this software in your organization.
 
 ![An Application's TVM Entry](<../../.gitbook/assets/image (6).png>)
@@ -66,6 +64,26 @@ Also displayed on the left side of the screen is the version of the software pac
 
 If you already provisioned the package to your environment, a link to the provisioned package in [Package Management](../package-management.md) will be displayed. The link will show the name and version of the provisioned package.
 
+## Subscribe to Package
+
+On the Overview Tab of a package, you will find buttons, that allow you to import the package from the store into your environment.&#x20;
+
+![Subscribe Buttons](<../../.gitbook/assets/image (16).png>)
+
+They will create a Win32 software package in Intune when pressed. You have two options:
+
+### Managed
+
+When you choose "managed", RealmJoin will also create AzureAD groups to assign the application to users.
+
+![Application Groups](<../../.gitbook/assets/image (10).png>)
+
+Assigning users to the main and the preview group will triggered a "required" installation of this software title in Intune. Managed packages currently do not support "available" installations. This is to make sure, that future package/application updates will actually arrive on a user's device - which is not guaranteed via "available" installations.&#x20;
+
+### Basic
+
+"Basic" just creates the Intune application
+
 ## Tabs
 
 The right side of the screen shows the contents of the current tab.&#x20;
@@ -74,15 +92,15 @@ The following tabs are available:
 
 ### Overview / Subscribe
 
-![Overview and Provisioning](<../../.gitbook/assets/image (10).png>)
+![Overview and Provisioning](<../../.gitbook/assets/image (10) (1).png>)
 
-#### Metadata
+#### Ttitle, Description and other Info
 
 This tab will show the long description, license and technical help information of a package.&#x20;
 
 #### Subscribe / Provisioning
 
-
+This tab also shows the Subscribe-Buttons for this package. See Subscribing.
 
 ### Changelog
 

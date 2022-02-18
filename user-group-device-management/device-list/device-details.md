@@ -36,7 +36,7 @@ The core properties include some glanceable information about the status of a de
 
 ![](<../../.gitbook/assets/image (6) (1) (1).png>)A/V up-to-date
 
-![](<../../.gitbook/assets/image (16).png>)Compliant device
+![](<../../.gitbook/assets/image (16) (1).png>)Compliant device
 
 ![](<../../.gitbook/assets/image (5) (1).png>) When the object was created
 
