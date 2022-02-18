@@ -1,6 +1,6 @@
-# Package Details
+# Package Store Details
 
-![Package Details Page](<../../.gitbook/assets/image (11).png>)
+![Package Details Page](<../../.gitbook/assets/image (11) (1).png>)
 
 This page will show detailed information for a single package from the package store and allows to provision this package to your environment.
 
@@ -58,11 +58,11 @@ This page allows to examine your current security posture, incl. installed versi
 
 ### Version
 
-![Available Version vs Provisioned Package](<../../.gitbook/assets/image (7).png>)
+![Available Version vs Provisioned Package](<../../.gitbook/assets/image (7) (1).png>)
 
 Also displayed on the left side of the screen is the version of the software package.&#x20;
 
-If you already provisioned the package to your environment, a link to the provisioned package in [Package Management](../package-management.md) will be displayed. The link will show the name and version of the provisioned package.
+If you already provisioned the package to your environment, a link to the provisioned package in [Package Management](../package-management/) will be displayed. The link will show the name and version of the provisioned package.
 
 ## Subscribe to Package
 
@@ -110,7 +110,7 @@ This tab also shows the Subscribe-Buttons for this package. See Subscribing.
 
 The package's changelog shows when the packages has been updated in RealmJoin's repository plus a short description of changes.
 
-![Appstore Package Changelog](<../../.gitbook/assets/image (12).png>)
+![Appstore Package Changelog](<../../.gitbook/assets/image (12) (1).png>)
 
 ### RealmJoin Store
 

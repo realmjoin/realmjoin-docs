@@ -26,7 +26,7 @@ Choose or create an Azure Resource Group in your Azure Subscription, e.g. `rjrb-
 
 [https://portal.azure.com/#create/Microsoft.ResourceGroup](https://portal.azure.com/#create/Microsoft.ResourceGroup)&#x20;
 
-![Create an Azure Resource Group](<../.gitbook/assets/image (7) (1) (1) (1).png>)
+![Create an Azure Resource Group](<../.gitbook/assets/image (7) (1) (1) (1) (1).png>)
 
 Please note down the Resource Group's name as it will be needed later.
 

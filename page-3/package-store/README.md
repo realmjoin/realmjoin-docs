@@ -17,7 +17,7 @@ You can use the searchbar at the top to search for a package by:&#x20;
 * **Display name** - e.g. "7-Zip"
 * **Category** - like "Tools" or "Office"
 * **Description** - like "7-Zip is a free and open-source file archiver"
-* **Package ID** - e.g. "generic-7zip" (visible via [Package Details](package-details.md))
+* **Package ID** - e.g. "generic-7zip" (visible via [Package Details](package-store-details.md))
 
 The search updates results instantly as you type.
 
@@ -29,23 +29,23 @@ Every package falls in at least one of the following categories. The banner on t
 
 GKGAB will provide new versions / updates for this package on a regular basis.&#x20;
 
-This package is available for provisioning via Intune / [Package Management](../package-management.md). Automatic package management can be applied to keep the software delivered by this package permanentely up-to-date in your environment.
+This package is available for provisioning via Intune / [Package Management](../package-management/). Automatic package management can be applied to keep the software delivered by this package permanentely up-to-date in your environment.
 
 #### Default Package
 
-This package is not maintained. It is available for provisioning via Intune / [Package Management](../package-management.md) but will not necessarily be kept up-to-date.
+This package is not maintained. It is available for provisioning via Intune / [Package Management](../package-management/) but will not necessarily be kept up-to-date.
 
 #### Free Package
 
 Like a "default package", but also non-billable.
 
-This package is available for provisioning via Intune / [Package Management](../package-management.md).
+This package is available for provisioning via Intune / [Package Management](../package-management/).
 
 #### Custom Package
 
 In contrast to the former types of packages, this kind of package is not globally available to all customers. In most cases this is a custom software package created specifically for your environment.
 
-This package is available for provisioning via Intune / [Package Management](../package-management.md).
+This package is available for provisioning via Intune / [Package Management](../package-management/).
 
 #### Craft Package
 

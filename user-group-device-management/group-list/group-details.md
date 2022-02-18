@@ -1,6 +1,6 @@
 # Group Details
 
-![Application management group](<../../.gitbook/assets/image (7) (1) (1).png>)
+![Application management group](<../../.gitbook/assets/image (7) (1) (1) (1).png>)
 
 This page shows you details regarding a single group.
 
@@ -49,7 +49,7 @@ Please use a [runbook ](../../runbooks/)to change owners of a group or to change
 
 Using the "**Add**" button will show a dialogue where you can search for users to add to the group. You can search for users via Name or User Principal Name / eMail address.
 
-![Adding Members](<../../.gitbook/assets/image (7) (1).png>)
+![Adding Members](<../../.gitbook/assets/image (7) (1) (1).png>)
 
 Press "+" to add a member to the group. The resulting membership will take a short time and not be immedaitely visible.
 
