@@ -1,6 +1,6 @@
 # Device Details
 
-![Device Details Page](<../../.gitbook/assets/image (12).png>)
+![Device Details Page](<../../.gitbook/assets/image (12) (1).png>)
 
 This page shows you details regarding a single device.
 

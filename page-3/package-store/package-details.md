@@ -80,9 +80,13 @@ When you choose "managed", RealmJoin will also create AzureAD groups to assign t
 
 Assigning users to the main and the preview group will triggered a "required" installation of this software title in Intune. Managed packages currently do not support "available" installations. This is to make sure, that future package/application updates will actually arrive on a user's device - which is not guaranteed via "available" installations.&#x20;
 
+"Managed" packages are the prefered way to deploy software to your users. You can combine it with automated package updates and ensure your users receive latest features and patches.&#x20;
+
 ### Basic
 
-"Basic" just creates the Intune application
+"Basic" just creates the Intune application, but will not associate it with any groups or users. You will have to manually assign groups, devices or users.&#x20;
+
+If you want to offer software for "available" installation through MS Company Portal you can do so with "basic" packages. Be aware, fully automated updates of software is not guaranteed via "available" installations.
 
 ## Tabs
 
@@ -104,6 +108,10 @@ This tab also shows the Subscribe-Buttons for this package. See Subscribing.
 
 ### Changelog
 
+The package's changelog shows when the packages has been updated in RealmJoin's repository plus a short description of changes.
+
+![Appstore Package Changelog](<../../.gitbook/assets/image (12).png>)
+
 ### RealmJoin Store
 
-Raw JSON representation of the package object.&#x20;
+Raw JSON representation of the package  and its metadata object in the store. This is primarily for debugging and administrative purposes.
