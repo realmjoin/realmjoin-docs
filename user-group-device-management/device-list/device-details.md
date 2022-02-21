@@ -71,7 +71,7 @@ Use "Device Scan" to trigger a (quick) scan of Windows Defender on a managed cli
 
 When combined with the RealmJoin Client, RealmJoin Portal can help with support tasks on windows clients that need local admin permissions by offering on-demand support accounts on clients. In many cases this removes the need to grant local admin permissions to the primary user of the device just to solve a one-time need.
 
-![LAPS management](<../../.gitbook/assets/image (9) (1).png>)
+![LAPS management](<../../.gitbook/assets/image (9) (1) (1).png>)
 
 By default, a local admin emergency account is created on a windows client. This account is useable even if network connectivity to the client fails. This is kind of a last resort.
 

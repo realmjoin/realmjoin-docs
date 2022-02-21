@@ -4,7 +4,7 @@
 
 The Package Management allows to show all packages that currently exist in your environment accross RealmJoin and Intune / MS Endpoint Manager.
 
-Clicking on the name of a package will redirect you to this package's details page.
+Clicking on the name of a package will redirect you to this package's [details page](package-details.md).
 
 ## Package Types
 
@@ -37,5 +37,7 @@ If a newer version of a managed package exists, you can subscribe to the new ver
 ![](<../../.gitbook/assets/image (12).png>)
 
 The package list shows you the version information of the main package, the preview package (if available) as well as the version number of the package currently available in the package store.
+
+If Update Automation is activated, the desired update timeframe is displayed in the column "Automation". A value of "ASAP" means, the package is due for updating.
 
 &#x20;
