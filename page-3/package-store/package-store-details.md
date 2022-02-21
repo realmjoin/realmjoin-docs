@@ -1,6 +1,6 @@
 # Package Store Details
 
-![Package Details Page](<../../.gitbook/assets/image (11) (1).png>)
+![Package Details Page](<../../.gitbook/assets/image (11) (1) (1).png>)
 
 This page will show detailed information for a single package from the package store and allows to provision this package to your environment.
 
@@ -58,7 +58,7 @@ This page allows to examine your current security posture, incl. installed versi
 
 ### Version
 
-![Available Version vs Provisioned Package](<../../.gitbook/assets/image (7) (1).png>)
+![Available Version vs Provisioned Package](<../../.gitbook/assets/image (7) (1) (1).png>)
 
 Also displayed on the left side of the screen is the version of the software package.&#x20;
 
@@ -76,7 +76,7 @@ They will create a Win32 software package in Intune when pressed. You have two o
 
 When you choose "managed", RealmJoin will also create AzureAD groups to assign the application to users.
 
-![Application Groups](<../../.gitbook/assets/image (10).png>)
+![Application Groups](<../../.gitbook/assets/image (10) (1).png>)
 
 Assigning users to the main and the preview group will triggered a "required" installation of this software title in Intune. Managed packages currently do not support "available" installations. This is to make sure, that future package/application updates will actually arrive on a user's device - which is not guaranteed via "available" installations.&#x20;
 
@@ -96,7 +96,7 @@ The following tabs are available:
 
 ### Overview / Subscribe
 
-![Overview and Provisioning](<../../.gitbook/assets/image (10) (1).png>)
+![Overview and Provisioning](<../../.gitbook/assets/image (10) (1) (1).png>)
 
 #### Ttitle, Description and other Info
 

@@ -1,6 +1,6 @@
 # Package Management
 
-![List of active packages](<../../.gitbook/assets/image (7).png>)
+![List of active packages](<../../.gitbook/assets/image (7) (1).png>)
 
 The Package Management allows to show all packages that currently exist in your environment accross RealmJoin and Intune / MS Endpoint Manager.
 

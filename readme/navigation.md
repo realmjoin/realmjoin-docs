@@ -2,7 +2,7 @@
 
 When you visit [RealmJoin Portal](https://portal.realmjoin.com), you will be presented with a "About me" page.&#x20;
 
-!["About me" page](<../.gitbook/assets/image (8) (1).png>)
+!["About me" page](<../.gitbook/assets/image (8) (1) (1).png>)
 
 Depending on the permissions you have been given in RealmJoin Portal, you will see a subset of the following items on the left. These allow you to navigate to different areas of interest.
 
