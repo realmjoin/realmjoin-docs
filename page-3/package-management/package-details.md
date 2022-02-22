@@ -24,7 +24,7 @@ Every package details page will show an overview of the core properties like the
 
 You can use the Edit-Button next to the package's name to give a package a custom display name relevant to your users. For packages hosted in Intune, this will also rename the package's display name in Intune. This will not break the relationship with the [package store entry](../package-store/package-store-details.md) for packages sourced from the [package store](../package-store/).
 
-![Package Name and Status](<../../.gitbook/assets/image (17).png>)
+![Package Name and Status](<../../.gitbook/assets/image (17) (1).png>)
 
 ### Status fields
 
@@ -91,7 +91,7 @@ You can click the group name to enter the group's details and add/remove users t
 
 You can also review the installation status of given assignments / this package on users and clients.
 
-![Package Deployment Status](../../.gitbook/assets/signal-2022-02-21-194314\_001.png)
+![Package Deployment Status (anonymized)](../../.gitbook/assets/signal-2022-02-21-194314\_001.png)
 
 ## Tabs
 
@@ -111,7 +111,28 @@ This tab will show the long description, license and technical help information 
 
 The package's changelog shows when the packages has been updated in RealmJoin's repository or Intune plus a short description of changes.
 
-![Package Changelog](<../../.gitbook/assets/image (11).png>)
+![Package Changelog](<../../.gitbook/assets/image (11) (1).png>)
+
+There are two types of changes tracked in Changelog.
+
+![](<../../.gitbook/assets/image (11).png>) Changes to the instance of the package in your environment, specifically in Intune. E.g. publishing a newer version of the package to your users.
+
+![](<../../.gitbook/assets/image (14).png>) Changes to package store entry.&#x20;
+
+### Automation
+
+![Automation setting for a package](<../../.gitbook/assets/image (17).png>)
+
+For managed packages, you can use the Automation tab to configure automatic publishing of new version of packages from the package store to your environment.&#x20;
+
+* **AutoDeployMain** - Automatically deploy new versions of this package to your users. ("Main" subscription)
+* **AutoDeployMainDeferInDays** - Wait for this number of days to pass before publishing a new version to "main". This is usefull to avoid stress for users/clients if multiple package versions are published rapidly.
+* **AutoDeployPreview** - Automatically deploy new versions of this package to your pilot users. ("Preview" subscription)
+* **AutoDeployPreviewDeferInDays** - Wait for this number of days to pass before publishing a new version to "preview".
+* **AutoDeployAtNight** - Schedule automatic deployment during night time
+* **Select target timezone** - If you use AutoDeployAtNight, use this Time Zone to indicate when "at night" is.
+
+These values can be globally preconfigured for newly imported packages in [Settings](../../settings.md). Configuring them on a per package basis will overwrite the global defaults.
 
 ### RealmJoin Store
 

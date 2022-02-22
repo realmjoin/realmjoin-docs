@@ -1,6 +1,6 @@
 # Package Store Details
 
-![Package Details Page](<../../.gitbook/assets/image (11) (1) (1).png>)
+![Package Details Page](<../../.gitbook/assets/image (11) (1) (1) (1).png>)
 
 This page will show detailed information for a single package from the package store and allows to provision this package to your environment.
 
