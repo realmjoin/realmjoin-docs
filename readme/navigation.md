@@ -28,11 +28,11 @@ This will give you information about you Azure Active Directory tenant, recent a
 
 "Devices" includes all AzureAD joined clients as well as devices registered in AzureAD, like mobile phones.
 
-### ![](../.gitbook/assets/packages.png) [Your active application packages](../page-3/package-management/)
+### ![](../.gitbook/assets/packages.png) [Your active application packages](../AppManagement/package-management/)
 
 The list of current applications can include custom Intune (MS Endpoint Manager) packages, managed Intune packages from RealmJoin's application store and RealmJoin Classic packages.
 
-### ![](../.gitbook/assets/appstore.png) [RealmJoin's application/package store](../page-3/package-store/)
+### ![](../.gitbook/assets/appstore.png) [RealmJoin's application/package store](../AppManagement/package-store/)
 
 In the store you can search for and import ready-to-use application packages into your Intune environment. No packaging needed.
 

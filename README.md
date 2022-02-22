@@ -16,7 +16,7 @@ Additional Information at [www.realmjoin.com](http://realmjoin.com).
 
 RealmJoin offers functionality in the following key areas
 
-[Application management](page-3/) - Integrates into MS Endpoint Manager and offer a ready to use catalogue of common software packages
+[Application management](AppManagement/) - Integrates into MS Endpoint Manager and offer a ready to use catalogue of common software packages
 
 [User, Group and Device management](user-group-device-management/) - Integrates into MS Azure AD and allows to interact with objects. + LAPS
 
