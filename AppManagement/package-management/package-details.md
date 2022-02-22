@@ -79,7 +79,7 @@ If this is a package sourced from the [package store](../package-store/), a link
 
 In the [Overview tab](package-details.md#overview-assignment), you can manage assignments of this package/application to users.
 
-![Package Assignments](<../../.gitbook/assets/image (10) (1).png>)
+![Package Assignments](<../../.gitbook/assets/image (10) (1) (1).png>)
 
 ### Groups ****&#x20;
 
@@ -132,7 +132,7 @@ For managed packages, you can use the Automation tab to configure automatic publ
 * **AutoDeployAtNight** - Schedule automatic deployment during night time
 * **Select target timezone** - If you use AutoDeployAtNight, use this Time Zone to indicate when "at night" is.
 
-These values can be globally preconfigured for newly imported packages in [Settings](../../settings.md). Configuring them on a per package basis will overwrite the global defaults.
+These values can be globally preconfigured for newly imported packages in [Settings](../../settings/). Configuring them on a per package basis will overwrite the global defaults.
 
 ### Config
 
@@ -144,7 +144,7 @@ You can assign multiple **Technical Application Owners** to a package by storing
 
 Some package include **Technical Help**, to explain possible **Arguments**.
 
-![](<../../.gitbook/assets/image (10).png>)
+![](<../../.gitbook/assets/image (10) (1).png>)
 
 ### Intune App and RealmJoin Store
 

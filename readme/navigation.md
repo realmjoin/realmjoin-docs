@@ -40,7 +40,7 @@ In the store you can search for and import ready-to-use application packages int
 
 See the results and logfiles/output of recent [Process Automation](../runbooks/) tasks&#x20;
 
-### ![](../.gitbook/assets/settings.png) [RealmJoin settings](../settings.md)
+### ![](../.gitbook/assets/settings.png) [RealmJoin settings](../settings/)
 
 Configuration and customization of RealmJoin. This area is only available to RealmJoin administrators.
 
