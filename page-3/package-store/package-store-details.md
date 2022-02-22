@@ -22,7 +22,7 @@ Every package details page will show an overview of the core properties like the
 
 Also displayed on the left side of the screen are four status fields for a package, displayed as tags below the package name and publisher name.
 
-![](<../../.gitbook/assets/image (5).png>)
+![](<../../.gitbook/assets/image (5) (1).png>)
 
 These fields are binary - they are set to one of two possible values. The text of each field changes accordingly. Some of the fields are also color-coded for easier glancability.
 
@@ -76,7 +76,7 @@ They will create a Win32 software package in Intune when pressed. You have two o
 
 When you choose "managed", RealmJoin will also create AzureAD groups to assign the application to users.
 
-![Application Groups](<../../.gitbook/assets/image (10) (1).png>)
+![Application Groups](<../../.gitbook/assets/image (10) (1) (1).png>)
 
 Assigning users to the main and the preview group will triggered a "required" installation of this software title in Intune. Managed packages currently do not support "available" installations. This is to make sure, that future package/application updates will actually arrive on a user's device - which is not guaranteed via "available" installations.&#x20;
 
@@ -96,7 +96,7 @@ The following tabs are available:
 
 ### Overview / Subscribe
 
-![Overview and Provisioning](<../../.gitbook/assets/image (10) (1) (1).png>)
+![Overview and Provisioning](<../../.gitbook/assets/image (10) (1) (1) (1).png>)
 
 #### Ttitle, Description and other Info
 

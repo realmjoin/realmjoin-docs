@@ -103,4 +103,4 @@ Choosing the location to make sure your runbooks are executed in the correct [Az
 
 Press "Save" to start the initial import of runbooks. Please leave this window open until you see the message "Sync completed".
 
-![](<../.gitbook/assets/image (5) (1) (1) (1).png>)
+![](<../.gitbook/assets/image (5) (1) (1) (1) (1).png>)

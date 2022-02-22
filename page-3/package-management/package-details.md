@@ -79,7 +79,7 @@ If this is a package sourced from the [package store](../package-store/), a link
 
 In the [Overview tab](package-details.md#overview-assignment), you can manage assignments of this package/application to users.
 
-![Package Assignments](<../../.gitbook/assets/image (10).png>)
+![Package Assignments](<../../.gitbook/assets/image (10) (1).png>)
 
 ### Groups ****&#x20;
 
@@ -134,8 +134,20 @@ For managed packages, you can use the Automation tab to configure automatic publ
 
 These values can be globally preconfigured for newly imported packages in [Settings](../../settings.md). Configuring them on a per package basis will overwrite the global defaults.
 
-### RealmJoin Store
+### Config
 
-Raw JSON representation of the package and its metadata object in the store. This is only available for packages sourced from the [package store](../package-store/). This is primarily for debugging and administrative purposes.
+![Package Config Tab](<../../.gitbook/assets/image (5).png>)
+
+You can assign multiple **Technical Application Owners** to a package by storing their email-address as a means to reach out. This is optional and currently is purely for information/administrative purposes.&#x20;
+
+**Arguments** allow you to pass command line switches to an application installation. This is commonly used to define language options or license key that need to be present at installation time.&#x20;
+
+Some package include **Technical Help**, to explain possible **Arguments**.
+
+![](<../../.gitbook/assets/image (10).png>)
+
+### Intune App and RealmJoin Store
+
+Raw JSON representation of the package and its metadata in Intune or in the package store respectively. This is primarily intended for debugging and administrative purposes.
 
 ##
