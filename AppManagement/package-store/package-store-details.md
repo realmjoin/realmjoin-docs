@@ -68,7 +68,7 @@ If you already provisioned the package to your environment, a link to the provis
 
 On the Overview Tab of a package, you will find buttons, that allow you to import the package from the store into your environment.&#x20;
 
-![Subscribe Buttons](<../../.gitbook/assets/image (16).png>)
+![Subscribe Buttons](<../../.gitbook/assets/image (16) (1).png>)
 
 They will create a Win32 software package in Intune when pressed. You have two options:
 
@@ -76,7 +76,7 @@ They will create a Win32 software package in Intune when pressed. You have two o
 
 When you choose "managed", RealmJoin will also create AzureAD groups to assign the application to users.
 
-![Application Groups](<../../.gitbook/assets/image (10) (1) (1) (1).png>)
+![Application Groups](<../../.gitbook/assets/image (10) (1) (1) (1) (1).png>)
 
 Assigning users to the main and the preview group will triggered a "required" installation of this software title in Intune. Managed packages currently do not support "available" installations. This is to make sure, that future package/application updates will actually arrive on a user's device - which is not guaranteed via "available" installations.&#x20;
 
@@ -96,7 +96,7 @@ The following tabs are available:
 
 ### Overview / Subscribe
 
-![Overview and Provisioning](<../../.gitbook/assets/image (10) (1) (1) (1) (1).png>)
+![Overview and Provisioning](<../../.gitbook/assets/image (10) (1) (1) (1) (1) (1).png>)
 
 #### Ttitle, Description and other Info
 

@@ -28,7 +28,7 @@ on the left side of the screen in a glanceable way. This part will not scroll an
 
 The core properties include some glanceable information about the status of a device object. Some statuses these are presented via icons that are either blue (active / present) or red (inactive missing).
 
-![](<../../.gitbook/assets/image (8) (1) (1) (1).png>)Endpoint Management active
+![](<../../.gitbook/assets/image (8) (1) (1) (1) (1).png>)Endpoint Management active
 
 ![](<../../.gitbook/assets/image (14) (1) (1).png>)Disk Encryption enabled
 
@@ -36,7 +36,7 @@ The core properties include some glanceable information about the status of a de
 
 ![](<../../.gitbook/assets/image (6) (1) (1).png>)A/V up-to-date
 
-![](<../../.gitbook/assets/image (16) (1).png>)Compliant device
+![](<../../.gitbook/assets/image (16) (1) (1).png>)Compliant device
 
 ![](<../../.gitbook/assets/image (5) (1) (1).png>) When the object was created
 
@@ -77,7 +77,7 @@ By default, a local admin emergency account is created on a windows client. This
 
 It is recommended to use a "Support Account". When clicking "**Request**", a job is created/queued and RealmJoin Client will create an on-demand local admin account next time it syncs to the backend. This can take up to 30 minutes or alternatively a "Sync this device" can be triggered on the client to speed up the process. RealmJoin Portal will show state of "Requested" until the account is created and automatically switches to a view similiar to the Emergency Account when ready:
 
-![Support Account](<../../.gitbook/assets/image (8) (1).png>)
+![Support Account](<../../.gitbook/assets/image (8) (1) (1).png>)
 
 Click the dots to reveal the password.
 

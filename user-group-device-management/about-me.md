@@ -1,6 +1,6 @@
 # About me
 
-![About Me - User](<../.gitbook/assets/image (10) (1) (1) (1) (1) (1).png>)
+![About Me - User](<../.gitbook/assets/image (10) (1) (1) (1) (1) (1) (1).png>)
 
 "About me" allows users to quickly access links to resources they might need in a modern workplace environment, e.g.
 

@@ -67,7 +67,7 @@ If available, a link to this software title's [MS Security Center Software Inven
 
 ### Version
 
-![](<../../.gitbook/assets/image (8).png>)
+![](<../../.gitbook/assets/image (8) (1).png>)
 
 Also displayed on the left side of the screen is the version of the software package.&#x20;
 
@@ -79,7 +79,7 @@ If this is a package sourced from the [package store](../package-store/), a link
 
 In the [Overview tab](package-details.md#overview-assignment), you can manage assignments of this package/application to users.
 
-![Package Assignments](<../../.gitbook/assets/image (10) (1) (1).png>)
+![Package Assignments](<../../.gitbook/assets/image (10) (1) (1) (1).png>)
 
 ### Groups ****&#x20;
 
