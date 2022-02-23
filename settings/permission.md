@@ -4,7 +4,9 @@
 
 You can delegate access to different levels of functionality of RealmJoin Portal to different users based in AzureAD group- or role membership.&#x20;
 
-There are different levels/roles that can be granted:
+To delegate/limit which runbooks can be used by different operators, please see [Runbook Permissions](../runbooks/runbook-permissions.md) - which is not covered in here.
+
+There are different levels/roles that can be granted on this page:
 
 ### Admin Permissions
 
