@@ -117,7 +117,7 @@ There are two types of changes tracked in Changelog.
 
 ![](<../../.gitbook/assets/image (11).png>) Changes to the instance of the package in your environment, specifically in Intune. E.g. publishing a newer version of the package to your users.
 
-![](<../../.gitbook/assets/image (14).png>) Changes to package store entry.&#x20;
+![](<../../.gitbook/assets/image (14) (1).png>) Changes to package store entry.&#x20;
 
 ### Automation
 
@@ -142,9 +142,9 @@ You can assign multiple **Technical Application Owners** to a package by storing
 
 **Arguments** allow you to pass command line switches to an application installation. This is commonly used to define language options or license key that need to be present at installation time.&#x20;
 
-Some package include **Technical Help**, to explain possible **Arguments**.
+Some package include **Technical Help**, to explain possible **Arguments** and other Requirements.
 
-![](<../../.gitbook/assets/image (10) (1).png>)
+![Technical Help for a Package](<../../.gitbook/assets/image (12).png>)
 
 ### Intune App and RealmJoin Store
 

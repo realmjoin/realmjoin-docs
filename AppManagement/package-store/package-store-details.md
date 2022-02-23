@@ -110,7 +110,7 @@ This tab also shows the Subscribe-Buttons for this package. See Subscribing.
 
 The package's changelog shows when the packages has been updated in RealmJoin's repository plus a short description of changes.
 
-![Appstore Package Changelog](<../../.gitbook/assets/image (12) (1).png>)
+![Appstore Package Changelog](<../../.gitbook/assets/image (12) (1) (1).png>)
 
 ### RealmJoin Store
 

@@ -81,13 +81,13 @@ Please execute these two lines of code using AZ CLI with an administrative accou
 
 Tipp: You can use [Azure CloudShell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview), so you don't need to install and authenticate a local copy of AZ CLI.
 
-![Azure CloudShell - Create the App Registration](<../.gitbook/assets/image (4) (1) (1).png>)
+![Azure CloudShell - Create the App Registration](<../.gitbook/assets/image (4) (1) (1) (1).png>)
 
 The command will return multiple values. Please note down the values for `appId` and `password`.&#x20;
 
 You can review the resulting App Registration in AzureAD. It will be named "RealmJoin Runbook Management".
 
-![App Regsitrations in Azure Portal](<../.gitbook/assets/image (3) (1) (1).png>)
+![App Regsitrations in Azure Portal](<../.gitbook/assets/image (3) (1) (1) (1).png>)
 
 ### Entering Info - Part 2
 

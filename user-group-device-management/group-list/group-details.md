@@ -57,7 +57,7 @@ Press "+" to add a member to the group. The resulting membership will take a sho
 
 Using the "**Remove**" button will not show a new dialogue but add a "x" icon in front of existing members. You can still search/filter for members via Name or User Principal Name / eMail address while this is active.
 
-![Removing Members](<../../.gitbook/assets/image (3).png>)
+![Removing Members](<../../.gitbook/assets/image (3) (1).png>)
 
 Press the "x" icon to remove a member. The resulting change will take a short time and not be immedaitely visible.
 

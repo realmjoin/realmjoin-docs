@@ -1,6 +1,6 @@
 # Package Store
 
-![Package Store Page](<../../.gitbook/assets/image (4).png>)
+![Package Store Page](<../../.gitbook/assets/image (4) (1).png>)
 
 RealmJoin Portal has access to a large library of ready-to-use packages for Microsoft Endpoint Manager (Intune) maintend by glueckkanja-gab AG (GKGAB).&#x20;
 
