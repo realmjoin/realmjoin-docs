@@ -1,6 +1,6 @@
 # Package Details
 
-![Package Details Page](<../../.gitbook/assets/image (9) (1).png>)
+![Package Details Page](<../../.gitbook/assets/image (9) (1) (1).png>)
 
 This page will show detailed information for a single package in your environment and allows to manage its assignment to users and updates.
 
@@ -24,7 +24,7 @@ Every package details page will show an overview of the core properties like the
 
 You can use the Edit-Button next to the package's name to give a package a custom display name relevant to your users. For packages hosted in Intune, this will also rename the package's display name in Intune. This will not break the relationship with the [package store entry](../package-store/package-store-details.md) for packages sourced from the [package store](../package-store/).
 
-![Package Name and Status](<../../.gitbook/assets/image (17) (1).png>)
+![Package Name and Status](<../../.gitbook/assets/image (17) (1) (1).png>)
 
 ### Status fields
 
@@ -63,7 +63,7 @@ Does this software need a commercial license to be used?
 
 If available, a link to this software title's [MS Security Center Software Inventory (TVM)](https://security.microsoft.com/software-inventory/applications)'s entry will be displayed. There you can check for known security issues and outdated versions of this software in your organization.
 
-![An Application's TVM Entry](<../../.gitbook/assets/image (6).png>)
+![An Application's TVM Entry](<../../.gitbook/assets/image (6) (1).png>)
 
 ### Version
 
@@ -79,7 +79,7 @@ If this is a package sourced from the [package store](../package-store/), a link
 
 In the [Overview tab](package-details.md#overview-assignment), you can manage assignments of this package/application to users.
 
-![Package Assignments](<../../.gitbook/assets/image (10) (1) (1) (1).png>)
+![Package Assignments](<../../.gitbook/assets/image (10) (1) (1) (1) (1).png>)
 
 ### Groups ****&#x20;
 
@@ -101,7 +101,7 @@ The following tabs are available:
 
 ### Overview
 
-![Overview Tab](<../../.gitbook/assets/image (9).png>)
+![Overview Tab](<../../.gitbook/assets/image (9) (1).png>)
 
 #### Ttitle, Description and other Info
 
@@ -111,17 +111,17 @@ This tab will show the long description, license and technical help information 
 
 The package's changelog shows when the packages has been updated in RealmJoin's repository or Intune plus a short description of changes.
 
-![Package Changelog](<../../.gitbook/assets/image (11) (1).png>)
+![Package Changelog](<../../.gitbook/assets/image (11) (1) (1).png>)
 
 There are two types of changes tracked in Changelog.
 
-![](<../../.gitbook/assets/image (11).png>) Changes to the instance of the package in your environment, specifically in Intune. E.g. publishing a newer version of the package to your users.
+![](<../../.gitbook/assets/image (11) (1).png>) Changes to the instance of the package in your environment, specifically in Intune. E.g. publishing a newer version of the package to your users.
 
-![](<../../.gitbook/assets/image (14) (1).png>) Changes to package store entry.&#x20;
+![](<../../.gitbook/assets/image (14) (1) (1).png>) Changes to package store entry.&#x20;
 
 ### Automation
 
-![Automation setting for a package](<../../.gitbook/assets/image (17).png>)
+![Automation setting for a package](<../../.gitbook/assets/image (17) (1).png>)
 
 For managed packages, you can use the Automation tab to configure automatic publishing of new version of packages from the package store to your environment.&#x20;
 
@@ -136,7 +136,7 @@ These values can be globally preconfigured for newly imported packages in [Setti
 
 ### Config
 
-![Package Config Tab](<../../.gitbook/assets/image (5).png>)
+![Package Config Tab](<../../.gitbook/assets/image (5) (1).png>)
 
 You can assign multiple **Technical Application Owners** to a package by storing their email-address as a means to reach out. This is optional and currently is purely for information/administrative purposes.&#x20;
 
@@ -144,7 +144,7 @@ You can assign multiple **Technical Application Owners** to a package by storing
 
 Some package include **Technical Help**, to explain possible **Arguments** and other Requirements.
 
-![Technical Help for a Package](<../../.gitbook/assets/image (12).png>)
+![Technical Help for a Package](<../../.gitbook/assets/image (12) (1).png>)
 
 ### Intune App and RealmJoin Store
 

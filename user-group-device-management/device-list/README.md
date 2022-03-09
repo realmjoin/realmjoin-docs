@@ -1,6 +1,6 @@
 # Device List
 
-![Device List View](<../../.gitbook/assets/image (9) (1) (1) (1) (1).png>)
+![Device List View](<../../.gitbook/assets/image (9) (1) (1) (1) (1) (1).png>)
 
 This view offers you a simple way to search or review devices in your environment.
 

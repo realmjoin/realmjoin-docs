@@ -1,6 +1,6 @@
 # User List
 
-![User List View](<../../.gitbook/assets/image (13) (1).png>)
+![User List View](<../../.gitbook/assets/image (13) (1) (1).png>)
 
 This view offers you a simple way to search or review users in your environment.
 

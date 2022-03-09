@@ -4,7 +4,7 @@
 
 If you configure [Process Automation / Runbooks](../runbooks/) in your environment, you can click "Sync runbooks..." to update your runbooks from glueckkanja gab's public repository.
 
-![](<../.gitbook/assets/image (13).png>)
+![](<../.gitbook/assets/image (13) (1).png>)
 
 This will make sure, you have the current state of our runbooks, incl. bugifxes and new functionality. If needed, this will also install needed PowerShell modules in your Azure Automation Acount.
 

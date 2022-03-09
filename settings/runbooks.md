@@ -8,7 +8,7 @@ For a detailed, step-by-step guide on how to onboard RealmJoin Portal and Azure 
 
 ## Parameters
 
-![Runbook Integration Parameters](<../.gitbook/assets/image (16).png>)
+![Runbook Integration Parameters](<../.gitbook/assets/image (16) (1).png>)
 
 ### TenantID
 

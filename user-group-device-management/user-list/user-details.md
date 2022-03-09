@@ -1,6 +1,6 @@
 # User Details
 
-![](<../../.gitbook/assets/image (5) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (5) (1) (1) (1) (1).png>)
 
 This page will show you detailed information about a single user object.&#x20;
 
@@ -24,7 +24,7 @@ Every user details page will show an overview of the core properties like
 
 on the left side of the screen in a glanceable way. This part will not scroll and be always visible in any tab.
 
-![Core Object Properties](<../../.gitbook/assets/image (6) (1).png>)
+![Core Object Properties](<../../.gitbook/assets/image (6) (1) (1).png>)
 
 ### Status information
 
@@ -34,7 +34,7 @@ The core properties include some glanceable information about the status of a us
 * **Member** - The user is a native user in this tenant/organization
 * **Guest** - This is an external user from a different organization
 * **DE/US**... - Two letter code designating the user's [usage location](https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/licensing-groups-resolve-problems#usage-location-isnt-allowed) which is relevant for licensing.
-* ![](<../../.gitbook/assets/image (5) (1) (1).png>) - When the object was created
+* ![](<../../.gitbook/assets/image (5) (1) (1) (1).png>) - When the object was created
 * ![](<../../.gitbook/assets/image (2).png>) - Last signin activity
 
 ### Tabs
