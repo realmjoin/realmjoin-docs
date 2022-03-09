@@ -6,7 +6,7 @@ description: Run runbooks and query their status using RealmJoins API
 
 ## Overview
 
-RealmJoin allows you to use Azure Automation Runbooks to automate day to day operations in your environment. See [Runbooks ](broken-reference)for more information.
+RealmJoin allows you to use Azure Automation Runbooks to automate day to day operations in your environment. See [Runbooks](../runbooks/README.md) for more information.
 
 RealmJoin's API allows you to start runbooks from your application, to query the successful execution of previously triggered runs. See [RealmJoin's Swagger description](https://realmjoin-backend.azurewebsites.net/swagger/index.html#/Runbook) to see, which operations are currently supported.
 
