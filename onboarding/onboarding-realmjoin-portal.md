@@ -30,4 +30,4 @@ Now you can choose the amount of permissions to be given to RealmJoin. If you ar
 
 In most cases continue by clicking "Activate Core Features".
 
-If you want to use [runbooks](broken-reference) to automate daily operations, please continue by connecting to [Azure Automation](connecting-azure-automation.md).
+If you want to use [runbooks](../runbooks/README.md) to automate daily operations, please continue by connecting to [Azure Automation](connecting-azure-automation.md).

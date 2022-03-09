@@ -91,8 +91,6 @@ You can click the group name to enter the group's details and add/remove users t
 
 You can also review the installation status of given assignments / this package on users and clients.
 
-![Package Deployment Status (anonymized)](../../.gitbook/assets/signal-2022-02-21-194314\_001.png)
-
 ## Tabs
 
 The right side of the screen shows the contents of the current tab.&#x20;

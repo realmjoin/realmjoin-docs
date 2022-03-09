@@ -14,7 +14,7 @@ Use a JSON policy to configure AnyDesk in the [RealmJoin Classic] Group Settings
 The following JSON contains all configurations:
 
 **Key** = Integration\
-**Value** = {"AnyDesk: { "Enabled": true, "BootstrapperUrl": "[https://.../.../AnyDesk.exe](https://../.../AnyDesk.exe)", "Ui": {TrayMenuTextEnglish": "Start remote session} } }
+**Value** = `{"AnyDesk: { "Enabled": true, "BootstrapperUrl": "https://.../.../AnyDesk.exe", "Ui": {TrayMenuTextEnglish": "Start remote session} } }`
 
 {% hint style="info" %}
 The BootstrapperUrl is your **user client URL**.
@@ -28,7 +28,7 @@ It is also possible to split this single JSON from above, in three different JSO
 and
 
 **Key** = Integration.AnyDesk.BootstrapperUrl\
-**Value** = "[https://.../.../AnyDesk.exe](https://../.../AnyDesk.exe)"
+**Value** = `https://.../.../AnyDesk.exe`
 
 and
 
@@ -38,7 +38,7 @@ and
 The following JSON is possible as well:
 
 **Key** = Integration.AnyDesk\
-**Value** = {"Enabled":true, BootstrapperUrl": "[https://.../.../AnyDesk.exe](https://../.../AnyDesk.exe)", "UI":{"TrayMenuTextEnglish": "Start remote session"} }
+**Value** = `{"Enabled":true, BootstrapperUrl": "https://.../.../AnyDesk.exe", "UI":{"TrayMenuTextEnglish": "Start remote session"} }`
 
 ## Back-End Integration
 

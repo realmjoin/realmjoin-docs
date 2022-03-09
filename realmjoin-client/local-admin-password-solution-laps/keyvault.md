@@ -23,13 +23,13 @@ The following table shows you the steps for Azure KeyVault Creation:
 | 13. Click **Key permissions**                                                                                                                                                                                                                                                                                     |                                                 |
 | 14. For **Cryptographic Operations** add Decrypt, Encrypt, Unwrap Key, Wrap Key, Verify and Sign                                                                                                                                                                                                                  | ![](<../../.gitbook/assets/image (17) (1).png>) |
 | 15. Click **Save** and then **OK**                                                                                                                                                                                                                                                                                |                                                 |
-| <p>16. Finally, go to <strong>Overview</strong> and share the <strong>DNS Name</strong> with the <a href="mailto:product.support@glueckkanja.com">Glück &#x26; Kanja support</a><strong></strong></p><p><strong></strong></p><p><strong>Example Value</strong>: https://example-rj-localadmin.vault.azure.net</p> | ![](<../../.gitbook/assets/image (14).png>)     |
+| <p>16. Finally, go to <strong>Overview</strong> and share the <strong>DNS Name</strong> with the <a href="mailto:product.support@glueckkanja.com">Glück &#x26; Kanja support</a><strong></strong></p><p><strong></strong></p><p><strong>Example Value</strong>: `https://example-rj-localadmin.vault.azure.net`</p> | ![](<../../.gitbook/assets/image (14).png>)     |
 
 ## KeyVault Storage of Secrets
 
 RealmJoin will not store the secret in any proprietary storage but instead create an **Azure KeyVault Secret** to store it in a secure and auditable way. The KeyVault API is documented here:
 
-[https://docs.microsoft.com/en-us/rest/api/keyvault/setsecret/setsecret](https://docs.microsoft.com/en-us/rest/api/keyvault/setsecret/setsecret)
+[https://docs.microsoft.com/en-us/rest/api/keyvault/secrets/set-secret/set-secret](https://docs.microsoft.com/en-us/rest/api/keyvault/secrets/set-secret/set-secret)
 
 The entry in KeyVault will be added with the device name as a key and the plain GUID as the secret value. See the following example screenshot**:**
 

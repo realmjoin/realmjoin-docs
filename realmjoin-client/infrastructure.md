@@ -29,16 +29,16 @@ For **BranchCache** to be effective the clients need to be able to communicate d
 
 RealmJoin connects to the following URLs that might be considered in your firewall settings:
 
-* [https://cdn.realmjoin.com/](https://cdn.realmjoin.com)
-* [https://x1.c.lencr.org/](https://x1.c.lencr.org)
-* [https://realmjoin-backend.azurewebsites.net/](https://realmjoin-backend.azurewebsites.net)
-* [https://realmjoin-backend-staging.azurewebsites.net/](https://realmjoin-backend-staging.azurewebsites.net)
-* [https://packages.gkdatacenter.net/](https://packages.gkdatacenter.net)
-* [https://enterpriseregistration.windows.net/](https://enterpriseregistration.windows.net)
-* [https://gkrealmjoin.s3.amazonaws.com/](https://gkrealmjoin.s3.amazonaws.com)
-* [https://login.microsoftonline.com/](https://login.microsoftonline.com)
-* [https://graph.microsoft.com/](https://graph.microsoft.com)
-* [https://realmjoinstaticcdn.azureedge.net](https://realmjoinstaticcdn.azureedge.net) (Notifier)
+* `https://cdn.realmjoin.com/`
+* `https://x1.c.lencr.org/`
+* `https://realmjoin-backend.azurewebsites.net/`
+* `https://realmjoin-backend-staging.azurewebsites.net/`
+* `https://packages.gkdatacenter.net/`
+* `https://enterpriseregistration.windows.net/`
+* `https://gkrealmjoin.s3.amazonaws.com/`
+* `https://login.microsoftonline.com/`
+* `https://graph.microsoft.com/`
+* `https://realmjoinstaticcdn.azureedge.net` (Notifier)
 
 ## Components
 
@@ -65,7 +65,7 @@ To provide the **BranchCache** mechanism, the endpoint has to provide the chunk 
 
 #### Web Interface
 
-The web interface can be reached via the [realmjoin portal](https://realmjoin-web.azurewebsites.net) and is in detailed explained in the chapter [RealmJoin Portal](broken-reference). After a logging with the provided credentials, the administrator can manage the package distribution in his tenant and access extensive information.
+The web interface can be reached via the [realmjoin portal](https://realmjoin-web.azurewebsites.net). After a logging with the provided credentials, the administrator can manage the package distribution in his tenant and access extensive information.
 
 ## Security Features
 

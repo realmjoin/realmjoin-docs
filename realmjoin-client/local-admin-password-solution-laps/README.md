@@ -181,8 +181,6 @@ Key `LocalAdminManagement.PrivilegedAccount` (for common settings see [group set
 
 Use the RealmJoin Portal to access the passwords. It will appears similar to this.​
 
-![](https://1370450175-files.gitbook.io/\~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LoFsqW9gZ0AjMnSuPaT%2Fuploads%2Fgit-blob-b815b68a1fd701333beb6ee50afdae740d94d5da%2Frj-laps-table-complete.png?alt=media)
-
 ## Enable self-service <a href="#enable-self-service" id="enable-self-service"></a>
 
 Users may access accounts created on their _own_ devices (they are "PrimaryUser") when enabled using the _RealmJoin Portal_ starting with version `2022.5.1`. To enable, define a setting using the key `Allow.SelfLAPS`. This setting may be defined on groups and users. As with all settings prefixed with `Allow.*` they are AND-joined across the user and all of their groups.

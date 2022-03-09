@@ -13,7 +13,7 @@ Application Insights is an extensible Application Performance Management service
 * Then, click **Review + Create**
 * Review your settings and click **Create**
 
-Then, copy the **Instrumentation Key** and send it to [GK Support](https://github.com/realmjoin/realmjoin-gitbooks/tree/3c2250fcc0d712e1b40ac535a1766b57ce01910c/docs/product.support@glueckkanja.com).
+Then, copy the **Instrumentation Key** and send it to [GK Support](support@glueckkanja-gab.com).
 
 ![](<../../.gitbook/assets/image (20).png>)
 

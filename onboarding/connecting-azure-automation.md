@@ -2,7 +2,7 @@
 
 ## Overview
 
-To enable RealmJoin Portal to offer [runbooks ](broken-reference)as a way to automate daily operations, you need to connect an [Azure Automation Account](https://azure.microsoft.com/en-us/services/automation/). This Automation Account will host your runbooks as well as the [permissions](../runbooks/azure-ad-roles-and-permissions.md) needed for the runbooks to function in your environment.
+To enable RealmJoin Portal to offer [runbooks ](../runbooks/README.md)as a way to automate daily operations, you need to connect an [Azure Automation Account](https://azure.microsoft.com/en-us/services/automation/). This Automation Account will host your runbooks as well as the [permissions](../runbooks/azure-ad-roles-and-permissions.md) needed for the runbooks to function in your environment.
 
 This guide will help you to onboard either a new or existing Automation Account.
 
@@ -35,8 +35,6 @@ Please note down the Resource Group's name as it will be needed later.
 Create an Azure Automation Account in the given Resource Group. In this example we will use the name `c4a8toydariaazacc01` for the Automation Account. It will host your shared and private runbooks.
 
 [https://portal.azure.com/#create/Microsoft.AutomationAccount](https://portal.azure.com/#create/Microsoft.AutomationAccount)&#x20;
-
-![Create an Azure Automation Account](https://dev.azure.com/c4a8/508e625f-6172-4534-b31e-a05ed53d9768/\_apis/git/repositories/f846934d-7f2f-42ae-a15a-6d20ceb0f586/Items?path=/.attachments/image-f7b89790-de1d-4afb-a951-ac601b465ca8.png\&download=false\&resolveLfs=true&%24format=octetStream\&api-version=5.0-preview.1\&sanitize=true\&versionDescriptor.version=wikiMaster)
 
 Make sure, to have "Create Azure Run As account" set to "Yes".
 
