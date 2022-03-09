@@ -8,7 +8,7 @@ RealmJoin skips the whole ID number sharing process because every AnyDesk ID num
 
 ## AnyDesk Deployment Workflow
 
-1. The customer sends a request to [Glück & Kanja (GK)](mailto:support@glueckkanja.com), for AnyDesk.
+1. The customer sends a request to [glueckkanja-gab (GKGAB)](mailto:support@glueckkanja-gab.com), for AnyDesk.
 2. GK orders a license from AnyDesk.
 3. AnyDesk sends a license and login credentials to GK
 4. GK deploys AnyDesk
