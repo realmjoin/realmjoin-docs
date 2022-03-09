@@ -2,6 +2,8 @@
 
 Our Local Administrator Password Solution (LAPS) was built to solve the issue of using identical accounts in your environment for user support or privilege escalation. LAPS creates strong passwords for local accounts which are stored securely in _your own_ [Azure Key Vault](https://docs.realmjoin.com/core-features/local-admin-password-solution/keyvault). For auditing, you also have to provide an [Application Insights](https://docs.realmjoin.com/core-features/local-admin-password-solution/application-insights) instance, though we are transitioning to using Log Analytics workspaces directly.
 
+Most settings denoted on this page have to be configured using [RealmJoin Classic Portal](https://realmjoin-web.azurewebsites.net).
+
 ## Pre-requirements <a href="#pre-requirements" id="pre-requirements"></a>
 
 Before you can start with LAPS you have to meet the following pre-requirements:
@@ -38,17 +40,17 @@ Each account type may be configured independently using the following common set
 In the following table `$` represents any of the three `Account` JSON object from above.
 {% endhint %}
 
-| Settings Key       | Default Value                                                                                | Description                                                                                                      |
-| ------------------ | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| $.NamePattern      | `"ADM-{HEX:8}"`                                                                              | Special. See [Privileged account](local-admin-password-solution-laps.md#privileged-account).                     |
-| $.DisplayName      | `"RealmJoin Local Administrator"`                                                            | Display name                                                                                                     |
-| $.PasswordCharSet  | `"!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz"`                         | Charset for the password generator (excludes lookalikes)                                                         |
-| $.PasswordLength   | 20                                                                                           | Password length                                                                                                  |
-| $.PasswordPreset   | 0                                                                                            | Preset password templates, see [Password generation](local-admin-password-solution-laps.md#password-generation). |
-| $.MaxStaleness     | Special. See [Account recreation](local-admin-password-solution-laps.md#account-recreation). | Preset password templates, see [Password generation](local-admin-password-solution-laps.md#password-generation). |
-| $.OnDemand         | Special. See [Support account](local-admin-password-solution-laps.md#support-account).       | Create account only when requested.                                                                              |
-| $.Expiration       | Special. See [Privileged account](local-admin-password-solution-laps.md#privileged-account). | Fixed account expiration date (ISO-8601 format)                                                                  |
-| $.PasswordRenewals | Special. See [Privileged account](local-admin-password-solution-laps.md#privileged-account). | Fixed account expiration date (ISO-8601 format)                                                                  |
+| Settings Key       | Default Value                                                        | Description                                                                   |
+| ------------------ | -------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| $.NamePattern      | `"ADM-{HEX:8}"`                                                      | Special. See [Privileged account](./#privileged-account).                     |
+| $.DisplayName      | `"RealmJoin Local Administrator"`                                    | Display name                                                                  |
+| $.PasswordCharSet  | `"!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz"` | Charset for the password generator (excludes lookalikes)                      |
+| $.PasswordLength   | 20                                                                   | Password length                                                               |
+| $.PasswordPreset   | 0                                                                    | Preset password templates, see [Password generation](./#password-generation). |
+| $.MaxStaleness     | Special. See [Account recreation](./#account-recreation).            | Preset password templates, see [Password generation](./#password-generation). |
+| $.OnDemand         | Special. See [Support account](./#support-account).                  | Create account only when requested.                                           |
+| $.Expiration       | Special. See [Privileged account](./#privileged-account).            | Fixed account expiration date (ISO-8601 format)                               |
+| $.PasswordRenewals | Special. See [Privileged account](./#privileged-account).            | Fixed account expiration date (ISO-8601 format)                               |
 
 ## Password generation <a href="#password-generation" id="password-generation"></a>
 

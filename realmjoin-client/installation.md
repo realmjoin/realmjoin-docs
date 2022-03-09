@@ -32,25 +32,25 @@ Use the following instructions to deploy RealmJoin:
 
 * Under **Other** choose **Line-of-business-app** and click **Select**
 
-![](<../.gitbook/assets/image (12).png>)
+![](<../.gitbook/assets/image (12) (1).png>)
 
 * Next click **Select app package file**
 * As **App package file** browse for **RealmJoin.msi** on your device
 
-![](<../.gitbook/assets/image (19).png>)
+![](<../.gitbook/assets/image (19) (1).png>)
 
 * Then, click **OK**
 * Under **App information** fill in all required fields and set **Ignore app version** to **Yes**
 
-![](<../.gitbook/assets/image (15).png>)
+![](<../.gitbook/assets/image (15) (1).png>)
 
 * Under **Assignments** add groups and users for your RealmJoin app
 
-![](<../.gitbook/assets/image (10).png>)
+![](<../.gitbook/assets/image (10) (1).png>)
 
 * Under **Review + create** check all your settings
 
-![](<../.gitbook/assets/image (14).png>)
+![](<../.gitbook/assets/image (14) (1).png>)
 
 * Finally click **Create**
 
@@ -121,5 +121,5 @@ reamjoin.exe -install
 
 The RealmJoin.MSI is SHA2 (256 bit) signed by GK and therefore recognized by Windows as safe to install.
 
-![](<../.gitbook/assets/image (16).png>)
+![](<../.gitbook/assets/image (16) (1).png>)
 

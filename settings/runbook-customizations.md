@@ -6,4 +6,4 @@ Please see the article on [Runbook Customization](../runbooks/runbook-customizat
 
 This page implements a simple editor, able to do syntax checking for common JSON errors. It also allows to fold in / hide code for better visibility.
 
-![JSON Syntax Checking](<../.gitbook/assets/image (8).png>)
+![JSON Syntax Checking](<../.gitbook/assets/image (8) (1).png>)

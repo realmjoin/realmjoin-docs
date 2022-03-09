@@ -24,7 +24,7 @@ Every package details page will show an overview of the core properties like the
 
 You can use the Edit-Button next to the package's name to give a package a custom display name relevant to your users. For packages hosted in Intune, this will also rename the package's display name in Intune. This will not break the relationship with the [package store entry](../package-store/package-store-details.md) for packages sourced from the [package store](../package-store/).
 
-![Package Name and Status](<../../.gitbook/assets/image (17) (1) (1).png>)
+![Package Name and Status](<../../.gitbook/assets/image (17) (1) (1) (1).png>)
 
 ### Status fields
 
@@ -67,7 +67,7 @@ If available, a link to this software title's [MS Security Center Software Inven
 
 ### Version
 
-![](<../../.gitbook/assets/image (8) (1).png>)
+![](<../../.gitbook/assets/image (8) (1) (1).png>)
 
 Also displayed on the left side of the screen is the version of the software package.&#x20;
 
@@ -79,7 +79,7 @@ If this is a package sourced from the [package store](../package-store/), a link
 
 In the [Overview tab](package-details.md#overview-assignment), you can manage assignments of this package/application to users.
 
-![Package Assignments](<../../.gitbook/assets/image (10) (1) (1) (1) (1).png>)
+![Package Assignments](<../../.gitbook/assets/image (10) (1) (1) (1) (1) (1).png>)
 
 ### Groups ****&#x20;
 
@@ -117,11 +117,11 @@ There are two types of changes tracked in Changelog.
 
 ![](<../../.gitbook/assets/image (11) (1).png>) Changes to the instance of the package in your environment, specifically in Intune. E.g. publishing a newer version of the package to your users.
 
-![](<../../.gitbook/assets/image (14) (1) (1).png>) Changes to package store entry.&#x20;
+![](<../../.gitbook/assets/image (14) (1) (1) (1).png>) Changes to package store entry.&#x20;
 
 ### Automation
 
-![Automation setting for a package](<../../.gitbook/assets/image (17) (1).png>)
+![Automation setting for a package](<../../.gitbook/assets/image (17) (1) (1).png>)
 
 For managed packages, you can use the Automation tab to configure automatic publishing of new version of packages from the package store to your environment.&#x20;
 
@@ -144,7 +144,7 @@ You can assign multiple **Technical Application Owners** to a package by storing
 
 Some package include **Technical Help**, to explain possible **Arguments** and other Requirements.
 
-![Technical Help for a Package](<../../.gitbook/assets/image (12) (1).png>)
+![Technical Help for a Package](<../../.gitbook/assets/image (12) (1) (1).png>)
 
 ### Intune App and RealmJoin Store
 
