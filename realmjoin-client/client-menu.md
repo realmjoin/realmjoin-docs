@@ -10,7 +10,7 @@ Software Packages contain customizable software categories. For example, **Brows
 
 Furthermore, RealmJoin offers a remote function (**Start remote session**).
 
-For more information read our [AnyDesk article](anydesk-integration.md).
+For more information read our [AnyDesk article](anydesk-integration/).
 
 A further useful feature is **Sync this device:**
 

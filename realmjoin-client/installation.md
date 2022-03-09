@@ -46,7 +46,7 @@ Use the following instructions to deploy RealmJoin:
 
 * Under **Assignments** add groups and users for your RealmJoin app
 
-![](<../.gitbook/assets/image (10) (1).png>)
+![](<../.gitbook/assets/image (10) (1) (1).png>)
 
 * Under **Review + create** check all your settings
 

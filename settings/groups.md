@@ -4,5 +4,5 @@ RealmJoin Portal uses naming prefixes to attribute functions to specific AzureAD
 
 This page allows to define these prefixes and to map group name prefixes to descriptive titles which RealmJoin will use when refering to these groups.
 
-![Group Prefix Mapping](<../.gitbook/assets/image (10) (1) (1).png>)
+![Group Prefix Mapping](<../.gitbook/assets/image (10) (1) (1) (1).png>)
 

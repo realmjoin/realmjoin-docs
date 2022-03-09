@@ -8,7 +8,7 @@ To do so, [Microsoft Update Compliance](https://docs.microsoft.com/en-us/windows
 
 Use the LogAnalytics Settings page to configure access to this workspace.&#x20;
 
-![Log Analytics Settings](<../.gitbook/assets/image (10) (1) (1) (1).png>)
+![Log Analytics Settings](<../.gitbook/assets/image (10) (1) (1) (1) (1).png>)
 
 ## Parameters
 

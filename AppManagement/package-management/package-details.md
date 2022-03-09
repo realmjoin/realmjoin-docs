@@ -24,7 +24,7 @@ Every package details page will show an overview of the core properties like the
 
 You can use the Edit-Button next to the package's name to give a package a custom display name relevant to your users. For packages hosted in Intune, this will also rename the package's display name in Intune. This will not break the relationship with the [package store entry](../package-store/package-store-details.md) for packages sourced from the [package store](../package-store/).
 
-![Package Name and Status](<../../.gitbook/assets/image (17) (1) (1) (1).png>)
+![Package Name and Status](<../../.gitbook/assets/image (17) (1) (1) (1) (1).png>)
 
 ### Status fields
 
@@ -79,7 +79,7 @@ If this is a package sourced from the [package store](../package-store/), a link
 
 In the [Overview tab](package-details.md#overview-assignment), you can manage assignments of this package/application to users.
 
-![Package Assignments](<../../.gitbook/assets/image (10) (1) (1) (1) (1) (1).png>)
+![Package Assignments](<../../.gitbook/assets/image (10) (1) (1) (1) (1) (1) (1).png>)
 
 ### Groups ****&#x20;
 
@@ -121,7 +121,7 @@ There are two types of changes tracked in Changelog.
 
 ### Automation
 
-![Automation setting for a package](<../../.gitbook/assets/image (17) (1) (1).png>)
+![Automation setting for a package](<../../.gitbook/assets/image (17) (1) (1) (1).png>)
 
 For managed packages, you can use the Automation tab to configure automatic publishing of new version of packages from the package store to your environment.&#x20;
 

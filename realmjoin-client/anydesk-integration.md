@@ -1,2 +1,0 @@
-# AnyDesk Integration
-
