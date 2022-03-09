@@ -105,7 +105,7 @@ Key `LocalAdminManagement.EmergencyAccount` (for common settings see [group sett
   "DisplayName": "Emergency Access",
   "MaxStaleness": "04:00",
   "PasswordPreset": 2
-}js
+}
 ```
 
 ## Support account <a href="#support-account" id="support-account"></a>
@@ -122,28 +122,87 @@ When using on-demand mode account recreation (`MaxStaleness`) _should not be use
 
 Requirements for the on-demand workflow:
 
-1. 1.The mode is enabled by setting `"OnDemand": true`.
-2. 2.A user is signed in
-3. 3.The RealmJoin agent is running
-4. 4.The device is connected to the internet
-5. 5.The device can reach the RealmJoin backend
+1. The mode is enabled by setting `"OnDemand": true`.
+2. A user is signed in
+3. The RealmJoin agent is running
+4. The device is connected to the internet
+5. The device can reach the RealmJoin backend
 
-It might take up to 30 minutes for the RealmJoin agent to notice the request. The signed-in user may speed up this progress by choosing "Sync this device" from the RealmJoin tray menu.When not in on-demand mode it will be created proactively._Example_ Key `LocalAdminManagement.SupportAccount` (for common settings see [group settings](https://docs.realmjoin.com/core-features/local-admin-password-solution#group-settings))1{2"NamePattern": "ADM-Support-User-{HEX:2}",3"DisplayName": "Support User",4"OnDemand": true,5"PasswordPreset": 16}Copied!
+{% hint style="info" %}
+It might take up to 30 minutes for the RealmJoin agent to notice the request. The signed-in user may speed up this progress by choosing "Sync this device" from the RealmJoin tray menu.
+{% endhint %}
+
+When not in on-demand mode it will be created proactively.
+
+_Example_&#x20;
+
+Key `LocalAdminManagement.SupportAccount` (for common settings see [group settings](https://docs.realmjoin.com/core-features/local-admin-password-solution#group-settings))
+
+```json
+{
+  "NamePattern": "ADM-Support-User-{HEX:2}",
+  "DisplayName": "Support User",
+  "OnDemand": true,
+  "PasswordPreset": 1
+}
+```
 
 ## Privileged account <a href="#privileged-account" id="privileged-account"></a>
 
-This account type is designed to be used by power users that need regular but controlled admin privileges on their own devices. A fixed account expiration date can be specified (`Expiration`).For this type account recreation (`MaxStaleness`) _should not be used_. The whole point is to have a persistent account for your users.Forced password rotations are supported:
+This account type is designed to be used by power users that need regular but controlled admin privileges on their own devices. A fixed account expiration date can be specified (`Expiration`).
+
+{% hint style="danger" %}
+For this type account recreation (`MaxStaleness`) _should not be used_. The whole point is to have a persistent account for your users.
+{% endhint %}
+
+Forced password rotations are supported:
 
 1. 1.`2021-11-20T12:34:56+01:00`: any explicit timestamp in ISO8601. Multiple timestamps can be specified.
 2. 2.`DayAfterCreate`: after the account has been created the account's password will be changed. This is useful when users are supposed to set up Windows Hello for additional sign-in options.
 3. 3.`Monthly` or `Weekly`: Weekly takes preference over Monthly. If no more conditions are specified, defaults are "1st day of month" for Monthly or "Monday" for Weekly. All seven weekday can be specified. So if `Wednesday` and `Weekly` are specified, the password will be changed every Wednesday. If `Wednesday` and `Monthly` are specified, the password will be changed on the first Wednesday each month.
 
-_Example_ Key `LocalAdminManagement.PrivilegedAccount` (for common settings see [group settings](https://docs.realmjoin.com/core-features/local-admin-password-solution#group-settings))1{2"NamePattern": "ADM-Privileged-User-{COUNT:1}",3"DisplayName": "Privileged User",4"PasswordRenewals": \["DayAfterCreate", "Monthly", "Thursday"],5"PasswordPreset": 3,6"PasswordLength": 37}Copied!
+_Example_&#x20;
+
+Key `LocalAdminManagement.PrivilegedAccount` (for common settings see [group settings](https://docs.realmjoin.com/core-features/local-admin-password-solution#group-settings))
+
+```json
+{
+  "NamePattern": "ADM-Privileged-User-{COUNT:1}",
+  "DisplayName": "Privileged User",
+  "PasswordRenewals": ["DayAfterCreate", "Monthly", "Thursday"],
+  "PasswordPreset": 3,
+  "PasswordLength": 3
+}
+```
 
 ## Accessing passwords <a href="#accessing-passwords" id="accessing-passwords"></a>
 
-Use the RealmJoin Portal to access the passwords. It will appears similar to this.![](https://1370450175-files.gitbook.io/\~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LoFsqW9gZ0AjMnSuPaT%2Fuploads%2Fgit-blob-b815b68a1fd701333beb6ee50afdae740d94d5da%2Frj-laps-table-complete.png?alt=media)​
+Use the RealmJoin Portal to access the passwords. It will appears similar to this.​
+
+![](https://1370450175-files.gitbook.io/\~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LoFsqW9gZ0AjMnSuPaT%2Fuploads%2Fgit-blob-b815b68a1fd701333beb6ee50afdae740d94d5da%2Frj-laps-table-complete.png?alt=media)
 
 ## Enable self-service <a href="#enable-self-service" id="enable-self-service"></a>
 
-Users may access accounts created on their _own_ devices (they are "PrimaryUser") when enabled using the _RealmJoin Portal_ starting with version `2022.5.1`. To enable, define a setting using the key `Allow.SelfLAPS`. This setting may be defined on groups and users. As with all settings prefixed with `Allow.*` they are AND-joined across the user and all of their groups.1{2"EmergencyAccount": true,3"SupportAccount": true,4"PrivilegedAccount": true5}Copied!The value can also be pure boolean `true`/`false`. This may be used as a wildcard and encompasses every current and future account type. Please note that this is only recommended for disabling access (`false`).In the past it was recommended to set this setting to `true`. However, as we continue to expand RealmJoin, new account types will be added. It is therefore strongly recommended to migrate all `true` values to the more explicit object notation.A sample configuration may look like this:GroupValueCommentAll remote workers`{ "EmergencyAccount": true }`Remote workers may access their own devices emergency account.All developers`{ "EmergencyAccount": true, "PrivilegedAccount": true }`Developers may access their emergency account and their privileged account—no matter whether they are remote workers or not.All trainees`false`Trainees must never have access to any of the three account types **and** all future types, even if they are remote workers or developers.
+Users may access accounts created on their _own_ devices (they are "PrimaryUser") when enabled using the _RealmJoin Portal_ starting with version `2022.5.1`. To enable, define a setting using the key `Allow.SelfLAPS`. This setting may be defined on groups and users. As with all settings prefixed with `Allow.*` they are AND-joined across the user and all of their groups.
+
+```json
+{
+  "EmergencyAccount": true,
+  "SupportAccount": true,
+  "PrivilegedAccount": true
+}
+```
+
+The value can also be pure boolean `true`/`false`. This may be used as a wildcard and encompasses every current and future account type. Please note that this is only recommended for disabling access (`false`).
+
+{% hint style="info" %}
+In the past it was recommended to set this setting to `true`. However, as we continue to expand RealmJoin, new account types will be added. It is therefore strongly recommended to migrate all `true` values to the more explicit object notation
+{% endhint %}
+
+A sample configuration may look like this:
+
+| Group              |                                                           | Comment                                                                                                                                   |
+| ------------------ | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| All remote workers | `{ "EmergencyAccount": true }`                            | Remote workers may access their own devices emergency account.                                                                            |
+| All developers     | `{ "EmergencyAccount": true, "PrivilegedAccount": true }` | Developers may access their emergency account and their privileged account—no matter whether they are remote workers or not.              |
+| All trainees       | `false`                                                   | Trainees must never have access to any of the three account types **and** all future types, even if they are remote workers or developers |
