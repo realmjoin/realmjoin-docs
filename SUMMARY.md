@@ -38,6 +38,7 @@
   * [Notifications](realmjoin-client/notifications.md)
   * [Client Menu](realmjoin-client/client-menu.md)
   * [AnyDesk Integration](realmjoin-client/anydesk-integration/README.md)
+    * [Customer Tasks](realmjoin-client/anydesk-integration/customer-tasks.md)
     * [glueckkanja-gab Tasks](realmjoin-client/anydesk-integration/glueckkanja-gab-tasks.md)
   * [Installation](realmjoin-client/installation.md)
   * [Connecting a Tenant](realmjoin-client/connecting-a-tenant.md)
