@@ -5,11 +5,11 @@
 RealmJoin Client is an optional component that you can use alongside RealmJoin Portal on Windows 10/11 clients. It enables additional scenarios, like
 
 * [Local Admin Password Solution (LAPS)](local-admin-password-solution-laps/)
-* [Notifications ](notifications.md)
+* [Notifications](showing-notifications.md)&#x20;
 * [AnyDesk integration](anydesk-integration/)
 * Invetory tasks (collecting device/client information)
 
-It can also be used to deploy windows software and configurations that that can not be easily delivered using MS Endpoint Manager / Intune.
+It can also be used to [deploy windows software and configurations](notifications.md) that that can not be easily delivered using MS Endpoint Manager / Intune.
 
 ## Compliance Checks
 
