@@ -1,6 +1,6 @@
 # Installation
 
-RealmJoin Client can be deployed on a device using one of multiple ways, depending on the individual scenario. As a first step, download the RealmJoin installer of your choice and preceed to the desired installation method.
+RealmJoin Client can be deployed on a device using one of multiple ways - depending on the individual scenario. As a first step, download the RealmJoin installer of your choice and preceed to the desired installation method.
 
 Stable release:\
 [RealmJoin Release Version](https://gkrealmjoin.s3.amazonaws.com/win-release/RealmJoin.msi)
@@ -12,8 +12,6 @@ Canary Channel (Experimental, first testing):\
 [RealmJoin Canary Version](https://gkrealmjoin.s3.amazonaws.com/win-canary/RealmJoin.msi)
 
 ## Install using Microsoft Intune
-
-
 
 RealmJoin has to deploy through Microsoft Intune by deploying the MSI as a Line-of-Business app. The following article is a step-by-step guide to deploy RealmJoin.
 

@@ -8,9 +8,7 @@ After being successfully installed, RealmJoin is automatically started on the us
 
 Software Packages contain customizable software categories. For example, **Browser** contains links to Mozilla Firefox or Google Chrome. With a click on a link, RealmJoin starts automatically an installation or an updating process (if the software is already installed).
 
-Furthermore, RealmJoin offers a remote function (**Start remote session**).
-
-For more information read our [AnyDesk article](anydesk-integration/).
+Furthermore, RealmJoin offers a remote function (**Start remote session**). For more information read our [AnyDesk article](anydesk-integration/).
 
 A further useful feature is **Sync this device:**
 
