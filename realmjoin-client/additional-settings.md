@@ -110,7 +110,7 @@ Integration.Notification
 
 ### LocalAdminManagement Features
 
-This section shows you all necessary settings for the LocalAdminManagement features. For more details about this features read [Local Admin Password Solution article](core-features/local-admin-password-solution/).
+This section shows you all necessary settings for the LocalAdminManagement features. For more details about this features read [Local Admin Password Solution article](local-admin-password-solution-laps/README.md).
 
 **Key**  
 LocalAdminManagement.Inactive
