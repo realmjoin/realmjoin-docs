@@ -1,4 +1,6 @@
-# Client Menu
+# User Inteface
+
+## Client Menu
 
 After being successfully installed, RealmJoin is automatically started on the user login and is permanently active in the background. It is represented with an ID card icon. Clicking on the icon opens up the RealmJoin client menu. It contains basic information in the lower part and several links in the upper part. These links are ordered in two different sections - **Web Links** and **Software Packages**.
 

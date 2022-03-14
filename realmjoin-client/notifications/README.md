@@ -6,7 +6,7 @@ When deploying packages/configurations via RealmJoin Agent notifications inform 
 
 The following screen shows the RealmJoin toast notification. It appears in the Windows notification center:
 
-![](<../.gitbook/assets/image (11).png>)
+![](<../../.gitbook/assets/image (11).png>)
 
 This screen shows a customizable **hero image** (for more information about hero images, click [here](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts#hero-image))
 

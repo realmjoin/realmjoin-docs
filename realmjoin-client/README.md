@@ -9,13 +9,13 @@ RealmJoin Client is an optional component that you can use alongside RealmJoin P
 * [AnyDesk integration](anydesk-integration/)
 * Invetory tasks (collecting device/client information)
 
-It can also be used to [deploy windows software and configurations](notifications.md) that that can not be easily delivered using MS Endpoint Manager / Intune.
+It can also be used to [deploy windows software and configurations](notifications/) that that can not be easily delivered using MS Endpoint Manager / Intune.
 
 ## Compliance Checks
 
 RealmJoin uses the **user identity** and checks with it at a Cloud-Service for an **Extended Policy** and optionally for a **Secondary Identity**, then the RealmJoin Security Assessment **checks if the system is qualified** (Encryption, Patch Level, Firewall, Anti-Virus, etc. - optionally, an Intune-Health-Check may be sufficient). If the user's device is eligible **software- and configuration-Policy** will be applied (Mandatory Applications, etc.).
 
-This can trigger[ package installations](notifications.md#package-installation) and the display of[ RealmJoin's own ESP ](realmjoin-esp.md)page.
+This can trigger[ package installations](notifications/#package-installation) and the display of[ RealmJoin's own ESP ](notifications/realmjoin-esp.md)page.
 
 ## Processes
 
