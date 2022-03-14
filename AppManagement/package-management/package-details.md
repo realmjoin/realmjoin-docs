@@ -24,7 +24,7 @@ Every package details page will show an overview of the core properties like the
 
 You can use the Edit-Button next to the package's name to give a package a custom display name relevant to your users. For packages hosted in Intune, this will also rename the package's display name in Intune. This will not break the relationship with the [package store entry](../package-store/package-store-details.md) for packages sourced from the [package store](../package-store/).
 
-![Package Name and Status](<../../.gitbook/assets/image (17) (1) (1) (1) (1).png>)
+![Package Name and Status](<../../.gitbook/assets/image (17) (1) (1) (1) (1) (1).png>)
 
 ### Status fields
 
@@ -34,13 +34,13 @@ These fields are binary - they are set to one of two possible values. The text o
 
 #### Maintained / Unmaintained
 
-GKGAB will provide new versions / updates of maintained packages on a regular basis.&#x20;
+GKGAB will provide new versions / updates of maintained packages on a regular basis.
 
 Automatic package management can be applied to keep the software delivered by these packages permanentely up-to-date in your environment.
 
 #### Generic / Custom
 
-"Generic" packages are available to all customers / environments.&#x20;
+"Generic" packages are available to all customers / environments.
 
 "Custom" packages are not globally available to all customers. In most cases this is a custom software package created specifically for your environment.
 
@@ -50,7 +50,7 @@ Provisioning of this package will count towards your package usage quota - if yo
 
 #### Intunemanaged / Intuneunmanaged
 
-These tags denote packages, that are offered via Intune.&#x20;
+These tags denote packages, that are offered via Intune.
 
 * **Intunemanaged**: Managed and Basic packages from the package store, delivered via Intune
 * **Intuneunmanaged**: Unmanaged packages in Intune (not from the package store)
@@ -63,13 +63,13 @@ Does this software need a commercial license to be used?
 
 If available, a link to this software title's [MS Security Center Software Inventory (TVM)](https://security.microsoft.com/software-inventory/applications)'s entry will be displayed. There you can check for known security issues and outdated versions of this software in your organization.
 
-![An Application's TVM Entry](<../../.gitbook/assets/image (6) (1).png>)
+![An Application's TVM Entry](<../../.gitbook/assets/image (6) (1) (1).png>)
 
 ### Version
 
 ![](<../../.gitbook/assets/image (8) (1) (1).png>)
 
-Also displayed on the left side of the screen is the version of the software package.&#x20;
+Also displayed on the left side of the screen is the version of the software package.
 
 If a "preview" version of the package is deployed, you can see it here. Otherwise it will be shown as "N/A".
 
@@ -81,7 +81,7 @@ In the [Overview tab](package-details.md#overview-assignment), you can manage as
 
 ![Package Assignments](<../../.gitbook/assets/image (10) (1) (1) (1) (1) (1) (1).png>)
 
-### Groups ****&#x20;
+### Groups \*\*\*\*
 
 For supported application types, especially **managed packages**, you will see the package's AzureAD groups which can be used to assign applications to users or to trigger an uninstallation.
 
@@ -93,7 +93,7 @@ You can also review the installation status of given assignments / this package 
 
 ## Tabs
 
-The right side of the screen shows the contents of the current tab.&#x20;
+The right side of the screen shows the contents of the current tab.
 
 The following tabs are available:
 
@@ -103,7 +103,7 @@ The following tabs are available:
 
 #### Ttitle, Description and other Info
 
-This tab will show the long description, license and technical help information of a package.&#x20;
+This tab will show the long description, license and technical help information of a package.
 
 ### Changelog
 
@@ -115,13 +115,13 @@ There are two types of changes tracked in Changelog.
 
 ![](<../../.gitbook/assets/image (11) (1).png>) Changes to the instance of the package in your environment, specifically in Intune. E.g. publishing a newer version of the package to your users.
 
-![](<../../.gitbook/assets/image (14) (1) (1) (1).png>) Changes to package store entry.&#x20;
+![](<../../.gitbook/assets/image (14) (1) (1) (1) (1).png>) Changes to package store entry.
 
 ### Automation
 
-![Automation setting for a package](<../../.gitbook/assets/image (17) (1) (1) (1).png>)
+![Automation setting for a package](<../../.gitbook/assets/image (17) (1) (1) (1) (1).png>)
 
-For managed packages, you can use the Automation tab to configure automatic publishing of new version of packages from the package store to your environment.&#x20;
+For managed packages, you can use the Automation tab to configure automatic publishing of new version of packages from the package store to your environment.
 
 * **AutoDeployMain** - Automatically deploy new versions of this package to your users. ("Main" subscription)
 * **AutoDeployMainDeferInDays** - Wait for this number of days to pass before publishing a new version to "main". This is usefull to avoid stress for users/clients if multiple package versions are published rapidly.
@@ -136,13 +136,13 @@ These values can be globally preconfigured for newly imported packages in [Setti
 
 ![Package Config Tab](<../../.gitbook/assets/image (5) (1).png>)
 
-You can assign multiple **Technical Application Owners** to a package by storing their email-address as a means to reach out. This is optional and currently is purely for information/administrative purposes.&#x20;
+You can assign multiple **Technical Application Owners** to a package by storing their email-address as a means to reach out. This is optional and currently is purely for information/administrative purposes.
 
-**Arguments** allow you to pass command line switches to an application installation. This is commonly used to define language options or license key that need to be present at installation time.&#x20;
+**Arguments** allow you to pass command line switches to an application installation. This is commonly used to define language options or license key that need to be present at installation time.
 
 Some package include **Technical Help**, to explain possible **Arguments** and other Requirements.
 
-![Technical Help for a Package](<../../.gitbook/assets/image (12) (1) (1).png>)
+![Technical Help for a Package](<../../.gitbook/assets/image (12) (1) (1) (1).png>)
 
 ### Intune App and RealmJoin Store
 

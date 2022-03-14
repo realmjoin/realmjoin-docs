@@ -43,7 +43,7 @@ On AzureAD groups ("Non-mail enabled security" and "Unified") you can use RealmJ
 
 Please use a [runbook ](../../runbooks/)to change owners of a group or to change memberships to Exchange Online groups, like Distribution Groups.
 
-![Members of a group](<../../.gitbook/assets/image (1) (1) (1).png>)
+![Members of a group](<../../.gitbook/assets/image (1) (1) (1) (1).png>)
 
 #### Adding Members
 

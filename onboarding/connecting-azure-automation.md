@@ -2,7 +2,7 @@
 
 ## Overview
 
-To enable RealmJoin Portal to offer [runbooks ](../runbooks/README.md)as a way to automate daily operations, you need to connect an [Azure Automation Account](https://azure.microsoft.com/en-us/services/automation/). This Automation Account will host your runbooks as well as the [permissions](../runbooks/azure-ad-roles-and-permissions.md) needed for the runbooks to function in your environment.
+To enable RealmJoin Portal to offer [runbooks ](../runbooks/)as a way to automate daily operations, you need to connect an [Azure Automation Account](https://azure.microsoft.com/en-us/services/automation/). This Automation Account will host your runbooks as well as the [permissions](../runbooks/azure-ad-roles-and-permissions.md) needed for the runbooks to function in your environment.
 
 This guide will help you to onboard either a new or existing Automation Account.
 
@@ -24,9 +24,9 @@ Please note down the Subscription Id as it will be needed later.
 
 Choose or create an Azure Resource Group in your Azure Subscription, e.g. `rjrb-automation`.
 
-[https://portal.azure.com/#create/Microsoft.ResourceGroup](https://portal.azure.com/#create/Microsoft.ResourceGroup)&#x20;
+[https://portal.azure.com/#create/Microsoft.ResourceGroup](https://portal.azure.com/#create/Microsoft.ResourceGroup)
 
-![Create an Azure Resource Group](<../.gitbook/assets/image (7) (1) (1) (1) (1) (1) (1).png>)
+![Create an Azure Resource Group](<../.gitbook/assets/image (2) (1) (1).png>)
 
 Please note down the Resource Group's name as it will be needed later.
 
@@ -34,7 +34,7 @@ Please note down the Resource Group's name as it will be needed later.
 
 Create an Azure Automation Account in the given Resource Group. In this example we will use the name `c4a8toydariaazacc01` for the Automation Account. It will host your shared and private runbooks.
 
-[https://portal.azure.com/#create/Microsoft.AutomationAccount](https://portal.azure.com/#create/Microsoft.AutomationAccount)&#x20;
+[https://portal.azure.com/#create/Microsoft.AutomationAccount](https://portal.azure.com/#create/Microsoft.AutomationAccount)
 
 Make sure, to have "Create Azure Run As account" set to "Yes".
 
@@ -48,13 +48,13 @@ It is assumed you already finished [onboarding RealmJoin Portal](onboarding-real
 
 In RealmJoin Portal go to '[Settings -> Runbooks](https://portal.realmjoin.com/settings/runbooks-configuration)'.
 
-![Automation Account Connection in RealmJoin Portal](<../.gitbook/assets/image (1) (1) (1) (1) (1).png>)
+![Automation Account Connection in RealmJoin Portal](<../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png>)
 
 Please fill in the AzureAD Tenant Id, Subscription Id and Resource Group name.
 
 You can review your AzureAD Tenant Id at [https://portal.azure.com/#blade/Microsoft\_AAD\_IAM/ActiveDirectoryMenuBlade/Overview](https://portal.azure.com/#blade/Microsoft\_AAD\_IAM/ActiveDirectoryMenuBlade/Overview)
 
-To choose Subscription Id and Resource Group name, see [above](connecting-azure-automation.md#subscription-and-resource-group).&#x20;
+To choose Subscription Id and Resource Group name, see [above](connecting-azure-automation.md#subscription-and-resource-group).
 
 Please leave the windows / wizard open for now. We will return shortly in [part 2](connecting-azure-automation.md#entering-info-part-2).
 
@@ -67,13 +67,13 @@ az provider register --namespace Microsoft.Automation
 az ad sp create-for-rbac -n "RealmJoin Runbook Management" --role contributor --scopes /subscriptions/12345678-1234-1234-1234-123456789abc/resourceGroups/rjrb-automation-01
 ```
 
-Executing those lines will create an [App Registration](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals) (Service Principal) in AzureAD that can interact with the your Automation Account. This is needed, so that RealmJoin can&#x20;
+Executing those lines will create an [App Registration](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals) (Service Principal) in AzureAD that can interact with the your Automation Account. This is needed, so that RealmJoin can
 
 * Create, List and Update Runbooks
 * Start Runbooks
 * Display Jobs and Output
 
-RealmJoin Portal automatically included the information given [above](connecting-azure-automation.md#entering-info-part-1).&#x20;
+RealmJoin Portal automatically included the information given [above](connecting-azure-automation.md#entering-info-part-1).
 
 Please execute these two lines of code using AZ CLI with an administrative account that can create App Registrations and also grant contributor permissions on the chosen Resource Group.
 
@@ -81,11 +81,11 @@ Tipp: You can use [Azure CloudShell](https://docs.microsoft.com/en-us/azure/clou
 
 ![Azure CloudShell - Create the App Registration](<../.gitbook/assets/image (4) (1) (1) (1).png>)
 
-The command will return multiple values. Please note down the values for `appId` and `password`.&#x20;
+The command will return multiple values. Please note down the values for `appId` and `password`.
 
 You can review the resulting App Registration in AzureAD. It will be named "RealmJoin Runbook Management".
 
-![App Regsitrations in Azure Portal](<../.gitbook/assets/image (3) (1) (1) (1).png>)
+![App Regsitrations in Azure Portal](<../.gitbook/assets/image (10) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2).png>)
 
 ### Entering Info - Part 2
 

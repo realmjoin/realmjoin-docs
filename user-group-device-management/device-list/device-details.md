@@ -1,6 +1,6 @@
 # Device Details
 
-![Device Details Page](<../../.gitbook/assets/image (12) (1) (1) (1) (1) (1).png>)
+![Device Details Page](<../../.gitbook/assets/image (12) (1) (1) (1) (1) (1) (1).png>)
 
 This page shows you details regarding a single device.
 
@@ -30,13 +30,13 @@ The core properties include some glanceable information about the status of a de
 
 ![](<../../.gitbook/assets/image (8) (1) (1) (1) (1) (1).png>)Endpoint Management active
 
-![](<../../.gitbook/assets/image (14) (1) (1) (1) (1).png>)Disk Encryption enabled
+![](<../../.gitbook/assets/image (14) (1) (1) (1) (1) (1).png>)Disk Encryption enabled
 
-![](<../../.gitbook/assets/image (1) (1).png>)Defender ATP enabled
+![](<../../.gitbook/assets/image (1) (1) (1).png>)Defender ATP enabled
 
-![](<../../.gitbook/assets/image (6) (1) (1) (1).png>)A/V up-to-date
+![](<../../.gitbook/assets/image (6) (1) (1) (1) (1).png>)A/V up-to-date
 
-![](<../../.gitbook/assets/image (16) (1) (1) (1) (1).png>)Compliant device
+![](<../../.gitbook/assets/image (16) (1) (1) (1) (1) (1).png>)Compliant device
 
 ![](<../../.gitbook/assets/image (5) (1) (1) (1).png>) When the object was created
 

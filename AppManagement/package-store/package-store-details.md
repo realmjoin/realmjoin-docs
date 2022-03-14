@@ -50,7 +50,7 @@ Does this software need a commercial license to be used?
 
 If available, a link to this software title's [MS Security Center Software Inventory (TVM)](https://security.microsoft.com/software-inventory/applications)'s entry will be displayed. There you can check for known security issues and outdated versions of this software in your organization.
 
-![An Application's TVM Entry](<../../.gitbook/assets/image (6) (1).png>)
+![An Application's TVM Entry](<../../.gitbook/assets/image (6) (1) (1).png>)
 
 An appropriate license from Microsoft is needed to access TVM.
 
@@ -68,7 +68,7 @@ If you already provisioned the package to your environment, a link to the provis
 
 On the Overview Tab of a package, you will find buttons, that allow you to import the package from the store into your environment.&#x20;
 
-![Subscribe Buttons](<../../.gitbook/assets/image (16) (1) (1) (1).png>)
+![Subscribe Buttons](<../../.gitbook/assets/image (16) (1) (1) (1) (1).png>)
 
 They will create a Win32 software package in Intune when pressed. You have two options:
 
@@ -110,7 +110,7 @@ This tab also shows the Subscribe-Buttons for this package. See Subscribing.
 
 The package's changelog shows when the packages has been updated in RealmJoin's repository plus a short description of changes.
 
-![Appstore Package Changelog](<../../.gitbook/assets/image (12) (1) (1) (1) (1).png>)
+![Appstore Package Changelog](<../../.gitbook/assets/image (12) (1) (1) (1) (1) (1).png>)
 
 ### RealmJoin Store
 

@@ -1,6 +1,6 @@
 # Group List
 
-![Group List View](<../../.gitbook/assets/image (15) (1) (1).png>)
+![Group List View](<../../.gitbook/assets/image (15) (1) (1) (1).png>)
 
 This view offers you a simple way to search or review groups in your environment.
 

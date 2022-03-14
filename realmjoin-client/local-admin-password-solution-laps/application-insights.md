@@ -15,7 +15,7 @@ Application Insights is an extensible Application Performance Management service
 
 Then, copy the **Instrumentation Key** and send it to [GK Support](mailto:support@glueckkanja-gab.com).
 
-![](<../../.gitbook/assets/image (20).png>)
+![](<../../.gitbook/assets/image (20) (1).png>)
 
 **Example value:** `a74393bd-2dee-4a10-9df3-66c8c2b2a9ec`
 
@@ -23,8 +23,8 @@ Then, copy the **Instrumentation Key** and send it to [GK Support](mailto:suppor
 
 To start a reporting, click **Search**
 
-![](<../../.gitbook/assets/image (18).png>)
+![](<../../.gitbook/assets/image (18) (1).png>)
 
 An overview appears, which looks like the following example:
 
-![](<../../.gitbook/assets/image (17).png>)
+![](<../../.gitbook/assets/image (17) (1).png>)

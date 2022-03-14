@@ -23,7 +23,7 @@ Every object's details page will show an overview of the core properties like
 
 on the left side of the screen in a glanceable way. This part will not scroll and be always visible in any tab.
 
-![Core Object Properties](<../.gitbook/assets/image (6) (1) (1).png>)
+![Core Object Properties](<../.gitbook/assets/image (6) (1) (1) (1).png>)
 
 The right side of the screen shows the current tab, which can be&#x20;
 
