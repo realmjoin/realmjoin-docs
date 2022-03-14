@@ -32,7 +32,6 @@
   * [Local Admin Password Solution (LAPS)](realmjoin-client/local-admin-password-solution-laps/README.md)
     * [KeyVault](realmjoin-client/local-admin-password-solution-laps/keyvault.md)
     * [Application Insights](realmjoin-client/local-admin-password-solution-laps/application-insights.md)
-    * [Group and User Settings](realmjoin-client/local-admin-password-solution-laps/group-and-user-settings.md)
   * [Multi User Devices](realmjoin-client/multi-user-devices.md)
   * [Infrastructure](realmjoin-client/infrastructure.md)
   * [RealmJoin ESP](realmjoin-client/realmjoin-esp.md)
