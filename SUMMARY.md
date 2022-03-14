@@ -44,7 +44,7 @@
     * [Multi User Devices](realmjoin-client/infrastructure/multi-user-devices.md)
   * [Deploying the Client](realmjoin-client/installation.md)
   * [Connecting a Tenant](realmjoin-client/connecting-a-tenant.md)
-  * [Page 1](realmjoin-client/page-1.md)
+  * [Additional Settings](realmjoin-client/additional-settings.md)
 * [Settings](settings/README.md)
   * [General](settings/general.md)
   * [Permission](settings/permission.md)
