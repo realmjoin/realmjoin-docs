@@ -23,7 +23,7 @@ You can offer RealmJoin Portal to your support and administration teams to simpl
 
 glueckkanja-gab maintains a [shared online repository of runbooks](https://github.com/realmjoin/realmjoin-runbooks). They aim to cover many common operations found in most environments. The runbooks are continuously updated and improved. Of course you can include your own, custom runbooks, too.
 
-RealmJoin Portal allows you to import these runbooks into your environment and offers your support and administration staff an easy, non-technical interface to the tasks the runbooks cover.
+RealmJoin Portal allows you to import these runbooks via [RealmJoin Runbook Management App](../onboarding/connecting-azure-automation/required-permissions.md#b31d828b-8bcb-45fc-8d72-5418777a5376) into your environment and offers your support and administration staff an easy, non-technical interface to the tasks the runbooks cover.
 
 ### Syncing from the shared repository
 

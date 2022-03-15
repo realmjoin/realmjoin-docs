@@ -6,11 +6,11 @@ description: Run runbooks and query their status using RealmJoins API
 
 ## Overview
 
-RealmJoin allows you to use Azure Automation Runbooks to automate day to day operations in your environment. See [Runbooks](../runbooks/README.md) for more information.
+RealmJoin allows you to use Azure Automation Runbooks to automate day to day operations in your environment. See [Runbooks](../runbooks/) for more information.
 
 RealmJoin's API allows you to start runbooks from your application, to query the successful execution of previously triggered runs. See [RealmJoin's Swagger description](https://realmjoin-backend.azurewebsites.net/swagger/index.html#/Runbook) to see, which operations are currently supported.
 
-The following sections lay out how to use RealmJoin's API to start and track runbook jobs. It is assumed that you already have [connected an Azure Automation account](../onboarding/connecting-azure-automation.md) to RealmJoin Portal. Also, make sure to [authenticate ](realmjoin-api/authentication.md)every request against RealmJoin's API using an appropriate http Authorization header.
+The following sections lay out how to use RealmJoin's API to start and track runbook jobs. It is assumed that you already have [connected an Azure Automation account](../onboarding/connecting-azure-automation/) to RealmJoin Portal. Also, make sure to [authenticate ](realmjoin-api/authentication.md)every request against RealmJoin's API using an appropriate http Authorization header.
 
 ## How does Azure Automation handle runbooks?
 
@@ -24,9 +24,9 @@ Every job has a status that represents its current state of execution, see [Micr
 
 ## Starting a Runbook Job
 
-RealmJoin API offers two endpoints to trigger runbooks.&#x20;
+RealmJoin API offers two endpoints to trigger runbooks.
 
-`run` will execute a runbook in a synchronous fashion and only return/finish when the runbook is actually completed or failed. This endpoint directly returns the success state and output of the associated runbook job.&#x20;
+`run` will execute a runbook in a synchronous fashion and only return/finish when the runbook is actually completed or failed. This endpoint directly returns the success state and output of the associated runbook job.
 
 `start` will take the same parameters as `run` but works in a an asynchronous fashion. It will return as soon as a runbook job is queued. It will return the `jobID` to enable easy tracking of the new job.
 
@@ -36,11 +36,11 @@ Let us assume the following situation:
 
 * You have your RealmJoin API credentials and encoded them to `dC0xMjM0MTIzNDpteVMzY3JldCE=` (Base64)
 * You want to start the runbook `rjgit-user_security_revoke-or-restore-access` to block sign in for a specific user
-* The parameters for the runbook (PowerShell) are:&#x20;
-  * `$UserName = "someone@contoso.com"`&#x20;
+* The parameters for the runbook (PowerShell) are:
+  * `$UserName = "someone@contoso.com"`
   * `$Revoke = $true`
 
-We will use the `run` endpoint to immediately know if the job was successful.&#x20;
+We will use the `run` endpoint to immediately know if the job was successful.
 
 Let us build the **request**:
 
@@ -113,7 +113,7 @@ Body (in JSON-Notation):
 }
 ```
 
-The output streams are separated into different channels (`streamTypes`): `Output`, `Verbose`, `Error`. This allows to filter for errors or reduce output only to relevant information by only showing `Output`.&#x20;
+The output streams are separated into different channels (`streamTypes`): `Output`, `Verbose`, `Error`. This allows to filter for errors or reduce output only to relevant information by only showing `Output`.
 
 You can get these streams after a runbook is finished using the `/api/external/runbook/jobs/{jobID}/output/streams` endpoint. (see below)
 
@@ -156,7 +156,7 @@ Body (Plaintext)
 Completed
 ```
 
-Other possible states include `New`, `Failed`, `Running`. See [possible Runbook states](https://docs.microsoft.com/en-us/azure/automation/automation-runbook-execution#job-statuses).&#x20;
+Other possible states include `New`, `Failed`, `Running`. See [possible Runbook states](https://docs.microsoft.com/en-us/azure/automation/automation-runbook-execution#job-statuses).
 
 ### Reading Job Output
 
@@ -333,9 +333,9 @@ Body (JSON, array of messages)
 
 ### Reading Exceptions
 
-Use `/api/external/runbook/jobs/{jobID}/exception/text` to get a simple plaintext representation of a runbook's exception message (if present). This will not include the `Output`, `Verbose` and `Error` streams. See [reading streams](interacting-with-runbooks.md#reading-specific-streams) to read other streams.&#x20;
+Use `/api/external/runbook/jobs/{jobID}/exception/text` to get a simple plaintext representation of a runbook's exception message (if present). This will not include the `Output`, `Verbose` and `Error` streams. See [reading streams](interacting-with-runbooks.md#reading-specific-streams) to read other streams.
 
-Exceptions are written, when interrupting errors happen in the execution of the PowerShell script associated with the runbook. This endpoint will only read the plaintext message and does not include technical details, like at which line of code the script stopped.&#x20;
+Exceptions are written, when interrupting errors happen in the execution of the PowerShell script associated with the runbook. This endpoint will only read the plaintext message and does not include technical details, like at which line of code the script stopped.
 
 In out example, an interrupting error was caused by `throw "Exception"`.
 

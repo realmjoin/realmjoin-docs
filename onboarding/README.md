@@ -2,10 +2,10 @@
 
 ### Onboarding to RealmJoin
 
-Start your journey with RealmJoin by [self-onboarding](onboarding-realmjoin-portal.md) into the service.&#x20;
+Start your journey with RealmJoin by [self-onboarding](onboarding-realmjoin-portal/) into the service.&#x20;
 
 Need help? [Reach out to us](../support.md) :)
 
 ### Runbook / Process Automation
 
-You want to automate routine IT task? [Connect to an Azure Automation Account](connecting-azure-automation.md) and use [Runbooks ](../runbooks/)in your environment!
+You want to automate routine IT task? [Connect to an Azure Automation Account](connecting-azure-automation/) and use [Runbooks ](../runbooks/)in your environment!
