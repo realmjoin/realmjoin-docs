@@ -8,8 +8,6 @@ This app also will be used by RealmJoin Portal to trigger runbook execution afte
 
 As this app is created individually for your tenant, there is no globally known Application ID as with [RealmJoin Portal's apps](../onboarding-realmjoin-portal/required-permissions.md).
 
-### API Permissions
-
 This app will not have any API permissions.
 
 ### Azure Resource Permissions
