@@ -10,7 +10,7 @@ Users interact with this app for self services. Admins use this app to interact 
 
 All of the following permissions are of the permission type “**Delegated**” ( = can only operate when a user is interactively signed in). Also this app can be **consented per User** ( = admin consent is optional).
 
-All of the following permissions target [MS Graph API](https://docs.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0).
+All of the following permissions target [MS Graph API](https://docs.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0). You can read more about the individual permissions [here](https://docs.microsoft.com/en-us/graph/permissions-reference)
 
 These permissions are required for basic functionality of the app per user.
 
@@ -24,7 +24,9 @@ These permissions are required for basic functionality of the app per user.
 | openid         | Sign in / Authentication                     |
 | offline_access | Keep persisting data per user                |
 
-## RealmJoin Portal - Core Features <a href="#b31d828b-8bcb-45fc-8d72-5418777a530b" id="b31d828b-8bcb-45fc-8d72-5418777a530b"></a>
+You can read more about MS Graph permissions here.
+
+## RealmJoin Portal - Core Features
 
 Application ID: `61fcb903-2868-4c54-91cd-2716c62c5007`
 
@@ -32,7 +34,7 @@ Admins and Users do not directly interact with this app. It represents RealmJoin
 
 All actions triggered by this app are filtered through RealmJoin’s internal permission (RBAC) model which can evaluate AzureAD group and role memberships.
 
-All of the following permissions are of the permission type “**Application**” ( = can operate without a signed in user) and target [MS Graph API](https://docs.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0).
+All of the following permissions are of the permission type “**Application**” ( = can operate without a signed in user) and target [MS Graph API](https://docs.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0). You can read more about the individual permissions [here](https://docs.microsoft.com/en-us/graph/permissions-reference)
 
 If you onboard **RealmJoin Core ReadOnly** features it will onboard read-only versions of the same permissions and offer only limited functionality. These are not described separately.
 
