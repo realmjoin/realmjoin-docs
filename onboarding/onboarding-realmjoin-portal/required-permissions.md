@@ -6,23 +6,23 @@ RealmJoin Portal consists of multiple apps which are used for different use case
 
 Application ID: `b0130885-16be-4c6f-83de-5b1042b5d2e3`
 
-Users interact with this app for self services. Admins use this app to interact with all RealmJoin Portal features. This includes onboarding the "Core Features" permissions (see below).&#x20;
+Users interact with this app for self services. Admins use this app to interact with all RealmJoin Portal features. This includes onboarding the "Core Features" permissions (see below).
 
 All of the following permissions are of the permission type “**Delegated**” ( = can only operate when a user is interactively signed in). Also this app can be **consented per User** ( = admin consent is optional).
 
-All of the following permissions target [MS Graph API](https://docs.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0). You can read more about the individual permissions [here](https://docs.microsoft.com/en-us/graph/permissions-reference)
+All of the following permissions target [MS Graph API](https://docs.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0). You can read more about the individual permissions [here](https://docs.microsoft.com/en-us/graph/permissions-reference).
 
 These permissions are required for basic functionality of the app per user.
 
 ### API Permissions
 
-| Claim          | Usage                                        |
-| -------------- | -------------------------------------------- |
-| User.Read      | Sign in and reading basic user properties    |
-| profile        | Reading user info (name, picture, user name) |
-| email          | Reading user info (email address)            |
-| openid         | Sign in / Authentication                     |
-| offline_access | Keep persisting data per user                |
+| Claim           | Usage                                        |
+| --------------- | -------------------------------------------- |
+| User.Read       | Sign in and reading basic user properties    |
+| profile         | Reading user info (name, picture, user name) |
+| email           | Reading user info (email address)            |
+| openid          | Sign in / Authentication                     |
+| offline\_access | Keep persisting data per user                |
 
 You can read more about MS Graph permissions here.
 
@@ -34,7 +34,7 @@ Admins and Users do not directly interact with this app. It represents RealmJoin
 
 All actions triggered by this app are filtered through RealmJoin’s internal permission (RBAC) model which can evaluate AzureAD group and role memberships.
 
-All of the following permissions are of the permission type “**Application**” ( = can operate without a signed in user) and target [MS Graph API](https://docs.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0). You can read more about the individual permissions [here](https://docs.microsoft.com/en-us/graph/permissions-reference)
+All of the following permissions are of the permission type “**Application**” ( = can operate without a signed in user) and target [MS Graph API](https://docs.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0). You can read more about the individual permissions [here](https://docs.microsoft.com/en-us/graph/permissions-reference).
 
 If you onboard **RealmJoin Core ReadOnly** features it will onboard read-only versions of the same permissions and offer only limited functionality. These are not described separately.
 
@@ -54,5 +54,3 @@ If you onboard **RealmJoin Core ReadOnly** features it will onboard read-only ve
 | DeviceManagementManagedDevices.PrivilegedOperations.All | Trigger device management tasks like "Scan Device"                   |
 | DeviceManagementApps.ReadWrite.All                      | Manage/automate software deployment and device management via Intune |
 | DeviceManagementRBAC.ReadWrite.All                      | Manage/automate software deployment and device management via Intune |
-
-
