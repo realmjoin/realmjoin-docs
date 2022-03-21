@@ -12,7 +12,7 @@ Visit [RealmJoin Portal](https://portal.realmjoin.com) to onboard your organizat
 
 Additional Information at [www.realmjoin.com](http://realmjoin.com).
 
-Searching the **RealmJoin Classic Documentation** [click here](https://docs-classic.realmjoin.com).
+Searching the **RealmJoin Classic Documentation?** [Click here](https://docs-classic.realmjoin.com).
 
 ## Areas
 
