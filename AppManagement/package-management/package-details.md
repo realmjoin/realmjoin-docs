@@ -81,7 +81,7 @@ In the [Overview tab](package-details.md#overview-assignment), you can manage as
 
 ![Package Assignments](<../../.gitbook/assets/image (10) (1) (1) (1) (1) (1) (1).png>)
 
-### Groups \*\*\*\*
+### Groups
 
 For supported application types, especially **managed packages**, you will see the package's AzureAD groups which can be used to assign applications to users or to trigger an uninstallation.
 

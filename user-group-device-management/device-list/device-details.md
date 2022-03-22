@@ -63,13 +63,13 @@ The right side of the screen shows the contents of the current tab, which can be
 
 ### Actions
 
-You can use the button "Device Sync" to trigger a Sync of Intune Policies and RealmJoin Action, like queued [LAPS ](device-details.md#local)account creations.
+You can use the button "Device Sync" to trigger a Sync of Intune Policies and RealmJoin Action, like queued [LAPS](device-details.md#local-admin-management-laps) account creations.
 
 Use "Device Scan" to trigger a (quick) scan of Windows Defender on a managed client.
 
 ### Local Admin Management (LAPS)
 
-When combined with the RealmJoin Client, RealmJoin Portal can help with support tasks on windows clients that need local admin permissions by offering on-demand support accounts on clients. In many cases this removes the need to grant local admin permissions to the primary user of the device just to solve a one-time need.
+When combined with the [RealmJoin Client](../../realmjoin-client/), RealmJoin Portal can help with support tasks on windows clients that need local admin permissions by offering on-demand support accounts on clients. In many cases this removes the need to grant local admin permissions to the primary user of the device just to solve a one-time need.
 
 ![LAPS management](<../../.gitbook/assets/image (9) (1) (1) (1) (1).png>)
 
@@ -82,6 +82,8 @@ It is recommended to use a "Support Account". When clicking "**Request**", a job
 Click the dots to reveal the password.
 
 The Support Account will automatically be removed after 12 hours.
+
+See the [LAPS documentation](../../realmjoin-client/local-admin-password-solution-laps/) for more details.
 
 
 

@@ -15,7 +15,7 @@ We'll look at both of them below.
 
 ## Application Insights <a href="#application-insights" id="application-insights"></a>
 
-Application Insights play an important role when using LAPS. The password requests triggered by LAPS are logged by RealmJoin and piped to Application Insights. This way you have complete insight into who is retrieving passwords.More details can be found in our [Application Insight article](https://docs.realmjoin.com/core-features/local-admin-password-solution/application-insights).
+Application Insights play an important role when using LAPS. The password requests triggered by LAPS are logged by RealmJoin and piped to Application Insights. This way you have complete insight into who is retrieving passwords.More details can be found in our [Application Insights](application-insights.md) article.
 
 ## Group settings <a href="#group-settings" id="group-settings"></a>
 
@@ -95,9 +95,9 @@ Even though RealmJoin tries its best to avoid naming conflicts when managing the
 
 ## Emergency account <a href="#emergency-account" id="emergency-account"></a>
 
-This account type is supposed to be your backup access to the device should it fail catastrophically. It will be created proactively. This way you will always have access for recovery. We recommend configuring it for [account recreation](https://docs.realmjoin.com/core-features/local-admin-password-solution#account-recreation).
+This account type is supposed to be your backup access to the device should it fail catastrophically. It will be created proactively. This way you will always have access for recovery. We recommend configuring it for [account recreation](https://docs-classic.realmjoin.com/core-features/local-admin-password-solution#account-recreation) (in RJ Classic Docs).
 
-_Example_&#x20;
+_Example_
 
 Key `LocalAdminManagement.EmergencyAccount` (for common settings see [group settings](https://docs.realmjoin.com/core-features/local-admin-password-solution#group-settings))
 
@@ -136,7 +136,7 @@ It might take up to 30 minutes for the RealmJoin agent to notice the request. Th
 
 When not in on-demand mode it will be created proactively.
 
-_Example_&#x20;
+_Example_
 
 Key `LocalAdminManagement.SupportAccount` (for common settings see [group settings](https://docs.realmjoin.com/core-features/local-admin-password-solution#group-settings))
 
@@ -163,7 +163,7 @@ Forced password rotations are supported:
 2. 2.`DayAfterCreate`: after the account has been created the account's password will be changed. This is useful when users are supposed to set up Windows Hello for additional sign-in options.
 3. 3.`Monthly` or `Weekly`: Weekly takes preference over Monthly. If no more conditions are specified, defaults are "1st day of month" for Monthly or "Monday" for Weekly. All seven weekday can be specified. So if `Wednesday` and `Weekly` are specified, the password will be changed every Wednesday. If `Wednesday` and `Monthly` are specified, the password will be changed on the first Wednesday each month.
 
-_Example_&#x20;
+_Example_
 
 Key `LocalAdminManagement.PrivilegedAccount` (for common settings see [group settings](https://docs.realmjoin.com/core-features/local-admin-password-solution#group-settings))
 

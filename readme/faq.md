@@ -27,9 +27,9 @@ glueckkanja-gab AG offers a public repository of runbooks at [https://github.com
 
 RealmJoin leverages standard Azure Automation features to host these shared runbooks. They will be stored using a `rjgit-` prefix in your Azure Automation Account. You can simply add custom runbooks without this prefix to the same Azure Automation account. As long as the runbooks adheres to our naming scheme, RealmJoin Portal will present your custom runbooks in the same way as our shared ones.
 
-TODO: Describe Runbook naming scheme
+See [Runbook naming scheme](../runbooks/naming-conventions.md)
 
-## Is RealmJoin providing an uninstall of software?
+## Is RealmJoin Client providing an uninstall of software?
 
 A general uninstall feature is currently not implemented. In a 100% modern workplace environment with evergreen applications, regular removabilty of installed software does not exist anymore.
 
