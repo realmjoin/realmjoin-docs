@@ -16,7 +16,7 @@ The following permissions are admitted by the administrator consent and set in A
 
 ![](<../.gitbook/assets/image (7).png>)
 
-### Default configuration for new tenants <a href="#default-configuration-for-new-tenants" id="default-configuration-for-new-tenants"></a>
+### Default configuration for new tenants
 
 After successful connection the following software packages are provided as default in RealmJoin portal:
 
