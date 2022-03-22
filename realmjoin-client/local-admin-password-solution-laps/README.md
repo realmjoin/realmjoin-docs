@@ -4,7 +4,7 @@ Our Local Administrator Password Solution (LAPS) was built to solve the issue of
 
 Most settings denoted on this page have to be configured using [RealmJoin Classic Portal](https://realmjoin-web.azurewebsites.net).
 
-## Pre-requirements <a href="#pre-requirements" id="pre-requirements"></a>
+## Pre-requirements
 
 Before you can start with LAPS you have to meet the following pre-requirements:
 
@@ -13,11 +13,11 @@ Before you can start with LAPS you have to meet the following pre-requirements:
 
 We'll look at both of them below.
 
-## Application Insights <a href="#application-insights" id="application-insights"></a>
+## Application Insights
 
 Application Insights play an important role when using LAPS. The password requests triggered by LAPS are logged by RealmJoin and piped to Application Insights. This way you have complete insight into who is retrieving passwords.More details can be found in our [Application Insights](application-insights.md) article.
 
-## Group settings <a href="#group-settings" id="group-settings"></a>
+## Group settings
 
 LAPS supports the follow global settings.
 
@@ -42,17 +42,17 @@ In the following table `$` represents any of the three `Account` JSON object fro
 
 | Settings Key       | Default Value                                                        | Description                                                                   |
 | ------------------ | -------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| $.NamePattern      | `"ADM-{HEX:8}"`                                                      | Special. See [Privileged account](./#privileged-account).                     |
+| $.NamePattern      | `"ADM-{HEX:8}"`                                                      | Special. See [Privileged account](#privileged-account).                     |
 | $.DisplayName      | `"RealmJoin Local Administrator"`                                    | Display name                                                                  |
 | $.PasswordCharSet  | `"!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz"` | Charset for the password generator (excludes lookalikes)                      |
 | $.PasswordLength   | 20                                                                   | Password length                                                               |
-| $.PasswordPreset   | 0                                                                    | Preset password templates, see [Password generation](./#password-generation). |
-| $.MaxStaleness     | Special. See [Account recreation](./#account-recreation).            | Preset password templates, see [Password generation](./#password-generation). |
-| $.OnDemand         | Special. See [Support account](./#support-account).                  | Create account only when requested.                                           |
-| $.Expiration       | Special. See [Privileged account](./#privileged-account).            | Fixed account expiration date (ISO-8601 format)                               |
-| $.PasswordRenewals | Special. See [Privileged account](./#privileged-account).            | Fixed account expiration date (ISO-8601 format)                               |
+| $.PasswordPreset   | 0                                                                    | Preset password templates, see [Password generation](#password-generation). |
+| $.MaxStaleness     | Special. See [Account recreation](#account-recreation).            | Preset password templates, see [Password generation](#password-generation). |
+| $.OnDemand         | Special. See [Support account](#support-account).                  | Create account only when requested.                                           |
+| $.Expiration       | Special. See [Privileged account](#privileged-account).            | Fixed account expiration date (ISO-8601 format)                               |
+| $.PasswordRenewals | Special. See [Privileged account](#privileged-account).            | Fixed account expiration date (ISO-8601 format)                               |
 
-## Password generation <a href="#password-generation" id="password-generation"></a>
+## Password **generation**
 
 By default truly random passwords will be generated based on the settings `PasswordCharSet` and `PasswordLength`. The default charset was chosen to exclude similar looking characters like `I1l` and `O0`. Windows' cryptographic random number generator is used to provide high quality randomness for generation.
 
@@ -77,7 +77,7 @@ Truly random passwords can be painful to work with, which is why special preset 
   * `Neurology-Astute-Debate-Marshy-15` (PasswordLength = 4)
   * `Marshy-Darkened-Undertake-Reset-Shrouded-Wise-26` (default)
 
-## Account recreation <a href="#account-recreation" id="account-recreation"></a>
+## Account recreation
 
 After an account was used, that is after sign out of the local user, RealmJoin can be configured to delete and recreate the account using the `MaxStaleness` setting. This way accounts will always be pristine. If not configured accounts will never be recreated and will stay around indefinitely.
 
@@ -85,7 +85,7 @@ After an account was used, that is after sign out of the local user, RealmJoin c
 RealmJoin will delete the account and its profile. ALL FILES WILL BE PERMANENTLY DELETED.
 {% endhint %}
 
-## Conflict avoidance <a href="#conflict-avoidance" id="conflict-avoidance"></a>
+## Conflict avoidance
 
 Even though RealmJoin tries its best to avoid naming conflicts when managing the accounts on a device, there is always the possibility that accounts might already exist on a device causing conflicts. This is why the `NamePattern` setting supports these tokens with special meaning to RealmJoin. The tokens will be transformed by the specified function and its length parameter following the colon.
 
@@ -93,13 +93,13 @@ Even though RealmJoin tries its best to avoid naming conflicts when managing the
 * `{DEC:6}` ⇒ `506453`, `066946`, ... (random decimal characters)
 * `{COUNT:2}` ⇒ `01`, `02`, ... (counter, will stay `01` if no conflicts exist)
 
-## Emergency account <a href="#emergency-account" id="emergency-account"></a>
+## Emergency account
 
-This account type is supposed to be your backup access to the device should it fail catastrophically. It will be created proactively. This way you will always have access for recovery. We recommend configuring it for [account recreation](https://docs-classic.realmjoin.com/core-features/local-admin-password-solution#account-recreation) (in RJ Classic Docs).
+This account type is supposed to be your backup access to the device should it fail catastrophically. It will be created proactively. This way you will always have access for recovery. We recommend configuring it for [account recreation](#account-recreation).
 
 _Example_
 
-Key `LocalAdminManagement.EmergencyAccount` (for common settings see [group settings](https://docs.realmjoin.com/core-features/local-admin-password-solution#group-settings))
+Key `LocalAdminManagement.EmergencyAccount` (for common settings see [group settings](#group-settings))
 
 ```json
 {
@@ -110,7 +110,7 @@ Key `LocalAdminManagement.EmergencyAccount` (for common settings see [group sett
 }
 ```
 
-## Support account <a href="#support-account" id="support-account"></a>
+## Support account
 
 This account type can be configured for on-demand creation. It is designed for use in a limited time window of 12 hours in on-demand mode.
 
@@ -138,7 +138,7 @@ When not in on-demand mode it will be created proactively.
 
 _Example_
 
-Key `LocalAdminManagement.SupportAccount` (for common settings see [group settings](https://docs.realmjoin.com/core-features/local-admin-password-solution#group-settings))
+Key `LocalAdminManagement.SupportAccount` (for common settings see [group settings](#group-settings))
 
 ```json
 {
@@ -149,7 +149,7 @@ Key `LocalAdminManagement.SupportAccount` (for common settings see [group settin
 }
 ```
 
-## Privileged account <a href="#privileged-account" id="privileged-account"></a>
+## Privileged account
 
 This account type is designed to be used by power users that need regular but controlled admin privileges on their own devices. A fixed account expiration date can be specified (`Expiration`).
 
@@ -165,7 +165,7 @@ Forced password rotations are supported:
 
 _Example_
 
-Key `LocalAdminManagement.PrivilegedAccount` (for common settings see [group settings](https://docs.realmjoin.com/core-features/local-admin-password-solution#group-settings))
+Key `LocalAdminManagement.PrivilegedAccount` (for common settings see [group settings](#group-settings))
 
 ```json
 {
@@ -177,11 +177,11 @@ Key `LocalAdminManagement.PrivilegedAccount` (for common settings see [group set
 }
 ```
 
-## Accessing passwords <a href="#accessing-passwords" id="accessing-passwords"></a>
+## Accessing passwords
 
 Use the RealmJoin Portal to access the passwords. It will appears similar to this.​
 
-## Enable self-service <a href="#enable-self-service" id="enable-self-service"></a>
+## Enable self-service
 
 Users may access accounts created on their _own_ devices (they are "PrimaryUser") when enabled using the _RealmJoin Portal_ starting with version `2022.5.1`. To enable, define a setting using the key `Allow.SelfLAPS`. This setting may be defined on groups and users. As with all settings prefixed with `Allow.*` they are AND-joined across the user and all of their groups.
 
