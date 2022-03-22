@@ -20,4 +20,4 @@ Now, on every request against the RealmJoins backend service present an http hea
 Authorization: Basic dC0xMjM0MTIzNDpteVMzY3JldCE=
 ```
 
-RealmJoin will then allow you to interact with ressources in your envorinment. It will not allow yuo to interact with resources foreign to your tenant.
+RealmJoin will then allow you to interact with ressources in your envorinment. It will not allow yuo to interact with resources foreign to your tenant. Remember that RealmJoin Portal requires SSL/TLS transport layer encryption on every request - your credentials will not be exposed to the traversing networks.
