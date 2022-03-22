@@ -13,7 +13,7 @@ Application Insights is an extensible Application Performance Management service
 * Then, click **Review + Create**
 * Review your settings and click **Create**
 
-Then, copy the **Instrumentation Key** and send it to [GKGAB Support](mailto:support@glueckkanja-gab.com).
+Then, copy the **Instrumentation Key** and send it to [glueckkanja-gab (GKGAB) Support](mailto:support@glueckkanja-gab.com).
 
 ![](<../../.gitbook/assets/image (20) (1).png>)
 

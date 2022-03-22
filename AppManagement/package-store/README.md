@@ -49,7 +49,7 @@ This package is available for provisioning via Intune / [Package Management](../
 
 #### Craft Package
 
-Non-Intune package to be delivered via RealmJoin Client. It is not available via Intune and can not be directly provisioned from this page. Visit [RealmJoin Classic](https://realmjoin-web.azurewebsites.net/home) to assign a Craft package.
+Non-Intune package to be delivered via RealmJoin Client. It is not available via Intune and can not be directly provisioned from this page. Visit [RealmJoin Classic Portal](https://realmjoin-web.azurewebsites.net/home) to assign a Craft package.
 
 ### Full vs. Limited Catalogue of Packages
 

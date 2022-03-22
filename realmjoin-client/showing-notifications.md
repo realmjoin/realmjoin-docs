@@ -2,7 +2,7 @@
 
 With the help of the notification feature it is possible to notify users and clients very quickly. Whether it is general information or important issues.
 
-This feature currently needs to be configured using [RealmJoin Classic](https://realmjoin-web.azurewebsites.net).&#x20;
+This feature currently needs to be configured using [RealmJoin Classic Portal](https://realmjoin-web.azurewebsites.net).&#x20;
 
 ### Notification example
 

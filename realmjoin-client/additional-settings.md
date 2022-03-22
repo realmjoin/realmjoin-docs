@@ -1,6 +1,6 @@
 # Settings
 
-The following article shows you a list of possible RealmJoin Settings. These can be configured in [RealmJoin Classic](https://realmjoin-web.azurewebsites.net/).
+The following article shows you a list of possible RealmJoin Settings. These can be configured in [RealmJoin Classic Portal](https://realmjoin-web.azurewebsites.net/).
 
 ### BranchCache.Mode
 

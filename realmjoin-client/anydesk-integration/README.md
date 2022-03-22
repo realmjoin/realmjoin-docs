@@ -13,6 +13,6 @@ RealmJoin Client allows to skip the ID number sharing because every AnyDesk ID n
 3. AnyDesk sends a license and login credentials to GKGAB
 4. GKGAB deploys AnyDesk
 5. GKGAB sends the 'public download' URL to the customer
-6. The customer configures the AnyDesk Group Settings in [RealmJoin Classic](https://realmjoin-web.azurewebsites.net)
+6. The customer configures the AnyDesk Group Settings in [RealmJoin Classic Portal](https://realmjoin-web.azurewebsites.net)
 7. GKGAB does the backend integration in RealmJoin
 8. AnyDesk is deployed

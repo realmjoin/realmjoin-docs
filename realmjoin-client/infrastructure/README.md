@@ -65,7 +65,7 @@ To provide the **BranchCache** mechanism, the endpoint has to provide the chunk 
 
 #### Web Interface
 
-The web interface can be reached via the [realmjoin portal](https://realmjoin-web.azurewebsites.net). After a logging with the provided credentials, the administrator can manage the package distribution in his tenant and access extensive information.
+The web interface can be reached via the [RealmJoin Classic Portal](https://realmjoin-web.azurewebsites.net). After a logging with the provided credentials, the administrator can manage the package distribution in his tenant and access extensive information.
 
 ## Security Features
 
