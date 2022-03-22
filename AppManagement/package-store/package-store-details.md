@@ -10,7 +10,7 @@ The RealmJoin Store contains two types of packages. **Intune** packages and **Cr
 
 Currently only Intune Win32 app packages can be provisioned using RealmJoin Portal. Other package types like Craft packages can be displayed but currently not provisioned.
 
-Craft packages can be used in conjuction with RealmJoin Client and are not delivered via Intune/Microsoft Endpoint Manager. Please visit [RealmJoin Classic Portal](https://realmjoin-web.azurewebsites.net/home) to assign Craft packages.&#x20;
+Craft packages can be used in conjuction with RealmJoin Client and are not delivered via Intune/Microsoft Endpoint Manager. Please visit [RealmJoin Classic Portal](https://realmjoin-web.azurewebsites.net/home) to assign Craft packages.
 
 ## Package Properties
 
@@ -28,13 +28,13 @@ These fields are binary - they are set to one of two possible values. The text o
 
 #### Maintained / Unmaintained
 
-GKGAB will provide new versions / updates of maintained packages on a regular basis.&#x20;
+GKGAB will provide new versions / updates of maintained packages on a regular basis.
 
 Automatic package management can be applied to keep the software delivered by these packages permanentely up-to-date in your environment.
 
 #### Generic / Custom
 
-"Generic" packages are available to all customers / environments.&#x20;
+"Generic" packages are available to all customers / environments.
 
 "Custom" packages are not globally available to all customers. In most cases this is a custom software package created specifically for your environment.
 
@@ -58,15 +58,15 @@ This page allows to examine your current security posture, incl. installed versi
 
 ### Version
 
-![Available Version vs Provisioned Package](<../../.gitbook/assets/image (7) (1) (1) (1).png>)
+![Available Version vs Provisioned Package](<../../.gitbook/assets/image (7) (1) (1) (1) (1).png>)
 
-Also displayed on the left side of the screen is the version of the software package.&#x20;
+Also displayed on the left side of the screen is the version of the software package.
 
 If you already provisioned the package to your environment, a link to the provisioned package in [Package Management](../package-management/) will be displayed. The link will show the name and version of the provisioned package.
 
 ## Subscribe to Package
 
-On the Overview Tab of a package, you will find buttons, that allow you to import the package from the store into your environment.&#x20;
+On the Overview Tab of a package, you will find buttons, that allow you to import the package from the store into your environment.
 
 ![Subscribe Buttons](<../../.gitbook/assets/image (16) (1) (1) (1) (1).png>)
 
@@ -78,19 +78,19 @@ When you choose "managed", RealmJoin will also create AzureAD groups to assign t
 
 ![Application Groups](<../../.gitbook/assets/image (10) (1) (1) (1) (1) (1) (1) (1).png>)
 
-Assigning users to the main and the preview group will triggered a "required" installation of this software title in Intune. Managed packages currently do not support "available" installations. This is to make sure, that future package/application updates will actually arrive on a user's device - which is not guaranteed via "available" installations.&#x20;
+Assigning users to the main and the preview group will triggered a "required" installation of this software title in Intune. Managed packages currently do not support "available" installations. This is to make sure, that future package/application updates will actually arrive on a user's device - which is not guaranteed via "available" installations.
 
-"Managed" packages are the prefered way to deploy software to your users. You can combine it with automated package updates and ensure your users receive latest features and patches.&#x20;
+"Managed" packages are the prefered way to deploy software to your users. You can combine it with automated package updates and ensure your users receive latest features and patches.
 
 ### Basic
 
-"Basic" just creates the Intune application, but will not associate it with any groups or users. You will have to manually assign groups, devices or users.&#x20;
+"Basic" just creates the Intune application, but will not associate it with any groups or users. You will have to manually assign groups, devices or users.
 
 If you want to offer software for "available" installation through MS Company Portal you can do so with "basic" packages. Be aware, fully automated updates of software is not guaranteed via "available" installations.
 
 ## Tabs
 
-The right side of the screen shows the contents of the current tab.&#x20;
+The right side of the screen shows the contents of the current tab.
 
 The following tabs are available:
 
@@ -100,7 +100,7 @@ The following tabs are available:
 
 #### Ttitle, Description and other Info
 
-This tab will show the long description, license and technical help information of a package.&#x20;
+This tab will show the long description, license and technical help information of a package.
 
 #### Subscribe / Provisioning
 
@@ -114,4 +114,4 @@ The package's changelog shows when the packages has been updated in RealmJoin's 
 
 ### RealmJoin Store
 
-Raw JSON representation of the package  and its metadata object in the store. This is primarily for debugging and administrative purposes.
+Raw JSON representation of the package and its metadata object in the store. This is primarily for debugging and administrative purposes.

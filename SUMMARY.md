@@ -41,7 +41,7 @@
   * [Deploying Applications using the Client](realmjoin-client/deploy-apps/README.md)
     * [RealmJoin ESP](realmjoin-client/deploy-apps/realmjoin-esp.md)
   * [Showing Notifications](realmjoin-client/showing-notifications.md)
-  * [User Inteface](realmjoin-client/client-menu.md)
+  * [User Interface](realmjoin-client/client-menu.md)
   * [Infrastructure](realmjoin-client/infrastructure/README.md)
     * [Multi User Devices](realmjoin-client/infrastructure/multi-user-devices.md)
   * [Deploying the Client](realmjoin-client/installation.md)

@@ -9,7 +9,7 @@ The RealmJoin runbook implementation offers customizing capabilities to a runboo
 * present human readable explanations of parameters
 * hide unneeded UI elements
 
-![Example](<../.gitbook/assets/runbook-customization-img1 (1) (1).png>)
+![Example](<../.gitbook/assets/runbook-customization-img1 (1).png>)
 
 The customizings can be included in the runbook itself and/or stored in the customers RealmJoin Portal instance. By default, we will try to offer sensible defaults in the runbooks offered on [GitHub](https://github.com/realmjoin/realmjoin-runbooks).
 
@@ -73,7 +73,7 @@ In the example above, the source of information is MS Graph, as described by `-T
 
 The picker includes a quick search, to easily pin down the required resource.
 
-![Picker Example](<../.gitbook/assets/runbook-customization-img2 (1) (1).png>)
+![Picker Example](<../.gitbook/assets/runbook-customization-img2 (1).png>)
 
 Currently, no multiselect is possible using a picker.
 
@@ -105,7 +105,7 @@ param(
 
 This specific example `ref:LicenseGroup` is available by default without further configuration.
 
-![ODATA filter](<../.gitbook/assets/runbook-customization-img3 (1) (1).png>)
+![ODATA filter](<../.gitbook/assets/runbook-customization-img3 (1).png>)
 
 ## Runbook Header
 
@@ -214,7 +214,7 @@ if ($ExtraWorkflow) {
 
 If not customized, it will be presented like this in the frontend:
 
-![Demo - before](<../.gitbook/assets/runbook-customization-img4 (1) (1).png>)
+![Demo - before](<../.gitbook/assets/runbook-customization-img4 (1).png>)
 
 Thoughts:
 
@@ -283,11 +283,11 @@ Each parameter has its own section in `ParameterList`. [Modifiers](runbook-custo
 
 The result will look like this:
 
-![Demo - after hidden](<../.gitbook/assets/runbook-customization-img5 (1) (1).png>)
+![Demo - after hidden](<../.gitbook/assets/runbook-customization-img5 (1).png>)
 
 Choosing the additional workflow, will present (unhide) more parameters:
 
-![Demo - after unhidden](<../.gitbook/assets/runbook-customization-img6 (1) (1).png>)
+![Demo - after unhidden](<../.gitbook/assets/runbook-customization-img6 (1).png>)
 
 This shows less clutter in comparison to before applying customizing. At the same time more information about the alternatives of "Extra Workflow" is available to the user. Also, a user now will only worry about "Extra Workflow Time" if it is relevant.
 
@@ -555,9 +555,9 @@ So, we can have a runbook specific customziation in `Runbooks` reusable accross 
 
 This will create the following UI:
 
-![Demo - ref-location](<../.gitbook/assets/runbook-customization-img7 (1) (1).png>)
+![Demo - ref-location](<../.gitbook/assets/runbook-customization-img7 (1).png>)
 
-![Demo - ref-address](<../.gitbook/assets/runbook-customization-img8 (1) (1).png>)
+![Demo - ref-address](<../.gitbook/assets/runbook-customization-img8 (1).png>)
 
 ### Graph Filters
 

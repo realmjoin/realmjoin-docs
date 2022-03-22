@@ -6,7 +6,7 @@ To connect RealmJoin Cliet's backend to an AzureAD tenant, a **Hello Token** is 
 Sometimes if a new tab is used, the RealmJoin portal needs to log the admin user in first. This leads to the page reloading. In this case, open the link [RealmJoin connect](https://realmjoin-web.azurewebsites.net/global/graph) in the **same** browser tab again.
 {% endhint %}
 
-![](<../.gitbook/assets/image (20) (1) (1).png>)
+![](<../.gitbook/assets/image (20) (1) (1) (1).png>)
 
 A tenant administrator has to give consent to RealmJoin. The Connect Wizard creates the necessary entries in Intune. After completion, it is important to revisit the first tab/browser window and the **Check\&Install** option to be executed.
 
@@ -14,7 +14,7 @@ A tenant administrator has to give consent to RealmJoin. The Connect Wizard crea
 
 The following permissions are admitted by the administrator consent and set in Azure via the GraphAPI:
 
-![](<../.gitbook/assets/image (7).png>)
+![](<../.gitbook/assets/image (7) (1).png>)
 
 ### Default configuration for new tenants
 

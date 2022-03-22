@@ -1,4 +1,4 @@
-# User Inteface
+# User Interface
 
 ## Client Menu
 
@@ -14,6 +14,6 @@ Furthermore, RealmJoin offers a remote function (**Start remote session**). For 
 
 A further useful feature is **Sync this device:**
 
-![](<../.gitbook/assets/image (9).png>)
+![](<../.gitbook/assets/image (24).png>)
 
 When you click **Sync this device** RealmJoin will install or update mandatory packages. Furthermore **Sync this device** helps to speed up background processes (e. g. waiting for new weblinks or waiting for an admin account).
