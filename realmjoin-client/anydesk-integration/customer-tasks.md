@@ -50,7 +50,7 @@ After you configure your user client, you will need to contact AnyDesk. Request 
 
 To allow a supporter to connect to a desktop, you have to assign the **AnyDesk Supporter Client Setup Launcher** to a supporter.
 
-![](<../../.gitbook/assets/image (25).png>)
+![](<../../.gitbook/assets/image (27).png>)
 
 For this assignment you need your supporter client URL.
 

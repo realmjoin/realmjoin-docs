@@ -1,6 +1,6 @@
 # Local Admin Password Solution (LAPS)
 
-Our Local Administrator Password Solution (LAPS) was built to solve the issue of using identical accounts in your environment for user support or privilege escalation. LAPS creates strong passwords for local accounts which are stored securely in _your own_ [Azure Key Vault](https://docs.realmjoin.com/core-features/local-admin-password-solution/keyvault). For auditing, you also have to provide an [Application Insights](https://docs.realmjoin.com/core-features/local-admin-password-solution/application-insights) instance, though we are transitioning to using Log Analytics workspaces directly.
+Our Local Administrator Password Solution (LAPS) was built to solve the issue of using identical accounts in your environment for user support or privilege escalation. LAPS creates strong passwords for local accounts which are stored securely in _your own_ [Azure Key Vault](keyvault.md). For auditing, you also have to provide an [Application Insights](application-insights.md) instance, though we are transitioning to using Log Analytics workspaces directly.
 
 Most settings denoted on this page have to be configured using [RealmJoin Classic Portal](https://realmjoin-web.azurewebsites.net).
 
@@ -15,7 +15,7 @@ We'll look at both of them below.
 
 ## Application Insights
 
-Application Insights play an important role when using LAPS. The password requests triggered by LAPS are logged by RealmJoin and piped to Application Insights. This way you have complete insight into who is retrieving passwords.More details can be found in our [Application Insights](application-insights.md) article.
+Application Insights play an important role when using LAPS. The password requests triggered by LAPS are logged by RealmJoin and piped to Application Insights. This way you have complete insight into who is retrieving passwords. More details can be found in our [Application Insights](application-insights.md) article.
 
 ## Group settings
 
@@ -42,15 +42,15 @@ In the following table `$` represents any of the three `Account` JSON object fro
 
 | Settings Key       | Default Value                                                        | Description                                                                   |
 | ------------------ | -------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| $.NamePattern      | `"ADM-{HEX:8}"`                                                      | Special. See [Privileged account](#privileged-account).                     |
+| $.NamePattern      | `"ADM-{HEX:8}"`                                                      | Special. See [Privileged account](./#privileged-account).                     |
 | $.DisplayName      | `"RealmJoin Local Administrator"`                                    | Display name                                                                  |
 | $.PasswordCharSet  | `"!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz"` | Charset for the password generator (excludes lookalikes)                      |
 | $.PasswordLength   | 20                                                                   | Password length                                                               |
-| $.PasswordPreset   | 0                                                                    | Preset password templates, see [Password generation](#password-generation). |
-| $.MaxStaleness     | Special. See [Account recreation](#account-recreation).            | Preset password templates, see [Password generation](#password-generation). |
-| $.OnDemand         | Special. See [Support account](#support-account).                  | Create account only when requested.                                           |
-| $.Expiration       | Special. See [Privileged account](#privileged-account).            | Fixed account expiration date (ISO-8601 format)                               |
-| $.PasswordRenewals | Special. See [Privileged account](#privileged-account).            | Fixed account expiration date (ISO-8601 format)                               |
+| $.PasswordPreset   | 0                                                                    | Preset password templates, see [Password generation](./#password-generation). |
+| $.MaxStaleness     | Special. See [Account recreation](./#account-recreation).            | Preset password templates, see [Password generation](./#password-generation). |
+| $.OnDemand         | Special. See [Support account](./#support-account).                  | Create account only when requested.                                           |
+| $.Expiration       | Special. See [Privileged account](./#privileged-account).            | Fixed account expiration date (ISO-8601 format)                               |
+| $.PasswordRenewals | Special. See [Privileged account](./#privileged-account).            | Fixed account expiration date (ISO-8601 format)                               |
 
 ## Password **generation**
 
@@ -95,11 +95,11 @@ Even though RealmJoin tries its best to avoid naming conflicts when managing the
 
 ## Emergency account
 
-This account type is supposed to be your backup access to the device should it fail catastrophically. It will be created proactively. This way you will always have access for recovery. We recommend configuring it for [account recreation](#account-recreation).
+This account type is supposed to be your backup access to the device should it fail catastrophically. It will be created proactively. This way you will always have access for recovery. We recommend configuring it for [account recreation](./#account-recreation).
 
 _Example_
 
-Key `LocalAdminManagement.EmergencyAccount` (for common settings see [group settings](#group-settings))
+Key `LocalAdminManagement.EmergencyAccount` (for common settings see [group settings](./#group-settings))
 
 ```json
 {
@@ -138,7 +138,7 @@ When not in on-demand mode it will be created proactively.
 
 _Example_
 
-Key `LocalAdminManagement.SupportAccount` (for common settings see [group settings](#group-settings))
+Key `LocalAdminManagement.SupportAccount` (for common settings see [group settings](./#group-settings))
 
 ```json
 {
@@ -165,7 +165,7 @@ Forced password rotations are supported:
 
 _Example_
 
-Key `LocalAdminManagement.PrivilegedAccount` (for common settings see [group settings](#group-settings))
+Key `LocalAdminManagement.PrivilegedAccount` (for common settings see [group settings](./#group-settings))
 
 ```json
 {
