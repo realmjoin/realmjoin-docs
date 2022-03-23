@@ -53,6 +53,6 @@ This is the recommended permission to use for User/Device Supporter Roles.
 
 ## Permission Defaults
 
-Normal users will be default only have access to the [About Me](../user-group-device-management/about-me.md) page to support self-service scenarios.
+Normal users will by default only have access to the [About Me](../user-group-device-management/about-me.md) page to support self-service scenarios.
 
 On initial onboarding, The AzureAD role "Global Admins" is also a RealmJoin Admin, so that initial configuration is possible.&#x20;
