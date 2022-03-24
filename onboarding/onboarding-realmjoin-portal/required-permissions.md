@@ -62,7 +62,7 @@ Application ID: `ba1ffde4-2f5e-46e2-a431-a9a19f77aed4`
 
 Admins and Users do not directly interact with this app. It represents RealmJoin’s backend that interacts with Azure AD and Intune.
 
-Using this app only allows you to do "read only" operations on AzureAD/MS Graph and Intune with RealJoin Portal. This is intended for testing RealmJoin Portal as part of a PoC before switching over to the full set of [Core Features](required-permissions.md#realmjoin-portal-core-features). Using this app severly limits your ability to deploy or manage applications as it cannot create or modify AzureAD groups or Intune applications. &#x20;
+Using this app only allows you to do "read only" operations on AzureAD/MS Graph and Intune with RealJoin Portal. This is intended for testing RealmJoin Portal as part of a PoC before switching over to the full set of [Core Features](required-permissions.md#realmjoin-portal-core-features). Using this app severly limits your ability to deploy or manage applications as it cannot create or modify AzureAD groups or Intune applications.
 
 Be aware, using this app does not stop you from leveraging components like [runbooks ](../../runbooks/)that can be configured for writing (and possibly destructive) operations.
 
@@ -72,18 +72,17 @@ All of the following permissions are of the permission type “**Application**�
 
 ### API Permissions
 
-| Claim                                                   | Usage                                                                  |
-| ------------------------------------------------------- | ---------------------------------------------------------------------- |
-| PrivilegedAccess.Read.AzureAD                           | Read AzureAD roles (incl. PIM) for RealmJoin’s internal RBAC model     |
-| PrivilegedAccess.Read.AzureResources                    | Read AzureAD roles (incl. PIM) for RealmJoin’s internal RBAC model     |
-| PrivilegedAccess.Read.AzureADGroup                      | Read AzureAD groups (incl. PIM) for RealmJoin’s internal RBAC model    |
-| User.Read.All                                           | List / display users                 |
-| Device.Read.All                                         | Interact with devices and device management                            |
-| Group.Read.All                                          | List / display groups as           |
-| GroupMember.Read.All                                    | List application assignment group memberships                        |
-| AuditLog.Read.All                                       | Read last signin date of users and devices                             |
-| DeviceManagementServiceConfig.Read.All                  | Read software deployment and device management via Intune |
-| DeviceManagementManagedDevices.PrivilegedOperations.All | Query device management tasks like "Scan Device"                     |
-| DeviceManagementManagedDevices.Read.All                 | Read software deployment and device management via Intune |
-| DeviceManagementApps.Read.All                           | Read software deployment via Intune                       |
-| DeviceManagementRBAC.Read.All                           | Read software deployment and device management via Intune |
+| Claim                                   | Usage                                                               |
+| --------------------------------------- | ------------------------------------------------------------------- |
+| PrivilegedAccess.Read.AzureAD           | Read AzureAD roles (incl. PIM) for RealmJoin’s internal RBAC model  |
+| PrivilegedAccess.Read.AzureResources    | Read AzureAD roles (incl. PIM) for RealmJoin’s internal RBAC model  |
+| PrivilegedAccess.Read.AzureADGroup      | Read AzureAD groups (incl. PIM) for RealmJoin’s internal RBAC model |
+| User.Read.All                           | List / display users                                                |
+| Device.Read.All                         | Interact with devices and device management                         |
+| Group.Read.All                          | List / display groups as                                            |
+| GroupMember.Read.All                    | List application assignment group memberships                       |
+| AuditLog.Read.All                       | Read last signin date of users and devices                          |
+| DeviceManagementServiceConfig.Read.All  | Read software deployment and device management via Intune           |
+| DeviceManagementManagedDevices.Read.All | Read software deployment and device management via Intune           |
+| DeviceManagementApps.Read.All           | Read software deployment via Intune                                 |
+| DeviceManagementRBAC.Read.All           | Read software deployment and device management via Intune           |
