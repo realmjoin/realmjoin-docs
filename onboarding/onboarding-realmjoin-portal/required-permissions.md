@@ -78,7 +78,7 @@ All of the following permissions are of the permission type “**Application**�
 | PrivilegedAccess.Read.AzureResources    | Read AzureAD roles (incl. PIM) for RealmJoin’s internal RBAC model  |
 | PrivilegedAccess.Read.AzureADGroup      | Read AzureAD groups (incl. PIM) for RealmJoin’s internal RBAC model |
 | User.Read.All                           | List / display users                                                |
-| Device.Read.All                         | List/Read devices and device management                             |
+| Device.Read.All                         | List / read devices and device management                           |
 | Group.Read.All                          | List / display groups as                                            |
 | GroupMember.Read.All                    | List application assignment group memberships                       |
 | AuditLog.Read.All                       | Read last signin date of users and devices                          |
