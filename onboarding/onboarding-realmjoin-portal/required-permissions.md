@@ -36,7 +36,7 @@ All actions triggered by this app are filtered through RealmJoin’s internal pe
 
 All of the following permissions are of the permission type “**Application**” ( = can operate without a signed in user) and target [MS Graph API](https://docs.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0). You can read more about the individual permissions [here](https://docs.microsoft.com/en-us/graph/permissions-reference).
 
-If you onboard **RealmJoin Core ReadOnly** features it will onboard read-only versions of the same permissions and offer only limited functionality. These are not described separately.
+If you onboard **RealmJoin Core Features (Read-Only)** features it will onboard read-only versions of the same permissions and offer only limited functionality. This can be used to testdrive RealmJoin Portal with less permissions. See [below](required-permissions.md#realmjoin-portal-core-features-1) for details.
 
 ### API Permissions
 
@@ -46,11 +46,28 @@ If you onboard **RealmJoin Core ReadOnly** features it will onboard read-only ve
 | PrivilegedAccess.Read.AzureResources                    | Read AzureAD roles (incl. PIM) for RealmJoin’s internal RBAC model     |
 | PrivilegedAccess.Read.AzureADGroup                      | Read AzureAD groups (incl. PIM) for RealmJoin’s internal RBAC model    |
 | User.ReadWrite.All                                      | List / display users as well as user self-services                     |
-| Group.ReadWrite.All                                     | List / display groups as well as application group management          |
 | Device.ReadWrite.All                                    | Interact with devices and device management                            |
+| Group.ReadWrite.All                                     | List / display groups as well as application group management          |
 | GroupMember.ReadWrite.All                               | Manage application assignment group memberships                        |
 | AuditLog.Read.All                                       | Read last signin date of users and devices                             |
 | DeviceManagementServiceConfig.ReadWrite.All             | Manage / automate software deployment and device management via Intune |
 | DeviceManagementManagedDevices.PrivilegedOperations.All | Trigger device management tasks like "Scan Device"                     |
-| DeviceManagementApps.ReadWrite.All                      | Manage / automate software deployment and device management via Intune |
+| DeviceManagementManagedDevices.ReadWrite.All            | Manage / automate software deployment and device management via Intune |
+| DeviceManagementApps.ReadWrite.All                      | Manage / automate software deployment via Intune                       |
 | DeviceManagementRBAC.ReadWrite.All                      | Manage / automate software deployment and device management via Intune |
+
+## RealmJoin Portal - Core Features (Read-Only)
+
+Application ID: `ba1ffde4-2f5e-46e2-a431-a9a19f77aed4`
+
+Admins and Users do not directly interact with this app. It represents RealmJoin’s backend that interacts with Azure AD and Intune.
+
+Using this app only allows you to do "read only" operations on AzureAD and MS Graph with RealJoin Portal. This is intended for testing RealmJoin Portal as part of a PoC before switching over to the full set of [Core Features](required-permissions.md#realmjoin-portal-core-features) .&#x20;
+
+Be aware, using this app does not stop you from leveraging components like [runbooks ](../../runbooks/)that can be configured for writing (and possibly destructive) operations.
+
+All actions triggered by this app are filtered through RealmJoin’s internal permission (RBAC) model which can evaluate AzureAD group and role memberships.
+
+All of the following permissions are of the permission type “**Application**” ( = can operate without a signed in user) and target [MS Graph API](https://docs.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0). You can read more about the individual permissions [here](https://docs.microsoft.com/en-us/graph/permissions-reference).
+
+### API Permissions
