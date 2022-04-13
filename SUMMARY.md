@@ -60,5 +60,4 @@
     * [Authentication](developer-reference/realmjoin-api/authentication.md)
   * [Interacting with Runbooks](developer-reference/interacting-with-runbooks.md)
   * [Local Admin Password Management](developer-reference/local-admin-password-management.md)
-* [Licensing](https://www.realmjoin.com/pricing/)
 * [Support](support.md)
