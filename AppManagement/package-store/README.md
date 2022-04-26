@@ -2,7 +2,7 @@
 
 ![Package Store Page](<../../.gitbook/assets/image (4) (1).png>)
 
-RealmJoin Portal has access to a large library of ready-to-use packages for Microsoft Endpoint Manager (Intune) maintend by glueckkanja-gab AG (GKGAB).&#x20;
+RealmJoin Portal has access to a large library of ready-to-use packages for Microsoft Endpoint Manager (Intune) maintend by glueckkanja-gab AG (GKGAB).
 
 This page will list all packages available to your organization.
 
@@ -12,7 +12,7 @@ Packages are sorted into categories to simplify searching/exploring the catalogu
 
 ### Search
 
-You can use the searchbar at the top to search for a package by:&#x20;
+You can use the searchbar at the top to search for a package by:
 
 * **Display name** - e.g. "7-Zip"
 * **Category** - like "Tools" or "Office"
@@ -25,31 +25,35 @@ The search updates results instantly as you type.
 
 Every package falls in at least one of the following categories. The banner on the right side of a package is color-coded accordingly.
 
-#### Maintaned Packages
+#### Maintained Packages
 
-GKGAB will provide new versions / updates for this package on a regular basis.&#x20;
+GKGAB will provide new versions / updates for this package on a regular basis.
 
 This package is available for provisioning via Intune / [Package Management](../package-management/). Automatic package management can be applied to keep the software delivered by this package permanentely up-to-date in your environment.
 
-#### Default Package
+#### Unmaintained Package
 
 This package is not maintained. It is available for provisioning via Intune / [Package Management](../package-management/) but will not necessarily be kept up-to-date.
 
 #### Free Package
 
-Like a "default package", but also non-billable.
+Packages that are based on freely available software titles. Please review and respect the individual titles licensing terms.
 
 This package is available for provisioning via Intune / [Package Management](../package-management/).
+
+#### Craft Package
+
+Packages that operate outside of some standard packaging practises. For example, installations in the user's context instead of system context are done via "Craft" packages.&#x20;
+
+In the context of RealmJoin Classic / Agent based installation - these packages to not use the "choco" engine.
+
+Most of these packages are available for provisioning via Intune / [Package Management](../package-management/).
 
 #### Custom Package
 
 In contrast to the former types of packages, this kind of package is not globally available to all customers. In most cases this is a custom software package created specifically for your environment.
 
 This package is available for provisioning via Intune / [Package Management](../package-management/).
-
-#### Craft Package
-
-Non-Intune package to be delivered via RealmJoin Client. It is not available via Intune and can not be directly provisioned from this page. Visit [RealmJoin Classic Portal](https://realmjoin-web.azurewebsites.net/home) to assign a Craft package.
 
 ### Full vs. Limited Catalogue of Packages
 
