@@ -1,4 +1,4 @@
-# Settings
+# Additional Settings
 
 The following article shows you a list of possible RealmJoin Settings. These can be configured in [RealmJoin Classic Portal](https://realmjoin-web.azurewebsites.net/).
 
@@ -6,12 +6,12 @@ The following article shows you a list of possible RealmJoin Settings. These can
 
 This setting changes BranchCache mode for **new** clients.
 
-**Key**  
+**Key**\
 BranchCache.Mode
 
 **Value**
 
-```text
+```
 "Distributed"|"Undefined"
 ```
 
@@ -19,30 +19,30 @@ BranchCache.Mode
 
 The following settings configure DomainConnect for legacy domains.
 
-**Key**  
+**Key**\
 DomainConnect.CredentialName
 
 **Value**
 
-```text
+```
 "RealmJoin (domain)"
 ```
 
-**Key**  
+**Key**\
 DomainConnect.Domain
 
 **Value**
 
-```text
+```
 "domain.contoso.net"
 ```
 
-**Key**  
+**Key**\
 DomainConnect.NetBIOS
 
 **Value**
 
-```text
+```
 "contoso"
 ```
 
@@ -50,12 +50,12 @@ DomainConnect.NetBIOS
 
 With this setting the user group switch channel on next auto-update.
 
-**Key**  
+**Key**\
 Environment.Channel
 
 **Value**
 
-```text
+```
 "release" | "beta" | "canary"
 ```
 
@@ -63,7 +63,7 @@ Environment.Channel
 
 This setting enables or disables the AnyDesk feature.
 
-**Key**  
+**Key**\
 Integration.AnyDesk
 
 **Value**
@@ -79,7 +79,7 @@ Integration.AnyDesk
 
 This setting enables or disables the ExecutionMonitor Feature.
 
-**Key**  
+**Key**\
 Integration.ExecutionMonitor
 
 **Value**
@@ -93,9 +93,9 @@ Integration.ExecutionMonitor
 
 ### Notifier Feature
 
-This setting enables or disables the Notifier featire and it also activates or deactivates the editor UI.
+This setting enables or disables the Notifier feature and it also activates or deactivates the editor UI.
 
-**Key**  
+**Key**\
 Integration.Notification
 
 **Value**
@@ -110,27 +110,27 @@ Integration.Notification
 
 ### LocalAdminManagement Features
 
-This section shows you all necessary settings for the LocalAdminManagement features. For more details about this features read [Local Admin Password Solution article](local-admin-password-solution-laps/README.md).
+This section shows you all necessary settings for the LocalAdminManagement features. For more details about this features read [Local Admin Password Solution article](local-admin-password-solution-laps/).
 
-**Key**  
+**Key**\
 LocalAdminManagement.Inactive
 
 **Value**
 
-```text
+```
 false
 ```
 
-**Key**  
+**Key**\
 LocalAdminManagement.CheckInterval
 
 **Value**
 
-```text
+```
 "00:05"
 ```
 
-**Key**  
+**Key**\
 LocalAdminManagement.EmergencyAccount
 
 **Value**
@@ -145,7 +145,7 @@ LocalAdminManagement.EmergencyAccount
 }
 ```
 
-**Key**  
+**Key**\
 LocalAdminManagement.SupportAccount
 
 ```json
@@ -163,7 +163,7 @@ LocalAdminManagement.SupportAccount
 
 The following setting generates a weblink in the tray.
 
-**Key**   
+**Key**\
 WebLinks
 
 **Value**
@@ -189,7 +189,7 @@ WebLinks
 Currently only LAPS is supported
 {% endhint %}
 
-**Key**  
+**Key**\
 Restrict.LAPS
 
 Value
@@ -215,39 +215,38 @@ Attach Restrict. \*keys to target user group. This list is inclusive: Only those
 
 This sections shows you four policies for RealmJoin.
 
-**Key**  
+**Key**\
 Policies.DisableNetworkLocationWizard
 
 **Value**
 
-```text
+```
 true | false
 ```
 
-**Key**  
+**Key**\
 Policies.RequireSecurityFeatures.BitlockerEnabled
 
 **Value**
 
-```text
+```
 true | false
 ```
 
-**Key**  
+**Key**\
 Policies.SetCurrentUserAdministrator
 
 **Value**
 
-```text
+```
 true | false
 ```
 
-**Key**  
+**Key**\
 Policies.SetTimeserver
 
 **Value**
 
-```text
+```
 "pool.ntp.org"
 ```
-
