@@ -27,18 +27,21 @@ For **BranchCache** to be effective the clients need to be able to communicate d
 
 ### RealmJoin Connection Endpoints
 
-RealmJoin connects to the following URLs that might be considered in your firewall settings:
+RealmJoin connects to the following hosts (using HTTPS) that might be considered in your firewall settings:
 
-* `https://cdn.realmjoin.com/`
-* `https://x1.c.lencr.org/`
-* `https://realmjoin-backend.azurewebsites.net/`
-* `https://realmjoin-backend-staging.azurewebsites.net/`
-* `https://packages.gkdatacenter.net/`
-* `https://enterpriseregistration.windows.net/`
-* `https://gkrealmjoin.s3.amazonaws.com/`
-* `https://login.microsoftonline.com/`
-* `https://graph.microsoft.com/`
-* `https://realmjoinstaticcdn.azureedge.net` (Notifier)
+* `cdn.realmjoin.com`
+* `x1.c.lencr.org`
+* `client-api.realmjoin.com **NEW!**`
+* `client-api-staging.realmjoin.com **NEW!**`
+* `realmjoin-backend.azurewebsites.net`
+* `realmjoin-backend-staging.azurewebsites.net`
+* `packages.gkdatacenter.net`
+* `nuget.realmjoin.com **NEW!**`
+* `enterpriseregistration.windows.net`
+* `gkrealmjoin.s3.amazonaws.com`
+* `login.microsoftonline.com`
+* `graph.microsoft.com`
+* `realmjoinstaticcdn.azureedge.net` (Notifier)
 
 ## Components
 
