@@ -31,12 +31,12 @@ RealmJoin connects to the following hosts (using HTTPS) that might be considered
 
 * `cdn.realmjoin.com`
 * `x1.c.lencr.org`
-* `client-api.realmjoin.com **NEW!**`
-* `client-api-staging.realmjoin.com **NEW!**`
+* `client-api.realmjoin.com` **NEW!**
+* `client-api-staging.realmjoin.com` **NEW!**
 * `realmjoin-backend.azurewebsites.net`
 * `realmjoin-backend-staging.azurewebsites.net`
 * `packages.gkdatacenter.net`
-* `nuget.realmjoin.com **NEW!**`
+* `nuget.realmjoin.com` **NEW!**
 * `enterpriseregistration.windows.net`
 * `gkrealmjoin.s3.amazonaws.com`
 * `login.microsoftonline.com`
