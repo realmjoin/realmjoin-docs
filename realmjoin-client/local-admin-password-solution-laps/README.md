@@ -169,7 +169,7 @@ Key `LocalAdminManagement.PrivilegedAccount` (for common settings see [group set
 
 ```json
 {
-  "NamePattern": "ADM-Privileged-User-{COUNT:1}",
+  "NamePattern": "Privileged-User-{COUNT:1}",
   "DisplayName": "Privileged User",
   "PasswordRenewals": ["DayAfterCreate", "Monthly", "Thursday"],
   "PasswordPreset": 3,
