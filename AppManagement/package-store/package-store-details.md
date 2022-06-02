@@ -40,7 +40,7 @@ Automatic package management can be applied to keep the software delivered by th
 
 #### Billable / Non-billable
 
-Provisioning of this package will count towards your package usage quota - if you have one. Please see [Licensing](https://www.realmjoin.com/pricing/). Currently all publicly available packages are billable.
+Provisioning of this package will count towards your package usage quota - if you have one. Currently all publicly available packages are billable.
 
 #### Free to Use / Needs license
 
