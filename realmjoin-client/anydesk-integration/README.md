@@ -23,7 +23,7 @@ Once everything has been set up, the tray icon can be used to get support withou
 
 {% hint style="info" %} This text can be changed! Create a setting with the key *Integration.AnyDesk.Ui.TrayMenuTextEnglish* in the backend. {% endhint %}
 
-<img src="anydesk-tray-client-windows.png" height="85" alt="A screenshot showing the &quot;Start remote session&quot; entry" />
+<img src="anydesk-tray-client-windows.png" height="85" title="A screenshot showing the &quot;Start remote session&quot; entry" />
 
 This will download the appropriate executable and send the ID number to the RealmJoin Portal. The support agent will be notified as soon as the process is finished and then may connect to the user's desktop.
 
