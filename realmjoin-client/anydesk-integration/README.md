@@ -21,7 +21,7 @@ RealmJoin Client for Windows allows to skip the ID number sharing because every 
 
 Once everything has been set up, the tray icon can be used to get support without sharing the ID number or downloading executables by hand. The users are instructed by their support agent to open the tray menu and click *Start remote session*.
 
-{% hint style="info" %} This text can be changed! Create a setting with the key *Integration.AnyDesk.Ui.TrayMenuTextEnglish* in the backend. {% endhint %}
+{% hint style="info" %} This text can be changed! Create a setting with the key <code>Integration.AnyDesk.Ui.TrayMenuTextEnglish</code> in the backend. {% endhint %}
 
 <img src="anydesk-tray-client-windows.png" height="85" title="A screenshot showing the &quot;Start remote session&quot; entry" />
 
