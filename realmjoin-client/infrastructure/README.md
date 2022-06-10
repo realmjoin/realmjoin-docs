@@ -8,7 +8,7 @@ Initial deployment needs direct Internet access. No proxy would be ideal but a t
 
 For a list of the corresponding IP ranges click the following link:
 
-[Microsoft Azure Datacenter IP Ranges](https://www.microsoft.com/en-us/download/details.aspx?id=41653)
+[Azure IP Ranges and Service Tags – Public Cloud](https://www.microsoft.com/en-us/download/details.aspx?id=56519)
 
 This file contains the compute IP address ranges (including SQL ranges) used by the Microsoft Azure Datacenters. A new xml file will be uploaded every Wednesday (Pacific Time) with the new planned IP address ranges. New IP address ranges will be effective on the following Monday (Pacific Time).\
 Download the new xml file and perform the necessary changes on your site before Monday.
