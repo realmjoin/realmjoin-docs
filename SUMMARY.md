@@ -61,3 +61,4 @@
   * [Interacting with Runbooks](developer-reference/interacting-with-runbooks.md)
   * [Local Admin Password Management](developer-reference/local-admin-password-management.md)
 * [Support](support.md)
+* [Changelog](changelog.md)

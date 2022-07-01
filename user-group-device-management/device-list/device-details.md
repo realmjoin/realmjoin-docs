@@ -28,7 +28,7 @@ on the left side of the screen in a glanceable way. This part will not scroll an
 
 The core properties include some glanceable information about the status of a device object. Some statuses these are presented via icons that are either blue (active / present) or red (inactive missing).
 
-![](<../../.gitbook/assets/image (8) (1) (1) (1) (1) (1).png>)Endpoint Management active
+<img src="../../.gitbook/assets/image (8) (1) (1) (1) (1) (1).png" alt="" data-size="original">Endpoint Management active
 
 ![](<../../.gitbook/assets/image (14) (1) (1) (1) (1) (1).png>)Disk Encryption enabled
 

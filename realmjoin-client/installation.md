@@ -1,4 +1,4 @@
-# Installation
+# Deploying the Client
 
 RealmJoin Client can be deployed on a device using one of multiple ways - depending on the individual scenario. As a first step, download the RealmJoin installer of your choice and preceed to the desired installation method.
 
@@ -19,7 +19,7 @@ RealmJoin has to deploy through Microsoft Intune by deploying the MSI as a Line-
 
 Use the following instructions to deploy RealmJoin:
 
-* Log in to your [Azure portal](https://portal.azure.com)
+* Log in to your [Azure portal](https://portal.azure.com/)
 * Navigate to **Microsoft Intune** and select **Client apps**
 
 ![](<../.gitbook/assets/image (6) (1).png>)
