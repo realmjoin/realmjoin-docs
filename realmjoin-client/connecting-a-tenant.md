@@ -1,6 +1,6 @@
 # Connecting a Tenant
 
-To connect RealmJoin Cliet's backend to an AzureAD tenant, a **Hello Token** is needed. This token can be requested from Glück & Kanja. A RealmJoin administrator group has to be created upfront in AAD with the name **cfg-RealmJoin Admin** and all dedicated RealmJoin administrators should be added to it. The **Connect Wizard** is located under the URL [RealmJoin connect](https://realmjoin-web.azurewebsites.net/global/graph). The token and the tenant name are to be entered and the request submitted.
+To connect RealmJoin clients backend to an AzureAD tenant a **Hello Token** is needed. This token can be requested from the support team. A RealmJoin administrator group has to be created upfront in AAD with the name **cfg-RealmJoin Admin** and all dedicated RealmJoin administrators should be added to it. The **Connect Wizard** is located under the URL [RealmJoin connect](https://realmjoin-web.azurewebsites.net/global/graph). The token and the tenant name are to be entered and the request submitted.
 
 {% hint style="info" %}
 Sometimes if a new tab is used, the RealmJoin portal needs to log the admin user in first. This leads to the page reloading. In this case, open the link [RealmJoin connect](https://realmjoin-web.azurewebsites.net/global/graph) in the **same** browser tab again.
