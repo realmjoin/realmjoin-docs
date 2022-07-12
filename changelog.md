@@ -62,7 +62,7 @@ description: RealmJoin Ecosystem Change Tracking
 
 * Deployment: Improves handling of failing software updates
 * Deployment: Does not update Choco unless _EnableAutoUpdate_ is set
-* Deployment: Allows the deployment screen to be disabled by setting [_DisableDeploymentScreen_](core-features/settings.md#policies.disablenetworklocationwizard)\_\_
+* Deployment: Allows the deployment screen to be disabled by setting `FirstRun.DisableDeploymentScreen = true`
 
 ### RealmJoin v4.18.0
 
