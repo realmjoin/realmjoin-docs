@@ -36,21 +36,25 @@ The following account types are supported.
 
 Each account type may be configured independently using the following common settings. Some types have special settings described in their respective section.
 
+
+
+
+
 {% hint style="info" %}
 In the following table `$` represents any of the three `Account` JSON object from above.
 {% endhint %}
 
-| Settings Key       | Default Value                                                        | Description                                                                   |
-| ------------------ | -------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| $.NamePattern      | `"ADM-{HEX:8}"`                                                      | Special. See [Privileged account](./#privileged-account).                     |
-| $.DisplayName      | `"RealmJoin Local Administrator"`                                    | Display name                                                                  |
-| $.PasswordCharSet  | `"!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz"` | Charset for the password generator (excludes lookalikes)                      |
-| $.PasswordLength   | 20                                                                   | Password length                                                               |
-| $.PasswordPreset   | 0                                                                    | Preset password templates, see [Password generation](./#password-generation). |
-| $.MaxStaleness     | Special. See [Account recreation](./#account-recreation).            | Preset password templates, see [Password generation](./#password-generation). |
-| $.OnDemand         | Special. See [Support account](./#support-account).                  | Create account only when requested.                                           |
-| $.Expiration       | Special. See [Privileged account](./#privileged-account).            | Fixed account expiration date (ISO-8601 format)                               |
-| $.PasswordRenewals | Special. See [Privileged account](./#privileged-account).            | Fixed account expiration date (ISO-8601 format)                               |
+| Settings Key       | Default Value                                                        | Description                                                                                  |
+| ------------------ | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| $.NamePattern      | `"ADM-{HEX:8}"`                                                      | Special. See [Privileged account](./#privileged-account). Needs to be 20 characters or less. |
+| $.DisplayName      | `"RealmJoin Local Administrator"`                                    | Display name                                                                                 |
+| $.PasswordCharSet  | `"!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz"` | Charset for the password generator (excludes lookalikes)                                     |
+| $.PasswordLength   | 20                                                                   | Password length                                                                              |
+| $.PasswordPreset   | 0                                                                    | Preset password templates, see [Password generation](./#password-generation).                |
+| $.MaxStaleness     | Special. See [Account recreation](./#account-recreation).            | Preset password templates, see [Password generation](./#password-generation).                |
+| $.OnDemand         | Special. See [Support account](./#support-account).                  | Create account only when requested.                                                          |
+| $.Expiration       | Special. See [Privileged account](./#privileged-account).            | Fixed account expiration date (ISO-8601 format)                                              |
+| $.PasswordRenewals | Special. See [Privileged account](./#privileged-account).            | Fixed account expiration date (ISO-8601 format)                                              |
 
 ## Password **generation**
 
