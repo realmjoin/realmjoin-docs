@@ -4,6 +4,16 @@ description: RealmJoin Ecosystem Change Tracking
 
 # Changelog
 
+### RealmJoin v4.19.7
+
+**Beta** - July 28th 2022
+
+* LAPS: Fix bug with password renewals with certain regional settings
+
+#### v4.19.6
+
+* Housekeeping: Replace Microsoft.Graph library
+
 ### RealmJoin v4.19.5
 
 **Beta** - July 1st 2022
