@@ -4,52 +4,15 @@ description: RealmJoin Ecosystem Change Tracking
 
 # Changelog
 
-### RealmJoin v4.19.7
+### The changelog has a new home
 
-**Beta** - July 28th 2022
+[July 1st 2022 - Starting with a new changelog system](https://feedback.realmjoin.com/)
 
-* LAPS: Fix bug with password renewals with certain regional settings
+We are happy to announce the new RealmJoin changelog system. Starting today, all new improvements and changes to the RealmJoin ecosystem will be announced here.
 
-#### v4.19.6
+You are welcome to always be informed about changes immediately via the new Subscriber feature.
 
-* Housekeeping: Replace Microsoft.Graph library
-
-### RealmJoin v4.19.5
-
-**Beta** - July 1st 2022
-
-* Deployment: improve handling of the config file after initial deployment when not restarting or signing out
-* LAPS: handle an edge case when an unknown local user is encountered
-
-#### v4.19.4
-
-* Deployment: do not initialize Choco when running background installations
-* BranchCache: ignore status on CloudPCs
-* Deployment: use user authentication for initial deployment on CloudPCs instead of certificate authentication
-
-#### v4.19.3
-
-* Telemetry: handle an edge case when a BitLocker volume with an active conversion is currently locked
-* Deployment: fixes n/a for BranchCache on deployment screen
-* Tray: do not start as SYSTEM or DefaultUser\*
-
-#### v4.19.2
-
-* Telemetry: handle an edge case when enumerating uninstall entries
-* Telemetry: handle an edge case when enumerating credential manager
-
-#### v4.19.1
-
-* Deployment: add support for CloudPCs (W365)
-* Deployment: add full support for setting `FirstRun.AfterSuccessAction = "None"`
-* Internal: optimize HTTP connection handling
-* Telemetry: include system-wide environment variables
-
-#### v4.19.0
-
-* Deployment: Introduces new templating feature to pre-provision machines
-* Backend: Introduces new endpoints for canary and beta channels
-* LAPS: Fixes a rare issue when listing unresolvable SIDs
+## Changelog Archive
 
 ### RealmJoin v4.18.6
 
