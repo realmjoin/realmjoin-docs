@@ -23,7 +23,7 @@ LAPS supports the follow global settings.
 
 | Settings Key                       | Default Value | Description                                                                                                                                 |
 | ---------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| LocalAdminManagement.Inactive      | `false`       | Set to `true` to force this feature off                                                                                                     |
+| LocalAdminManagement.Inactive      | `false`       | Set to `true` to force this feature off. This will clean up and **delete** all local accounts.                                                  |
 | LocalAdminManagement.CheckInterval | `"01:00"`     | Interval for internal config checks ([HH:mm](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings)) |
 
 The following account types are supported.
