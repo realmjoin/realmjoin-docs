@@ -163,9 +163,9 @@ For this type account recreation (`MaxStaleness`) _should not be used_. The whol
 
 Forced password rotations are supported:
 
-1. 1.`2021-11-20T12:34:56+01:00`: any explicit timestamp in ISO8601. Multiple timestamps can be specified.
-2. 2.`DayAfterCreate`: after the account has been created the account's password will be changed. This is useful when users are supposed to set up Windows Hello for additional sign-in options.
-3. 3.`Monthly` or `Weekly`: Weekly takes preference over Monthly. If no more conditions are specified, defaults are "1st day of month" for Monthly or "Monday" for Weekly. All seven weekday can be specified. So if `Wednesday` and `Weekly` are specified, the password will be changed every Wednesday. If `Wednesday` and `Monthly` are specified, the password will be changed on the first Wednesday each month.
+1. `2021-11-20T12:34:56+01:00`: any explicit timestamp in ISO8601. Multiple timestamps can be specified.
+2. `DayAfterCreate`: after the account has been created the account's password will be changed. This is useful when users are supposed to set up Windows Hello for additional sign-in options.
+3. `Monthly` or `Weekly`: Weekly takes preference over Monthly. If no more conditions are specified, defaults are "1st day of month" for Monthly or "Monday" for Weekly. All seven weekday can be specified. So if `Wednesday` and `Weekly` are specified, the password will be changed every Wednesday. If `Wednesday` and `Monthly` are specified, the password will be changed on the first Wednesday each month.
 
 _Example_
 
