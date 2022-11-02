@@ -248,5 +248,5 @@ Policies.SetTimeserver
 **Value**
 
 ```
-"pool.ntp.org"
+["time.windows.com", "time.apple.com", "pool.ntp.org"]
 ```
