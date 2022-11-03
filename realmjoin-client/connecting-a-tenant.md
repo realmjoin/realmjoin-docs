@@ -6,7 +6,7 @@ To connect RealmJoin clients backend to an AzureAD tenant a **Hello Token** is n
 Sometimes if a new tab is used, the RealmJoin portal needs to log the admin user in first. This leads to the page reloading. In this case, open the link [RealmJoin connect](https://realmjoin-web.azurewebsites.net/global/graph) in the **same** browser tab again.
 {% endhint %}
 
-![](<../.gitbook/assets/image (20) (1) (1).png>)
+![](<../.gitbook/assets/image (20) (1) (1) (1).png>)
 
 A tenant administrator has to give consent to RealmJoin. The Connect Wizard creates the necessary entries in Intune. After completion, it is important to revisit the first tab/browser window and the **Check\&Install** option to be executed.
 
