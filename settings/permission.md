@@ -81,9 +81,9 @@ This permissions does not include
 
 ### Software Requester Permissions
 
-This allows a user to file a request to glueckkanja GAB for a new  software package to be created and offered in his organization / tenant.
+This allows a user to file a request to glueckkanja-gab for a new  software package to be created and offered in his organization / tenant.
 
-Regular software requests will be processed by the "package as a service" team at glueckkanja GAB.
+Regular software requests will be processed by the "package as a service" team at glueckkanja-gab.
 
 This permission does not include
 
@@ -96,7 +96,7 @@ This permission does not include
 
 This allows a user to automatically create a software package from uploaded sources in his organization / tenant.
 
-No manual check by the "package as a service" team at glueckkanja GAB will be done on these packages.
+No manual check by the "package as a service" team at glueckkanja-gab will be done on these packages.
 
 This permission does not include
 
