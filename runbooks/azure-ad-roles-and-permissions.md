@@ -8,17 +8,15 @@ description: >-
 
 ## Permissions
 
-The RealmJoin shared runbooks use the default Azure Automation [RunAs account](https://docs.microsoft.com/en-us/azure/automation/manage-runas-account) to interact with AzureAD, Graph API etc.
+The RealmJoin shared runbooks use the Azure Automation's [system assigned managed indetity](https://learn.microsoft.com/en-us/azure/automation/enable-managed-identity-for-automation) to interact with AzureAD, MS Graph API etc.
 
-When creating the Automation Account RunAs account an AppRegistration is created in the customer's AzureAD representing this RunAs Connection. All needed permissions have to be applied to this AppRegistration.
+The following list of roles and permissions will enable you to use all runbooks currently available in our shared repository, [except Phone-related runbooks](azure-ad-roles-and-permissions.md#user-account-problematic).
 
-The following list of roles and permissions will enable you to use all runbooks currently available in our shared repository.&#x20;
-
-it is not recommended to reduce the roles/permissions as the runbooks are tested only against this set of permissions. If you reduce the set of roles/permissions some runbooks will cease to function.
+it is not recommended to reduce the roles/permissions as the runbooks are tested only against this set of permissions. If you reduce the set of roles/permissions, some runbooks will cease to function.
 
 ### AzureAD Roles
 
-Please add the following AzureAD roles to the the AppRegistration
+Please add the following AzureAD roles to the the managed identity
 
 * User administrator
 * Cloud device administrator
@@ -26,7 +24,7 @@ Please add the following AzureAD roles to the the AppRegistration
 
 ### Graph API Permissions
 
-Please grant the following Graph API-Permissions to the AppRegistration
+Please grant the following Graph API-Permissions to the managed identity
 
 * AuditLog.Read.All
 * Device.Read.All
@@ -46,7 +44,7 @@ Please grant the following Graph API-Permissions to the AppRegistration
 
 ### Other App API Permissions
 
-Please grant the following Office 365 Exchange Online API-Permissions to the AppRegistration
+Please grant the following Office 365 Exchange Online API-Permissions to the managed identity
 
 * Exchange.ManageAsApp
 
@@ -58,9 +56,13 @@ Some runbooks will use an Azure Storage Account to store reports or backups. Ple
 
 ## Method of authentication
 
-### Certificate Thumbprint
+### Managed Identities
 
-When creating the Azure Automation Account, a certificate thumprint is created as part of a [RunAs Account](https://docs.microsoft.com/en-us/azure/automation/manage-runas-account). Where possible, this is approach of authentication is currently used.
+Azure Automation supports [Managed Identities](https://docs.microsoft.com/en-us/azure/automation/enable-managed-identity-for-automation) (system assigned) as primarty to way to authenticate. This replaces the older RunAs Accounts.&#x20;
+
+The RealmJoin Runbooks currently support RunAs Accounts if no managed identity is configured.
+
+If you still use a RunAs Account, please consider migrating your permissions to a system assigned managed identity.
 
 ### Client Secret
 
@@ -88,8 +90,4 @@ If you want to use theses runbook (like "Assign Teams Phone Number"), you will h
 
 This is not a recommended situation and will be fixed as soon as a technical solution is known.
 
-### Managed Identities
-
-Azure Automation recently started supporting [Managed Identities](https://docs.microsoft.com/en-us/azure/automation/enable-managed-identity-for-automation) (system assigned) as alternative to RunAs accounts.&#x20;
-
-We are currently evaluating this approach, but as of now our shared runbooks still expect a RunAs account.
+###

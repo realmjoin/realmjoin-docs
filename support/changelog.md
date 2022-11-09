@@ -2,9 +2,9 @@
 description: RealmJoin Ecosystem Change Tracking
 ---
 
-# Changelog
+# Old Changelog
 
-### The changelog has a new home
+## The changelog has a new home
 
 [July 1st 2022 - Starting with a new changelog system](https://feedback.realmjoin.com/)
 

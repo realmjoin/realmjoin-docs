@@ -6,7 +6,7 @@ To enable RealmJoin Portal to offer [runbooks ](../../runbooks/)as a way to auto
 
 This guide will help you to onboard either a new or existing Automation Account.
 
-Please be aware, the [RunAs-Account](https://docs.microsoft.com/en-us/azure/automation/create-run-as-account) (Automation Account's identity) will potentially have far reaching [permissions ](../../runbooks/azure-ad-roles-and-permissions.md)in your environment, like the ability to modify group- or user-objects in AzureAD or mailboxes in Exchange Online. Please carefully limit the number of people with access to this Automation Account to prevent unwanted usage of the given permissions.
+Please be aware, the Automation Account (its [Managed Identity](https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview), to be more precise) will potentially have far reaching [permissions ](../../runbooks/azure-ad-roles-and-permissions.md)in your environment, like the ability to modify group- or user-objects in AzureAD or mailboxes in Exchange Online. Please carefully limit the number of people with access to this Automation Account to prevent unwanted usage of the given permissions.
 
 When reusing an existing Automation Account, be aware that RealmJoin Portal automates the creation, updating and removal of runbooks coming from the [shared online repository of runbooks](https://github.com/realmjoin/realmjoin-runbooks). This might not be adequate for an existing Automation Account. If in doubt, it is recommended to create a dedicated Azure Automation Account.
 
@@ -14,7 +14,7 @@ When reusing an existing Automation Account, be aware that RealmJoin Portal auto
 
 ### Subscription
 
-Please choose an Azure Subscription to host your Automation Account. It is recommended to choose a subscription where only dedicated administrators will have access.
+An Azure Subscription is needed to host your Automation Account. It is recommended to choose a subscription where only dedicated administrators will have access.
 
 [https://portal.azure.com/#blade/Microsoft\_Azure\_Billing/SubscriptionsBlade](https://portal.azure.com/#blade/Microsoft\_Azure\_Billing/SubscriptionsBlade)
 
@@ -35,8 +35,6 @@ Please note down the Resource Group's name as it will be needed later.
 Create an Azure Automation Account in the given Resource Group. In this example we will use the name `c4a8toydariaazacc01` for the Automation Account. It will host your shared and private runbooks.
 
 [https://portal.azure.com/#create/Microsoft.AutomationAccount](https://portal.azure.com/#create/Microsoft.AutomationAccount)
-
-Make sure, to have "Create Azure Run As account" set to "Yes".
 
 Please note down the Automation Account's name as it will be needed later.
 

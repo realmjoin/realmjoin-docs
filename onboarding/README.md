@@ -4,7 +4,7 @@
 
 Start your journey with RealmJoin by [self-onboarding](onboarding-realmjoin-portal/) into the service.&#x20;
 
-Need help? [Reach out to us](../support.md) :)
+Need help? [Reach out to us](../support/) :)
 
 ### Runbook / Process Automation
 

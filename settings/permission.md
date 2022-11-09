@@ -35,6 +35,19 @@ This permissions does not include
 * Modifying group memberships / assignments
 * Access to [Settings](./)
 
+### Supporter Permissions
+
+This will grant:
+
+* Read-only access to all areas of [User, Group and Device Management](../user-group-device-management/)&#x20;
+
+This permissions does not include
+
+* Subscribing to apps/packages
+* Modifying group memberships / assignments
+* Access to [Settings](./)
+* Starting Runbooks or Read Runbook Job logs
+
 ### Runbook Runner Permissions
 
 This will grant:
@@ -50,6 +63,47 @@ This permissions does not include
 * Access to [Settings](./)
 
 This is the recommended permission to use for User/Device Supporter Roles.
+
+### Software Agent Permissions
+
+This will grant:
+
+* Read-only access to [User and Group Management](../user-group-device-management/)
+  * Full access on application managent groups
+* Access to all features of [Application Management](../AppManagement/)
+
+This permissions does not include
+
+* Starting Runbooks&#x20;
+* Modifying group memberships / assignments other than through application manangent
+* [Device Management](../user-group-device-management/device-list/)
+* Access to [Settings](./)
+
+### Software Requester Permissions
+
+This allows a user to file a request to glueckkanja GAB for a new  software package to be created and offered in his organization / tenant.
+
+Regular software requests will be processed by the "package as a service" team at glueckkanja GAB.
+
+This permission does not include
+
+* Access to [User, Group and Device Management](../user-group-device-management/)&#x20;
+* Access to [Application Management](../AppManagement/)
+* Starting Runbooks or reading Runbook Job logs
+* Access to [Settings](./)
+
+### Organic Software Requester Permissions
+
+This allows a user to automatically create a software package from uploaded sources in his organization / tenant.
+
+No manual check by the "package as a service" team at glueckkanja GAB will be done on these packages.
+
+This permission does not include
+
+* Access to [User, Group and Device Management](../user-group-device-management/)&#x20;
+* Access to [Application Management](../AppManagement/)
+* Starting Runbooks or reading Runbook Job logs
+* Access to [Settings](./)
 
 ## Permission Defaults
 

@@ -12,7 +12,7 @@ This app will not have any API permissions.
 
 ### Azure Resource Permissions
 
-This app will need to be at least Contributor on the Azure Resource Group hosting your Azure Automation Account. Using our [onboarding process](./) will make sure this permission is given.
+The RealmJoin Runbook Management app will need to be at least Contributor on the Azure Resource Group hosting your Azure Automation Account. Using our [onboarding process](./) will make sure this permission is given.
 
 ## Azure Automation Account (Runbooks)
 
