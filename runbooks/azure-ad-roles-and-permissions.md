@@ -28,7 +28,7 @@ Please grant the following Graph API-Permissions to the managed identity
 
 * AuditLog.Read.All
 * Device.Read.All
-* DeviceManagementConfiguration.ReadWrite.All
+* DeviceManagementConfiguration.ReadWrite.All&#x20;
 * DeviceManagementManagedDevices.PrivilegedOperations.All
 * DeviceManagementManagedDevices.ReadWrite.All
 * DeviceManagementServiceConfig.ReadWrite.All
@@ -41,6 +41,9 @@ Please grant the following Graph API-Permissions to the managed identity
 * Team.Create
 * User.ReadWrite.All
 * UserAuthenticationMethod.ReadWrite.All
+* Reports.Read.All
+* Place.Read.All
+* Mail.Send
 
 ### Other App API Permissions
 
