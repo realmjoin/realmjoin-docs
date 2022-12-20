@@ -91,7 +91,7 @@ In RealmJoin Portal return to the open window/wizard for '[Settings -> Runbooks]
 
 Continue filling in the missing values for `appId` and `password` we created in the [last step](./#granting-access-for-realmjoin-to-azure-automation). Also fill in the name of the Automation Account from [before](./#user-content-azure-automation-account).
 
-Choose the Branch of the shared runbook repository you want to follow, wither `master` or `production`. If unsure, please choose `production` as `master` will have more bleeding edge / preview runbooks in a less tested state.
+Choose the Branch of the shared runbook repository you want to follow, wether `master` or `production`. If unsure, please choose `production` as `master` will have more bleeding edge / preview runbooks in a less tested state.
 
 Choosing the location to make sure your runbooks are executed in the correct [Azure region](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview).
 
