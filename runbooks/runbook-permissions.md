@@ -33,7 +33,7 @@ The prefix `rjgit-` denotes runbooks that are imported from our piblic GitHub re
 
 ### AzureAD Groups
 
-AzureAD groups will be referenced using their Object ID, like `91688d11-9a34-42cd-8d1e-ce617d6c1234`.
+AzureAD groups will be referenced using their Object ID, like `91688d11-9a34-42cd-8d1e-ce617d6c1234`. Currently, only security groups can be used.
 
 ## JSON Structure and Example
 

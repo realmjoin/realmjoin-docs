@@ -8,7 +8,7 @@ This guide will help you to onboard either a new or existing Automation Account.
 
 Please be aware, the Automation Account (its [Managed Identity](https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview), to be more precise) will potentially have far reaching [permissions ](../../runbooks/azure-ad-roles-and-permissions.md)in your environment, like the ability to modify group- or user-objects in AzureAD or mailboxes in Exchange Online. Please carefully limit the number of people with access to this Automation Account to prevent unwanted usage of the given permissions.
 
-When reusing an existing Automation Account, be aware that RealmJoin Portal automates the creation, updating and removal of runbooks coming from the [shared online repository of runbooks](https://github.com/realmjoin/realmjoin-runbooks). This might not be adequate for an existing Automation Account. If in doubt, it is recommended to create a dedicated Azure Automation Account.
+When reusing an existing Automation Account, be aware that RealmJoin Portal automates the creation, updating and removal of runbooks coming from the [shared online repository of runbooks](https://github.com/realmjoin/realmjoin-runbooks). This might not be adequate for an existing Automation Account. If in doubt, it is recommended to create a dedicated Azure Automation Account for RealmJoin Runbooks.
 
 ## Azure Environment
 

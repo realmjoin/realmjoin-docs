@@ -6,10 +6,10 @@ description: Automate day to day operations in your environment.
 
 RealmJoin allows you to automate tasks, like&#x20;
 
-* user lifecycle operations (onboarding/offboarding users)
-* creating Temporary Access Passes (TAPs)
-* reporting M/O365 license usage
-* managing email aliases
+* User lifecycle operations (onboarding/offboarding users)
+* Creating Temporary Access Passes (TAPs)
+* Reporting M/O365 license usage
+* Managing email aliases
 
 RealmJoin realizes this by using [Azure Automation](https://azure.microsoft.com/en-us/services/automation) to execute so called "Runbooks". Specifically, [PowerShell Runbooks](https://docs.microsoft.com/en-us/azure/automation/automation-runbook-types#powershell-runbooks) will be used.
 
@@ -41,9 +41,9 @@ As described in the [naming convention](naming-conventions.md) this will add, up
 
 You can customize existing an new runbooks to your environment. For example, you can&#x20;
 
-* use templates for common pieces of information, like office locations
-* prefill / preconfigure parameters, like to not allowing deleting user object when offboarding
-* hide certain inputs/parameters
+* Use templates for common pieces of information, like office locations
+* Prefill / preconfigure parameters, like to not allowing deleting user object when offboarding
+* Hide certain inputs/parameters
 
 See [Runbook Customization ](runbook-customization.md)for more details.
 

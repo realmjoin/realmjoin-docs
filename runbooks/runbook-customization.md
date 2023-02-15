@@ -1,13 +1,17 @@
+---
+description: Adapt glueckkanja-gab's generic runbooks to your environments needs.
+---
+
 # Runbook Customization
 
 ## Overview
 
 The RealmJoin runbook implementation offers customizing capabilities to a runbook's author or an environments administrator, so that he/she can:
 
-* host customer/tenant specific parameters and templates
-* offer UI elements like user-pickers or dropdown selections
-* present human readable explanations of parameters
-* hide unneeded UI elements
+* Host customer/tenant specific parameters and templates
+* Offer UI elements like user-pickers or dropdown selections
+* Present human readable explanations of parameters
+* Hide unneeded UI elements
 
 ![Example](<../.gitbook/assets/runbook-customization-img1 (1).png>)
 

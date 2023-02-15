@@ -12,7 +12,7 @@ The RealmJoin shared runbooks use the Azure Automation's [system assigned manage
 
 The following list of roles and permissions will enable you to use all runbooks currently available in our shared repository, [except Phone-related runbooks](azure-ad-roles-and-permissions.md#user-account-problematic).
 
-it is not recommended to reduce the roles/permissions as the runbooks are tested only against this set of permissions. If you reduce the set of roles/permissions, some runbooks will cease to function.
+it is not recommended to reduce these roles/permissions as the runbooks are tested only against this set of permissions. If you reduce the set of roles/permissions, some runbooks will cease to function.
 
 ### AzureAD Roles
 
@@ -27,6 +27,7 @@ Please add the following AzureAD roles to the the managed identity
 Please grant the following Graph API-Permissions to the managed identity
 
 * AuditLog.Read.All
+* CloudPC.ReadWrite.All
 * Device.Read.All
 * DeviceManagementConfiguration.ReadWrite.All&#x20;
 * DeviceManagementManagedDevices.PrivilegedOperations.All
@@ -47,9 +48,31 @@ Please grant the following Graph API-Permissions to the managed identity
 
 ### Other App API Permissions
 
-Please grant the following Office 365 Exchange Online API-Permissions to the managed identity
+Please grant the following Office 365 Exchange Online API Permissions to the managed identity
 
 * Exchange.ManageAsApp
+
+Please grant the following WindowsDefenderATP API Permissions to the managed identity
+
+* Machine.Read.All&#x20;
+* Machine.Isolate&#x20;
+* Machine.RestrictExecution
+
+Please grant the following SharePoint API Permissions to the managed identity
+
+* User.Read.All&#x20;
+* Sites.Read.All&#x20;
+* Sites.FullControl.All
+
+### Granting Roles and Permissions
+
+Granting permissions to Managed Identities can currently not be done using Azure Portal. We recommend to use MS Graph / PowerShell scripting for this.&#x20;
+
+You can find an example for this process [here](https://notdoneyet.blog/ms%20graph/powershell/azuread/2022/01/20/MSGraph-and-Permissions.html#managed-identities-and-azure-portal).
+
+{% hint style="info" %}
+If you are onboarded using glueckkanja-gab's consulting or managed workplace services, you can benefit from our [ready made template](https://gitlab.c4a8.net/modern-workplace-code/approle-and-directoryrole-granter) to quickly and easily set this up.&#x20;
+{% endhint %}
 
 ### Azure Resource Permissions
 
@@ -65,7 +88,11 @@ Azure Automation supports [Managed Identities](https://docs.microsoft.com/en-us/
 
 The RealmJoin Runbooks currently support RunAs Accounts if no managed identity is configured.
 
-If you still use a RunAs Account, please consider migrating your permissions to a system assigned managed identity.
+{% hint style="warning" %}
+If a Managed Identity and a RunAs Account are configured at the same time, the runbooks from glueckkanja-gab's shared repository will automatically prefer using the Managed Identity when using recent versions of our supporting RealmJoin.RunbookHelper Module starting with v0.8.0. Older versions of the module could not fully utilize Managed Identities and prefered the RunAs Account.&#x20;
+
+Please make sure, that you grant the needed permissions to Managed Identity or disable it completely to only use the RunAs Account.&#x20;
+{% endhint %}
 
 ### Client Secret
 
