@@ -31,7 +31,7 @@ RealmJoin will not store the secret in any proprietary storage but instead creat
 
 [https://docs.microsoft.com/en-us/rest/api/keyvault/secrets/set-secret/set-secret](https://docs.microsoft.com/en-us/rest/api/keyvault/secrets/set-secret/set-secret)
 
-The entry in KeyVault will be added with the device name as a key and the plain GUID as the secret value. See the following example screenshot\*\*:\*\*
+The entry in KeyVault will be added with the Azure device ID as a key and the plain GUID as the secret value. See the following example screenshot\*\*:\*\*
 
 ![](<../../.gitbook/assets/image (15) (1).png>)
 
