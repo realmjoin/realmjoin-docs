@@ -10,7 +10,7 @@ description: Step by step guide to use RealmJoin Portal in a new tenant
 
 Visit [https://portal.realmjoin.com](https://portal.realmjoin.com) and sign in as Global Admin of your AzureAD Tenant.
 
-The App will request basic permissions needed to interact with RealmJoin Portal. This permission are required for any user interacting with RealmJoin Portal - e.g. to use self-services.
+The App will request basic permissions needed to interact with RealmJoin Portal. These permissions are required for any user interacting with RealmJoin Portal - e.g. to use self-services.
 
 ![Initial Sign In](../../.gitbook/assets/onboarding-img1.png)
 
