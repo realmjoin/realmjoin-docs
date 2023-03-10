@@ -28,6 +28,7 @@
   * [Naming conventions](runbooks/naming-conventions.md)
   * [Azure AD Roles and Permissions](runbooks/azure-ad-roles-and-permissions.md)
   * [PowerShell modules](runbooks/powershell-modules.md)
+  * [Scheduling](runbooks/scheduling.md)
   * [Runbook Changelog](https://github.com/realmjoin/realmjoin-runbooks/blob/production/CHANGELOG.md)
 * [RealmJoin Client](realmjoin-client/README.md)
   * [Local Admin Password Solution (LAPS)](realmjoin-client/local-admin-password-solution-laps/README.md)

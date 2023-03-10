@@ -134,7 +134,7 @@ These values can be globally preconfigured for newly imported packages in [Setti
 
 ### Config
 
-![Package Config Tab](<../../.gitbook/assets/image (5) (1).png>)
+![Package Config Tab](<../../.gitbook/assets/image (5) (1) (2).png>)
 
 You can assign multiple **Technical Application Owners** to a package by storing their email-address as a means to reach out. This is optional and currently is purely for information/administrative purposes.
 

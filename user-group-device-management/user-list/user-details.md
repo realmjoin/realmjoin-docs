@@ -35,7 +35,7 @@ The core properties include some glanceable information about the status of a us
 * **Guest** - This is an external user from a different organization
 * **DE/US**... - Two letter code designating the user's [usage location](https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/licensing-groups-resolve-problems#usage-location-isnt-allowed) which is relevant for licensing.
 * ![](<../../.gitbook/assets/image (5) (1) (1) (1).png>) - When the object was created
-* ![](<../../.gitbook/assets/image (2).png>) - Last signin activity
+* ![](<../../.gitbook/assets/image (2) (2).png>) - Last signin activity
 
 ### Tabs
 

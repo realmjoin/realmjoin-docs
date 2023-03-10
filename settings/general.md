@@ -12,7 +12,7 @@ This will make sure, you have the current state of our runbooks, incl. bugifxes 
 
 If you source packages from RealmJoin's [Package Store](../AppManagement/package-store/), you can use [automation ](../AppManagement/package-management/package-details.md#automation)to keep these packages always up to date.
 
-![Automation defaults for a package](<../.gitbook/assets/image (3).png>)
+![Automation defaults for a package](<../.gitbook/assets/image (3) (2).png>)
 
 The settings are:
 

@@ -40,7 +40,7 @@ The core properties include some glanceable information about the status of a de
 
 ![](<../../.gitbook/assets/image (5) (1) (1) (1).png>) When the object was created
 
-![](<../../.gitbook/assets/image (2).png>) Last seen activity / Last contact
+![](<../../.gitbook/assets/image (2) (2).png>) Last seen activity / Last contact
 
 Other bits of information are presented as tags:
 

@@ -56,16 +56,16 @@ For this assignment you need your supporter client URL.
 
 ## Start a Remote Session via RealmJoin Tray Menu
 
-| Task                                                                                                                                                             | Image                                       |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
-| 1. Open the RealmJoin tray menu                                                                                                                                  |                                             |
-| 2. Click **Start remote session**                                                                                                                                | ![](<../../.gitbook/assets/image (26).png>) |
-| 3. The AnyDesk client starts and its current address will be pushed to RealmJoin backend in the background. Also,, it's visible in the UI.                       | ![](<../../.gitbook/assets/image (16).png>) |
-| 4. This client address will be displayed in RealmJoin portal at the corresponding client and the support staff can initiate the session via clicking **Connect** | ![](<../../.gitbook/assets/image (1).png>)  |
-| 5. This will automatically start the AnyDesk client                                                                                                              |                                             |
-| 6. Subsequently, the end user needs to accept the incoming remote session request                                                                                | ![](<../../.gitbook/assets/image (18).png>) |
-| 7. The Connection is established and the support staff can perform his tasks remotely                                                                            |                                             |
-| 8. When the job is finished, please **disconnect** from the remote session                                                                                       |                                             |
+| Task                                                                                                                                                             | Image                                          |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| 1. Open the RealmJoin tray menu                                                                                                                                  |                                                |
+| 2. Click **Start remote session**                                                                                                                                | ![](<../../.gitbook/assets/image (26).png>)    |
+| 3. The AnyDesk client starts and its current address will be pushed to RealmJoin backend in the background. Also,, it's visible in the UI.                       | ![](<../../.gitbook/assets/image (16).png>)    |
+| 4. This client address will be displayed in RealmJoin portal at the corresponding client and the support staff can initiate the session via clicking **Connect** | ![](<../../.gitbook/assets/image (1) (1).png>) |
+| 5. This will automatically start the AnyDesk client                                                                                                              |                                                |
+| 6. Subsequently, the end user needs to accept the incoming remote session request                                                                                | ![](<../../.gitbook/assets/image (18).png>)    |
+| 7. The Connection is established and the support staff can perform his tasks remotely                                                                            |                                                |
+| 8. When the job is finished, please **disconnect** from the remote session                                                                                       |                                                |
 
 #### Get Elevated Rights
 

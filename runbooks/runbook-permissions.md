@@ -233,3 +233,33 @@ We introduce a new AzureAD group `4444c0af-c217-41e9-b790-3043788f4444` containi
   }
 }
 ```
+
+### SchedulingEnabledRunbookPatterns
+
+This section contains a list of runbooks that will be flagged as "schedulable". RealmJoin Port will allow to assign / manage schedules for these runbooks. See [scheduling.md](scheduling.md "mention").
+
+The following example describes the default behaviour if SchedulingEnabledRunbookPatterns are not defined:
+
+```json
+{
+  "SchedulingEnabledRunbookPatterns": [
+    "*_scheduled"
+  ]
+}
+```
+
+### SchedulingDisabledRunbookPatterns
+
+This section contains a list of runbooks that will be blacklisted from being flagged as "schedulable". RealmJoin Port will not allow to assign / manage schedules for these runbooks. See [scheduling.md](scheduling.md "mention").
+
+A runbook present in both SchedulingEnabledRunbookPatterns and SchedulingDisabledRunbookPatterns will **not** be schedulable.&#x20;
+
+By default no runbooks are blacklisted. The following example just demonstrates the syntax:
+
+```json
+{
+  "SchedulingDisabledRunbookPatterns": [
+    "rjgit-user_*"
+  ]
+}
+```
