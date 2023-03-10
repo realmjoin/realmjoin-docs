@@ -12,7 +12,7 @@ RealmJoin Portal allows you to assign schedules to runbooks as well as to manage
 
 ## Schedulability
 
-By default, no all runbooks are flagged as schedulable. This is meant to easily indicate which runbooks are most probably either useful on a scheduled basis and which runbooks should preferably be used interactively.
+By default, not all runbooks are flagged as schedulable. This is meant to easily indicate which runbooks are most probably either useful on a scheduled basis and which runbooks should preferably be used interactively.
 
 By default runbooks having the suffix `_scheduled` are flagged as schedulable. You can overwrite this behaviour using [runbook-permissions.md](runbook-permissions.md "mention").
 
