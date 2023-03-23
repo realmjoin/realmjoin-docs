@@ -1,12 +1,12 @@
 ---
-description: Adapt glueckkanja-gab's generic runbooks to your environments needs.
+description: Adapt glueckkanja-gab's generic runbooks to your environments' needs.
 ---
 
 # Runbook Customization
 
 ## Overview
 
-The RealmJoin runbook implementation offers customizing capabilities to a runbook's author or an environments administrator, so that he/she can:
+The RealmJoin runbook implementation offers customizing capabilities to a runbook's author or an environments' administrator, so that they can:
 
 * Host customer/tenant specific parameters and templates
 * Offer UI elements like user-pickers or dropdown selections
@@ -15,7 +15,7 @@ The RealmJoin runbook implementation offers customizing capabilities to a runboo
 
 ![Example](<../.gitbook/assets/runbook-customization-img1 (1).png>)
 
-The customizings can be included in the runbook itself and/or stored in the customers RealmJoin Portal instance. By default, we will try to offer sensible defaults in the runbooks offered on [GitHub](https://github.com/realmjoin/realmjoin-runbooks).
+The customizations can be included in the runbook itself and/or stored in the customer's RealmJoin Portal instance. By default, we will try to offer sensible defaults in the runbooks offered on [GitHub](https://github.com/realmjoin/realmjoin-runbooks).
 
 Some runbooks will come with examples of how to configure customer specific templates like specifying office locations for the user on-boarding.
 
@@ -31,11 +31,11 @@ Additionally (with least priority)
 * per parameter in the runbook header
 * per parameter in the runbooks param block (using the RJRb Helper Module)
 
-Some functionality (like templates) is only available in JSON format. Some functionality (like creating a user picker) is only available by specifying a data type in the param block. You can combine multiple types of customizings for best results.
+Some functionality (like templates) is only available in JSON format. Some functionality (like creating a user picker) is only available by specifying a data type in the param block. You can combine multiple types of customizations for best results.
 
 ## Runbook Param Block
 
-The RealmJoin Portal parses a runbooks PowerShell param block to determine which input fields to render. Where possible, it will also validate the inputs according to the .NET type given for a variable.
+The RealmJoin Portal parses a runbook's PowerShell param block to determine which input fields to render. Where possible, it will also validate the inputs according to the .NET type given for a variable.
 
 The following data types are currently understood:
 
@@ -44,11 +44,11 @@ The following data types are currently understood:
 * `[int]` - will present a textbox, only allowing numeric inputs
 * `[DateTime]`, `[DateTimeOffset]` - Will present a date/time picker
 
-You can apply standard PowerShell modifiers to parameters. Especially RealmJoin Portal will understand if you specify `[Parameter(Mandatory = $true)]` to indicate a mandatory parameter and enforce this parameters being filled.
+You can apply standard PowerShell modifiers to parameters. RealmJoin Portal, in particullar, will understand if you specify `[Parameter(Mandatory = $true)]` to indicate a mandatory parameter and enforce these parameters being filled.
 
 Where possible, RealmJoin Portal will also read and present given default values in the UI.
 
-Be aware, default values from the runbook can be overridden by customizings. Also, parameters can be completely hidden by customizing.
+Be aware, default values from the runbook can be overridden by customizations. Additionally, parameters can be completely hidden by customizations.
 
 ### Customizing Parameters
 
@@ -56,7 +56,7 @@ To be able to customize parameters, please make sure to include RealmJoin's Runb
 
 `#Requires -Modules @{ModuleName = "RealmJoin.RunbookHelper"; ModuleVersion = "0.6.0" }`
 
-You can then include `[ValidateScript( { Use-RJInterface ... } )]` statements in the parameter definitions. For example the following will create a user picker, allowing to choose an AzureAD user and will pass its object id as string the runbook.
+You can then include `[ValidateScript( { Use-RJInterface ... } )]` statements in the parameter definitions. For example the following will create a user picker, allowing to choose an AzureAD user and will pass its object id as string to the runbook.
 
 ```powershell
 param(
@@ -73,7 +73,7 @@ Let's take this piece by piece. `[ValidateScript...]` is a modifier to the next 
 
 #### Graph resources
 
-In the example above, the source of information is MS Graph, as described by `-Type Graph`. For MS Graph, use `-Entity` to specify which kind of resource you expect. Available entities are `User`, `Group`, `Device`. This will produce a picker for either users, groups or devices in the given AzureAD.
+In the example above, the source of information is MS Graph, as described by `-Type Graph`. For MS Graph, use `-Entity` to specify which kind of resource you're expecting. Available entities are `User`, `Group`, `Device`. This will produce a picker for either users, groups or devices in the given AzureAD.
 
 The picker includes a quick search, to easily pin down the required resource.
 
@@ -81,7 +81,7 @@ The picker includes a quick search, to easily pin down the required resource.
 
 Currently, no multiselect is possible using a picker.
 
-By default, a MS Graph picker will return the object's id. If you require e.g. the user principal name instead, make sure the include "name" as suffix in your variables name. So, basically, to get a user's id, name the parameter `$userid`. If you want a UPN, name it `$username`.
+By default, a MS Graph picker will return the object's id. If you require e.g. the user principal name instead, make sure to include "name" as suffix in your variable's name. So, basically, to get a user's id, name the parameter `$userid`. If you want a UPN, name it `$username`.
 
 #### Graph Filtering
 
@@ -113,7 +113,7 @@ This specific example `ref:LicenseGroup` is available by default without further
 
 ## Runbook Header
 
-The Portal can parse a runbooks [comment based help](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about\_comment\_based\_help?view=powershell-5.1) section, if present.
+The Portal can parse a runbook's [comment based help](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about\_comment\_based\_help?view=powershell-5.1) section, if present.
 
 Here is an example:
 
@@ -157,13 +157,13 @@ Here is an example:
 
 `.DESCRIPTION` - Give a description of your runbook's function. Can contain slightly more detail, as this will be displayed inside the runbooks execution / parameter dialogue.
 
-`.PARAMETER` - Needs to be followed by a parameters name. Allows you to give a detailed explanation of the expected input for the parameter in question.
+`.PARAMETER` - Needs to be followed by a parameter's name. Allows you to give a detailed explanation of the expected input for the parameter in question.
 
 `.INPUTS` - Can contain a block of JSON-based Runbook Customization.
 
 `.NOTES` - Is not parsed / rendered. Please use this space to write down which permissions and requirements exist for your runbook.
 
-`.EXAMPLE` - Is not parsed / rendered. Can contain an example of a JSON-based Customizing to use in the RealmJoin Datastore in your tenant. These can be examples of how to create templates e.g. for different workflows or user classes.
+`.EXAMPLE` - Is not parsed / rendered. Can contain an example of a JSON-based Customization to use in the RealmJoin Datastore in your tenant. These can be examples of how to create templates e.g. for different workflows or user classes.
 
 ## JSON Based Customizing
 
@@ -171,7 +171,7 @@ Here is an example:
 
 Each AzureAD tenant can host a "Runbook Customizations" datastore, found at [https://portal.realmjoin.com/settings/runbooks-customizations](https://portal.realmjoin.com/settings/runbooks-customizations) .
 
-The format is JSON with comments, allowing trailing commas. Currently, there are three relevant sections, `Runbooks`, `Templates`, `Runbooks`.
+The format is JSON with comments, allowing trailing commas. Currently, there are three relevant sections, `Settings`, `Templates`, `Runbooks`.
 
 ```json
 {
@@ -289,13 +289,13 @@ The result will look like this:
 
 ![Demo - after hidden](<../.gitbook/assets/runbook-customization-img5 (1).png>)
 
-Choosing the additional workflow, will present (unhide) more parameters:
+Choosing the additional workflow will present (unhide) more parameters:
 
 ![Demo - after unhidden](<../.gitbook/assets/runbook-customization-img6 (1).png>)
 
-This shows less clutter in comparison to before applying customizing. At the same time more information about the alternatives of "Extra Workflow" is available to the user. Also, a user now will only worry about "Extra Workflow Time" if it is relevant.
+This shows less clutter in comparison to before applying the customization. At the same time more information about the alternatives of "Extra Workflow" is available to the user. Also, a user now will only worry about "Extra Workflow Time" if it is relevant.
 
-Changing the visibility of that field was done using a `"Customizing"` block inside one of the `"Select"` options. You can currently have at most one such `"Customizing"` block active at a time.&#x20;
+Changing the visibility of that field was done using a `"Customization"` block inside one of the `"Select"` options. You can currently have at most one such `"Customization"` block active at a time.&#x20;
 
 As you can see, the parameter `$DeviceId` is completely hidden. This is done by setting the `"Hide": true` for this parameter.
 
@@ -350,7 +350,7 @@ For an example see SelectSimple
 
 #### SelectSimple
 
-If not the full power of a `Select` is needed and you just want to offer a list of possible values in a dropdown (without applying additional customizing), you can use `SelectSimple`.
+Ifnthe full power of a `Select` is not needed and you just want to offer a list of possible values in a dropdown (without applying additional customizing), you can use `SelectSimple`.
 
 `SelectSimple` is only usable for named parameters.
 
@@ -394,11 +394,11 @@ Each parameter can have one or more of the following modifiers:
 * `"ReadOnly": true / false` - Protect this parameter from beeing changed from its default value
 * `"DefaultValue": "..."` - Set a default value for this parameter. (You can also use `Default` instead.)
 * `"GraphFilter": "startswith(DisplayName, 'LIC_')"` - see [Graph Filtering](runbook-customization.md#graph-filtering)
-* `"AllowEdit": true / false` - Protect this parameter from manual editing (combine this with templates)
+* `"AllowEdit": true / false` - Protect this parameter from manual editing. (combine this with templates)
 
 ### Settings
 
-`Settings` allows you to store configuration data like Azure Storage Account names in central place, while still keeping them separate from your runbooks.
+`Settings` allows you to store configuration data like Azure Storage Account names in a central place, while still keeping them separate from your runbooks.
 
 You can access individual values from a runbooks param-Block using `Use-RJInterface`.
 
@@ -444,9 +444,9 @@ The missing `Container` element will simply not be prefilled in the UI.
 
 `Templates` use JSON-references to pull in data - for example a lengthy list of office locations - when using a `Select` statement.
 
-This allows to keep a customizing neutral/reusable/separated from actual data.
+This allows to keep a customization neutral/reusable/separated from actual data.
 
-Let us take the example of onboarding new users. You might have have multiple given options for departments or office locations, where assigning a office location also mandates a certain street address, country, state etc.
+Let us take the example of onboarding new users. You might have have multiple given options for departments or office locations, where assigning an office location also mandates a certain street address, country, state etc.
 
 The following example of a runbook customization uses the `$ref` inside the `Runbooks` section to reference/import a subtree from the `Templates` section. Look out for the `$id`/`$values` keywords. Be aware that `$id`/`$values` have to defined before referencing them using `$ref`. That is why `Templates` is defined ahead of `Runbooks` in this example.
 
