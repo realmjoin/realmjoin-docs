@@ -83,7 +83,7 @@ The command will return multiple values. Please note down the values for `appId`
 
 You can review the resulting App Registration in AzureAD. It will be named "RealmJoin Runbook Management".
 
-![App Regsitrations in Azure Portal](<../../.gitbook/assets/image (10) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
+![App Regsitrations in Azure Portal](<../../.gitbook/assets/image (10) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (1).png>)
 
 ### Entering Info - Part 2
 
