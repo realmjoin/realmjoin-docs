@@ -55,6 +55,7 @@ The following table shows an overview of the scope of the two plans. RealmJoin i
 | Remote Support Agent Integration (Anydesk)\* |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 | Enhanced & Reliable Autopilot ESP            |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 | Autopilot Manager                            |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
+| Multi-user support                           |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 | Azure Virtual Desktop (AVD) support          |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 | Corporate Forms                              |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 
