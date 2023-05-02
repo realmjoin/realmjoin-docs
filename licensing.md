@@ -41,7 +41,8 @@ The following table shows an overview of the scope of the two plans. RealmJoin i
 | Application Store                            | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
 | Application Lifecycle                        | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
 | Deploy Binaries (Organics)                   | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
-| App Agent                                    |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
+| App Agent                                    | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
+| Multi-user support                           | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
 | Software Inventory                           |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 | Supporter Insights & Device Warranty         |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 | Supporter Runbooks                           |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
@@ -55,7 +56,6 @@ The following table shows an overview of the scope of the two plans. RealmJoin i
 | Remote Support Agent Integration (Anydesk)\* |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 | Enhanced & Reliable Autopilot ESP            |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 | Autopilot Manager                            |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
-| Multi-user support                           |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 | Azure Virtual Desktop (AVD) support          |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 | Corporate Forms                              |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 
