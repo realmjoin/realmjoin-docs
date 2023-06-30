@@ -4,7 +4,7 @@ Application Insights is an extensible Application Performance Management service
 
 ## Create App Insight for Generic Auditing
 
-![](<../../.gitbook/assets/image (10).png>)
+![](<../../.gitbook/assets/image (10) (1).png>)
 
 * Navigate to **Application Insights** and click **+Add**
 * Select a **Subscription**

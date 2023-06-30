@@ -24,7 +24,7 @@ If a runbook is flagged as schedulable, the "Schedule" button next to the runboo
 
 The schedule dialogue allows you to choose a [schedule ](scheduling.md#managing-schedules)and to configure the parameters for the runbook's execution. If the parameters are left empty, the runbook's defaults will be used.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Configuring a scheduled runbook</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>Configuring a scheduled runbook</p></figcaption></figure>
 
 RealmJoin Portal will show existing schedule-assignments when browsing the runbooks.
 
@@ -44,7 +44,7 @@ You can add a **New Schedule**, **Edit** or **Delete** an existing schedule from
 
 If no schedules exist yet, RealmJoin Portal will offer a **Create default schedules** button:
 
-<img src="../.gitbook/assets/image (6).png" alt="" data-size="original">
+<img src="../.gitbook/assets/image (6) (1).png" alt="" data-size="original">
 
 Pressing this button will create a default set ("Hourly", "Daily", "Weekly", "Monthly") of schedules as seen above.
 

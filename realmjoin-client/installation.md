@@ -22,7 +22,7 @@ Use the following instructions to deploy RealmJoin:
 * Log in to your [Azure portal](https://portal.azure.com/)
 * Navigate to **Microsoft Intune** and select **Client apps**
 
-![](<../.gitbook/assets/image (6) (1).png>)
+![](<../.gitbook/assets/image (6) (1) (1).png>)
 
 * Then select **Apps** and click **+Add**
 
