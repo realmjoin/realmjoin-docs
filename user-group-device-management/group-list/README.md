@@ -2,7 +2,7 @@
 
 This view offers you a simple way to search or review groups in your environment.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Group List</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption><p>Group List</p></figcaption></figure>
 
 ### Object Types
 
@@ -26,7 +26,7 @@ You can sort the current search result or the full list by any of the fields, by
 
 ### Filters
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption><p>Group Filters</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Group Filters</p></figcaption></figure>
 
 You can use the filters above the list to limit search results to specific objects:
 
@@ -53,7 +53,7 @@ Limit the groups shown to&#x20;
 Limit the results to the type of AzureAD group
 
 * **Security** - List Security Groups. This currently also includes Exchange-related groups like Distribution Lists and Mail-enabled Sec. Groups.
-* **Unified** - List Microsoft 365 groups as well as RealmJoin internal groups like "RealmJoin - All Users"
+* **Unified** - List Microsoft 365 groups/teams as well as RealmJoin internal groups like "RealmJoin - All Users"
 
 ### Drill down to a Group
 
