@@ -1,6 +1,6 @@
-# Additional Settings
+# Available Settings
 
-The following article shows you a list of possible RealmJoin Settings. These can be configured in [RealmJoin Classic Portal](https://realmjoin-web.azurewebsites.net/).
+The following article shows you a list of possible RealmJoin Client Settings. These can be configured and assigned per [user or group](../user-group-device-management/).
 
 ### BranchCache.Mode
 

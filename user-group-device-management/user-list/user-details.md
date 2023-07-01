@@ -55,19 +55,19 @@ You can assign Key-Value pairs of data to specific users to control RealmJoin Cl
 
 Most of the time this is used to overwrite settings configure on a group or for all users.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Settings overview on a user</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption><p>Settings overview on a user</p></figcaption></figure>
 
-You can add a setting assigned to this user using <img src="../../.gitbook/assets/image (1).png" alt="" data-size="line">, alternatively open an existing setting by clicking on its name/key or search for a setting by name/key.
+You can add a setting assigned to this user using <img src="../../.gitbook/assets/image (12).png" alt="" data-size="line">, alternatively open an existing setting by clicking on its name/key or search for a setting by name/key.
 
 Clicking a name/key will open a UI allowing you to manipulate/create the setting.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Setting editor</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption><p>Setting editor</p></figcaption></figure>
 
 Be aware: The value of the setting must be valid JSON, which includes singular values like `true` or strings (without brackets).
 
 The switches in the lower half of the wizard allow scoping this setting to certain scenarios like VDI / Windows365 machines.
 
-Please see [Available Settings](../user-and-group-settings/available-settings.md) for more information on which settings can be used.
+Please see [Available Settings](../../realmjoin-client/additional-settings.md) for more information on which settings can be used.
 
 ### Other Tabs
 
