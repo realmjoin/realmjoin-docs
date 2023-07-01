@@ -11,7 +11,7 @@ RealmJoin allows you to automate tasks, like&#x20;
 * Reporting M/O365 license usage
 * Managing email aliases
 
-RealmJoin realizes this by using [Azure Automation](https://azure.microsoft.com/en-us/services/automation) to execute so called "Runbooks". Specifically, [PowerShell Runbooks](https://docs.microsoft.com/en-us/azure/automation/automation-runbook-types#powershell-runbooks) will be used.
+RealmJoin realizes this by using [Azure Automation](https://learn.microsoft.com/en-us/azure/automation/overview) to execute so called "Runbooks". Specifically, [PowerShell Runbooks](https://docs.microsoft.com/en-us/azure/automation/automation-runbook-types#powershell-runbooks) will be used.
 
 Runbooks are scripts, automating tasks that normally have to be executed by a support engineer / operator or administrator. Automating these tasks lowers the risk of manual error and allows better auditing of actions.
 

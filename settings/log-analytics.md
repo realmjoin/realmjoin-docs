@@ -30,7 +30,7 @@ Please be aware, to store logs longer than 30 days, you will need to modify the 
 
 ### Parameters
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 You configure both features in the same UI in RealmJoin Portal.
 
@@ -54,6 +54,6 @@ Please provide / create a Log Analytics workspace to store [RealmJoin audit log 
 
 RealmJoin will act as an agent to Log Analytics. Please provide the "Primary Key" to this workspace, as to allow writing data to the workspace.
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 Press **Save** after entering all fields. The system will give you feedback if everything worked.
