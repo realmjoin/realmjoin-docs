@@ -22,7 +22,7 @@ This will give you information about you Azure Active Directory tenant, recent a
 
 "Users" includes normal users, AzureAD guests as well as Exchange room- and shared mailboxes.
 
-### ![](<../.gitbook/assets/image (6).png>) [User Settings](../user-group-device-management/user-and-group-settings.md)
+### ![](<../.gitbook/assets/image (18).png>) [User Settings](../user-group-device-management/user-and-group-settings.md)
 
 Here you can review RealmJoin Client Settings applied to specific users.&#x20;
 
@@ -30,7 +30,7 @@ Here you can review RealmJoin Client Settings applied to specific users.&#x20;
 
 "Groups" includes regular AzureAD groups, Teams in Microsoft Teams, Offce365 groups as well as Exchange distribution groups.
 
-### ![](<../.gitbook/assets/image (12).png>)[ Group Settings](../user-group-device-management/user-and-group-settings.md)
+### ![](<../.gitbook/assets/image (10).png>)[ Group Settings](../user-group-device-management/user-and-group-settings.md)
 
 Here you can review RealmJoin Client Settings applied to specific groups.&#x20;
 
@@ -38,11 +38,11 @@ Here you can review RealmJoin Client Settings applied to specific groups.&#x20;
 
 "Devices" includes all AzureAD joined clients as well as devices registered in AzureAD, like mobile phones.
 
-### ![](<../.gitbook/assets/image (3).png>) Remediation Scripts
+### ![](<../.gitbook/assets/image (20).png>) Remediation Scripts
 
 Review and manage Intune Remediation Scripts. You can leverage ready made templates from our repository.
 
-### ![](<../.gitbook/assets/image (1).png>) Audit Logs
+### ![](<../.gitbook/assets/image (16).png>) Audit Logs
 
 Review actions done in RealmJoin Portal.
 
@@ -56,7 +56,7 @@ The list of current applications can include custom Intune (MS Endpoint Manager)
 
 In the store you can search for and import ready-to-use application packages into your Intune environment. No packaging needed.
 
-### ![](<../.gitbook/assets/image (4).png>) Application/Packaging Submission
+### ![](<../.gitbook/assets/image (15).png>) Application/Packaging Submission
 
 Upload your own sources / software package description to glueckkanja-gab's "Packaging as a Service" offerings.
 

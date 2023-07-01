@@ -10,7 +10,7 @@ Also, RealmJoin Portal will use Log Analytics to store Audit Log information and
 
 RealmJoin will interact with the LogAnalytics workspace via an [AzureAD application registration](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals). You can create one here, alternatively you can reuse RealmJoin Runbook Management which is created when [onboarding runbooks](../onboarding/connecting-azure-automation/).
 
-This app will be called using a ClientId and ClientSecret. Using a certificate or managed id is currently not suppored.
+This app will be called using a ClientId and ClientSecret. Using a certificate or managed id is currently not supported.
 
 Please grant the app "Monitoring Reader" permissions on the Log Analytics account used for [Windows Update for Business Reports Integration](log-analytics.md#windows-update-for-business-reports-integration).
 
@@ -30,7 +30,7 @@ Please be aware, to store logs longer than 30 days, you will need to modify the 
 
 ### Parameters
 
-<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 You configure both features in the same UI in RealmJoin Portal.
 
@@ -54,6 +54,6 @@ Please provide / create a Log Analytics workspace to store [RealmJoin audit log 
 
 RealmJoin will act as an agent to Log Analytics. Please provide the "Primary Key" to this workspace, as to allow writing data to the workspace.
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 Press **Save** after entering all fields. The system will give you feedback if everything worked.

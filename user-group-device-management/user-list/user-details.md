@@ -55,13 +55,13 @@ You can assign Key-Value pairs of data to specific users to control RealmJoin Cl
 
 Most of the time this is used to overwrite settings configure on a group or for all users.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption><p>Settings overview on a user</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption><p>Settings overview on a user</p></figcaption></figure>
 
-You can add a setting assigned to this user using <img src="../../.gitbook/assets/image (20).png" alt="" data-size="line">, alternatively open an existing setting by clicking on its name/key or search for a setting by name/key.
+You can add a setting assigned to this user using <img src="../../.gitbook/assets/image (7).png" alt="" data-size="line">, alternatively open an existing setting by clicking on its name/key or search for a setting by name/key.
 
 Clicking a name/key will open a UI allowing you to manipulate/create the setting.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption><p>Setting editor</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Setting editor</p></figcaption></figure>
 
 Be aware: The value of the setting must be valid JSON, which includes singular values like `true` or strings (without brackets).
 
