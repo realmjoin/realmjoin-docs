@@ -24,7 +24,7 @@ If a runbook is flagged as schedulable, the "Schedule" button next to the runboo
 
 The schedule dialogue allows you to choose a [schedule ](scheduling.md#managing-schedules)and to configure the parameters for the runbook's execution. If the parameters are left empty, the runbook's defaults will be used.
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Configuring a scheduled runbook</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (4).png" alt=""><figcaption><p>Configuring a scheduled runbook</p></figcaption></figure>
 
 RealmJoin Portal will show existing schedule-assignments when browsing the runbooks.
 
@@ -34,7 +34,7 @@ RealmJoin Portal will show existing schedule-assignments when browsing the runbo
 
 Azure Automation allows to define schedules, so that runbooks can be automatically triggered every day or every week etc. You can use RealmJoin Portal to manage existing Azure Automation Schedules or to create new ones.
 
-Use the navigation on the left, selecting the clock icon ![](<../.gitbook/assets/image (5).png>) to get to [Runbook Schedules](https://portal.realmjoin.com/automation-accounts/schedules).
+Use the navigation on the left, selecting the clock icon ![](<../.gitbook/assets/image (5) (2).png>) to get to [Runbook Schedules](https://portal.realmjoin.com/automation-accounts/schedules).
 
 <figure><img src="../.gitbook/assets/image (4) (2).png" alt=""><figcaption><p>Runbook Schedules</p></figcaption></figure>
 

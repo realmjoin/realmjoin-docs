@@ -12,7 +12,7 @@ For a detailed, step-by-step guide on how to onboard RealmJoin Portal and Azure 
 
 ### TenantID
 
-Please provide the unique [id of your AzureAD tenant](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant).
+Please provide the unique [id of your AzureAD tenant](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/find-tenant-id-domain).
 
 ### SubscriptionID
 

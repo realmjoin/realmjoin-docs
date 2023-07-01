@@ -30,7 +30,7 @@ Here you can review RealmJoin Client Settings applied to specific users.&#x20;
 
 "Groups" includes regular AzureAD groups, Teams in Microsoft Teams, Offce365 groups as well as Exchange distribution groups.
 
-### ![](<../.gitbook/assets/image (26).png>) Group Settings
+### ![](<../.gitbook/assets/image (5).png>) Group Settings
 
 Here you can review RealmJoin Client Settings applied to specific groups.&#x20;
 
@@ -38,11 +38,11 @@ Here you can review RealmJoin Client Settings applied to specific groups.&#x20;
 
 "Devices" includes all AzureAD joined clients as well as devices registered in AzureAD, like mobile phones.
 
-### ![](<../.gitbook/assets/image (4).png>) Remediation Scripts
+### ![](<../.gitbook/assets/image (3).png>) Remediation Scripts
 
 Review and manage Intune Remediation Scripts. You can leverage ready made templates from our repository.
 
-### ![](<../.gitbook/assets/image (29).png>) Audit Logs
+### ![](<../.gitbook/assets/image (4).png>) Audit Logs
 
 Review actions done in RealmJoin Portal.
 
