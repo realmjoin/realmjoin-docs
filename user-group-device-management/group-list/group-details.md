@@ -71,13 +71,13 @@ See[ Process Automation](../../runbooks/) for more information.
 
 You can assign Key-Value pairs of data to specific groups of users to control RealmJoin Clients behavior for these users.
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption><p>Settings for this group</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption><p>Settings for this group</p></figcaption></figure>
 
 You can add a setting assigned to this group using <img src="../../.gitbook/assets/image (2).png" alt="" data-size="line">, alternatively open an existing setting by clicking on its name/key or search by name/key.
 
 Clicking a name/key will open a UI allowing you to manipulate/create the setting.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption><p>Settings Editor</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption><p>Settings Editor</p></figcaption></figure>
 
 Be aware: The value of the setting must be valid JSON, which includes singular values like `true` or strings (without brackets).
 

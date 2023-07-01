@@ -1,8 +1,8 @@
 # User List
 
-![User List View](<../../.gitbook/assets/image (13) (1) (1) (1).png>)
-
 This view offers you a simple way to search or review users in your environment.
+
+<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption><p>User List</p></figcaption></figure>
 
 ### User Object Types
 
@@ -13,6 +13,8 @@ This view offers you a simple way to search or review users in your environment.
 * Shared mailboxes
 * Room and Equipment mailboxes
 * Administrative user accounts
+
+
 
 ### Search and Sort
 
@@ -29,9 +31,28 @@ The search supports realtime / as-you-type incremental search. The search result
 
 You can sort the current search result or the full list by any of the fields, by clicking on the fields name.
 
-### Guests
+### Filters
 
-By default, AzureAD external users ("Guests") are excluded. Switching the "Exclude guests" toggle will include them in the search/list.
+<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption><p>Filters</p></figcaption></figure>
+
+You can use the filters above the list to limit search results to specific objects:
+
+#### **Usertype**
+
+* **Members** - Users native to your tenant (default)
+* **Guests** - Azure B2B Guests invited from other tenants&#x20;
+* **Any** - Both, Members and Guests are displayed&#x20;
+
+#### ADM Accounts
+
+* **Any** - Display Admin- and regular user accounts (default)
+* **ADM** - Filter to only show users whose DisplayName starts with "ADM" (admin accounts)
+* **Non-ADM** - Negation of the "ADM" Filter
+
+#### Data completeness
+
+* **Any** - Show users with complete and missing data (default)
+* **No Data** - Show only users with missing data in "job title", "city" or "country"
 
 ### Drill Down to a User
 
