@@ -1,8 +1,10 @@
 # User Details
 
-![](<../../.gitbook/assets/image (5) (1) (1) (1) (1).png>)
-
 This page will show you detailed information about a single user object.&#x20;
+
+### User Summary (left half of page)
+
+![](<../../.gitbook/assets/image (5) (1) (1) (1) (1).png>)
 
 ### User Object Types
 
@@ -37,10 +39,36 @@ The core properties include some glanceable information about the status of a us
 * ![](<../../.gitbook/assets/image (5) (1) (1) (1).png>) - When the object was created
 * ![](<../../.gitbook/assets/image (2) (2).png>) - Last signin activity
 
-### Tabs
+### Overview Tab
 
-The right side of the screen shows the contents of the current tab, which can be&#x20;
+Main tab, showing you a host on information about the user, including owned devices and group memberships.
 
-* "Overview" with more information about the object
-* "[Runbooks](../../runbooks/)" showing available runbooks - as the name implies
+### Runbooks Tab
+
+If you have been given Supporter or Admin-Permissions, this gives you access to runbooks that can be executed on this user object. For example to change an email-address for a user.
+
+See[ Process Automation](../../runbooks/) for more information.
+
+### Settings Tab
+
+You can assign Key-Value pairs of data to specific users to control RealmJoin Clients behavior for this user.
+
+Most of the time this is used to overwrite settings configure on a group or for all users.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption><p>Settings overview on a user</p></figcaption></figure>
+
+You can add a setting assigned to this user using <img src="../../.gitbook/assets/image (12).png" alt="" data-size="line">, alternatively open an existing setting by clicking on its name/key or search for a setting by name/key.
+
+Clicking a name/key will open a UI allowing you to manipulate/create the setting.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption><p>Setting editor</p></figcaption></figure>
+
+Be aware: The value of the setting must be valid JSON, which includes singular values like `true` or strings (without brackets).
+
+The switches in the lower half of the wizard allow scoping this setting to certain scenarios like VDI / Windows365 machines.
+
+Please see [Available Settings](../user-and-group-settings/available-settings.md) for more information on which settings can be used.
+
+### Other Tabs
+
 * Raw [data sources](../#data-sources), like AzureAD, Sign in logs etc display in JSON. Only available for RealmJoin administrators.

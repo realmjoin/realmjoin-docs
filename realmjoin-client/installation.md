@@ -30,7 +30,7 @@ Use the following instructions to deploy RealmJoin:
 
 * Under **Other** choose **Line-of-business-app** and click **Select**
 
-![](<../.gitbook/assets/image (12) (1) (1).png>)
+![](<../.gitbook/assets/image (12) (1) (1) (2).png>)
 
 * Next click **Select app package file**
 * As **App package file** browse for **RealmJoin.msi** on your device

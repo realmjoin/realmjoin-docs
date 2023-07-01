@@ -17,6 +17,8 @@
     * [Group Details](user-group-device-management/group-list/group-details.md)
   * [Device List](user-group-device-management/device-list/README.md)
     * [Device Details](user-group-device-management/device-list/device-details.md)
+  * [User and Group Settings](user-group-device-management/user-and-group-settings/README.md)
+    * [Available Settings](user-group-device-management/user-and-group-settings/available-settings.md)
 * [Application Management](AppManagement/README.md)
   * [Package Store](AppManagement/package-store/README.md)
     * [Package Store Details](AppManagement/package-store/package-store-details.md)

@@ -61,6 +61,30 @@ Using the "**Remove**" button will not show a new dialogue but add a "x" icon in
 
 Press the "x" icon to remove a member. The resulting change will take a short time and not be immedaitely visible.
 
+### Runbooks Tab
+
+If you have been given Supporter or Admin-Permissions, this gives you access to runbooks that can be executed on this group object. For example to change an email-address of a distribution list.
+
+See[ Process Automation](../../runbooks/) for more information.
+
+### Settings Tab
+
+You can assign Key-Value pairs of data to specific groups of users to control RealmJoin Clients behavior for these users.
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Settings for this group</p></figcaption></figure>
+
+You can add a setting assigned to this group using <img src="../../.gitbook/assets/image (12).png" alt="" data-size="line">, alternatively open an existing setting by clicking on its name/key or search by name/key.
+
+Clicking a name/key will open a UI allowing you to manipulate/create the setting.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Settings Editor</p></figcaption></figure>
+
+Be aware: The value of the setting must be valid JSON, which includes singular values like `true` or strings (without brackets).
+
+The switches in the lower half of the wizard allow scoping this setting to certain scenarios like VDI / Windows365 machines.
+
+Please see [Available Settings](../user-and-group-settings/available-settings.md) for more information on which settings can be used.
+
 ### Tabs
 
 The right side of the screen shows the contents of the current tab, which can be&#x20;
