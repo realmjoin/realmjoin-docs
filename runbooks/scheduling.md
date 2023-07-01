@@ -44,7 +44,7 @@ You can add a **New Schedule**, **Edit** or **Delete** an existing schedule from
 
 If no schedules exist yet, RealmJoin Portal will offer a **Create default schedules** button:
 
-<img src="../.gitbook/assets/image (6).png" alt="" data-size="original">
+<img src="../.gitbook/assets/image (6) (3).png" alt="" data-size="original">
 
 Pressing this button will create a default set ("Hourly", "Daily", "Weekly", "Monthly") of schedules as seen above.
 
