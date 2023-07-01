@@ -44,7 +44,7 @@ The following JSON is possible as well:
 
 After you configure your user client, you will need to contact AnyDesk. Request an email containing your **Contract ID**, your **License ID** and your **API Password**. Send these IDs and the password to the [glueckkanja-gab (GKGAB) support](mailto:support@glueckkanja-gab.com). If you do so, GKGAB will integrate a AnyDesk API in your RealmJoin portal.
 
-![](<../../.gitbook/assets/image (17).png>)
+![](<../../.gitbook/assets/image (17) (2).png>)
 
 ### AnyDesk Supporter Client Setup Launcher
 
