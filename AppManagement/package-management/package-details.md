@@ -63,7 +63,7 @@ Does this software need a commercial license to be used?
 
 If available, a link to this software title's [MS Security Center Software Inventory (TVM)](https://security.microsoft.com/software-inventory/applications)'s entry will be displayed. There you can check for known security issues and outdated versions of this software in your organization.
 
-![An Application's TVM Entry](<../../.gitbook/assets/image (6) (1) (1) (2).png>)
+![An Application's TVM Entry](<../../.gitbook/assets/image (6) (1) (1).png>)
 
 ### Version
 
@@ -99,7 +99,7 @@ The following tabs are available:
 
 ### Overview
 
-![Overview Tab](<../../.gitbook/assets/image (9) (1) (2).png>)
+![Overview Tab](<../../.gitbook/assets/image (9) (1).png>)
 
 #### Ttitle, Description and other Info
 
