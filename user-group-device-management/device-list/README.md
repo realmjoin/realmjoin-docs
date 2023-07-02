@@ -2,7 +2,7 @@
 
 This view offers you a simple way to search or review devices in your environment.
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Device List</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption><p>Device List</p></figcaption></figure>
 
 ### Object Types
 
@@ -29,7 +29,7 @@ You can sort the current search result or the full list by any of the fields, by
 
 ### Filters
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Device List Filters</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Device List Filters</p></figcaption></figure>
 
 #### Only Enabled
 

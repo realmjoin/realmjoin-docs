@@ -2,7 +2,7 @@
 
 This view offers you a simple way to search or review users in your environment.
 
-<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption><p>User List</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption><p>User List</p></figcaption></figure>
 
 ### User Object Types
 
@@ -33,7 +33,7 @@ You can sort the current search result or the full list by any of the fields, by
 
 ### Filters
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption><p>Filters</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption><p>Filters</p></figcaption></figure>
 
 You can use the filters above the list to limit search results to specific objects:
 

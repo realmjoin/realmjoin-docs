@@ -2,7 +2,7 @@
 
 This view offers you a simple way to search or review groups in your environment.
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption><p>Group List</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption><p>Group List</p></figcaption></figure>
 
 ### Object Types
 
@@ -26,7 +26,7 @@ You can sort the current search result or the full list by any of the fields, by
 
 ### Filters
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption><p>Group Filters</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption><p>Group Filters</p></figcaption></figure>
 
 You can use the filters above the list to limit search results to specific objects:
 

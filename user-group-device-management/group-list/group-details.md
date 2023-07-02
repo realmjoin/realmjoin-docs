@@ -73,11 +73,11 @@ You can assign Key-Value pairs of data to specific groups of users to control Re
 
 <figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption><p>Settings for this group</p></figcaption></figure>
 
-You can add a setting assigned to this group using <img src="../../.gitbook/assets/image (6).png" alt="" data-size="line">, alternatively open an existing setting by clicking on its name/key or search by name/key.
+You can add a setting assigned to this group using <img src="../../.gitbook/assets/image (3).png" alt="" data-size="line">, alternatively open an existing setting by clicking on its name/key or search by name/key.
 
 Clicking a name/key will open a UI allowing you to manipulate/create the setting.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption><p>Settings Editor</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Settings Editor</p></figcaption></figure>
 
 Be aware: The value of the setting must be valid JSON, which includes singular values like `true` or strings (without brackets).
 
@@ -92,3 +92,23 @@ The right side of the screen shows the contents of the current tab, which can be
 * "Overview" with more information about the object
 * "[Runbooks](../../runbooks/)" showing available runbooks - as the name implies
 * Raw [data sources](../#data-sources), like AzureAD, Sign in logs etc display in JSON. Only available for RealmJoin administrators.
+
+### More Actions
+
+At the lower end of the groups details, you can find a "More" Button. Pressing it will open a menu of more available actions.&#x20;
+
+<img src="../../.gitbook/assets/image (30).png" alt="" data-size="original">
+
+Currently, only
+
+* D**elete** - deleting the Azure AD group
+
+is available.&#x20;
+
+#### Delete
+
+If you are allowed to delete the group, a confirmation dialogue will pop up upon pressing the Delete button. (If you don't have enough permissions, nothing will happen.)
+
+![](<../../.gitbook/assets/image (26).png>)
+
+Pressing "Yes" will delete the group AzureAD. This is of course also able to delete Exchange based objects like Distribution lists, or Microsoft 365 groups and teams.
