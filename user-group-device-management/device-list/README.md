@@ -2,7 +2,7 @@
 
 This view offers you a simple way to search or review devices in your environment.
 
-<figure><img src="../../.gitbook/assets/image (30).png" alt=""><figcaption><p>Device List</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (30) (1).png" alt=""><figcaption><p>Device List</p></figcaption></figure>
 
 ### Object Types
 

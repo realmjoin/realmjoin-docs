@@ -26,7 +26,7 @@ Use the following instructions to deploy RealmJoin:
 
 * Then select **Apps** and click **+Add**
 
-![](<../.gitbook/assets/image (5) (1).png>)
+![](<../.gitbook/assets/image (5) (1) (2).png>)
 
 * Under **Other** choose **Line-of-business-app** and click **Select**
 

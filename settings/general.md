@@ -24,3 +24,15 @@ The settings are:
 * **Select target timezone** - If you use AutoDeployAtNight, use this Time Zone to indicate when "at night" is.
 
 See [Package Details](../AppManagement/package-management/package-details.md#automation) for more information on Package Automation.
+
+## Remediation Scripts Defaults
+
+If you use [RealmJoin managed Intune Remediation scripts](../user-group-device-management/remediation-scripts.md#managed-scripts), you can define the naming scheme for [Managed Groups](../user-group-device-management/remediation-scripts.md#managed-groups).
+
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Remediation Scripts Group Naming Scheme</p></figcaption></figure>
+
+You can use the following variables:
+
+* **$healthScriptName** - Name of the Managed Remediation Script
+* **$modifier** - either "included" or "excluded" (Assignment vs. Exception)
+* **$groupName** - (only in description) Name of the Managed Group

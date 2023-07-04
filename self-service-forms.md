@@ -8,11 +8,11 @@ You can use Self Service Forms to collect structured data from users. This can b
 
 We will use a workflow to "indicate a new pet" as example throughout this article.
 
-<figure><img src=".gitbook/assets/image (11) (3).png" alt=""><figcaption><p>Form Example</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (11) (1).png" alt=""><figcaption><p>Form Example</p></figcaption></figure>
 
 ## Using Forms
 
-Using the ![](<.gitbook/assets/image (7) (3).png>) navigation item, users can select a form to fill and submit.
+Using the ![](<.gitbook/assets/image (7) (1).png>) navigation item, users can select a form to fill and submit.
 
 <figure><img src=".gitbook/assets/image (17).png" alt=""><figcaption><p>Form Selector</p></figcaption></figure>
 
@@ -22,9 +22,9 @@ When a user fills out and submits a form, its contents will be sent via email to
 
 ## Review Submissions
 
-Using the ![](<.gitbook/assets/image (2).png>) navigation icon, you can review past form submissions by your users.
+Using the ![](<.gitbook/assets/image (15).png>) navigation icon, you can review past form submissions by your users.
 
-<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption><p>Submissions List</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (30).png" alt=""><figcaption><p>Submissions List</p></figcaption></figure>
 
 You can search for submissions by sending username and by form name, but not by fields in the form submission.
 
@@ -36,7 +36,7 @@ The Self Service Forms settings page allows to manage existing forms, add, edit 
 
 ### Forms List on the Settings Page
 
-<figure><img src=".gitbook/assets/image (13).png" alt=""><figcaption><p>Forms List</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (13) (3).png" alt=""><figcaption><p>Forms List</p></figcaption></figure>
 
 Use "New Form" or "Edit" to describe the form using [JSON Schema](https://json-schema.org/). This defines which fields need to be entered and what values are valid. It offers a syntax checking editor and a preview of the resulting form.&#x20;
 
@@ -50,7 +50,7 @@ Above the editor there are two fields. Use the left field to give your form a de
 
 You can use "Update JSON Form Preview" to create a preview of the resulting form below the editor.
 
-<figure><img src=".gitbook/assets/image (15).png" alt=""><figcaption><p>Editor Preview</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (15) (4).png" alt=""><figcaption><p>Editor Preview</p></figcaption></figure>
 
 After modifying the schema, press "Submit" to save your changes. It will show an error if the syntax check fails.
 

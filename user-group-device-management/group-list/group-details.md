@@ -57,7 +57,7 @@ Press "+" to add a member to the group. The resulting membership will take a sho
 
 Using the "**Remove**" button will not show a new dialogue but add a "x" icon in front of existing members. You can still search/filter for members via Name or User Principal Name / eMail address while this is active.
 
-![Removing Members](<../../.gitbook/assets/image (3) (1).png>)
+![Removing Members](<../../.gitbook/assets/image (3) (1) (2).png>)
 
 Press the "x" icon to remove a member. The resulting change will take a short time and not be immedaitely visible.
 
@@ -71,13 +71,13 @@ See[ Process Automation](../../runbooks/) for more information.
 
 You can assign Key-Value pairs of data to specific groups of users to control RealmJoin Clients behavior for these users.
 
-<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption><p>Settings for this group</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1) (2).png" alt=""><figcaption><p>Settings for this group</p></figcaption></figure>
 
 You can add a setting assigned to this group using <img src="../../.gitbook/assets/image (15) (3).png" alt="" data-size="line">, alternatively open an existing setting by clicking on its name/key or search by name/key.
 
 Clicking a name/key will open a UI allowing you to manipulate/create the setting.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Settings Editor</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>Settings Editor</p></figcaption></figure>
 
 Be aware: The value of the setting must be valid JSON, which includes singular values like `true` or strings (without brackets).
 
@@ -109,6 +109,6 @@ is available.&#x20;
 
 If you are allowed to delete the group, a confirmation dialogue will pop up upon pressing the Delete button. (If you don't have enough permissions, nothing will happen.)
 
-![](<../../.gitbook/assets/image (11) (1).png>)
+![](<../../.gitbook/assets/image (11) (1) (1).png>)
 
 Pressing "Yes" will delete the group AzureAD. This is of course also able to delete Exchange based objects like Distribution lists, or Microsoft 365 groups and teams.

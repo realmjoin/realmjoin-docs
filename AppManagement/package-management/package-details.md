@@ -99,7 +99,7 @@ The following tabs are available:
 
 ### Overview
 
-![Overview Tab](<../../.gitbook/assets/image (9) (1).png>)
+![Overview Tab](<../../.gitbook/assets/image (9) (1) (2).png>)
 
 #### Ttitle, Description and other Info
 
@@ -109,7 +109,7 @@ This tab will show the long description, license and technical help information 
 
 The package's changelog shows when the packages has been updated in RealmJoin's repository or Intune plus a short description of changes.
 
-![Package Changelog](<../../.gitbook/assets/image (11) (1) (1).png>)
+![Package Changelog](<../../.gitbook/assets/image (11) (1) (1) (2).png>)
 
 There are two types of changes tracked in Changelog.
 
@@ -134,7 +134,7 @@ These values can be globally preconfigured for newly imported packages in [Setti
 
 ### Config
 
-![Package Config Tab](<../../.gitbook/assets/image (5) (1) (2).png>)
+![Package Config Tab](<../../.gitbook/assets/image (5) (1) (2) (1).png>)
 
 You can assign multiple **Technical Application Owners** to a package by storing their email-address as a means to reach out. This is optional and currently is purely for information/administrative purposes.
 

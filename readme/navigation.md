@@ -22,7 +22,7 @@ This will give you information about you Azure Active Directory tenant, recent a
 
 "Users" includes normal users, AzureAD guests as well as Exchange room- and shared mailboxes.
 
-### ![](<../.gitbook/assets/image (9).png>) [User Settings](../user-group-device-management/user-and-group-settings.md)
+### ![](<../.gitbook/assets/image (9) (1).png>) [User Settings](../user-group-device-management/user-and-group-settings.md)
 
 Here you can review RealmJoin Client Settings applied to specific users.&#x20;
 
@@ -38,7 +38,7 @@ Here you can review RealmJoin Client Settings applied to specific groups.&#x20;
 
 "Devices" includes all AzureAD joined clients as well as devices registered in AzureAD, like mobile phones.
 
-### ![](<../.gitbook/assets/image (16) (1).png>) Remediation Scripts
+### ![](<../.gitbook/assets/image (16) (1).png>) [Remediation Scripts](../user-group-device-management/remediation-scripts.md)
 
 Review and manage Intune Remediation Scripts. You can leverage ready made templates from our repository.
 
@@ -62,11 +62,11 @@ Upload your own sources / software package description to glueckkanja-gab's "Pac
 
 ## [Self Service Forms](../self-service-forms.md)
 
-### ![](<../.gitbook/assets/image (11).png>) [Submit a Form](../self-service-forms.md#using-forms)
+### ![](<../.gitbook/assets/image (12).png>) [Submit a Form](../self-service-forms.md#using-forms)
 
 Users can report incidents or request equipment using forms. See [Self Service Forms](../self-service-forms.md) for more information.
 
-### ![](../.gitbook/assets/image.png) [Review recent Form Submissions](../self-service-forms.md#review-submissions)
+### ![](<../.gitbook/assets/image (13).png>) [Review recent Form Submissions](../self-service-forms.md#review-submissions)
 
 See a list of recent form submissions and review senders and submission contents.
 

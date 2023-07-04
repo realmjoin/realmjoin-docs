@@ -10,7 +10,7 @@ If settings have been created/assigned to users, you can review them under&#x20;
 
 Accordingly, if settings have been applied to any group, including "**RealmJoin - All Users"**, these can be reviewed under
 
-![](<../.gitbook/assets/image (6).png>) - Group Settings
+![](<../.gitbook/assets/image (6) (2).png>) - Group Settings
 
 ### List of Settings
 
