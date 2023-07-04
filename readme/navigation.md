@@ -38,11 +38,11 @@ Here you can review RealmJoin Client Settings applied to specific groups.&#x20;
 
 "Devices" includes all AzureAD joined clients as well as devices registered in AzureAD, like mobile phones.
 
-### ![](<../.gitbook/assets/image (16).png>) Remediation Scripts
+### ![](<../.gitbook/assets/image (16) (1).png>) Remediation Scripts
 
 Review and manage Intune Remediation Scripts. You can leverage ready made templates from our repository.
 
-### ![](../.gitbook/assets/image.png) Audit Logs
+### ![](<../.gitbook/assets/image (20).png>) Audit Logs
 
 Review actions done in RealmJoin Portal.
 
@@ -61,6 +61,10 @@ In the store you can search for and import ready-to-use application packages int
 Upload your own sources / software package description to glueckkanja-gab's "Packaging as a Service" offerings.
 
 ## Other
+
+### ![](../.gitbook/assets/image.png) [Self Service Forms](../self-service-forms.md)
+
+Users can report incidents or request equipment using forms. See [Self Service Forms](../self-service-forms.md) for more information.
 
 ### ![](../.gitbook/assets/jobs.png) Recent Runbook job logs
 

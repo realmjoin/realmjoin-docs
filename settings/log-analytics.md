@@ -30,7 +30,7 @@ Please be aware, to store logs longer than 30 days, you will need to modify the 
 
 ### Parameters
 
-<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (17) (2).png" alt=""><figcaption></figcaption></figure>
 
 You configure both features in the same UI in RealmJoin Portal.
 

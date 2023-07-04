@@ -14,7 +14,7 @@ A tenant administrator has to give consent to RealmJoin. The Connect Wizard crea
 
 The following permissions are admitted by the administrator consent and set in Azure via the GraphAPI:
 
-![](<../.gitbook/assets/image (7) (1).png>)
+![](<../.gitbook/assets/image (7) (1) (1).png>)
 
 ### Default configuration for new tenants
 

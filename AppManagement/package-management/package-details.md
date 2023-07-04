@@ -113,7 +113,7 @@ The package's changelog shows when the packages has been updated in RealmJoin's 
 
 There are two types of changes tracked in Changelog.
 
-![](<../../.gitbook/assets/image (11) (1).png>) Changes to the instance of the package in your environment, specifically in Intune. E.g. publishing a newer version of the package to your users.
+![](<../../.gitbook/assets/image (11) (1) (2).png>) Changes to the instance of the package in your environment, specifically in Intune. E.g. publishing a newer version of the package to your users.
 
 ![](<../../.gitbook/assets/image (14) (1) (1) (1) (1).png>) Changes to package store entry.
 

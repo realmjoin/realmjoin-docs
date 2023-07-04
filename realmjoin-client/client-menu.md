@@ -4,7 +4,7 @@
 
 After being successfully installed, RealmJoin is automatically started on the user login and is permanently active in the background. It is represented with an ID card icon. Clicking on the icon opens up the RealmJoin client menu. It contains basic information in the lower part and several links in the upper part. These links are ordered in two different sections - **Web Links** and **Software Packages**.
 
-![](<../.gitbook/assets/image (13) (1).png>)
+![](<../.gitbook/assets/image (13) (1) (2).png>)
 
 **Web Links** contains customizable web links. For example, Google. When a user clicks the web link **Google**, RealmJoin opens the Google Search automatically.
 

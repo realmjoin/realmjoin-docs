@@ -56,6 +56,8 @@
   * [Runbooks](settings/runbooks.md)
   * [Runbook Customizations](settings/runbook-customizations.md)
   * [Runbook Permissions](settings/runbook-permissions.md)
+  * [Self Service Forms](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-MkrcM7cKOpXKri1kVrh/\~/changes/144/self-service-forms#settings-page)
+* [Self Service Forms](self-service-forms.md)
 * [Developer Reference](developer-reference/README.md)
   * [RealmJoin API](developer-reference/realmjoin-api/README.md)
     * [Authentication](developer-reference/realmjoin-api/authentication.md)

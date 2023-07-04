@@ -6,7 +6,7 @@ Settings can be used to control RealmJoin Clients behaviour and configure featur
 
 If settings have been created/assigned to users, you can review them under&#x20;
 
-![](<../.gitbook/assets/image (20).png>) - User Settings
+![](<../.gitbook/assets/image (20) (3).png>) - User Settings
 
 Accordingly, if settings have been applied to any group, including "**RealmJoin - All Users"**, these can be reviewed under
 
@@ -22,7 +22,7 @@ You can click on the name (Key) of a setting to open it in the settings editor.
 
 ### Settings Editor
 
-<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption><p>Settings Editor</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (12) (2).png" alt=""><figcaption><p>Settings Editor</p></figcaption></figure>
 
 Be aware: The value of the setting must be valid JSON, which includes singular values like `true` or strings (without brackets).
 

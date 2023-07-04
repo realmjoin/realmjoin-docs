@@ -29,7 +29,7 @@ You can sort the current search result or the full list by any of the fields, by
 
 ### Filters
 
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption><p>Device List Filters</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14) (2).png" alt=""><figcaption><p>Device List Filters</p></figcaption></figure>
 
 #### Only Enabled
 
