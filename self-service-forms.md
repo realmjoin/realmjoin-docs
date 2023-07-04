@@ -151,8 +151,6 @@ Arrays allow you to add multiple similar **items** to a list. Use the **items** 
 
 #### String
 
-Just plain text.&#x20;
-
-You can prefill this using the **default** keyword.
+Just plain text. You can prefill this using the **default** keyword.
 
 To allow only certain values, you can use the **enum** keyword.
