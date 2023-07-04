@@ -42,10 +42,6 @@ Here you can review RealmJoin Client Settings applied to specific groups.&#x20;
 
 Review and manage Intune Remediation Scripts. You can leverage ready made templates from our repository.
 
-### ![](<../.gitbook/assets/image (20).png>) Audit Logs
-
-Review actions done in RealmJoin Portal.
-
 ## [Application Management](../AppManagement/)
 
 ### ![](../.gitbook/assets/packages.png) [Your active application packages](../AppManagement/package-management/)
@@ -75,6 +71,10 @@ See a list of recent form submissions and review senders and submission contents
 ### ![](../.gitbook/assets/jobs.png) Recent Runbook job logs
 
 See the results and logfiles/output of recent [Process Automation](../runbooks/) tasks&#x20;
+
+### ![](<../.gitbook/assets/image (20).png>) [Audit Logs](../audit-log.md)
+
+Review actions done in RealmJoin Portal.
 
 ### ![](../.gitbook/assets/settings.png) [RealmJoin settings](../settings/)
 

@@ -29,7 +29,7 @@ See [Package Details](../AppManagement/package-management/package-details.md#aut
 
 If you use [RealmJoin managed Intune Remediation scripts](../user-group-device-management/remediation-scripts.md#managed-scripts), you can define the naming scheme for [Managed Groups](../user-group-device-management/remediation-scripts.md#managed-groups).
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Remediation Scripts Group Naming Scheme</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (5).png" alt=""><figcaption><p>Remediation Scripts Group Naming Scheme</p></figcaption></figure>
 
 You can use the following variables:
 

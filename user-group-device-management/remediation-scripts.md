@@ -53,7 +53,7 @@ Other tabs and UI elements depend on the state of the script package.
 
 * **Statistics** - Show execution and device statistics for the script
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Script Statistics</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Script Statistics</p></figcaption></figure>
 
 ### Managed Scripts
 

@@ -50,6 +50,7 @@
   * [Connecting a Tenant](realmjoin-client/connecting-a-tenant.md)
   * [Available Settings](realmjoin-client/additional-settings.md)
 * [Self Service Forms](self-service-forms.md)
+* [Audit Log](audit-log.md)
 * [Settings](settings/README.md)
   * [General](settings/general.md)
   * [Permission](settings/permission.md)
