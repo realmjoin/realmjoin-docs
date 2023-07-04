@@ -8,17 +8,27 @@ You can use Self Service Forms to collect structured data from users. This can b
 
 We will use a workflow to "indicate a new pet" as example throughout this article.
 
-<figure><img src=".gitbook/assets/image (11).png" alt=""><figcaption><p>Form Example</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (11) (3).png" alt=""><figcaption><p>Form Example</p></figcaption></figure>
 
 ## Using Forms
 
-Using the ![](<.gitbook/assets/image (7).png>) navigation item, users can select a form to fill and submit.
+Using the ![](<.gitbook/assets/image (7) (3).png>) navigation item, users can select a form to fill and submit.
 
 <figure><img src=".gitbook/assets/image (17).png" alt=""><figcaption><p>Form Selector</p></figcaption></figure>
 
 When a user fills out and submits a form, its contents will be sent via email to the recipient given in the form's definition. The email will be sent vie RealmJoin's infrastructure and will not originate from your companies email addresses.&#x20;
 
 <figure><img src=".gitbook/assets/image (14).png" alt=""><figcaption><p>Sample email from a form</p></figcaption></figure>
+
+## Review Submissions
+
+Using the ![](<.gitbook/assets/image (2).png>) navigation icon, you can review past form submissions by your users.
+
+<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption><p>Submissions List</p></figcaption></figure>
+
+You can search for submissions by sending username and by form name, but not by fields in the form submission.
+
+Click "View" to see the filled form data. The view is read only.
 
 ## Settings Page
 

@@ -60,11 +60,17 @@ In the store you can search for and import ready-to-use application packages int
 
 Upload your own sources / software package description to glueckkanja-gab's "Packaging as a Service" offerings.
 
-## Other
+## [Self Service Forms](../self-service-forms.md)
 
-### ![](../.gitbook/assets/image.png) [Self Service Forms](../self-service-forms.md)
+### ![](<../.gitbook/assets/image (11).png>) [Submit a Form](../self-service-forms.md#using-forms)
 
 Users can report incidents or request equipment using forms. See [Self Service Forms](../self-service-forms.md) for more information.
+
+### ![](../.gitbook/assets/image.png) [Review recent Form Submissions](../self-service-forms.md#review-submissions)
+
+See a list of recent form submissions and review senders and submission contents.
+
+## Other
 
 ### ![](../.gitbook/assets/jobs.png) Recent Runbook job logs
 
