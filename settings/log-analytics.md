@@ -12,9 +12,9 @@ RealmJoin will interact with the LogAnalytics workspace via an [AzureAD applicat
 
 This app will be called using a ClientId and ClientSecret. Using a certificate or managed id is currently not supported.
 
-Please grant the app "Monitoring Reader" permissions on the Log Analytics account used for [Windows Update for Business Reports Integration](log-analytics.md#windows-update-for-business-reports-integration).
+Please grant the app "Monitoring Reader" permissions on the Log Analytics accounts used for [Windows Update for Business Reports Integration](log-analytics.md#windows-update-for-business-reports-integration) and [RealmJoin Audit logs](log-analytics.md#realmjoin-audit-logs).
 
-Also grant the app "Contributor" permissions on the Log Analytics account used for storing [RealmJoin Audit logs](log-analytics.md#realmjoin-audit-logs).
+RealmJoin will use the [Customer WorkSpace Key](log-analytics.md#customer-workspace-key) to write data directly (and thus does not need write permissions using RBAC).
 
 ### Windows Update for Business Reports Integration
 
