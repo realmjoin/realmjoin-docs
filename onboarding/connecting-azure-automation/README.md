@@ -2,7 +2,7 @@
 
 ## Overview
 
-To enable RealmJoin Portal to offer [runbooks ](../../runbooks/)as a way to automate daily operations, you need to connect an [Azure Automation Account](https://azure.microsoft.com/en-us/services/automation/). This Automation Account will host your runbooks as well as the [permissions](../../runbooks/azure-ad-roles-and-permissions.md) needed for the runbooks to function in your environment.
+To enable RealmJoin Portal to offer [runbooks ](../../runbooks/)as a way to automate daily operations, you need to connect an Azure Automation Account. This Automation Account will host your runbooks as well as the [permissions](../../runbooks/azure-ad-roles-and-permissions.md) needed for the runbooks to function in your environment.
 
 This guide will help you to onboard either a new or existing Automation Account.
 
