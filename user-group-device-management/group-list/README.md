@@ -2,7 +2,7 @@
 
 This view offers you a simple way to search or review groups in your environment.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Group List</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>Group List</p></figcaption></figure>
 
 ### Object Types
 

@@ -52,6 +52,6 @@ Please be aware that you have to modify the Workspace's retention time to accomm
 
 Click **Archived** to switch from the recent logs in Azure Automation to those stored in Log Analytics.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Archived Runbook Job Logs List</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption><p>Archived Runbook Job Logs List</p></figcaption></figure>
 
 You can search and inspect these the same as the regular logs under **Recent**.

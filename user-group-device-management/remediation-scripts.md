@@ -8,7 +8,7 @@ RealmJoin Portal allows you to review Intune remediation scripts in your environ
 
 ## Remediation Script List
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p>Remediation Script List</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p>Remediation Script List</p></figcaption></figure>
 
 The Remediation Script List shows you all existing and available remediation scripts for your environment.&#x20;
 
@@ -33,7 +33,7 @@ When you click on a scripts name, you can review a scripts details, statistics a
 
 On the left side of the page you will see metadata about the script, incl. flags like if the scripts needs to be executed in 32bits on a 64bit host.
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption><p>Remediation Script Details</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (3).png" alt=""><figcaption><p>Remediation Script Details</p></figcaption></figure>
 
 Be aware, details can vary. For example, only scripts already staged/existing in your tenant can have a "last modified" date.
 
@@ -49,7 +49,7 @@ Other tabs and UI elements depend on the state of the script package.
 
 * **Assignments** - For scripts that you created outside of RealmJoin, you can review (but not change) the scripts assignments to users and groups. This will also show the schedule for the detection script execution.
 
-<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>Custom Script Assignments</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (3).png" alt=""><figcaption><p>Custom Script Assignments</p></figcaption></figure>
 
 * **Statistics** - Show execution and device statistics for the script
 
@@ -93,7 +93,7 @@ You can use **Assign to All Users** and **Assign to All Devices** to you Intune'
 
 Alternatively, you can **Create Managed Groups** to create AzureAD Groups that will be assigned instead of "All Devices" or "All Users".&#x20;
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Managed Groups</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Managed Groups</p></figcaption></figure>
 
 The naming scheme for Managed Groups can be defined in [Settings -> General](../settings/general.md).
 

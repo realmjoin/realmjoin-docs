@@ -4,7 +4,7 @@
 
 After configuring [Log Analytics](settings/log-analytics.md) as data storage, RealmJoin will start to log actions done in RealmJoin Portal into its Audit Log.
 
-<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption><p>Audit Log List</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (3) (2).png" alt=""><figcaption><p>Audit Log List</p></figcaption></figure>
 
 As Admin you can review any actions/changes executed in RealmJoin Portal using Audit Log. This includes:
 

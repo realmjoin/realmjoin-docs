@@ -4,7 +4,7 @@
 
 This page will show detailed information for a single package in your environment and allows to manage its assignment to users and updates.
 
-This page looks similiar to the [Package Store Details](../package-store/package-store-details.md) page, but gives details about a package that is already imported into your environment. It does not reflect the generic package store entry.
+This page looks similar to the [Package Store Details](../package-store/package-store-details.md) page, but gives details about a package that is already imported into your environment. It does not reflect the generic package store entry.
 
 ## Package Types
 
@@ -87,6 +87,20 @@ For supported application types, especially **managed packages**, you will see t
 
 You can click the group name to enter the group's details and add/remove users to the group.
 
+## Update Groups
+
+RealmJoin allows to automatically "onboard" loose installations of a software title into management.&#x20;
+
+Click **Enable Update Group** and a new AzureAD Group with the suffix "(update)" will be created and software installations also assigned to this group.&#x20;
+
+RealmJoin will dynamically discover installed copies of the software that are unmanaged and add the device it has been discovered on to the update group.
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Enable an Update Group</p></figcaption></figure>
+
+Thus, new version of this software will also be installed on these devices to assert deployment of security patches across your environment.
+
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption><p>Enabled Update Group</p></figcaption></figure>
+
 ## Deployment Status
 
 You can also review the installation status of given assignments / this package on users and clients.
@@ -119,15 +133,14 @@ There are two types of changes tracked in Changelog.
 
 ### Automation
 
-![Automation setting for a package](<../../.gitbook/assets/image (17) (1) (1) (1) (1).png>)
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Package Automation</p></figcaption></figure>
 
 For managed packages, you can use the Automation tab to configure automatic publishing of new version of packages from the package store to your environment.
 
-* **AutoDeployMain** - Automatically deploy new versions of this package to your users. ("Main" subscription)
-* **AutoDeployMainDeferInDays** - Wait for this number of days to pass before publishing a new version to "main". This is usefull to avoid stress for users/clients if multiple package versions are published rapidly.
-* **AutoDeployPreview** - Automatically deploy new versions of this package to your pilot users. ("Preview" subscription)
-* **AutoDeployPreviewDeferInDays** - Wait for this number of days to pass before publishing a new version to "preview".
-* **AutoDeployAtNight** - Schedule automatic deployment during night time
+* **Automate Main Channel** - Automatically deploy new versions of this package to your users. ("Main" subscription)
+* **Automate Preview Channel** - Automatically deploy new versions of this package to your pilot users. ("Preview" subscription)
+* **... defer X days** - Wait for this number of days to pass before publishing a new version to the channel. This is usefull to avoid stress for users/clients if multiple package versions are published rapidly.
+* **Deploy At Night** - Schedule automatic deployment during night time
 * **Select target timezone** - If you use AutoDeployAtNight, use this Time Zone to indicate when "at night" is.
 
 These values can be globally preconfigured for newly imported packages in [Settings](../../settings/). Configuring them on a per package basis will overwrite the global defaults.

@@ -1,8 +1,18 @@
 # Device Details
 
-![Device Details Page](<../../.gitbook/assets/image (12) (1) (1) (1) (1) (1) (1).png>)
+## Overview
 
 This page shows you details regarding a single device.
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Device Details</p></figcaption></figure>
+
+The left side of the page will show device metadata incl. the device's owner, OS and serial number.
+
+The right side will show one of multiple tabs. The default **Overview** tab view will include information (if available) like
+
+* The currently logged on user&#x20;
+* Currently installed apps/software, either managed bei RealmJoin or Intune
+* Security recommendations and if these are met by the device
 
 ### Object Types
 
@@ -50,23 +60,6 @@ Other bits of information are presented as tags:
 * Company - Company Owned (not Personal)
 * Personal - Personal, not Company Owned
 
-### Tabs
-
-The right side of the screen shows the contents of the current tab, which can be&#x20;
-
-* "Overview" with more information about the object. This view will include information (if available) like
-  * The currently logged on user&#x20;
-  * Currently installed software, either managed bei RealmJoin or Intune
-  * Security recommendations and if these are met by the device
-* "[Runbooks](../../runbooks/)" showing available runbooks - as the name implies
-* Raw [data sources](../#data-sources), like AzureAD, Sign in logs etc display in JSON. Only available for RealmJoin administrators.
-
-### Actions
-
-You can use the button "Device Sync" to trigger a Sync of Intune Policies and RealmJoin Action, like queued [LAPS](device-details.md#local-admin-management-laps) account creations.
-
-Use "Device Scan" to trigger a (quick) scan of Windows Defender on a managed client.
-
 ### Local Admin Management (LAPS)
 
 When combined with the [RealmJoin Client](../../realmjoin-client/), RealmJoin Portal can help with support tasks on windows clients that need local admin permissions by offering on-demand support accounts on clients. In many cases this removes the need to grant local admin permissions to the primary user of the device just to solve a one-time need.
@@ -84,6 +77,29 @@ Click the dots to reveal the password.
 The Support Account will automatically be removed after 12 hours.
 
 See the [LAPS documentation](../../realmjoin-client/local-admin-password-solution-laps/) for more details.
+
+## Warranty
+
+Use the **Warranty** tab to display information like remaining vendor warranty time for supported vendors/devices.
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Warranty Information</p></figcaption></figure>
+
+Depending on the API used, a captcha might be displayed before requesting/displaying warranty information.
+
+## Actions
+
+You can use the button **Sync** to trigger a Sync of Intune Policies and RealmJoin Action, like queued [LAPS](device-details.md#local-admin-management-laps) account creations.
+
+**Scan** to trigger a (quick) scan of Windows Defender on a managed client.
+
+## Other Tabs
+
+The right side of the screen shows the contents of the current tab, which can be&#x20;
+
+* "[Runbooks](../../runbooks/)" showing available runbooks for devices.
+* Raw [data sources](../#data-sources), like AzureAD, Sign in logs etc. displayed as JSON. Only available for RealmJoin administrators.
+
+##
 
 
 

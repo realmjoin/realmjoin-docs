@@ -4,7 +4,7 @@
 
 RealmJoin Portal allows you to view runbooks jobs from Azure Automation.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Runbook Job Details</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (5).png" alt=""><figcaption><p>Runbook Job Details</p></figcaption></figure>
 
 On the left side of the page you will find metadata about the runbook job, its type/context, job ID and its caller.&#x20;
 
