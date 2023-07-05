@@ -43,3 +43,15 @@ See [Scheduling](../scheduling.md#assigning-schedules) to create new scheduled j
 Click **Schedules** to view and manage available schedules for your runbooks.
 
 See [Scheduling ](../scheduling.md#managing-schedules)to learn more.
+
+## Archived Logs
+
+Azure Automation will only keep runbook job logs for a limited time. RealmJoin offers to copy/archive runbook logs into a Log Analytics Workspace to preserve them for a longer time. This will only be available after you correctly configured/onboarded [Log Analytics](../../settings/log-analytics.md).
+
+Please be aware that you have to modify the Workspace's retention time to accommodate your needs as this will limit how long archived logs can be stored.
+
+Click **Archived** to switch from the recent logs in Azure Automation to those stored in Log Analytics.
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Archived Runbook Job Logs List</p></figcaption></figure>
+
+You can search and inspect these the same as the regular logs under **Recent**.

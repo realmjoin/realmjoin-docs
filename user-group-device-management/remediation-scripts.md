@@ -73,7 +73,7 @@ Managed Scripts that exist in your environment show the same information as othe
 
 Staged and deployed managed scripts can be removed from Intune using the **More** -> **Delete** button.
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption><p>Delete a Managed Script</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (3).png" alt=""><figcaption><p>Delete a Managed Script</p></figcaption></figure>
 
 Deleting a managed script will also remove its [Managed Groups](remediation-scripts.md#managed-groups) (if these exist).
 
