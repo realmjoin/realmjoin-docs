@@ -33,7 +33,7 @@ The right side of the screen shows the current tab, which can be&#x20;
 
 ### Runbooks
 
-RealmJoin offers operators to automate day to day tasks using [Runbooks](../runbooks/). RealmJoin Portal will offer context specific runbooks on tenant, device, group and user level via a seperate tab.
+RealmJoin offers operators to automate day to day tasks using [Runbooks](../runbooks/). RealmJoin Portal offers context specific runbooks on tenant, device, group and user level via a separate tab.
 
 ![Runbook Tab](<../.gitbook/assets/2022-02-07 Runbooks tab.png>)
 

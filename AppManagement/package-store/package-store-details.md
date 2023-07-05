@@ -22,7 +22,7 @@ Every package details page will show an overview of the core properties like the
 
 Also displayed on the left side of the screen are four status fields for a package, displayed as tags below the package name and publisher name.
 
-![](<../../.gitbook/assets/image (5) (1) (1).png>)
+![](<../../.gitbook/assets/image (5) (1) (1) (2).png>)
 
 These fields are binary - they are set to one of two possible values. The text of each field changes accordingly. Some of the fields are also color-coded for easier glancability.
 

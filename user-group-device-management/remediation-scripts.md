@@ -49,7 +49,7 @@ Other tabs and UI elements depend on the state of the script package.
 
 * **Assignments** - For scripts that you created outside of RealmJoin, you can review (but not change) the scripts assignments to users and groups. This will also show the schedule for the detection script execution.
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Custom Script Assignments</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>Custom Script Assignments</p></figcaption></figure>
 
 * **Statistics** - Show execution and device statistics for the script
 
@@ -81,7 +81,7 @@ Deleting a managed script will also remove its [Managed Groups](remediation-scri
 
 You can assign managed scripts to users and devices in the **Assignments** tab.
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>Assign Managed Scrips</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (4).png" alt=""><figcaption><p>Assign Managed Scrips</p></figcaption></figure>
 
 When assigning a **staged** script, its status will change to **deployed**. At this point it can affect clients and users.
 

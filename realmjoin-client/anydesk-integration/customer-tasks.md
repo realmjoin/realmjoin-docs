@@ -50,7 +50,7 @@ After you configure your user client, you will need to contact AnyDesk. Request 
 
 To allow a supporter to connect to a desktop, you have to assign the **AnyDesk Supporter Client Setup Launcher** to a supporter.
 
-![](<../../.gitbook/assets/image (27).png>)
+![](<../../.gitbook/assets/image (27) (1).png>)
 
 For this assignment you need your supporter client URL.
 
@@ -77,7 +77,7 @@ For special support scenarios, administrative rights will be needed. A normal re
 | 2. Select **Request elevation**                                                               | ![](<../../.gitbook/assets/image (20) (2).png>) |
 | 3. In the new appearing window (Request elevation) choose to **Transmit authentication data** |                                                 |
 | 4. Insert corresponding credentials                                                           |                                                 |
-| 5. Then, click **OK**                                                                         | ![](<../../.gitbook/assets/image (19).png>)     |
+| 5. Then, click **OK**                                                                         | ![](<../../.gitbook/assets/image (19) (2).png>) |
 | 5. On the remote client, a new window **User Account Control** will appear                    |                                                 |
 | 6. Confirm it                                                                                 |                                                 |
 | 7. The support staff is now able to perform administrative tasks.                             |                                                 |

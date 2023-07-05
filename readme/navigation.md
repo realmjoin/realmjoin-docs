@@ -68,7 +68,7 @@ See a list of recent form submissions and review senders and submission contents
 
 ## Other
 
-### ![](../.gitbook/assets/jobs.png) Recent Runbook job logs
+### ![](../.gitbook/assets/jobs.png) [Runbook logs](../runbooks/runbook-logs/)
 
 See the results and logfiles/output of recent [Process Automation](../runbooks/) tasks&#x20;
 

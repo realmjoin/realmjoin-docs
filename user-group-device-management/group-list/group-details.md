@@ -77,7 +77,7 @@ You can add a setting assigned to this group using <img src="../../.gitbook/asse
 
 Clicking a name/key will open a UI allowing you to manipulate/create the setting.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>Settings Editor</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption><p>Settings Editor</p></figcaption></figure>
 
 Be aware: The value of the setting must be valid JSON, which includes singular values like `true` or strings (without brackets).
 

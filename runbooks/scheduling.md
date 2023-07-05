@@ -34,9 +34,9 @@ RealmJoin Portal will show existing schedule-assignments when browsing the runbo
 
 Azure Automation allows to define schedules, so that runbooks can be automatically triggered every day or every week etc. You can use RealmJoin Portal to manage existing Azure Automation Schedules or to create new ones.
 
-Use the navigation on the left, selecting the clock icon ![](<../.gitbook/assets/image (5) (2).png>) to get to [Runbook Schedules](https://portal.realmjoin.com/automation-accounts/schedules).
+Use the navigation on the left, selecting the Runbook Logs ![](../.gitbook/assets/jobs.png) and got the **Schedules** tab.
 
-<figure><img src="../.gitbook/assets/image (4) (2).png" alt=""><figcaption><p>Runbook Schedules</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption><p>Runbook Schedules</p></figcaption></figure>
 
 You can add a **New Schedule**, **Edit** or **Delete** an existing schedule from here.
 
@@ -44,7 +44,7 @@ You can add a **New Schedule**, **Edit** or **Delete** an existing schedule from
 
 If no schedules exist yet, RealmJoin Portal will offer a **Create default schedules** button:
 
-<img src="../.gitbook/assets/image (6) (3).png" alt="" data-size="original">
+<figure><img src="../.gitbook/assets/image (31).png" alt=""><figcaption><p>Create Schedules</p></figcaption></figure>
 
 Pressing this button will create a default set ("Hourly", "Daily", "Weekly", "Monthly") of schedules as seen above.
 
@@ -56,4 +56,4 @@ Execution of the runbook will happen on the days defined by start-date and frequ
 
 The start-time defines at which time the execution will happen. Setting the timezone makes sure the time is interpreted accordingly.
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Edit Schedule</p></figcaption></figure>

@@ -46,7 +46,7 @@ The schema will be used to dynamically create a form for the user. Basically, us
 
 Above the editor there are two fields. Use the left field to give your form a descriptive name. Use the right field to denominate the email address of the recipient of the submitted form data.
 
-<figure><img src=".gitbook/assets/image (16).png" alt=""><figcaption><p>Schema Editor Sample</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (16) (3).png" alt=""><figcaption><p>Schema Editor Sample</p></figcaption></figure>
 
 You can use "Update JSON Form Preview" to create a preview of the resulting form below the editor.
 
