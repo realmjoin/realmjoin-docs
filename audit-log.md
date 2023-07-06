@@ -15,13 +15,13 @@ As Admin you can review any actions/changes executed in RealmJoin Portal using A
 
 Please be aware, [Self Service Form Submissions](self-service-forms.md#review-submissions) are not logged in this space as they have a separate log.
 
-It can take several minutes for an action to be visible in Audit Log.
+It can take several minutes for an action to be visible in the Audit Log.
 
 ## Search and Sort
 
 You can search entries by all fields displayed in the list, including the message content, category and username.&#x20;
 
-You can sort by most fields by clicking on the fields header (name).
+You can sort by most fields by clicking on the fields' header (name).
 
 ## Event Details
 
