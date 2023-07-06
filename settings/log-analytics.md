@@ -18,15 +18,15 @@ RealmJoin will use the [Customer WorkSpace Key](log-analytics.md#customer-worksp
 
 ### Windows Update for Business Reports Integration
 
-[Windows Update for Business Reports](https://learn.microsoft.com/en-us/windows/deployment/update/wufb-reports-overview) needs to be configured in your environment to leverage this feature. It will write update-related events into an [Azure LogAnalytics Workspace](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview). RealmJoin can read the events from this LogAnalytics Workspace and display them on the[ device's details page](../user-group-device-management/device-list/device-details.md).
+[Windows Update for Business Reports](https://learn.microsoft.com/en-us/windows/deployment/update/wufb-reports-overview) needs to be configured in your environment in order to leverage this feature. It will write update-related events into an [Azure LogAnalytics Workspace](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview). RealmJoin can read the events from this LogAnalytics Workspace and display them on the[ device's details page](../user-group-device-management/device-list/device-details.md).
 
 Use the LogAnalytics Settings page to configure access to this workspace.&#x20;
 
 ### RealmJoin Audit Logs
 
-RealmJoin can use a Log Analytics workspace to store its own audit logs as well as archive runbook logs after the maximum retention in Azure Automation (30 days).&#x20;
+RealmJoin can use a Log Analytics workspace to store its own audit logs as well as archive runbook logs after the maximum retention in Azure Automation (currently 30 days).&#x20;
 
-Please be aware, to store logs longer than 30 days, you will need to modify the [workspace's default data retention](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive?tabs=portal-1%2Cportal-2), which is also set to 30 days by default.&#x20;
+Please be aware, in order to store logs for longer than 30 days, you will need to modify the [workspace's default data retention](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive?tabs=portal-1%2Cportal-2), which is also set to 30 days by default.&#x20;
 
 ### Parameters
 
@@ -36,7 +36,7 @@ You configure both features in the same UI in RealmJoin Portal.
 
 #### TenantId
 
-Please provide your AzureAD's tenant id.
+Please provide your AzureAD's tenant ID.
 
 #### ClientId and ClientSecret
 
@@ -44,7 +44,7 @@ RealmJoin will interact with the LogAnalytics workspace via an [Azure App Regist
 
 #### Update Compliance WorkspaceId
 
-Please provide the [Windows Update for Business Reports](log-analytics.md#windows-update-for-business-reports-integration) LogAnalytics workspace's id from which to collect data.
+Please provide the [Windows Update for Business Reports](log-analytics.md#windows-update-for-business-reports-integration) LogAnalytics workspace's ID from which to collect data.
 
 #### Customer Workspace Id
 
@@ -56,4 +56,4 @@ RealmJoin will act as an agent to Log Analytics. Please provide the "Primary Key
 
 <figure><img src="../.gitbook/assets/image (4) (1) (4).png" alt=""><figcaption></figcaption></figure>
 
-Press **Save** after entering all fields. The system will give you feedback if everything worked.
+Press **Save** after filling out all fields. The system will give you feedback if everything worked.
