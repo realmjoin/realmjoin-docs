@@ -23,9 +23,9 @@ The device list allows you to search for devices in your organization by
 * Model
 * Operating System
 
-The search support realtime / as-you-type incremental search. The search results will update instantly as you type.
+The search supports realtime / as-you-type incremental search. The search results will update instantly as you type.
 
-You can sort the current search result or the full list by any of the fields, by clicking on the fields name.
+You can sort the current search result or the full list by any of the fields, by clicking on the field's name.
 
 ### Filters
 
@@ -35,7 +35,7 @@ You can sort the current search result or the full list by any of the fields, by
 
 If toggled **on** (default) devices that have been disabled / blocked from sign in in AzureAD will not be shown.
 
-Switch **off** to see all devices including devices that are not enabled.
+Switch to **off** to see all devices including ones that are not enabled.
 
 #### Operating System / Device Type
 
@@ -48,7 +48,7 @@ Use this filter to select devices based on their operating system or deployment 
 * **Mobiles** - Show iOS and Android devices
 * **S-Hub** - Show Surface Hub devices
 * **Printer** - Show Printers (from Universal Printing)
-* **Other** - Show devices not matched by other filters
+* **Other** - Show devices not matched by any other filters
 
 #### (Non-) Compliant Devices
 
