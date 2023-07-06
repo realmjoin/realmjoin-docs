@@ -6,7 +6,7 @@ When you visit [RealmJoin Portal](https://portal.realmjoin.com), you will be pre
 
 Depending on the permissions you have been given in RealmJoin Portal, you will see a subset of the following items on the left. These allow you to navigate to different areas of interest.
 
-The icon of the current location is highlighted with a light blue.
+The icon of the current location is highlighted in light blue.
 
 ## [User, Group and Device management](../user-group-device-management/)
 
@@ -40,7 +40,7 @@ Here you can review RealmJoin Client Settings applied to specific groups.&#x20;
 
 ### ![](<../.gitbook/assets/image (16) (1).png>) [Remediation Scripts](../user-group-device-management/remediation-scripts.md)
 
-Review and manage Intune Remediation Scripts. You can leverage ready made templates from our repository.
+Review and manage Intune Remediation Scripts. You can leverage premade templates from our repository.
 
 ## [Application Management](../AppManagement/)
 
