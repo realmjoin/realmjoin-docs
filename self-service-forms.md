@@ -16,7 +16,7 @@ Using the ![](<.gitbook/assets/image (7) (1).png>) navigation item, users can se
 
 <figure><img src=".gitbook/assets/image (17).png" alt=""><figcaption><p>Form Selector</p></figcaption></figure>
 
-When a user fills out and submits a form, its contents will be sent via email to the recipient given in the form's definition. The email will be sent via RealmJoin's infrastructure and will not originate from your companiy's email addresses.&#x20;
+When a user fills out and submits a form, its contents will be sent via email to the recipient given in the form's definition. The email will be sent via RealmJoin's infrastructure and will not originate from your company's email addresses.
 
 <figure><img src=".gitbook/assets/image (14).png" alt=""><figcaption><p>Sample email from a form</p></figcaption></figure>
 
@@ -32,15 +32,15 @@ Click "View" to see the filled form data. The view is read only.
 
 ## Settings Page
 
-The Self Service Forms settings page allows to manage existing forms, add, edit and delete forms.&#x20;
+The Self Service Forms settings page allows to manage existing forms, add, edit and delete forms.
 
 ### Forms List on the Settings Page
 
 <figure><img src=".gitbook/assets/image (13) (3).png" alt=""><figcaption><p>Forms List</p></figcaption></figure>
 
-Use "New Form" or "Edit" to describe the form using [JSON Schema](https://json-schema.org/). This defines which fields need to be entered and what values are valid. The UI offers a syntax checking editor and a preview of the resulting form.&#x20;
+Use "New Form" or "Edit" to describe the form using [JSON Schema](https://json-schema.org/). This defines which fields need to be entered and what values are valid. The UI offers a syntax checking editor and a preview of the resulting form.
 
-The schema will be used to dynamically create a form for the user. Basically, use the schema not only to describe the desired data but also to implicitly create the form's UI.&#x20;
+The schema will be used to dynamically create a form for the user. Basically, use the schema not only to describe the desired data but also to implicitly create the form's UI.
 
 ### Schema Editor
 
@@ -149,7 +149,7 @@ Every JSON Schema consists of objects. Every object has to at least have a type 
 
 #### Object
 
-"Complex" objects containing other child-objects should use the **object** type. In our example the root node "Person" of the schema is of this type.&#x20;
+"Complex" objects containing other child-objects should use the **object** type. In our example the root node "Person" of the schema is of this type.
 
 You can define mandatory fields using the **required** keyword. These fields have to be defined in the schema as well.
 
