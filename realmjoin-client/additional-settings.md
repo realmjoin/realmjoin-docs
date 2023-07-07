@@ -48,7 +48,7 @@ DomainConnect.NetBIOS
 
 ### Environment.Channel
 
-With this setting the user group switch channel on next auto-update.
+This setting changes the user's / user group's channel with the next update of the RealmJoin Client.
 
 **Key**\
 Environment.Channel
@@ -70,7 +70,7 @@ Integration.AnyDesk
 
 ```json
 {
-"Enabled": true, | false,
+"Enabled": true | false,
 "BootstrapperUrl":"https://get.anydesk.com/GENERATED_LINK_TOKEN/RJAnyDesk.exe"
 }
 ```
@@ -110,7 +110,7 @@ Integration.Notification
 
 ### LocalAdminManagement Features
 
-This section shows you all necessary settings for the LocalAdminManagement features. For more details about this features read [Local Admin Password Solution article](local-admin-password-solution-laps/).
+This section shows you all necessary settings for the LocalAdminManagement features. For more details about this feature read the [Local Admin Password Solution article](local-admin-password-solution-laps/).
 
 **Key**\
 LocalAdminManagement.Inactive
@@ -208,7 +208,7 @@ Value
 ```
 
 {% hint style="warning" %}
-Attach Restrict. \*keys to target user group. This list is inclusive: Only those Admin and Support groups listed are allowed to use LAPS. Additionally usergroups can be excluded.
+Attach Restriction: keys of targeted user groups. This list is inclusive: Only the listed Admin and Support groups are allowed to use LAPS. Additionally user groups can be excluded from the list.
 {% endhint %}
 
 ### Various Toggles

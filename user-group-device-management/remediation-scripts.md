@@ -14,24 +14,24 @@ The Remediation Script List shows you all existing and available remediation scr
 
 ### Search and Sort
 
-You can search for scripts by Author, Status and Name. The search will update while you type.&#x20;
+You can search for scripts by Author, Status or Name. The search will update as you type.&#x20;
 
-You can sort by most fields by clicking on the fields header (name).
+You can sort by most fields by clicking on the fields' header (name).
 
 ### Filters
 
 Use filters to limit the items displayed by state
 
 * **Any** (default) - Show all existing and available remediation scripts
-* **Managed** - Show all remediation scripts managed by glueckkanja-gab. Available ("not staged"), staged and deployed.&#x20;
+* **Managed** - Show all remediation scripts managed by glueckkanja-gab. Available (a.k.a. "not staged"), staged and deployed.&#x20;
 * **Staged** - Show only managed remediation scripts that have been imported into your Intune instance but not assigned to users/devices.
 * **Deployed** - Show only managed remediation scripts that are assigned to users/devices.
 
 ## Remediation Script Details
 
-When you click on a scripts name, you can review a scripts details, statistics and also stage, deploy or remove managed scripts in your environment.
+When you click on a script's name, you can review a script's details, statistics and also its stage, as well as deploy or remove managed scripts in your environment.
 
-On the left side of the page you will see metadata about the script, incl. flags like if the scripts needs to be executed in 32bits on a 64bit host.
+On the left side of the page you will see metadata about the script, incl. flags such as if the scripts need to be executed on 32bit on a 64bit host.
 
 <figure><img src="../.gitbook/assets/image (9) (3).png" alt=""><figcaption><p>Remediation Script Details</p></figcaption></figure>
 
@@ -47,7 +47,7 @@ Other tabs and UI elements depend on the state of the script package.
 
 ### Custom scripts
 
-* **Assignments** - For scripts that you created outside of RealmJoin, you can review (but not change) the scripts assignments to users and groups. This will also show the schedule for the detection script execution.
+* **Assignments** - For scripts that you created outside of RealmJoin, you can review (but not change) the scripts' assignments to users and groups. This will also show the schedule for the detection script execution.
 
 <figure><img src="../.gitbook/assets/image (5) (1) (3).png" alt=""><figcaption><p>Custom Script Assignments</p></figcaption></figure>
 
@@ -75,7 +75,7 @@ Staged and deployed managed scripts can be removed from Intune using the **More*
 
 <figure><img src="../.gitbook/assets/image (7) (3).png" alt=""><figcaption><p>Delete a Managed Script</p></figcaption></figure>
 
-Deleting a managed script will also remove its [Managed Groups](remediation-scripts.md#managed-groups) (if these exist).
+Deleting a managed script will also remove its [Managed Groups](remediation-scripts.md#managed-groups) (if such exist).
 
 #### Assignment
 
@@ -101,4 +101,4 @@ When updates for the managed remediation script become available, RealmJoin will
 
 You can use **change schedule** to open the Script Schedule Editor for this assignment.
 
-Using **Unassign** you can remove individual group assignemts.
+Using **Unassign** will remove individual group assignemts.

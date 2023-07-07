@@ -2,7 +2,7 @@
 
 ## Overview
 
-Settings can be used to control RealmJoin Clients behaviour and configure features like [LAPS](../../realmjoin-client/local-admin-password-solution-laps/).
+Settings can be used to control RealmJoin Client's behaviour and configure features like [LAPS](../../realmjoin-client/local-admin-password-solution-laps/).
 
 If settings have been created/assigned to users, you can review them under&#x20;
 
