@@ -85,9 +85,9 @@ In the [Overview tab](package-details.md#overview-assignment), you can manage as
 
 For RealmJoin Client Packages, individual assignments can carry settings, modifying the packages deployment behavior.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Assignment Settings Option</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Assignment Settings Option</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption><p>Assignment Settings</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Assignment Settings</p></figcaption></figure>
 
 ### Groups
 
@@ -103,7 +103,7 @@ Click **Enable Update Group** and a new AzureAD Group with the suffix "(update)"
 
 RealmJoin will dynamically discover installed copies of the software that are unmanaged and add the device it has been discovered on to the update group.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Enable an Update Group</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (3).png" alt=""><figcaption><p>Enable an Update Group</p></figcaption></figure>
 
 Thus, new version of this software will also be installed on these devices to assert deployment of security patches across your environment.
 
@@ -141,7 +141,7 @@ There are two types of changes tracked in Changelog.
 
 ### Automation
 
-<figure><img src="../../.gitbook/assets/image (6) (4).png" alt=""><figcaption><p>Package Automation</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Package Automation</p></figcaption></figure>
 
 For managed packages, you can use the Automation tab to configure automatic publishing of new version of packages from the package store to your environment.
 
@@ -174,5 +174,3 @@ RealmJoin Client packages allow **Expert Settings** which modify an app's deploy
 ### Intune App and RealmJoin Store
 
 Raw JSON representation of the package and its metadata in Intune or in the package store respectively. This is primarily intended for debugging and administrative purposes.
-
-##

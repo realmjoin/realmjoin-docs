@@ -14,7 +14,7 @@ Custom Roles are defined as JSON. The JSON editor included in RealmJoin Portal o
 
 The editor will check the syntas as you type. If a syntax error is detected, an error message **View x errors** and bug icon will appear next to **Save.**
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>JSON error message/button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (4).png" alt=""><figcaption><p>JSON error message/button</p></figcaption></figure>
 
 Click on this message to get more details about the error.
 
