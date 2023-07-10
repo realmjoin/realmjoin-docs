@@ -20,6 +20,10 @@ When a user fills out and submits a form, its contents will be sent via email to
 
 <figure><img src=".gitbook/assets/image (14).png" alt=""><figcaption><p>Sample email from a form</p></figcaption></figure>
 
+{% hint style="info" %}
+When Self Service Forms are enabled for your tenant, all users are able to use / submit forms.
+{% endhint %}
+
 ## Review Submissions
 
 Using the ![](<.gitbook/assets/image (15).png>) navigation icon, you can review past form submissions of your users.
