@@ -20,10 +20,6 @@ As there are many permissions available, we will group them by topic for easier 
 
 The user gains access to to [Settings](../)
 
-{% hint style="warning" %}
-This permissions allows writing access to some areas in Settings incl. Custom Roles.
-{% endhint %}
-
 ## App Management
 
 ### CanReadAppTable
