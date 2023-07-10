@@ -81,6 +81,14 @@ In the [Overview tab](package-details.md#overview-assignment), you can manage as
 
 ![Package Assignments](<../../.gitbook/assets/image (10) (1) (1) (1) (1) (1) (1).png>)
 
+### Assignment Settings
+
+For RealmJoin Client Packages, individual assignments can carry settings, modifying the packages deployment behavior.
+
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Assignment Settings Option</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption><p>Assignment Settings</p></figcaption></figure>
+
 ### Groups
 
 For supported application types, especially **managed packages**, you will see the package's AzureAD groups which can be used to assign applications to users or to trigger an uninstallation.
@@ -133,7 +141,7 @@ There are two types of changes tracked in Changelog.
 
 ### Automation
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Package Automation</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (4).png" alt=""><figcaption><p>Package Automation</p></figcaption></figure>
 
 For managed packages, you can use the Automation tab to configure automatic publishing of new version of packages from the package store to your environment.
 

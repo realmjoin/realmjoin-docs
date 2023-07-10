@@ -62,7 +62,7 @@ Upload your own sources / software package description to glueckkanja-gab's "Pac
 
 Users can report incidents or request equipment using forms. See [Self Service Forms](../self-service-forms.md) for more information.
 
-### ![](<../.gitbook/assets/image (13).png>) [Review recent Form Submissions](../self-service-forms.md#review-submissions)
+### ![](<../.gitbook/assets/image (13) (4).png>) [Review recent Form Submissions](../self-service-forms.md#review-submissions)
 
 See a list of recent form submissions and review senders and submission contents.
 
