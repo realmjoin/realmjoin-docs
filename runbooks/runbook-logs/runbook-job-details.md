@@ -36,7 +36,7 @@ If the PowerShell script of the runbook threw an exception (and the runbook thus
 
 Exceptions will also be shown above the regular output in **Console** if present to simplify identifying problems.
 
-<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption><p>Exception shown in Console</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (24) (3).png" alt=""><figcaption><p>Exception shown in Console</p></figcaption></figure>
 
 ### Source
 

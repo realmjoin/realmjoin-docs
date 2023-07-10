@@ -4,7 +4,7 @@
 
 This page shows you details regarding a single device.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Device Details</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption><p>Device Details</p></figcaption></figure>
 
 The left side of the page will show device metadata incl. the device's owner, OS and serial number.
 

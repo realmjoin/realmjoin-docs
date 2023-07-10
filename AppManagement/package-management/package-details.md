@@ -99,7 +99,7 @@ RealmJoin will dynamically discover installed copies of the software that are un
 
 Thus, new version of this software will also be installed on these devices to assert deployment of security patches across your environment.
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption><p>Enabled Update Group</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (2).png" alt=""><figcaption><p>Enabled Update Group</p></figcaption></figure>
 
 ## Deployment Status
 

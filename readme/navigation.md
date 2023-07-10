@@ -1,6 +1,6 @@
 # Navigation
 
-When you visit [RealmJoin Portal](https://portal.realmjoin.com), you will be presented with a "About me" page.&#x20;
+When you visit [RealmJoin Portal](https://portal.realmjoin.com), you will be presented with a "About me" page.
 
 !["About me" page](<../.gitbook/assets/image (8) (1) (1) (1) (1).png>)
 
@@ -24,7 +24,7 @@ This will give you information about you Azure Active Directory tenant, recent a
 
 ### ![](<../.gitbook/assets/image (9) (1).png>) [User Settings](../user-group-device-management/user-and-group-settings.md)
 
-Here you can review RealmJoin Client Settings applied to specific users.&#x20;
+Here you can review RealmJoin Client Settings applied to specific users.
 
 ### ![](../.gitbook/assets/group.png) [List of all groups](../user-group-device-management/group-list/)
 
@@ -32,7 +32,7 @@ Here you can review RealmJoin Client Settings applied to specific users.&#x20;
 
 ### ![](<../.gitbook/assets/image (26).png>)[ Group Settings](../user-group-device-management/user-and-group-settings.md)
 
-Here you can review RealmJoin Client Settings applied to specific groups.&#x20;
+Here you can review RealmJoin Client Settings applied to specific groups.
 
 ### ![](../.gitbook/assets/device.png) [List of all devices](../user-group-device-management/device-list/)
 
@@ -58,7 +58,7 @@ Upload your own sources / software package description to glueckkanja-gab's "Pac
 
 ## [Self Service Forms](../self-service-forms.md)
 
-### ![](<../.gitbook/assets/image (12).png>) [Submit a Form](../self-service-forms.md#using-forms)
+### ![](<../.gitbook/assets/image (12) (1).png>) [Submit a Form](../self-service-forms.md#using-forms)
 
 Users can report incidents or request equipment using forms. See [Self Service Forms](../self-service-forms.md) for more information.
 
@@ -70,7 +70,7 @@ See a list of recent form submissions and review senders and submission contents
 
 ### ![](../.gitbook/assets/jobs.png) [Runbook logs](../runbooks/runbook-logs/)
 
-See the results and logfiles/output of recent [Process Automation](../runbooks/) tasks&#x20;
+See the results and logfiles/output of recent [Process Automation](../runbooks/) tasks
 
 ### ![](<../.gitbook/assets/image (20).png>) [Audit Logs](../audit-log.md)
 
@@ -81,4 +81,3 @@ Review actions done in RealmJoin Portal.
 Configuration and customization of RealmJoin. This area is only available to RealmJoin administrators.
 
 ###
-

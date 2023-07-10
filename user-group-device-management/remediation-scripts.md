@@ -10,11 +10,11 @@ RealmJoin Portal allows you to review Intune remediation scripts in your environ
 
 <figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p>Remediation Script List</p></figcaption></figure>
 
-The Remediation Script List shows you all existing and available remediation scripts for your environment.&#x20;
+The Remediation Script List shows you all existing and available remediation scripts for your environment.
 
 ### Search and Sort
 
-You can search for scripts by Author, Status or Name. The search will update as you type.&#x20;
+You can search for scripts by Author, Status or Name. The search will update as you type.
 
 You can sort by most fields by clicking on the fields' header (name).
 
@@ -23,7 +23,7 @@ You can sort by most fields by clicking on the fields' header (name).
 Use filters to limit the items displayed by state
 
 * **Any** (default) - Show all existing and available remediation scripts
-* **Managed** - Show all remediation scripts managed by glueckkanja-gab. Available (a.k.a. "not staged"), staged and deployed.&#x20;
+* **Managed** - Show all remediation scripts managed by glueckkanja-gab. Available (a.k.a. "not staged"), staged and deployed.
 * **Staged** - Show only managed remediation scripts that have been imported into your Intune instance but not assigned to users/devices.
 * **Deployed** - Show only managed remediation scripts that are assigned to users/devices.
 
@@ -37,7 +37,7 @@ On the left side of the page you will see metadata about the script, incl. flags
 
 Be aware, details can vary. For example, only scripts already staged/existing in your tenant can have a "last modified" date.
 
-The right half of the page is split up into multiple tabs.&#x20;
+The right half of the page is split up into multiple tabs.
 
 * **Overview** - Basic information about the script
 * **Detection Script Source** - See the PowerShell Source of the detection script.
@@ -59,7 +59,7 @@ Other tabs and UI elements depend on the state of the script package.
 
 #### Not staged
 
-If a managed script is not staged yet (i.e. does not exist in your Intune instance yet), RealmJoin Portal will offer a button to **Stage** the script in your environment.&#x20;
+If a managed script is not staged yet (i.e. does not exist in your Intune instance yet), RealmJoin Portal will offer a button to **Stage** the script in your environment.
 
 This will make the script available for assignment, but not have any effect on your devices yet.
 
@@ -67,7 +67,7 @@ This will make the script available for assignment, but not have any effect on y
 
 #### Staged and Deployed
 
-Managed Scripts that exist in your environment show the same information as other (custom) scripts in your environment like **existing assignments** and **statistics**, see [Custom Scripts](remediation-scripts.md#custom-scripts).&#x20;
+Managed Scripts that exist in your environment show the same information as other (custom) scripts in your environment like **existing assignments** and **statistics**, see [Custom Scripts](remediation-scripts.md#custom-scripts).
 
 #### Removal
 
@@ -91,9 +91,9 @@ You can use **Assign to All Users** and **Assign to All Devices** to you Intune'
 
 #### Managed Groups
 
-Alternatively, you can **Create Managed Groups** to create AzureAD Groups that will be assigned instead of "All Devices" or "All Users".&#x20;
+Alternatively, you can **Create Managed Groups** to create AzureAD Groups that will be assigned instead of "All Devices" or "All Users".
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Managed Groups</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (4).png" alt=""><figcaption><p>Managed Groups</p></figcaption></figure>
 
 The naming scheme for Managed Groups can be defined in [Settings -> General](../settings/general.md).
 
