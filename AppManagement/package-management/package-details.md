@@ -165,6 +165,12 @@ Some package include **Technical Help**, to explain possible **Arguments** and o
 
 ![Technical Help for a Package](<../../.gitbook/assets/image (12) (1) (1) (1).png>)
 
+### Expert Settings
+
+RealmJoin Client packages allow **Expert Settings** which modify an app's deployment behaior. These can be reached via the **Config** tab.
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Expert Settings</p></figcaption></figure>
+
 ### Intune App and RealmJoin Store
 
 Raw JSON representation of the package and its metadata in Intune or in the package store respectively. This is primarily intended for debugging and administrative purposes.

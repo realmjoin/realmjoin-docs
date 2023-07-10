@@ -34,7 +34,7 @@ RealmJoin supports a staged update procedure for software packages.&#x20;
 
 If a newer version of a managed package exists, you can subscribe to the new version of a package as **Preview**. This will create a separate instance of the package with the new version and allows you to assign this package preview to a pilot user group for testing.
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>List of Updates</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (6).png" alt=""><figcaption><p>List of Updates</p></figcaption></figure>
 
 The package list shows you the version information of the main package, the preview package (if available) as well as the version number of the package currently available in the package store.
 

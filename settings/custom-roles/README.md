@@ -6,7 +6,7 @@
 
 Custom Roles are defined as JSON. The JSON editor included in RealmJoin Portal offers syntax checking and highlighting and will verify your definition against the Custom Roles JSON schema.&#x20;
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Custom Roles JSON Editor</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Custom Roles JSON Editor</p></figcaption></figure>
 
 ### Using the editor
 
