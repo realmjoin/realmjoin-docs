@@ -30,6 +30,19 @@ RealmJoin API offers two endpoints to trigger runbooks.
 
 `start` will take the same parameters as `run` but works in a an asynchronous fashion. It will return as soon as a runbook job is queued. It will return the `jobID` to enable easy tracking of the new job.
 
+### Runbook naming
+
+Runbooks are adressed by their name in Azure Automation. In short:
+
+* Is it synced from glueckkanja-gab's GitHub repo? Add `rjgit-`as prefix
+* Either `org_`, `device_`, `group_`, `user_` as scope (exactly one of those)
+* A category, like `general_`or `security_`&#x20;
+* The name of the runbook, separated by `_` like `add-xyz-exception`
+
+The result in this case would be: `rjgit-org_security_add-xyz-exception`
+
+&#x20;See [Naming Conventions](../runbooks/naming-conventions.md) for more details.
+
 ### Example
 
 Let us assume the following situation:
