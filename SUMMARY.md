@@ -24,6 +24,7 @@
     * [Package Store Details](AppManagement/package-store/package-store-details.md)
   * [Package Management](AppManagement/package-management/README.md)
     * [Package Details](AppManagement/package-management/package-details.md)
+  * [AVD Templates](appmanagement/avd-templates.md)
 * [Process Automation](runbooks/README.md)
   * [Runbook Customization](runbooks/runbook-customization.md)
   * [Runbook Permissions](runbooks/runbook-permissions.md)

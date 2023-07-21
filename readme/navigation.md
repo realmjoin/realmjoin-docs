@@ -30,7 +30,7 @@ Here you can review RealmJoin Client Settings applied to specific users.
 
 "Groups" includes regular AzureAD groups, Teams in Microsoft Teams, Offce365 groups as well as Exchange distribution groups.
 
-### ![](<../.gitbook/assets/image (26).png>)[ Group Settings](../user-group-device-management/user-and-group-settings.md)
+### ![](<../.gitbook/assets/image (26) (2).png>)[ Group Settings](../user-group-device-management/user-and-group-settings.md)
 
 Here you can review RealmJoin Client Settings applied to specific groups.
 
@@ -52,7 +52,11 @@ The list of current applications can include custom Intune (MS Endpoint Manager)
 
 In the store you can search for and import ready-to-use application packages into your Intune environment. No packaging needed.
 
-### ![](<../.gitbook/assets/image (29).png>) Application/Packaging Submission
+### ![](<../.gitbook/assets/image (37).png>) [AVD Templates](../appmanagement/avd-templates.md)
+
+Use RealmJoin Client to prepare VMs / system images without a user logging in.
+
+### ![](<../.gitbook/assets/image (29) (1).png>) Application/Packaging Submission
 
 Upload your own sources / software package description to glueckkanja-gab's "Packaging as a Service" offerings.
 
