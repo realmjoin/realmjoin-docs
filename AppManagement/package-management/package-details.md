@@ -147,11 +147,31 @@ For managed packages, you can use the Automation tab to configure automatic publ
 
 * **Automate Main Channel** - Automatically deploy new versions of this package to your users. ("Main" subscription)
 * **Automate Preview Channel** - Automatically deploy new versions of this package to your pilot users. ("Preview" subscription)
+
+{% hint style="info" %}
+The Preview Channel will only advance to a newer software version after deploying the current version in Preview to the Main Channel.&#x20;
+
+This is intended behavior to ensure that a testing / review process using the Preview Channel is not accidentally invalidated by a newer software version entering Preview.
+{% endhint %}
+
+The Preview Channel will take the newest version available from the App Store pushing its current version to the main channel.
+
+{% hint style="success" %}
+Recommendation:&#x20;
+
+* Automate only **Main Channel** for software that can upgrade without prior testing, like web browsers from major vendors.
+* Automate only **Preview Channel** for software you want to test before deploying. Push the validated version to Main Channel after testing and start testing the next version in Preview.
+{% endhint %}
+
 * **... defer X days** - Wait for this number of days to pass before publishing a new version to the channel. This is usefull to avoid stress for users/clients if multiple package versions are published rapidly.
 * **Deploy At Night** - Schedule automatic deployment during night time
 * **Select target timezone** - If you use AutoDeployAtNight, use this Time Zone to indicate when "at night" is.
 
 These values can be globally preconfigured for newly imported packages in [Settings](../../settings/). Configuring them on a per package basis will overwrite the global defaults.
+
+#### Interactions between Main and Preview Channel
+
+
 
 ### Config
 
