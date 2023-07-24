@@ -2,7 +2,7 @@
 
 Package Management allows to show all packages that currently exist in your environment across RealmJoin and Microsoft Intune.
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Package Management List</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (3).png" alt=""><figcaption><p>Package Management List</p></figcaption></figure>
 
 Clicking on the name of a package will redirect you to the package's [details page](package-details.md).
 

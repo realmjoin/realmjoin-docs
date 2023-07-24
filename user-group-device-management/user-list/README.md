@@ -14,8 +14,6 @@ This view offers you a simple way to search or review users in your environment.
 * Room and Equipment mailboxes
 * Administrative user accounts
 
-
-
 ### Search and Sort
 
 The user list allows you to search for any user in your organization by
@@ -33,15 +31,15 @@ You can sort the current search result or the full list by any of the fields, by
 
 ### Filters
 
-<figure><img src="../../.gitbook/assets/image (8) (3).png" alt=""><figcaption><p>Filters</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (3) (1).png" alt=""><figcaption><p>Filters</p></figcaption></figure>
 
 You can use the filters above the list to limit search results to specific objects:
 
 #### **Usertype**
 
 * **Members** - Users native to your tenant (default)
-* **Guests** - Azure B2B Guests invited from other tenants&#x20;
-* **Any** - Both, Members and Guests are displayed&#x20;
+* **Guests** - Azure B2B Guests invited from other tenants
+* **Any** - Both, Members and Guests are displayed
 
 #### ADM Accounts
 
@@ -57,4 +55,3 @@ You can use the filters above the list to limit search results to specific objec
 ### Drill Down to a User
 
 Clicking the name of a user object will lead you to this [user's details page](user-details.md).
-

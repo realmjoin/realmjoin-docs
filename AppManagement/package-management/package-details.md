@@ -189,7 +189,7 @@ Some package include **Technical Help**, to explain possible **Arguments** and o
 
 RealmJoin Client packages allow **Expert Settings** which modify an app's deployment behaior. These can be reached via the **Config** tab.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Expert Settings</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Expert Settings</p></figcaption></figure>
 
 ### Intune App and RealmJoin Store
 
