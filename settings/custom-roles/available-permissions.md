@@ -106,15 +106,50 @@ The user gains the ability to modify an app's Technical App. Owners in [Config](
 
 The user gains the ability to delete an app from a [Package Management](../../AppManagement/package-management/). This will not remove an app from the package store and will not trigger uninstallations on existing deployments.
 
+## User Management
+
+### CanReadUserTable&#x20;
+
+The user gains the ability to see the [list of all AzureAD users](../../user-group-device-management/user-list/).
+
+### CanReadUserDetails&#x20;
+
+The user gains the ability to inspect an individual [user's details](../../user-group-device-management/user-list/user-details.md).
+
+### CanSeeRealmJoinUserSettings&#x20;
+
+**Given**:&#x20;
+
+* CanReadUserDetails
+
+Allow the user to see/inspect [RealmJoin Client Settings](../../user-group-device-management/user-and-group-settings.md) assigned to a specific user.
+
+### CanChangeRealmJoinUserSettings
+
+**Given**:&#x20;
+
+* CanReadUserDetails
+* CanSeeRealmJoinUserSettings
+
+Allow the user to add/modify/delete[ RealmJoin Client Settings](../../user-group-device-management/user-and-group-settings.md) assigned to a specific user.
+
+### CanReadUserSettingTable&#x20;
+
+The user gains the ability to see the list of [user settings](../../user-group-device-management/user-and-group-settings.md) (across all users) from the [navigation](available-permissions.md#navigation).
+
+### CanReadUserSettingDetails&#x20;
+
+The user gains the ability to inspect all [user settings](../../user-group-device-management/user-and-group-settings.md)' details.
+
 ## Group Management
 
 ### CanReadGroupTable
 
-The user gains the ability to see the list of all AzureAD groups.&#x20;
+The user gains the ability to see the list of all [AzureAD and RealmJoin internal groups](../../user-group-device-management/group-list/).&#x20;
 
 ### CanReadGroupDetails
 
-The user gains the ability to inspect individual AzureAD groups.
+The user gains the ability to inspect an individual AzureAD / RealmJoin internal [group's details](../../user-group-device-management/group-list/group-details.md).
 
 ### CanChangeGroupMembers
 
@@ -122,7 +157,7 @@ The user gains the ability to inspect individual AzureAD groups.
 
 * CanReadGroupDetails
 
-The user gains the ability to add or remove members from AzureAD groups.&#x20;
+The user gains the ability to add or remove members from groups.&#x20;
 
 ### CanDeleteGroup
 
@@ -130,7 +165,7 @@ The user gains the ability to add or remove members from AzureAD groups.&#x20;
 
 * CanReadGroupDetails
 
-The user gains the ability to delete an AzureAD group.
+The user gains the ability to delete a group.
 
 ### CanEditGroupDisplayName
 
@@ -138,7 +173,7 @@ The user gains the ability to delete an AzureAD group.
 
 * CanReadGroupDetails
 
-The user gains the ability to change a groups display name in AzureAD.
+The user gains the ability to change a groups display name.
 
 ### CanSeeGroupJsonAzureAD and CanSeeGroupJsonRealmJoin
 
