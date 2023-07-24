@@ -106,6 +106,73 @@ The user gains the ability to modify an app's Technical App. Owners in [Config](
 
 The user gains the ability to delete an app from a [Package Management](../../AppManagement/package-management/). This will not remove an app from the package store and will not trigger uninstallations on existing deployments.
 
+## Group Management
+
+### CanReadGroupTable
+
+The user gains the ability to see the list of all AzureAD groups.&#x20;
+
+### CanReadGroupDetails
+
+The user gains the ability to inspect individual AzureAD groups.
+
+### CanChangeGroupMembers
+
+**Given**:&#x20;
+
+* CanReadGroupDetails
+
+The user gains the ability to add or remove members from AzureAD groups.&#x20;
+
+### CanDeleteGroup
+
+**Given**:&#x20;
+
+* CanReadGroupDetails
+
+The user gains the ability to delete an AzureAD group.
+
+### CanEditGroupDisplayName
+
+**Given**:&#x20;
+
+* CanReadGroupDetails
+
+The user gains the ability to change a groups display name in AzureAD.
+
+### CanSeeGroupJsonAzureAD and CanSeeGroupJsonRealmJoin
+
+**Given**:&#x20;
+
+* CanReadGroupDetails
+
+Allow the user to see diagnostic metadata about a AzureAD or RealmJoin internal group, if "Show advanced info" is enabled in [Settings](../general.md).
+
+### CanSeeRealmJoinGroupSettings
+
+**Given**:&#x20;
+
+* CanReadGroupDetails
+
+Allow the user to see/inspect [RealmJoin Client Settings](../../user-group-device-management/user-and-group-settings.md) assigned to a specific group.
+
+### CanChangeRealmJoinGroupSettings
+
+**Given**:&#x20;
+
+* CanReadGroupDetails
+* CanSeeRealmJoinGroupSettings
+
+Allow the user to add/modify/delete[ RealmJoin Client Settings](../../user-group-device-management/user-and-group-settings.md) assigned to a specific group.
+
+### CanReadGroupSettingTable
+
+The user gains the ability to see the list of [group settings](../../user-group-device-management/user-and-group-settings.md) (across all groups) from the [navigation](available-permissions.md#navigation).
+
+### CanReadGroupSettingDetails
+
+The user gains the ability to inspect all [group settings](../../user-group-device-management/user-and-group-settings.md)' details.
+
 ## Self Service Forms
 
 ### CanAddSelfServiceForms and CanDeleteSelfServiceForms
