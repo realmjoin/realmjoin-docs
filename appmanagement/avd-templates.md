@@ -2,9 +2,9 @@
 
 ## Overview
 
-Using this feature you can define a set (aka template) of applications. This set of applications can then be applied to a computer in a headles / unattended fashion using RealmJoin Client.
+Using this feature you can define a set (aka template) of applications. This set of applications can then be applied to a computer in a headless / unattended fashion using RealmJoin Client.
 
-This is intended for creating computer images for Azure Virtual Desktop / Windows 365 multi-session pooled hosts.
+This is intended for creating golden images for Azure Virtual Desktop multi-session pooled hosts.
 
 ## Permissions
 
