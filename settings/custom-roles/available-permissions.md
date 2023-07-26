@@ -14,7 +14,7 @@ We will expand this list over time.
 
 As there are many permissions available, we will group them by topic for easier naviagtion.
 
-## Navigation
+## Settings
 
 ### CanReadSettingsDetails
 
@@ -331,6 +331,16 @@ Allow the user to use the[ warranty tab](../../user-group-device-management/devi
 Allow the user to use / connect to a device using [AnyDesk AnyConnect](../../realmjoin-client/anydesk-integration/) from RealmJoin Portal.
 
 <figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption><p>AnyConnect Remote Support</p></figcaption></figure>
+
+## Organization
+
+### CanReadOrganizationDetails
+
+Allow the user to see / read the [Organization details](../../user-group-device-management/organization-details.md).
+
+### CanSeeOrganizationJsonAzureAD
+
+These permissions allow a user to see specific diagnostic information as JSON in separate tabs if "show advanced info" is enabled in [Settings](../general.md).
 
 ## Self Service Forms
 
