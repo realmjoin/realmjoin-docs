@@ -342,3 +342,32 @@ Allow the user to use / connect to a device using [AnyDesk AnyConnect](../../rea
 * User has access to [Settings](../)
 
 The user can create new or delete Self Service Forms in [Settings->Self Service Forms](../../self-service-forms.md#settings-page) respectively.&#x20;
+
+## Runbooks
+
+### CanSeeRunbooks
+
+The user can see the list of available runbooks, limited by:
+
+* Object types (Users/Groups/Devices/Org) the user can see
+* Runbooks as limited by [Runbook Permissions](../runbook-permissions.md)
+
+This does not grant the right to actually start Runbook jobs.
+
+### CanRunRunbooks
+
+The user can start Runbooks, if CanSeeRunbooks is given and the conditions listed there are met.
+
+### CanEditRunbookSchedules
+
+If the user is able to see Runbooks, he/she can create/manage [Runbook Schedules](../../runbooks/scheduling.md).
+
+## Logs
+
+### CanReadRunbookTable
+
+Allow a user to see the [Runbook Logs](../../runbooks/runbook-logs/) list.
+
+### CanReadRunbookDetails
+
+Allow a user to inspect a [Runbook Logs](../../runbooks/runbook-logs/) item and output.
