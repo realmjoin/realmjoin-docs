@@ -6,7 +6,7 @@ You can delegate access to different levels of functionality of RealmJoin Portal
 
 To delegate/limit which runbooks can be used by different operators, please see [Runbook Permissions](../runbooks/runbook-permissions.md) - which is not covered here.
 
-There are different levels/roles that can be granted on this page:
+If these predefined roles are not meeting your requirements, you can request [Custom Roles](custom-roles/) to be enabled for your environment to create additional, granular roles.
 
 ### Admin Permissions
 
