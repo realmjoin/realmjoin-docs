@@ -2,7 +2,7 @@
 
 This view offers you a simple way to search or review groups in your environment.
 
-<figure><img src="../../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>Group List</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (2) (1).png" alt=""><figcaption><p>Group List</p></figcaption></figure>
 
 ### Object Types
 
@@ -34,7 +34,7 @@ You can use the filters above the list to limit the search results to specific o
 
 Turn this toggle **off** to include groups that do not match any RealmJoin naming scheme. When **off** all AzureAD groups will be shown.
 
-By default (**on**), RealmJoin only lists groups related to RealmJoin's operation, like&#x20;
+By default (**on**), RealmJoin only lists groups related to RealmJoin's operation, like
 
 * Licensing Groups ("lic -")
 * Application-Assignment Groups ("app -")
@@ -42,7 +42,7 @@ By default (**on**), RealmJoin only lists groups related to RealmJoin's operatio
 
 #### Static/Dynamic
 
-Limit the groups shown to&#x20;
+Limit the groups shown to
 
 * **Static** - Groups with static member assignment
 * **Dynamic** - Groups with dynamic membership

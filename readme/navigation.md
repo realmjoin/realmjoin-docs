@@ -30,7 +30,7 @@ Here you can review RealmJoin Client Settings applied to specific users.
 
 "Groups" includes regular AzureAD groups, Teams in Microsoft Teams, Offce365 groups as well as Exchange distribution groups.
 
-### ![](<../.gitbook/assets/image (26) (2).png>)[ Group Settings](../user-group-device-management/user-and-group-settings.md)
+### ![](<../.gitbook/assets/image (26) (2) (1).png>)[ Group Settings](../user-group-device-management/user-and-group-settings.md)
 
 Here you can review RealmJoin Client Settings applied to specific groups.
 
@@ -56,7 +56,7 @@ In the store you can search for and import ready-to-use application packages int
 
 Use RealmJoin Client to prepare VMs / system images without a user logging in.
 
-### ![](<../.gitbook/assets/image (29) (1).png>) Application/Packaging Submission
+### ![](<../.gitbook/assets/image (29) (1) (1).png>) Application/Packaging Submission
 
 Upload your own sources / software package description to glueckkanja-gab's "Packaging as a Service" offerings.
 
@@ -66,7 +66,7 @@ Upload your own sources / software package description to glueckkanja-gab's "Pac
 
 Users can report incidents or request equipment using forms. See [Self Service Forms](../self-service-forms.md) for more information.
 
-### ![](<../.gitbook/assets/image (13).png>) [Review recent Form Submissions](../self-service-forms.md#review-submissions)
+### ![](<../.gitbook/assets/image (13) (3).png>) [Review recent Form Submissions](../self-service-forms.md#review-submissions)
 
 See a list of recent form submissions and review senders and submission contents.
 

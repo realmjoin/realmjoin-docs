@@ -42,4 +42,4 @@ Exceptions will also be shown above the regular output in **Console** if present
 
 This allows you to review the runbooks source code associated with this job.
 
-<figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption><p>Runbook Source</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (33) (1).png" alt=""><figcaption><p>Runbook Source</p></figcaption></figure>

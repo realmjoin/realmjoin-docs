@@ -141,6 +141,16 @@ The user gains the ability to see the list of [user settings](../../user-group-d
 
 The user gains the ability to inspect all [user settings](../../user-group-device-management/user-and-group-settings.md)' details.
 
+### CanSeeUserJsonAzureAD and CanSeeUserJsonRealmJoin&#x20;
+
+**Given**:&#x20;
+
+* CanReadUserDetails
+
+These permissions allow a user to see specific diagnostic information as JSON in separate tabs if "show advanced info" is enabled in [Settings](../general.md).
+
+### CanSeeUserSignIns&#x20;
+
 ## Group Management
 
 ### CanReadGroupTable
@@ -207,6 +217,120 @@ The user gains the ability to see the list of [group settings](../../user-group-
 ### CanReadGroupSettingDetails
 
 The user gains the ability to inspect all [group settings](../../user-group-device-management/user-and-group-settings.md)' details.
+
+## Device Management
+
+### CanReadDeviceTable&#x20;
+
+The user gains the ability to see the list of all [AzureAD devices](../../user-group-device-management/device-list/).
+
+### CanReadDeviceDetails&#x20;
+
+The user gains the ability to inspect an individual [device's details](../../user-group-device-management/device-list/device-details.md).
+
+### CanRequestDeviceLogs&#x20;
+
+The user can trigger collecting "Extended Logs" for a device using RealmJoin Client .
+
+<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption><p>Request RealmJoin Client Logs</p></figcaption></figure>
+
+### CanScanDevice&#x20;
+
+The user can trigger a Defender for Endpoint scan for a Windows device.
+
+### CanSyncDevice&#x20;
+
+The user can trigger an Intune sync for a managed Windows device.
+
+### CanChangeRealmJoinPrimaryUser&#x20;
+
+Allow the user to assign a different primary user in RealmJoin.&#x20;
+
+{% hint style="info" %}
+When transfering a Windows device to a different user, you should change the RealmJoin primary user AND wipe the device. When a new user logs on after the wipe, this will also update the Intune primary user.
+{% endhint %}
+
+### CanSeeDeviceAutopilotInformation&#x20;
+
+Allow the user to see a device's Autopilot information (if present)
+
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption><p>Autopilot info</p></figcaption></figure>
+
+### CanSeeDeviceExtendedSecurityInformation
+
+Allow the user to see a device's extended sec. info from Defender for Endpoint - if available.
+
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption><p>Extended Security Information</p></figcaption></figure>
+
+### CanSeeDeviceExternalLinks&#x20;
+
+Allow the user to see links to Intune, AzureAD etc. Only useful if the user is allowed to use these portals.
+
+<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption><p>Device External Links</p></figcaption></figure>
+
+### CanSeeDeviceJson...
+
+These permissions allow a user to see specific diagnostic information as JSON in separate tabs if "show advanced info" is enabled in [Settings](../general.md).
+
+* CanSeeDeviceJsonAtp
+* CanSeeDeviceJsonAutopilot&#x20;
+* CanSeeDeviceJsonAzureAD&#x20;
+* CanSeeDeviceJsonIntune&#x20;
+* CanSeeDeviceJsonRealmJoin&#x20;
+
+### CanSeeDeviceNetworkInformation&#x20;
+
+Allow the user to see network information for a device if available.&#x20;
+
+&#x20;This will include "Delivery Optimization" information if available.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Network Information</p></figcaption></figure>
+
+### CanSeeDeviceRealmJoinInformation&#x20;
+
+Allow the user to see RealmJoin Client details or a device.
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>RealmJoin Client Information</p></figcaption></figure>
+
+### CanSeeDeviceSafeguardHold&#x20;
+
+Allow the use to see the **Safeguard Holds** for a device.&#x20;
+
+Safeguard Holds indicate that a Windows device can not upgrade to a newer version of Windows.
+
+See [Safeguard Holds (Microsoft Docs)](https://learn.microsoft.com/en-us/windows/deployment/update/safeguard-holds).
+
+### CanSeeDeviceSecurityInformation&#x20;
+
+Allow the user to see a device's security state, especially **device compliance**.
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Device Security Information</p></figcaption></figure>
+
+### CanSeeDeviceSecurityRecommendations and CanSeeDeviceSecurityVulnerabilities&#x20;
+
+RealmJoin Portal can pull security recommendations and vulnerabilities from the Microsoft Security Center. This permission allows a user to see these for a device respectively.
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Security Vulnerability</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption><p>Security Recommendations</p></figcaption></figure>
+
+### CanSeeDeviceUsers&#x20;
+
+Allow the user to see the devices logged in user.
+
+{% hint style="warning" %}
+Be aware: If not given this permission, a user able to see the device's details can still see the device's owner.
+{% endhint %}
+
+### CanSeeWarranty&#x20;
+
+Allow the user to use the[ warranty tab](../../user-group-device-management/device-list/device-details.md#warranty) for a device.
+
+### CanUseDeviceAnyDeskInterface
+
+Allow the user to use / connect to a device using [AnyDesk AnyConnect](../../realmjoin-client/anydesk-integration/) from RealmJoin Portal.
+
+<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption><p>AnyConnect Remote Support</p></figcaption></figure>
 
 ## Self Service Forms
 

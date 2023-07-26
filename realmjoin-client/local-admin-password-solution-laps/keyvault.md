@@ -33,6 +33,6 @@ RealmJoin will not store the secret in any proprietary storage but instead creat
 
 The entry in KeyVault will be added with the Azure device ID as a key and the plain GUID as the secret value. See the following example screenshot\*\*:\*\*
 
-![](<../../.gitbook/assets/image (15) (1).png>)
+![](<../../.gitbook/assets/image (15) (1) (2).png>)
 
 ![](<../../.gitbook/assets/image (20) (1) (2).png>)

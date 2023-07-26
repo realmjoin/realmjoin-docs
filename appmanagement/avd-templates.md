@@ -48,7 +48,7 @@ Copy the following definition and make sure to change the GroupID accordingly.
 ### Add Applications to a Template
 
 * Open the template by clicking on its name.
-* To add packages to the template, hit the ![](<../.gitbook/assets/image (29).png>) icon.&#x20;
+* To add packages to the template, hit the ![](<../.gitbook/assets/image (29) (1).png>) icon.&#x20;
 
 <figure><img src="../.gitbook/assets/image-2.png" alt=""><figcaption><p>Add packages to a template - 1</p></figcaption></figure>
 
@@ -82,7 +82,7 @@ Please handle the token with care. If you think the token might have been leaked
 
 Collect the template ID and the token you want to use for deployment.
 
-<figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption><p>Find template ID and token</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (26) (2).png" alt=""><figcaption><p>Find template ID and token</p></figcaption></figure>
 
 Run the following command from inside your system/VM you want to prepare as golden image:
 

@@ -19,7 +19,7 @@ It can take several minutes for an action to be visible in the Audit Log.
 
 ## Search and Sort
 
-You can search entries by all fields displayed in the list, including the message content, category and username.&#x20;
+You can search entries by all fields displayed in the list, including the message content, category and username.
 
 You can sort by most fields by clicking on the fields' header (name).
 
@@ -27,8 +27,8 @@ You can sort by most fields by clicking on the fields' header (name).
 
 Click **Details** next to a list entry to open its detailed view.
 
-<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption><p>Audit Log Entry Details</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (4) (3).png" alt=""><figcaption><p>Audit Log Entry Details</p></figcaption></figure>
 
-This will display all available metadata for an audit log entry.&#x20;
+This will display all available metadata for an audit log entry.
 
 You can use a real-time search which will highlight properties containing the search string.

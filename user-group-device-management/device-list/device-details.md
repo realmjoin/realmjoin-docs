@@ -4,7 +4,7 @@
 
 This page shows you details regarding a single device.
 
-<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption><p>Device Details</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (24) (4).png" alt=""><figcaption><p>Device Details</p></figcaption></figure>
 
 The left side of the page will show device metadata incl. the device's owner, OS and serial number.
 
@@ -82,7 +82,7 @@ See the [LAPS documentation](../../realmjoin-client/local-admin-password-solutio
 
 Use the **Warranty** tab to display information like remaining vendor warranty time for supported vendors/devices.
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Warranty Information</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (3).png" alt=""><figcaption><p>Warranty Information</p></figcaption></figure>
 
 Depending on the API used, a captcha might be displayed before requesting/displaying warranty information.
 

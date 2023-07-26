@@ -35,7 +35,7 @@ Be aware that there is no "Save" button. Changes will automatically be saved.
 
 RealmJoin can create assignment groups for Intune and RealmJoin Client packages. Use this to define the naming pattern the groups.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Package Deployment Group Naming Scheme</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Package Deployment Group Naming Scheme</p></figcaption></figure>
 
 You can use the following variables:
 

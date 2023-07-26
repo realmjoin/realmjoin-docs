@@ -53,7 +53,7 @@ Use the following instructions to deploy RealmJoin:
 * Finally click **Create**
 
 {% hint style="warning" %}
-Like any other application in Intune, ReamJoin can be assigned to the desired user groups as (required) software. It is not necessary to install additional software on the client devices to run RealmJoin. RealmJoin will be deployed on the client devices on the next Azure sync.
+Like any other application in Intune, ReamJoin can be assigned to the desired user groups as (required) software. It is not necessary to install additional software on the client devices to run RealmJoin. RealmJoin will be deployed on the client devices on the next Intune sync.
 {% endhint %}
 
 ### Windows Defender Exceptions
@@ -117,7 +117,7 @@ reamjoin.exe -install
 
 ### Signed MSI
 
-The RealmJoin.MSI is SHA2 (256 bit) signed by GK and therefore recognized by Windows as safe to install.
+The RealmJoin.MSI is SHA2 (256 bit) signed by glueckkanja-gab and therefore recognized by Windows as safe to install.
 
 ![](<../.gitbook/assets/image (16) (1) (1).png>)
 

@@ -26,7 +26,7 @@ When Self Service Forms are enabled for your tenant, all users are able to use /
 
 ## Review Submissions
 
-Using the ![](<.gitbook/assets/image (15).png>) navigation icon, you can review past form submissions of your users.
+Using the ![](<.gitbook/assets/image (15) (1).png>) navigation icon, you can review past form submissions of your users.
 
 <figure><img src=".gitbook/assets/image (30).png" alt=""><figcaption><p>Submissions List</p></figcaption></figure>
 
@@ -40,7 +40,7 @@ The Self Service Forms settings page allows to manage existing forms, add, edit 
 
 ### Forms List on the Settings Page
 
-<figure><img src=".gitbook/assets/image (13) (3).png" alt=""><figcaption><p>Forms List</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (13) (3) (1).png" alt=""><figcaption><p>Forms List</p></figcaption></figure>
 
 Use "New Form" or "Edit" to describe the form using [JSON Schema](https://json-schema.org/). This defines which fields need to be entered and what values are valid. The UI offers a syntax checking editor and a preview of the resulting form.
 

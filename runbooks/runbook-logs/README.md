@@ -16,7 +16,7 @@ Both type and category influence when/where a runbook will be offered in RealmJo
 
 ### Search and Sort
 
-You can search for jobs by job ID, name, type or category. The search will update as you type.&#x20;
+You can search for jobs by job ID, name, type or category. The search will update as you type.
 
 You can sort by most fields by clicking on the fields' header (name).
 
@@ -52,6 +52,6 @@ Please be aware that you have to modify the Workspace's retention time to accomm
 
 Click **Archived** to switch from the recent logs in Azure Automation to those stored in Log Analytics.
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption><p>Archived Runbook Job Logs List</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (4).png" alt=""><figcaption><p>Archived Runbook Job Logs List</p></figcaption></figure>
 
 You can search and inspect these the same as the regular logs under **Recent**.
