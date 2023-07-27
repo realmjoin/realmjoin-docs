@@ -106,7 +106,53 @@ The user gains the ability to modify an app's Technical App. Owners in [Config](
 
 The user gains the ability to delete an app from a [Package Management](../../AppManagement/package-management/). This will not remove an app from the package store and will not trigger uninstallations on existing deployments.
 
+### CanRequestSoftware
 
+The user gains the ability to submit a software packaging request to glueckkanja-gab.
+
+{% hint style="warning" %}
+Please combine this with either **CanRequestSoftwareOrganic** or **CanRequestSoftwarePaas**
+{% endhint %}
+
+### CanRequestSoftwareOrganic
+
+The user gains the ability to submit an "organic" software package to glueckkanja-gab for distribution via RealmJoin Client to specific users.
+
+Organic packages contain raw and unprocessed application setups. When handling those, RealmJoin is used as a transport vehicle to move the zipped container to a specified location. Depending on its payload, the installer then has to be manually started by the user (if user mode) or a remote administrator or field service.
+
+The software deployment will not be tested by glueckkanja-gab.
+
+### CanRequestSoftwarePaas
+
+The user gains the ability to submit a software packaging request to glueckkanja-gab.
+
+The software will be packaged by glueckkanja-gab and will become available for consumption through the [Package Store](../../AppManagement/package-store/).
+
+### CanReadPackageStoreTable
+
+The user gains access to the [Package Store](../../AppManagement/package-store/) (Package Store List).
+
+This does not grant permission to the package details or to subscribe to an app.
+
+### CanReadPackageStoreDetails
+
+Given:
+
+* CanReadPackageStoreTable
+
+Allow a user to inspect a package store offering. This does not grant permission to subscribe to an app.
+
+### CanSubscribeApp
+
+Given:
+
+* CanReadPackageStoreDetails
+
+Allow the user to subscribe to an offering from package store.
+
+### CanSeeIntuneAppJson, CanSeeIntuneAppStoreJson, CanSeeRealmJoinAppJson, CanSeeRealmJoinAppStoreJson
+
+Allow to see additional, diagnostic JSON information for a package in [Package Store](../../AppManagement/package-store/) or [Package Management](../../AppManagement/package-management/).&#x20;
 
 ## User Management
 
@@ -152,6 +198,12 @@ The user gains the ability to inspect all [user settings](../../user-group-devic
 These permissions allow a user to see specific diagnostic information as JSON in separate tabs if "show advanced info" is enabled in [Settings](../general.md).
 
 ### CanSeeUserSignIns&#x20;
+
+**Given**:&#x20;
+
+* CanReadUserDetails
+
+These permissions allow a user to see AzureAD user sign in information as JSON in a separate tab.
 
 ## Group Management
 
