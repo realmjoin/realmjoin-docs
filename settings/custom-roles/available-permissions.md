@@ -106,6 +106,8 @@ The user gains the ability to modify an app's Technical App. Owners in [Config](
 
 The user gains the ability to delete an app from a [Package Management](../../AppManagement/package-management/). This will not remove an app from the package store and will not trigger uninstallations on existing deployments.
 
+
+
 ## User Management
 
 ### CanReadUserTable&#x20;
@@ -343,6 +345,14 @@ Allow the user to see / read the [Organization details](../../user-group-device-
 These permissions allow a user to see specific diagnostic information as JSON in separate tabs if "show advanced info" is enabled in [Settings](../general.md).
 
 ## Self Service Forms
+
+### CanReadSelfServiceFormsHistoryTable
+
+The user can see the list of recent [Self Service Forms](../../self-service-forms.md) submissions.
+
+### CanReadSelfServiceFormsHistoryDetails
+
+The user can inspect individual [Self Service Forms](../../self-service-forms.md) submission details and contents.
 
 ### CanAddSelfServiceForms and CanDeleteSelfServiceForms
 
