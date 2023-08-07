@@ -48,4 +48,4 @@ You will get a file `AzureRunAsConnection.cer` that you upload to the Applicatio
 
 Just use `Connect-RjRbGraph` to authenticate to the app.&#x20;
 
-Make sure to remove older Dev-Certificates if present, to avoid conflicts/login failures.
+Make sure to remove older Dev-Certificates using mmc.exe  from your set of personal certificates if present to avoid conflicts/login failures.
