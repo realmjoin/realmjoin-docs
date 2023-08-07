@@ -344,7 +344,7 @@ Allow the user to see network information for a device if available.&#x20;
 
 Allow the user to see RealmJoin Client details or a device.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>RealmJoin Client Information</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>RealmJoin Client Information</p></figcaption></figure>
 
 ### CanSeeDeviceSafeguardHold&#x20;
 
@@ -364,7 +364,7 @@ Allow the user to see a device's security state, especially **device compliance*
 
 RealmJoin Portal can pull security recommendations and vulnerabilities from the Microsoft Security Center. This permission allows a user to see these for a device respectively.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Security Vulnerability</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>Security Vulnerability</p></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption><p>Security Recommendations</p></figcaption></figure>
 

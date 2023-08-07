@@ -85,9 +85,9 @@ In the [Overview tab](package-details.md#overview-assignment), you can manage as
 
 For RealmJoin Client Packages, individual assignments can carry settings, modifying the packages deployment behavior.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Assignment Settings Option</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (5).png" alt=""><figcaption><p>Assignment Settings Option</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>Assignment Settings</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (2) (2).png" alt=""><figcaption><p>Assignment Settings</p></figcaption></figure>
 
 ### Groups
 
@@ -161,6 +161,8 @@ Recommendation:&#x20;
 
 * Automate only **Main Channel** for software that can upgrade without prior testing, like web browsers from major vendors.
 * Automate only **Preview Channel** for software you want to test before deploying. Push the validated version to Main Channel after testing and start testing the next version in Preview.
+
+You can always manually push a newer version available in Package Store directly to **Preview** or **Main Channel** to skip a version you don't want published.
 {% endhint %}
 
 * **... defer X days** - Wait for this number of days to pass before publishing a new version to the channel. This is usefull to avoid stress for users/clients if multiple package versions are published rapidly.
