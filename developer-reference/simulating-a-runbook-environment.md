@@ -42,6 +42,14 @@ New-SelfSignedCertificate -Subject 'CN=AzureRunAsConnection, OU={AppID}, DC={Ten
 
 You will get a file `AzureRunAsConnection.cer` that you upload to the Application Registration secrets.
 
+{% hint style="info" %}
+If you want to serve multiple apps / environments, you can replace the default "AzureRunAsConnection" in`CN=AzureRunAsConnection` with a custom name when creating the certificate for that environment.
+
+You can then select which the environment/certificate (e.g. "OtherEnv") to connect using `Connect-RjRbGraph -AutomationConnectionName "OtherEnv"`
+
+This way you can access multiple environments from the same machine.
+{% endhint %}
+
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Certificate upload</p></figcaption></figure>
 
 ### Usage
