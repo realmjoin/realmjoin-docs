@@ -67,7 +67,7 @@ Content-Type: application/json
 Request / URI:
 
 ```http
-GET https://realmjoin-backend.azurewebsites.net/api/external/runbook/rjgit-user_security_revoke-or-restore-access/run
+POST https://realmjoin-backend.azurewebsites.net/api/external/runbook/rjgit-user_security_revoke-or-restore-access/run
 ```
 
 Body (in JSON-Notation):
