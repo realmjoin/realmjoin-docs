@@ -1,6 +1,6 @@
 # Workplace Cloud Storage
 
-Overview
+## Overview
 
 Modern Workplace devices are getting policies and configurations via Microsoft Intune. Some of these settings rely on files available by URL or in special formats like JSON or XML. This RealmJoin feature is intended to manage those files via an easy to use interface for administrators.
 
