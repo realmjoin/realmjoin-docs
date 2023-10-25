@@ -42,6 +42,10 @@ Navigate to RealmJoin portal (as administrator), open settings and switch to the
 
 If you are currently using the separate web app from [GitHub](https://github.com/glueckkanja/gk-m365-workplacecloudstorage) or Azure Marketplace, you can easily migrate to native RealmJoin integration.
 
+{% hint style="warning" %}
+Please note that **managing Enterprise Mode Site Lists** is **not possible** via RealmJoin. Please **migrate** your lists to Microsoft 365 admin center **before the following steps** as describe in [Overview](workplace-cloud-storage.md#overview).
+{% endhint %}
+
 #### Connect existing storage account
 
 Please navigate to the corresponding and already **existing storage account** and add the access key to RealmJoin (as described in the previous section). Afterwards, your existing data will automatically be displayed in RealmJoin.
