@@ -53,6 +53,7 @@
   * [Connecting a Tenant](realmjoin-client/connecting-a-tenant.md)
   * [Available Settings](realmjoin-client/additional-settings.md)
 * [Self Service Forms](self-service-forms.md)
+* [Workplace Cloud Storage](workplace-cloud-storage.md)
 * [Audit Log](audit-log.md)
 * [Settings](settings/README.md)
   * [General](settings/general.md)
