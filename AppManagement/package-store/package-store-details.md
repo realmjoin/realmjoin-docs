@@ -6,11 +6,9 @@ This page will show detailed information for a single package from the package s
 
 ## Package Types
 
-The RealmJoin Store contains two types of packages. **Intune** packages and **Craft** packages. Only Intune Packages can be deployed using RealmJoin Portal at this point.
+The RealmJoin Store contains two types of packages. **Intune** packages and **RealmJoin** packages. Packages deployed via the RealmJoin agent might be **Craft** or **Chocolatey** packages.
 
-Currently only Intune Win32 app packages can be provisioned using RealmJoin Portal. Other package types like Craft packages can be displayed but currently not provisioned.
-
-Craft packages can be used in conjuction with RealmJoin Client and are not delivered via Intune/Microsoft Endpoint Manager. Please visit [RealmJoin Classic Portal](https://realmjoin-web.azurewebsites.net/home) to assign Craft packages.
+**Managed** subscriptions contain the management of the application groups by the RealmJoin portal, while basic packages can be assigned to any groups or users.
 
 ## Package Properties
 
