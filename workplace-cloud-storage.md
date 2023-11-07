@@ -1,6 +1,6 @@
 # Workplace Cloud Storage
 
-## Overview
+Overview
 
 Modern Workplace devices are getting policies and configurations via Microsoft Intune. Some of these settings rely on files available by URL or in special formats like JSON or XML. This RealmJoin feature is intended to manage those files via an easy to use interface for administrators.
 
@@ -45,9 +45,9 @@ Once created successfully, please go to the new storage account and navigate to 
 
 <figure><img src=".gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
-Navigate to RealmJoin portal (as administrator), open settings and switch to the tab "Workplace cloud storage". Paste in the previously copied connection string into "Azure storage connection ("password")" and click on "Save":
+Navigate to RealmJoin portal (as administrator), open settings and switch to the tab "Workplace cloud storage". Paste in the previously copied connection string into "Access key (Connection string) for Azure Storage account" and click on "Save":
 
-<figure><img src=".gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
 
 ### Migration from Azure Web App
 
@@ -88,7 +88,7 @@ Navigate to the favourites feature in the main menu and create a new list:
 
 The newly create list will get an ID that can be changed on your needs (just for internal identification of the corresponding list). Now, add desired links or create sub-folders. The name of the first folder (default name: "Favorites Bar") will be the name of the folder in favourites bar - visible to the user (most customers change this to their company name).
 
-<figure><img src=".gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, you can export the list in different formats:
 
@@ -110,15 +110,11 @@ Create a new configuration profile (template) of type "Preference file". As "Pre
 
 <figure><img src=".gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
-For Google Chrome set "Preference domain name" to "com.google.chrome". Change the first line in the XML before uploading it:
+For Google Chrome set "Preference domain name" to "com.google.chrome" and use the corresponding XML. Only difference between Microsoft Edge and Google Chrome XML is the first line:
 
-<pre><code><strong>&#x3C;key>ManagedFavorites&#x3C;/key>
-</strong></code></pre>
-
-to:
-
-<pre><code><strong>&#x3C;key>ManagedBookmarks&#x3C;/key>
-</strong></code></pre>
+```
+<key>ManagedBookmarks</key> instead of <key>ManagedFavorites</key>
+```
 
 ## Backgrounds and other files
 
