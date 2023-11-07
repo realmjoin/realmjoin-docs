@@ -26,9 +26,20 @@ This features requires a blob storage on Azure. Please create a new one:
 
 <figure><img src=".gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
-Adjust the settings like name, region and redundancy based on your needs. If you don't have any special requirements please use the default values for the other tabs like "Advanced" and "Network".
+Adjust the settings like name, region and redundancy based on your needs.
 
 <figure><img src=".gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+
+Due to stored files like backgrounds have to be accessible anonymously, the setting "Allow enabling anonymous access on individual containers" needs to be enabled (tab "Advanced"):
+
+<figure><img src=".gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+If the setting "Allow enabling anonymous access on individual containers" is not enabled during creation of the storage account, RealmJoin will display the error "Error uploading file. Please try again".\
+If so, please move to "Settings" of your storage account and set "Allow Blob anonymous access" to "Enabled".
+{% endhint %}
+
+If you don't have any special requirements please use the default values for the other tabs like "Networking" and "Data protection".
 
 Once created successfully, please go to the new storage account and navigate to "Access keys". Please copy the "Connection string" under "key1":
 
