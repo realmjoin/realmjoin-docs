@@ -1,5 +1,5 @@
 ---
-description: Adapt glueckkanja-gab's generic runbooks to your environments' needs.
+description: Adapt glueckkanja's generic runbooks to your environments' needs.
 ---
 
 # Runbook Customization
@@ -514,8 +514,8 @@ So, we can have a runbook specific customziation in `Runbooks` reusable accross 
                 "$values": [
                     {
                         "Id": "gkg",
-                        "Display": "glueckkanja-gab",
-                        "Value": "glueckkanja-gab AG"
+                        "Display": "glueckkanja",
+                        "Value": "glueckkanja AG"
                     },
                     {
                         "Id": "pp",

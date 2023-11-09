@@ -34,7 +34,7 @@ These fields are binary - they are set to one of two possible values. The text o
 
 #### Maintained / Unmaintained
 
-GKGAB will provide new versions / updates of maintained packages on a regular basis.
+glueckkanja will provide new versions / updates of maintained packages on a regular basis.
 
 Automatic package management can be applied to keep the software delivered by these packages permanentely up-to-date in your environment.
 

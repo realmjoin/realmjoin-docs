@@ -24,7 +24,7 @@ Please provide the name of the Azure ResourceGroup hosting your Azure Automation
 
 ### ClientID and ClientSecret
 
-RealmJoin will create an application in your AzureAD environment called "RealmJoin Runbook Management". This application will be used to interact with the Azure Automation Account. It will import runbooks from glueckkanja gab's central repository into your Automation Account and it will be used to start runbooks and to read runbook job logs.
+RealmJoin will create an application in your AzureAD environment called "RealmJoin Runbook Management". This application will be used to interact with the Azure Automation Account. It will import runbooks from glueckkanja's central repository into your Automation Account and it will be used to start runbooks and to read runbook job logs.
 
 Please provide the app's ClientID ("AppId") and ClientSecret, so that RealmJoin can authenticate against Azure Automation.
 
@@ -32,7 +32,7 @@ Make sure, that you securely store the ClientSecret. It will not be readable aft
 
 ### Branch
 
-glueckkanja gab maintains a public repository of shared runbooks at [https://github.com/realmjoin/realmjoin-runbooks](https://github.com/realmjoin/realmjoin-runbooks)&#x20;
+glueckkanja maintains a public repository of shared runbooks at [https://github.com/realmjoin/realmjoin-runbooks](https://github.com/realmjoin/realmjoin-runbooks)&#x20;
 
 These runbooks are imported when you sync runbooks on the [General Settings](general.md) page.&#x20;
 

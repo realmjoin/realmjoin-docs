@@ -4,7 +4,7 @@
 
 [Intune remediation scripts](https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations) allow you to report and react to problems on your managed windows clients using scripts.
 
-RealmJoin Portal allows you to review Intune remediation scripts in your environment, additionally glueckkanja-gab hosts a [set of managed and constantly updated scripts](https://github.com/realmjoin/realmjoin-remediation) for you to use in GitHub.
+RealmJoin Portal allows you to review Intune remediation scripts in your environment, additionally glueckkanja hosts a [set of managed and constantly updated scripts](https://github.com/realmjoin/realmjoin-remediation) for you to use in GitHub.
 
 ## Remediation Script List
 
@@ -23,7 +23,7 @@ You can sort by most fields by clicking on the fields' header (name).
 Use filters to limit the items displayed by state
 
 * **Any** (default) - Show all existing and available remediation scripts
-* **Managed** - Show all remediation scripts managed by glueckkanja-gab. Available (a.k.a. "not staged"), staged and deployed.
+* **Managed** - Show all remediation scripts managed by glueckkanja. Available (a.k.a. "not staged"), staged and deployed.
 * **Staged** - Show only managed remediation scripts that have been imported into your Intune instance but not assigned to users/devices.
 * **Deployed** - Show only managed remediation scripts that are assigned to users/devices.
 

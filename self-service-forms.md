@@ -4,7 +4,7 @@
 
 You can use Self Service Forms to collect structured data from users. This can be used to let users report incidents or indicate changes, like the need for a new workplace setup in an office.
 
-"Self Service Forms" is an optional feature that can be enabled for your tenant by glueckkanja-gab Support. If not enabled, you can still enter/prepare forms in the settings page, but users will not be able to see/use self service forms.
+"Self Service Forms" is an optional feature that can be enabled for your tenant by glueckkanja Support. If not enabled, you can still enter/prepare forms in the settings page, but users will not be able to see/use self service forms.
 
 We will use a workflow to "indicate a new pet" as an example throughout this article.
 

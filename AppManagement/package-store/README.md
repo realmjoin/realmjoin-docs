@@ -2,7 +2,7 @@
 
 ![Package Store Page](<../../.gitbook/assets/image (4) (1) (2).png>)
 
-RealmJoin Portal has access to a large library of ready-to-use packages for Microsoft Endpoint Manager (Intune) maintend by glueckkanja-gab AG (GKGAB).
+RealmJoin Portal has access to a large library of ready-to-use packages for Microsoft Endpoint Manager (Intune) maintend by glueckkanja AG (GK).
 
 This page will list all packages available to your organization.
 
@@ -27,7 +27,7 @@ Every package falls in at least one of the following categories. The banner on t
 
 #### Maintained Packages
 
-GKGAB will provide new versions / updates for this package on a regular basis.
+GK will provide new versions / updates for this package on a regular basis.
 
 This package is available for provisioning via Intune / [Package Management](../package-management/). Automatic package management can be applied to keep the software delivered by this package permanentely up-to-date in your environment.
 

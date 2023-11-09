@@ -1,6 +1,6 @@
 # Customer Tasks
 
-If you are interested in AnyDesk send a request to [glueckkanja-gab (GKGAB)](mailto:support@glueckkanja-gab.com). They will send you two different URLs:
+If you are interested in AnyDesk send a request to [glueckkanja (GK)](mailto:support@glueckkanja.com). They will send you two different URLs:
 
 * A user client URL
 * A supporter client URL
@@ -42,7 +42,7 @@ The following JSON is possible as well:
 
 ## Back-End Integration
 
-After you configure your user client, you will need to contact AnyDesk. Request an email containing your **Contract ID**, your **License ID** and your **API Password**. Send these IDs and the password to the [glueckkanja-gab (GKGAB) support](mailto:support@glueckkanja-gab.com). If you do so, GKGAB will integrate a AnyDesk API in your RealmJoin portal.
+After you configure your user client, you will need to contact AnyDesk. Request an email containing your **Contract ID**, your **License ID** and your **API Password**. Send these IDs and the password to the [glueckkanja (GK) support](mailto:support@glueckkanja.com). If you do so, GK will integrate a AnyDesk API in your RealmJoin portal.
 
 ![](<../../.gitbook/assets/image (17) (2) (1).png>)
 
@@ -84,6 +84,6 @@ For special support scenarios, administrative rights will be needed. A normal re
 
 ## Additional Sessions
 
-When setting up AnyDesk for the first time, you will receive a single license from glueckkanja-gab. This single license allows one remote session. Further simultaneous sessions by other supporters are not possible, additional licenses are necessary.
+When setting up AnyDesk for the first time, you will receive a single license from glueckkanja. This single license allows one remote session. Further simultaneous sessions by other supporters are not possible, additional licenses are necessary.
 
-If you need more licenses, contact [glueckkanja-gab (GKGAB)](mailto:support@glueckkanja-gab.com)for more details.
+If you need more licenses, contact [glueckkanja (GK)](mailto:support@glueckkanja.com) for more details.

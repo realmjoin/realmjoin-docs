@@ -108,7 +108,7 @@ The user gains the ability to delete an app from a [Package Management](../../Ap
 
 ### CanRequestSoftware
 
-The user gains the ability to submit a software packaging request to glueckkanja-gab.
+The user gains the ability to submit a software packaging request to glueckkanja.
 
 {% hint style="warning" %}
 Please combine this with either **CanRequestSoftwareOrganic** or **CanRequestSoftwarePaas**
@@ -116,17 +116,17 @@ Please combine this with either **CanRequestSoftwareOrganic** or **CanRequestSof
 
 ### CanRequestSoftwareOrganic
 
-The user gains the ability to submit an "organic" software package to glueckkanja-gab for distribution via RealmJoin Client to specific users.
+The user gains the ability to submit an "organic" software package to glueckkanja for distribution via RealmJoin Client to specific users.
 
 Organic packages contain raw and unprocessed application setups. When handling those, RealmJoin is used as a transport vehicle to move the zipped container to a specified location. Depending on its payload, the installer then has to be manually started by the user (if user mode) or a remote administrator or field service.
 
-The software deployment will not be tested by glueckkanja-gab.
+The software deployment will not be tested by glueckkanja.
 
 ### CanRequestSoftwarePaas
 
-The user gains the ability to submit a software packaging request to glueckkanja-gab.
+The user gains the ability to submit a software packaging request to glueckkanja.
 
-The software will be packaged by glueckkanja-gab and will become available for consumption through the [Package Store](../../AppManagement/package-store/).
+The software will be packaged by glueckkanja and will become available for consumption through the [Package Store](../../AppManagement/package-store/).
 
 ### CanReadPackageStoreTable
 

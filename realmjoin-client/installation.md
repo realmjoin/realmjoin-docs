@@ -117,7 +117,7 @@ reamjoin.exe -install
 
 ### Signed MSI
 
-The RealmJoin.MSI is SHA2 (256 bit) signed by glueckkanja-gab and therefore recognized by Windows as safe to install.
+The RealmJoin.MSI is SHA2 (256 bit) signed by glueckkanja and therefore recognized by Windows as safe to install.
 
 ![](<../.gitbook/assets/image (16) (1) (1).png>)
 

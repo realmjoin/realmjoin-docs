@@ -6,7 +6,7 @@ See [azure-ad-roles-and-permissions.md](../../runbooks/azure-ad-roles-and-permis
 
 ## RealmJoin Runbook Management
 
-RealmJoin will create an Application Registration called **RealmJoin Runbook Management** which is used to update the [Azure Automation Runbooks](../../runbooks/) in your tenant based on [glueckkanja-gab's shared runbook repository](https://github.com/realmjoin/realmjoin-runbooks).
+RealmJoin will create an Application Registration called **RealmJoin Runbook Management** which is used to update the [Azure Automation Runbooks](../../runbooks/) in your tenant based on [glueckkanja's shared runbook repository](https://github.com/realmjoin/realmjoin-runbooks).
 
 This app also will be used by RealmJoin Portal to trigger runbook execution after filtering requests through [RealmJoin's RBAC](../../settings/permission.md) and [Runbook Permissions](../../runbooks/runbook-permissions.md).
 

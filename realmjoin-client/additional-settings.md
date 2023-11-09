@@ -103,7 +103,7 @@ Integration.Notification
 ```json
 {
 "Enabled": true | false,
-"SourceUrl": "URL_PROVIDED_BY_GKGAB",
+"SourceUrl": "URL_PROVIDED_BY_GK",
 "FallbackCulture": "en"
 }
 ```

@@ -58,7 +58,7 @@ Use RealmJoin Client to prepare VMs / system images without a user logging in.
 
 ### ![](<../.gitbook/assets/image (29) (1) (1).png>) Application/Packaging Submission
 
-Upload your own sources / software package description to glueckkanja-gab's "Packaging as a Service" offerings.
+Upload your own sources / software package description to glueckkanja's "Packaging as a Service" offerings.
 
 ## [Self Service Forms](../self-service-forms.md)
 

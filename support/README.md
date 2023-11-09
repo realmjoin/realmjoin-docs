@@ -2,7 +2,7 @@
 
 ### How to reach us?
 
-glueckkanja-gab AG&#x20;
+glueckkanja AG&#x20;
 
 Kaiserstraße 39&#x20;
 
@@ -10,4 +10,4 @@ Kaiserstraße 39&#x20;
 
 T +49 69 4005520&#x20;
 
-info@glueckkanja-gab.com
+info@glueckkanja.com

@@ -68,11 +68,7 @@ Please grant the following SharePoint API Permissions to the managed identity
 
 Granting permissions to Managed Identities can currently not be done using Azure Portal. We recommend to use MS Graph / PowerShell scripting for this.&#x20;
 
-You can find an example for this process [here](https://notdoneyet.blog/ms%20graph/powershell/azuread/2022/01/20/MSGraph-and-Permissions.html#managed-identities-and-azure-portal).
-
-{% hint style="info" %}
-If you are onboarded using glueckkanja-gab's consulting or managed workplace services, you can benefit from our [ready made template](https://gitlab.c4a8.net/modern-workplace-code/approle-and-directoryrole-granter) to quickly and easily set this up.&#x20;
-{% endhint %}
+You can find an example for this process [here](https://github.com/hcoberdalhoff/approle-and-directoryrole-granter).
 
 ### Azure Resource Permissions
 
@@ -84,12 +80,12 @@ Some runbooks will use an Azure Storage Account to store reports or backups. Ple
 
 ### Managed Identities
 
-Azure Automation supports [Managed Identities](https://docs.microsoft.com/en-us/azure/automation/enable-managed-identity-for-automation) (system assigned) as primarty to way to authenticate. This replaces the older RunAs Accounts.&#x20;
+Azure Automation supports [Managed Identities](https://docs.microsoft.com/en-us/azure/automation/enable-managed-identity-for-automation) (system assigned) as primarty to way to authenticate. This replaces the deprecated RunAs Accounts.&#x20;
 
 The RealmJoin Runbooks currently support RunAs Accounts if no managed identity is configured.
 
 {% hint style="warning" %}
-If a Managed Identity and a RunAs Account are configured at the same time, the runbooks from glueckkanja-gab's shared repository will automatically prefer using the Managed Identity when using recent versions of our supporting RealmJoin.RunbookHelper Module starting with v0.8.0. Older versions of the module could not fully utilize Managed Identities and prefered the RunAs Account.&#x20;
+If a Managed Identity and a RunAs Account are configured at the same time, the runbooks from glueckkanja's shared repository will automatically prefer using the Managed Identity when using recent versions of our supporting RealmJoin.RunbookHelper Module starting with v0.8.0. Older versions of the module could not fully utilize Managed Identities and prefered the RunAs Account.&#x20;
 
 Please make sure, that you grant the needed permissions to Managed Identity or disable it completely to only use the RunAs Account.&#x20;
 {% endhint %}

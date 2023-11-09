@@ -34,7 +34,7 @@ RealmJoin API offers two endpoints to trigger runbooks.
 
 Runbooks are adressed by their name in Azure Automation. In short:
 
-* Is it synced from glueckkanja-gab's GitHub repo? Add `rjgit-`as prefix
+* Is it synced from glueckkanja's GitHub repo? Add `rjgit-`as prefix
 * Either `org_`, `device_`, `group_`, `user_` as scope (exactly one of those)
 * A category, like `general_`or `security_`&#x20;
 * The name of the runbook, separated by `_` like `add-xyz-exception`

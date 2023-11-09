@@ -1,6 +1,6 @@
-# glueckkanja-gab Tasks
+# glueckkanja Tasks
 
-If a customer is interested in AnyDesk, the customer will need to send an email to glueckkanja-gab (GKGAB). GKGAB then will contact AnyDesk to request a license and AnyDesk will send back login credentials. With these credentials, GKGAB can start the deployment of a user client and the deployment of a supporter client.
+If a customer is interested in AnyDesk, the customer will need to send an email to glueckkanja (GK). GK then will contact AnyDesk to request a license and AnyDesk will send back login credentials. With these credentials, GK can start the deployment of a user client and the deployment of a supporter client.
 
 ## AnyDesk User Client Deployment
 

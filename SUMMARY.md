@@ -40,7 +40,7 @@
     * [KeyVault](realmjoin-client/local-admin-password-solution-laps/keyvault.md)
     * [Application Insights](realmjoin-client/local-admin-password-solution-laps/application-insights.md)
   * [AnyDesk Integration](realmjoin-client/anydesk-integration/README.md)
-    * [glueckkanja-gab Tasks](realmjoin-client/anydesk-integration/glueckkanja-gab-tasks.md)
+    * [glueckkanja Tasks](realmjoin-client/anydesk-integration/glueckkanja-tasks.md)
     * [Customer Tasks](realmjoin-client/anydesk-integration/customer-tasks.md)
     * [AnyDesk Cloud Connections](realmjoin-client/anydesk-integration/anydesk-cloud-connections.md)
   * [Deploying Applications using the Client](realmjoin-client/deploy-apps/README.md)
