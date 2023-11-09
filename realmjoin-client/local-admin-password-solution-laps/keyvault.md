@@ -23,7 +23,7 @@ The following table shows you the steps for Azure KeyVault Creation:
 | 13. Click **Key permissions**                                                                                                                                            |                                                         |
 | 14. For **Cryptographic Operations** add Decrypt, Encrypt, Unwrap Key, Wrap Key, Verify and Sign                                                                         | ![](<../../.gitbook/assets/image (17) (1) (1).png>)     |
 | 15. Click **Save** and then **OK**                                                                                                                                       |                                                         |
-| 16. Finally, go to **Overview** and share the **DNS Name** with the [Glück & Kanja support](mailto:product.support@glueckkanja.com)                                      | ![](<../../.gitbook/assets/image (14) (1).png>)         |
+| 16. Finally, go to **Overview** and share the **DNS Name** with the [RealmJoin Support](mailto:support@realmjoin.com)                                      | ![](<../../.gitbook/assets/image (14) (1).png>)         |
 
 ## KeyVault Storage of Secrets
 

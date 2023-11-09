@@ -8,7 +8,7 @@ RealmJoin Client for Windows allows to skip the ID number sharing because every 
 
 ## Deployment Workflow
 
-1. The customer sends a request to [glueckkanja (GK)](mailto:support@glueckkanja.com), for a quote on AnyDesk.
+1. The customer sends a request to [RealmJoin Support](mailto:support@realmjoin.com), for a quote on AnyDesk.
 2. GK orders a license from AnyDesk.
 3. AnyDesk sends a license and login credentials to GK
 4. GK deploys AnyDesk
