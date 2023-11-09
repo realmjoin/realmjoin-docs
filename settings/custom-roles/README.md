@@ -2,7 +2,7 @@
 
 ## Overview
 
-**Custom Roles** is an optional feature in RealmJoin Portal. When enbled by glueckkanja-gab's support, it allows you create additional RealmJoin internal roles. You can assign granular / atomic permissions to these roles and bind them to AzureAD groups or users.
+**Custom Roles** is an optional feature in RealmJoin Portal. When enbled by glueckkanja's support, it allows you create additional RealmJoin internal roles. You can assign granular / atomic permissions to these roles and bind them to AzureAD groups or users.
 
 Custom Roles are defined as JSON. The JSON editor included in RealmJoin Portal offers syntax checking and highlighting and will verify your definition against the Custom Roles JSON schema.&#x20;
 
