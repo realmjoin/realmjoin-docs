@@ -74,5 +74,6 @@
   * [Simulating a Runbook environment](developer-reference/simulating-a-runbook-environment.md)
 * [Licensing](licensing.md)
 * [Support](support/README.md)
+  * [Troubleshooting](support/troubleshooting.md)
   * [Old Changelog](support/changelog.md)
 * [Changelog](https://feedback.realmjoin.com/)
