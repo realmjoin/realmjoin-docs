@@ -6,7 +6,15 @@ description: Troubleshooting Guide for failed software package installations
 
 This guide will focus on troubleshooting failed RealmJoin software package installations.
 
+{% hint style="info" %}
+This guide is only valid for software deployment using the RealmJoin client (not intunewin).
 
+Especially the convenient way of collecting the required logfiles, directly on the client as well as remotely using the RealmJoin portal, only works with the RealmJoin tray application rolled out to your clients.
+
+
+
+When using intunewin deployment, the logfiles will need to be collected manually from the clients, the most relevant folder being `C:\WINDOWS\Logs\RealmJoin`.
+{% endhint %}
 
 ## Required log files
 
