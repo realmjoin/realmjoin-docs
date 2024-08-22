@@ -2,6 +2,8 @@
 
 ## Overview
 
+{% embed url="https://www.youtube.com/watch?v=Ijp9XnE8UuA" %}
+
 To enable RealmJoin Portal to offer [runbooks ](../runbooks/)to automate daily operations, you need to connect an [Azure Automation](https://learn.microsoft.com/en-us/azure/automation/overview) Account. This Automation Account will host your runbooks as well as the [permissions](../azure-ad-roles-and-permissions.md) needed for the runbooks to function in your environment.
 
 This guide will help you to onboard either a new or existing Automation Account.
@@ -26,7 +28,7 @@ Choose or create an Azure Resource Group in your Azure Subscription, e.g. `rjrb-
 
 [https://portal.azure.com/#create/Microsoft.ResourceGroup](https://portal.azure.com/#create/Microsoft.ResourceGroup)
 
-![Create an Azure Resource Group](<../../.gitbook/assets/image (129).png>)
+![Create an Azure Resource Group](<../../../.gitbook/assets/image (129).png>)
 
 Please note down the Resource Group's name as it will be needed later.
 
@@ -46,7 +48,7 @@ It is assumed you already finished [onboarding RealmJoin Portal](../../realmjoin
 
 1. In RealmJoin Portal go to '[Settings -> Runbooks](https://portal.realmjoin.com/settings/runbooks-configuration)'.
 
-![Automation Account Connection in RealmJoin Portal](<../../.gitbook/assets/image (240).png>)
+![Automation Account Connection in RealmJoin Portal](<../../../.gitbook/assets/image (240).png>)
 
 2. Fill in the Azure Tenant ID, Subscription ID and Resource Group name.\
    You can review your Azure Tenant ID at [https://portal.azure.com/#blade/Microsoft\_AAD\_IAM/ActiveDirectoryMenuBlade/Overview](https://portal.azure.com/#blade/Microsoft\_AAD\_IAM/ActiveDirectoryMenuBlade/Overview)\
@@ -77,13 +79,13 @@ Please execute these two lines of code using AZ CLI with an administrative accou
 You can use [Azure CloudShell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview), so you don't need to install and authenticate a local copy of AZ CLI.
 {% endhint %}
 
-![Azure CloudShell - Create the App Registration](<../../.gitbook/assets/image (103).png>)
+![Azure CloudShell - Create the App Registration](<../../../.gitbook/assets/image (103).png>)
 
 The command will return multiple values. Please note down the values for `appId` and `password`.
 
 You can review the resulting App Registration in Entra ID. It will be named "RealmJoin Runbook Management".
 
-![App Regsitrations in Azure Portal](<../../.gitbook/assets/image (259).png>)
+![App Regsitrations in Azure Portal](<../../../.gitbook/assets/image (259).png>)
 
 ### Entering Information - Part 2
 
@@ -92,11 +94,11 @@ You can review the resulting App Registration in Entra ID. It will be named "Rea
 3. Choose the Branch of the shared runbook repository you want to follow, whether `master` or `production`. If unsure, please choose `production` as `master` will have more bleeding edge / preview runbooks in a less tested state.
 4. Choosing the location to make sure your runbooks are executed in the correct [Azure region](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview).
 
-![Automation Account Connection in RealmJoin Portal](<../../.gitbook/assets/image (118).png>)
+![Automation Account Connection in RealmJoin Portal](<../../../.gitbook/assets/image (118).png>)
 
 5. Press "Save" to start the initial import of runbooks. Please leave this window open until you see the message "Sync completed".
 
-![](<../../.gitbook/assets/image (90).png>)
+![](<../../../.gitbook/assets/image (90).png>)
 
 ## Granting Permissions to your Runbooks
 

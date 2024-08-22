@@ -1,12 +1,16 @@
 # User, Group and Device Lists
 
+{% embed url="https://www.youtube.com/watch?v=IlIEnhoaaIA" %}
+Brand new video tutorial
+{% endembed %}
+
 Selecting the Users, Groups or Devices tab offers administrators a simple way to search or review users in their environment. Clicking the name of a user, group or device object will lead you to the respective object's details page.
 
-<figure><img src="../../.gitbook/assets/image (193).png" alt=""><figcaption><p>User List</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (193).png" alt=""><figcaption><p>User List</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (304).png" alt=""><figcaption><p>Group List</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (304).png" alt=""><figcaption><p>Group List</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (305).png" alt=""><figcaption><p>Device List</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (305).png" alt=""><figcaption><p>Device List</p></figcaption></figure>
 
 ### Object Types
 
@@ -46,7 +50,7 @@ You can use the filters above the list to limit search results to specific User,
 
 {% tabs %}
 {% tab title="Users" %}
-<figure><img src="../../.gitbook/assets/image (183).png" alt=""><figcaption><p>User Filters</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (183).png" alt=""><figcaption><p>User Filters</p></figcaption></figure>
 
 **User Type**
 
@@ -67,7 +71,7 @@ You can use the filters above the list to limit search results to specific User,
 {% endtab %}
 
 {% tab title="Groups" %}
-<figure><img src="../../.gitbook/assets/image (131).png" alt=""><figcaption><p>Group Filters</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (131).png" alt=""><figcaption><p>Group Filters</p></figcaption></figure>
 
 #### Only RealmJoin Groups
 
@@ -96,7 +100,7 @@ Limit the search results to the type of Entra ID group
 {% endtab %}
 
 {% tab title="Devices" %}
-<figure><img src="../../.gitbook/assets/image (110).png" alt=""><figcaption><p>Device Filters</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (110).png" alt=""><figcaption><p>Device Filters</p></figcaption></figure>
 
 #### Only Enabled
 

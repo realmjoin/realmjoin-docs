@@ -1,6 +1,10 @@
 # Package Details
 
-![Package Details Page](<../../.gitbook/assets/image (61).png>)
+{% embed url="https://www.youtube.com/watch?v=BdF3rvMbjFs" %}
+Brand new video tutorial
+{% endembed %}
+
+![Package Details Page](<../../../.gitbook/assets/image (61).png>)
 
 This page will show detailed information for a single package in your environment and allows you to manage its assignment to users and updates.
 
@@ -24,7 +28,7 @@ Every package detail page will show an overview of the core properties like the 
 
 You can use the Edit-Button next to the package's name to give a package a custom display name relevant to your users. For packages hosted in Intune, this will also rename the package's display name in Intune. This will not break the relationship with the [package store entry](../package-store/package-store-details.md) for packages sourced from the [package store](../package-store/).
 
-![Package Name and Status](<../../.gitbook/assets/image (106).png>)
+![Package Name and Status](<../../../.gitbook/assets/image (106).png>)
 
 ### Status Fields
 
@@ -63,11 +67,11 @@ Does this software need a commercial license to be used?
 
 If available, a link to this software title's [MS Security Center Software Inventory (TVM)](https://security.microsoft.com/software-inventory/applications)'s entry will be displayed. There you can check for known security issues and outdated versions of this software in your organization.
 
-![An Application's TVM Entry](<../../.gitbook/assets/image (104).png>)
+![An Application's TVM Entry](<../../../.gitbook/assets/image (104).png>)
 
 ### Version
 
-![](<../../.gitbook/assets/image (176).png>)
+![](<../../../.gitbook/assets/image (176).png>)
 
 Also displayed on the left side of the screen is the version of the software package.
 
@@ -79,15 +83,15 @@ If this is a package sourced from the [package store](../package-store/), a link
 
 In the [Overview tab](package-details.md#overview-assignment), you can manage assignments of this package/application to users.
 
-![Package Assignments](<../../.gitbook/assets/image (56).png>)
+![Package Assignments](<../../../.gitbook/assets/image (56).png>)
 
 ### Assignment Settings
 
 For RealmJoin Client Packages, individual assignments can carry settings, modifying the packages deployment behavior.
 
-<figure><img src="../../.gitbook/assets/image (254).png" alt=""><figcaption><p>Assignment Settings Option</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (254).png" alt=""><figcaption><p>Assignment Settings Option</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (244).png" alt=""><figcaption><p>Assignment Settings</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (244).png" alt=""><figcaption><p>Assignment Settings</p></figcaption></figure>
 
 ### Groups
 
@@ -103,11 +107,11 @@ Click **Enable Update Group** and a new EntraID Group with the suffix "(update)"
 
 RealmJoin will dynamically discover installed copies of the software that are unmanaged and add the device it has been discovered on to the update group.
 
-<figure><img src="../../.gitbook/assets/image (123).png" alt=""><figcaption><p>Enable an Update Group</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (123).png" alt=""><figcaption><p>Enable an Update Group</p></figcaption></figure>
 
 Thus, new version of this software will also be installed on these devices to assert deployment of security patches across your environment.
 
-<figure><img src="../../.gitbook/assets/image (189).png" alt=""><figcaption><p>Enabled Update Group</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (189).png" alt=""><figcaption><p>Enabled Update Group</p></figcaption></figure>
 
 ## Deployment Status
 
@@ -121,7 +125,7 @@ The following tabs are available:
 
 ### Overview
 
-![Overview Tab](<../../.gitbook/assets/image (160).png>)
+![Overview Tab](<../../../.gitbook/assets/image (160).png>)
 
 #### Title, Description and other Info
 
@@ -131,17 +135,17 @@ This tab will show the long description, license and technical help information 
 
 The package's changelog shows when the packages has been updated in RealmJoin's repository or Intune plus a short description of changes.
 
-![Package Changelog](<../../.gitbook/assets/image (116).png>)
+![Package Changelog](<../../../.gitbook/assets/image (116).png>)
 
 There are two types of changes tracked in Changelog.
 
-![](<../../.gitbook/assets/image (229).png>) Changes to the instance of the package in your environment, specifically in Intune. E.g. publishing a newer version of the package to your users.
+![](<../../../.gitbook/assets/image (229).png>) Changes to the instance of the package in your environment, specifically in Intune. E.g. publishing a newer version of the package to your users.
 
-![](<../../.gitbook/assets/image (198).png>) Changes to package store entry.
+![](<../../../.gitbook/assets/image (198).png>) Changes to package store entry.
 
 ### Automation
 
-<figure><img src="../../.gitbook/assets/image (219).png" alt=""><figcaption><p>Package Automation</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (219).png" alt=""><figcaption><p>Package Automation</p></figcaption></figure>
 
 For managed packages, you can use the Automation tab to configure automatic publishing of new version of packages from the package store to your environment.
 
@@ -177,7 +181,7 @@ These values can be globally preconfigured for newly imported packages in [Setti
 
 ### Config
 
-<figure><img src="../../.gitbook/assets/image (315).png" alt=""><figcaption><p>Package Config</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (315).png" alt=""><figcaption><p>Package Config</p></figcaption></figure>
 
 You can assign multiple **Technical Application Owners** (TAO) to a package by storing their email-address to reach out. This is optional and currently is purely for information/administrative purposes.&#x20;
 
@@ -187,13 +191,13 @@ You need to **enable** the switch below TAOs to subscribe to changes/updates.&#x
 
 Some packages include **Technical Help**, to explain possible **Arguments** and other Requirements.
 
-![Technical Help for a Package](<../../.gitbook/assets/image (47).png>)
+![Technical Help for a Package](<../../../.gitbook/assets/image (47).png>)
 
 ### Expert Settings
 
 RealmJoin Client packages allow **Expert Settings** which modify an app's deployment behavior. These can be reached via the **Config** tab.
 
-<figure><img src="../../.gitbook/assets/image (165).png" alt=""><figcaption><p>Expert Settings</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (165).png" alt=""><figcaption><p>Expert Settings</p></figcaption></figure>
 
 ### Intune App and RealmJoin Store
 

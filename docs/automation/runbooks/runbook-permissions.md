@@ -4,6 +4,8 @@ description: How to grant/deny access to certain runbooks.
 
 # Runbook Permissions
 
+{% embed url="https://www.youtube.com/watch?v=bLi_k_Yzhyw" %}
+
 ## Scope
 
 This addresses how to grant/deny access to certain runbooks in an Azure tenant. If you are looking for answers regarding which MS Graph API permissions are needed to run a certain action as a runbook, please have a look at our [requirements](../azure-ad-roles-and-permissions.md).

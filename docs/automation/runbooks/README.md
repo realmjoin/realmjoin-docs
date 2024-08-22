@@ -4,6 +4,8 @@ description: Automate day-to-day operations in your environment.
 
 # Runbooks
 
+{% embed url="https://www.youtube.com/watch?v=TfL7xRasVUg" %}
+
 RealmJoin provides administrators with the ability to automate tasks by using [Azure Automation](https://learn.microsoft.com/en-us/azure/automation/overview) to execute [PowerShell Runbooks](https://docs.microsoft.com/en-us/azure/automation/automation-runbook-types#powershell-runbooks). &#x20;
 
 Runbooks are scripts, automating tasks that normally must be executed by a support engineer / operator or administrator. Automating these tasks lowers the risk of manual error and allows better auditing of actions.
@@ -17,7 +19,7 @@ Some common tasks RealmJoin can help you automate include:
 
 You can offer RealmJoin Portal to your support and administration teams to simplify and improve the quality of your day-to-day operations.
 
-![](<../../.gitbook/assets/user rb (1).png>)
+![](<../../../.gitbook/assets/user rb (1).png>)
 
 ## Common Runbooks
 
@@ -31,7 +33,7 @@ You can trigger a sync from the shared repository to your Azure Automation accou
 
 [https://portal.realmjoin.com/settings/general](https://portal.realmjoin.com/settings/general)
 
-![Trigger a sync of your runbooks](<../../.gitbook/assets/image (192).png>)
+![Trigger a sync of your runbooks](<../../../.gitbook/assets/image (192).png>)
 
 Wait for the "Sync completed" message. Please keep the browser window open while the sync process is running.
 

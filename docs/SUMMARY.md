@@ -9,6 +9,7 @@
 * [Required Permissions](realmjoin-deployment/required-permissions.md)
 * [Infrastructure Considerations](realmjoin-deployment/infrastructure/README.md)
   * [Multi User Devices](realmjoin-deployment/infrastructure/multi-user-devices.md)
+* [Migration to RealmJoin vNext](realmjoin-deployment/migration-to-realmjoin-vnext.md)
 
 ## User, Group and Device Management <a href="#ugd-management" id="ugd-management"></a>
 
@@ -25,7 +26,7 @@
 ## App Management
 
 * [Package Store](app-management/package-store/README.md)
-  * [Package Store Details](app-management/package-store/package-store-details.md)
+  * [Application Store Details](app-management/package-store/package-store-details.md)
   * [Package Deployment](app-management/package-store/package-deployment.md)
 * [Package Management](app-management/package-management/README.md)
   * [Package Details](app-management/package-management/package-details.md)
