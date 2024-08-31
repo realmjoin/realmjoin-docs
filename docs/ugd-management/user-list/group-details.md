@@ -1,6 +1,6 @@
 # Group Details
 
-![Application management group](<../../.gitbook/assets/image (98).png>)
+![Application management group](<../../../.gitbook/assets/image (98).png>)
 
 This page shows you details regarding a single group.
 
@@ -43,13 +43,13 @@ On Entra ID groups ("Non-mail enabled security" and "Unified") you can use Realm
 
 Please use a [runbook ](../../automation/runbooks/)to change owners of a group or to change memberships to Exchange Online groups, like Distribution Groups.
 
-![Members of a group](<../../.gitbook/assets/image (205).png>)
+![Members of a group](<../../../.gitbook/assets/image (205).png>)
 
 #### Adding Members
 
 Using the "**Add**" button will show a dialogue where you can search for users to add to the group. You can search for users via Name or User Principal Name / eMail address.
 
-![Adding Members](<../../.gitbook/assets/image (217).png>)
+![Adding Members](<../../../.gitbook/assets/image (217).png>)
 
 Press "+" to add a member to the group. The resulting membership will take a short time and not be immedaitely visible.
 
@@ -57,7 +57,7 @@ Press "+" to add a member to the group. The resulting membership will take a sho
 
 Using the "**Remove**" button will not show a new dialogue but add a "x" icon in front of existing members. You can still search/filter for members via Name or User Principal Name / eMail address while this is active.
 
-![Removing Members](<../../.gitbook/assets/image (75).png>)
+![Removing Members](<../../../.gitbook/assets/image (75).png>)
 
 Press the "x" icon to remove a member. The resulting change will take a short time and not be immedaitely visible.
 
@@ -71,13 +71,13 @@ See[ Process Automation](../../automation/runbooks/) for more information.
 
 You can assign Key-Value pairs of data to specific groups of users to control RealmJoin Clients behavior for these users.
 
-<figure><img src="../../.gitbook/assets/image (147).png" alt=""><figcaption><p>Settings for this group</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (147).png" alt=""><figcaption><p>Settings for this group</p></figcaption></figure>
 
-You can add a setting assigned to this group using <img src="../../.gitbook/assets/image (66).png" alt="" data-size="line">, alternatively open an existing setting by clicking on its name/key or search by name/key.
+You can add a setting assigned to this group using <img src="../../../.gitbook/assets/image (66).png" alt="" data-size="line">, alternatively open an existing setting by clicking on its name/key or search by name/key.
 
 Clicking a name/key will open a UI allowing you to manipulate/create the setting.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (204).png" alt=""><figcaption><p>Settings Editor</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (204).png" alt=""><figcaption><p>Settings Editor</p></figcaption></figure>
 
 Be aware: The value of the setting must be valid JSON, which includes singular values like `true` or strings (without brackets).
 
@@ -97,7 +97,7 @@ The right side of the screen shows the contents of the current tab, which can be
 
 At the lower end of the groups details, you can find a "More" Button. Pressing it will open a menu of more available actions.&#x20;
 
-<img src="../../.gitbook/assets/image (214).png" alt="" data-size="original">
+<img src="../../../.gitbook/assets/image (214).png" alt="" data-size="original">
 
 Currently, only Delete is available.&#x20;
 
@@ -105,6 +105,6 @@ Currently, only Delete is available.&#x20;
 
 If you are allowed to delete the group, a confirmation dialogue will pop up upon pressing the Delete button. (If you don't have enough permissions, nothing will happen.)
 
-![](<../../.gitbook/assets/image (126).png>)
+![](<../../../.gitbook/assets/image (126).png>)
 
 Pressing "Yes" will delete the group from Entra ID. This is of course also able to delete Exchange based objects like Distribution lists, or Microsoft 365 groups and teams.

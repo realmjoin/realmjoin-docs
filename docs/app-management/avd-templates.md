@@ -39,23 +39,23 @@ Copy the following definition and make sure to change the GroupID accordingly.
 
 1. Click on the "templates" icon or open the Templates section by entering the url: [https://portal.realmjoin.com/templates](https://portal.realmjoin.com/templates)
 
-<figure><img src="../.gitbook/assets/image (148).png" alt=""><figcaption><p>Templates List</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (148).png" alt=""><figcaption><p>Templates List</p></figcaption></figure>
 
-2. Select the <img src="../.gitbook/assets/image (140).png" alt="" data-size="line"> icon (1), enter a meaningful name (2) and Click "Save" (3).&#x20;
+2. Select the <img src="../../.gitbook/assets/image (140).png" alt="" data-size="line"> icon (1), enter a meaningful name (2) and Click "Save" (3).&#x20;
 
-<figure><img src="../.gitbook/assets/image-1.png" alt=""><figcaption><p>Create a template</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image-1.png" alt=""><figcaption><p>Create a template</p></figcaption></figure>
 
 ### Add Applications to a Template
 
 1. Open the template by clicking on its name.
-2. To add packages to the template, click the <img src="../.gitbook/assets/image (138).png" alt="" data-size="line"> icon.&#x20;
+2. To add packages to the template, click the <img src="../../.gitbook/assets/image (138).png" alt="" data-size="line"> icon.&#x20;
 
-<figure><img src="../.gitbook/assets/image-2.png" alt=""><figcaption><p>Add packages to a template - 1</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image-2.png" alt=""><figcaption><p>Add packages to a template - 1</p></figcaption></figure>
 
-3. Search for a package and hit the ![](<../.gitbook/assets/image (179).png>) icon to add it to your template. The list represents all RealmJoin packages you have subscribed to in your environment.
+3. Search for a package and hit the ![](<../../.gitbook/assets/image (179).png>) icon to add it to your template. The list represents all RealmJoin packages you have subscribed to in your environment.
 4. Once you are done, click the **Close** button.
 
-<figure><img src="../.gitbook/assets/image-3.png" alt=""><figcaption><p>Add packages to a template - 2</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image-3.png" alt=""><figcaption><p>Add packages to a template - 2</p></figcaption></figure>
 
 {% hint style="info" %}
 Intune Packages can not be assigned using AVD templates.
@@ -66,7 +66,7 @@ Intune Packages can not be assigned using AVD templates.
 1. Open the template by clicking on its name.
 2. If you want to remove applications, click on **Unassign**. If you want to define arguments overwriting those set on the package level, you can do so by clicking on **Settings**.&#x20;
 
-<figure><img src="../.gitbook/assets/image-4.png" alt=""><figcaption><p>Remote packages from a template</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image-4.png" alt=""><figcaption><p>Remote packages from a template</p></figcaption></figure>
 
 ### Create a Token
 
@@ -77,9 +77,9 @@ Please handle the token with care. If you think the token might have been leaked
 {% endhint %}
 
 1. Create a token, click on the **Tokens** tab.
-2. Click the <img src="../.gitbook/assets/image (140).png" alt="" data-size="line"> icon (1), enter a meaningful name (2) and click **Save** (3).&#x20;
+2. Click the <img src="../../.gitbook/assets/image (140).png" alt="" data-size="line"> icon (1), enter a meaningful name (2) and click **Save** (3).&#x20;
 
-<figure><img src="../.gitbook/assets/image-6.png" alt=""><figcaption><p>Create a token</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image-6.png" alt=""><figcaption><p>Create a token</p></figcaption></figure>
 
 ## Using a Template&#x20;
 
@@ -87,7 +87,7 @@ Please handle the token with care. If you think the token might have been leaked
 
 Collect the template ID and the token you want to use for deployment.
 
-<figure><img src="../.gitbook/assets/image (169).png" alt=""><figcaption><p>Find template ID and token</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (169).png" alt=""><figcaption><p>Find template ID and token</p></figcaption></figure>
 
 Run the following command from inside your system/VM you want to prepare as golden image:
 

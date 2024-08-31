@@ -107,11 +107,11 @@ Click **Enable Update Group** and a new EntraID Group with the suffix "(update)"
 
 RealmJoin will dynamically discover installed copies of the software that are unmanaged and add the device it has been discovered on to the update group.
 
-<figure><img src="../../../.gitbook/assets/image (123).png" alt=""><figcaption><p>Enable an Update Group</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/app-deploy-1.png" alt=""><figcaption><p>Enable an Update Group</p></figcaption></figure>
 
 Thus, new version of this software will also be installed on these devices to assert deployment of security patches across your environment.
 
-<figure><img src="../../../.gitbook/assets/image (189).png" alt=""><figcaption><p>Enabled Update Group</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/app-deploy-2.png" alt=""><figcaption><p>Update Group Enabled</p></figcaption></figure>
 
 ## Deployment Status
 

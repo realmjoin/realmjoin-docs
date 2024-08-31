@@ -12,7 +12,7 @@ If you are facing this issue, first of all check if your Key Vault is correctly 
 
 As an indicator to see if the basic communication between RealmJoin and the KeyVault works, check the Certificates section of the Key Vault in the Azure Portal. Provided you have the right permissions on the KeyVault, you should see a certificate called `realmjoin-master` that has been created by RealmJoin:
 
-<figure><img src="../../../.gitbook/assets/image (306).png" alt=""><figcaption><p>realmjoin-master Certificate</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (306).png" alt=""><figcaption><p>realmjoin-master Certificate</p></figcaption></figure>
 
 
 

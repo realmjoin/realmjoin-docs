@@ -4,5 +4,5 @@ Organic packages are used for binary file transportation with a fixed configurat
 
 Because of this high standardization, organic packages are built automatically and within a couple of minutes. No ticket will be created and no charge added, the package will be made available in the Package Store under the Organic tab as soon as possible without the need of involvement of the packaging factory.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (308).png" alt=""><figcaption><p>Organic packaging request.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (308).png" alt=""><figcaption><p>Organic packaging request.</p></figcaption></figure>
 

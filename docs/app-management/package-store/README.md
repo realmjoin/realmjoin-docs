@@ -1,6 +1,6 @@
 # Package Store
 
-<figure><img src="../../.gitbook/assets/24-06-26-13_42_07_chrome.png" alt=""><figcaption><p>The RealmJoin Store</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/24-06-26-13_42_07_chrome.png" alt=""><figcaption><p>The RealmJoin Store</p></figcaption></figure>
 
 RealmJoin Portal provides and maintains a large library of ready-to-use packages, easily deployable using either the RealmJoin Client or Intune.
 

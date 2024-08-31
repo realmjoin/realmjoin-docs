@@ -6,7 +6,7 @@ This page allows you to specify the components needed to interact with Azure Aut
 
 ## Parameters
 
-![Runbook Integration Parameters](<../../.gitbook/assets/image (154).png>)
+![Runbook Integration Parameters](<../../../.gitbook/assets/image (154).png>)
 
 ### TenantID
 

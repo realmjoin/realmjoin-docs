@@ -8,17 +8,17 @@ You can use Self Service Forms to collect structured data from users. This can b
 
 We will use a workflow to "indicate a new pet" as an example.
 
-<figure><img src="../.gitbook/assets/image (178).png" alt=""><figcaption><p>Form Example</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (178).png" alt=""><figcaption><p>Form Example</p></figcaption></figure>
 
 ## Using Forms
 
-Using the ![](<../.gitbook/assets/image (70).png>) navigation item, users can select a form to fill out and submit.
+Using the ![](<../../.gitbook/assets/image (70).png>) navigation item, users can select a form to fill out and submit.
 
-<figure><img src="../.gitbook/assets/image (197).png" alt=""><figcaption><p>Form Selector</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (197).png" alt=""><figcaption><p>Form Selector</p></figcaption></figure>
 
 When a user fills out and submits a form, its contents will be sent via email to the recipient given in the form's definition. The email will be sent via RealmJoin's infrastructure and will not originate from your company's email addresses.
 
-<figure><img src="../.gitbook/assets/image (238).png" alt=""><figcaption><p>Sample email from a form</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (238).png" alt=""><figcaption><p>Sample email from a form</p></figcaption></figure>
 
 {% hint style="info" %}
 When Self Service Forms are enabled for your tenant, all users are able to use / submit forms.
@@ -26,9 +26,9 @@ When Self Service Forms are enabled for your tenant, all users are able to use /
 
 ## Review Submissions
 
-Using the ![](<../.gitbook/assets/image (132).png>) navigation icon, you can review past form submissions of your users.
+Using the ![](<../../.gitbook/assets/image (132).png>) navigation icon, you can review past form submissions of your users.
 
-<figure><img src="../.gitbook/assets/image (111).png" alt=""><figcaption><p>Submissions List</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (111).png" alt=""><figcaption><p>Submissions List</p></figcaption></figure>
 
 You can search for submissions by sending username and by form name, but not by fields in the form submission.
 
@@ -40,7 +40,7 @@ The Self Service Forms settings page allows to manage existing forms, add, edit 
 
 ### Forms List on the Settings Page
 
-<figure><img src="../.gitbook/assets/image (133).png" alt=""><figcaption><p>Forms List</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (133).png" alt=""><figcaption><p>Forms List</p></figcaption></figure>
 
 Use "New Form" or "Edit" to describe the form using [JSON Schema](https://json-schema.org/). This defines which fields need to be entered and what values are valid. The UI offers a syntax checking editor and a preview of the resulting form.
 
@@ -50,11 +50,11 @@ The schema will be used to dynamically create a form for the user. Basically, us
 
 Above the editor there are two fields. Use the left field to give your form a descriptive name. Use the right field to name the email address of the recipient of the user submited data.
 
-<figure><img src="../.gitbook/assets/image (114).png" alt=""><figcaption><p>Schema Editor Sample</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (114).png" alt=""><figcaption><p>Schema Editor Sample</p></figcaption></figure>
 
 You can use "Update JSON Form Preview" to create a preview of the resulting form underneath the editor.
 
-<figure><img src="../.gitbook/assets/image (172).png" alt=""><figcaption><p>Editor Preview</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (172).png" alt=""><figcaption><p>Editor Preview</p></figcaption></figure>
 
 After modifying the schema, press "Submit" to save your changes. It will show an error if the syntax check fails.
 

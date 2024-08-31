@@ -38,8 +38,8 @@ Example: You want to offer a runbook "Private Runbook" in the context of Azure A
 
 This will look like this in Azure Automation:
 
-![Runbook names in GitHub / Azure Automation](../../.gitbook/assets/naming-ing1.png)
+![Runbook names in GitHub / Azure Automation](../../../.gitbook/assets/naming-ing1.png)
 
 It will be presented in RealmJoin Portal as:
 
-![Runbook names in RealmJoin Portal](../../.gitbook/assets/naming-ing2.png)
+![Runbook names in RealmJoin Portal](../../../.gitbook/assets/naming-ing2.png)

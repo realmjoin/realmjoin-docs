@@ -18,7 +18,7 @@ The easiest way to collect the logs is using the built-in _Collect Logs_ feature
 4. A ZIP-file called `RealmJoin_Diagnostic.zip` will be created on the user's desktop.
 5. This ZIP-file contains all important logs for troubleshooting failed installations.
 
-<figure><img src="../../../.gitbook/assets/logs-debug.png" alt=""><figcaption><p>Collecting logs on the client using RealmJoin debug window</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/logs-debug.png" alt=""><figcaption><p>Collecting logs on the client using RealmJoin debug window</p></figcaption></figure>
 
 
 
@@ -45,4 +45,4 @@ Note that for this feature to work, the client needs to be online and have a run
 The log ZIP file download is available to every user that has access to the RealmJoin Portal, not only the requesting account.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/logs-portal.png" alt=""><figcaption><p>Requesting Logs using the RealmJoin Portal</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/logs-portal.png" alt=""><figcaption><p>Requesting Logs using the RealmJoin Portal</p></figcaption></figure>

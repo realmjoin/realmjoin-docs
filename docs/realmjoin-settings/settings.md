@@ -1,6 +1,6 @@
 # Overview
 
-![](<../.gitbook/assets/image (267).png>)
+![](<../../.gitbook/assets/image (267).png>)
 
 RealmJoin Portal's Settings allow you to configure and manage RealmJoin features, including:
 

@@ -20,23 +20,23 @@ By default, runbooks having the suffix `_scheduled` are flagged as schedulable. 
 
 If a runbook is flagged as schedulable, the "Schedule" button next to the runbook will become active.
 
-<figure><img src="../../.gitbook/assets/image (200).png" alt=""><figcaption><p>Schedulable vs. non-schedulable runbook</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (200).png" alt=""><figcaption><p>Schedulable vs. non-schedulable runbook</p></figcaption></figure>
 
 The schedule dialogue allows you to choose a [schedule ](scheduling.md#managing-schedules)and to configure the parameters for the runbook's execution. If the parameters are left empty, the runbook's defaults will be used.
 
-<figure><img src="../../.gitbook/assets/image (168).png" alt=""><figcaption><p>Configuring a scheduled runbook</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (168).png" alt=""><figcaption><p>Configuring a scheduled runbook</p></figcaption></figure>
 
 RealmJoin Portal will show existing schedule-assignments when browsing the runbooks.
 
-<figure><img src="../../.gitbook/assets/image (261).png" alt=""><figcaption><p>Scheduled runbook</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (261).png" alt=""><figcaption><p>Scheduled runbook</p></figcaption></figure>
 
 ## Managing Schedules
 
 Azure Automation allows administrators to define custom schedules for runbooks. You can use RealmJoin Portal to manage existing Azure Automation Schedules or to create new ones.
 
-Use the navigation on the left, selecting the Runbook Logs ![](../../.gitbook/assets/jobs.png) and got the **Schedules** tab.
+Use the navigation on the left, selecting the Runbook Logs ![](../../../.gitbook/assets/jobs.png) and got the **Schedules** tab.
 
-<figure><img src="../../.gitbook/assets/image (58).png" alt=""><figcaption><p>Runbook Schedules</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (58).png" alt=""><figcaption><p>Runbook Schedules</p></figcaption></figure>
 
 You can add a **New Schedule**, **Edit** or **Delete** an existing schedule from here.
 
@@ -44,7 +44,7 @@ You can add a **New Schedule**, **Edit** or **Delete** an existing schedule from
 
 If no schedules exist yet, RealmJoin Portal will offer a **Create default schedules** button:
 
-<figure><img src="../../.gitbook/assets/image (50).png" alt=""><figcaption><p>Create Schedules</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (50).png" alt=""><figcaption><p>Create Schedules</p></figcaption></figure>
 
 Pressing this button will create a default set ("Hourly", "Daily", "Weekly", "Monthly") of schedules as seen above.
 
@@ -58,4 +58,4 @@ For example: If you configure a weekly frequency with an interval of 1 week, sta
 
 The start-time defines at which time the execution will happen. Setting the timezone makes sure the time is interpreted accordingly.
 
-<figure><img src="../../.gitbook/assets/image (55).png" alt=""><figcaption><p>Edit Schedule</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (55).png" alt=""><figcaption><p>Edit Schedule</p></figcaption></figure>

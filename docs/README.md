@@ -8,7 +8,7 @@ description: Application Lifecycle and Management Companion to Endpoint Manager
 
 Visit [RealmJoin Portal](https://portal.realmjoin.com) to onboard your organization and start your journey.
 
-![](.gitbook/assets/rjvnext-appstore.png)
+![](../.gitbook/assets/rjvnext-appstore.png)
 
 Additional Information at [www.realmjoin.com](http://realmjoin.com).
 

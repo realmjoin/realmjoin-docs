@@ -10,15 +10,15 @@ The user receives different colored notifications based off the notification cat
 
 <div>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-07-11 172006 (2).png" alt=""><figcaption><p>Category: None</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-07-11 172006 (2).png" alt=""><figcaption><p>Category: None</p></figcaption></figure>
 
  
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-07-11 171544 (3).png" alt=""><figcaption><p>Category: Info</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-07-11 171544 (3).png" alt=""><figcaption><p>Category: Info</p></figcaption></figure>
 
  
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-07-11 171242 (2).png" alt=""><figcaption><p>Category: Alert</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-07-11 171242 (2).png" alt=""><figcaption><p>Category: Alert</p></figcaption></figure>
 
 </div>
 
@@ -39,14 +39,14 @@ The notifications are transparent and are able to be clicked through to minimize
    * **Title**: The headline of your notification.
    * **Body**: The main content of your notification.
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 ### Advanced Settings
 
 1. **Disable Click Through**: If enabled, users will not be able to click on the notification to navigate to a different page.
 2. **Disable Transparency**: If enabled, the notification window will not be transparent.
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 Please note that these advanced options might affect the user experience, so use them wisely.
 
@@ -56,29 +56,29 @@ Effective notifications are concise, relevant, and timely. Always respect the us
 
 In order to publish a notification, the configured notification must first be saved as a draft.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 Drafts will appear in the notification list with a yellow "Draft" tag.
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 Once a draft has been saved, the administrator will be prompted to either Publish or Delete.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 * **Publish:** Selecting Publish will prompt for an additional Confirm Publish button.\
-  ![](<../../.gitbook/assets/image (2).png>) \
+  ![](<../../../.gitbook/assets/image (2).png>) \
   Once notifications are sent out, they are not easily retrieved. Please make sure the notification is configured as intended prior to publishing.
 * **Delete:** Selecting Delete will prompt for an additional Confirm Delete button.\
-  ![](<../../.gitbook/assets/image (4).png>) \
+  ![](<../../../.gitbook/assets/image (4).png>) \
   Once messages are deleted, they cannot be recovered. They will be deleted after 30 days.
 
 ### Cancelling a Notification
 
 Once a notification has been published, administrators will have the option to cancel the notification.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 Cancelling a notification will cause the notification to disappear from a user's device without their intervention. Cancelled notifications cannot be recovered, will be deleted after 30 days and appear in the notification list with a red "Cancelled" tag.
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>

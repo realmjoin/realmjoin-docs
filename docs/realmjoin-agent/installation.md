@@ -17,9 +17,9 @@ RealmJoin directly integrates with your Microsoft Intune tenant. No downloading 
 2.  Select the RealmJoin Agent on the banner\
 
 
-    <figure><img src="../.gitbook/assets/image (312).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (312).png" alt=""><figcaption></figcaption></figure>
 3. Select your preferred deployment method and click "Continue"\
-   ![](<../.gitbook/assets/image (313).png>)
+   ![](<../../.gitbook/assets/image (313).png>)
 4. Add users to the managed app groups for RealmJoin or directly on Intune, depending on preference
 5. Intune will automatically deploy the RealmJoin Agent after some time
 
@@ -33,30 +33,30 @@ Use the following instructions to deploy the RealmJoin Agent:
 
 1. Navigate to **Microsoft Intune** and select **Apps > All Apps**
 
-<figure><img src="../.gitbook/assets/image (311).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (311).png" alt=""><figcaption></figcaption></figure>
 
 2. Then click **+ Add**
 3. Under **Other** choose **Line-of-business-app** and click **Select**
 
-![](<../.gitbook/assets/image (236).png>)
+![](<../../.gitbook/assets/image (236).png>)
 
 4. Next click **Select app package file**
 5. As **App package file** browse for **RealmJoin.msi** on your device
 
-![](<../.gitbook/assets/image (139).png>)
+![](<../../.gitbook/assets/image (139).png>)
 
 6. Then, click **OK**
 7. Under **App information** fill in all required fields and set **Ignore app version** to **Yes**
 
-![](<../.gitbook/assets/image (216).png>)
+![](<../../.gitbook/assets/image (216).png>)
 
 8. Under **Assignments** add groups and users for your RealmJoin app
 
-![](<../.gitbook/assets/image (152).png>)
+![](<../../.gitbook/assets/image (152).png>)
 
 9. Under **Review + create** check all your settings
 
-![](<../.gitbook/assets/image (121).png>)
+![](<../../.gitbook/assets/image (121).png>)
 
 10. Finally click **Create**
 
@@ -127,5 +127,5 @@ reamjoin.exe -install
 
 The RealmJoin.MSI is SHA2 (256 bit) signed by RealmJoin and therefore recognized by Windows as safe to install.
 
-![](<../.gitbook/assets/image (227).png>)
+![](<../../.gitbook/assets/image (227).png>)
 

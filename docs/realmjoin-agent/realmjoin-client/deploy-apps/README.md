@@ -6,7 +6,7 @@ When deploying packages/configurations via RealmJoin Agent notifications inform 
 
 The following screen shows the RealmJoin toast notification. It appears in the Windows notification center:
 
-![Package Installation Popup](<../../../.gitbook/assets/image (53).png>)
+![Package Installation Popup](<../../../../.gitbook/assets/image (53).png>)
 
 This screen shows a customizable **hero image** (for more information about hero images, click [here](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts#hero-image))
 
@@ -16,7 +16,7 @@ You also see a progress bar and an **Auto Install...** countdown. You can snooze
 
 The following setting does define the hero image:
 
-<figure><img src="../../../.gitbook/assets/image (309).png" alt=""><figcaption><p>Hero Image Configuration</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (309).png" alt=""><figcaption><p>Hero Image Configuration</p></figcaption></figure>
 
 Be aware of size limitations and that the file name must match the sha value of the file.
 

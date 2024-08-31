@@ -21,7 +21,7 @@ Every object's detail page will show an overview of the core properties such as
 
 The object properties are static and be visible in any tab.
 
-![Core Object Properties](<../.gitbook/assets/image (74).png>)
+![Core Object Properties](<../../.gitbook/assets/image (74).png>)
 
 The right side of the screen shows the current tab, which can be&#x20;
 
@@ -33,7 +33,7 @@ The right side of the screen shows the current tab, which can be&#x20;
 
 RealmJoin offers operators the ability to automate day to day tasks using [Runbooks](../automation/runbooks/). RealmJoin Portal offers context specific runbooks on tenant, device, group and user level via a separate tab.
 
-![Runbook Tab](<../.gitbook/assets/2022-02-07 Runbooks tab.png>)
+![Runbook Tab](<../../.gitbook/assets/2022-02-07 Runbooks tab.png>)
 
 ### Data sources
 
@@ -41,7 +41,7 @@ RealmJoin Portal collects information from multiple sources. You can review the 
 
 Raw source data is only available to RealmJoin administrators.
 
-![Raw JSON Source Data](<../.gitbook/assets/2022-02-07 json source.png>)
+![Raw JSON Source Data](<../../.gitbook/assets/2022-02-07 json source.png>)
 
 
 
