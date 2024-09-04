@@ -1,10 +1,8 @@
 # Overview
 
-![](<../../.gitbook/assets/image (267).png>)
-
 RealmJoin Portal's Settings allows administrators to customize their experience, manage RealmJoin features and integrate with Azure resources.
 
-
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ## Navigation
 
