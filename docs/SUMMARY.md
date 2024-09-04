@@ -75,7 +75,7 @@
 
 * [Overview](realmjoin-settings/settings.md)
 * [General](realmjoin-settings/general.md)
-* [Permission](realmjoin-settings/permission.md)
+* [Permissions](realmjoin-settings/permission.md)
 * [Group Namespaces](realmjoin-settings/groups.md)
 * [Workplace Cloud Storage](realmjoin-settings/workplace-cloud-storage.md)
 * [Self Service Forms](realmjoin-settings/self-service-forms.md)
