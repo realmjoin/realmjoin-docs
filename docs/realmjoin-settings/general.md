@@ -29,8 +29,6 @@ See [Package Details](../app-management/package-management/package-details.md#au
 
 RealmJoin Portal can dynamically create and manage Entra groups for features like [package assignment](../app-management/package-management/package-details.md#assignments) and [remediation script assignment](../automation/remediation-scripts.md#assignment).
 
-Be aware that there is no "Save" button. Changes will automatically be saved.
-
 ### App / Package Deployment
 
 RealmJoin can create assignment groups for Intune and RealmJoin Client packages. Use this to define the naming pattern the groups.
