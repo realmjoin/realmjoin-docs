@@ -26,7 +26,6 @@ The required log files needed for troubleshooting failed installations reside in
 * `%LOCALAPPDATA%\RealmJoin\tray*.log`
 * `%LOCALAPPDATA%\RealmJoin\Logs`
 * `C:\ProgramData\chocolatey\logs\`
-* `C:\Users\Public\Documents\RealmJoin`
 
 Please always provide the ZIP file containing the logs with any service request raised to the RealmJoin support.
 
