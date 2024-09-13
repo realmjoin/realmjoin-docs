@@ -79,39 +79,7 @@ If a "preview" version of the package is deployed, you can see it here. Otherwis
 
 If this is a package sourced from the [package store](../package-store/), a link to the [packages store details page](../package-store/package-store-details.md) will be given.
 
-## Assignments
 
-In the [Overview tab](package-details.md#overview-assignment), you can manage assignments of this package/application to users.
-
-![Package Assignments](<../../../.gitbook/assets/image (56).png>)
-
-### Assignment Settings
-
-For RealmJoin Client Packages, individual assignments can carry settings, modifying the packages deployment behavior.
-
-<figure><img src="../../../.gitbook/assets/image (254).png" alt=""><figcaption><p>Assignment Settings Option</p></figcaption></figure>
-
-<figure><img src="../../../.gitbook/assets/image (244).png" alt=""><figcaption><p>Assignment Settings</p></figcaption></figure>
-
-### Groups
-
-For supported application types, especially **managed packages**, you will see the package's Entra ID groups which can be used to assign applications to users or to trigger an uninstallation.
-
-You can click the group name to enter the group's details and add/remove users to the group.
-
-## Update Groups
-
-RealmJoin allows to automatically "onboard" loose installations of a software title into management.&#x20;
-
-Click **Enable Update Group** and a new EntraID Group with the suffix "(update)" will be created and software installations also assigned to this group.&#x20;
-
-RealmJoin will dynamically discover installed copies of the software that are unmanaged and add the device it has been discovered on to the update group.
-
-<figure><img src="../../.gitbook/assets/app-deploy-1.png" alt=""><figcaption><p>Enable an Update Group</p></figcaption></figure>
-
-Thus, new version of this software will also be installed on these devices to assert deployment of security patches across your environment.
-
-<figure><img src="../../.gitbook/assets/app-deploy-2.png" alt=""><figcaption><p>Update Group Enabled</p></figcaption></figure>
 
 ## Deployment Status
 

@@ -101,7 +101,7 @@ This tab will show the long description, license and technical help information 
 
 #### Subscribe / Provisioning
 
-This tab also shows the Subscribe-Buttons for this package. See [Subscribe to Package](package-deployment.md).
+This tab also shows the Subscribe-Buttons for this package. See [Subscribe to Package](../package-management/package-deployment.md).
 
 ### Changelog
 
