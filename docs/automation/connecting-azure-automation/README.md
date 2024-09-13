@@ -85,7 +85,7 @@ The command will return multiple values. Please note down the values for `appId`
 
 You can review the resulting App Registration in Entra ID. It will be named "RealmJoin Runbook Management".
 
-![App Regsitrations in Azure Portal](<../../../.gitbook/assets/image (259).png>)
+![App Registrations in Azure Portal](<../../../.gitbook/assets/image (259).png>)
 
 ### Entering Information - Part 2
 

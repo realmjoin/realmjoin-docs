@@ -6,7 +6,7 @@
 Brand new video tutorial
 {% endembed %}
 
-<figure><img src="../../../.gitbook/assets/image (310).png" alt=""><figcaption><p>Package Details</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (310).png" alt=""><figcaption><p>Package Details</p></figcaption></figure>
 
 This page will show detailed information for a single package from the package store and allows to provision this package to your environment.
 
@@ -43,7 +43,7 @@ Every package's details page will show an overview of the core properties such a
 
 Also displayed on the left side of the screen are four status fields for a package, displayed as tags below the package name and publisher name.
 
-![](<../../../.gitbook/assets/image (112).png>)
+![](<../../../../.gitbook/assets/image (112).png>)
 
 These fields are binary - they are set to one of two possible values. The text of each field changes accordingly. Some of the fields are also color-coded for easier glanceability.
 
@@ -71,7 +71,7 @@ Does this software need a commercial license to be used?
 
 If available, a link to this software title's [MS Security Center Software Inventory (TVM)](https://security.microsoft.com/software-inventory/applications)'s entry will be displayed. There you can check for known security issues and outdated versions of this software in your organization.
 
-![An Application's TVM Entry](<../../../.gitbook/assets/image (104).png>)
+![An Application's TVM Entry](<../../../../.gitbook/assets/image (104).png>)
 
 An appropriate license from Microsoft is needed to access TVM.
 
@@ -79,7 +79,7 @@ This page allows to examine your current security posture, incl. installed versi
 
 ### Version
 
-![Available Version vs Provisioned Package](<../../../.gitbook/assets/image (250).png>)
+![Available Version vs Provisioned Package](<../../../../.gitbook/assets/image (250).png>)
 
 Also displayed on the left side of the screen is the version of the software package.
 
@@ -93,7 +93,7 @@ The following tabs are available:
 
 ### Overview / Subscribe
 
-<figure><img src="../../../.gitbook/assets/image (333).png" alt=""><figcaption><p>Overview and Provisioning</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (333).png" alt=""><figcaption><p>Overview and Provisioning</p></figcaption></figure>
 
 #### Title, Description and other info
 
@@ -107,7 +107,7 @@ This tab also shows the Subscribe-Buttons for this package. See [Subscribe to Pa
 
 The package's changelog shows when the packages has been updated in RealmJoin's repository plus a short description of changes.
 
-<figure><img src="../../../.gitbook/assets/image (334).png" alt=""><figcaption><p>App Package Changelog</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (334).png" alt=""><figcaption><p>App Package Changelog</p></figcaption></figure>
 
 ### RealmJoin Store
 

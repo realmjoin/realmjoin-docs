@@ -10,7 +10,7 @@ This will make sure, you have the current state of our runbooks, incl. bugfixes 
 
 ## Package Automation Defaults
 
-If you source packages from RealmJoin's [Package Store](../app-management/package-store/), you can use [automation ](../app-management/package-management/package-details.md#automation)to keep these packages always up to date.
+If you source packages from RealmJoin's [Package Store](../app-management/packages/package-store/), you can use [automation ](../app-management/packages/package-management/package-details.md#automation)to keep these packages always up to date.
 
 ![Automation defaults for a package](<../../.gitbook/assets/image (177).png>)
 
@@ -23,11 +23,11 @@ The settings are:
 * **AutoDeployAtNight** - Schedule automatic deployment during night time
 * **Select target timezone** - If you use AutoDeployAtNight, use this Time Zone to indicate when "at night" is.
 
-See [Package Details](../app-management/package-management/package-details.md#automation) for more information on Package Automation.
+See [Package Details](../app-management/packages/package-management/package-details.md#automation) for more information on Package Automation.
 
 ## Group Naming Scheme
 
-RealmJoin Portal can dynamically create and manage Entra groups for features like [package assignment](../app-management/package-management/package-details.md#assignments) and [remediation script assignment](../automation/remediation-scripts.md#assignment).
+RealmJoin Portal can dynamically create and manage Entra groups for features like [package assignment](../app-management/packages/package-management/package-details.md#assignments) and [remediation script assignment](../automation/remediation-scripts.md#assignment).
 
 ### App / Package Deployment
 

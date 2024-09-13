@@ -1,6 +1,6 @@
 # Package Store
 
-<figure><img src="../../../.gitbook/assets/24-06-26-13_42_07_chrome.png" alt=""><figcaption><p>The RealmJoin Store</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/24-06-26-13_42_07_chrome.png" alt=""><figcaption><p>The RealmJoin Store</p></figcaption></figure>
 
 RealmJoin Portal provides and maintains a large library of ready-to-use packages, easily deployable using either the RealmJoin Client or Intune.
 
@@ -47,4 +47,4 @@ This section is only available for selected ADM accounts. If you can see it, you
 
 ### Full vs. Limited Catalogue of Packages
 
-If you recently self-onboarded into RealmJoin or do not have a subscription/licensing agreement yet, the list of software packages will be limited to a free-to-use subset of packages. Please [contact us](../../legal/support.md) to enable the full catalogue of packages for your organization.
+If you recently self-onboarded into RealmJoin or do not have a subscription/licensing agreement yet, the list of software packages will be limited to a free-to-use subset of packages. Please [contact us](../../../legal/support.md) to enable the full catalogue of packages for your organization.

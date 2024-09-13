@@ -30,12 +30,12 @@ The configuration and assignment of application packages and RealmJoin settings 
 
 In general, it is possible to keep using the same package handling as before, but we recommend using the additional features.&#x20;
 
-* Intunewin vs RealmJoin agent: With vNext, all applications are also available to be deployed via Intune. We highly recommend not to mix up both deployment options, and recommend staying with the RealmJoin agent driven deployment as it offers more features. For details see [package types](../app-management/package-store/#package-types).&#x20;
+* Intunewin vs RealmJoin agent: With vNext, all applications are also available to be deployed via Intune. We highly recommend not to mix up both deployment options, and recommend staying with the RealmJoin agent driven deployment as it offers more features. For details see [package types](../app-management/packages/package-store/#package-types).&#x20;
 * Basic vs managed: Packages can be subscribed as _managed_ or _basic_ subscriptions. _Basic_ subscriptions are similar to subscriptions in the RealmJoin Classic portal, while _managed_ subscriptions offer more features and a full automated lifecycle. As the latter are optional, we highly recommend to subscribe all packages as _managed_.&#x20;
 * Multiple configurations: As managed subscriptions create and handle the related assignment groups, having multiple configurations of the same package is handled differently to basic subscriptions. Instead of assigning the package to N groups with varying configurations, the package is subscribed N times. Please also change the package name during the first subscription step, to allow clearer management. E.g.: Instead of one package _Adobe Reader_ which is assigned to the groups _Adobe Reader EN_ and _Adobe Reader DE_ with corresponding configurations, we suggest to subscribe and rename to have a package _Adobe Reader EN_ and one package _Adobe Reader DE._ With the automation features, the maintenance is not increasing significantly.&#x20;
 * User or device assignment: In vNext, RealmJoin features user or device group assignment. We recommend not to mix those and use device groups for classic _DEM_ scenarios.
 
-Please see the [package deployment](../app-management/package-management/package-deployment.md) section in the documentation for more details.
+Please see the [package deployment](../app-management/packages/package-management/package-deployment.md) section in the documentation for more details.
 
 {% hint style="info" %}
 Note: Intunewin deployment options might not be available from the start and need to be activated by glueckkanja, based on the licensing model.

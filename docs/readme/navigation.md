@@ -22,17 +22,9 @@ This will give you information about your Azure tenant, recent application updat
 
 "Users" includes normal users, Entra ID guests as well as Exchange room and shared mailboxes.
 
-### ![](<../../.gitbook/assets/image (221).png>) [User Settings](../ugd-management/user-and-group-settings/)
-
-Here you can review RealmJoin Client Settings applied to specific users.
-
 ### ![](../../.gitbook/assets/group.png) [Groups](../ugd-management/user-list/)
 
 "Groups" includes regular Entra ID groups, Teams in Microsoft Teams, Offce365 groups as well as Exchange distribution groups.
-
-### ![](<../../.gitbook/assets/image (170).png>)[ Group Settings](../ugd-management/user-and-group-settings/)
-
-Here you can review RealmJoin Client Settings applied to specific groups.
 
 ### ![](../../.gitbook/assets/device.png) [Devices](../ugd-management/user-list/)
 
@@ -42,13 +34,13 @@ Here you can review RealmJoin Client Settings applied to specific groups.
 
 Review and manage Intune Remediation Scripts. You can leverage premade templates from our repository.
 
-## [Application Management](../app-management/package-store/)
+## [Application Management](broken-reference)
 
-### ![](../../.gitbook/assets/packages.png) [Your active application packages](../app-management/package-management/)
+### ![](../../.gitbook/assets/packages.png) [Packages](../app-management/packages/package-management/)
 
 The list of current applications can include custom Intune (MS Endpoint Manager) packages, managed Intune packages from RealmJoin's application store and RealmJoin Classic packages.
 
-### ![](../../.gitbook/assets/appstore.png) [RealmJoin's App Store](../app-management/package-store/)
+### ![](../../.gitbook/assets/appstore.png) [Package Store](../app-management/packages/package-store/)
 
 In the store you can search for and import ready-to-use application packages into your Intune environment. No packaging needed.
 
@@ -56,23 +48,23 @@ In the store you can search for and import ready-to-use application packages int
 
 Use RealmJoin Client to prepare VMs/system images without a user logging in.
 
-### ![](<../../.gitbook/assets/image (149).png>) Application/Packaging Submission
+### ![](<../../.gitbook/assets/image (149).png>) [Request Package](../app-management/packages/packaging-requests/)
 
 Upload your own sources/software package description to RealmJoin's "Packaging as a Service" offerings.
 
 ## [Self Service Forms](../realmjoin-settings/self-service-forms.md)
 
-### ![](<../../.gitbook/assets/image (185).png>) [Submit a Form](../realmjoin-settings/self-service-forms.md#using-forms)
+### ![](<../../.gitbook/assets/image (185).png>) [Self Service Form](../realmjoin-settings/self-service-forms.md#using-forms)
 
 Users can report incidents or request equipment using forms. See [Self Service Forms](../realmjoin-settings/self-service-forms.md) for more information.
 
-### ![](<../../.gitbook/assets/image (271).png>) [Review recent Form Submissions](../realmjoin-settings/self-service-forms.md#review-submissions)
+### ![](<../../.gitbook/assets/image (271).png>) [Self Service Form History](../realmjoin-settings/self-service-forms.md#review-submissions)
 
 See a list of recent form submissions and review senders and submission contents.
 
 ## Other
 
-### ![](../../.gitbook/assets/jobs.png) [Runbook Logs](../automation/runbooks/runbook-logs/)
+### ![](../../.gitbook/assets/jobs.png) [Runbook Jobs](../automation/runbooks/runbook-logs/)
 
 See the results and logfiles/output of recent [Process Automation](../automation/runbooks/) tasks
 

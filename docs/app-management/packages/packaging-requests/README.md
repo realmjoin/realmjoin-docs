@@ -23,7 +23,7 @@ If an application is required in a newer version than available in the RealmJoin
 Note: Additional switches, new parameters or configuration files for an existing package are considered updates and shall be requested the identical way.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (307).png" alt=""><figcaption><p>RealmJoin packaging request form</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (307).png" alt=""><figcaption><p>RealmJoin packaging request form</p></figcaption></figure>
 
 
 

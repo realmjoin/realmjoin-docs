@@ -24,29 +24,29 @@ The user gains access to to [Settings](../settings.md)
 
 ### CanReadAppTable
 
-The user gains read access to [Package Management](../../app-management/package-management/) (Package Management List). This does not grant permission to the package details.
+The user gains read access to [Package Management](../../app-management/packages/package-management/) (Package Management List). This does not grant permission to the package details.
 
 ### CanReadIntuneAppDetails
 
 **Given**:
 
-* User has access [Package Management](../../app-management/package-management/)&#x20;
+* User has access [Package Management](../../app-management/packages/package-management/)&#x20;
 
-The user gains read only access to Intune packages / [package details](../../app-management/package-management/package-details.md).
+The user gains read only access to Intune packages / [package details](../../app-management/packages/package-management/package-details.md).
 
 ### CanReadRealmJoinAppDetails
 
 **Given**:
 
-* User has access [Package Management](../../app-management/package-management/)&#x20;
+* User has access [Package Management](../../app-management/packages/package-management/)&#x20;
 
-The user gains read only access to RealmJoin Client packages / [package details](../../app-management/package-management/package-details.md).
+The user gains read only access to RealmJoin Client packages / [package details](../../app-management/packages/package-management/package-details.md).
 
 ### CanChangeAppAssignments
 
 **Given**:
 
-* User has access to [Package Details](../../app-management/package-management/package-details.md)
+* User has access to [Package Details](../../app-management/packages/package-management/package-details.md)
 
 The user gains the ability to add/remove user or group assignments in a packages details. &#x20;
 
@@ -54,31 +54,31 @@ The user gains the ability to add/remove user or group assignments in a packages
 
 **Given**:
 
-* User has access to [Package Details](../../app-management/package-management/package-details.md)
+* User has access to [Package Details](../../app-management/packages/package-management/package-details.md)
 
-On RealmJoin Client Packages, the option to change [per assignment settings](../../app-management/package-management/package-details.md#assignment-settings) will be shown and users can modify the settings.
+On RealmJoin Client Packages, the option to change [per assignment settings](../../app-management/packages/package-management/package-details.md#assignment-settings) will be shown and users can modify the settings.
 
 ### CanEditAppArgs&#x20;
 
 **Given**:
 
-* User has access to [Package Details](../../app-management/package-management/package-details.md)
+* User has access to [Package Details](../../app-management/packages/package-management/package-details.md)
 
-The user gains the ability to modify an app's command line arguments in [Package Details](../../app-management/package-management/package-details.md).
+The user gains the ability to modify an app's command line arguments in [Package Details](../../app-management/packages/package-management/package-details.md).
 
 ### CanEditAppAutomation&#x20;
 
 **Given**:
 
-* User has access to [Package Details](../../app-management/package-management/package-details.md)
+* User has access to [Package Details](../../app-management/packages/package-management/package-details.md)
 
-The user gains the ability to modify an [Intune app's automation](../../app-management/package-management/package-details.md#automation) settings ( = If and when newer versions of the package from the store will be automatically rolled out to existing users.)&#x20;
+The user gains the ability to modify an [Intune app's automation](../../app-management/packages/package-management/package-details.md#automation) settings ( = If and when newer versions of the package from the store will be automatically rolled out to existing users.)&#x20;
 
 ### CanEditAppDisplayName&#x20;
 
 **Given**:
 
-* User has access to [Package Details](../../app-management/package-management/package-details.md)
+* User has access to [Package Details](../../app-management/packages/package-management/package-details.md)
 
 The user gains the ability to modify an app's display name.
 
@@ -86,25 +86,25 @@ The user gains the ability to modify an app's display name.
 
 **Given**:
 
-* User has access to [Package Details](../../app-management/package-management/package-details.md)
+* User has access to [Package Details](../../app-management/packages/package-management/package-details.md)
 
-The user gains the ability to modify an [app's expert settings](../../app-management/package-management/package-details.md#expert-settings).
+The user gains the ability to modify an [app's expert settings](../../app-management/packages/package-management/package-details.md#expert-settings).
 
 ### CanEditAppTechnicalApplicationOwners&#x20;
 
 **Given**:
 
-* User has access to [Package Details](../../app-management/package-management/package-details.md)
+* User has access to [Package Details](../../app-management/packages/package-management/package-details.md)
 
-The user gains the ability to modify an app's Technical App. Owners in [Config](../../app-management/package-management/package-details.md#config).
+The user gains the ability to modify an app's Technical App. Owners in [Config](../../app-management/packages/package-management/package-details.md#config).
 
 ### CanDeleteApp
 
 **Given**:
 
-* User has access to [Package Details](../../app-management/package-management/package-details.md)
+* User has access to [Package Details](../../app-management/packages/package-management/package-details.md)
 
-The user gains the ability to delete an app from a [Package Management](../../app-management/package-management/). This will not remove an app from the package store and will not trigger uninstallations on existing deployments.
+The user gains the ability to delete an app from a [Package Management](../../app-management/packages/package-management/). This will not remove an app from the package store and will not trigger uninstallations on existing deployments.
 
 ### CanRequestSoftware
 
@@ -126,11 +126,11 @@ The software deployment will not be tested by RealmJoin.
 
 The user gains the ability to submit a software packaging request to RealmJoin.
 
-The software will be packaged by RealmJoin and will become available for consumption through the [Package Store](../../app-management/package-store/).
+The software will be packaged by RealmJoin and will become available for consumption through the [Package Store](../../app-management/packages/package-store/).
 
 ### CanReadPackageStoreTable
 
-The user gains access to the [Package Store](../../app-management/package-store/) (Package Store List).
+The user gains access to the [Package Store](../../app-management/packages/package-store/) (Package Store List).
 
 This does not grant permission to the package details or to subscribe to an app.
 
@@ -152,7 +152,7 @@ Allow the user to subscribe to an offering from package store.
 
 ### CanSeeIntuneAppJson, CanSeeIntuneAppStoreJson, CanSeeRealmJoinAppJson, CanSeeRealmJoinAppStoreJson
 
-Allow to see additional, diagnostic JSON information for a package in [Package Store](../../app-management/package-store/) or [Package Management](../../app-management/package-management/).&#x20;
+Allow to see additional, diagnostic JSON information for a package in [Package Store](../../app-management/packages/package-store/) or [Package Management](../../app-management/packages/package-management/).&#x20;
 
 ## User Management
 

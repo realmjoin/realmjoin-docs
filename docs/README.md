@@ -18,7 +18,7 @@ Searching for the **RealmJoin Classic Documentation?** [Click here](https://docs
 
 RealmJoin offers functionality in the following key areas
 
-* [Application Management](app-management/package-store/) - Integrates into Microsoft Intune and offers a ready to use catalogue of common software packages
+* [Application Management](app-management/packages/package-store/) - Integrates into Microsoft Intune and offers a ready to use catalogue of common software packages
 * [User, Group and Device Management](ugd-management/user-group-device-management.md) - Integrates into Microsoft Entra ID and allows interaction with objects + LAPS
 * [Process Automation](automation/runbooks/) - Leverage Azure Automation to simplify everyday IT operational tasks
 
