@@ -15,6 +15,12 @@
   1. Open an elevated PowerShell
   2. Run `Reset-BC -Force`
 
+{% hint style="info" %}
+We strongly recommend deploying the **Reset or Clear BranchCache** Remediation Script with a daily schedule. It can be found in the [Remediation Scripts](../../../automation/remediation-scripts.md) section of the RealmJoin Portal.&#x20;
+
+By using this method the above mentioned BranchCache issues will proactively be detected and automatically remediated (if possible).
+{% endhint %}
+
 ## Missing / wrong Package arguments <a href="#user-content-missing-wrong-package-arguments" id="user-content-missing-wrong-package-arguments"></a>
 
 1. Check the `chocolatey.log` file for the value(s) of `packageParameters` in the section `RJAppDeployToolkit: Resulting Variables`
