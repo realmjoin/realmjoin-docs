@@ -6,7 +6,7 @@ description: Step by step guide to use RealmJoin Portal in a new tenant
 
 ## Self-onboard RealmJoin Portal
 
-#### App Permissions
+### App Permissions
 
 First we start to connect the **RealmJoin Portal**
 
@@ -44,7 +44,7 @@ First we start to connect the **RealmJoin Portal**
 
 10. Copy the shown script via 'Copy to clipboard' to the clipboard and open a PowerShell 7 ([Download](https://github.com/PowerShell/PowerShell/releases)). Copy the clipboard text to the PowerShell and Run the script.\
     \
-    **PowerShell 7 is needed as the Modul 'Microsoft.Graph' used in the script works only flawlessly in PowerShell 7!**
+    **PowerShell 7 is needed as the Module 'Microsoft.Graph' used in the script works only flawlessly in PowerShell 7!**
 
 <figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
@@ -74,11 +74,19 @@ First we start to connect the **RealmJoin Portal**
 
 👌 RealmJoin Portal is now successful connected!
 
+## Additional Permissions
+
 Depending on the feature set you are going to use there are several additional permissions which can be granted.
 
 * **RealmJoin Client App**
 * **Security Features**
 * **Optional Permissions**
+
+
+
+### RealmJoin Client App
+
+Activating permissions for the RealmJoin Client app will unlock an array of features exclusive to the [RealmJoin Agent](../realmjoin-agent/realmjoin-client/).
 
 Let's connect the **RealmJoin Client app** to get the RealmJoin Agent working.
 
@@ -93,6 +101,10 @@ Let's connect the **RealmJoin Client app** to get the RealmJoin Agent working.
 3. The RealmJoin Client app will now show a button with 'Reactivate'. This indicates everything is ready.
 
 <figure><img src="../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+
+
+
+### Security Features
 
 Now connect the optional **Security features** (an existing Microsoft Defender for Endpoint subscription is needed for this)
 
@@ -109,6 +121,10 @@ Now connect the optional **Security features** (an existing Microsoft Defender f
 <figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
 4. You might not see all detailed permissions listed under **RealmJoin client app** and **Security features** as the tokens behind this are not yet issued. This is not an error and normal in the beginning.
+
+
+
+### Optional Features
 
 There are several optional permissions which can be granted individually. The same way as we have already done it for the RealmJoin Portal app. As an example here the step-by-step walkthrough for Intune LAPS. The procedure is identical for all other Optional permissions.
 
@@ -140,16 +156,16 @@ There are several optional permissions which can be granted individually. The sa
 
 <figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
-8. On the feature page you can see the optional Intune LAPS permission is now granted
+8. On the feature page you can see the optional Intune LAPS permission is now granted. Repeat this for all other optional permission to get full functionality of RealmJoin.
 
 <figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
 
-Repeat this for all other optional permission to get full functionality of RealmJoin.
+### Permission Revocation
 
 To Revoke a permission simply click on the 'Revoke' link next to the permission and execute the upcoming script again. Instead of granting permission the script template will now remove the permission. With this approach a granular control of the permissions for RealmJoin is given.
 
 
 
-Next steps
+## Next steps
 
 If you want to use [runbooks](../automation/runbooks/) to automate daily operations, please continue by connecting to [Azure Automation](../automation/connecting-azure-automation/).
