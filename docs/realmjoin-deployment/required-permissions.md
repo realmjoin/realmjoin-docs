@@ -20,13 +20,13 @@ These permissions are required for basic functionality of the app per user.
 
 The following permissions are from type "Delegated" and are mainly used for login to the Portal.
 
-| Claim           | Usage                                       |
-| --------------- | ------------------------------------------- |
-| User.Read       | Sign in and reading basic user properties   |
-| profile         | Reading user info (name, picture, username) |
-| email           | Reading user info (email address)           |
-| openid          | Sign in / authentication                    |
-| offline\_access | Keep persisting data per user               |
+| Claim            | Usage                                       |
+| ---------------- | ------------------------------------------- |
+| `User.Read`      | Sign in and reading basic user properties   |
+| `profile`        | Reading user info (name, picture, username) |
+| `email`          | Reading user info (email address)           |
+| `openid`         | Sign in / authentication                    |
+| `offline_access` | Keep persisting data per user               |
 
 You can read more about MS Graph permissions here.
 
@@ -46,19 +46,19 @@ If you onboard **RealmJoin Core Features (Read-Only)** features, it will onboard
 
 The following table reflects the permissions (type Application permissions) if Administrative Units (AU) **are not used**. Some of the permissions are optional, please refer to your onboarding agent to adopt the consent to your needs.
 
-| Claim                                                   | Usage                                                                  |
-| ------------------------------------------------------- | ---------------------------------------------------------------------- |
-| User.Read.All                                           | List / display users as well as user self-services                     |
-| Device.Read.All                                         | Interact with devices and device management                            |
-| Group.ReadWrite.All                                     | List / display groups as well as application group management          |
-| GroupMember.ReadWrite.All                               | Manage application assignment group memberships                        |
-| AuditLog.Read.All                                       | Read last sign-in date of users and devices                            |
-| DeviceManagementServiceConfig.Read.All                  | Manage / automate software deployment and device management via Intune |
-| DeviceManagementManagedDevices.PrivilegedOperations.All | Trigger device management tasks like "Scan Device"                     |
-| DeviceManagementManagedDevices.Read.All                 | Manage / automate software deployment and device management via Intune |
-| DeviceManagementConfiguration.ReadWrite.All             | Manage Device Health Scripts                                           |
-| DeviceManagementApps.ReadWrite.All                      | Manage / automate software deployment via Intune                       |
-| AdministrativeUnit.Read.All (optional)                  | Needed when AU are used.                                               |
+| Claim                                                     | Usage                                                                  |
+| --------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `User.Read.All`                                           | List / display users as well as user self-services                     |
+| `Device.Read.All`                                         | Interact with devices and device management                            |
+| `Group.ReadWrite.All`                                     | List / display groups as well as application group management          |
+| `GroupMember.ReadWrite.All`                               | Manage application assignment group memberships                        |
+| `AuditLog.Read.All`                                       | Read last sign-in date of users and devices                            |
+| `DeviceManagementServiceConfig.Read.All`                  | Manage / automate software deployment and device management via Intune |
+| `DeviceManagementManagedDevices.PrivilegedOperations.All` | Trigger device management tasks like "Scan Device"                     |
+| `DeviceManagementManagedDevices.Read.All`                 | Manage / automate software deployment and device management via Intune |
+| `DeviceManagementConfiguration.ReadWrite.All`             | Manage Device Health Scripts                                           |
+| `DeviceManagementApps.ReadWrite.All`                      | Manage / automate software deployment via Intune                       |
+| `AdministrativeUnit.Read.All` (optional)                  | Needed when AU are used.                                               |
 
 ### RealmJoin Portal - Security Features&#x20;
 
@@ -74,10 +74,10 @@ This app is responsible for the client application (RealmJoin Agent) (type Deleg
 
 ### API Permissions
 
-| Claim                 | Usage                                                                         |
-| --------------------- | ----------------------------------------------------------------------------- |
-| User.Read (Delegated) | Client Application: Used by RealmJoin Agent                                   |
-| User.Read.All         | Classic Portal: List / display users                                          |
-| Device.Read.All       | Classic Portal: Interact with devices and device management                   |
-| Group.Read.All        | Classic Portal: List / display groups as well as application group management |
+| Claim                   | Usage                                                                         |
+| ----------------------- | ----------------------------------------------------------------------------- |
+| `User.Read` (Delegated) | Client Application: Used by RealmJoin Agent                                   |
+| `User.Read.All`         | Classic Portal: List / display users                                          |
+| `Device.Read.All`       | Classic Portal: Interact with devices and device management                   |
+| `Group.Read.All`        | Classic Portal: List / display groups as well as application group management |
 
