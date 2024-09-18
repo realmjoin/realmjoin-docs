@@ -1,4 +1,6 @@
-# Package Deployment
+# Package Assignments
+
+{% embed url="https://www.youtube.com/watch?v=BdF3rvMbjFs" %}
 
 ## Subscription
 

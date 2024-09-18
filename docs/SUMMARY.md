@@ -30,7 +30,7 @@
     * [Application Store Details](app-management/packages/package-store/package-store-details.md)
   * [Package Management](app-management/packages/package-management/README.md)
     * [Package Details](app-management/packages/package-management/package-details.md)
-    * [Package Deployment](app-management/packages/package-management/package-deployment.md)
+    * [Package Assignments](app-management/packages/package-management/package-deployment.md)
   * [Packaging Requests](app-management/packages/packaging-requests/README.md)
     * [Organic Packages](app-management/packages/packaging-requests/organic-packages.md)
 * [AVD Templates](app-management/avd-templates.md)

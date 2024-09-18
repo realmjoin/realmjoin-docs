@@ -36,7 +36,7 @@ These runbooks are imported when you sync runbooks on the [General Settings](../
 
 Currently there are different git branches in this repository.&#x20;
 
-* **production** - The main branch for production use. These runbooks are best tested and we recommend using this branch.
+* **production** - The main branch for production use. These runbooks are thoroughly tested, and we recommend using this branch.
 * **master** - Early / Insider versions runbooks. These should be usable at any given time but are less well tested.
 * **feature-{...}** - Specific features can be tested ahead of time by using specific features branches as part of a private preview or beta testing. Not recommended for general use.
 

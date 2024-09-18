@@ -1,9 +1,5 @@
 # Package Details
 
-{% embed url="https://www.youtube.com/watch?v=BdF3rvMbjFs" %}
-Brand new video tutorial
-{% endembed %}
-
 ![Package Details Page](<../../../../.gitbook/assets/image (61).png>)
 
 This page will show detailed information for a single package in your environment and allows you to manage its assignment to users and updates.

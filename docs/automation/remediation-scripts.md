@@ -2,9 +2,9 @@
 
 ## Overview
 
-[Intune remediation scripts](https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations) allow you to report and react to problems on your managed indows clients using scripts.
+[Intune remediation scripts](https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations) allow you to report and react to problems on your managed Windows clients using scripts.
 
-RealmJoin Portal allows you to review Intune remediation scripts in your environmentdditionally  hosts a [set of managed and constantly updated scripts](https://github.com/realmjoin/realmjoin-remediation) for you to use in GitHub.
+RealmJoin Portal allows you to review Intune remediation scripts in your environment. Additionally, RealmJoin hosts a [set of managed and constantly updated scripts](https://github.com/realmjoin/realmjoin-remediation) for you to use in GitHub.
 
 ## Remediation Script List
 
