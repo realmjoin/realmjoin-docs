@@ -25,7 +25,7 @@ RealmJoin directly integrates with your Microsoft Intune tenant. No downloading 
 
 ## Manual Deployment using Microsoft Intune
 
-RealmJoin is able to be deploy through Microsoft Intune by deploying the MSI as a Line-of-Business app. This may be useful if you wish to deploy Beta or Canary versions using Intune.
+RealmJoin can be deployed through Microsoft Intune by deploying the MSI as a Line-of-Business app. This may be useful if you wish to deploy Beta or Canary versions using Intune.
 
 ### Intune Portal
 

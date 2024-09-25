@@ -36,7 +36,7 @@ Review and manage Intune Remediation Scripts. You can leverage premade templates
 
 ## [Application Management](broken-reference)
 
-### ![](../../.gitbook/assets/packages.png) [Packages](../app-management/packages/package-management/)
+### ![](../../.gitbook/assets/packages.png) [Packages](../app-management/packages/package-management.md)
 
 The list of current applications can include custom Intune (MS Endpoint Manager) packages, managed Intune packages from RealmJoin's application store and RealmJoin Classic packages.
 

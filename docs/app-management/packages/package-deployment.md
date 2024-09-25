@@ -6,7 +6,7 @@
 
 On the Overview Tab of a package, you will find buttons, that allow you to import the package from the store into your environment.
 
-<figure><img src="../../../../.gitbook/assets/image (331).png" alt=""><figcaption><p>Subscribe Buttons</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (331).png" alt=""><figcaption><p>Subscribe Buttons</p></figcaption></figure>
 
 They will create a Win32 software package in Intune when pressed. You have two options:
 
@@ -14,7 +14,7 @@ They will create a Win32 software package in Intune when pressed. You have two o
 
 When a Managed packed is chosen, RealmJoin will create Microsoft Entra groups to assign the application to users. These groups can be managed from both the RealmJoin Portal and Microsoft Entra ID. Managed deployment will automatically create four RealmJoin-managed groups:
 
-<figure><img src="../../../../.gitbook/assets/image (335).png" alt=""><figcaption><p>Application Groups</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (335).png" alt=""><figcaption><p>Application Groups</p></figcaption></figure>
 
 The created Entra ID groups can be managed from both the RealmJoin Portal and Microsoft Entra ID.&#x20;
 
@@ -28,13 +28,13 @@ RealmJoin or Intune will automatically install the application. These applicatio
 {% tab title="RealmJoin" %}
 The application will appear in the RealmJoin Agent tray and will require the user to initiate the download and installation
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Intune" %}
 The application will appear in Company Portal -> Apps and will require the user to initiate the download and installation
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 
@@ -52,11 +52,11 @@ Additionally, RealmJoin provides an Update group that is created on demand. The 
 
 Click **Enable Update Group** and a new EntraID Group with the suffix "(update)" will be created and software installations also assigned to this group. RealmJoin will dynamically discover installed copies of the software that are unmanaged and add the device it has been discovered on to the update group.
 
-<figure><img src="../../../.gitbook/assets/app-deploy-1.png" alt=""><figcaption><p>Enable an Update Group</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/app-deploy-1.png" alt=""><figcaption><p>Enable an Update Group</p></figcaption></figure>
 
 Thus, new version of this software will also be installed on these devices to assert deployment of security patches across your environment.
 
-<figure><img src="../../../.gitbook/assets/app-deploy-2.png" alt=""><figcaption><p>Update Group Enabled</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/app-deploy-2.png" alt=""><figcaption><p>Update Group Enabled</p></figcaption></figure>
 
 {% hint style="info" %}
 Managed packages are the preferred way to deploy software to your users. You can combine it with automated package updates and ensure your users receive latest features and patches.
@@ -70,7 +70,7 @@ Users and devices should only be in one RealmJoin managed group at any given tim
 
 Users and devices can easily be moved across groups using the Managed Users function.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 Selecting Main, Preview, Available and Uninstall will add the user to the chosen group and remove the user from all other groups relevant to the package.
 

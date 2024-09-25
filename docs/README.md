@@ -4,7 +4,7 @@ description: Application Lifecycle and Management Companion to Endpoint Manager
 
 # Welcome
 
-[RealmJoin ](https://realmjoin.com)is the perfect companion to Microsoft Endpoint Manager. Securely connect to the cloud and manage large Windows 10/11 ecosystems with software and policies as well as your Azure AD based user landscape - without any on premise servers or other local requirements. Manage devices and users no matter if work happens in corporate headquarter or at [Starbucks](https://www.starbucks.com).
+[RealmJoin ](https://realmjoin.com)is the perfect companion to Microsoft Endpoint Manager. Securely connect to the cloud and manage large Windows 10/11 ecosystems with software and policies as well as your Azure AD based user landscape - without any on premise servers or other local requirements. Manage devices and users no matter if work happens in corporate headquarters or at [Starbucks](https://www.starbucks.com).
 
 Visit [RealmJoin Portal](https://portal.realmjoin.com) to onboard your organization and start your journey.
 

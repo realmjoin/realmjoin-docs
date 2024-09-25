@@ -2,7 +2,7 @@
 
 ## Overview
 
-This page allows you to specify the components needed to interact with Azure Automation and enable the use of [Runbooks (Process Automation)](./).
+This page allows you to specify the components needed to interact with Azure Automation and enable the use of [Runbooks (Process Automation)](../runbooks/).
 
 ## Parameters
 

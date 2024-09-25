@@ -206,7 +206,7 @@ Body (Plaintext)
 ## Distribution Group 'Sales Team' has been created.
 ```
 
-### Reading specific Streams
+### Reading Specific Streams
 
 Use `/api/external/runbook/jobs/{jobID}/output/streams` to get a comprehensive json representation of the output of a runbook. This way you can access the `Output`, `Verbose` and `Error` stream. [Exceptions](interacting-with-runbooks.md#reading-exceptions) are handled separately.
 

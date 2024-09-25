@@ -1,6 +1,6 @@
 ---
 description: >-
-  To develop new runbooks, you might need to enable RealmJoin.RunbookHelper  to
+  To develop new runbooks, you might need to enable RealmJoin.RunbookHelper to
   authenticate as if you were running inside a Runbook.
 ---
 

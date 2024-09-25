@@ -83,7 +83,7 @@ This page allows to examine your current security posture, incl. installed versi
 
 Also displayed on the left side of the screen is the version of the software package.
 
-If you already provisioned the package to your environment, a link to the provisioned package in [Package Management](../package-management/) will be displayed. The link will show the name and version of the provisioned package.
+If you already provisioned the package to your environment, a link to the provisioned package in [Package Management](../package-management.md) will be displayed. The link will show the name and version of the provisioned package.
 
 ## Tabs
 
@@ -101,7 +101,7 @@ This tab will show the long description, license and technical help information 
 
 #### Subscribe / Provisioning
 
-This tab also shows the Subscribe-Buttons for this package. See [Subscribe to Package](../package-management/package-deployment.md).
+This tab also shows the Subscribe-Buttons for this package. See [Subscribe to Package](../package-deployment.md).
 
 ### Changelog
 

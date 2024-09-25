@@ -92,8 +92,10 @@ Navigating away from the Certificates & Secrets page will cause Azure to obfusca
 ### Part 3 - Enabling Windows Update for Business Reports
 
 1. In the Azure Portal, navigate to Monitor > Workbooks
-2. Search for "Windows Update for Business reports"\
-   ![](<../../.gitbook/assets/image (320).png>)
+2.  Search for "Windows Update for Business reports"\
+
+
+    <figure><img src="../../.gitbook/assets/image (320).png" alt=""><figcaption></figcaption></figure>
 3. Set your Subscription and the Workspace previously create. If a separate Workspace is preferred for RealmJoin logs and Windows Update for Business reports, create a separate Workspace and link instead.\
    ![](<../../.gitbook/assets/image (321).png>)
 4. Save Settings

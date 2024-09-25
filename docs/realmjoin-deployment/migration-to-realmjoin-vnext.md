@@ -35,7 +35,7 @@ In general, it is possible to keep using the same package handling as before, bu
 * Multiple configurations: As managed subscriptions create and handle the related assignment groups, having multiple configurations of the same package is handled differently to basic subscriptions. Instead of assigning the package to N groups with varying configurations, the package is subscribed N times. Please also change the package name during the first subscription step, to allow clearer management. E.g.: Instead of one package _Adobe Reader_ which is assigned to the groups _Adobe Reader EN_ and _Adobe Reader DE_ with corresponding configurations, we suggest to subscribe and rename to have a package _Adobe Reader EN_ and one package _Adobe Reader DE._ With the automation features, the maintenance is not increasing significantly.&#x20;
 * User or device assignment: In vNext, RealmJoin features user or device group assignment. We recommend not to mix those and use device groups for classic _DEM_ scenarios.
 
-Please see the [package deployment](../app-management/packages/package-management/package-deployment.md) section in the documentation for more details.
+Please see the [package deployment](../app-management/packages/package-deployment.md) section in the documentation for more details.
 
 {% hint style="info" %}
 Note: Intunewin deployment options might not be available from the start and need to be activated by glueckkanja, based on the licensing model.

@@ -4,7 +4,7 @@
 
 {% embed url="https://www.youtube.com/watch?v=Ijp9XnE8UuA" %}
 
-To enable RealmJoin Portal to offer [runbooks ](../runbooks/)to automate daily operations, you need to connect an [Azure Automation](https://learn.microsoft.com/en-us/azure/automation/overview) Account. This Automation Account will host your runbooks as well as the [permissions](../azure-ad-roles-and-permissions.md) needed for the runbooks to function in your environment.
+To allow RealmJoin Portal to provide [runbooks ](../runbooks/)for automating daily tasks, you need to connect an [Azure Automation](https://learn.microsoft.com/en-us/azure/automation/overview) Account. This Automation Account will host your runbooks as well as the [permissions](../azure-ad-roles-and-permissions.md) needed for the runbooks to function in your environment.
 
 This guide will help you to onboard either a new or existing Automation Account.
 
@@ -91,7 +91,9 @@ You can review the resulting App Registration in Entra ID. It will be named "Rea
 
 1. In RealmJoin Portal return to the open window/wizard for '[Settings -> Runbooks](https://portal.realmjoin.com/settings/runbooks-configuration)'.
 2. Continue filling in the missing values for `appId` and `password` we created in the [last step](./#granting-access-for-realmjoin-to-azure-automation). Also fill in the name of the Automation Account from [before](./#user-content-azure-automation-account).
-3. Choose the Branch of the shared runbook repository you want to follow, whether `master` or `production`. If unsure, please choose `production` as `master` will have more bleeding edge / preview runbooks in a less tested state.
+3. Choose the Branch of the shared runbook repository you want to follow. \
+   If unsure, please choose `production` \
+   All runbook branches may be viewed here: [https://github.com/realmjoin/realmjoin-runbooks](https://github.com/realmjoin/realmjoin-runbooks)
 4. Choosing the location to make sure your runbooks are executed in the correct [Azure region](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview).
 
 ![Automation Account Connection in RealmJoin Portal](<../../../.gitbook/assets/image (118).png>)

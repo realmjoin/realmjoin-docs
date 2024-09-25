@@ -2,11 +2,11 @@
 
 ## Overview
 
-Local Administrator Password Solution (short LAPS) will solve the issue of using an identical administrative credentials on every Windows computer for support and emergency purposes. On its own, LAPS creates a randomly generated password for a local admin account.
+Local Administrator Password Solution (LAPS) will solve the issue of using identical administrative credentials on every Windows computer for support and emergency purposes. On its own, LAPS creates a randomly generated password for a local admin account.
 
 With RealmJoin it is possible to manage secure and individualized administrative accounts, either for local support or remote support on a large scale. RealmJoin saves encrypted passwords in Azure Key Vault within the customer's tenant and stores audit logs of every access to these credentials.
 
-RealmJoin's API allows you to request a "Support Account" (local admin) for a given device in your tenant. See [RealmJoin's Swagger description](https://realmjoin-backend.azurewebsites.net/swagger/index.html#/LocalAdmin) to see, which operations are currently supported in detail. Using LAPS with RealmJoin requires the deployment of the RealJoin Windows Client.
+RealmJoin's API allows you to request a "Support Account" (local admin) for a given device in your tenant. See [RealmJoin's Swagger description](https://realmjoin-backend.azurewebsites.net/swagger/index.html#/LocalAdmin) to see which operations are currently supported in detail. Using LAPS with RealmJoin requires the deployment of the RealmJoin Windows Client.
 
 It is assumed you have correctly set up LAPS in your environment and deployed the RealmJoin Windows Client on your devices. Also, make sure to [authenticate ](realmjoin-api/authentication.md)every request against RealmJoin's API using an appropriate http Authorization header.
 
@@ -58,7 +58,7 @@ Body (in JSON-Notation):
 
 The response contains the approximate time until the RealmJoin Windows Client will create the local Support Account. In this example expect to wait at least 12 minutes. If the client has not been seen for a long time, you might get `null` as estimate instead of a number.
 
-The RealmJon Windows Client will poll for jobs every 30 min by default. The approximation offered by the API is based on the last time the Windows Client checked in.
+The RealmJoin Windows Client will poll for jobs every 30 min by default. The approximation offered by the API is based on the last time the Windows Client checked in.
 
 ## Retrieve Support Account Credentials
 
