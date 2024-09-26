@@ -104,6 +104,7 @@
     * [Troubleshooting failed chocolatey packages](other/troubleshooting/package-installation-issues/troubleshooting-failed-chocolatey-packages.md)
     * [Troubleshooting failed craft packages](other/troubleshooting/package-installation-issues/troubleshooting-failed-craft-packages.md)
     * [Fixes for common issues](other/troubleshooting/package-installation-issues/fixes-for-common-issues.md)
+    * [Intunewin Debugging](other/troubleshooting/package-installation-issues/intunewin-debugging.md)
   * [LAPS Issues](other/troubleshooting/laps-issues/README.md)
     * [LAPS account passwords cannot be retrieved](other/troubleshooting/laps-issues/laps-account-passwords-cannot-be-retrieved.md)
     * [Requested LAPS Accounts are not being created](other/troubleshooting/laps-issues/requested-laps-accounts-are-not-being-created.md)
