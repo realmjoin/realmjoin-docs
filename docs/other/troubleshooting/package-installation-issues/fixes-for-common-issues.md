@@ -14,6 +14,9 @@
 * Error message `The supplied object has not been initialized` (may also occur localized, depending on Windows OS language) in download phase, chocolatey exit code `404`:
   1. Open an elevated PowerShell
   2. Run `Reset-BC -Force`
+* Error message `Error - hashes do not match. Actual value was '123abcd'`:
+  1. Open an elevated PowerShell
+  2. Run `Reset-BC -Force`&#x20;
 
 {% hint style="info" %}
 We strongly recommend deploying the **Reset or Clear BranchCache** Remediation Script with a daily schedule. It can be found in the [Remediation Scripts](../../../automation/remediation-scripts.md) section of the RealmJoin Portal.&#x20;
