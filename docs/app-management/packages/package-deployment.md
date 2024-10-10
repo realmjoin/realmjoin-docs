@@ -80,5 +80,5 @@ Selecting Assign will add users to the Main group by default.
 
 Basic packages do not have any associated Microsoft Entra groups. You will have to manually assign groups, devices or users.
 
-Groups, devices and users that are assigned to a Basic package will have their assigned package deployed as soon as possible.
+Groups, devices and users that are assigned to a Basic package will be assigned as Available in default.
 
