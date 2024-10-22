@@ -22,7 +22,7 @@ Different types of packages have different levels of support to be managed via R
 
 Every package detail page will show an overview of the core properties like the package's **Display Name**, **Description** and **Package ID** ("Unique RJ ID") on the left side of the screen. This part will not scroll and be always visible in any tab.
 
-You can use the Edit-Button next to the package's name to give a package a custom display name relevant to your users. For packages hosted in Intune, this will also rename the package's display name in Intune. This will not break the relationship with the [package store entry](package-store/package-store-details.md) for packages sourced from the [package store](package-store/).
+You can use the edit button next to the package's name to give a package a custom display name relevant to your users. For packages hosted in Intune, this will also rename the package's display name in Intune. This will not break the relationship with the [package store entry](package-store/package-store-details.md) for packages sourced from the [package store](package-store/).
 
 ![Package Name and Status](<../../../.gitbook/assets/image (106).png>)
 
@@ -32,54 +32,14 @@ Also displayed on the left side of the screen are four status fields for a packa
 
 These fields are binary - they are set to one of two possible values. The text of each field changes accordingly. Some of the fields are also color-coded for easier glanceability.
 
-#### Maintained / Unmaintained
-
-RealmJoin will provide new versions / updates of maintained packages on a regular basis.
-
-Automatic package management can be applied to keep the software delivered by these packages permanently up-to-date in your environment.
-
-#### Generic / Custom
-
-"Generic" packages are available to all customers / environments.
-
-"Custom" packages are not globally available to all customers. In most cases this is a custom software package created specifically for your environment.
-
-#### Billable / Non-billable
-
-Provisioning of this package will count towards your package usage quota - if you have one. Currently all publicly available packages are billable.
-
-#### Intunemanaged / Intuneunmanaged
-
-These tags denote packages, that are offered via Intune.
-
-* **Intunemanaged**: Managed and Basic packages from the package store, delivered via Intune
-* **Intuneunmanaged**: Unmanaged packages in Intune (not from the package store)
-
-#### Free to Use / Needs license
-
-Does this software need a commercial license to be used?
-
-### MS Security Center Software Inventory (TVM) entry
-
-If available, a link to this software title's [MS Security Center Software Inventory (TVM)](https://security.microsoft.com/software-inventory/applications)'s entry will be displayed. There you can check for known security issues and outdated versions of this software in your organization.
-
-![An Application's TVM Entry](<../../../.gitbook/assets/image (104).png>)
-
-### Version
-
-![](<../../../.gitbook/assets/image (176).png>)
-
-Also displayed on the left side of the screen is the version of the software package.
-
-If a "preview" version of the package is deployed, you can see it here. Otherwise it will be shown as "N/A".
-
-If this is a package sourced from the [package store](package-store/), a link to the [packages store details page](package-store/package-store-details.md) will be given.
-
-
-
-## Deployment Status
-
-You can also review the installation status of given assignments / this package on users and clients.
+* **Maintained / Unmaintained:** RealmJoin will provide new versions / updates of maintained packages on a regular basis.\
+  Automatic package management can be applied to keep the software delivered by these packages permanently up-to-date in your environment.
+* **Generic / Custom:** Generic packages are available to all customers / environments. Custom packages are not globally available to all customers. In most cases this is a custom software package created specifically for your environment.
+* **Billable / Non-Billable:** Provisioning of this package will count towards your package usage quota - if you have one. Currently all publicly available packages are billable.
+* **Free to Use / Needs License:** Does this software need a commercial license to be used?
+* **Intunemanaged / Intuneunmanaged:** These tags denote packages, that are offered via Intune.
+  * **Intunemanaged**: Managed and Basic packages from the package store, delivered via Intune
+  * **Intuneunmanaged**: Unmanaged packages in Intune (not from the package store)
 
 ## Tabs
 
@@ -94,6 +54,23 @@ The following tabs are available:
 #### Title, Description and other Info
 
 This tab will show the long description, license and technical help information of a package.
+
+#### Assignments and Deployment Status
+
+Use these tables to assign additional groups and check the deployment status of apps for devices and/or users.\
+
+
+<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+
+#### Usage
+
+{% hint style="warning" %}
+The Usage function requires the RealmJoin Agent to properly populate data.
+{% endhint %}
+
+Use the usage table to determine the spread of versions deployed across your device fleet as well as your license count. Clicking on the numbers under Client Count or User Count will show the device/users using the respective version of the package.
+
+<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
 ### Changelog
 

@@ -47,25 +47,11 @@ Also displayed on the left side of the screen are four status fields for a packa
 
 These fields are binary - they are set to one of two possible values. The text of each field changes accordingly. Some of the fields are also color-coded for easier glanceability.
 
-#### Maintained / Unmaintained
-
-RealmJoin will provide new versions / updates of maintained packages on a regular basis.
-
-Automatic package management can be applied to keep the software delivered by these packages permanentely up-to-date in your environment.
-
-#### Generic / Custom
-
-"Generic" packages are available to all customers / environments.
-
-"Custom" packages are not globally available to all customers. In most cases this is a custom software package created specifically for your environment.
-
-#### Billable / Non-billable
-
-Provisioning of this package will count towards your package usage quota - if you have one. Currently all publicly available packages are billable.
-
-#### Free to Use / Needs license
-
-Does this software need a commercial license to be used?
+* **Maintained / Unmaintained:** RealmJoin will provide new versions / updates of maintained packages on a regular basis.\
+  Automatic package management can be applied to keep the software delivered by these packages permanently up-to-date in your environment.
+* **Generic / Custom:** Generic packages are available to all customers / environments. Custom packages are not globally available to all customers. In most cases this is a custom software package created specifically for your environment.
+* **Billable / Non-Billable:** Provisioning of this package will count towards your package usage quota - if you have one. Currently all publicly available packages are billable.
+* **Free to Use / Needs License:** Does this software need a commercial license to be used?
 
 ### MS Security Center Software Inventory (TVM) entry
 
