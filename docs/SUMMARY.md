@@ -30,7 +30,8 @@
     * [Application Store Details](app-management/packages/package-store/package-store-details.md)
   * [Package Management](app-management/packages/package-management.md)
   * [Package Details](app-management/packages/package-details.md)
-  * [Package Assignments](app-management/packages/package-deployment.md)
+  * [Package Assignments](app-management/packages/package-deployment/README.md)
+    * [Package Migration](app-management/packages/package-deployment/package-migration.md)
   * [Package Settings](app-management/packages/package-settings.md)
   * [Packaging Requests](app-management/packages/packaging-requests/README.md)
     * [Organic Packages](app-management/packages/packaging-requests/organic-packages.md)
@@ -89,7 +90,7 @@
 * [RealmJoin API](dev-reference/realmjoin-api/README.md)
   * [Authentication](dev-reference/realmjoin-api/authentication.md)
 * [Interacting with Runbooks](dev-reference/interacting-with-runbooks.md)
-* [Simulating a Runbook environment](dev-reference/simulating-a-runbook-environment.md)
+* [Simulating a Runbook Environment](dev-reference/simulating-a-runbook-environment.md)
 * [Local Admin Password Management](dev-reference/local-admin-password-management.md)
 
 ## Other
