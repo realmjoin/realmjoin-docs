@@ -6,7 +6,7 @@ The subscription for RealmJoin is **user-based**.
 
 ## User definition
 
-The subscription of a "user" is required for each Intune subscription, that is assigned to a user in the Microsoft 365 tenant in scope for the RealmJoin instance.
+The subscription of a "user" is required for each Intune subscription, that is assigned to a user in the Microsoft 365 tenant in scope for the RealmJoin instance. The maximum amount of Intune-users in the corresponding subscription term is the required number of users for RealmJoin.
 
 The minimum amount of users that can be subscribed for one organization is 1.000.
 
