@@ -301,7 +301,9 @@ The user can trigger an Intune sync for a managed Windows device.
 Allow the user to assign a different primary user in RealmJoin.&#x20;
 
 {% hint style="info" %}
-When transfering a Windows device to a different user, you should change the RealmJoin primary user AND wipe the device. When a new user logs on after the wipe, this will also update the Intune primary user.
+When transferring a Windows device to a different user, you should wipe the device from Intune.&#x20;
+
+When a new user logs on after the wipe, this will update the Intune and RealmJoin primary user automatically.
 {% endhint %}
 
 ### CanSeeDeviceAutopilotInformation&#x20;
