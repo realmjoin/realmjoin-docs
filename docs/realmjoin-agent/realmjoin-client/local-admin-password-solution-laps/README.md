@@ -2,8 +2,6 @@
 
 Our Local Administrator Password Solution (LAPS) was built to solve the issue of using identical accounts in your environment for user support or privilege escalation. LAPS creates strong passwords for local accounts which are stored securely in _your own_ [Azure Key Vault](keyvault.md). For auditing, you have option to provide an [Application Insights](application-insights.md) instance or a [Log Analytics Workspace](../../../logs/log-analytics.md).
 
-Most settings denoted on this page have to be configured using [RealmJoin Classic Portal](https://realmjoin-web.azurewebsites.net).
-
 ## Pre-requirements
 
 Before you can start with LAPS you have to meet the following pre-requirements:
