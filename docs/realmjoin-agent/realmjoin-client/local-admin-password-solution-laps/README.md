@@ -1,6 +1,6 @@
 # Local Admin Password Solution (LAPS)
 
-Our Local Administrator Password Solution (LAPS) was built to solve the issue of using identical accounts in your environment for user support or privilege escalation. LAPS creates strong passwords for local accounts which are stored securely in _your own_ [Azure Key Vault](keyvault.md). For auditing, you also have to provide an [Application Insights](application-insights.md) instance, though we are transitioning to using Log Analytics workspaces directly.
+Our Local Administrator Password Solution (LAPS) was built to solve the issue of using identical accounts in your environment for user support or privilege escalation. LAPS creates strong passwords for local accounts which are stored securely in _your own_ [Azure Key Vault](keyvault.md). For auditing, you have option to provide an [Application Insights](application-insights.md) instance or a [Log Analytics Workspace](../../../logs/log-analytics.md).
 
 Most settings denoted on this page have to be configured using [RealmJoin Classic Portal](https://realmjoin-web.azurewebsites.net).
 
@@ -8,14 +8,18 @@ Most settings denoted on this page have to be configured using [RealmJoin Classi
 
 Before you can start with LAPS you have to meet the following pre-requirements:
 
-* You have to have set up [Application Insights](./#application-insights)
-* You have to explicitly enable LAPS account types using group (or user) settings
+* Set up [Application Insights](./#application-insights) OR [Log Analytics Workspace](../../../logs/log-analytics.md)
+* Explicitly enable LAPS account types using group (or user) settings
 
 We'll look at both of them below.
 
-## Application Insights
+## Logging
 
-Application Insights play an important role when using LAPS. The password requests triggered by LAPS are logged by RealmJoin and piped to Application Insights. This way you have complete insight into who is retrieving passwords. More details can be found in our [Application Insights](application-insights.md) article.
+Application Insights and Log Analytics play an important role when using LAPS. The password requests triggered by LAPS are logged by RealmJoin and piped to the configured Application Insights instance or Log Analytics Workspace. This way you have complete insight into who is retrieving passwords.&#x20;
+
+Only one form of logging needs to be chosen - either Application Insights or Log Analytics. Logging is optional when setting up LAPS and can be skipped if your organization does not need this information.
+
+More details can be found in our [Application Insights](application-insights.md) and [Log Analytics](../../../logs/log-analytics.md) articles.
 
 ## Group settings
 
