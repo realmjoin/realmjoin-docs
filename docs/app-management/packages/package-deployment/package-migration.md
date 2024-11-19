@@ -16,12 +16,18 @@ Currently only RealmJoin packages can be migrated from Basic to Managed deployme
 ## Migration
 
 1. Select a Basic RealmJoin package
-2.  Under Group Assignments, select More -> Convert to managed app (This process happens immediately). Old groups and users are nested into the new Managed RealmJoin Groups.\
+2. Under Group Assignments, select More -> Convert to managed app (This process happens immediately).&#x20;
+   *   Old groups are nested into the new Managed RealmJoin Groups. Settings made to the Basic groups will be adopted by the Managed groups.\
 
 
-    <figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+       <figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption><p>Before Migration</p></figcaption></figure>
 
-    <figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+       <figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption><p>After Migration</p></figcaption></figure>
+   *   Users are added to the most relevant group
+
+       <figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption><p>Before Migration</p></figcaption></figure>
+
+       <figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption><p>After Migration</p></figcaption></figure>
 3. (Optional) Pull members from nested groups directly into the RealmJoin managed groups. This setting migrates users directly to the RealmJoin managed group and optionally removes the nested group from the Managed group.
    1. Select relevant group -> More -> "Pull members up".&#x20;
    2. Select the ![](<../../../.gitbook/assets/image (12).png>) on the desired nested group
