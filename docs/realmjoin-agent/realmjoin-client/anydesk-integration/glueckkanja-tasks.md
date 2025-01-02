@@ -1,6 +1,6 @@
 # RealmJoin Tasks
 
-If a customer is interested in AnyDesk, the customer will need to send an email to [RealmJoin Support](mailto:support@realmjoin.com). RealmJoin will then contact AnyDesk to request a license and AnyDesk will send back login credentials. With these credentials, GK can start the deployment of a user client and the deployment of a supporter client.
+These settings are only a suggestion.
 
 ## AnyDesk User Client Deployment
 

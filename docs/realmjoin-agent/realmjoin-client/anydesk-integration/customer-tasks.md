@@ -1,15 +1,8 @@
 # Customer Tasks
 
-If you are interested in AnyDesk send a request to [RealmJoin Support](mailto:support@realmjoin.com). They will send you two different URLs:
-
-* A user client URL
-* A supporter client URL
-
-These URLs are important for the following configurations and settings.
-
 ## AnyDesk Group Settings for User Client
 
-Use a JSON policy to configure AnyDesk in the \[RealmJoin Classic] Group Settings. There are three different policies to configure AnyDesk.
+Use a JSON policy to configure AnyDesk in the Group Settings. There are three different policies to configure AnyDesk.
 
 The following JSON contains all configurations:
 

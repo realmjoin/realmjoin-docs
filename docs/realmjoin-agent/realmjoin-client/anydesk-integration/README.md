@@ -8,14 +8,10 @@ RealmJoin Client for Windows allows to skip the ID number sharing because every 
 
 ## Deployment Workflow
 
-1. The customer sends a request to [RealmJoin Support](mailto:support@realmjoin.com), for a quote on AnyDesk.
-2. GK orders a license from AnyDesk.
-3. AnyDesk sends a license and login credentials to GK
-4. GK deploys AnyDesk
-5. GK sends the 'public download' URL to the customer
-6. The customer configures the AnyDesk Group Settings in [RealmJoin Classic Portal](https://realmjoin-web.azurewebsites.net)
-7. GK does the backend integration in RealmJoin
-8. AnyDesk is deployed
+1. Customer orders a license from AnyDesk.
+2. The customer configures the AnyDesk Group Settings in [RealmJoin Portal](https://portal.realmjoin.com)
+3. GK does the backend integration in RealmJoin
+4. AnyDesk is deployed
 
 ## Using the Tray Icon (Windows)
 

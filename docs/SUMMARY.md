@@ -63,7 +63,6 @@
   * [AnyDesk Integration](realmjoin-agent/realmjoin-client/anydesk-integration/README.md)
     * [RealmJoin Tasks](realmjoin-agent/realmjoin-client/anydesk-integration/glueckkanja-tasks.md)
     * [Customer Tasks](realmjoin-agent/realmjoin-client/anydesk-integration/customer-tasks.md)
-    * [AnyDesk Cloud Connections](realmjoin-agent/realmjoin-client/anydesk-integration/anydesk-cloud-connections.md)
   * [App Deployment using the Agent](realmjoin-agent/realmjoin-client/deploy-apps/README.md)
     * [RealmJoin ESP](realmjoin-agent/realmjoin-client/deploy-apps/realmjoin-esp.md)
 * [Deploying the Agent](realmjoin-agent/installation.md)
