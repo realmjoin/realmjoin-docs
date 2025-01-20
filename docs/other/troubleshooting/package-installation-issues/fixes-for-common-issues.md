@@ -33,9 +33,9 @@ By using this method the above mentioned BranchCache issues will proactively be 
 ## Broken chocolatey config <a href="#user-content-broken-chocolatey-config" id="user-content-broken-chocolatey-config"></a>
 
 1. Delete contents of folder `C:\ProgramData\chocolatey\config`
-2. Delete System Variable
+2. Delete System Variable `ChocolateyInstall` :
    * Use GUI: Run `sysdm.cpl` -> Tab `Advanced` -> `Environment Variables...`
-   * Use (admin) cmd: `REG delete "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /V ChocolateyInstall`
+   * Use (admin) cmd, run: `REG delete "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /V ChocolateyInstall`
 3. Reboot
 4. RealmJoin tray will reinstall chocolatey, let the system settle for 5-10 minutes.
 5. If you experience missing items in the RealmJoin tray menu, reboot again.
