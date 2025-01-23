@@ -39,25 +39,36 @@ Please assign the following Entra ID roles to the managed identity
 
 Please grant the following Graph API-Permissions to the managed identity
 
-* `AuditLog.Read.All`
-* `CloudPC.ReadWrite.All`
-* `Device.Read.All`
-* `DeviceManagementConfiguration.ReadWrite.All`
-* `DeviceManagementManagedDevices.PrivilegedOperations.All`
-* `DeviceManagementManagedDevices.ReadWrite.All`
-* `DeviceManagementServiceConfig.ReadWrite.All`
-* `Directory.ReadWrite.All`
-* `Group.ReadWrite.All`
-* `IdentityRiskyUser.ReadWrite.All`
-* `InformationProtectionPolicy.Read.All`
-* `Policy.Read.All`
-* `RoleManagement.Read.All`
-* `Team.Create`
-* `User.ReadWrite.All`
-* `UserAuthenticationMethod.ReadWrite.All`
-* `Reports.Read.All`
+* `AppCatalog.ReadWrite.All`&#x20;
+* `Application.ReadWrite.All`&#x20;
+* `AuditLog.Read.All`&#x20;
+* `BitlockerKey.Read.All`&#x20;
+* `Channel.Delete.All`&#x20;
+* `ChannelMember.ReadWrite.All`&#x20;
+* `ChannelSettings.ReadWrite.All`&#x20;
+* `CloudPC.ReadWrite.All`&#x20;
+* `Device.Read.All`&#x20;
+* `DeviceLocalCredential.Read.All`&#x20;
+* `DeviceManagementApps.ReadWrite.All`&#x20;
+* `DeviceManagementConfiguration.ReadWrite.All`&#x20;
+* `DeviceManagementManagedDevices.PrivilegedOperations.All`&#x20;
+* `DeviceManagementManagedDevices.ReadWrite.All`&#x20;
+* `DeviceManagementServiceConfig.ReadWrite.All`&#x20;
+* `Directory.ReadWrite.All`&#x20;
+* `Group.ReadWrite.All`&#x20;
+* `IdentityRiskyUser.ReadWrite.All`&#x20;
+* `InformationProtectionPolicy.Read.All`&#x20;
+* `Mail.Send`&#x20;
+* `Organization.Read.All`&#x20;
 * `Place.Read.All`
-* `Mail.Send`
+* `Policy.Read.All`&#x20;
+* `Reports.Read.All`&#x20;
+* `RoleManagement.Read.All`&#x20;
+* `Team.Create`&#x20;
+* `TeamSettings.ReadWrite.All`&#x20;
+* `User.ReadWrite.All`&#x20;
+* `UserAuthenticationMethod.ReadWrite.All`&#x20;
+* `WindowsUpdates.ReadWrite.All`
 
 ### Other App API Permissions
 
@@ -70,6 +81,7 @@ Please grant the following WindowsDefenderATP API Permissions to the managed ide
 * `Machine.Read.All`
 * `Machine.Isolate`
 * `Machine.RestrictExecution`
+* `Ti.ReadWrite.All`
 
 Please grant the following SharePoint API Permissions to the managed identity
 
