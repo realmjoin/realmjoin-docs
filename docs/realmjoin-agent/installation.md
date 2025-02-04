@@ -48,7 +48,7 @@ Use the following instructions to deploy the RealmJoin Agent:
 6. Then, click **OK**
 7. Under **App information** fill in all required fields and set **Ignore app version** to **Yes**
 
-![](<../../.gitbook/assets/image (216).png>)
+![](../.gitbook/assets/rj_intune_1.png)
 
 8. Under **Assignments** add groups and users for your RealmJoin app
 
@@ -56,7 +56,7 @@ Use the following instructions to deploy the RealmJoin Agent:
 
 9. Under **Review + create** check all your settings
 
-![](<../../.gitbook/assets/image (121).png>)
+![](../.gitbook/assets/rj_intune_2.png)
 
 10. Finally click **Create**
 
@@ -127,5 +127,7 @@ reamjoin.exe -install
 
 The RealmJoin.MSI is SHA2 (256 bit) signed by RealmJoin and therefore recognized by Windows as safe to install.
 
-![](<../../.gitbook/assets/image (227).png>)
+
+
+![](../.gitbook/assets/realmjoin.msi.signature.png)
 
