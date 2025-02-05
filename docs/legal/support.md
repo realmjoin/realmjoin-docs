@@ -8,4 +8,4 @@ Kaiserstraße 39 \
 
 [support@realmjoin.com](mailto:support@realmjoin.com)
 
-[glueckkanja.com](https://app.gitbook.com/u/p8lFkexseChsGQgukZidw0fXa5r1)
+[glueckkanja.com](https://www.glueckkanja.com)
