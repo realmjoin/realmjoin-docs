@@ -21,6 +21,26 @@ You can offer RealmJoin Portal to your support and administration teams to simpl
 
 ![](<../../../.gitbook/assets/user rb (1).png>)
 
+### Migration to PowerShell Runtime Environments
+
+RealmJoin is currently in the process of migrating from Windows PowerShell v5.1 to a PowerShell v7.4 [Runtime Environment](https://learn.microsoft.com/en-us/azure/automation/manage-runtime-environment).&#x20;
+
+{% hint style="info" %}
+Make sure the "Runtime Environment" experience in your Automation Account is enabled.
+{% endhint %}
+
+<figure><img src="../../.gitbook/assets/re.png" alt=""><figcaption></figcaption></figure>
+
+When running a [sync](./#syncing-from-the-shared-repository), a custom PowerShell Runtime Environment "RJ-PowerShell-7.4" will be created, synced runbooks will be moved to this environment. If needed, required PowerShell modules will automatically be imported.
+
+{% hint style="warning" %}
+**Custom / non-synced runbooks will not be upgraded automatically.**
+
+You can use Azure Portal and use "Edit in Portal" on these runbooks to manually migrate them. Make sure to "publish" the runbooks for the change to take effect.
+{% endhint %}
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
 ## Common Runbooks
 
 RealmJoin maintains a [shared online repository of runbooks](https://github.com/realmjoin/realmjoin-runbooks). They aim to cover many common operations found in most environments. The runbooks are continuously updated and improved. Of course, you can include your own custom runbooks, too.
