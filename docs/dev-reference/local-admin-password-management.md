@@ -6,13 +6,13 @@ Local Administrator Password Solution (LAPS) will solve the issue of using ident
 
 With RealmJoin it is possible to manage secure and individualized administrative accounts, either for local support or remote support on a large scale. RealmJoin saves encrypted passwords in Azure Key Vault within the customer's tenant and stores audit logs of every access to these credentials.
 
-RealmJoin's API allows you to request a "Support Account" (local admin) for a given device in your tenant. See [RealmJoin's Swagger description](https://realmjoin-backend.azurewebsites.net/swagger/index.html#/LocalAdmin) to see which operations are currently supported in detail. Using LAPS with RealmJoin requires the deployment of the RealmJoin Windows Client.
+RealmJoin's API allows you to request a "Support Account" (local admin) for a given device in your tenant. See [RealmJoin's Swagger description](https://customer-api.realmjoin.com/swagger/index.html) to see which operations are currently supported in detail. Using LAPS with RealmJoin requires the deployment of the RealmJoin Windows Client.
 
 It is assumed you have correctly set up LAPS in your environment and deployed the RealmJoin Windows Client on your devices. Also, make sure to [authenticate ](realmjoin-api/authentication.md)every request against RealmJoin's API using an appropriate http Authorization header.
 
 ## Requesting a Support Account
 
-Tell RealmJoin to create a local Support Account on the target device using the endpoint `/api/external/LocalAdmin/RequestSupportAccount`. The request is queued using Application insights and will be processed RealmJoin Backend and RealmJoin Windows Client as soon as possible. When the account is created/usable.
+Tell RealmJoin to create a local Support Account on the target device using the endpoint `/laps/request`. The request is queued using Application insights and will be processed RealmJoin Backend and RealmJoin Windows Client as soon as possible. When the account is created/usable.
 
 The endpoint will return an estimate how long the account create will take. When the account is ready, see [here](local-admin-password-management.md#retrieve-support-account-credentials) on how to query for the credentials.
 
@@ -39,7 +39,7 @@ Content-Type: application/json
 Request / URI:
 
 ```http
-POST https://realmjoin-backend.azurewebsites.net/api/external/LocalAdmin/RequestSupportAccount?deviceID=9999dab9-f946-40ee-9a17-2500c8d00878
+POST https://customer-api.realmjoin.com/laps/request?deviceID=9999dab9-f946-40ee-9a17-2500c8d00878
 ```
 
 This endpoint does not expect a request body.
@@ -62,7 +62,7 @@ The RealmJoin Windows Client will poll for jobs every 30 min by default. The app
 
 ## Retrieve Support Account Credentials
 
-The endpoint `/api/external/LocalAdmin/RetrieveSupportAccountPassword` is used to query if a Support Account has already been created as well as to collect the actual credentials of the Support Account.
+The endpoint `/laps/retrieve` is used to query if a Support Account has already been created as well as to collect the actual credentials of the Support Account.
 
 Let us query the same `deviceId` of `9999dab9-f946-40ee-9a17-2500c8d00878` as in the example [above](local-admin-password-management.md#requesting-a-support-account).
 
@@ -82,7 +82,7 @@ Content-Type: application/json
 Request / URI:
 
 ```http
-POST https://realmjoin-backend.azurewebsites.net/api/external/LocalAdmin/RetrieveSupportAccountPassword?deviceID=9999dab9-f946-40ee-9a17-2500c8d00878
+POST https://customer-api.realmjoin.com/laps/retrieve?deviceID=9999dab9-f946-40ee-9a17-2500c8d00878
 ```
 
 This endpoint does not expect a request body.
