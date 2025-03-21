@@ -236,6 +236,83 @@ We introduce a new Entra ID group `4444c0af-c217-41e9-b790-3043788f4444` contain
 }
 ```
 
+#### **Example: Restricting US Support Staff to Manage Only US Users**
+
+In this scenario, we have US-based Support Staff who should only manage Users located in the US. To enforce this restriction:
+
+* Create a permission rule that explicitly **denies** US Supporters the ability to execute Runbooks on **all Users**.
+* Add an exception rule that specifically **allows** execution of Runbooks only for **US Users**.
+
+This ensures US Supporters have permissions limited strictly to their intended target audience (US Users) and prevents accidental interactions with users outside this scope.
+
+**Implementation**
+
+1. A Runbook Runners Entra group must be assigned in Realm Join Portal
+   1. Settings > Permissions > Runbook Runner Permissions
+   2. US Supporters Entra group must be member of the Runbook Runners Group to allow general Runbook operation in the RealmJoin Portal.
+2. Adding a new Role under Settings > Runbook Permissions
+   1. In the Roles section add USSupporters Role with their Entra group (group object ID)
+   2. Add AllowedRunbookPatterns for the USSupporters
+3. Modify the TargetEntityGroups
+   1. All-Users group must Restrict the Role USSupporters with an empty value (no Entra group object ID is added here). This is an implicit denial!
+   2. US Users group must Restrict the Role USSupporters to the US Supporters Entra group object ID
+
+
+
+<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption><p>Restricting US Support Staff to manage only US Users</p></figcaption></figure>
+
+Below the complete example for this scenario:
+
+```json
+{
+  // Portal Permission:
+  // Runbook Runner Role: US Supporters
+
+  // Group Memberships:
+  // 3e1e7540-7f0c-483c-b9bf-500342e2467c: All-Users
+  // c603278c-cc36-4661-bb7a-eecb7ab079f9: US Supporters
+  // 0f76d01e-cc6b-4553-bf1d-e4ccedd9c824: US Users
+
+  "EnabledRunbookPatterns": [ // General enablement of mail and security Runbooks
+    "rjgit-*_mail_*",
+    "rjgit-*security*"
+  ],
+  "DisabledRunbookPatterns": [
+    "*password*"
+  ],
+
+  "Roles": {
+    "USSupporters": {
+      "Groups": [
+        "c603278c-cc36-4661-bb7a-eecb7ab079f9" // US Supporters
+      ],
+      "AllowedRunbookPatterns": [ // allowed Runbooks for this Role - US Supporters
+        "rjgit-user_*",
+        "rjgit-device_*",
+        "rjgit-group_*"
+      ]
+    }
+  },
+  
+  "TargetEntityGroups": {
+    "3e1e7540-7f0c-483c-b9bf-500342e2467c": { // All-Users
+      "RestrictRoles": {
+        "USSupporters": [
+          // generally, do not allow Runbooks for any US Supporters
+        ]
+      }
+    },
+    "0f76d01e-cc6b-4553-bf1d-e4ccedd9c824": { // US Users
+      "RestrictRoles": {
+        "USSupporters": [
+          "c603278c-cc36-4661-bb7a-eecb7ab079f9" // US Supporters
+        ]
+      }
+    }
+  }
+}
+```
+
 ### SchedulingEnabledRunbookPatterns
 
 This section contains a list of runbooks that will be flagged as "schedulable". RealmJoin Port will allow to assign / manage schedules for these runbooks. See [scheduling.md](scheduling.md "mention").
