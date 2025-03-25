@@ -18,7 +18,7 @@
   1. Open an elevated PowerShell
   2. Run `Reset-BC -Force`&#x20;
 
-{% hint style="info" %}
+{% hint style="warning" %}
 We strongly recommend deploying the **Reset or Clear BranchCache** Remediation Script with a daily schedule. It can be found in the [Remediation Scripts](../../../automation/remediation-scripts.md) section of the RealmJoin Portal.&#x20;
 
 By using this method the above mentioned BranchCache issues will proactively be detected and automatically remediated (if possible).
@@ -29,6 +29,19 @@ By using this method the above mentioned BranchCache issues will proactively be 
 1. Check the `chocolatey.log` file for the value(s) of `packageParameters` in the section `RJAppDeployToolkit: Resulting Variables`
    * These are the actual value(s) used for the installation and passed by the RealmJoin backend.
 2. If they are not the value(s) you would expect, check the package assingment in the RealmJoin portal for group / user override values.
+
+## Corrupt .nupkg file
+
+If you see the following error in the `chocolatey.log`  the .nupkg file got corrupted:&#x20;
+
+`[ERROR] - Unable to read package from path 'generic-package-id\generic-package-id.nupkg'.`&#x20;
+
+Often it can also be observed that the .nupkg file is 0 bytes in size.
+
+Steps to fix this issue:
+
+1. Navigate to `C:\ProgramData\chocolatey\lib`
+2. Delete folder `generic-package-id`&#x20;
 
 ## Broken chocolatey config <a href="#user-content-broken-chocolatey-config" id="user-content-broken-chocolatey-config"></a>
 
