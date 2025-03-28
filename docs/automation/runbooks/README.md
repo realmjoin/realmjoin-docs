@@ -33,6 +33,10 @@ Make sure the "Runtime Environment" experience in your Automation Account is ena
 
 When running a [sync](./#syncing-from-the-shared-repository), a custom PowerShell Runtime Environment "RJ-PowerShell-7.4" will be created, synced runbooks will be moved to this environment. If needed, required PowerShell modules will automatically be imported.
 
+{% hint style="info" %}
+Due to **varying process durations** that might cause errors like 404, please **sync again**. Additionally, wait a few minutes before starting the first runbook after the migration.
+{% endhint %}
+
 {% hint style="warning" %}
 **Custom / non-synced runbooks will not be upgraded automatically.**
 
