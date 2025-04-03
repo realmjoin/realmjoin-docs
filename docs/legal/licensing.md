@@ -57,6 +57,7 @@ The following table shows an overview of the scope of the two plans. RealmJoin i
 | <p><a href="../app-management/avd-templates.md">AVD templates support</a><br>(headless agent)</p> |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 | Software Inventory                                                                                |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 | Supporter Insights & Device Warranty                                                              |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
+| [RealmJoin API](../dev-reference/realmjoin-api/)                                                  |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 | Supporter Runbooks                                                                                |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 | Scheduled Runbooks                                                                                |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 | Supporter Permissions (RBAC)                                                                      |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
