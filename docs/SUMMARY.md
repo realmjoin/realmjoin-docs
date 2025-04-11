@@ -61,7 +61,6 @@
     * [Application Insights](realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/application-insights.md)
   * [Notifications](realmjoin-agent/realmjoin-client/showing-notifications.md)
   * [AnyDesk Integration](realmjoin-agent/realmjoin-client/anydesk-integration/README.md)
-    * [Get your customized AnyDesk files](realmjoin-agent/realmjoin-client/anydesk-integration/glueckkanja-tasks.md)
     * [AnyDesk configuration](realmjoin-agent/realmjoin-client/anydesk-integration/customer-tasks.md)
   * [App Deployment using the Agent](realmjoin-agent/realmjoin-client/deploy-apps/README.md)
     * [RealmJoin ESP](realmjoin-agent/realmjoin-client/deploy-apps/realmjoin-esp.md)
