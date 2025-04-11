@@ -1,4 +1,4 @@
-# Customer Tasks
+# AnyDesk configuration
 
 ## AnyDesk Group Settings for User Client
 
@@ -10,7 +10,9 @@ The following JSON contains all configurations:
 **Value** = `{"AnyDesk: { "Enabled": true, "BootstrapperUrl": "https://.../.../AnyDesk.exe", "Ui": {TrayMenuTextEnglish": "Start remote session} } }`
 
 {% hint style="info" %}
-The BootstrapperUrl is your **user client URL**.
+Please make sure that you host your AnyDesk file(s) yourself on a publicly available URL and put this URL as "BootstrapperURL" in your configuration. \
+The suggested way to do so is by using RealmJoin's Workplace Cloud Storage solution: \
+[https://docs.realmjoin.com/realmjoin-settings/workplace-cloud-storage](https://docs.realmjoin.com/realmjoin-settings/workplace-cloud-storage)
 {% endhint %}
 
 It is also possible to split this single JSON from above, in three different JSON policies:
@@ -35,7 +37,7 @@ The following JSON is possible as well:
 
 ## Back-End Integration
 
-After you configure your user client, you will need to contact AnyDesk. Request an email containing your **Contract ID**, your **License ID** and your **API Password**. Send these IDs and the password to the [RealmJoin Support](mailto:support@realmjoin.com). If you do so, GK will integrate a AnyDesk API in your RealmJoin portal.
+After you configure your user client, you will need to contact AnyDesk. Request an email containing your **Contract ID**, your **License ID** and your **API Password**. Send these IDs and the password to the [RealmJoin Support](mailto:support@realmjoin.com). If you do so, GK will integrate an AnyDesk API in your RealmJoin portal.
 
 ![](<../../../../.gitbook/assets/image (187).png>)
 
@@ -74,9 +76,3 @@ For special support scenarios, administrative rights will be needed. A normal re
 | 5. On the remote client, a new window **User Account Control** will appear                    |                                                    |
 | 6. Confirm it                                                                                 |                                                    |
 | 7. The support staff is now able to perform administrative tasks.                             |                                                    |
-
-## Additional Sessions
-
-When setting up AnyDesk for the first time, you will receive a single license from RealmJoin. This single license allows one remote session. Additional licenses are necessary for simultaneous sessions.
-
-If you need more licenses, contact [RealmJoin Support](mailto:support@realmjoin.com) for more details.
