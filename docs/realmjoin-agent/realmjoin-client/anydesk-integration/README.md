@@ -1,19 +1,22 @@
 # AnyDesk Integration
 
-AnyDesk allows access to devices including the option to elevate rights by using the RealmJoin [LAPS](../local-admin-password-solution-laps/) feature. AnyDesk can be installed on Windows and macOS.
+AnyDesk provides access to devices, including the ability to elevate rights using the RealmJoin [LAPS feature](../local-admin-password-solution-laps/). It can be installed on both Windows and macOS devices.
 
-ID numbers are used by AnyDesk to establish a connection between two computers. Share your ID number with another user (this user needs AnyDesk as well). This user has to enter the ID number in the AnyDesk menu. When you accept the request, the other user will have access to your desktop.
+To establish a connection between two computers, AnyDesk uses ID numbers. Share your ID number with another user (who also needs AnyDesk). The other user will enter your ID number in the AnyDesk menu. Once you accept the connection request, they will have access to your desktop.
 
-RealmJoin Client for Windows allows to skip the ID number sharing because every ID number in an organization is linked to a single device. An administrator just needs to know the device and can request access to the desktop. However the user has to accept this request, depending on the configuration.
+The RealmJoin Client for Windows eliminates the need to share ID numbers, as each device in an organization is linked to a unique ID. Administrators can request access to a desktop simply by identifying the device. However, depending on the configuration, the user must still accept the access request.
 
 ## Deployment Workflow
 
-1. Order a license from AnyDesk.
-2. Configure AnyDesk to your desired configuration in the AnyDesk Webinterface and create your custom clients.
-3. Configure the AnyDesk Group Settings in [RealmJoin Portal](https://portal.realmjoin.com).
-4. [Contact RealmJoin support](mailto:support@glueckkanja.com) to enable the backend integration.
+Please follow [AnyDesk configuration](customer-tasks.md). Steps in short:
 
-## Using the Tray Icon (Windows)
+1. Order a license from AnyDesk.
+2. Tailor your AnyDesk settings and create custom clients for end-users and supporters by configuring them at my.anydesk.com.
+3. Host the end-user client and configure the AnyDesk group settings in [RealmJoin Portal](https://portal.realmjoin.com).
+4. Request your custom supporter client as RealmJoin package.
+5. [Contact RealmJoin support](mailto:support@glueckkanja.com) to enable the backend integration.
+
+## Start Remote session using tray Icon (Windows)
 
 Once everything has been set up, the tray icon can be used to get support without sharing the ID number or downloading executables by hand. The users are instructed by their support agent to open the tray menu and click _Start remote session_.
 
@@ -23,8 +26,8 @@ This text can be changed! Create a setting with the key `Integration.AnyDesk.Ui.
 
 ![](../../../../.gitbook/assets/anydesk-tray-client-windows.png)
 
-This will download the appropriate executable and send the ID number to the RealmJoin Portal. The support agent will be notified as soon as the process is finished and then may connect to the user's desktop.
+This process downloads the appropriate executable and sends the ID number to the RealmJoin Portal. The support agent can then view the ID under device details and connect to the user's desktop.
 
-### Using this outside of the tray menu
+### Trigger Start Remote Session via shortcut
 
 This process may also be initiated outside of RealmJoin's UI. Simply create a Windows shortcut with the target `realmjoin:remotesupport:default`. This will trigger RealmJoin and behave as if the user had clicked the menu entry.

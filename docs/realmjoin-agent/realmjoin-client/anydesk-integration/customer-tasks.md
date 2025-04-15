@@ -1,43 +1,75 @@
 # AnyDesk configuration
 
-## AnyDesk Group Settings for User Client
+## Deploy AnyDesk clients
 
-Use a JSON policy to configure AnyDesk in the Group Settings. There are three different policies to configure AnyDesk.
+In short, the following actions are required:
 
-The following JSON contains all configurations:
+* **host end-user client** on a publicly available URL and **add to RealmJoin**
+* request **supporter client** as **custom RealmJoin package**
 
-**Key** = Integration\
-**Value** = `{"AnyDesk: { "Enabled": true, "BootstrapperUrl": "https://.../.../AnyDesk.exe", "Ui": {TrayMenuTextEnglish": "Start remote session} } }`
+### End-User client
 
-{% hint style="danger" %}
-Please make sure that you host your AnyDesk file(s) yourself on a publicly available URL and put this URL as "BootstrapperURL" in your configuration. \
-The suggested way to do so is by using RealmJoin's Workplace Cloud Storage solution: \
-[https://docs.realmjoin.com/realmjoin-settings/workplace-cloud-storage](https://docs.realmjoin.com/realmjoin-settings/workplace-cloud-storage)
+Please host the end-user client on a **publicly available URL**. You can simply use **RealmJoin's Workplace Cloud Storage Solution** for this.
+
+{% hint style="warning" %}
+A direct (public available) download from my.anydesk.com is not supported as it might be protected by services like Cloudflare.
 {% endhint %}
 
-It is also possible to split this single JSON from above, in three different JSON policies:
+**Download** the current end-user client from your my.anydesk.com instance.
 
-**Key** = Integration.AnyDesk.Enabled\
-**Value** = true
+{% hint style="warning" %}
+Note, that **you are** **responsible** for **updating the version on a regular basis.**&#x20;
+{% endhint %}
 
-and
+Simply go to [https://portal.realmjoin.com/organization/other-files](https://portal.realmjoin.com/organization/other-files), upload your **EXE** and _copy the link_:
 
-**Key** = Integration.AnyDesk.BootstrapperUrl\
-**Value** = `https://.../.../AnyDesk.exe`
+<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
-and
+Afterwards, please update the AnyDesk configuration in RealmJoin with the new URL as stated in the [article below](customer-tasks.md#anydesk-group-settings-for-user-client).
 
-**Key** = Integration.AnyDesk.UI.TrayMenuTextEnglish\
-**Value** = "Start remote session"
+### Supporter client
 
-The following JSON is possible as well:
+Please download your current supporter client (as MSI) and request it as a new RealmJoin software package via the package request formular under [portal.realmjoin.com](https://portal.realmjoin.com).
 
-**Key** = Integration.AnyDesk\
-**Value** = `{"Enabled":true, BootstrapperUrl": "https://.../.../AnyDesk.exe", "UI":{"TrayMenuTextEnglish": "Start remote session"} }`
+<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+
+Once the package is ready assign it to the desired users/supporters. Old AnyDesk versions will be uninstalled automatically.
+
+{% hint style="warning" %}
+Note, that **you are responsible** for **updating the custom client** and **request updated versions** of your **package on a regular basis**.&#x20;
+{% endhint %}
+
+{% hint style="danger" %}
+The RealmJoin package "AnyDesk Custom Client" (also known as "AnyDesk Supporter Client Setup Launcher") is no longer supported (announced in February 2024). Please use the new process stated above and delete the old package.&#x20;
+{% endhint %}
+
+## Group settings for end-user client
+
+Use a JSON policy to **configure AnyDesk in the group settings**. The following JSON contains all configurations:
+
+**Key**: Integration.AnyDesk\
+**Value**:
+
+```json
+{
+  "Enabled": true,  # activate integration
+  "BootstrapperUrl": "https://xxxx/AnyDeskEndUser.exe", # public download URL
+  "CustomClientSuffix": "xxxxxxx", # custom client suffix (see my.anydesk.com)
+  "TrayMenuTextEnglish": "Start remote session" # optional: change text in tray menu
+}
+```
+
+<figure><img src="../../../.gitbook/assets/image (4).png" alt="" width="539"><figcaption></figcaption></figure>
 
 ## Back-End Integration
 
-To enable the backend integration you will need your **AnyDesk License ID**, your **AnyDesk API Password** and the **Custom-Client-Prefix**. Send these to the [RealmJoin support](mailto:support@realmjoin.com) to have the backend integration activated.
+To enable the backend integration the following information is required:
+
+* **AnyDesk License ID**
+* **AnyDesk API Password**
+* **Custom Client Prefix**
+
+Send this information to [RealmJoin support](mailto:support@realmjoin.com) to have the integration activated.
 
 ![Overview in the portal](<../../../../.gitbook/assets/image (187).png>)
 
