@@ -41,8 +41,14 @@ Sometimes it is necessary to have multiple subscriptions of one craft package. T
 
 You can set the suffix, after choosing the subscription type, next to the continue button.
 
+{% hint style="danger" %}
+Please only use lowercase letters and dashes ("-") for the suffix!
+{% endhint %}
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
 {% hint style="info" %}
-The option to set a suffix is only available for RealmJoin Deployment!
+The option to set a suffix is only available for RealmJoin Deployment since it is not necessary for Intune Deployment!
 {% endhint %}
 
 ### Choco Packages
