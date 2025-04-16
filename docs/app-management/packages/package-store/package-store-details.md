@@ -26,12 +26,30 @@ The Intune driven deployment pushes the .intunewin version of the package direct
 As of today, we recommend RealmJoin driven deployment, as it offers more options and manageability.&#x20;
 {% endhint %}
 
-### Subscription Type
+## Subscription Type
 
 Packages can be subscribed as _managed_ or _basic_.
 
 * _Basic_ packages are available for assignment to groups or users and do not offer additional features. If you've used RealmJoin Classic (2015-2024), you'll be familiar with Basic packages.&#x20;
 * _Managed_ packages leave the group management and assignment to the RealmJoin backend. A fixed number if groups is created. The assignment of the package is only available to those. The groups include preview and uninstall groups. The static connection between the RealmJoin backend and the Entra group also allows utilize additional features like the automatic update of packages if a new version is published in RealmJoin.
+
+## Multiple package subscriptions
+
+### Craft Packages
+
+Sometimes it is necessary to have multiple subscriptions of one craft package. Those craft packages are often used for configurations like printer or network drive mapping and need to be subscribed and assigned multiple times to users because there are multiple printer or network drives to be mapped. Therefore it is important to have a suffix, because RealmJoin only accepts every package ID once. The suffix is modifying the unique ID from "this-id" to "this-id#\[your-suffix]".
+
+You can set the suffix, after choosing the subscription type, next to the continue button.
+
+{% hint style="info" %}
+The option to set a suffix is only available for RealmJoin Deployment!
+{% endhint %}
+
+### Choco Packages
+
+If you need multiple configurations of an application, e.g. "Microsoft 365 Apps for Enterprise", you can subscribe it multiple times and change the name during the subscription process, i.e. "Microsoft 365 Apps for Enterprise - DE", which will be reflected in the managed package groups created by RealmJoin. A suffix is not needed and therefore not available for these type of packages because users can only have one application with one configuration assigned and installed at a time.
+
+You can change the name by choosing your package and subscription type and before hitting continue clicking next to the name in the top left corner to adjust it.&#x20;
 
 ## Package Properties
 
