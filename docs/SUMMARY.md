@@ -76,12 +76,13 @@
 
 * [Overview](realmjoin-settings/settings.md)
 * [General](realmjoin-settings/general.md)
-* [Permissions](realmjoin-settings/permission.md)
+* [Roles and Permissions](realmjoin-settings/permission/README.md)
+  * [Pre-defined Roles](realmjoin-settings/permission/pre-defined-roles.md)
+  * [Custom Roles](realmjoin-settings/permission/custom-roles/README.md)
+    * [Available Permissions](realmjoin-settings/permission/custom-roles/available-permissions.md)
 * [Group Namespaces](realmjoin-settings/groups.md)
 * [Workplace Cloud Storage](realmjoin-settings/workplace-cloud-storage.md)
 * [Self Service Forms](realmjoin-settings/self-service-forms.md)
-* [Custom Roles](realmjoin-settings/custom-roles/README.md)
-  * [Available Permissions](realmjoin-settings/custom-roles/available-permissions.md)
 
 ## Developer Reference <a href="#dev-reference" id="dev-reference"></a>
 

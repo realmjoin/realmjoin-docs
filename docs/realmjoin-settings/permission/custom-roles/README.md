@@ -2,33 +2,37 @@
 
 ## Overview
 
-**Custom Roles** is an optional feature in RealmJoin Portal. **Custom Roles** allows you create additional RealmJoin internal roles. You can assign granular / atomic permissions to these roles and bind them to Entra groups or users.
+**Custom Roles** is an optional feature in RealmJoin Portal and allows to create additional RealmJoin internal roles. You can assign granular / atomic permissions to these roles and bind them to Entra groups or dedicated users.
+
+{% hint style="info" %}
+If custom roles are needed, please **request activation via RealmJoin support**.
+{% endhint %}
 
 Custom Roles are defined as JSON. The JSON editor included in RealmJoin Portal offers syntax checking and highlighting and will verify your definition against the Custom Roles JSON schema.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (203).png" alt=""><figcaption><p>Custom Roles JSON Editor</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (203).png" alt=""><figcaption><p>Custom Roles JSON Editor</p></figcaption></figure>
 
-### Using the editor
+## Using the editor
 
-#### Syntax check / Errors
+### Syntax check / Errors
 
-The editor will check the syntas as you type. If a syntax error is detected, an error message **View x errors** and bug icon will appear next to **Save.**
+The editor will check the syntax as you type. If a syntax error is detected, an error message **View x errors** and bug icon will appear next to **Save.**
 
-<figure><img src="../../../.gitbook/assets/image (62).png" alt=""><figcaption><p>JSON error message/button</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (62).png" alt=""><figcaption><p>JSON error message/button</p></figcaption></figure>
 
 Click on this message to get more details about the error.
 
-#### Formatting
+### Formatting
 
 You can auto-format the JSON by clicking **Format** in the upper right corner of the page.
 
-<figure><img src="../../../.gitbook/assets/image (107).png" alt=""><figcaption><p>Format Button</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (107).png" alt=""><figcaption><p>Format Button</p></figcaption></figure>
 
-#### Auto-Complete
+### Auto-Complete
 
 The Editor can offer Auto-Complete known keywords (like permissions) from the schema.
 
-<figure><img src="../../../.gitbook/assets/image (94).png" alt=""><figcaption><p>Keyword Auto-Complete</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (94).png" alt=""><figcaption><p>Keyword Auto-Complete</p></figcaption></figure>
 
 You can press "Ctrl" + "Space" at any time to invoke Auto-Complete.
 
