@@ -1,82 +1,75 @@
-# Customer Tasks
+# AnyDesk configuration
 
-## AnyDesk Group Settings for User Client
+## Deploy AnyDesk clients
 
-Use a JSON policy to configure AnyDesk in the Group Settings. There are three different policies to configure AnyDesk.
+In short, the following actions are required:
 
-The following JSON contains all configurations:
+* **host end-user client** on a publicly available URL and **add to RealmJoin**
+* request **supporter client** as **custom RealmJoin package**
 
-**Key** = Integration\
-**Value** = `{"AnyDesk: { "Enabled": true, "BootstrapperUrl": "https://.../.../AnyDesk.exe", "Ui": {TrayMenuTextEnglish": "Start remote session} } }`
+### End-User client
 
-{% hint style="info" %}
-The BootstrapperUrl is your **user client URL**.
+Please host the end-user client on a **publicly available URL**. You can simply use **RealmJoin's Workplace Cloud Storage Solution** for this.
+
+{% hint style="warning" %}
+A direct (public available) download from my.anydesk.com is not supported as it might be protected by services like Cloudflare.
 {% endhint %}
 
-It is also possible to split this single JSON from above, in three different JSON policies:
+**Download** the current end-user client from your my.anydesk.com instance.
 
-**Key** = Integration.AnyDesk.Enabled\
-**Value** = true
+{% hint style="warning" %}
+Note, that **you are** **responsible** for **updating the version on a regular basis.**&#x20;
+{% endhint %}
 
-and
+Simply go to [https://portal.realmjoin.com/organization/other-files](https://portal.realmjoin.com/organization/other-files), upload your **EXE** and _copy the link_:
 
-**Key** = Integration.AnyDesk.BootstrapperUrl\
-**Value** = `https://.../.../AnyDesk.exe`
+<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
-and
+Afterwards, please update the AnyDesk configuration in RealmJoin with the new URL as stated in the [article below](customer-tasks.md#anydesk-group-settings-for-user-client).
 
-**Key** = Integration.AnyDesk.UI.TrayMenuTextEnglish\
-**Value** = "Start remote session"
+### Supporter client
 
-The following JSON is possible as well:
+Please download your current supporter client (as MSI) and request it as a new RealmJoin software package via the package request formular under [portal.realmjoin.com](https://portal.realmjoin.com).
 
-**Key** = Integration.AnyDesk\
-**Value** = `{"Enabled":true, BootstrapperUrl": "https://.../.../AnyDesk.exe", "UI":{"TrayMenuTextEnglish": "Start remote session"} }`
+<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+
+Once the package is ready assign it to the desired users/supporters. Old AnyDesk versions will be uninstalled automatically.
+
+{% hint style="warning" %}
+Note, that **you are responsible** for **updating the custom client** and **request updated versions** of your **package on a regular basis**.&#x20;
+{% endhint %}
+
+{% hint style="danger" %}
+The RealmJoin package "AnyDesk Custom Client" (also known as "AnyDesk Supporter Client Setup Launcher") is no longer supported (announced in February 2024). Please use the new process stated above and delete the old package.&#x20;
+{% endhint %}
+
+## Group settings for end-user client
+
+Use a JSON policy to **configure AnyDesk in the group settings**. The following JSON contains all configurations:
+
+**Key**: Integration.AnyDesk\
+**Value**:
+
+```json
+{
+  "Enabled": true,  # activate integration
+  "BootstrapperUrl": "https://xxxx/AnyDeskEndUser.exe", # public download URL
+  "CustomClientSuffix": "xxxxxxx", # custom client suffix (see my.anydesk.com)
+  "TrayMenuTextEnglish": "Start remote session" # optional: change text in tray menu
+}
+```
+
+<figure><img src="../../../.gitbook/assets/image (4).png" alt="" width="539"><figcaption></figcaption></figure>
 
 ## Back-End Integration
 
-After you configure your user client, you will need to contact AnyDesk. Request an email containing your **Contract ID**, your **License ID** and your **API Password**. Send these IDs and the password to the [RealmJoin Support](mailto:support@realmjoin.com). If you do so, GK will integrate a AnyDesk API in your RealmJoin portal.
+To enable the backend integration the following information is required:
 
-![](<../../../../.gitbook/assets/image (187).png>)
+* **AnyDesk License ID**
+* **AnyDesk API Password**
+* **Custom Client Prefix**
 
-### AnyDesk Supporter Client Setup Launcher
+Send this information to [RealmJoin support](mailto:support@realmjoin.com) to have the integration activated.
 
-To allow a supporter to connect to a desktop, you have to assign the **AnyDesk Supporter Client Setup Launcher** to a supporter.
+![Overview in the portal](<../../../../.gitbook/assets/image (187).png>)
 
-![](<../../../../.gitbook/assets/image (92).png>)
-
-For this assignment you need your supporter client URL.
-
-## Start a Remote Session via RealmJoin Tray Menu
-
-| Task                                                                                                                                                             | Image                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| 1. Open the RealmJoin tray menu                                                                                                                                  |                                                    |
-| 2. Click **Start remote session**                                                                                                                                | ![](<../../../../.gitbook/assets/image (91).png>)  |
-| 3. The AnyDesk client starts and its current address will be pushed to RealmJoin backend in the background. Also,, it's visible in the UI.                       | ![](<../../../../.gitbook/assets/image (210).png>) |
-| 4. This client address will be displayed in RealmJoin portal at the corresponding client and the support staff can initiate the session via clicking **Connect** | ![](<../../../../.gitbook/assets/image (194).png>) |
-| 5. This will automatically start the AnyDesk client                                                                                                              |                                                    |
-| 6. Subsequently, the end user needs to accept the incoming remote session request                                                                                | ![](<../../../../.gitbook/assets/image (258).png>) |
-| 7. The Connection is established and the support staff can perform his tasks remotely                                                                            |                                                    |
-| 8. When the job is finished, please **disconnect** from the remote session                                                                                       |                                                    |
-
-#### Get Elevated Rights
-
-For special support scenarios, administrative rights will be needed. A normal remote session starts with standard rights. That requires to elevate the permissions:
-
-| Task                                                                                          | Image                                              |
-| --------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| 1. Click the **lightning icon**                                                               |                                                    |
-| 2. Select **Request elevation**                                                               | ![](<../../../../.gitbook/assets/image (86).png>)  |
-| 3. In the new appearing window (Request elevation) choose to **Transmit authentication data** |                                                    |
-| 4. Insert corresponding credentials                                                           |                                                    |
-| 5. Then, click **OK**                                                                         | ![](<../../../../.gitbook/assets/image (159).png>) |
-| 5. On the remote client, a new window **User Account Control** will appear                    |                                                    |
-| 6. Confirm it                                                                                 |                                                    |
-| 7. The support staff is now able to perform administrative tasks.                             |                                                    |
-
-## Additional Sessions
-
-When setting up AnyDesk for the first time, you will receive a single license from RealmJoin. This single license allows one remote session. Additional licenses are necessary for simultaneous sessions.
-
-If you need more licenses, contact [RealmJoin Support](mailto:support@realmjoin.com) for more details.

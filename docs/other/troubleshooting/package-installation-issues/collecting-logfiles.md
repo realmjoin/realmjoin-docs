@@ -32,8 +32,6 @@ For this feature to work, the client needs to be online and have a running Realm
 The sync can be forced from the client by running `Sync this device` from the RealmJoin tray menu.
 {% endhint %}
 
-Note that for this feature to work, the client needs to be online and have a running RealmJoin tray. Also, you will need to wait for the next RealmJoin client sync cycle to complete until the log file download will be available. The usual sync cycle is 30 minutes, which is the maximum wait time.
-
 1. Open the [RealmJoin Portal](https://portal.realmjoin.com)
 2. Search for the affected device and open the device page.
 3. On the `Overview` tab, search for the section `Extended Logs`

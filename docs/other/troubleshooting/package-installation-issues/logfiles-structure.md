@@ -6,7 +6,7 @@ description: Detailed explanation of the different log files collected by RealmJ
 
 ## User-Context Logfiles
 
-The user-context logfiles written by RealmJoin can be found in `%LOCALAPPDATA\RealmJoin`. This folder contains `tray.log` files and the subfolder `Logs`.
+The user-context logfiles written by RealmJoin can be found in `%LOCALAPPDATA%\RealmJoin`. This folder contains `tray.log` files and the subfolder `Logs`.
 
 ### tray.log
 

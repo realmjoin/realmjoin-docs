@@ -61,8 +61,7 @@
     * [Application Insights](realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/application-insights.md)
   * [Notifications](realmjoin-agent/realmjoin-client/showing-notifications.md)
   * [AnyDesk Integration](realmjoin-agent/realmjoin-client/anydesk-integration/README.md)
-    * [RealmJoin Tasks](realmjoin-agent/realmjoin-client/anydesk-integration/glueckkanja-tasks.md)
-    * [Customer Tasks](realmjoin-agent/realmjoin-client/anydesk-integration/customer-tasks.md)
+    * [AnyDesk configuration](realmjoin-agent/realmjoin-client/anydesk-integration/customer-tasks.md)
   * [App Deployment using the Agent](realmjoin-agent/realmjoin-client/deploy-apps/README.md)
     * [RealmJoin ESP](realmjoin-agent/realmjoin-client/deploy-apps/realmjoin-esp.md)
 * [Deploying the Agent](realmjoin-agent/installation.md)
@@ -77,12 +76,13 @@
 
 * [Overview](realmjoin-settings/settings.md)
 * [General](realmjoin-settings/general.md)
-* [Permissions](realmjoin-settings/permission.md)
+* [Roles and Permissions](realmjoin-settings/permission/README.md)
+  * [Pre-defined Roles](realmjoin-settings/permission/pre-defined-roles.md)
+  * [Custom Roles](realmjoin-settings/permission/custom-roles/README.md)
+    * [Available Permissions](realmjoin-settings/permission/custom-roles/available-permissions.md)
 * [Group Namespaces](realmjoin-settings/groups.md)
 * [Workplace Cloud Storage](realmjoin-settings/workplace-cloud-storage.md)
 * [Self Service Forms](realmjoin-settings/self-service-forms.md)
-* [Custom Roles](realmjoin-settings/custom-roles/README.md)
-  * [Available Permissions](realmjoin-settings/custom-roles/available-permissions.md)
 
 ## Developer Reference <a href="#dev-reference" id="dev-reference"></a>
 

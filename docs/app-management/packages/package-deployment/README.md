@@ -28,13 +28,13 @@ RealmJoin or Intune will automatically install the application. These applicatio
 {% tab title="RealmJoin" %}
 The application will appear in the RealmJoin Agent tray and will require the user to initiate the download and installation
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Intune" %}
 The application will appear in Company Portal -> Apps and will require the user to initiate the download and installation
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 
@@ -70,7 +70,7 @@ Users and devices should only be in one RealmJoin managed group at any given tim
 
 Users and devices can easily be moved across groups using the Managed Users function.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Selecting Main, Preview, Available and Uninstall will add the user to the chosen group and remove the user from all other groups relevant to the package.
 

@@ -73,7 +73,7 @@ Truly random passwords can be painful to work with, which is why special preset 
   * `Key-012993-230956-976475` (PasswordLength = 3)
   * `Key-497254-679158-631224-278319` (PasswordLength = 4)
   * `Key-506179-861369-706482-613244-730371-097689-404350-340073` (default)
-* Preset 3 ⇒ `[word]-[word]-[word]-[word]-[word]-[word]` generated from [Eff Long List](https://www.eff.org/files/2016/07/18/eff\_large\_wordlist.txt)​
+* Preset 3 ⇒ `[word]-[word]-[word]-[word]-[word]-[word]` generated from [Eff Long List](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt)​
   * PasswordLength setting is supported! The setting determines the number of words.
   * `Exciting-Unearth-Cried-87` (PasswordLength = 3)
   * `Neurology-Astute-Debate-Marshy-15` (PasswordLength = 4)
@@ -215,3 +215,9 @@ A sample configuration may look like this:
 | All remote workers | `{ "EmergencyAccount": true }`                            | Remote workers may access their own devices emergency account.                                                                            |
 | All developers     | `{ "EmergencyAccount": true, "PrivilegedAccount": true }` | Developers may access their emergency account and their privileged account—no matter whether they are remote workers or not.              |
 | All trainees       | `false`                                                   | Trainees must never have access to any of the three account types **and** all future types, even if they are remote workers or developers |
+
+{% hint style="info" %}
+SelfLAPS is stronger than regular LAPS role. That said, if an admin user is administrating LAPS with its regular user account, it won't be able to administrate it's own LAPS.
+
+Mitigation: enable SelfLAPS for these admin accounts or use separated admin accounts.
+{% endhint %}

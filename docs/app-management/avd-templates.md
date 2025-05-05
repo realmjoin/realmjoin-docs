@@ -8,7 +8,7 @@ This is intended for creating golden images for Azure Virtual Desktop multi-sess
 
 ## Permissions
 
-To enable the feature, you must define a [custom role](../realmjoin-settings/custom-roles/) and assign the role to a group or user.
+To enable the feature, you must define a [custom role](../realmjoin-settings/permission/custom-roles/) and assign the role to a group or user.
 
 Copy the following definition and make sure to change the GroupID accordingly.
 

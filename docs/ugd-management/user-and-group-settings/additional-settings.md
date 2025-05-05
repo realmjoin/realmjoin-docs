@@ -155,7 +155,7 @@ Integration.AnyDesk
 ```json
 {
 "Enabled": true | false,
-"BootstrapperUrl":"https://get.anydesk.com/GENERATED_LINK_TOKEN/RJAnyDesk.exe"
+"BootstrapperUrl": "https://.../.../AnyDesk.exe"
 }
 ```
 
