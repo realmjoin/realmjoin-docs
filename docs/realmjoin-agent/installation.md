@@ -9,13 +9,14 @@ RealmJoin Agent can be deployed on a device using one of multiple ways - dependi
 * Canary Channel (Experimental, first testing):\
   [RealmJoin Canary Version](https://gkrealmjoin.s3.amazonaws.com/win-canary/RealmJoin.msi)
 
-## Automatic Deployment using Microsoft Intune
+## Deploy with Microsoft Intune
+
+### Automatic Deployment using Microsoft Intune
 
 RealmJoin directly integrates with your Microsoft Intune tenant. No downloading of the client is necessary. This method only deploys the stable release of the agent.
 
 1. Head to the Package Store
-2.  Select the RealmJoin Agent on the banner\
-
+2. Select the RealmJoin Agent on the banner\
 
     <figure><img src="../../.gitbook/assets/image (312).png" alt=""><figcaption></figcaption></figure>
 3. Select your preferred deployment method and click "Continue"\
@@ -23,11 +24,11 @@ RealmJoin directly integrates with your Microsoft Intune tenant. No downloading 
 4. Add users to the managed app groups for RealmJoin or directly on Intune, depending on preference
 5. Intune will automatically deploy the RealmJoin Agent after some time
 
-## Manual Deployment using Microsoft Intune
+### Manual Deployment using Microsoft Intune
 
 RealmJoin can be deployed through Microsoft Intune by deploying the MSI as a Line-of-Business app. This may be useful if you wish to deploy Beta or Canary versions using Intune.
 
-### Intune Portal
+#### Intune Portal
 
 Use the following instructions to deploy the RealmJoin Agent:
 
@@ -64,7 +65,12 @@ Use the following instructions to deploy the RealmJoin Agent:
 Like any other application in Intune, ReamJoin can be assigned to the desired user groups as (required) software. It is not necessary to install additional software on the client devices to run RealmJoin. RealmJoin will be deployed on the client devices on the next Intune sync.
 {% endhint %}
 
-### Windows Defender Exceptions
+### Tip: Make sure RealmJoin Agent is installed before the User is able to use the device
+To make sure that the RealmJoin Agent is installed before the user uses the device, configure an Enrollment Status Page (ESP) in Intune.
+In the ESP configuration, Select RealmJoin Agent under "Block device use until required apps are installed if they are assigned to the user/device".
+Please note that you still must assign the RealmJoin Agent App in Intune to your users!
+
+## Windows Defender Exceptions
 
 RealmJoin has worked with the Microsoft Defender Team to be whitelisted from malware detection. Since Defender is using more and more machine learning mechanisms to identify potential threats and RealmJoin has several features like cloud downloaded application installations, RealmJoin might be recognized by **Windows Defender** as a possible threat.
 
@@ -130,4 +136,3 @@ The RealmJoin.MSI is SHA2 (256 bit) signed by RealmJoin and therefore recognized
 
 
 ![](../.gitbook/assets/realmjoin.msi.signature.png)
-
