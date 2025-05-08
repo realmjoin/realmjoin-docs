@@ -33,7 +33,8 @@ Advanced Search allows querying across available table values using a flexible a
 * **Tokenized Search**:\
   Search terms are automatically tokenized to improve matching accuracy. For example, typing `lu sk` will match names like **Luke Skywalker**. The search always uses a **starts-with** approach rather than a full-text or "contains" search. This means a search for `walk` would **not** return **Skywalker**.
 * **Logical AND**:\
-  All filters are combined using logical **AND**. Every condition must be met.
+  All filters are combined using logical **AND**. Every condition must be met.\
+  Example: `Luke Skywalker country:france` searches for Luke Skywalker where the **country** starts with "france".
 * **Column-specific Search**:\
   Use `column:` to search within a specific column.\
   Example: `country:france` searches for entries where the **country** starts with "france".
@@ -56,12 +57,42 @@ Advanced Search allows querying across available table values using a flexible a
 * **Supported Columns**:
   * Aliases for column names may exist and are listed in brackets
   * User table:
-    * `name, upn, language (lang), jobtitle (job), city, country, zip (plz), enabled`
+    * `name, upn, language (lang), jobtitle (job), city, country, zip (plz), enabled, department`
       * `enabled:` → accepts `true` or `false` (`enabled:true`)
     * Groups table
       * `name`
     * Device table
       * `name, operatingsystem (os), manufacturer (manu), model`
+
+#### Examples
+
+Get all users of a specific department:
+
+`department:"Sales Department"`
+
+Get all users with job title CEO:
+
+`job:CEO`
+
+Get all users with job title CEO not in Germany:
+
+`job:CEO country!:Germany`
+
+Get all users starting with ADM- with an empty department:
+
+`name:ADM- departnent=""`
+
+Get all users with postal code 63065:
+
+`zip:63065`
+
+List all users with specific domain:
+
+`domain.com`
+
+Get all Dell XPS devices:
+
+`manu:dell model:xps`&#x20;
 
 ### FAQ
 
