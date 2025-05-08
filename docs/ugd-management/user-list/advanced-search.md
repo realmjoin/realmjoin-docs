@@ -53,16 +53,16 @@ Advanced Search allows querying across available table values using a flexible a
   * **Brackets () are ignored** in startsWith searches.
   * **Empty value search**:
     * `zip:""` searches for empty values
-    * `zip:` searches for any value starting with e.g. `zip:63`
+    * `zip:` searches for any value e.g. `zip:63`
 * **Supported Columns**:
   * Aliases for column names may exist and are listed in brackets
   * User table:
     * `name, upn, language (lang), jobtitle (job), city, country, zip (plz), enabled, department`
       * `enabled:` → accepts `true` or `false` (`enabled:true`)
-    * Groups table
-      * `name`
-    * Device table
-      * `name, operatingsystem (os), manufacturer (manu), model`
+  * Groups table
+    * `name`
+  * Device table
+    * `name, operatingsystem (os), manufacturer (manu), model`
 
 ### Examples
 
