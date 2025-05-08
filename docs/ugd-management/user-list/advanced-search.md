@@ -53,7 +53,7 @@ Advanced Search allows querying across available table values using a flexible a
   * **Brackets () are ignored** in startsWith searches.
   * **Empty value search**:
     * `zip:""` searches for empty values
-    * `zip:` searches for any value e.g. `zip:63`
+    * `zip:` searches for any value
 * **Supported Columns**:
   * Aliases for column names may exist and are listed in brackets
   * User table:
