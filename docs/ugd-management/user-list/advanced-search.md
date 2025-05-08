@@ -14,7 +14,9 @@ Tables can be searched using the _basic_ or the _advanced_ search feature.&#x20;
 
 ### Basic Search
 
-Basic search involves directly querying tenant data using the Graph API. This method provides real-time data as it queries all objects during the search process. However, it may cause delays if a large number of objects need to be searched.
+Basic Search uses the Graph API to directly query tenant data, providing real-time results.&#x20;
+
+Basic Search is always available as a fallback when Advanced Search is not. It also appears during the initial loading of the cached table, allowing users to search immediately—even before the cache is fully built.
 
 ### Advanced Search
 
@@ -22,7 +24,44 @@ RealmJoin's advanced search feature uses caching and tokenization, making search
 
 Additionally, information not displayed in the table is also searchable, like post-codes or UPN.&#x20;
 
-<figure><img src="../../.gitbook/assets/adv.search.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+
+### Advanced Search Syntax Overview
+
+Advanced Search allows querying across available table values using a flexible and powerful syntax. Below are the key features and rules:
+
+* **Tokenized Search**:\
+  Search terms are automatically tokenized to improve matching accuracy. For example, typing `lu sk` will match names like **Luke Skywalker**. The search always uses a **starts-with** approach rather than a full-text or "contains" search. This means a search for `walk` would **not** return **Skywalker**.
+* **Logical AND**:\
+  All filters are combined using logical **AND**. Every condition must be met.
+* **Column-specific Search**:\
+  Use `column:` to search within a specific column.\
+  Example: `country:france` searches for entries where the **country** starts with "france".
+* **Operators**:
+  * `:` → **startsWith** search\
+    Example: `name:jo` matches "John", "Joanna", etc.
+  * `=` → **equals** search\
+    Example: `city=Stuttgart` matches exactly "Stuttgart"
+  * `!=` or `!:` → **negation**\
+    Example: `city!=Stuttgart`or `city!:Stuttgart` excludes "Suttgart"
+* **Special Behavior**:
+  * **Umlaut substitution**:\
+    Umlauts are normalized (e.g., **Björn** can be found by searching for **Bjorn**).
+  * **Unicode support**:\
+    Unicode characters are supported in search terms.
+  * **Brackets () are ignored** in startsWith searches.
+  * **Empty value search**:
+    * `zip:""` searches for empty values
+    * `zip:` searches for any value starting with e.g. `zip:63`
+* **Supported Columns**:
+  * Aliases for column names may exist and are listed in brackets
+  * User table:
+    * `name, upn, language (lang), jobtitle (job), city, country, zip (plz), enabled`
+      * `enabled:` → accepts `true` or `false` (`enabled:true`)
+    * Groups table
+      * `name`
+    * Device table
+      * `name, operatingsystem (os), manufacturer (manu), model`
 
 ### FAQ
 
@@ -40,8 +79,8 @@ The table is available for all users in the same RealmJoin portal instance. Thus
 
 #### What is an RealmJoin portal instance?
 
-The RealmJoin portal has three different instances for load balancing and redundancy reasons. This is indicated by the numbers after the tenant name in the top middle of the RealmJoin portal.&#x20;
+The RealmJoin portal has three different instances for load balancing and redundancy reasons.&#x20;
 
 #### How long will a rebuild/refresh of the advanced search take?
 
-The rebuild time depends on the size of the tenant and the number of objects. It is not uncommon, that the rebuild might take several minutes. During the rebuild, only the basic search is activate, all data is queried directly via Graph, thus reducing the speed.
+The rebuild time depends on the size of the tenant and the number of objects. It is not uncommon, that the rebuild might take several minutes. During the rebuild, only the basic search is available. All data is then queried directly via Graph, thus reducing the capabilities in filtering and speed.
