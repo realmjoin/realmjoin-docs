@@ -17,10 +17,10 @@
 * [User Profile](ugd-management/about-me.md)
 * [Organization Details](ugd-management/organization-details.md)
 * [User, Group and Device Lists](ugd-management/user-list/README.md)
+  * [Advanced Search](ugd-management/user-list/advanced-search.md)
   * [User Details](ugd-management/user-list/user-details.md)
   * [Group Details](ugd-management/user-list/group-details.md)
   * [Device Details](ugd-management/user-list/device-details.md)
-  * [Advanced Search](ugd-management/user-list/advanced-search.md)
 * [User and Group Settings](ugd-management/user-and-group-settings/README.md)
   * [Available RealmJoin Policies](ugd-management/user-and-group-settings/additional-settings.md)
 
