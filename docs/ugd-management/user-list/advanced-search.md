@@ -64,7 +64,7 @@ Advanced Search allows querying across available table values using a flexible a
     * Device table
       * `name, operatingsystem (os), manufacturer (manu), model`
 
-#### Examples
+### Examples
 
 Get all users of a specific department:
 
