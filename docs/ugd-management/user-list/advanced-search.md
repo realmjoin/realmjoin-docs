@@ -57,7 +57,7 @@ Advanced Search allows querying across available table values using a flexible a
 * **Supported Columns**:
   * Aliases for column names may exist and are listed in brackets
   * User table:
-    * `name, upn, language (lang), jobtitle (job), city, country, zip (plz), enabled, department`
+    * `name, upn, language (lang), jobtitle (job), city, country, zip (plz), enabled, department (dept)`
       * `enabled:` → accepts `true` or `false` (`enabled:true`)
   * Groups table
     * `name`
