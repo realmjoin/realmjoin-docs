@@ -80,7 +80,7 @@ Get all users with job title CEO not in Germany:
 
 Get all users starting with ADM- with an empty department:
 
-`name:ADM- departnent=""`
+`name:ADM- department=""`
 
 Get all users with postal code 63065:
 
