@@ -92,7 +92,7 @@ List all users with specific domain:
 
 Get all Dell XPS devices:
 
-`manu:dell model:xps`&#x20;
+[`manu:dell model:xps`](https://portal.realmjoin.com/devices?type=0\&search=manu%3Adell%20model%3Axps)
 
 ### FAQ
 
