@@ -96,7 +96,7 @@ Get all Windows 11 Version 22H2 devices:
 
 Get all Dell XPS devices:
 
-[`manu:dell model:xps`](https://portal.realmjoin.com/devices?type=0\&search=manu%3Adell%20model%3Axps)
+[`manu:dell model:xps`](https://portal.realmjoin.com/devices?search=manu%3Adell%20model%3Axps)
 
 ### FAQ
 
