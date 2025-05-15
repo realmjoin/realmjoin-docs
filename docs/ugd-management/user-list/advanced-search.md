@@ -90,6 +90,10 @@ List all users with specific domain:
 
 `domain.com`
 
+Get all Windows 11 Version 22H2 devices:
+
+[`os="Windows 11 (22H2)"`](https://portal.realmjoin.com/devices?search=OS%3D%22Windows%2011%20\(22H2\)%22)
+
 Get all Dell XPS devices:
 
 [`manu:dell model:xps`](https://portal.realmjoin.com/devices?type=0\&search=manu%3Adell%20model%3Axps)
