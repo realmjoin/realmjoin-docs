@@ -51,7 +51,7 @@ This will grant:
 * Read-only access to all areas of [User, Group and Device Management](../../ugd-management/user-group-device-management.md)&#x20;
 * Initiate remote support sessions
 * Retrieval of LAPS credentials
-* Sync/scan device
+* Sync/scan devices
 * Request device logs
 
 This permission does not include:
@@ -60,6 +60,26 @@ This permission does not include:
 * Modifying group memberships / assignments
 * Access to [Settings](../settings.md)
 * Starting Runbooks or Read Runbook Job logs
+
+### Advanced Supporter Permissions
+
+This will grant:
+
+* Read-only access to all areas of [User, Group and Device Management](../../ugd-management/user-group-device-management.md)&#x20;
+* Initiate remote support sessions
+* Retrieval of LAPS credentials
+* Sync/scan devices
+* Request device logs
+* Run proactive remediation scripts
+* Change primary user
+* Starting Runbooks and reading Runbook Job logs
+* Several read-only permissions in areas like apps/packages with settings, package store, device health scripts, notifications, templates, favourites, organization files, software report etc.
+
+This permission does not include:
+
+* Subscribing to apps/packages
+* Modifying group memberships / assignments
+* Access to [Settings](../settings.md)
 
 ### Runbook Runner Permissions
 
