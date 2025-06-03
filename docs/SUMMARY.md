@@ -114,7 +114,7 @@
 ## Legal
 
 * [Licensing](legal/licensing.md)
-* [Support](legal/support.md)
+* [Support & Service Level](legal/support.md)
 
 ***
 
