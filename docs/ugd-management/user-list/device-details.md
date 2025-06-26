@@ -71,9 +71,17 @@ See the [LAPS documentation](../../realmjoin-agent/realmjoin-client/local-admin-
 
 ## Warranty
 
-Use the **Warranty** tab to display information like remaining vendor warranty time for supported vendors/devices.
+Use the **Warranty** tab to display information like remaining vendor warranty time for **supported vendors/devices.**
+
+{% hint style="success" %}
+Currently supported vendors: Apple, Dell, Fujitsu, HP, Huawei, Lenovo and Microsoft
+{% endhint %}
 
 <figure><img src="../../../.gitbook/assets/image (124).png" alt=""><figcaption><p>Warranty Information</p></figcaption></figure>
+
+{% hint style="info" %}
+We rely on the information provided by the vendors through their APIs. We do not guarantee the accuracy of this information.
+{% endhint %}
 
 Depending on the API used, a captcha might be displayed before requesting/displaying warranty information.
 
