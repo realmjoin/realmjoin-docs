@@ -68,3 +68,15 @@ Steps to fix this issue:
 * Check if package is correctly assigned to user or user is member of assigned group
 * Check if package is not assigned hidden (use Debug Mode to see hidden assigned packages)
 * Check if user is primary user of the client, alternatively check if package is configured to be available to secondary users
+
+## ConfigUpdater unauthorized <a href="#user-content-broken-chocolatey-config" id="user-content-broken-chocolatey-config"></a>
+
+<figure><img src="../../../.gitbook/assets/25-07-02-10_40_03_Photos.png" alt=""><figcaption><p>The RJ agent can not access the configuration</p></figcaption></figure>
+
+The primary issue causing this problem is that the access token was not refreshed automatically as expected. Typically, access tokens are updated automatically to ensure uninterrupted access to resources. However, in this case, the expected process failed, leading to the token becoming outdated and thus resulting in access issues. This highlights the importance of ensuring that the automated token refresh mechanisms are functioning correctly to prevent similar issues in the future. Addressing this root cause will help maintain consistent access and avoid disruptions in
+
+1. Delete the RealmJoin token file:
+   * Path: `%LOCALAPPDATA%\RealmJoin`
+   * RJ 4.19 and below `token2.dat`
+   * RJ 4.20 and up: `msal_cache.dat`
+2. Reboot
