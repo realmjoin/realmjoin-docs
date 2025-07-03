@@ -38,3 +38,20 @@ RealmJoin utilises the customers Azure instance for [Log Analytics](../../logs/l
 From our experience over several customers, we estimate it takes 250 to 500 tenant users to reach 1 GB, translating to 2-4 cents/user per month.&#x20;
 
 We will monitor the traffic numbers in the future and update our estimation regularly if necessary.&#x20;
+
+
+
+## Does RealmJoin work with White-Glove?
+
+The compatibility of RealmJoin with White-Glove varies based on the deployment method employed:
+
+1. **Intune-Driven Deployment for Apps**:
+   * **Compatibility**: Generally supported.
+   * **Considerations**: Manual intervention may be necessary to ensure that deployed applications remain up to date. This involves regularly checking for updates and applying them to maintain the integrity and functionality of the applications.
+2. **RealmJoin Agent-Driven App Deployment**:
+   * **Compatibility**: Not supported.
+   * **Recommendation**: In this scenario, it is advisable to use a Temporary Access Pass (TAP). This method provides a secure and efficient way to grant temporary access for the user profile to an admin, ensuring that they can perform necessary tasks without compromising security.
+3. **Alternative Option**:
+   * **Device Assigned Applications**: Depending on the specific use case, this method can be utilized as an alternative. This approach allows for applications to be assigned directly to devices, ensuring that the necessary software is available and up to date on each device. Suitable for devices that are used by more than the primary user only.
+
+By understanding these nuances, you can select the most appropriate deployment method for your requirements, ensuring a smooth and efficient integration with White-Glove.
