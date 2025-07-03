@@ -43,7 +43,7 @@ We will monitor the traffic numbers in the future and update our estimation regu
 
 ## Does RealmJoin work with White-Glove?
 
-The compatibility of RealmJoin with White-Glove varies based on the deployment method employed:
+The compatibility of RealmJoin with White-Glove (Autopilot Pre-Provisioning) varies based on the deployment method employed:
 
 1. **Intune-Driven Deployment for Apps**:
    * **Compatibility**: Generally supported.
