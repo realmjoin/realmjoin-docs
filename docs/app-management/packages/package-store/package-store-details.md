@@ -1,4 +1,4 @@
-# Application Store Details
+# Package Subscription Options
 
 
 
@@ -8,7 +8,24 @@ Brand new video tutorial
 
 <figure><img src="../../../../.gitbook/assets/image (310).png" alt=""><figcaption><p>Package Details</p></figcaption></figure>
 
-This page will show detailed information for a single package from the package store and allows to provision this package to your environment.
+## Subscription
+
+<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption><p>Subscribe Buttons</p></figcaption></figure>
+
+Packages will either be pushed directly to Intune as .intunewin packages or deployed using the RealmJoin agent on the device (recommended).&#x20;
+
+## Subscription Type
+
+Packages can be subscribed as _managed_ or _basic_.
+
+* _Basic_ packages are available for assignment to groups or users and do not offer additional features. If you've used RealmJoin Classic (2015-2024), you'll be familiar with Basic packages.&#x20;
+* _Managed_ packages leave the group management and assignment to the RealmJoin backend. A fixed number if groups is created. The assignment of the package is only available to those. The groups include preview and uninstall groups. The static connection between the RealmJoin backend and the Entra group also allows utilize additional features like the automatic update of packages if a new version is published in RealmJoin. Find more on the managed groups [here](https://docs.realmjoin.com/app-management/packages/package-deployment#managed-deployment)
+
+
+
+<figure><img src="../../../../.gitbook/assets/image (335).png" alt=""><figcaption><p>Application Groups</p></figcaption></figure>
+
+The created Entra ID groups can be managed from both the RealmJoin Portal and Microsoft Entra ID.&#x20;
 
 ## Package Types
 
@@ -26,16 +43,11 @@ The Intune driven deployment pushes the .intunewin version of the package direct
 As of today, we recommend RealmJoin driven deployment, as it offers more options and manageability.&#x20;
 {% endhint %}
 
-## Subscription Type
-
-Packages can be subscribed as _managed_ or _basic_.
-
-* _Basic_ packages are available for assignment to groups or users and do not offer additional features. If you've used RealmJoin Classic (2015-2024), you'll be familiar with Basic packages.&#x20;
-* _Managed_ packages leave the group management and assignment to the RealmJoin backend. A fixed number if groups is created. The assignment of the package is only available to those. The groups include preview and uninstall groups. The static connection between the RealmJoin backend and the Entra group also allows utilize additional features like the automatic update of packages if a new version is published in RealmJoin.
+##
 
 ## Multiple package subscriptions
 
-### Craft Packages
+### Craft Packages (Suffix Configuration or #-Notation)
 
 Sometimes it is necessary to have multiple subscriptions of one craft package. Those craft packages are often used for configurations like printer or network drive mapping and need to be subscribed and assigned multiple times to users because there are multiple printer or network drives to be mapped. Therefore it is important to have a suffix, because RealmJoin only accepts every package ID once. The suffix is modifying the unique ID from "this-id" to "this-id#\[your-suffix]".
 
@@ -111,7 +123,7 @@ This tab will show the long description, license and technical help information 
 
 #### Subscribe / Provisioning
 
-This tab also shows the Subscribe-Buttons for this package. See [Subscribe to Package](../package-deployment/).
+This tab also shows the Subscribe-Buttons for this package. See [Subscribe to Package](../package-deployment.md).
 
 ### Changelog
 

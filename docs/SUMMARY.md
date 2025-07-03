@@ -18,6 +18,7 @@
 * [Organization Details](ugd-management/organization-details.md)
 * [User, Group and Device Lists](ugd-management/user-list/README.md)
   * [Advanced Search](ugd-management/user-list/advanced-search.md)
+  * [Data Export](ugd-management/user-list/data-export.md)
   * [User Details](ugd-management/user-list/user-details.md)
   * [Group Details](ugd-management/user-list/group-details.md)
   * [Device Details](ugd-management/user-list/device-details.md)
@@ -28,14 +29,15 @@
 
 * [Packages](app-management/packages/README.md)
   * [Package Store](app-management/packages/package-store/README.md)
-    * [Application Store Details](app-management/packages/package-store/package-store-details.md)
-  * [Package Management](app-management/packages/package-management.md)
+    * [Package Subscription Options](app-management/packages/package-store/package-store-details.md)
+    * [Package Migration](app-management/packages/package-store/package-migration.md)
+  * [Package Management Overview](app-management/packages/package-management.md)
+  * [Package Configuration and Assignment](app-management/packages/package-deployment.md)
   * [Package Details](app-management/packages/package-details.md)
-  * [Package Assignments](app-management/packages/package-deployment/README.md)
-    * [Package Migration](app-management/packages/package-deployment/package-migration.md)
   * [Package Settings](app-management/packages/package-settings.md)
   * [Packaging Requests](app-management/packages/packaging-requests/README.md)
     * [Organic Packages](app-management/packages/packaging-requests/organic-packages.md)
+* [Software Reporting](app-management/software-reporting.md)
 * [AVD Templates](app-management/avd-templates.md)
 
 ## Automation
