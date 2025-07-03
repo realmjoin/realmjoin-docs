@@ -45,8 +45,6 @@ As of today, we recommend RealmJoin driven deployment, as it offers more options
 
 ## App Categories
 
-
-
 The name and group name/category can now be customized when subscribing to a new package. This feature allows for better organization and easier access to applications within both RealmJoin and Intune environments.
 
 **RealmJoin Deployment**
@@ -64,7 +62,7 @@ The name and group name/category can now be customized when subscribing to a new
 
 <figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption><p>Configuration of Category/Group Name during the subscription process</p></figcaption></figure>
 
-The total of aategories can be managed from the _App Categories_ tab in the general settings section in the RealmJoin portal.&#x20;
+The total of categories can be managed from the _App Categories_ tab in the general settings section in the RealmJoin portal.&#x20;
 
 <figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption><p>All categories available in the tenant</p></figcaption></figure>
 
