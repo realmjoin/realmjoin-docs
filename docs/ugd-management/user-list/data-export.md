@@ -27,5 +27,5 @@ This enables you to do evaluations on installed software and identify Devices an
 <figure><img src="../../.gitbook/assets/image (34).png" alt=""><figcaption><p>Overview of installed versions of Git for Windows</p></figcaption></figure>
 
 {% hint style="info" %}
-Find more information about Software Reporting with RealmJoin in the [Software Reporting Section](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-MkrcM7cKOpXKri1kVrh/~/changes/339/app-management/software-reporting).
+Find more information about Software Reporting with RealmJoin in the [Software Reporting Section](https://docs.realmjoin.com/app-management/software-reporting).
 {% endhint %}
