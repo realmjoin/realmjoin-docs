@@ -33,19 +33,19 @@ Every package falls in at least one of the following categories. The banner on t
 
 If an application package is created without any customer-specific configuration hard-coded inside, it is created as generic package. Generic packages are available to all customers the same, and if possible, generic packages will be created as maintained packages.&#x20;
 
-This package is available for provisioning via Intune / [Package Management](../package-management.md).
+This package is available for provisioning via RealmJoin Agent & Intune / [Package Management](../package-management.md).
 
 #### Custom Package
 
 In contrast to the former types of packages, this kind of package is not globally available to all customers. In most cases this is a custom software package created specifically for your environment.
 
-This package is available for provisioning via Intune / [Package Management](../package-management.md).
+This package is available for provisioning via RealmJoin Agent & Intune / [Package Management](../package-management.md).
 
 #### Organic Package
 
 In contrast to the former types of packages, this kind of package is not globally available to all customers. In most cases this is a custom software package created specifically for your environment.
 
-This package is available for provisioning via Intune / [Package Management](../package-management.md).
+This package is available for provisioning via RealmJoin Agent & Intune / [Package Management](../package-management.md).
 
 #### macOS Packages
 
