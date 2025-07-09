@@ -68,27 +68,27 @@ Advanced Search allows querying across available table values using a flexible a
 
 Get all users of a specific department:
 
-`department:"Sales Department"`
+[`department:"Sales Department"`](https://app.gitbook.com/s/zqu07siXx0fTBgrX7874/)&#x20;
 
 Get all users with job title CEO:
 
-`job:CEO`
+[`job:CEO`](https://portal.realmjoin.com/users/all?search=job%3ACEO)&#x20;
 
 Get all users with job title CEO not in Germany:
 
-`job:CEO country!:Germany`
+[`job:CEO country!:Germany`](https://portal.realmjoin.com/users/all?search=job%3ACEO%20country!%3AGermany)&#x20;
 
 Get all users starting with ADM- with an empty department:
 
-`name:ADM- department=""`
+[`name:ADM- department=""`](https://portal.realmjoin.com/users/all?search=name%3AADM-%20department%3D%22%22)&#x20;
 
 Get all users with postal code 63065:
 
-`zip:63065`
+[`zip:63065`](https://portal.realmjoin.com/users/all?search=zip%3A63065)
 
 List all users with specific domain:
 
-`domain.com`
+[`domain.com`](https://portal.realmjoin.com/users/all?search=domain.com)
 
 Get all Windows 11 Version 22H2 devices:
 
@@ -96,7 +96,11 @@ Get all Windows 11 Version 22H2 devices:
 
 Get all Dell XPS devices:
 
-[`manu:dell model:xps`](https://portal.realmjoin.com/devices?search=manu%3Adell%20model%3Axps)
+[`manu:dell model:xps`](https://portal.realmjoin.com/devices?search=manu%3Adell%20model%3Axps)&#x20;
+
+Get all devices with RealmJoin Version 4.19 installed:
+
+[`rj:4.19`](https://portal.realmjoin.com/devices?search=rj%3A4.19)&#x20;
 
 ### FAQ
 
