@@ -1,6 +1,6 @@
 # Package Details
 
-![Package Details Page](<../../../.gitbook/assets/image (61).png>)
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Package details page</p></figcaption></figure>
 
 This page will show detailed information for a single package in your environment and allows you to manage its assignment to users and updates.
 
@@ -10,7 +10,7 @@ This page looks like the [Package Store Details](package-store/package-store-det
 
 This page can display any package that is understood by RealmJoin Portal, this includes
 
-* **Managed** and **Basic** packages from the package store, delivered via Intune
+* **Managed** and **Basic** packages from the package store
 * **Unmanaged** packages in Intune (not from the package store)
 * **RealmJoin Classic** "Choco" and "Craft" packages
 
@@ -49,7 +49,7 @@ The following tabs are available:
 
 ### Overview
 
-![Overview Tab](<../../../.gitbook/assets/image (160).png>)
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Overview tab</p></figcaption></figure>
 
 #### Title, Description and other Info
 
@@ -72,18 +72,14 @@ Use the usage table to determine the spread of versions deployed across your dev
 
 <figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
-### Changelog
+### History
 
-The package's changelog shows when the packages has been updated in RealmJoin's repository or Intune plus a short description of changes.
+The package's history shows when the package has been updated in RealmJoin's repository.
 
-![Package Changelog](<../../../.gitbook/assets/image (116).png>)
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>History tab</p></figcaption></figure>
 
 There are two types of changes tracked in Changelog.
 
 ![](<../../../.gitbook/assets/image (229).png>) Changes to the instance of the package in your environment, specifically in Intune. E.g. publishing a newer version of the package to your users.
 
 ![](<../../../.gitbook/assets/image (198).png>) Changes to package store entry.
-
-### Intune App and RealmJoin Store
-
-Raw JSON representation of the package and its metadata in Intune or in the package store respectively. This is primarily intended for debugging and administrative purposes.

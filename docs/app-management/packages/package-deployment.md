@@ -71,6 +71,6 @@ Basic packages do not have any associated Microsoft Entra groups. You will have 
 Groups, devices and users that are assigned to a Basic package will be assigned as Available by default and can be changed using the \[change settings] button.\
 
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>

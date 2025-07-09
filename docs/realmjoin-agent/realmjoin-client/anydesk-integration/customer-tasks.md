@@ -59,7 +59,7 @@ Use a JSON policy to **configure AnyDesk in the group settings**. The following 
 }
 ```
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt="" width="539"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt="" width="539"><figcaption></figcaption></figure>
 
 ## Back-End Integration
 

@@ -43,7 +43,7 @@ Due to **varying process durations** that might cause errors like 404, please **
 You can use Azure Portal and use "Edit in Portal" on these runbooks to manually migrate them. Make sure to "publish" the runbooks for the change to take effect.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Common Runbooks
 

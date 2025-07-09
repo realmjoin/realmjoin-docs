@@ -3,10 +3,10 @@
 
 
 {% embed url="https://www.youtube.com/watch?v=QYBx9yto560" %}
-Brand new video tutorial
+Video tutorial
 {% endembed %}
 
-<figure><img src="../../../../.gitbook/assets/image (310).png" alt=""><figcaption><p>Package Details</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Package Store details page</p></figcaption></figure>
 
 ## Subscription
 
@@ -78,7 +78,7 @@ You can set the suffix, after choosing the subscription type, next to the contin
 Please only use lowercase letters and dashes ("-") for the suffix!
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 The option to set a suffix is only available for RealmJoin Deployment since it is not necessary for Intune Deployment!
@@ -146,12 +146,8 @@ This tab will show the long description, license and technical help information 
 
 This tab also shows the Subscribe-Buttons for this package. See [Subscribe to Package](../package-deployment.md).
 
-### Changelog
+### Versions
 
 The package's changelog shows when the packages has been updated in RealmJoin's repository plus a short description of changes.
 
 <figure><img src="../../../../.gitbook/assets/image (334).png" alt=""><figcaption><p>App Package Changelog</p></figcaption></figure>
-
-### RealmJoin Store
-
-Raw JSON representation of the package and its metadata object in the store. This is primarily for debugging and administrative purposes.
