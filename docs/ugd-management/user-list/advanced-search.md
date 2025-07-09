@@ -66,6 +66,10 @@ Advanced Search allows querying across available table values using a flexible a
 
 ### Examples
 
+Get all German users:
+
+[`country:DE`](https://portal.realmjoin.com/users/all?search=country%3ADE)&#x20;
+
 Get all users of a specific department:
 
 [`department:"Sales Department"`](https://app.gitbook.com/s/zqu07siXx0fTBgrX7874/)&#x20;
