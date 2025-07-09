@@ -72,7 +72,7 @@ Get all German users:
 
 Get all users of a specific department:
 
-[`department:"Sales Department"`](https://app.gitbook.com/s/zqu07siXx0fTBgrX7874/)&#x20;
+[`department:"Sales Department"`](https://portal.realmjoin.com/users/all?search=department%3A%22Sales%20Department%22)&#x20;
 
 Get all users with job title CEO:
 
