@@ -129,7 +129,7 @@ FirstRun.EnableSecureDesktop
 
 ### Allow downgrade of packages <a href="#softwarepackaging.autoupgradecandowngrade" id="softwarepackaging.autoupgradecandowngrade"></a>
 
-Allows downgrade of already installed applications via auto upgrade, if the version number is changed. Applies to all packages assigned to group.
+Allows downgrade of already installed applications via auto upgrade, if the version number is changed. Applies to all packages assigned to users receiving the policy via group or user settings.
 
 **Key**
 
