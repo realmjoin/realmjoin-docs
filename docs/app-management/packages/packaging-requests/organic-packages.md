@@ -6,3 +6,9 @@ Because of this high standardization, organic packages are built automatically a
 
 <figure><img src="../../../../.gitbook/assets/image (308).png" alt=""><figcaption><p>Organic packaging request.</p></figcaption></figure>
 
+## Unlist Organic Packages
+
+Organic packages can be unlisted after creation, if they should not be seen by other administrators in your tenant. Simply go to the package store, select the package and press the "Unlist now" button.
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>Unlist now</p></figcaption></figure>
+
