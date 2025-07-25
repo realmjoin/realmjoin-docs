@@ -60,13 +60,28 @@ The following table reflects the permissions (type Application permissions) if A
 | `DeviceManagementApps.ReadWrite.All`                      | Manage / automate software deployment via Intune                       |
 | `AdministrativeUnit.Read.All` (optional)                  | Needed when AU are used.                                               |
 
-### RealmJoin Portal - Security Features&#x20;
+## RealmJoin Portal - Security Features&#x20;
 
 Application ID: `5713826-15ee-4f6c-91ee-56cb1844e275`
 
 This app is responsible for advanced security information in the ReamJoin Portal. Please refer to your onboarding agent to adopt the consent to your needs.
 
-### RealmJoin
+### API Permissions
+
+| Claim                             | Usage                                                                                                |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `User.Read.All`                   | Read user profiles; Sign in and read user profile                                                    |
+| `NetworkAccessPolicy.Read.All`    | Read URL profiles; Read IP address profiles                                                          |
+| `IdentityRiskEvent.Read.All`      | Read all IOCs (Indicators of Compromise)                                                             |
+| `SecurityRecommendation.Read.All` | Read Threat and Vulnerability Management security recommendations                                    |
+| `SecurityAlert.Read.All`          | Read all alerts                                                                                      |
+| `ThreatAssessment.Read.All`       | Read Threat and Vulnerability Management information; Read Threat and Vulnerability Management score |
+| `SecurityConfiguration.Read.All`  | Read all security configurations                                                                     |
+| `Device.Read.All`                 | Read all machine profiles                                                                            |
+| `Files.Read.All`                  | Read file profiles                                                                                   |
+| `SecurityEvents.Read.All`         | Run advanced queries                                                                                 |
+
+## RealmJoin Agent
 
 Application ID: `008c704d-20fe-4c15-bab0-c2e6f66a992c`
 
