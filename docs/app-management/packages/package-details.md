@@ -49,7 +49,7 @@ The following tabs are available:
 
 ### Overview
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Overview tab</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Overview tab</p></figcaption></figure>
 
 #### Title, Description and other Info
 
@@ -76,7 +76,7 @@ Use the usage table to determine the spread of versions deployed across your dev
 
 The package's history shows when the package has been updated in RealmJoin's repository.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>History tab</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>History tab</p></figcaption></figure>
 
 There are two types of changes tracked in Changelog.
 

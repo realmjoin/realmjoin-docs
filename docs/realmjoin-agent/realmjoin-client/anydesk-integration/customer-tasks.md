@@ -45,7 +45,7 @@ The RealmJoin package "AnyDesk Custom Client" (also known as "AnyDesk Supporter 
 
 ## Group settings for end-user client
 
-Use a JSON policy to **configure AnyDesk in the group settings**. The following JSON contains all configurations:
+Use a JSON policy to **configure AnyDesk in the group settings**. The following two JSON's contain all configurations:
 
 **Key**: Integration.AnyDesk\
 **Value**:
@@ -55,11 +55,21 @@ Use a JSON policy to **configure AnyDesk in the group settings**. The following 
   "Enabled": true,  # activate integration
   "BootstrapperUrl": "https://xxxx/AnyDeskEndUser.exe", # public download URL
   "CustomClientSuffix": "xxxxxxx", # custom client suffix (see my.anydesk.com)
+}
+```
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+**Key**: Integration.AnyDesk.Ui\
+**Value**:
+
+```json
+{
   "TrayMenuTextEnglish": "Start remote session" # optional: change text in tray menu
 }
 ```
 
-<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt="" width="539"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Back-End Integration
 

@@ -10,5 +10,5 @@ Because of this high standardization, organic packages are built automatically a
 
 Organic packages can be unlisted after creation, if they should not be seen by other administrators in your tenant. Simply go to the package store, select the package and press the "Unlist now" button.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>Unlist now</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Unlist now</p></figcaption></figure>
 
