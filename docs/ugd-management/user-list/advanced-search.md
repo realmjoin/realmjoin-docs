@@ -26,6 +26,10 @@ Additionally, information not displayed in the table is also searchable, like po
 
 <figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="warning" %}
+Please make sure to only use the "Reload-Button" in the top right corner if you are missing very recently added information from Entra / Intune.
+{% endhint %}
+
 ### Advanced Search Syntax Overview
 
 Advanced Search allows querying across available table values using a flexible and powerful syntax. Below are the key features and rules:
