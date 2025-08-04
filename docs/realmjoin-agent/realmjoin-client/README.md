@@ -7,7 +7,7 @@ RealmJoin Agent is an optional component that you can use alongside RealmJoin Po
 * [AnyDesk integration](anydesk-integration/)
 * Audit tasks (collecting device/client information)
 
-It can also be used to [deploy Windows software and configurations](deploy-apps/) that that cannot be easily delivered using MS Endpoint Manager / Intune.
+It can also be used to [deploy Windows software and configurations](deploy-apps/) that cannot be easily delivered using MS Endpoint Manager / Intune.
 
 ## Compliance Checks
 
