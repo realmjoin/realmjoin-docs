@@ -8,8 +8,6 @@ description: Step by step guide to use RealmJoin Portal in a new tenant
 
 ### App Permissions
 
-First we start to connect the **RealmJoin Portal**
-
 1. Visit [https://portal.realmjoin.com](https://portal.realmjoin.com) and sign in as Global Admin of your Entra ID Tenant
 
 <figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
@@ -42,9 +40,11 @@ First we start to connect the **RealmJoin Portal**
 
 <figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
-10. Copy the shown script via 'Copy to clipboard' to the clipboard and open a PowerShell 7 ([Download](https://github.com/PowerShell/PowerShell/releases)). Copy the clipboard text to the PowerShell and Run the script.\
-    \
-    **PowerShell 7 is needed as the Module 'Microsoft.Graph' used in the script works only flawlessly in PowerShell 7!**
+10. Copy the shown script via 'Copy to clipboard' to the clipboard and open a PowerShell 7 ([Download](https://github.com/PowerShell/PowerShell/releases)). Copy the clipboard text to the PowerShell and Run the script.
+
+{% hint style="danger" %}
+**PowerShell 7 is needed as the Module 'Microsoft.Graph' used in the script works only flawlessly in PowerShell 7!**
+{% endhint %}
 
 <figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
@@ -52,7 +52,7 @@ First we start to connect the **RealmJoin Portal**
 
 <figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
-12. If the tenant has never seen any 'Microsoft Graph Command Line Tools' you will see the following consent dialog which you need to 'Accept', otherwise this is skiped.
+12. If the tenant has never seen any 'Microsoft Graph Command Line Tools' you will see the following consent dialog which you need to 'Accept', otherwise this is skipped.
 
 <figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
@@ -60,7 +60,7 @@ First we start to connect the **RealmJoin Portal**
 
 <figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
-14. The script will run and show the following similar output:
+14. The script will run and show the following output:
 
 <figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
@@ -108,7 +108,7 @@ Let's connect the **RealmJoin Client app** to get the RealmJoin Agent working.
 
 Now connect the optional **Security features** (an existing Microsoft Defender for Endpoint subscription is needed for this)
 
-1. Click on Security features 'Activate'
+1. Select the 'Activate' button
 
 <figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
 
