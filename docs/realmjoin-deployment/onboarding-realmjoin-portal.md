@@ -22,7 +22,7 @@ description: Step by step guide to use RealmJoin Portal in a new tenant
 <figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 5. Click 'Connect Now'
-6. Several Permission can be granted, start with the **RealmJoin Portal app** and click 'Activate'
+6. Several Permissions can be granted. Start with the **RealmJoin Portal app** and click 'Activate'
 
 <figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
@@ -40,15 +40,15 @@ description: Step by step guide to use RealmJoin Portal in a new tenant
 
 <figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
-10. Copy the shown script via 'Copy to clipboard' to the clipboard and open a PowerShell 7 ([Download](https://github.com/PowerShell/PowerShell/releases)). Copy the clipboard text to the PowerShell and Run the script.
+10. Copy the shown script via 'Copy to clipboard' to the clipboard and open PowerShell 7 ([Download](https://github.com/PowerShell/PowerShell/releases)). Copy the clipboard text to the PowerShell and Run the script.
 
 {% hint style="danger" %}
-**PowerShell 7 is needed as the Module 'Microsoft.Graph' used in the script works only flawlessly in PowerShell 7!**
+**PowerShell 7 is needed as the Module 'Microsoft.Graph' used in the script works out of the box.**
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
-11. You will be asked for authentication with your Global Administrator account
+11. Authenticate with your **Global Administrator** account
 
 <figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
@@ -56,7 +56,7 @@ description: Step by step guide to use RealmJoin Portal in a new tenant
 
 <figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
-13. After two successful Authentications you will see a simple message in the browser indicating successful authentication
+13. After two successful Authentications you will see a message in the browser indicating successful authentication
 
 <figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
