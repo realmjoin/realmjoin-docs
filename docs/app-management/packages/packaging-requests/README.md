@@ -2,9 +2,25 @@
 
 RealmJoin offers a Packaging-as-a-Services (PACKaaS) if application packages are required, that are not already available in the RJ store, or are outdated. This section shall give a comprehensive overview over different scenarios. For more detailed information get in touch with your RealmJoin consultant/partner/support.&#x20;
 
+## Architecture (Win11 & macOS)
+
+The glueckkanja Packaging Factory currently exclusively supports Windows 11 application requests. We are working on full macOS integration, which will introduce hundreds of ready-to-use apps in the RealmJoin store. Until further notice, macOS packages are in preview, and requests for macOS are not being accepted.
+
 ## Request Types
 
 Three different PACKaaS requests are currently available: new package, update existing package and [organic packages](organic-packages.md).&#x20;
+
+### Custom vs. generic packaging
+
+#### Generic Packages in RealmJoin
+
+We aim to create packages as **generic** as possible. This allows all settings to be configured via the RealmJoin portal post-app subscription. Our **generic** packages feature unmodified installers provided by vendors, without any customer-specific alterations. These packages are accessible to all customers in the RealmJoin store.
+
+#### Custom Packages in RealmJoin
+
+**Custom** packages are exclusively available for customers in their **custom** section of the RealmJoin store. The **custom** namespaces are used for modified installers, including those customized by the vendor for the customer, such as SAP, or for customer-developed apps and similar cases.
+
+We invite customers to share their evaluation on whether an application can be packaged as _generic_ or requires a _custom_ package. However, the final decision is made by the glueckkanja Packaging Factory. Note that _custom_ packages incur additional costs.
 
 ### New Packages
 
