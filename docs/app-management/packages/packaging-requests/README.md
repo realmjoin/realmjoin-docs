@@ -4,7 +4,11 @@ RealmJoin offers a Packaging-as-a-Services (PACKaaS) if application packages are
 
 ## Architecture (Win11 & macOS)
 
-The glueckkanja Packaging Factory currently exclusively supports Windows 11 application requests. We are working on full macOS integration, which will introduce hundreds of ready-to-use apps in the RealmJoin store. Until further notice, macOS packages are in preview, and requests for macOS are not being accepted.
+The glueckkanja Packaging Factory is currently optimized for Windows 11 application requests, providing comprehensive support and reliable packaging services for the Windows ecosystem. We are actively developing full macOS integration, which will significantly expand our capabilities and introduce hundreds of ready-to-use applications in the RealmJoin store, creating a more comprehensive cross-platform experience for our users.
+
+While macOS packages remain in preview status as we continue to refine our macOS packaging pipeline, we accept macOS application requests on a best-effort basis. Our team will work diligently to accommodate these requests within our current development framework, though please note that processing times and availability may vary as we continue to enhance our macOS integration capabilities.
+
+We appreciate your patience as we work toward delivering the same level of excellence for macOS that our Windows 11 users currently enjoy.
 
 ## Request Types
 
