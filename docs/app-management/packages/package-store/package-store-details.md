@@ -86,7 +86,11 @@ The option to set a suffix is only available for RealmJoin Deployment since it i
 
 ### Choco Packages
 
-If you need multiple configurations of an application, e.g. "Microsoft 365 Apps for Enterprise", you can subscribe it multiple times and change the name during the subscription process, i.e. "Microsoft 365 Apps for Enterprise - DE", which will be reflected in the managed package groups created by RealmJoin. A suffix is not needed and therefore not available for these type of packages because users can only have one application with one configuration assigned and installed at a time.
+If you need multiple configurations of an application, e.g. "Microsoft 365 Apps for Enterprise", you can subscribe it multiple times and change the name during the subscription process, i.e. "Microsoft 365 Apps for Enterprise - DE", which will be reflected in the managed package groups created by RealmJoin.&#x20;
+
+{% hint style="danger" %}
+**Suffixes are not required—and therefore not available—for these types of packages, as each user can only be assigned and install a single instance of an application with a specific configuration at any given time. This limitation ensures that identical Chocolatey or IntuneWin applications, which share the same unique identifier, cannot be deployed to the same user more than once. Attempting to assign multiple copies of the same app with the same ID will result in conflicts and is not supported.**
+{% endhint %}
 
 You can change the name by choosing your package and subscription type and before hitting continue clicking next to the name in the top left corner to adjust it.&#x20;
 
