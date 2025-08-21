@@ -58,5 +58,5 @@ Please note that:
 * organic packages and PACKaaS might be not available right away, please get in touch with support@realmjoin.com if a feature is missing
 {% endhint %}
 
-Update and New package requests necessitate the provision of both binaries and documentation detailing the required command line parameters. If an update request does not entail changes from the previous version, the submission of new parameters is not required. All types of requests mandate a file upload, after which the generated ticket will be dispatched to the requesting account. Organic packages, offered at no cost, automatically extract the contents of the provided zip file to the C:\Install directory.
+Update and new package requests necessitate the provision of both binaries and documentation detailing the required command line parameters. If an update request does not entail changes from the previous version, the submission of new parameters is not required. All types of requests mandate a file upload, after which the generated ticket will be dispatched to the requesting account. Organic packages, offered at no cost, automatically extract the contents of the provided zip file to the C:\Install directory.
 
