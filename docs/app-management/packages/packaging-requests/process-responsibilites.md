@@ -1,21 +1,36 @@
 # Process responsibilites
 
-### Maintained vs. unmaintained vs. custom packages
+#### Package Maintenance Types
 
-* Maintained packages are regularly checked by the gk packaging factory. The updates will be published in the store after being checked and deployed. If an update of a packages marked as maintained is missing, customers may open a support ticket to bring it to attention. The gk packaging factory intends to create as many packages as maintained as possible.&#x20;
-* Unmaintained packages are all packages not marked as maintained. If a customer requires an update of a non maintained generic package, a regular update request has to be created. Updates of generic packages will not be charged.&#x20;
-* Custom package updates are exclusively created from a dedicated packaging request per customer and will be charged accordingly.&#x20;
+**Maintained Packages**
 
-### Responsibilities
+* **Regular Updates**: These packages are consistently monitored by the GK Packaging Factory.
+* **Update Process**: After rigorous checks, updates are published in the store.
+* **Support Options**: If updates are missing, customers can open a support ticket to address this.
 
-The gk packaging factory does not monitor applications for possible vulnerabilities. Maintained application packages will be updated after the vendor publishes updates. For all other applications the customer has to monitor their software for updates.&#x20;
+**Unmaintained Packages**
+
+* **Categorization**: Any package not marked as maintained falls into this category.
+* **Update Requests**: Customers must submit a regular update request for non-maintained generic packages.
+* **Cost**: Updates for generic packages are free of charge.
+
+**Custom Packages**
+
+* **Tailored Updates**: Custom package updates are created through specific requests from customers.
+* **Pricing**: These updates incur charges, as they are personalized per customer needs.
+
+<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+
+**Responsibilities**
+
+The GK Packaging Factory does not monitor applications for vulnerabilities. Application packages will be updated once the vendor releases updates. Customers are responsible for monitoring and updating all other applications themselves.
 
 | Process Step              | glueckkanja                   | Customer                                   |
 | ------------------------- | ----------------------------- | ------------------------------------------ |
 | creation generic packages | packaging                     | requesting                                 |
 | custom package creation   | packaging                     | requesting                                 |
 | installation testing      | install, reinstall, uninstall | functional, share results with glueckkanja |
-| Update monitoring         | maintained                    | non maintained                             |
+| update monitoring         | maintained                    | non maintained                             |
 
 
 
