@@ -38,7 +38,7 @@ Maintained application packages will be updated once the vendor releases updates
 | creation generic packages | packaging                     | requesting                                 |
 | custom package creation   | packaging                     | requesting                                 |
 | installation testing      | install, reinstall, uninstall | functional, share results with glueckkanja |
-| update monitoring         | maintained                    | non maintained                             |
+| update monitoring         | maintained packages           | non-maintained packages                    |
 
 
 
