@@ -1,4 +1,4 @@
-# Process responsibilites
+# Packaging Roles & Responsibilities
 
 #### Package Maintenance Types
 
@@ -16,14 +16,14 @@
 
 
 
-<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption><p>generic maintained application package</p></figcaption></figure>
 
 **Custom Packages**
 
 * **Tailored Updates**: Custom package updates are created through specific requests from customers.
 * **Pricing**: These updates incur charges, as they are personalized per customer needs.
 
-<figure><img src="../../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (46).png" alt=""><figcaption><p>custom non-maintained application package</p></figcaption></figure>
 
 
 

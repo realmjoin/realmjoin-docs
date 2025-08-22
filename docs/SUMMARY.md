@@ -36,7 +36,7 @@
   * [Package Details](app-management/packages/package-details.md)
   * [Package Settings](app-management/packages/package-settings.md)
   * [Packaging Requests](app-management/packages/packaging-requests/README.md)
-    * [Process responsibilites](app-management/packages/packaging-requests/process-responsibilites.md)
+    * [Packaging Roles & Responsibilities](app-management/packages/packaging-requests/packaging-roles-and-responsibilities.md)
     * [Organic Packages](app-management/packages/packaging-requests/organic-packages.md)
 * [Software Reporting](app-management/software-reporting.md)
 * [AVD Templates](app-management/avd-templates.md)
