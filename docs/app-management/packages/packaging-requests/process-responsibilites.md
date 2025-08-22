@@ -14,16 +14,24 @@
 * **Update Requests**: Customers must submit a regular update request for non-maintained generic packages.
 * **Cost**: Updates for generic packages are free of charge.
 
+
+
+<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+
 **Custom Packages**
 
 * **Tailored Updates**: Custom package updates are created through specific requests from customers.
 * **Pricing**: These updates incur charges, as they are personalized per customer needs.
 
-<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+
+
+
+
 
 **Responsibilities**
 
-The GK Packaging Factory does not monitor applications for vulnerabilities. Application packages will be updated once the vendor releases updates. Customers are responsible for monitoring and updating all other applications themselves.
+Maintained application packages will be updated once the vendor releases updates. The GK Packaging Factory does not monitor non-maintained applications. Customers are responsible for monitoring and request updates for all other applications themselves.
 
 | Process Step              | glueckkanja                   | Customer                                   |
 | ------------------------- | ----------------------------- | ------------------------------------------ |
