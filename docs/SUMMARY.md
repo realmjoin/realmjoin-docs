@@ -95,6 +95,7 @@
 * [Interacting with Runbooks](dev-reference/interacting-with-runbooks.md)
 * [Simulating a Runbook Environment](dev-reference/simulating-a-runbook-environment.md)
 * [Local Admin Password Management](dev-reference/local-admin-password-management.md)
+* [Custom Protocol](dev-reference/custom-protocol.md)
 
 ## Other
 
