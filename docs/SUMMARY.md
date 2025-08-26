@@ -101,8 +101,7 @@
 ## Other
 
 * [Security & Privacy](other/security-and-privacy.md)
-* [FAQ](other/faq/README.md)
-  * [Security](other/faq/security.md)
+* [FAQ](other/faq.md)
 * [Troubleshooting](other/troubleshooting/README.md)
   * [Package Installation Issues](other/troubleshooting/package-installation-issues/README.md)
     * [Collecting Logfiles](other/troubleshooting/package-installation-issues/collecting-logfiles.md)

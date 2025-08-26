@@ -27,13 +27,13 @@ RealmJoin offers a [public repository of runbooks](https://github.com/realmjoin/
 
 RealmJoin leverages standard Azure Automation features to host these shared runbooks. They will be stored using a `rjgit-` prefix in your Azure Automation Account. You can simply add custom runbooks without this prefix to the same Azure Automation account. If the runbooks adhere to our naming scheme, RealmJoin Portal will present your custom runbooks in the same way as our shared ones.
 
-See [Runbook naming scheme](../../automation/runbooks/naming-conventions.md)
+See [Runbook naming scheme](../automation/runbooks/naming-conventions.md)
 
 
 
 ## What cost to expect from Azure Resources?
 
-RealmJoin utilises the customers Azure instance for [Log Analytics](../../logs/log-analytics.md) and[ Key Vault](../../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/keyvault.md). Microsoft bills the cost for traffic directly to the customer, currently 2.8€ per GB.&#x20;
+RealmJoin utilises the customers Azure instance for [Log Analytics](../logs/log-analytics.md) and[ Key Vault](../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/keyvault.md). Microsoft bills the cost for traffic directly to the customer, currently 2.8€ per GB.&#x20;
 
 From our experience over several customers, we estimate it takes 250 to 500 tenant users to reach 1 GB, translating to 2-4 cents/user per month.&#x20;
 
