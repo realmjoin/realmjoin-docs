@@ -99,6 +99,7 @@
 
 ## Other
 
+* [Security & Privacy](other/security-and-privacy.md)
 * [FAQ](other/faq/README.md)
   * [Security](other/faq/security.md)
 * [Troubleshooting](other/troubleshooting/README.md)
