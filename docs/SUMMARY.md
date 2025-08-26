@@ -84,6 +84,7 @@
   * [Pre-defined Roles](realmjoin-settings/permission/pre-defined-roles.md)
   * [Custom Roles](realmjoin-settings/permission/custom-roles/README.md)
     * [Available Permissions](realmjoin-settings/permission/custom-roles/available-permissions.md)
+  * [Implementing Privileged Identity Management (PIM) with RealmJoin Portal](realmjoin-settings/permission/implementing-privileged-identity-management-pim-with-realmjoin-portal.md)
 * [Group Namespaces](realmjoin-settings/groups.md)
 * [Workplace Cloud Storage](realmjoin-settings/workplace-cloud-storage.md)
 * [Self Service Forms](realmjoin-settings/self-service-forms.md)
