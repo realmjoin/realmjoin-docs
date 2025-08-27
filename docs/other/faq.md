@@ -29,17 +29,13 @@ RealmJoin leverages standard Azure Automation features to host these shared runb
 
 See [Runbook naming scheme](../automation/runbooks/naming-conventions.md)
 
-
-
 ## What cost to expect from Azure Resources?
 
 RealmJoin utilises the customers Azure instance for [Log Analytics](../logs/log-analytics.md) and[ Key Vault](../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/keyvault.md). Microsoft bills the cost for traffic directly to the customer, currently 2.8€ per GB.&#x20;
 
 From our experience over several customers, we estimate it takes 250 to 500 tenant users to reach 1 GB, translating to 2-4 cents/user per month.&#x20;
 
-We will monitor the traffic numbers in the future and update our estimation regularly if necessary.&#x20;
-
-
+We will monitor the traffic numbers in the future and update our estimation regularly if necessary.
 
 ## Does RealmJoin work with White-Glove?
 
@@ -50,7 +46,7 @@ The compatibility of RealmJoin with White-Glove (Autopilot Pre-Provisioning) var
    * **Considerations**: Manual intervention may be necessary to ensure that deployed applications remain up to date. This involves regularly checking for updates and applying them to maintain the integrity and functionality of the applications.
 2. **RealmJoin Agent-Driven App Deployment**:
    * **Compatibility**: Not supported.
-   * **Recommendation**: In this scenario, it is advisable to use a Temporary Access Pass (TAP). This method provides a secure and efficient way to grant temporary access for the user profile to an admin, ensuring that they can perform necessary tasks without compromising security.
+   * **Recommendation**: In this scenario, it is advisable to use a Temporary Access Pass (TAP). This method provides an efficient way to grant temporary access for the user profile to an admin.
 3. **Alternative Option**:
    * **Device Assigned Applications**: Depending on the specific use case, this method can be utilized as an alternative. This approach allows for applications to be assigned directly to devices, ensuring that the necessary software is available and up to date on each device. Suitable for devices that are used by more than the primary user only.
 
