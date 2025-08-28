@@ -37,17 +37,16 @@ From our experience over several customers, we estimate it takes 250 to 500 tena
 
 We will monitor the traffic numbers in the future and update our estimation regularly if necessary.
 
-## Does RealmJoin work with White-Glove?
+## Does RealmJoin work with Windows Autopilot for pre-provisioned deployment (formerly: WhiteGlove)?
 
-The compatibility of RealmJoin with White-Glove (Autopilot Pre-Provisioning) varies based on the deployment method employed:
+The compatibility of RealmJoin with Autopilot Pre-Provisioning varies based on the deployment method selected:
 
-1. **Intune-Driven Deployment for Apps**:
-   * **Compatibility**: Generally supported.
-   * **Considerations**: Manual intervention may be necessary to ensure that deployed applications remain up to date. This involves regularly checking for updates and applying them to maintain the integrity and functionality of the applications.
+1. **Intune-Driven App Deployment**:
+   * **Compatibility**: Supported.
+   * **Considerations**: Ensure that you meet the [requirements defined by Microsoft](https://learn.microsoft.com/en-us/autopilot/pre-provision) for pre-provisioning. Please note that this method only supports device-context apps that are targeted either to the device itself or to a pre-assigned user.&#x20;
 2. **RealmJoin Agent-Driven App Deployment**:
    * **Compatibility**: Not supported.
-   * **Recommendation**: In this scenario, it is advisable to use a Temporary Access Pass (TAP). This method provides an efficient way to grant temporary access for the user profile to an admin.
-3. **Alternative Option**:
-   * **Device Assigned Applications**: Depending on the specific use case, this method can be utilized as an alternative. This approach allows for applications to be assigned directly to devices, ensuring that the necessary software is available and up to date on each device. Suitable for devices that are used by more than the primary user only.
-
-By understanding these nuances, you can select the most appropriate deployment method for your requirements, ensuring a smooth and efficient integration with White-Glove.
+   * **Recommendation**: In this scenario, it is possible to use a Temporary Access Pass (TAP). This method allows to enroll a device on behalf of a user what includes the whole Intune and RealmJoin deployment phases.
+3. **Mix of Intune- and RealmJoin Agent-Driven App Deployment:**
+   * **Compatibility:** Possible, but not recommended.
+   * The RealmJoin Agent can detect applications installed via Intune-driven app deployment. However, for successful recognition, the packages must match exactly (such as argument hashes, version number). This approach adds complexity, as applications need to be maintained two times and assignment logic becomes more intricate.
