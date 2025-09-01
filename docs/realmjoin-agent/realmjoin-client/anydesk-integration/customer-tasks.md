@@ -25,7 +25,7 @@ Simply go to [https://portal.realmjoin.com/organization/other-files](https://por
 
 <figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
-Afterwards, please update the AnyDesk configuration in RealmJoin with the new URL as stated in the [article below](customer-tasks.md#anydesk-group-settings-for-user-client).
+Afterwards, please update the AnyDesk configuration in RealmJoin with the new URL as stated in the [article below](customer-tasks.md#group-settings-for-end-user-client).
 
 ### Supporter client
 
@@ -40,7 +40,7 @@ Note, that **you are responsible** for **updating the custom client** and **requ
 {% endhint %}
 
 {% hint style="danger" %}
-The RealmJoin package "AnyDesk Custom Client" (also known as "AnyDesk Supporter Client Setup Launcher") is no longer supported (announced in February 2024). Please use the new process stated above and delete the old package.&#x20;
+The RealmJoin package "AnyDesk Custom Client" (also known as "AnyDesk Supporter Client Setup Launcher") is no longer supported (announced in February 2025). Please use the new process stated above and delete the old package.&#x20;
 {% endhint %}
 
 ## Group settings for end-user client
