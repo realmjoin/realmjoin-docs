@@ -17,9 +17,9 @@
 
 ## Am I able to maintain my own software packages and updates?
 
-RealmJoin contains an internal application store compatible with Intunewin (Microsoft Endpoint Manager / Intune Package Format), with over 1000 existing applications. RealmJoin offers packaging-as-a-service to provide any missing applications.
+RealmJoin contains an internal application store compatible with Intunewin (Microsoft Endpoint Manager / Intune Package Format), with over 2000 existing applications. RealmJoin offers packaging-as-a-service to provide any missing applications.
 
-As RealmJoin directly leverages Microsoft Endpoint Manager, it is possible to offer additional applications which are maintained independently by your organization next to applications sourced through our application store.
+As RealmJoin directly leverages Microsoft Intune, it is possible to offer additional applications which are maintained independently by your organization next to applications sourced through our application store.
 
 ## Am I able to maintain my own runbooks?
 
