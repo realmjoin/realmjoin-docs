@@ -53,6 +53,7 @@
   * [Runbook Scheduling](automation/runbooks/scheduling.md)
   * [Runbook Logs](automation/runbooks/runbook-logs/README.md)
     * [Runbook Job Details](automation/runbooks/runbook-logs/runbook-job-details.md)
+  * [Runbook Reference](automation/runbooks/documentation/README.md)
   * [Runbooks Changelog](https://github.com/realmjoin/realmjoin-runbooks/blob/production/CHANGELOG.md)
 * [Requirements](automation/azure-ad-roles-and-permissions.md)
 * [Remediation Scripts](automation/remediation-scripts.md)
