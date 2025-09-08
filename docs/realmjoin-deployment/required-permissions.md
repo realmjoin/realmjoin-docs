@@ -62,7 +62,7 @@ The following table reflects the permissions (type Application permissions) if A
 
 ## RealmJoin Portal - Security Features&#x20;
 
-Application ID: `5713826-15ee-4f6c-91ee-56cb1844e275`
+Application ID: `e5713826-15ee-4f6c-91ee-56cb1844e275`
 
 This app is responsible for advanced security information in the ReamJoin Portal. Please refer to your onboarding agent to adopt the consent to your needs.
 
@@ -95,4 +95,3 @@ This app is responsible for the client application (RealmJoin Agent) (type Deleg
 | `User.Read.All`         | Classic Portal: List / display users                                          |
 | `Device.Read.All`       | Classic Portal: Interact with devices and device management                   |
 | `Group.Read.All`        | Classic Portal: List / display groups as well as application group management |
-
