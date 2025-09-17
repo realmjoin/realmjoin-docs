@@ -72,3 +72,14 @@ The RealmJoin subscription fee does not include licensing for the software appli
 Customers/Users of the RealmJoin software packages are required to inform themselves about the respective licensing terms of the software applications in the packages and to license them accordingly before deployment.
 
 In general, we assume no liability for any damages that may arise from the software packages we create or the software contained therein. We recommend that customers test all software packages before deployment.
+
+## Custom Packaging
+
+Customers have the option to request **custom software packages**. These packages are stored in a **private app store**, accessible only to the requesting customer’s organization and not visible in the public app store. The main use case for custom packages are packages, that are not meant to be publicly available or contain proprietary information that can not be externalized by parameters.
+
+Please note that requesting custom packages is not included in the standard subscription fee. To enable this feature, customers must purchase a **RealmJoin Custom Packaging Contingent**. Two contingent sizes are available:
+
+* 5 Custom Packaging Credits
+* 10 Custom Packaging Credits
+
+Each new custom package consumes 1 credit, while an update to an existing package consumes 0.5 credits. Custom Packaging Contingents are one-time purchase items. Once a contingent is fully used, a new contingent must be purchased to continue requesting custom packages.
