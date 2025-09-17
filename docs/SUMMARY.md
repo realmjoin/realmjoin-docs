@@ -119,7 +119,8 @@
 
 ## Legal
 
-* [Licensing](legal/licensing.md)
+* [Licensing](legal/licensing/README.md)
+  * [Azure Marketplace](legal/licensing/azure-marketplace.md)
 * [Support & Service Level](legal/support.md)
 
 ***
