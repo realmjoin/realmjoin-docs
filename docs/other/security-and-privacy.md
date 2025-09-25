@@ -12,7 +12,7 @@ This chapter provides an overview on frequently asked questions surrounding info
 ### 2. Which data is processed by RealmJoin?
 
 * Computer state
-* Entra ID user/device/group data
+* Entra ID user/device/group data (this contains UPN / email address data, first name, last name, profile picture)
 * Intune data
 * ATP data
 * Log files
@@ -20,9 +20,9 @@ This chapter provides an overview on frequently asked questions surrounding info
 ### 3. Which data is persistently stored by/on behalf of RealmJoin and how?
 
 * Computer state
-* Entra ID user/device references,
+* Entra ID user/device references (this contains UPN / email address data)
 * Information for app management
-* Log files.
+* Log files
 
 &#x20;Data is stored in a combination of blob storage and databases.
 
