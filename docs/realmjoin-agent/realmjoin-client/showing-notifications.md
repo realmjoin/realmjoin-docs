@@ -8,19 +8,7 @@ Once you have created your notification, the target groups will receive a notifi
 
 The user receives different colored notifications based off the notification category chosen. Once a notification has been closed and acknowledged by the user, it will not re-appear.
 
-<div>
-
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-07-11 172006 (2).png" alt=""><figcaption><p>Category: None</p></figcaption></figure>
-
- 
-
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-07-11 171544 (3).png" alt=""><figcaption><p>Category: Info</p></figcaption></figure>
-
- 
-
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-07-11 171242 (2).png" alt=""><figcaption><p>Category: Alert</p></figcaption></figure>
-
-</div>
+<div><figure><img src="../../../.gitbook/assets/Screenshot 2024-07-11 172006 (2).png" alt=""><figcaption><p>Category: None</p></figcaption></figure> <figure><img src="../../../.gitbook/assets/Screenshot 2024-07-11 171544 (3).png" alt=""><figcaption><p>Category: Info</p></figcaption></figure> <figure><img src="../../../.gitbook/assets/Screenshot 2024-07-11 171242 (2).png" alt=""><figcaption><p>Category: Alert</p></figcaption></figure></div>
 
 The notifications are transparent and are able to be clicked through to minimize disruption. This can be changed in the [Advanced Settings](showing-notifications.md#advanced-settings).
 
@@ -35,7 +23,7 @@ The notifications are transparent and are able to be clicked through to minimize
 2. **Notification Schedule**: Set a Start and End date for the notification. The notification will only be active during this period. Use the prompts to quickly fill
 3. **Target Groups**: Specify which [groups](../../ugd-management/user-list/) should receive the alert. You can also exclude certain groups if needed.
 4. **Notification Content**: This includes:
-   * **Language (Optional)**: The language of your notification. This field accepts IETF language tags.
+   * **Language (Optional)**: Additional language versions of your notification. This field accepts IETF language tags and the language is evaluated by the current Windows language by the agent. The default and fallback is always _en._&#x20;
    * **Title**: The headline of your notification.
    * **Body**: The main content of your notification.
 
