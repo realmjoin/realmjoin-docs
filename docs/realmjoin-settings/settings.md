@@ -2,7 +2,7 @@
 
 RealmJoin Portal's Settings allows administrators to customize their experience, manage RealmJoin features and integrate with Azure resources.
 
-<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ## Navigation
 
@@ -22,13 +22,9 @@ Configure group prefixes to descriptive names within the RealmJoin Portal.
 
 Connect Log Analytics Workspace to RealmJoin for in-depth logging.
 
-### [Workplace Cloud Storage](settings.md#workplace-cloud-storage)
+### [Workplace cloud storage](settings.md#workplace-cloud-storage)
 
 Manage files within your Workspace.
-
-### [Self Service Forms](settings.md#self-service-forms)
-
-Custom forms to collect structured data from users.
 
 ### [Runbooks](../automation/connecting-azure-automation/)
 
@@ -46,7 +42,6 @@ Create granular access permissions for team members
 
 Create additional RealmJoin Portal roles
 
-### [Changelog](settings.md#changelog)
+### App Categories
 
-Keep up to date with the latest releases for the RealmJoin Portal
-
+Create and manage Intune app categories
