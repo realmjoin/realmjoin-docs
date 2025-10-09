@@ -1,5 +1,6 @@
 ---
 description: First pointers for the migration to the new RealmJoin portal.
+hidden: true
 ---
 
 # Migration to RealmJoin vNext
