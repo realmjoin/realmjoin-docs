@@ -4,15 +4,16 @@ description: Application Lifecycle and Management Companion to Microsoft Intune
 
 # Welcome
 
-[RealmJoin ](https://realmjoin.com)is the perfect companion to Microsoft Intune. Securely connect to the cloud and manage large Windows 10/11 ecosystems with software and policies as well as your Entra ID based user landscape - without any on premise servers or other local requirements. Manage devices and users no matter if work happens in corporate headquarters or at [Starbucks](https://www.starbucks.com).
+[RealmJoin ](https://realmjoin.com)is the perfect companion to Microsoft Intune. Securely connect to the cloud and manage large ecosystems with software and policies as well as your Entra ID based user landscape - without any on-premise servers or other local requirements. \
+Manage devices and users & start with automation - no matter if work happens in corporate headquarters or at [Starbucks](https://www.starbucks.com).
 
-Visit [RealmJoin Portal](https://portal.realmjoin.com) to onboard your organization and start your journey.
+***
+
+<p align="center"><a href="https://www.realmjoin.com/start-now/">Onboard your organization and start your journey now!</a></p>
 
 ![](../.gitbook/assets/rjvnext-appstore.png)
 
 Additional Information at [www.realmjoin.com](http://realmjoin.com).
-
-Searching for the **RealmJoin Classic Documentation?** [Click here](https://docs-classic.realmjoin.com).
 
 ## Areas
 
