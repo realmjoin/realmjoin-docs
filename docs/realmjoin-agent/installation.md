@@ -106,14 +106,14 @@ RealmJoin can be deployed via [MSI installer](installation.md#msi-installer) as 
 
 If an administrator wants to install RealmJoin Agent on a device without mass deployment or the Microsoft Intune infrastructure, one may download the MSI and do an interactive installation. As alternative, you can also copy one of the command lines below to download and run the Agent in a single step.
 
-#### MSI installer
+#### MSI installer and EXE
 
-* Stable release (Automatic Deployment recommended instead):\
-  [RealmJoin Release Version](https://gkrealmjoin.s3.amazonaws.com/win-release/RealmJoin.msi)
+* Stable release:\
+  [MSI](https://gkrealmjoin.s3.amazonaws.com/win-release/RealmJoin.msi) or [EXE](https://gkrealmjoin.s3.amazonaws.com/win-release/RealmJoin.exe)
 * Beta Channel (near to stable, for long-term testing):\
-  [RealmJoin Beta Version](https://gkrealmjoin.s3.amazonaws.com/win-beta/RealmJoin.msi)
+  [MSI](https://gkrealmjoin.s3.amazonaws.com/win-beta/RealmJoin.msi) or [EXE](https://gkrealmjoin.s3.amazonaws.com/win-beta/RealmJoin.exe)
 * Canary Channel (Experimental, first testing):\
-  [RealmJoin Canary Version](https://gkrealmjoin.s3.amazonaws.com/win-canary/RealmJoin.msi)
+  [MSI](https://gkrealmjoin.s3.amazonaws.com/win-canary/RealmJoin.msi) or [EXE](https://gkrealmjoin.s3.amazonaws.com/win-canary/RealmJoin.exe)
 
 #### Release Channel
 
