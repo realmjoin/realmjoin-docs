@@ -1,74 +1,73 @@
 # Deploying the Agent
 
-RealmJoin Agent can be deployed on a device using one of multiple ways - depending on the individual scenario. As a first step, download the RealmJoin installer of your choice and proceed to the desired installation method.
+The RealmJoin Agent can be seamlessly deployed using Microsoft Intune. A ready-to-use package is available in our Package Store, simplifying the setup process.\
+This guide outlines the recommended and supported method for installing the RealmJoin Agent via Intune.
 
-* Stable release (Automatic Deployment recommended instead):\
-  [RealmJoin Release Version](https://gkrealmjoin.s3.amazonaws.com/win-release/RealmJoin.msi)
-* Beta Channel (near to stable, for long term testing):\
-  [RealmJoin Beta Version](https://gkrealmjoin.s3.amazonaws.com/win-beta/RealmJoin.msi)
-* Canary Channel (Experimental, first testing):\
-  [RealmJoin Canary Version](https://gkrealmjoin.s3.amazonaws.com/win-canary/RealmJoin.msi)
+## Automatic Deployment
 
-## Automatic Deployment using Microsoft Intune
+### Microsoft Intune (intunewin)
 
-RealmJoin directly integrates with your Microsoft Intune tenant. No downloading of the client is necessary. This method only deploys the stable release of the agent.
+{% hint style="info" %}
+Recommended and fully supported.
+{% endhint %}
 
-1. Head to the Package Store
-2.  Select the RealmJoin Agent on the banner\
+RealmJoin integrates directly with your Microsoft Intune tenant by adding and updating the agent as an intunewin package:
+
+1. Open our **Package Store**.
+2.  Select the banner "RealmJoin Agent" or use this direct link: [RealmJoin Agent (Device)](https://portal.realmjoin.com/packagestore/45935/overview)\
 
 
     <figure><img src="../../.gitbook/assets/image (312).png" alt=""><figcaption></figcaption></figure>
-3. Select your preferred deployment method and click "Continue"\
-   ![](<../../.gitbook/assets/image (313).png>)
-4. Add users to the managed app groups for RealmJoin or directly on Intune, depending on preference
-5. Intune will automatically deploy the RealmJoin Agent after some time
+3. Select "**Use Intune (managed)**" as deployment method and click "Continue".
+4. Add this package to your "**Enrollment Status Page**" under "Block device use until required apps are installed if they are assigned to the user/device". This ensures that Intune waits for RealmJoin Agent installation during enrollment.
+5. Please also activate "**Automation Main channel**".
 
-## Manual Deployment using Microsoft Intune
+<figure><img src="../.gitbook/assets/image (56).png" alt="" width="563"><figcaption></figcaption></figure>
 
-RealmJoin can be deployed through Microsoft Intune by deploying the MSI as a Line-of-Business app. This may be useful if you wish to deploy Beta or Canary versions using Intune.
-
-### Intune Portal
-
-Use the following instructions to deploy the RealmJoin Agent:
-
-1. Navigate to **Microsoft Intune** and select **Apps > All Apps**
-
-<figure><img src="../../.gitbook/assets/image (311).png" alt=""><figcaption></figcaption></figure>
-
-2. Then click **+ Add**
-3. Under **Other** choose **Line-of-business-app** and click **Select**
-
-![](<../../.gitbook/assets/image (236).png>)
-
-4. Next click **Select app package file**
-5. As **App package file** browse for **RealmJoin.msi** on your device
-
-![](<../../.gitbook/assets/image (139).png>)
-
-6. Then, click **OK**
-7. Under **App information** fill in all required fields and set **Ignore app version** to **Yes**
-
-![](../.gitbook/assets/rj_intune_1.png)
-
-8. Under **Assignments** add groups and users for your RealmJoin app
-
-![](<../../.gitbook/assets/image (152).png>)
-
-9. Under **Review + create** check all your settings
-
-![](../.gitbook/assets/rj_intune_2.png)
-
-10. Finally click **Create**
-
-{% hint style="warning" %}
-Like any other application in Intune, ReamJoin can be assigned to the desired user groups as (required) software. It is not necessary to install additional software on the client devices to run RealmJoin. RealmJoin will be deployed on the client devices on the next Intune sync.
+{% hint style="info" %}
+RealmJoin agent will **check for newer versions** during **inital deployment** and **update if required**. To speed up this process, we still recommend "Automation Main channel". This ensures that the most current version is installed right from the start.
 {% endhint %}
 
-### Windows Defender Exceptions
+{% hint style="warning" %}
+Please **do not use "Automate Preview channel"** as the **intunewin application ID can change** what will remove the package from your "Enrollment Status Page" configuration.
+{% endhint %}
+
+6. Add users, devices or groups to the created managed app groups and Intune will automatically deploy the RealmJoin Agent.
+
+{% hint style="info" %}
+Our store also offers the package "RealmJoin Agent (User)" which is running on user level (which was the default in the past). For **stability reasons**, we now **only recommend the device level version**.
+{% endhint %}
+
+## Beta and Canary channel
+
+{% hint style="info" %}
+The RealmJoin release **channel** can be **adjusted via User and Group settings**: [Configure RealmJoin release channel](../ugd-management/user-and-group-settings/). Only **during initial deployment**, the **channel is defined and fixed by the installer** package. When using [Automatic Deployment](installation.md#automatic-deployment) with our Package store, deployments will always use the release channel.
+{% endhint %}
+
+For **testing initial deployments with other channels**, you can manually download and upload one of the following intunewin packages:
+
+* Beta Channel (near to stable, for long-term testing):\
+  [RealmJoin Beta Version](https://gkrealmjoin.s3.amazonaws.com/win-beta/RealmJoinSystemInstallEspDeviceSetupOnly.intunewin)
+* Canary Channel (Experimental, first testing):\
+  [RealmJoin Canary Version](https://gkrealmjoin.s3.amazonaws.com/win-canary/RealmJoinSystemInstallEspDeviceSetupOnly.intunewin)
+
+When uploading to Intune, please use the suggested settings and:
+
+* Program:
+  * Device restart behavior: `Determine behavior based on return codes`
+* Detection rules:
+  * Manually configure detection rules
+  * File:
+    * Path: `C:\Program Files\RealmJoin`
+    * File or folder: `RealmJoin.exe`
+    * Detection method: `File or folder exists`
+    * Associated with a 32-bit app on 64-bit clients: `No`
+
+## Windows Defender Exceptions
 
 RealmJoin has worked with the Microsoft Defender Team to be whitelisted from malware detection. Since Defender is using more and more machine learning mechanisms to identify potential threats and RealmJoin has several features like cloud downloaded application installations, RealmJoin might be recognized by **Windows Defender** as a possible threat.
 
-While this behavior is not certain, it is recommended to implement additional Windows Defender exceptions. Create a new device configuration profile, type **Device restriction**, or edit your existing profile and add the following **Windows Defender Antivirus Exceptions**:
+While this behavior is not certain, it is recommended to implement additional **Windows Defender Antivirus exceptions**:
 
 | Defender Exceptions                             |
 | ----------------------------------------------- |
@@ -87,27 +86,48 @@ While this behavior is not certain, it is recommended to implement additional Wi
 It\`s important to configure the same path in **Files and Folders** and **Processes**. In some cases, Microsoft only checks one of this Defender Exceptions.
 {% endhint %}
 
-## Interactive Installation
+## Additional Information
 
-If an administrator wants to install RealmJoin on a device without mass deployment or the Microsoft Intune infrastructure, he/she may download the MSI and do an interactive installation or copy one of the command lines below to download and run in a single step.
+### Automatic Deployment
 
-### Command Line Installation
+#### Legacy: Microsoft Intune (MSI)
 
-You may download and install RealmJoin in a single step by using the following command lines. This may help especially when testing scenarios or new software packages in virtual machines.
+{% hint style="warning" %}
+This **legacy deployment method** is provided for reference purposes only and is **no longer supported**.
 
-#### Release Channel:
+Also note that [Microsoft does not recommend to mix MSI and intunewin deployment](https://learn.microsoft.com/en-us/intune/intune-service/apps/lob-apps-windows): "If you mix the installation of Win32 apps and line-of-business apps during Windows Autopilot enrollment, the app installation may fail as they both use the Trusted Installer service at the same time."
+{% endhint %}
+
+RealmJoin can be deployed via [MSI installer](installation.md#msi-installer) as a Line-of-Business app. When uploading to Intune, ensure that "Ignore app version" is set to "Yes".
+
+<figure><img src="../.gitbook/assets/image (55).png" alt="" width="364"><figcaption></figcaption></figure>
+
+### Interactive Installation via Command Line
+
+If an administrator wants to install RealmJoin Agent on a device without mass deployment or the Microsoft Intune infrastructure, one may download the MSI and do an interactive installation. As alternative, you can also copy one of the command lines below to download and run the Agent in a single step.
+
+#### MSI installer
+
+* Stable release (Automatic Deployment recommended instead):\
+  [RealmJoin Release Version](https://gkrealmjoin.s3.amazonaws.com/win-release/RealmJoin.msi)
+* Beta Channel (near to stable, for long-term testing):\
+  [RealmJoin Beta Version](https://gkrealmjoin.s3.amazonaws.com/win-beta/RealmJoin.msi)
+* Canary Channel (Experimental, first testing):\
+  [RealmJoin Canary Version](https://gkrealmjoin.s3.amazonaws.com/win-canary/RealmJoin.msi)
+
+#### Release Channel
 
 ```
 @powershell -NoProfile -ExecutionPolicy unrestricted -Command "((new-object net.webclient).DownloadFile('https://gkrealmjoin.s3.amazonaws.com/win-release/RealmJoin.exe', 'realmjoin.exe'))" && .\realmjoin.exe
 ```
 
-#### Beta Channel:
+#### Beta Channel
 
 ```
 @powershell -NoProfile -ExecutionPolicy unrestricted -Command "((new-object net.webclient).DownloadFile('https://gkrealmjoin.s3.amazonaws.com/win-beta/RealmJoin.exe', 'realmjoin.exe'))" && .\realmjoin.exe
 ```
 
-#### Canary Channel:
+#### Canary Channel
 
 ```
 @powershell -NoProfile -ExecutionPolicy unrestricted -Command "((new-object net.webclient).DownloadFile('https://gkrealmjoin.s3.amazonaws.com/win-canary/RealmJoin.exe', 'realmjoin.exe'))" && .\realmjoin.exe
@@ -121,13 +141,9 @@ When installing RealmJoin during unattended OS installation or any other non-int
 reamjoin.exe -install
 ```
 
-## Additional Infos
-
 ### Signed MSI
 
 The RealmJoin.MSI is SHA2 (256 bit) signed by RealmJoin and therefore recognized by Windows as safe to install.
-
-
 
 ![](../.gitbook/assets/realmjoin.msi.signature.png)
 
