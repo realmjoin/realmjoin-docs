@@ -32,7 +32,9 @@ RealmJoin agent will **check for newer versions** during **inital deployment** a
 Please **do not use "Automate Preview channel"** as the **intunewin application ID can change** what will remove the package from your "Enrollment Status Page" configuration.
 {% endhint %}
 
-6. Add users, devices or groups to the created managed app groups and Intune will automatically deploy the RealmJoin Agent.
+6. **Assign** the package to **devices** (if assigned to user objects, the agent might not start during deployment), e.g.:
+   1. Add **single devices or device group/s** to the automatically created managed app groups
+   2. Add "**All devices**" as **additional assignment via Intune** (note that you might need filters to exclude special devices like AVD or Kiosk)
 
 {% hint style="info" %}
 Our store also offers the package "RealmJoin Agent (User)" which is running on user level (which was the default in the past). For **stability reasons**, we now **only recommend the device level version**.
