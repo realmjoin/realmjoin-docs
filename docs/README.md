@@ -13,7 +13,7 @@ Manage devices and users & start with automation - no matter if work happens in 
 
 ![](../.gitbook/assets/rjvnext-appstore.png)
 
-Additional Information at [www.realmjoin.com](http://realmjoin.com).
+<p align="center">Additional Information at <a href="http://realmjoin.com">www.realmjoin.com</a>.</p>
 
 ## Areas
 

@@ -14,16 +14,20 @@
 ## User, Group and Device Management <a href="#ugd-management" id="ugd-management"></a>
 
 * [Overview](ugd-management/user-group-device-management.md)
-* [User Profile](ugd-management/about-me.md)
 * [Organization Details](ugd-management/organization-details.md)
+* [User Profile](ugd-management/about-me.md)
 * [User, Group and Device Lists](ugd-management/user-list/README.md)
-  * [Advanced Search](ugd-management/user-list/advanced-search.md)
-  * [Data Export](ugd-management/user-list/data-export.md)
   * [User Details](ugd-management/user-list/user-details.md)
   * [Group Details](ugd-management/user-list/group-details.md)
   * [Device Details](ugd-management/user-list/device-details.md)
 * [User and Group Settings](ugd-management/user-and-group-settings/README.md)
   * [Available RealmJoin Policies](ugd-management/user-and-group-settings/additional-settings.md)
+
+## Analyze & Export
+
+* [Advanced Search](analyze-and-export/advanced-search/README.md)
+  * [Advanced Search Syntax](analyze-and-export/advanced-search/advanced-search-syntax.md)
+* [Data Export](analyze-and-export/data-export.md)
 
 ## App Management
 

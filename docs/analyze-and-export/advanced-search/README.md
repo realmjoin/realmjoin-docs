@@ -4,7 +4,12 @@ description: Experience nearly load-free access to your data
 
 # Advanced Search
 
-From May 9th, RealmJoin introduces a revamped search mechanism that enables real-time access to tenant data. This enhancement ensures efficient performance even for tenants with a large volume of user, device, and group objects.
+RealmJoin introduces a revamped search mechanism that enables real-time access to tenant data. This enhancement ensures efficient performance even for tenants with a large volume of user, device, and group objects.
+
+{% hint style="success" %}
+The Advanced Search experience is available for the Users-, Groups-, Devices- & Packages-Table. \
+Check out the Use Cases subpage for examples that help you get more value from your tenant data.&#x20;
+{% endhint %}
 
 Tables can be searched using the _basic_ or the _advanced_ search feature.&#x20;
 
@@ -67,48 +72,6 @@ Advanced Search allows querying across available table values using a flexible a
     * `name`
   * Device table
     * `name, operatingsystem (os), manufacturer (manu), model`
-
-### Examples
-
-Get all German users:
-
-[`country:DE`](https://portal.realmjoin.com/users/all?search=country%3ADE)&#x20;
-
-Get all users of a specific department:
-
-[`department:"Sales Department"`](https://portal.realmjoin.com/users/all?search=department%3A%22Sales%20Department%22)&#x20;
-
-Get all users with job title CEO:
-
-[`job:CEO`](https://portal.realmjoin.com/users/all?search=job%3ACEO)&#x20;
-
-Get all users with job title CEO not in Germany:
-
-[`job:CEO country!:Germany`](https://portal.realmjoin.com/users/all?search=job%3ACEO%20country!%3AGermany)&#x20;
-
-Get all users starting with ADM- with an empty department:
-
-[`name:ADM- department=""`](https://portal.realmjoin.com/users/all?search=name%3AADM-%20department%3D%22%22)&#x20;
-
-Get all users with postal code 63065:
-
-[`zip:63065`](https://portal.realmjoin.com/users/all?search=zip%3A63065)
-
-List all users with specific domain:
-
-[`domain.com`](https://portal.realmjoin.com/users/all?search=domain.com)
-
-Get all Windows 11 Version 22H2 devices:
-
-[`os:"Windows 11 (22H2)"`](https://portal.realmjoin.com/devices?search=OS%3D%22Windows%2011%20\(22H2\)%22)
-
-Get all Dell XPS devices:
-
-[`manu:dell model:xps`](https://portal.realmjoin.com/devices?search=manu%3Adell%20model%3Axps)&#x20;
-
-Get all devices with RealmJoin Version 4.19 installed:
-
-[`rj:4.19`](https://portal.realmjoin.com/devices?search=rj%3A4.19)&#x20;
 
 ### FAQ
 
