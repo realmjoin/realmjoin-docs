@@ -133,7 +133,7 @@ The random order of **Base Fees** und **Additional Users** under the **Price** i
 * After authenticating on our platform using your Microsoft credentials, you will be prompted for additional information, such as the desired total **User** amount and a **Technical contact**.
 
 {% hint style="info" %}
-The **Technical contact** must have a mailbox connected to it, so we are able to notify you in case there are relevant issues with RealmJoin. In case you'd like to change that, please [let us know](https://www.realmjoin/help/).
+The **Technical contact** must have a mailbox connected to it, so we are able to notify you in case there are relevant issues with RealmJoin. In case you'd like to change that, please [let us know](https://www.realmjoin.com/help/).
 {% endhint %}
 
 {% hint style="success" %}
