@@ -75,7 +75,7 @@ For prices in Euro (EUR), please check out our [website](https://www.realmjoin.c
 ### **Change plan**
 
 {% hint style="warning" %}
-This is currently **not supported**. Please [contact us](https://www.radius-as-a-service.com/help/) in case you have questions around this topic.
+This is currently **not supported**. Please [contact us](https://www.realmjoin.com/help) in case you have questions around this topic.
 {% endhint %}
 
 ### **Recurring billing**
