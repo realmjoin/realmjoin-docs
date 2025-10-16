@@ -65,7 +65,7 @@ RealmJoin will automatically handle issues with Windows' complexity requirements
 Truly random passwords can be painful to work with, which is why special preset templates are also supported.
 
 * Preset 1 ⇒ `[1 upper][3 lower][4 digit]`
-  * `Tuci9324`
+  * `Tuci9325`
   * `Lnso5050`
   * `Khwn2174`
 * Preset 2 ⇒ `Key-[6 digit]-[6 digit]-[6 digit]-[6 digit]-[6 digit]-[6 digit]-[6 digit]-[6 digit]`
