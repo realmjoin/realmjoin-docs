@@ -42,6 +42,7 @@
   * [Packaging Requests](app-management/packages/packaging-requests/README.md)
     * [Packaging Roles & Responsibilities](app-management/packages/packaging-requests/packaging-roles-and-responsibilities.md)
     * [Organic Packages](app-management/packages/packaging-requests/organic-packages.md)
+  * [Migration Guide: RealmJoin to Intune Managed Packages](app-management/packages/migration-guide-realmjoin-to-intune-managed-packages.md)
 * [Software Reporting](app-management/software-reporting.md)
 * [AVD Templates](app-management/avd-templates.md)
 
