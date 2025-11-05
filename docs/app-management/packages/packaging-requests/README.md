@@ -37,7 +37,7 @@ If the application package does not contain any customer specific information, i
 
 ### Package Updates
 
-If an application is required in a newer version than available in the RealmJoin store, the same processes and rules apply as for the _New Packages_ listed above. If the updated binary behaves exactly as the available version, command line parameters can be omitted in the request.
+If an application is required in a newer version than available in the RealmJoin store or additional parameters are needed, the same processes and rules apply as for the _New Packages_ listed above. If the updated binary behaves exactly as the available version, command line parameters can be omitted in the request.
 
 {% hint style="info" %}
 Note: Additional switches, new parameters or configuration files for an existing package are considered updates and shall be requested the identical way.
