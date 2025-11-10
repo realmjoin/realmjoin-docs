@@ -66,16 +66,16 @@
 
 ## RealmJoin Agent
 
+* [Deploying the Agent](realmjoin-agent/installation.md)
 * [Features](realmjoin-agent/realmjoin-client/README.md)
+  * [RealmJoin ESP](realmjoin-agent/realmjoin-client/realmjoin-esp.md)
+  * [RealmJoin App Notification](realmjoin-agent/realmjoin-client/deploy-apps.md)
   * [Local Admin Password Solution (LAPS)](realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/README.md)
     * [KeyVault](realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/keyvault.md)
     * [Application Insights](realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/application-insights.md)
   * [Notifications](realmjoin-agent/realmjoin-client/showing-notifications.md)
   * [AnyDesk Integration](realmjoin-agent/realmjoin-client/anydesk-integration/README.md)
     * [AnyDesk configuration](realmjoin-agent/realmjoin-client/anydesk-integration/customer-tasks.md)
-  * [App Deployment using the Agent](realmjoin-agent/realmjoin-client/deploy-apps/README.md)
-    * [RealmJoin ESP](realmjoin-agent/realmjoin-client/deploy-apps/realmjoin-esp.md)
-* [Deploying the Agent](realmjoin-agent/installation.md)
 * [User Interface](realmjoin-agent/client-menu.md)
 
 ## Logs
