@@ -6,6 +6,10 @@ Using this feature you can define a set (aka template) of applications. This set
 
 This is intended for creating golden images for Azure Virtual Desktop multi-session pooled hosts.
 
+{% hint style="info" %}
+Creating and managing Azure Virtual Desktop (AVD) templates is a complex task that requires expert knowledge, thorough planning, and precise configuration. While we fully support all RealmJoin-related topics described on this page, our ability to assist with broader AVD templating topics is limited. This includes—but is not limited to—general guidance on creating, customizing, deploying, and troubleshooting AVD templates.
+{% endhint %}
+
 ## Permissions
 
 To enable the feature, you must define a [custom role](../realmjoin-settings/permission/custom-roles/) and assign the role to a group or user.
