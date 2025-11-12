@@ -1,13 +1,14 @@
 # Features
 
-RealmJoin Agent is an optional component that you can use alongside RealmJoin Portal on Windows 10/11 clients. It enables additional scenarios such as:
+RealmJoin Agent is an optional component that you can use alongside RealmJoin Portal on Windows 10/11 clients. It enables additional features such as:
 
+* [RealmJoin ESP](realmjoin-esp.md)
+* [RealmJoin Application / Configuration Deployment and Lifecycle](../../app-management/packages/package-store/package-store-details.md#realmjoin-deployment)
 * [Local Admin Password Solution (LAPS)](local-admin-password-solution-laps/)
-* [Notifications](showing-notifications.md)&#x20;
-* [AnyDesk integration](anydesk-integration/)
+* [Notifications](showing-notifications.md)
+* [AnyDesk Integration](anydesk-integration/)
 * Audit tasks (collecting device/client information)
-
-It can also be used to [deploy Windows software and configurations](deploy-apps.md) that cannot be easily delivered using MS Endpoint Manager / Intune.
+* Advanced Telemetry
 
 ## Compliance Checks
 
@@ -19,6 +20,6 @@ This can trigger[ package installations](deploy-apps.md#package-installation) an
 
 RealmJoin is responsible for two different processes running on the device:
 
-* The **realmjoin.exe** process is started up automatically on Logon. The process is always running and sends upstream data every 15 minutes.
-* The **realmjoinservice.exe** is called when a package requires the **SYSTEM mode** to be processed. It is not running by default.
+* The **`realmjoin.exe`** process is started up automatically on Logon. The process is always running and sends upstream data every 15 minutes.
+* The **`realmjoinservice.exe`** is called when a package requires the **SYSTEM mode** to be processed. It is not running by default.
 
