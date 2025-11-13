@@ -102,7 +102,7 @@ Also note that [Microsoft does not recommend to mix MSI and intunewin deployment
 
 RealmJoin can be deployed via [MSI installer](installation.md#msi-installer) as a Line-of-Business app. When uploading to Intune, ensure that "Ignore app version" is set to "Yes".
 
-<figure><img src="../.gitbook/assets/image (55).png" alt="" width="364"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (55) (1).png" alt="" width="364"><figcaption></figcaption></figure>
 
 ### Interactive Installation via Command Line
 

@@ -107,6 +107,7 @@
 
 ## Other
 
+* [MSP & Advanced Features](other/msp-and-advanced-features.md)
 * [Security & Privacy](other/security-and-privacy.md)
 * [FAQ](other/faq.md)
 * [Troubleshooting](other/troubleshooting/README.md)

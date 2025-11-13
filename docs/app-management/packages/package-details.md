@@ -49,7 +49,7 @@ The following tabs are available:
 
 ### Overview
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Overview tab</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Overview tab</p></figcaption></figure>
 
 #### Title, Description and other Info
 

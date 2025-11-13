@@ -20,7 +20,7 @@ RealmJoin or Intune will automatically install the application. These applicatio
 {% tab title="RealmJoin" %}
 The application will appear in the RealmJoin Agent tray and will require the user to initiate the download and installation
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Intune" %}
