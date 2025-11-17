@@ -154,8 +154,12 @@ Windows Update for Business reports may take up to 24 hours to apply
 
 
         <figure><img src="../../.gitbook/assets/image (328).png" alt=""><figcaption></figcaption></figure>
-    *   **Customer Workspace Key:** RealmJoin will act as an agent to Log Analytics. Please provide the "Primary Key" to this workspace, as to allow writing data to the workspace.\
-
-
-        <figure><img src="../../.gitbook/assets/image (323).png" alt=""><figcaption></figcaption></figure>
+    * **Customer Workspace Key:** RealmJoin will act as an agent to Log Analytics. Please provide the "Primary Key" to this workspace, as to allow writing data to the workspace.
+      * "The Primary Key" can be obtained via different methods:
+        * [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/monitor/log-analytics/workspace?view=azure-cli-latest#az-monitor-log-analytics-workspace-get-shared-keys):\
+          `az monitor log-analytics workspace get-shared-keys --resource-group MyResourceGroup --workspace-name MyWorkspace`
+        * [PowerShell](https://learn.microsoft.com/en-us/powershell/module/az.operationalinsights/get-azoperationalinsightsworkspacesharedkey?view=azps-14.6.0):\
+          `Get-AzOperationalInsightsWorkspaceSharedKey -ResourceGroupName "MyResourceGroup" -Name "MyWorkspace"`&#x20;
+        * [RestAPI](https://learn.microsoft.com/en-us/rest/api/loganalytics/shared-keys/get-shared-keys?view=rest-loganalytics-2025-07-01\&tabs=HTTP):\
+          `POST https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/sharedKeys?api-version=2025-07-01`
 3. Press **Save** after filling out all fields. The system will give you feedback if everything worked.
