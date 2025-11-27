@@ -33,14 +33,14 @@ The complete line in the log may look like this, instead of `upgrade` may also b
 ```
 {% endcode %}
 
-<figure><img src="../../../../.gitbook/assets/choco-install-entry-point.png" alt=""><figcaption><p>Entry point of a choco installation inside chocolatey.log</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/choco-install-entry-point.png" alt=""><figcaption><p>Entry point of a choco installation inside chocolatey.log</p></figcaption></figure>
 
 This line already contains some important information, like the package version number to be installed, as well as the used params (package arguments configured in the RealmJoin Portal).
 
 The following lines will contain a lot of (non-relevant) debug information, among others, the complete content of chocolateyInstall.ps1 will be printed out.\
 Inside the debug information you will the two sections `RJAppDeployToolkit: Input Environment Variables` and `RJAppDeployToolkit: Resulting Variables`. Both section are located next to each other and show variables and values provided by the `RJAppDeployToolkit`
 
-<figure><img src="../../../../.gitbook/assets/RJAppDeployToolkit-output.png" alt=""><figcaption><p>Output of RJAppDeployToolkit</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/RJAppDeployToolkit-output.png" alt=""><figcaption><p>Output of RJAppDeployToolkit</p></figcaption></figure>
 
 ### Installation process
 

@@ -2,7 +2,7 @@
 
 RealmJoin Portal's Settings allows administrators to customize their experience, manage RealmJoin features and integrate with Azure resources.
 
-<figure><img src="../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (55) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Navigation
 

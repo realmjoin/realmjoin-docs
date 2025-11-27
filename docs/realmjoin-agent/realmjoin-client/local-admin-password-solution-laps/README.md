@@ -185,10 +185,9 @@ Key `LocalAdminManagement.PrivilegedAccount` (for common settings see [group set
 
 ## Accessing passwords
 
-Use the RealmJoin Portal to access the passwords.\
+Use the RealmJoin Portal to access the passwords.<br>
 
-
-<figure><img src="../../../../.gitbook/assets/image (300).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (309).png" alt=""><figcaption></figcaption></figure>
 
 ## Enable self-service
 

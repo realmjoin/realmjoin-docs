@@ -10,7 +10,7 @@ If custom roles are needed, please **request activation via RealmJoin support**.
 
 Custom Roles are defined as JSON. The JSON editor included in RealmJoin Portal offers syntax checking and highlighting and will verify your definition against the Custom Roles JSON schema.&#x20;
 
-<figure><img src="../../../../.gitbook/assets/image (203).png" alt=""><figcaption><p>Custom Roles JSON Editor</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (212).png" alt=""><figcaption><p>Custom Roles JSON Editor</p></figcaption></figure>
 
 ## Using the editor
 
@@ -18,7 +18,7 @@ Custom Roles are defined as JSON. The JSON editor included in RealmJoin Portal o
 
 The editor will check the syntax as you type. If a syntax error is detected, an error message **View x errors** and bug icon will appear next to **Save.**
 
-<figure><img src="../../../../.gitbook/assets/image (62).png" alt=""><figcaption><p>JSON error message/button</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (71).png" alt=""><figcaption><p>JSON error message/button</p></figcaption></figure>
 
 Click on this message to get more details about the error.
 
@@ -26,13 +26,13 @@ Click on this message to get more details about the error.
 
 You can auto-format the JSON by clicking **Format** in the upper right corner of the page.
 
-<figure><img src="../../../../.gitbook/assets/image (107).png" alt=""><figcaption><p>Format Button</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (116).png" alt=""><figcaption><p>Format Button</p></figcaption></figure>
 
 ### Auto-Complete
 
 The Editor can offer Auto-Complete known keywords (like permissions) from the schema.
 
-<figure><img src="../../../../.gitbook/assets/image (94).png" alt=""><figcaption><p>Keyword Auto-Complete</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (103).png" alt=""><figcaption><p>Keyword Auto-Complete</p></figcaption></figure>
 
 You can press "Ctrl" + "Space" at any time to invoke Auto-Complete.
 

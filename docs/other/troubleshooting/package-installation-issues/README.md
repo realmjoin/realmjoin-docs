@@ -29,7 +29,7 @@ The required log files needed for troubleshooting failed installations reside in
 
 Please always provide the ZIP file containing the logs with any service request raised to the RealmJoin support.
 
-<figure><img src="../../../../.gitbook/assets/zip-filestructure.png" alt=""><figcaption><p>File structure of a RealmJoin exported logs ZIP file</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/zip-filestructure.png" alt=""><figcaption><p>File structure of a RealmJoin exported logs ZIP file</p></figcaption></figure>
 
 \
 The following chapters will explain how to obtain the logs, how to analyze them, and will explain some common issues and fixes for these common issues.

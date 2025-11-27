@@ -48,7 +48,7 @@ Additionally, RealmJoin provides an Update group that is created on demand. The 
 
 Click **Enable Update Group** and a new EntraID Group with the suffix "(update)" will be created and software installations also assigned to this group. RealmJoin will dynamically discover installed copies of the software that are unmanaged and add the device it has been discovered on to the update group.
 
-<figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption><p>Additional groups can be activated</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (43) (1).png" alt=""><figcaption><p>Additional groups can be activated</p></figcaption></figure>
 
 
 
@@ -82,9 +82,8 @@ Selecting Assign will add users to the Main group by default.
 
 Basic packages do not have any associated Microsoft Entra groups. You will have to manually assign groups, devices or users.
 
-Groups, devices and users that are assigned to a Basic package will be assigned as Available by default and can be changed using the \[change settings] button.\
-
+Groups, devices and users that are assigned to a Basic package will be assigned as Available by default and can be changed using the \[change settings] button.<br>
 
 <figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>

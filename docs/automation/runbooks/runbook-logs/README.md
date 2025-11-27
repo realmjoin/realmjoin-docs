@@ -4,7 +4,7 @@
 
 Runbook logs allows you to review recent and archived runbook executions (jobs).
 
-<figure><img src="../../../../.gitbook/assets/image (76).png" alt=""><figcaption><p>Runbook Job List</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (85).png" alt=""><figcaption><p>Runbook Job List</p></figcaption></figure>
 
 ### Type and Category
 
@@ -24,7 +24,7 @@ You can sort by most fields by clicking on the field's header (name).
 
 Click on a job's ID to open the job's details page, which will show more metadata, the runbook's outputs and parameters. See [Runbook Job Details](runbook-job-details.md) for more information.
 
-<figure><img src="../../../../.gitbook/assets/image (84).png" alt=""><figcaption><p>Runbook Job Details</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (93).png" alt=""><figcaption><p>Runbook Job Details</p></figcaption></figure>
 
 ## Scheduled Jobs and Schedules
 
@@ -32,7 +32,7 @@ Click on a job's ID to open the job's details page, which will show more metadat
 
 Click **Scheduled Jobs** to see all scheduled jobs in your Azure Automation Account, regardless of type/context.
 
-<figure><img src="../../../../.gitbook/assets/image (213).png" alt=""><figcaption><p>Scheduled Jobs</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (222).png" alt=""><figcaption><p>Scheduled Jobs</p></figcaption></figure>
 
 You can **Delete** the scheduled job using the button to the right of the job. This will not delete the runbook, only the scheduled job.
 
@@ -52,6 +52,6 @@ Please be aware that you have to modify the Workspace's retention time to accomm
 
 Click **Archived** to switch from the recent logs in Azure Automation to those stored in Log Analytics.
 
-<figure><img src="../../../../.gitbook/assets/image (239).png" alt=""><figcaption><p>Archived Runbook Job Logs List</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (248).png" alt=""><figcaption><p>Archived Runbook Job Logs List</p></figcaption></figure>
 
 You can search and inspect these the same as the regular logs under **Recent**.

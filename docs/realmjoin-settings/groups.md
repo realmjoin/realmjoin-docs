@@ -6,9 +6,9 @@ This page allows to define these prefixes and to map group name prefixes to desc
 
 The pre-filled group namespaces can be changed or additional namespaces can be added to suit company requirements.
 
-![Group Prefix Mapping](<../../.gitbook/assets/image (175).png>)
+![Group Prefix Mapping](<../.gitbook/assets/image (184).png>)
 
 For example, the above group namespaces will appear in the User Profile as shown:
 
-<figure><img src="../../.gitbook/assets/image (316).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (325).png" alt=""><figcaption></figcaption></figure>
 

@@ -14,7 +14,7 @@ You can query the User, Group, Device and Package tables for your requested data
 
 Simply go to a table, perform your search and press the download button in the top right corner:
 
-<figure><img src="../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (33) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Export Use Case: Software Report
 
@@ -24,7 +24,7 @@ Clicking on an entry in the "Devices" or "Users" column will result in a pre-fil
 
 This enables you to do evaluations on installed software and identify Devices and Users with outdated versions.&#x20;
 
-<figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption><p>Overview of installed versions of Git for Windows</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (34) (1).png" alt=""><figcaption><p>Overview of installed versions of Git for Windows</p></figcaption></figure>
 
 {% hint style="info" %}
 Find more information about Software Reporting with RealmJoin in the [Software Reporting Section](https://docs.realmjoin.com/app-management/software-reporting).

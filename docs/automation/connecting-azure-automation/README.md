@@ -18,7 +18,7 @@ When reusing an existing Automation Account, be aware that RealmJoin Portal auto
 
 An Azure Subscription is needed to host your Automation Account. It is recommended to choose a subscription where only dedicated administrators will have access.
 
-[https://portal.azure.com/#blade/Microsoft\_Azure\_Billing/SubscriptionsBlade](https://portal.azure.com/#blade/Microsoft\_Azure\_Billing/SubscriptionsBlade)
+[https://portal.azure.com/#blade/Microsoft\_Azure\_Billing/SubscriptionsBlade](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade)
 
 Please note down the Subscription Id as it will be needed later.
 
@@ -28,7 +28,7 @@ Choose or create an Azure Resource Group in your Azure Subscription, e.g. `rjrb-
 
 [https://portal.azure.com/#create/Microsoft.ResourceGroup](https://portal.azure.com/#create/Microsoft.ResourceGroup)
 
-![Create an Azure Resource Group](<../../../.gitbook/assets/image (129).png>)
+![Create an Azure Resource Group](<../../.gitbook/assets/image (138).png>)
 
 Please note down the Resource Group's name as it will be needed later.
 
@@ -48,10 +48,10 @@ It is assumed you already finished [onboarding RealmJoin Portal](../../realmjoin
 
 1. In RealmJoin Portal go to '[Settings -> Runbooks](https://portal.realmjoin.com/settings/runbooks-configuration)'.
 
-![Automation Account Connection in RealmJoin Portal](<../../../.gitbook/assets/image (240).png>)
+![Automation Account Connection in RealmJoin Portal](<../../.gitbook/assets/image (249).png>)
 
 2. Fill in the Azure Tenant ID, Subscription ID and Resource Group name.\
-   You can review your Azure Tenant ID at [https://portal.azure.com/#blade/Microsoft\_AAD\_IAM/ActiveDirectoryMenuBlade/Overview](https://portal.azure.com/#blade/Microsoft\_AAD\_IAM/ActiveDirectoryMenuBlade/Overview)\
+   You can review your Azure Tenant ID at [https://portal.azure.com/#blade/Microsoft\_AAD\_IAM/ActiveDirectoryMenuBlade/Overview](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview)\
    To choose Subscription ID and Resource Group name, see [above](./#subscription-and-resource-group).
 
 **Please leave the windows / wizard open for now. We will return shortly in** [**part 2**](./#entering-info-part-2)**.**
@@ -79,13 +79,13 @@ Please execute these two lines of code using AZ CLI with an administrative accou
 You can use [Azure CloudShell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview), so you don't need to install and authenticate a local copy of AZ CLI.
 {% endhint %}
 
-![Azure CloudShell - Create the App Registration](<../../../.gitbook/assets/image (103).png>)
+![Azure CloudShell - Create the App Registration](<../../.gitbook/assets/image (112).png>)
 
 The command will return multiple values. Please note down the values for `appId` and `password`.
 
 You can review the resulting App Registration in Entra ID. It will be named "RealmJoin Runbook Management".
 
-![App Registrations in Azure Portal](<../../../.gitbook/assets/image (259).png>)
+![App Registrations in Azure Portal](<../../.gitbook/assets/image (268).png>)
 
 ### Entering Information - Part 2
 
@@ -96,11 +96,11 @@ You can review the resulting App Registration in Entra ID. It will be named "Rea
    All runbook branches may be viewed here: [https://github.com/realmjoin/realmjoin-runbooks](https://github.com/realmjoin/realmjoin-runbooks)
 4. Choosing the location to make sure your runbooks are executed in the correct [Azure region](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview).
 
-![Automation Account Connection in RealmJoin Portal](<../../../.gitbook/assets/image (118).png>)
+![Automation Account Connection in RealmJoin Portal](<../../.gitbook/assets/image (127).png>)
 
 5. Press "Save" to start the initial import of runbooks. Please leave this window open until you see the message "Sync completed".
 
-![](<../../../.gitbook/assets/image (90).png>)
+![](<../../.gitbook/assets/image (99).png>)
 
 ## Granting Permissions to your Runbooks
 

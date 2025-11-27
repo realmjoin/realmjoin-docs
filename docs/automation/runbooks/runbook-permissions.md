@@ -259,7 +259,7 @@ This ensures US Supporters have permissions limited strictly to their intended t
 
 
 
-<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption><p>Restricting US Support Staff to manage only US Users</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (24) (1).png" alt=""><figcaption><p>Restricting US Support Staff to manage only US Users</p></figcaption></figure>
 
 Below the complete example for this scenario:
 

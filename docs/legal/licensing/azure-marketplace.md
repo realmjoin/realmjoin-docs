@@ -20,10 +20,9 @@ In order to purchase solutions from independent software vendors (ISV) such as R
 * Upon every renewal date, you will be billed immediately.
 * You will always be billed for the entire subscription cycle in advance.
 * The related items should appear on your Microsoft Azure invoice (Pay-As-You-Go or Enterprise Agreement) the month after we have reported your fees to Microsoft.
-*   In the PDF invoice you will receive from Microsoft, all RealmJoin fees are lumped into an item called "SaaS". The related Publisher is "glueckkanja".\
+*   In the PDF invoice you will receive from Microsoft, all RealmJoin fees are lumped into an item called "SaaS". The related Publisher is "glueckkanja".<br>
 
-
-    <figure><img src="../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (47) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 For a more detailed cost breakdown of your base and additional user fees, please refer to the invoice in your Azure portal.
@@ -76,7 +75,7 @@ For prices in Euro (EUR), please check out our [website](https://www.realmjoin.c
 * The downgrade will become effective upon the next regular renewal of your subscription.
 * In case you change your mind and would like to change the user quantity or cancel the downgrade altogether, navigate back to your **RealmJoin subscription** and click **Cancel downgrade**.
 
-<figure><img src="../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (58) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Change Plan
 
@@ -117,14 +116,14 @@ To get started with your RealmJoin subscription, follow below steps:
     * [Multiparty Offer](https://www.youtube.com/watch?v=TANUlgLuVqI)
 * Select the **Plan** based on your preferred renewal interval and click **Subscribe**.
 
-<figure><img src="../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (51) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Create or select the **Resource group** you would like to deploy the subscription to.
 * Assign a descriptive **Name** to later identify your subscription.
 * We recommend to keep **Recurring billing** **On** so that you do not have to worry about an automatic termination of your subscription.
 * Click **Review + subscribe** and then **Subscribe** to deploy the **SaaS** resource to your **Resource group**.
 
-<figure><img src="../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (52) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 The random order of **Base Fees** und **Additional Users** under the **Price** information is attributed to limitations of the Azure Marketplace. Later during the the enrolment process, we will provide you with transparent information on the expected licensing fees.
@@ -132,7 +131,7 @@ The random order of **Base Fees** und **Additional Users** under the **Price** i
 
 * Once the deployment is complete, please navigate to our platform to complete the checkout. Therefore click **Configure account now**.
 
-<figure><img src="../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (53) (1).png" alt=""><figcaption></figcaption></figure>
 
 * After authenticating on our platform using your Microsoft credentials, you will be prompted for additional information, such as the desired total **User** amount and a **Technical contact**.
 
@@ -144,7 +143,7 @@ The **Technical contact** must have a mailbox connected to it, so we are able to
 If the plan contains chargeable add-ons, you can select them under **Extras**. For example, all RealmJoin editions and plans allow you to purchase optional private [Packaging Contingents](./#software-package-licensing).
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (54) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Based on the amount of users provided, we will charge the relevant base fee for your user segment as well as additional users, in case you require more than the included amount in your base fee. **The platform automatically selects the best price / tier**.
 * The platform will show you the licensing fees you have to expect under **Cost Projection**.

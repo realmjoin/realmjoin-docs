@@ -25,7 +25,7 @@ Let us assume the following situation:
 
 Currently no Support Account exists on the target device.
 
-![Local Accounts - before requesting a Support Account](../../.gitbook/assets/Laps-before.png)
+![Local Accounts - before requesting a Support Account](../.gitbook/assets/Laps-before.png)
 
 Let us build the **request**:
 
@@ -68,7 +68,7 @@ Let us query the same `deviceId` of `9999dab9-f946-40ee-9a17-2500c8d00878` as in
 
 In our example a Support Account (Full Name: "Local Support Admin Account") has been created on the target device by the RealmJoin Windows Client:
 
-![Local Accounts - Support Account is successfully created](../../.gitbook/assets/Laps-after.png)
+![Local Accounts - Support Account is successfully created](../.gitbook/assets/Laps-after.png)
 
 **Request**
 

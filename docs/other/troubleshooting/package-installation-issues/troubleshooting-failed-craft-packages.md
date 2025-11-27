@@ -23,7 +23,7 @@ For craft packages running in user scope, as mentioned above, the output will be
 ```
 {% endcode %}
 
-<figure><img src="../../../../.gitbook/assets/craft-user-install.png" alt=""><figcaption><p>Example output of successful craft user package installation</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/craft-user-install.png" alt=""><figcaption><p>Example output of successful craft user package installation</p></figcaption></figure>
 
 
 
@@ -33,7 +33,7 @@ The relevant logs for craft packages running in system scope will be split acros
 
 The example below shows how package output is included in the log file:
 
-<figure><img src="../../../../.gitbook/assets/craft-system-install.png" alt=""><figcaption><p>Output of craft package script as it appears in the log file.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/craft-system-install.png" alt=""><figcaption><p>Output of craft package script as it appears in the log file.</p></figcaption></figure>
 
 The `tray.log` file will always include a hint in parentheses after the version number whether the package is run in system or user scope:
 

@@ -14,15 +14,14 @@ Recommended and fully supported.
 RealmJoin integrates directly with your Microsoft Intune tenant by adding and updating the agent as an intunewin package:
 
 1. Open our **Package Store**.
-2.  Select the banner "RealmJoin Agent" or use this direct link: [RealmJoin Agent (Device)](https://portal.realmjoin.com/packagestore/45935/overview)\
+2.  Select the banner "RealmJoin Agent" or use this direct link: [RealmJoin Agent (Device)](https://portal.realmjoin.com/packagestore/45935/overview)<br>
 
-
-    <figure><img src="../../.gitbook/assets/image (312).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (321).png" alt=""><figcaption></figcaption></figure>
 3. Select "**Use Intune (managed)**" as deployment method and click "Continue".
 4. Add this package to your "**Enrollment Status Page**" under "Block device use until required apps are installed if they are assigned to the user/device". This ensures that Intune waits for RealmJoin Agent installation during enrollment.
 5. Please also activate "**Automation Main channel**".
 
-<figure><img src="../.gitbook/assets/image (56).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (56) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 RealmJoin agent will **check for newer versions** during **inital deployment** and **update if required**. To speed up this process, we still recommend "Automation Main channel". This ensures that the most current version is installed right from the start.
@@ -102,7 +101,7 @@ Also note that [Microsoft does not recommend to mix MSI and intunewin deployment
 
 RealmJoin can be deployed via [MSI installer](installation.md#msi-installer) as a Line-of-Business app. When uploading to Intune, ensure that "Ignore app version" is set to "Yes".
 
-<figure><img src="../.gitbook/assets/image (55) (1).png" alt="" width="364"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (55) (1) (1).png" alt="" width="364"><figcaption></figcaption></figure>
 
 ### Interactive Installation via Command Line
 

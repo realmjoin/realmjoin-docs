@@ -4,7 +4,7 @@ Application Insights is an extensible Application Performance Management service
 
 ## Create App Insight for Generic Auditing
 
-![](<../../../../.gitbook/assets/image (100).png>)
+![](<../../../.gitbook/assets/image (109).png>)
 
 * Navigate to **Application Insights** and click **+Add**
 * Select a **Subscription**
@@ -15,7 +15,7 @@ Application Insights is an extensible Application Performance Management service
 
 Then, copy the **Instrumentation Key** and send it to [RealmJoin Support](mailto:support@realmjoin.com).
 
-![](<../../../../.gitbook/assets/image (211).png>)
+![](<../../../.gitbook/assets/image (220).png>)
 
 **Example value:** `a74393bd-2dee-4a10-9df3-66c8c2b2a9ec`
 
@@ -23,8 +23,8 @@ Then, copy the **Instrumentation Key** and send it to [RealmJoin Support](mailto
 
 To start a reporting, click **Search**
 
-![](<../../../../.gitbook/assets/image (272).png>)
+![](<../../../.gitbook/assets/image (281).png>)
 
 An overview appears, which looks like the following example:
 
-![](<../../../../.gitbook/assets/image (223).png>)
+![](<../../../.gitbook/assets/image (232).png>)

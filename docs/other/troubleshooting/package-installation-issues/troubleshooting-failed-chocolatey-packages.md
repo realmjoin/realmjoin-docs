@@ -29,7 +29,7 @@ The `Access is denied` message belongs to the standard error stack of chocolatey
 
 See how in this example the actual error happens at the top (404 for the download), but the chocolatey error stack prints some misleading 'Access is denied' messages later on.
 
-<figure><img src="../../../../.gitbook/assets/choco-error-stack.png" alt=""><figcaption><p>Actual download error on top followed by chocolatey standard error stack at the bottom, may be misleading.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/choco-error-stack.png" alt=""><figcaption><p>Actual download error on top followed by chocolatey standard error stack at the bottom, may be misleading.</p></figcaption></figure>
 
 ## Examples for failed installations
 

@@ -4,7 +4,7 @@
 
 If you configure [Process Automation / Runbooks](../automation/runbooks/) in your environment, you can click "Sync runbooks..." to update your runbooks from RealmJoin's public repository.
 
-![](<../../.gitbook/assets/image (59).png>)
+![](<../.gitbook/assets/image (68).png>)
 
 This will make sure, you have the current state of our runbooks, incl. bugfixes and new functionality. If needed, this will also install needed PowerShell modules in your Azure Automation Account.
 
@@ -12,7 +12,7 @@ This will make sure, you have the current state of our runbooks, incl. bugfixes 
 
 If you source packages from RealmJoin's [Package Store](../app-management/packages/package-store/), you can use [automation ](../app-management/packages/package-details.md#automation)to keep these packages always up to date.
 
-![Automation defaults for a package](<../../.gitbook/assets/image (177).png>)
+![Automation defaults for a package](<../.gitbook/assets/image (186).png>)
 
 The settings are:
 
@@ -33,7 +33,7 @@ RealmJoin Portal can dynamically create and manage Entra groups for features lik
 
 RealmJoin can create assignment groups for Intune and RealmJoin Client packages. Use this to define the naming pattern the groups.
 
-<figure><img src="../../.gitbook/assets/image (209).png" alt=""><figcaption><p>Package Deployment Group Naming Scheme</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (218).png" alt=""><figcaption><p>Package Deployment Group Naming Scheme</p></figcaption></figure>
 
 You can use the following variables:
 
@@ -47,7 +47,7 @@ You can use the following variables:
 
 If you use [RealmJoin managed Intune Remediation scripts](../automation/remediation-scripts.md#managed-scripts), you can define the naming scheme for [Managed Groups](../automation/remediation-scripts.md#managed-groups).
 
-<figure><img src="../../.gitbook/assets/image (127).png" alt=""><figcaption><p>Remediation Scripts Group Naming Scheme</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (136).png" alt=""><figcaption><p>Remediation Scripts Group Naming Scheme</p></figcaption></figure>
 
 You can use the following variables:
 

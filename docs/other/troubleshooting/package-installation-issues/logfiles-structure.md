@@ -12,7 +12,7 @@ The user-context logfiles written by RealmJoin can be found in `%LOCALAPPDATA%\R
 
 The `tray.log` files are written by the RealmJoin tray application, which is running in the logged on users session. `tray.log` is the most-recent log file, older ones are suffixed with an ascending number, where the highest number is the second-most recent log file. The lower the number, the older the log file.
 
-<figure><img src="../../../../.gitbook/assets/tray-logs.png" alt=""><figcaption><p>tray.log is the most recent file, tray.904.log the second-most recent. The logs subfolder may contain individual setup logs.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/tray-logs.png" alt=""><figcaption><p>tray.log is the most recent file, tray.904.log the second-most recent. The logs subfolder may contain individual setup logs.</p></figcaption></figure>
 
 The `tray.log` includes information about various tasks carried out by the RealmJoin tray application:
 
@@ -53,4 +53,4 @@ As the `realmjoin.log` file contains information from the RealmJoin service, it 
 
 In the `C:\WINDOWS\Logs\RealmJoin\Packages` folder you will find folders named like package IDs. If supported by the setup file and package, logs written by the setup file will be found in the equivalent folder. The logfilename will usually include the timestamp of the installation, package id, setup filename, package version and the action taken (install/uninstall). As this is not always the case, these (sub)folders may also be empty.
 
-<figure><img src="../../../../.gitbook/assets/windows-realmjoin-logs.png" alt=""><figcaption><p>Packages folder containing subfolders for each package, which may contain installer-written log files.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/windows-realmjoin-logs.png" alt=""><figcaption><p>Packages folder containing subfolders for each package, which may contain installer-written log files.</p></figcaption></figure>

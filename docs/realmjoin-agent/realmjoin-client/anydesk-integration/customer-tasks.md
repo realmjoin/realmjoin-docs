@@ -23,7 +23,7 @@ Note, that **you are** **responsible** for **updating the version on a regular b
 
 Simply go to [https://portal.realmjoin.com/organization/other-files](https://portal.realmjoin.com/organization/other-files), upload your **EXE** and _copy the link_:
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
 
 Afterwards, please update the AnyDesk configuration in RealmJoin with the new URL as stated in the [article below](customer-tasks.md#group-settings-for-end-user-client).
 
@@ -31,7 +31,7 @@ Afterwards, please update the AnyDesk configuration in RealmJoin with the new UR
 
 Please download your current supporter client (as MSI) and request it as a new RealmJoin software package via the package request formular under [portal.realmjoin.com](https://portal.realmjoin.com).
 
-<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
 
 Once the package is ready assign it to the desired users/supporters. Old AnyDesk versions will be uninstalled automatically.
 
@@ -81,5 +81,5 @@ To enable the backend integration the following information is required:
 
 Send this information to [RealmJoin support](mailto:support@realmjoin.com) to have the integration activated.
 
-![Overview in the portal](<../../../../.gitbook/assets/image (187).png>)
+![Overview in the portal](<../../../.gitbook/assets/image (196).png>)
 

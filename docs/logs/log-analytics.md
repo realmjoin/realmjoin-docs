@@ -59,10 +59,9 @@ If you have already [integrated with Azure Runbooks](../automation/connecting-az
 If you have not integrated runbooks or prefer a separate app registration, do the following:
 
 1. Select "New Registration"
-2.  Provide a Name\
+2.  Provide a Name<br>
 
-
-    <figure><img src="../../.gitbook/assets/image (318).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (327).png" alt=""><figcaption></figcaption></figure>
 3. Register the application
 4. Select the application
 5. Navigate to Manage > Certificates & Secrets
@@ -92,12 +91,11 @@ Navigating away from the Certificates & Secrets page will cause Azure to obfusca
 ### Part 3 - Enabling Windows Update for Business Reports
 
 1. In the Azure Portal, navigate to Monitor > Workbooks
-2.  Search for "Windows Update for Business reports"\
+2.  Search for "Windows Update for Business reports"<br>
 
-
-    <figure><img src="../../.gitbook/assets/image (320).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (329).png" alt=""><figcaption></figcaption></figure>
 3. Set your Subscription and the Workspace previously create. If a separate Workspace is preferred for RealmJoin logs and Windows Update for Business reports, create a separate Workspace and link instead.\
-   ![](<../../.gitbook/assets/image (321).png>)
+   ![](<../.gitbook/assets/image (330).png>)
 4. Save Settings
 
 {% hint style="warning" %}
@@ -109,37 +107,33 @@ Windows Update for Business reports may take up to 24 hours to apply
 1. Navigate to the subscription your Log Analytics Workspace resides in
 2. Select Access Control (IAM)
 3. Add a role assignment
-4.  Provide your App Registration with Monitoring Contributor permissions\
+4.  Provide your App Registration with Monitoring Contributor permissions<br>
 
-
-    <figure><img src="../../.gitbook/assets/image (319).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (328).png" alt=""><figcaption></figcaption></figure>
 5. Review and Save the role assignment
 
 
 
 ### Part 5 - Connecting RealmJoin and Azure Log Analytics Workspace
 
-<figure><img src="../../.gitbook/assets/image (273).png" alt=""><figcaption><p>Log Analytics Settings Page</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (282).png" alt=""><figcaption><p>Log Analytics Settings Page</p></figcaption></figure>
 
-1. In the RealmJoin Portal, navigate to Settings ![](<../../.gitbook/assets/image (322).png>) > Log Analytics
+1. In the RealmJoin Portal, navigate to Settings ![](<../.gitbook/assets/image (331).png>) > Log Analytics
 2.  Fill in the fields:\
     Tenant Details
 
-    *   **TenantId:** Please provide your Entra ID's tenant ID. Find this in the Entra ID Overview page\
+    *   **TenantId:** Please provide your Entra ID's tenant ID. Find this in the Entra ID Overview page<br>
 
-
-        <figure><img src="../../.gitbook/assets/image (325).png" alt=""><figcaption></figcaption></figure>
+        <figure><img src="../.gitbook/assets/image (334).png" alt=""><figcaption></figcaption></figure>
 
     Azure App Registration Details
 
-    *   **ClientId:** RealmJoin will interact with the LogAnalytics workspace via an [Azure App Registration](log-analytics.md#azure-app-registration). Please provide the app's ClientId/AppId and Secret, so that RealmJoin can authenticate.\
+    *   **ClientId:** RealmJoin will interact with the LogAnalytics workspace via an [Azure App Registration](log-analytics.md#azure-app-registration). Please provide the app's ClientId/AppId and Secret, so that RealmJoin can authenticate.<br>
 
+        <figure><img src="../.gitbook/assets/image (338).png" alt=""><figcaption></figcaption></figure>
+    *   **ClientSecret:** Used with the ClientId to provide access to RealmJoin. This is the secret made in [Part 1](log-analytics.md#part-1-authentication-using-azure-app-registration).<br>
 
-        <figure><img src="../../.gitbook/assets/image (329).png" alt=""><figcaption></figcaption></figure>
-    *   **ClientSecret:** Used with the ClientId to provide access to RealmJoin. This is the secret made in [Part 1](log-analytics.md#part-1-authentication-using-azure-app-registration).\
-
-
-        <figure><img src="../../.gitbook/assets/image (330).png" alt=""><figcaption></figcaption></figure>
+        <figure><img src="../.gitbook/assets/image (339).png" alt=""><figcaption></figcaption></figure>
 
     Windows Update for Business Workspace Details
 
@@ -150,10 +144,9 @@ Windows Update for Business reports may take up to 24 hours to apply
     * **Subscription ID:** Please provide the Subscription ID from the [RealmJoin Audit Logs](log-analytics.md#realmjoin-audit-logs) Log Analytics account. The subscription ID is viewable in the Subscription Overview page.
     * **Resource Group**: Please provide the Resource Group Name from the [RealmJoin Audit Logs](log-analytics.md#realmjoin-audit-logs) Log Analytics account.
     * **Workspace Name:** Please provide the Workspace Name from the [RealmJoin Audit Logs](log-analytics.md#realmjoin-audit-logs) Log Analytics account.
-    *   **Customer Workspace Id:** Please provide / create a Log Analytics workspace to store [RealmJoin audit log and runbook log data](log-analytics.md#realmjoin-audit-logs).\
+    *   **Customer Workspace Id:** Please provide / create a Log Analytics workspace to store [RealmJoin audit log and runbook log data](log-analytics.md#realmjoin-audit-logs).<br>
 
-
-        <figure><img src="../../.gitbook/assets/image (328).png" alt=""><figcaption></figcaption></figure>
+        <figure><img src="../.gitbook/assets/image (337).png" alt=""><figcaption></figcaption></figure>
     * **Customer Workspace Key:** RealmJoin will act as an agent to Log Analytics. Please provide the "Primary Key" to this workspace, as to allow writing data to the workspace.
       * "The Primary Key" can be obtained via different methods:
         * [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/monitor/log-analytics/workspace?view=azure-cli-latest#az-monitor-log-analytics-workspace-get-shared-keys):\

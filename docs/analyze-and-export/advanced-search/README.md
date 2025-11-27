@@ -14,7 +14,7 @@ Check out the Use Cases subpage for examples that help you get more value from y
 Tables can be searched using the _basic_ or the _advanced_ search feature.&#x20;
 
 {% hint style="info" %}
-<mark style="background-color:yellow;">**All searches have to be confirmed by either using the**</mark><mark style="background-color:yellow;">**&#x20;**</mark>_<mark style="background-color:yellow;">**enter key**</mark>_<mark style="background-color:yellow;">**&#x20;**</mark><mark style="background-color:yellow;">**or the**</mark>  <img src="../../.gitbook/assets/image (31).png" alt="" data-size="line"> <mark style="background-color:yellow;">**symbol.**</mark>&#x20;
+<mark style="background-color:yellow;">**All searches have to be confirmed by either using the**</mark><mark style="background-color:yellow;">**&#x20;**</mark>_<mark style="background-color:yellow;">**enter key**</mark>_<mark style="background-color:yellow;">**&#x20;**</mark><mark style="background-color:yellow;">**or the**</mark>  <img src="../../.gitbook/assets/image (31) (1).png" alt="" data-size="line"> <mark style="background-color:yellow;">**symbol.**</mark>&#x20;
 {% endhint %}
 
 ### Basic Search
@@ -29,7 +29,7 @@ RealmJoin's advanced search feature uses caching and tokenization, making search
 
 Additionally, information not displayed in the table is also searchable, like post-codes or UPN.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
 Please make sure to only use the "Reload-Button" in the top right corner if you are missing very recently added information from Entra / Intune.

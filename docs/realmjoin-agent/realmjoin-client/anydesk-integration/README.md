@@ -24,7 +24,7 @@ Once everything has been set up, the tray icon can be used to get support withou
 This text can be changed! Create a setting with the key `Integration.AnyDesk.Ui.TrayMenuTextEnglish` in the backend.
 {% endhint %}
 
-![](../../../../.gitbook/assets/anydesk-tray-client-windows.png)
+![](../../../.gitbook/assets/anydesk-tray-client-windows.png)
 
 This process downloads the appropriate executable and sends the ID number to the RealmJoin Portal. The support agent can then view the ID under device details and connect to the user's desktop.
 

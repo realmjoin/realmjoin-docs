@@ -19,7 +19,7 @@ Some common tasks RealmJoin can help you automate include:
 
 You can offer RealmJoin Portal to your support and administration teams to simplify and improve the quality of your day-to-day operations.
 
-![](<../../../.gitbook/assets/user rb (1).png>)
+![](<../../.gitbook/assets/user rb (1).png>)
 
 ### Migration to PowerShell Runtime Environments
 
@@ -57,7 +57,7 @@ You can trigger a sync from the shared repository to your Azure Automation accou
 
 [https://portal.realmjoin.com/settings/general](https://portal.realmjoin.com/settings/general)
 
-![Trigger a sync of your runbooks](<../../../.gitbook/assets/image (192).png>)
+![Trigger a sync of your runbooks](<../../.gitbook/assets/image (201).png>)
 
 Wait for the "Sync completed" message. Please keep the browser window open while the sync process is running.
 

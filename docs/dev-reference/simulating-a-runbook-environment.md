@@ -4,7 +4,7 @@ description: >-
   authenticate as if you were running inside a Runbook.
 ---
 
-# Simulating a Runbook environment
+# Simulating a Runbook Environment
 
 ## Overview
 
@@ -12,7 +12,7 @@ description: >-
 
 We create an Azure Application Registration to simulate the application-style signin to Microsoft Entra.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption><p>Create an App Registration</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (53).png" alt=""><figcaption><p>Create an App Registration</p></figcaption></figure>
 
 ### Grant Permissions
 
@@ -50,7 +50,7 @@ You can then select which the environment/certificate (e.g. "OtherEnv") to conne
 This way you can access multiple environments from the same machine.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption><p>Certificate upload</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (54).png" alt=""><figcaption><p>Certificate upload</p></figcaption></figure>
 
 ### Usage
 

@@ -6,7 +6,7 @@ description: This page details the different settings available for deployed pac
 
 ### Automation
 
-<figure><img src="../../../.gitbook/assets/image (219).png" alt=""><figcaption><p>Package Automation</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (228).png" alt=""><figcaption><p>Package Automation</p></figcaption></figure>
 
 For managed packages, you can use the Automation tab to configure automatic publishing of new version of packages from the package store to your environment.
 
@@ -40,7 +40,7 @@ These values can be globally preconfigured for newly imported packages in [Setti
 
 ### Config
 
-<figure><img src="../../../.gitbook/assets/image (315).png" alt=""><figcaption><p>Package Config</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (324).png" alt=""><figcaption><p>Package Config</p></figcaption></figure>
 
 #### Technical Application Owners
 
@@ -54,7 +54,7 @@ For receiving **automated notification emails** for package updates, you can **e
 
 Some packages include a **Technical Help**, to explain possible **Arguments** and other Requirements.
 
-![Technical Help for a Package](<../../../.gitbook/assets/image (47).png>)
+![Technical Help for a Package](<../../.gitbook/assets/image (56).png>)
 
 #### Expert Settings
 

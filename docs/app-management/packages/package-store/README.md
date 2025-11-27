@@ -27,7 +27,7 @@ The search updates results instantly as you type.
 
 Every package falls in at least one of the following categories. The banner on the right side of a package is color-coded accordingly.
 
-<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption><p>Package type filter</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36) (1).png" alt=""><figcaption><p>Package type filter</p></figcaption></figure>
 
 #### Generic Packages
 

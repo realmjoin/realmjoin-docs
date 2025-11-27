@@ -1,6 +1,6 @@
 # Organization Details
 
-![Organization Details View](<../../.gitbook/assets/2022-02-07 RJ ORG.png>)
+![Organization Details View](<../.gitbook/assets/2022-02-07 RJ ORG.png>)
 
 This page gives you an overview about&#x20;
 

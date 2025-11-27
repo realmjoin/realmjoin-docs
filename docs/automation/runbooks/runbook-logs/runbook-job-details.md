@@ -4,7 +4,7 @@
 
 RealmJoin Portal allows you to view runbooks jobs from Azure Automation.&#x20;
 
-<figure><img src="../../../../.gitbook/assets/image (102).png" alt=""><figcaption><p>Runbook Job Details</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (111).png" alt=""><figcaption><p>Runbook Job Details</p></figcaption></figure>
 
 On the left side of the page you will find metadata about the runbook job, its type/context, job ID and its caller.&#x20;
 
@@ -22,13 +22,13 @@ Using "Copy to Clipboard" you can copy the full output to use it e.g. in a servi
 
 Review the parameters used to start the runbook job.
 
-<figure><img src="../../../../.gitbook/assets/image (93).png" alt=""><figcaption><p>Runbook Job Parameters</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (102).png" alt=""><figcaption><p>Runbook Job Parameters</p></figcaption></figure>
 
 ### Errors and Warnings
 
 If present, warnings and errors which are not part of regular output will be shown in these two tabs.
 
-<figure><img src="../../../../.gitbook/assets/image (226).png" alt=""><figcaption><p>Runbook Job Warnings</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (235).png" alt=""><figcaption><p>Runbook Job Warnings</p></figcaption></figure>
 
 ### Exceptions
 
@@ -36,10 +36,10 @@ If the PowerShell script of the runbook threw an exception (and the runbook thus
 
 Exceptions will also be shown above the regular output in **Console** if present to simplify identifying problems.
 
-<figure><img src="../../../../.gitbook/assets/image (157).png" alt=""><figcaption><p>Exception shown in Console</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (166).png" alt=""><figcaption><p>Exception shown in Console</p></figcaption></figure>
 
 ### Source
 
 This allows you to review the runbooks source code associated with this job.
 
-<figure><img src="../../../../.gitbook/assets/image (122).png" alt=""><figcaption><p>Runbook Source</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (131).png" alt=""><figcaption><p>Runbook Source</p></figcaption></figure>
