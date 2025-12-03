@@ -23,4 +23,4 @@ RealmJoin offers functionality in the following key areas
 * [User, Group and Device Management](ugd-management/user-group-device-management.md) - Integrates into Microsoft Entra ID and allows interaction with objects + LAPS
 * [Process Automation](automation/runbooks/) - Leverage Azure Automation to simplify everyday IT operational tasks
 
-See [Navigation ](readme/navigation.md)for more help on how to find what you are looking for.
+See [Navigation ](realmjoin-deployment/navigation.md)for more help on how to find what you are looking for.
