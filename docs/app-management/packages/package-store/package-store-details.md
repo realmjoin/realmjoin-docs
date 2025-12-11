@@ -72,16 +72,12 @@ The total of categories can be managed from the _App Categories_ tab in the gene
 
 Sometimes it is necessary to have multiple subscriptions of one craft package. Those craft packages are often used for configurations like printer or network drive mapping and need to be subscribed and assigned multiple times to users because there are multiple printer or network drives to be mapped. Therefore it is important to have a suffix, because RealmJoin only accepts every package ID once. The suffix is modifying the unique ID from "this-id" to "this-id#\[your-suffix]".
 
-You can set the suffix, after choosing the subscription type, next to the continue button.
+While subscribing to a craft package from the store, a suffix is automatically added to the ID of the package. If you want to edit the ID, you can simply click on "Set suffix" next to the orange dialog box showing the pre-defined ID. &#x20;
 
-{% hint style="danger" %}
-Please only use lowercase letters and dashes ("-") for the suffix!
-{% endhint %}
-
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-The option to set a suffix is only available for RealmJoin Deployment since it is not necessary for Intune Deployment!
+The suffix is only available for RealmJoin Deployment since it is not necessary for Intune Deployment!
 {% endhint %}
 
 ### Choco Packages

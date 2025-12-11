@@ -36,9 +36,9 @@ To establish parent-daughter tenant relationships:
 
 Once configured, authorized administrators will see a tenant switcher control in the RealmJoin Portal interface. Select the target daughter tenant from the dropdown to switch context. Your parent tenant credentials remain active, and all actions are performed with the appropriate permissions within the daughter tenant scope.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Step 1: Select the Tenant Switcher in the parent tenant</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Step 1: Select the Tenant Switcher in the parent tenant</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Step 2: Select the desired tenant</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Step 2: Select the desired tenant</p></figcaption></figure>
 
 ***
 
