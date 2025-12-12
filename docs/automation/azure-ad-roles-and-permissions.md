@@ -93,7 +93,7 @@ Please grant the following SharePoint API Permissions to the managed identity
 
 Granting permissions to Managed Identities can currently not be done using Azure Portal. We recommend using MS Graph / PowerShell scripting for this.&#x20;
 
-You can find an example for this process [here](https://github.com/hcoberdalhoff/approle-and-directoryrole-granter).
+You can find an example for this process [here](https://github.com/Workplace-Foundation/approle-and-directoryrole-granter).
 
 ### Azure Resource Permissions
 
