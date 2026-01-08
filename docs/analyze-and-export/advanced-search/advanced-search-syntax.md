@@ -73,6 +73,12 @@ description: >-
 
 ***
 
+**Get all Printers:**
+
+[`OS:Printer`](https://portal.realmjoin.com/devices?compliance=0\&type=0\&search=OS%3APrinter)
+
+***
+
 **Get all Dell XPS devices:**
 
 [`manu:dell model:xps`](https://portal.realmjoin.com/devices?search=manu%3Adell%20model%3Axps)&#x20;
@@ -82,6 +88,12 @@ description: >-
 **Get all devices with RealmJoin Version 4.19 installed:**
 
 [`rj:4.19`](https://portal.realmjoin.com/devices?search=rj%3A4.19)&#x20;
+
+***
+
+**Get all Surface Hubs:**
+
+[`Model:Surface Hub`](https://portal.realmjoin.com/devices?search=Model%3ASurface%20Hub)
 
 ***
 
