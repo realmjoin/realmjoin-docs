@@ -62,12 +62,6 @@ The Exclude assignment of groups is used to ensure that users in the assigned ex
 
 For example, you can use the Exclude function to prevent a user, assigned to a 64-bit Adobe Reader package group, from also receiving the 32-bit version. Simply assign the used 64-bit package group as an exclude to the 32-bit package. &#x20;
 
-### Enable additional and restore default groups
-
-<figure><img src="../../.gitbook/assets/image (43) (1).png" alt=""><figcaption></figcaption></figure>
-
-Via the "More"-Button you can activate the optional update group, manage exclude assignments and also restore the default managed groups in case they were deleted.&#x20;
-
 {% hint style="warning" %}
 In managed packages, group management is handled by the RealmJoin Portal, which uses the GUID of each group after creation. This enables the portal to identify the provisioning type associated with each group. As a result, it is possible to establish a prioritization mechanism among groups. This ensures deterministic behavior in scenarios where a user is mistakenly assigned to multiple provisioning groups.
 
@@ -75,6 +69,12 @@ The prioritization order is (high to low):&#x20;
 
 Uninstall - \[Exclude] - \[Update] - Preview - Available - Required
 {% endhint %}
+
+### Enable additional and restore default groups
+
+<figure><img src="../../.gitbook/assets/image (43) (1).png" alt=""><figcaption></figcaption></figure>
+
+Via the "More"-Button you can activate the optional update group, manage exclude assignments and also restore the default managed groups in case they were deleted.&#x20;
 
 ### Changing Assignments
 
