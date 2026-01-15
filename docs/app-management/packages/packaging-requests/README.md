@@ -52,11 +52,10 @@ Tickets, Files and Setup
 
 Please note that:
 
-* all requests need a file attached to be created successfully. Requests without any file upload are not submitted.
+* all update and new package requests necessitate the provision of both binaries and documentation detailing the required command line parameters.
+* if an update request does not entail changes from the previous version, the submission of new parameters is not required.&#x20;
 * the request creates a ticket. All communication will be handled in this ticket, and it will only be sent to the account that created it. If this account does not have any active mailbox, the requester will not get any information.&#x20;
 * the software requester role can be assigned to any user group in the tenant, therefore, an ADM account may not be required.&#x20;
 * organic packages and PACKaaS might be not available right away, please get in touch with support@realmjoin.com if a feature is missing
 {% endhint %}
-
-Update and new package requests necessitate the provision of both binaries and documentation detailing the required command line parameters. If an update request does not entail changes from the previous version, the submission of new parameters is not required. All types of requests mandate a file upload, after which the generated ticket will be dispatched to the requesting account. Organic packages, offered at no cost, automatically extract the contents of the provided zip file to the C:\Install directory.
 
