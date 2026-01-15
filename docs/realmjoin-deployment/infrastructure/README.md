@@ -4,7 +4,7 @@
 
 ### Avoid Proxies
 
-Initial deployment needs direct Internet access. No proxy would be ideal, but a transparent proxy should work fine (if truly transparent). If a proxy is unavoidable as a minimum requirement the following services/addresses need to be directly accessible:
+Initial deployment needs direct internet access. No proxy would be ideal, but a transparent proxy should work fine (if truly transparent). If a proxy is unavoidable as a minimum requirement the following services/addresses need to be directly accessible:
 
 For a list of the corresponding IP ranges click the following link:
 
@@ -31,48 +31,13 @@ RealmJoin connects to the following hosts (using HTTPS) that might be considered
 
 * `cdn.realmjoin.com`
 * `x1.c.lencr.org`
-* `client-api.realmjoin.com` **NEW!**
-* `client-api-staging.realmjoin.com` **NEW!**
+* `client-api.realmjoin.com`
+* `client-api-staging.realmjoin.com`
 * `realmjoin-backend.azurewebsites.net`
 * `realmjoin-backend-staging.azurewebsites.net`
-* `packages.gkdatacenter.net`
-* `nuget.realmjoin.com` **NEW!**
+* `nuget.realmjoin.com`
 * `enterpriseregistration.windows.net`
 * `gkrealmjoin.s3.amazonaws.com`
 * `login.microsoftonline.com`
 * `graph.microsoft.com`
 * `realmjoinstaticcdn.azureedge.net` (Notifier)
-
-## Components
-
-### BranchCache
-
-An often-encountered problem when providing software packages to a large number of devices in a WAN is creating a bottleneck and huge network loads when downloading software from a server to the devices. A solution to this problem is the **BranchCache** technology. There are two BranchCache modes, **hosted** and **distributed** cache. In hosted cache mode, the content is cached on one or more local **hosted cache servers**, which increases the network load, since a download from big binaries from an internet server is not necessary. RealmJoin uses BranchCache in the distributed cache mode:
-
-A frequently encountered problem when providing software packages to many devices in a WAN is creating a bottleneck and huge network loads when downloading software from a server to the devices. A solution to this problem is the **BranchCache** technology.
-
-When a client device downloads software packages for the first time, the files are divided into chunks that are significantly smaller than the original content and cached on the device. If the same package is afterwards requested from a different client device in the same network, it downloads content information instead of the complete content from the server. The content information is used to locate the desired content on other devices in the network. If found, instead of downloading packages from the server, the content in form of the chopped-up chunks is transferred to the client device. If the requested software is available on several devices, the load is balanced between them.
-
-The RealmJoin Publishing Server must provide the chunk identifiers and therefore is hosted as a single Azure VM Windows 2016 IIS server with an Azure Blob Storage. For more information about BranchCache see the [Microsoft BranchCache documentation](https://docs.microsoft.com/en-us/windows-server/networking/branchcache/branchcache)
-
-### Back-End
-
-#### Hosting
-
-The RealmJoin back-end is an Azure web application using an Azure SQL database and the available Azure services.\
-The back-end is hosted on an Azure tenant exclusively used for RealmJoin. All customer realms within this tenant are isolated from each other.
-
-#### RealmJoin App Publishing Endpoint
-
-To provide the **BranchCache** mechanism, the endpoint must provide the chunk identifiers, a feature only provided by **Microsoft Internet Information Services** (IIS) servers. To deliver the maximum scalability the Publishing Endpoint is distributed on multiple Azure nodes hosting Windows 2016 IIS sharing redundant Azure blob storage.
-
-#### Web Interface
-
-The web interface can be reached via the [RealmJoin Classic Portal](https://realmjoin-web.azurewebsites.net). After logging in with the provided credentials, the administrator can manage the package distribution in his tenant and access extensive information.
-
-## Security Features
-
-### Client authentication
-
-The RealmJoin client authenticates itself against Entra ID via a secured HTTPS connection, receiving an identification token. With this token the client now can prove its identity to the Microsoft Graph API and the RealmJoin back-end.\
-After identifying the client, the back-ends response to the client is RSA signed. Using the servers public key, the RealmJoin client and service can verify the identity of the back-end server response.
