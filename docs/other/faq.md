@@ -17,7 +17,7 @@
 
 ## Am I able to maintain my own software packages and updates?
 
-RealmJoin contains an internal application store compatible with Intunewin (Microsoft Endpoint Manager / Intune Package Format), with over 2000 existing applications. RealmJoin offers packaging-as-a-service to provide any missing applications.
+RealmJoin contains an internal application store compatible with Intunewin (Microsoft Endpoint Manager / Intune Package Format), with over 3000 existing applications. RealmJoin offers packaging-as-a-service to provide any missing applications.
 
 As RealmJoin directly leverages Microsoft Intune, it is possible to offer additional applications which are maintained independently by your organization next to applications sourced through our application store.
 
@@ -50,3 +50,48 @@ The compatibility of RealmJoin with Autopilot Pre-Provisioning varies based on t
 3. **Mix of Intune- and RealmJoin Agent-Driven App Deployment:**
    * **Compatibility:** Possible, but not recommended.
    * The RealmJoin Agent can detect applications installed via Intune-driven app deployment. However, for successful recognition, the packages must match exactly (such as argument hashes, version number). This approach adds complexity, as applications need to be maintained two times and assignment logic becomes more intricate.
+
+## Backend Testing
+
+Backend testing is conducted across two primary components: the Portal and the Agent. Each component utilizes multiple deployment channels to ensure thorough validation before reaching production environments.
+
+### Portal Testing
+
+The portal testing infrastructure consists of three environments with progressive stability levels:
+
+**Developer Hosted Instances**
+
+* Individual development environments for initial feature development and rapid iteration
+
+**Staging Portal**
+
+* Central testing environment where newly developed features are deployed
+* Publicly accessible but should be used with caution due to frequent changes
+* Serves as both a formal testing environment and daily-use platform for the RealmJoin team
+* Real-world usage patterns help surface issues before production deployment
+
+**Productive Portal**
+
+* Production environment serving end users
+* Receives batched releases of multiple tested features from staging
+
+### Agent Testing
+
+The agent utilizes a three-channel release strategy:
+
+**Canary Channel**
+
+* Bleeding-edge releases used by the internal development team
+* Enables rapid internal feedback on new functionality
+
+**Beta Channel**
+
+* Company-wide release channel deployed across the organization
+* Balances feature currency with reasonable stability
+
+**Stable Channel**
+
+* Production-ready release channel with thoroughly tested features
+* Recommended for general use with maximum stability
+
+All three agent channels are publicly available to customers for testing at their preferred stability level and evaluating upcoming features in their own environments.

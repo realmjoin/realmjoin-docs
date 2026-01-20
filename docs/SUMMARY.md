@@ -42,6 +42,7 @@
   * [Package Settings](app-management/packages/package-settings.md)
   * [Packaging Requests](app-management/packages/packaging-requests/README.md)
     * [Packaging Roles & Responsibilities](app-management/packages/packaging-requests/packaging-roles-and-responsibilities.md)
+    * [Application Package Testing](app-management/packages/packaging-requests/application-package-testing.md)
     * [Organic Packages](app-management/packages/packaging-requests/organic-packages.md)
   * [Migration Guide: RealmJoin to Intune Managed Packages](app-management/packages/migration-guide-realmjoin-to-intune-managed-packages.md)
 * [Software Reporting](app-management/software-reporting.md)

@@ -101,7 +101,9 @@ FirstRun.AfterSuccessAction
 
 
 
-Change if the RJ ESP is displayed.
+Change if the RJ ESP is displayed. &#x20;
+
+If the deployment screen needs to be disabled for secondary users, the system variable _$env:RjDisableSecondaryInitialDeployment = 1_ has to be set before the first SU login.
 
 **Key**
 
