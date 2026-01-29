@@ -59,5 +59,3 @@ The nominated email will receive important updates and portal notifications.
 {% content-ref url="advanced-setup.md" %}
 [advanced-setup.md](advanced-setup.md)
 {% endcontent-ref %}
-
-## Decision Matrix
