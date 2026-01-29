@@ -4,7 +4,9 @@
 
 ## RealmJoin Deployment
 
-* [Onboarding](realmjoin-deployment/onboarding-realmjoin-portal.md)
+* [Onboarding](realmjoin-deployment/onboarding-realmjoin-portal/README.md)
+  * [Quick Setup](realmjoin-deployment/onboarding-realmjoin-portal/quick-setup.md)
+  * [Advanced Setup](realmjoin-deployment/onboarding-realmjoin-portal/advanced-setup.md)
 * [Required Permissions](realmjoin-deployment/required-permissions.md)
 * [Infrastructure Considerations](realmjoin-deployment/infrastructure/README.md)
   * [Limiting the Scope of RealmJoin Portal](realmjoin-deployment/infrastructure/limiting-the-scope-of-realmjoin-portal.md)

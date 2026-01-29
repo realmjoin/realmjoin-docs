@@ -44,7 +44,7 @@ Please note down the Automation Account's name as it will be needed later.
 
 ### Entering Info - Part 1
 
-It is assumed you already finished [onboarding RealmJoin Portal](../../realmjoin-deployment/onboarding-realmjoin-portal.md).
+It is assumed you already finished [onboarding RealmJoin Portal](../../realmjoin-deployment/onboarding-realmjoin-portal/).
 
 1. In RealmJoin Portal go to '[Settings -> Runbooks](https://portal.realmjoin.com/settings/runbooks-configuration)'.
 
