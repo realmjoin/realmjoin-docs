@@ -2,7 +2,7 @@
 
 This page describes the permissions needed for RealmJoin to interact with Azure Automation / Runbooks.&#x20;
 
-See [azure-ad-roles-and-permissions.md](../azure-ad-roles-and-permissions.md "mention") to see which permissions need to be granted to Azure Automation for the runbooks to be useful in your environment.
+See [azure-ad-roles-and-permissions.md](azure-ad-roles-and-permissions.md "mention") to see which permissions need to be granted to Azure Automation for the runbooks to be useful in your environment.
 
 ## RealmJoin Runbook Management
 
