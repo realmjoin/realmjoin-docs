@@ -4,11 +4,11 @@
 
 {% embed url="https://www.youtube.com/watch?v=Ijp9XnE8UuA" %}
 
-To allow RealmJoin Portal to provide [runbooks ](../runbooks/)for automating daily tasks, you need to connect an [Azure Automation](https://learn.microsoft.com/en-us/azure/automation/overview) Account. This Automation Account will host your runbooks as well as the [permissions](../azure-ad-roles-and-permissions.md) needed for the runbooks to function in your environment.
+To allow RealmJoin Portal to provide [runbooks ](../runbooks/)for automating daily tasks, you need to connect an [Azure Automation](https://learn.microsoft.com/en-us/azure/automation/overview) Account. This Automation Account will host your runbooks as well as the [permissions](azure-ad-roles-and-permissions.md) needed for the runbooks to function in your environment.
 
 This guide will help you to onboard either a new or existing Automation Account.
 
-Please be aware, the Automation Account (its [Managed Identity](https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview), to be more precise) will potentially have far reaching [permissions ](../azure-ad-roles-and-permissions.md)in your environment, like the ability to modify group or user objects in Entra ID or mailboxes in Exchange Online. Please carefully limit the number of people with access to this Automation Account to prevent unwanted usage of the given permissions.
+Please be aware, the Automation Account (its [Managed Identity](https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview), to be more precise) will potentially have far reaching [permissions ](azure-ad-roles-and-permissions.md)in your environment, like the ability to modify group or user objects in Entra ID or mailboxes in Exchange Online. Please carefully limit the number of people with access to this Automation Account to prevent unwanted usage of the given permissions.
 
 When reusing an existing Automation Account, be aware that RealmJoin Portal automates the creation, updating and removal of runbooks coming from the [shared online repository of runbooks](https://github.com/realmjoin/realmjoin-runbooks). This might not be possible for an existing Automation Account. If in doubt, it is recommended to create a dedicated Azure Automation Account for RealmJoin Runbooks.
 
@@ -44,7 +44,7 @@ Please note down the Automation Account's name as it will be needed later.
 
 ### Entering Info - Part 1
 
-It is assumed you already finished [onboarding RealmJoin Portal](../../realmjoin-deployment/onboarding-realmjoin-portal.md).
+It is assumed you already finished [onboarding RealmJoin Portal](../../realmjoin-deployment/onboarding-realmjoin-portal/).
 
 1. In RealmJoin Portal go to '[Settings -> Runbooks](https://portal.realmjoin.com/settings/runbooks-configuration)'.
 
@@ -104,4 +104,4 @@ You can review the resulting App Registration in Entra ID. It will be named "Rea
 
 ## Granting Permissions to your Runbooks
 
-Please continue with [azure-ad-roles-and-permissions.md](../azure-ad-roles-and-permissions.md "mention") in [Process Automation](../runbooks/) to allow your runbooks to interact with objects in your environment.
+Please continue with [azure-ad-roles-and-permissions.md](azure-ad-roles-and-permissions.md "mention") in [Process Automation](../runbooks/) to allow your runbooks to interact with objects in your environment.

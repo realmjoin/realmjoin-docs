@@ -4,7 +4,9 @@
 
 ## RealmJoin Deployment
 
-* [Onboarding](realmjoin-deployment/onboarding-realmjoin-portal.md)
+* [Onboarding](realmjoin-deployment/onboarding-realmjoin-portal/README.md)
+  * [Quick Setup](realmjoin-deployment/onboarding-realmjoin-portal/quick-setup.md)
+  * [Advanced Setup](realmjoin-deployment/onboarding-realmjoin-portal/advanced-setup.md)
 * [Required Permissions](realmjoin-deployment/required-permissions.md)
 * [Infrastructure Considerations](realmjoin-deployment/infrastructure/README.md)
   * [Limiting the Scope of RealmJoin Portal](realmjoin-deployment/infrastructure/limiting-the-scope-of-realmjoin-portal.md)
@@ -52,17 +54,17 @@
 
 * [Connecting Azure Automation](automation/connecting-azure-automation/README.md)
   * [Required Permissions](automation/connecting-azure-automation/required-permissions.md)
-  * [Runbook Parameters](automation/connecting-azure-automation/runbooks.md)
+  * [Requirements](automation/connecting-azure-automation/azure-ad-roles-and-permissions.md)
 * [Runbooks](automation/runbooks/README.md)
   * [Runbook Customization](automation/runbooks/runbook-customization.md)
-  * [Runbook Permissions](automation/runbooks/runbook-permissions.md)
-  * [Naming Conventions](automation/runbooks/naming-conventions.md)
-  * [Runbook Scheduling](automation/runbooks/scheduling.md)
   * [Runbook Logs](automation/runbooks/runbook-logs/README.md)
     * [Runbook Job Details](automation/runbooks/runbook-logs/runbook-job-details.md)
+  * [Runbook Naming Conventions](automation/runbooks/naming-conventions.md)
+  * [Runbook Parameters](automation/runbooks/runbooks.md)
+  * [Runbook Permissions](automation/runbooks/runbook-permissions.md)
   * [Runbook References](automation/runbooks/runbook-references/README.md)
-  * [Runbooks Changelog](https://github.com/realmjoin/realmjoin-runbooks/blob/production/CHANGELOG.md)
-* [Requirements](automation/azure-ad-roles-and-permissions.md)
+  * [Runbook Scheduling](automation/runbooks/scheduling.md)
+  * [Runbook Changelog](https://github.com/realmjoin/realmjoin-runbooks/blob/production/CHANGELOG.md)
 * [Remediation Scripts](automation/remediation-scripts.md)
 
 ## RealmJoin Agent
