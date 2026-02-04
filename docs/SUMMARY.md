@@ -226,7 +226,7 @@
         * [Set Photo](automation/runbooks/runbook-references/user/userinfo/set-photo.md)
         * [Update User](automation/runbooks/runbook-references/user/userinfo/update-user.md)
   * [Runbook Scheduling](automation/runbooks/scheduling.md)
-  * [Runbook Changelog](https://github.com/realmjoin/realmjoin-runbooks/blob/production/CHANGELOG.md)
+  * [Runbook Changelog](automation/runbooks/runbook-changelog.md)
 * [Remediation Scripts](automation/remediation-scripts.md)
 
 ## RealmJoin Agent

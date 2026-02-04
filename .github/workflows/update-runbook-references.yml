@@ -1,4 +1,4 @@
-name: 📚 Update Runbook References
+name: 📚 Update Runbook Docs
 
 on:
   workflow_dispatch:  # Manual trigger
@@ -75,6 +75,21 @@ jobs:
           
           Write-Host "✅ Documentation generated successfully"
 
+      - name: 📄 Generate Runbook Changelog
+        shell: pwsh
+        run: |
+          Write-Host "🧾 Generating runbook changelog page..."
+
+          $scriptPath = "./.github/scripts/Get-RunbookChangelog.ps1"
+          $runbooksPath = "./runbooks-repo"
+          $outputFile = "./docs/automation/runbooks/runbook-changelog.md"
+
+          & $scriptPath `
+            -RunbooksRepoPath (Resolve-Path $runbooksPath).Path `
+            -OutputFilePath $outputFile
+
+          Write-Host "✅ Runbook changelog generated"
+
       - name: 📝 Update SUMMARY.md
         shell: pwsh
         run: |
@@ -82,7 +97,8 @@ jobs:
           
           & ./.github/scripts/Update-SummaryMd.ps1 `
             -SummaryPath ./docs/SUMMARY.md `
-            -RunbookReferencesPath ./docs/automation/runbooks/runbook-references
+            -RunbookReferencesPath ./docs/automation/runbooks/runbook-references `
+            -RunbookReferencesSummaryLevel 3
           
           Write-Host "✅ SUMMARY.md updated"
 
@@ -92,6 +108,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
           git add docs/automation/runbooks/runbook-references
+          git add docs/automation/runbooks/runbook-changelog.md
           git add docs/SUMMARY.md
           
           if git diff --staged --quiet; then

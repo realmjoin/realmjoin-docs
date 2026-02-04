@@ -107,6 +107,17 @@ Write-Host "======================================================" -ForegroundC
 Write-Host ""
 #endregion
 
+# Normalize paths to absolute paths to ensure consistent behavior across platforms
+# and when parameters are provided as relative paths.
+try {
+    $rootFolder = (Resolve-Path -Path $rootFolder -ErrorAction Stop).Path
+} catch {
+    Write-Error "Root folder could not be resolved: $rootFolder. Error: $_"
+    exit 1
+}
+
+$outputFolder = [System.IO.Path]::GetFullPath($outputFolder)
+
 ######################################
 #region Open issues
 #- The region Static Parameters is currently used for development purposes. This should be removed in the future.
@@ -227,10 +238,24 @@ Get-ChildItem -Path $rootFolder -Recurse -Include "*.ps1" -Exclude $MyInvocation
 } | ForEach-Object {
     $CurrentObject = $_
 
-    $relativeRunbookPath = $CurrentObject.FullName -replace "^$rootFolder[\\/]*", ""
+    $relativeRunbookPath = [System.IO.Path]::GetRelativePath($rootFolder, $CurrentObject.FullName)
     $RelativeRunbookPath_PathOnly = Split-Path -Path $relativeRunbookPath
-    $primaryFolder = ($RelativeRunbookPath_PathOnly -split "[\\/]" | Select-Object -First 1).Substring(0, 1).ToUpper() + ($RelativeRunbookPath_PathOnly -split "[\\/]" | Select-Object -First 1).Substring(1)
-    $subFolder = ($RelativeRunbookPath_PathOnly -split "[\\/]" | Select-Object -Skip 1 | Select-Object -First 1).Substring(0, 1).ToUpper() + ($RelativeRunbookPath_PathOnly -split "[\\/]" | Select-Object -Skip 1 | Select-Object -First 1).Substring(1)
+
+    $pathParts = @($RelativeRunbookPath_PathOnly -split "[\\/]" | Where-Object { $_ -and $_.Trim() })
+    if ($pathParts.Count -lt 1) {
+        Write-Warning "Skipping runbook because relative path could not be determined: $($CurrentObject.FullName)"
+        return
+    }
+
+    $primaryFolderPart = $pathParts[0]
+    $subFolderPart = if ($pathParts.Count -gt 1) { $pathParts[1] } else { "General" }
+
+    $primaryFolder = $primaryFolderPart.Substring(0, 1).ToUpper() + $primaryFolderPart.Substring(1)
+    $subFolder = $subFolderPart.Substring(0, 1).ToUpper() + $subFolderPart.Substring(1)
+
+    if ($subFolder -eq 'Avd') {
+        $subFolder = 'AVD'
+    }
 
     # Get comment-based help content from the current runbook
     $CurrentRunbookBasics = Get-RunbookBasics -runbookPath $CurrentObject.FullName -relativeRunbookPath $relativeRunbookPath
@@ -438,7 +463,8 @@ if ($outputMode -eq "OneFile") {
                 }
             }
             Add-Content -Path $ResultFile -Value ""
-            Add-Content -Path $ResultFile -Value "[Back to Table of Content](#table-of-contents)"
+            Add-Content -Path $ResultFile -Value ""
+            Add-Content -Path $ResultFile -Value "[Back to Runbook Reference overview](#table-of-contents)"
             Add-Content -Path $ResultFile -Value "`n `n `n"
         }
     }
@@ -448,7 +474,9 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
     ################################################################################################
     #region SeperateFileSeperateFolder
     ################################################################################################
-    $ResultFile = Join-Path -Path $rootFolder -ChildPath ($mainOutfile)
+    # In SeperateFileSeperateFolder mode, the runbook reference entrypoint for GitBook is the
+    # README.md inside the output folder. Runbook files link back to ../../README.md accordingly.
+    $ResultFile = Join-Path -Path $outputFolder -ChildPath "README.md"
     if (Test-Path -Path $ResultFile) {
         Remove-Item -Path $ResultFile -Force -ErrorAction SilentlyContinue
     }
@@ -456,22 +484,122 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
 
     $groupedRunbooks = $runbookDescriptions | Group-Object -Property PrimaryFolder, SubFolder | Sort-Object -Property Name
 
-    # General information regarding the RealmJoin runbook repository
-    Add-Content -Path $ResultFile -Value "# RealmJoin runbook repository"
-    Add-Content -Path $ResultFile -Value "This repository contains all runbooks for the RealmJoin portal. The runbooks are organized into different folders based on their area of application."
+    # Root overview README.md (GitBook entrypoint)
+    Add-Content -Path $ResultFile -Value "---"
+    Add-Content -Path $ResultFile -Value "title: Runbook References"
+    Add-Content -Path $ResultFile -Value "---"
+    Add-Content -Path $ResultFile -Value ""
+    Add-Content -Path $ResultFile -Value "## Runbook References"
+    Add-Content -Path $ResultFile -Value ""
+    Add-Content -Path $ResultFile -Value "This section contains detailed documentation for all available RealmJoin Runbooks."
+    Add-Content -Path $ResultFile -Value "The runbooks are automatically generated from the [realmjoin-runbooks](https://github.com/realmjoin/realmjoin-runbooks) repository and updated daily."
+    Add-Content -Path $ResultFile -Value ""
+    Add-Content -Path $ResultFile -Value "All runbooks are organized into different folders based on their area of application."
+    Add-Content -Path $ResultFile -Value ""
     Add-Content -Path $ResultFile -Value "The following categories are currently available:"
+    Add-Content -Path $ResultFile -Value ""
     foreach ($scope in $includedScope) {
         Add-Content -Path $ResultFile -Value "- $scope"
     }
     Add-Content -Path $ResultFile -Value ""
     Add-Content -Path $ResultFile -Value "Each category contains multiple runbooks that are further divided into subcategories based on their functionality. The runbooks are listed in alphabetical order within each subcategory."
-
-    # Runbook overview part
-    Add-Content -Path $ResultFile -Value "<a name='runbook-overview'></a>"
-    Add-Content -Path $ResultFile -Value "# RealmJoin runbook overview"
+    Add-Content -Path $ResultFile -Value ""
+    Add-Content -Path $ResultFile -Value "## RealmJoin Runbook overview"
+    Add-Content -Path $ResultFile -Value ""
     Add-Content -Path $ResultFile -Value "In the following, each runbook is listed along with a brief description or synopsis to give a clear understanding of its purpose and functionality."
     Add-Content -Path $ResultFile -Value "Also the document for each runbook contains information about permissions, where to find, notes, and parameters and further information in general."
     Add-Content -Path $ResultFile -Value ""
+
+    # Build a 2-level overview (primary folder + subfolder) based on the actual runbooks found.
+    # Keep ordering stable using includedScope (device/group/org/user).
+    $scopeOrder = @()
+    foreach ($scope in $includedScope) {
+        $scopeOrder += $scope.ToLower()
+    }
+
+    $TextInfo = (Get-Culture).TextInfo
+    $subFoldersByScope = @{}
+    foreach ($scope in $scopeOrder) {
+        $primaryFolderName = $TextInfo.ToTitleCase($scope)
+        # For display, use "Organization" instead of "Org"
+        $primaryFolderLabel = if ($scope -eq 'org') { 'Organization' } else { $TextInfo.ToTitleCase($scope) }
+
+        $subFolders = $groupedRunbooks |
+        Where-Object { $_.Group[0].PrimaryFolder -eq $primaryFolderName } |
+        ForEach-Object { $_.Group[0].SubFolder } |
+        Sort-Object -Unique
+
+        $subFoldersByScope[$scope] = [PSCustomObject]@{
+            Label     = $primaryFolderLabel
+            SubFolders = $subFolders
+        }
+    }
+
+    Add-Content -Path $ResultFile -Value "### Runbook categorie overview"
+    Add-Content -Path $ResultFile -Value ""
+    Add-Content -Path $ResultFile -Value "| Category | Subcategory |"
+    Add-Content -Path $ResultFile -Value "|---|---|"
+    foreach ($scope in $scopeOrder) {
+        $scopeInfo = $subFoldersByScope[$scope]
+        if (-not $scopeInfo) {
+            continue
+        }
+
+        $primaryFolderPath = "$scope/README.md"
+        $categoryCell = "[$($scopeInfo.Label)]($primaryFolderPath)"
+
+        if (-not $scopeInfo.SubFolders -or $scopeInfo.SubFolders.Count -eq 0) {
+            Add-Content -Path $ResultFile -Value "| $categoryCell |  |"
+            continue
+        }
+
+        $subCategoryLinks = foreach ($subFolder in $scopeInfo.SubFolders) {
+            $subFolderSlug = ($subFolder -replace ' ', '-').ToLower()
+            $subFolderAnchor = "$scope-$subFolderSlug"
+            "[$subFolder]($primaryFolderPath#$subFolderAnchor)"
+        }
+
+        $subCategoryCell = $subCategoryLinks -join '<br>'
+        Add-Content -Path $ResultFile -Value "| $categoryCell | $subCategoryCell |"
+    }
+
+    Add-Content -Path $ResultFile -Value ""
+    foreach ($scope in $scopeOrder) {
+        $scopeInfo = $subFoldersByScope[$scope]
+        if (-not $scopeInfo) {
+            continue
+        }
+
+        Add-Content -Path $ResultFile -Value "### $($scopeInfo.Label) Runbooks"
+        Add-Content -Path $ResultFile -Value ""
+
+        $primaryFolderPath = "$scope/README.md"
+        $primaryFolderName = $TextInfo.ToTitleCase($scope)
+
+        foreach ($subFolder in $scopeInfo.SubFolders) {
+            $subFolderSlug = ($subFolder -replace ' ', '-').ToLower()
+            $subFolderAnchor = "$scope-$subFolderSlug"
+
+            Add-Content -Path $ResultFile -Value "- [$subFolder]($primaryFolderPath#$subFolderAnchor)"
+
+            $runbooks = $groupedRunbooks |
+            Where-Object { $_.Name -eq "$primaryFolderName, $subFolder" } |
+            Select-Object -ExpandProperty Group |
+            Sort-Object -Property RunbookDisplayName
+
+            foreach ($runbook in $runbooks) {
+                $runbookFileName = ($runbook.RunbookDisplayName -replace ' ', '-').ToLower() + ".md"
+                $runbookLinkText = $runbook.RunbookDisplayName
+                if ($runbookLinkText -match '_[Ss]cheduled$') {
+                    $runbookLinkText = $runbookLinkText -replace '_[Ss]cheduled$', ' (Scheduled)'
+                }
+
+                Add-Content -Path $ResultFile -Value "  - [$runbookLinkText]($scope/$subFolderSlug/$runbookFileName)"
+            }
+        }
+
+        Add-Content -Path $ResultFile -Value ""
+    }
 
     if ($includeAdditionalLinks) {
         Add-Content -Path $ResultFile -Value ""
@@ -485,17 +613,13 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
     }
 
 
-    # Create TOC in the main result file
-    Add-Content -Path $ResultFile -Value "## Table of contents"
-    Add-Content -Path $ResultFile -Value ""
-
     # Initialize Array to collect all primaryFolderOverviewFiles
     $primaryFolderOverviewFiles = @()
 
     # First, collect all unique primary folders in alphabetical order
     $uniquePrimaryFolders = @()
     foreach ($group in $groupedRunbooks) {
-        $primaryFolder = $group.Name.Split(',')[0].Trim()
+        $primaryFolder = $group.Group[0].PrimaryFolder
         if ($uniquePrimaryFolders -notcontains $primaryFolder) {
             $uniquePrimaryFolders += $primaryFolder
         }
@@ -506,12 +630,9 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
     foreach ($primaryFolder in $uniquePrimaryFolders) {
         $primaryFolderLink = ($primaryFolder -replace ' ', '-').ToLower()
 
-        # Add primary folder to main TOC
-        if ($nameTOCFilesAlwaysREADME) {
-            Add-Content -Path $ResultFile -Value "- [$primaryFolder]($($relativeOutputPath)$primaryFolderLink/README.md)"
-        }
-        else {
-            Add-Content -Path $ResultFile -Value "- [$primaryFolder]($($relativeOutputPath)$primaryFolderLink/$primaryFolderLink-overview.md)"
+        $primaryFolderDisplayName = $primaryFolder
+        if ($primaryFolderDisplayName -eq 'Org') {
+            $primaryFolderDisplayName = 'Organization'
         }
 
         # Create TOC for each primary folder
@@ -530,25 +651,49 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
         $primaryFolderOverviewFiles += $primaryFolderOverviewFile
 
         Remove-Item -Path $primaryFolderOverviewFile -Force -ErrorAction SilentlyContinue
-        Add-Content -Path $primaryFolderOverviewFile -Value "# $primaryFolder Overview"
+        $primaryFolderOverviewTitle = "$primaryFolderDisplayName Runbook Overview"
+        Add-Content -Path $primaryFolderOverviewFile -Value "---"
+        Add-Content -Path $primaryFolderOverviewFile -Value "title: $primaryFolderOverviewTitle"
+        Add-Content -Path $primaryFolderOverviewFile -Value "---"
+        Add-Content -Path $primaryFolderOverviewFile -Value ""
+        Add-Content -Path $primaryFolderOverviewFile -Value "# $primaryFolderOverviewTitle"
+        Add-Content -Path $primaryFolderOverviewFile -Value ""
+        Add-Content -Path $primaryFolderOverviewFile -Value "Here you can find all $primaryFolderDisplayName Runbooks along with the available subcategories."
         Add-Content -Path $primaryFolderOverviewFile -Value ""
 
         # Get all subfolders for this primary folder and sort them
-        $subFolders = $groupedRunbooks | Where-Object { $_.Name.Split(',')[0].Trim() -eq $primaryFolder } |
-        ForEach-Object { $_.Name.Split(',')[1].Trim() } | Sort-Object -Unique
+        $subFolders = $groupedRunbooks |
+        Where-Object { $_.Group[0].PrimaryFolder -eq $primaryFolder } |
+        ForEach-Object { $_.Group[0].SubFolder } |
+        Sort-Object -Unique
 
         # Process each subfolder
         foreach ($subFolder in $subFolders) {
-            $subFolderLink = "$primaryFolderLink-$(($subFolder -replace ' ', '-').ToLower())"
+            $subFolderSlug = (($subFolder -replace ' ', '-').ToLower())
+            $subFolderLink = "$primaryFolderLink-$subFolderSlug"
 
-            if ($nameTOCFilesAlwaysREADME) {
-                Add-Content -Path $ResultFile -Value "  - [$subFolder]($($relativeOutputPath)$primaryFolderLink/README.md#$subFolderLink)"
+            # Create a README.md for the subcategory folder
+            $subFolderPath = Join-Path -Path $primaryFolderPath -ChildPath $subFolderSlug
+            if (-not (Test-Path -Path $subFolderPath)) {
+                New-Item -Path $subFolderPath -ItemType Directory -Force | Out-Null
             }
-            else {
-                Add-Content -Path $ResultFile -Value "  - [$subFolder]($($relativeOutputPath)$primaryFolderLink/$primaryFolderLink-overview.md#$subFolderLink)"
-            }
+
+            $subFolderOverviewFile = Join-Path -Path $subFolderPath -ChildPath "README.md"
+            Remove-Item -Path $subFolderOverviewFile -Force -ErrorAction SilentlyContinue
+
+            $subFolderTitle = "$primaryFolderDisplayName Runbooks - $subFolder"
+            Add-Content -Path $subFolderOverviewFile -Value "---"
+            Add-Content -Path $subFolderOverviewFile -Value "title: $subFolderTitle"
+            Add-Content -Path $subFolderOverviewFile -Value "---"
+            Add-Content -Path $subFolderOverviewFile -Value ""
+            Add-Content -Path $subFolderOverviewFile -Value "# $subFolderTitle"
+            Add-Content -Path $subFolderOverviewFile -Value ""
+            Add-Content -Path $subFolderOverviewFile -Value "On this overview page you can find all $primaryFolderDisplayName Runbooks in the $subFolder subcategory."
+            Add-Content -Path $subFolderOverviewFile -Value ""
+            Add-Content -Path $subFolderOverviewFile -Value "## Runbooks"
+            Add-Content -Path $subFolderOverviewFile -Value ""
+
             Add-Content -Path $primaryFolderOverviewFile -Value "<a name='$subFolderLink'></a>"
-            Add-Content -Path $ResultFile -Value ""
             Add-Content -Path $primaryFolderOverviewFile -Value "## $subFolder"
 
             # Get and sort runbooks for this primary folder and subfolder
@@ -559,7 +704,7 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
 
             foreach ($runbook in $runbooks) {
                 $runbookFileName = ($runbook.RunbookDisplayName -replace ' ', '-').ToLower() + ".md"
-                $runbookFilePath = Join-Path -Path $outputFolder -ChildPath "$primaryFolderLink\$(($subFolder -replace ' ', '-').ToLower())\$runbookFileName"
+                $runbookFilePath = Join-Path -Path $subFolderPath -ChildPath $runbookFileName
                 $runbookAnchor = "$subFolderLink-$(($runbook.RunbookDisplayName -replace ' ', '-').ToLower())"
 
                 # Ensure the directory exists
@@ -568,10 +713,14 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
                     New-Item -Path $runbookDirectory -ItemType Directory -Force | Out-Null
                 }
 
-                # Add link to the runbook file in the main TOC
-                Add-Content -Path $ResultFile -Value "    - [$($runbook.RunbookDisplayName)]($($relativeOutputPath)$primaryFolderLink/$(($subFolder -replace ' ', '-').ToLower())/$runbookFileName)"
-                # Add link to the runbook file in the primary folder TOC
-                Add-Content -Path $primaryFolderOverviewFile -Value "  - [$($runbook.RunbookDisplayName)]($(($subFolder -replace ' ', '-').ToLower())/$runbookFileName)"
+                # Add links to the runbook file in the primary folder and subfolder overviews
+                $runbookLinkText = $runbook.RunbookDisplayName
+                if ($runbookLinkText -match '_[Ss]cheduled$') {
+                    $runbookLinkText = $runbookLinkText -replace '_[Ss]cheduled$', ' (Scheduled)'
+                }
+
+                Add-Content -Path $primaryFolderOverviewFile -Value "  - [$runbookLinkText]($subFolderSlug/$runbookFileName)"
+                Add-Content -Path $subFolderOverviewFile -Value "- [$runbookLinkText]($runbookFileName)"
 
                 # Create individual file for each runbook
                 Remove-Item -Path $runbookFilePath -Force -ErrorAction SilentlyContinue
@@ -659,16 +808,22 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
 
                 # Add link back to the runbook references main README
                 Add-Content -Path $runbookFilePath -Value ""
-                Add-Content -Path $runbookFilePath -Value "[Back to Table of Content](../../README.md)"
+                Add-Content -Path $runbookFilePath -Value ""
+                Add-Content -Path $runbookFilePath -Value "[Back to Runbook Reference overview](../../README.md)"
                 Add-Content -Path $runbookFilePath -Value ""
             }
+
+            Add-Content -Path $subFolderOverviewFile -Value ""
+            Add-Content -Path $subFolderOverviewFile -Value "[Back to Runbook Reference overview](../../README.md)"
+            Add-Content -Path $subFolderOverviewFile -Value ""
         }
     }
 
     # Create TOC for each primary folder
     foreach ($primaryFolderOverviewFile in $primaryFolderOverviewFiles) {
         Add-Content -Path $primaryFolderOverviewFile -Value ""
-        Add-Content -Path $primaryFolderOverviewFile -Value "[Back to Table of Content](../README.md)"
+        Add-Content -Path $primaryFolderOverviewFile -Value ""
+        Add-Content -Path $primaryFolderOverviewFile -Value "[Back to Runbook Reference overview](../README.md)"
         Add-Content -Path $primaryFolderOverviewFile -Value ""
     }
     #endregion

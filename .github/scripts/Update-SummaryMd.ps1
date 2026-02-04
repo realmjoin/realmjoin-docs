@@ -11,6 +11,12 @@
 
 .PARAMETER SummaryPath
     Path to the SUMMARY.md file to update.
+
+.PARAMETER RunbookReferencesSummaryLevel
+    Controls how many levels of entries are added under "Runbook References" in SUMMARY.md.
+    1 = top-level categories (e.g. device/group/org/user)
+    2 = include subcategories (e.g. avd/general/security)
+    3 = include individual runbooks (.md files)
 #>
 
 [CmdletBinding()]
@@ -19,7 +25,11 @@ param (
     [string]$RunbookReferencesPath,
 
     [Parameter(Mandatory = $true)]
-    [string]$SummaryPath
+    [string]$SummaryPath,
+
+    [Parameter(Mandatory = $false)]
+    [ValidateSet(1, 2, 3)]
+    [int]$RunbookReferencesSummaryLevel = 1
 )
 
 ############################################################
@@ -158,6 +168,11 @@ param (
         $indent = "  " * ($Item.Depth + 2)  # +2 because runbook-references is at level 2 (4 spaces)
         $friendlyName = Get-FriendlyName -Name $Item.Name
         $relativePath = "$BasePath/$($Item.Path -replace '\\', '/')"
+
+        # Top-level folders (device/group/org/user) should be displayed as "<Name> Runbooks"
+        if ($Item.Type -eq "Folder" -and $Item.Depth -eq 0) {
+            $friendlyName = "$friendlyName Runbooks"
+        }
 
         if ($Item.Type -eq "Folder") {
             return "$indent* [$friendlyName]($relativePath/README.md)"
@@ -462,7 +477,9 @@ This section contains runbooks related to $($friendlyName.ToLower()).
             Write-Warning "SUMMARY.md file not found at: $Path"
             return @()
         }
-    }    function Get-RunbookReferencesSection {
+    }
+
+    function Get-RunbookReferencesSection {
         <#
         .SYNOPSIS
             Generates the runbook references section content.
@@ -473,12 +490,20 @@ This section contains runbooks related to $($friendlyName.ToLower()).
         .PARAMETER RunbookReferencesPath
             Path to the runbook-references directory.
 
+        .PARAMETER SummaryLevel
+            Maximum entry level to include under "Runbook References".
+            1 = top-level folders, 2 = include subfolders, 3 = include runbook files.
+
         .OUTPUTS
             String[]. Returns the lines for the runbook references section.
         #>
         param (
             [Parameter(Mandatory = $true)]
-            [string]$RunbookReferencesPath
+            [string]$RunbookReferencesPath,
+
+            [Parameter(Mandatory = $false)]
+            [ValidateSet(1, 2, 3)]
+            [int]$SummaryLevel = 1
         )
 
         $basePath = "automation/runbooks/runbook-references"
@@ -496,8 +521,11 @@ This section contains runbooks related to $($friendlyName.ToLower()).
 
         # Generate entries and categorize folders
         foreach ($item in $structure) {
-            $entry = New-SummaryEntry -Item $item -BasePath $basePath
-            $sectionLines += $entry
+            $itemLevel = $item.Depth + 1
+            if ($itemLevel -le $SummaryLevel) {
+                $entry = New-SummaryEntry -Item $item -BasePath $basePath
+                $sectionLines += $entry
+            }
 
             if ($item.Type -eq "Folder") {
                 if ($item.Depth -eq 0) {
@@ -515,13 +543,25 @@ This section contains runbooks related to $($friendlyName.ToLower()).
 
         # Create README.md files for top-level folders with runbook listings
         foreach ($folder in $topLevelFolders) {
-            Write-Host "Generating README for top-level folder: $($folder.Name)"
-            New-SubfolderReadme -FolderPath $folder.Path -FolderName $folder.Name
+            $topLevelReadmePath = Join-Path -Path $folder.Path -ChildPath "README.md"
+
+            if (-not (Test-Path -Path $topLevelReadmePath)) {
+                Write-Host "Generating README for top-level folder: $($folder.Name)"
+                New-SubfolderReadme -FolderPath $folder.Path -FolderName $folder.Name
+            } else {
+                Write-Host "Skipping README generation for top-level folder '$($folder.Name)' because README.md already exists."
+            }
         }
 
         # Create main README for runbook-references
-        Write-Host "Generating main README for runbook-references"
-        New-MainReadme -RunbookReferencesPath $RunbookReferencesPath
+        $mainReadmePath = Join-Path -Path $RunbookReferencesPath -ChildPath "README.md"
+
+        if (-not (Test-Path -Path $mainReadmePath)) {
+            Write-Host "Generating main README for runbook-references"
+            New-MainReadme -RunbookReferencesPath $RunbookReferencesPath
+        } else {
+            Write-Host "Skipping main README generation for runbook-references because README.md already exists."
+        }
 
         return $sectionLines
     }
@@ -591,7 +631,10 @@ This section contains runbooks related to $($friendlyName.ToLower()).
                     if ($currentIndent -le $runbookReferencesIndent) {
                         # We've reached a new section at the same or lower level
                         $insideRunbookReferences = $false
-                        $updatedLines += $line
+                        # Avoid keeping any orphaned runbook-reference entries that may appear at this level
+                        if ($line -notmatch 'automation/runbooks/runbook-references/') {
+                            $updatedLines += $line
+                        }
                     }
                 }
                 # Skip lines that are part of the old runbook references section
@@ -625,6 +668,7 @@ This section contains runbooks related to $($friendlyName.ToLower()).
     Write-Host "Starting SUMMARY.md update..."
     Write-Host "Runbook References Path: $RunbookReferencesPath"
     Write-Host "SUMMARY.md Path: $SummaryPath"
+    Write-Host "Runbook References SUMMARY level: $RunbookReferencesSummaryLevel"
 
     # Check if runbook-references directory exists
     if (-not (Test-Path -Path $RunbookReferencesPath)) {
@@ -636,7 +680,7 @@ This section contains runbooks related to $($friendlyName.ToLower()).
     ##############################
 
     Write-Host "Scanning runbook references directory..."
-    $newSectionLines = Get-RunbookReferencesSection -RunbookReferencesPath $RunbookReferencesPath
+    $newSectionLines = Get-RunbookReferencesSection -RunbookReferencesPath $RunbookReferencesPath -SummaryLevel $RunbookReferencesSummaryLevel
     Write-Host "Generated $($newSectionLines.Count) lines for runbook references section."
     #endregion Generate New Section
 
