@@ -4,7 +4,7 @@ The following article shows you a list of possible RealmJoin Client settings/pol
 
 
 
-### Allow users to access LAPS for their devices
+### Allow users to access RealmJoin LAPS for their devices
 
 Users may access different LAPS types for devices owned by visiting the RealmJoin portal.&#x20;
 
@@ -25,6 +25,29 @@ or per account type
   "EmergencyAccount": true,
   "SupportAccount": true,
   "PrivilegedAccount": true
+}
+```
+
+### Allow users to access Intune LAPS for their devices
+
+Users may access and rotate the LAPS password for their devices.
+
+**Key**
+
+Allow.SelfLAPSIntune
+
+**Value**
+
+```
+"true"|"false"
+```
+
+or specifically:
+
+```
+{
+  "CanReadPassword": true,
+  "CanRotatePassword": false
 }
 ```
 
