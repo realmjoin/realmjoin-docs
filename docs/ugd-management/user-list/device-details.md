@@ -87,9 +87,9 @@ Depending on the API used, a captcha might be displayed before requesting/displa
 
 ## Actions
 
-You can use the button **Sync** to trigger a Sync of Intune Policies and RealmJoin Action, like queued [LAPS](device-details.md#local-admin-management-laps) account creations.
+You can use the button **Intune Sync** to trigger a remote sync of Intune Policies.
 
-**Scan** to trigger a (quick) scan of Windows Defender on a managed client.
+Use the **Defender Scan** button to trigger a (quick) scan of Windows Defender on a managed client.
 
 ## Runbooks
 
