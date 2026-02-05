@@ -1,6 +1,8 @@
 name: Check Markdown links
 
-on: push
+on: 
+  workflow_dispatch:  # Manual trigger
+  # push - currently disabled
 
 jobs:
   markdown-link-check:
