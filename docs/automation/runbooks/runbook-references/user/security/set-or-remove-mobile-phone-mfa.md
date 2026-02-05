@@ -47,5 +47,6 @@ Enter the user's mobile number in international format (e.g. +491701234567) to a
 | Type | Boolean |
 
 
-[Back to Table of Content](../../README.md)
+
+[Back to Runbook Reference overview](../../README.md)
 

@@ -17,5 +17,6 @@ Organization → Security → List Information Protection Labels
 
 ## Parameters
 
-[Back to Table of Content](../../README.md)
+
+[Back to Runbook Reference overview](../../README.md)
 

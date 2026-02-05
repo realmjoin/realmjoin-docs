@@ -37,5 +37,6 @@ Array of Azure subscription IDs where the AVD Session Host resources are located
 | Type | String[] |
 
 
-[Back to Table of Content](../../README.md)
+
+[Back to Runbook Reference overview](../../README.md)
 

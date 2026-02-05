@@ -41,5 +41,6 @@ The phone number must be in E.164 format. Example: +49321987654 or +49321987654;
 | Type | String |
 
 
-[Back to Table of Content](../../README.md)
+
+[Back to Runbook Reference overview](../../README.md)
 

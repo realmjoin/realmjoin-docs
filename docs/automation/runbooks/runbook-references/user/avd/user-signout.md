@@ -37,5 +37,6 @@ Array of Azure subscription IDs where the AVD resources are located. Retrieved f
 | Type | String[] |
 
 
-[Back to Table of Content](../../README.md)
+
+[Back to Runbook Reference overview](../../README.md)
 

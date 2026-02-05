@@ -152,5 +152,6 @@ Please configure an Azure Storage Account to use this feature.
 | Type | String |
 
 
-[Back to Table of Content](../../README.md)
+
+[Back to Runbook Reference overview](../../README.md)
 

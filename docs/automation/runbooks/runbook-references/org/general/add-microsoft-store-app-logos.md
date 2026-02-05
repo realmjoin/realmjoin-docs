@@ -17,5 +17,6 @@ Organization → General → Add Microsoft Store App Logos
 
 ## Parameters
 
-[Back to Table of Content](../../README.md)
+
+[Back to Runbook Reference overview](../../README.md)
 

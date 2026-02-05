@@ -27,5 +27,6 @@ DeviceId of the device to check onboarding status for.
 | Type | String |
 
 
-[Back to Table of Content](../../README.md)
+
+[Back to Runbook Reference overview](../../README.md)
 

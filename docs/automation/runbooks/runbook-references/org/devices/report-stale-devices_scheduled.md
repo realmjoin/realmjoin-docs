@@ -99,5 +99,6 @@ The sender email address. This needs to be configured in the runbook customizati
 | Type | String |
 
 
-[Back to Table of Content](../../README.md)
+
+[Back to Runbook Reference overview](../../README.md)
 

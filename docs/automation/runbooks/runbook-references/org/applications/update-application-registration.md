@@ -16,9 +16,12 @@ Organization → Applications → Update Application Registration
 ## Permissions
 ### Application permissions
 - **Type**: Microsoft Graph
-  - Application.ReadWrite.All
+  - Application.ReadWrite.OwnedBy
   - Organization.Read.All
   - Group.ReadWrite.All
+
+### RBAC roles
+- Application Developer
 
 
 ## Parameters
@@ -203,5 +206,6 @@ Only for UI used
 | Type | Boolean |
 
 
-[Back to Table of Content](../../README.md)
+
+[Back to Runbook Reference overview](../../README.md)
 

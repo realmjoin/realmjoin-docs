@@ -50,5 +50,6 @@ The function sends individual emails to each recipient for privacy reasons.
 | Type | String |
 
 
-[Back to Table of Content](../../README.md)
+
+[Back to Runbook Reference overview](../../README.md)
 

@@ -195,5 +195,6 @@ Who will take over group ownership if the offboarded user is the last remaining 
 | Type | String |
 
 
-[Back to Table of Content](../../README.md)
+
+[Back to Runbook Reference overview](../../README.md)
 

@@ -32,5 +32,6 @@ Object ID of the group to check onboarding status for its members.
 | Type | String |
 
 
-[Back to Table of Content](../../README.md)
+
+[Back to Runbook Reference overview](../../README.md)
 

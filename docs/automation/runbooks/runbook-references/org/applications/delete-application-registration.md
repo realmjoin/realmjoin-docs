@@ -15,8 +15,11 @@ Organization → Applications → Delete Application Registration
 ## Permissions
 ### Application permissions
 - **Type**: Microsoft Graph
-  - Application.ReadWrite.All
+  - Application.ReadWrite.OwnedBy
   - Group.ReadWrite.All
+
+### RBAC roles
+- Application Developer
 
 
 ## Parameters
@@ -31,5 +34,6 @@ Organization → Applications → Delete Application Registration
 | Type | String |
 
 
-[Back to Table of Content](../../README.md)
+
+[Back to Runbook Reference overview](../../README.md)
 

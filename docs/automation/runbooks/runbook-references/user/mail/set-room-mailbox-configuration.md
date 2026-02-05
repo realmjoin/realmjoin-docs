@@ -110,5 +110,6 @@ User → Mail → Set Room Mailbox Configuration
 | Type | Int32 |
 
 
-[Back to Table of Content](../../README.md)
+
+[Back to Runbook Reference overview](../../README.md)
 

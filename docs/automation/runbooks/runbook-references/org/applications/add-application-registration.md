@@ -16,9 +16,12 @@ Organization → Applications → Add Application Registration
 ## Permissions
 ### Application permissions
 - **Type**: Microsoft Graph
-  - Application.ReadWrite.All
+  - Application.ReadWrite.OwnedBy
   - Organization.Read.All
   - Group.ReadWrite.All
+
+### RBAC roles
+- Application Developer
 
 
 ## Parameters
@@ -213,5 +216,6 @@ Enable implicit grant flow for ID tokens. Default is false.
 | Type | Boolean |
 
 
-[Back to Table of Content](../../README.md)
+
+[Back to Runbook Reference overview](../../README.md)
 

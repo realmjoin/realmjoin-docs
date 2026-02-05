@@ -30,5 +30,6 @@ User which should be cleared. Could be filled with the user picker in the UI.
 | Type | String |
 
 
-[Back to Table of Content](../../README.md)
+
+[Back to Runbook Reference overview](../../README.md)
 

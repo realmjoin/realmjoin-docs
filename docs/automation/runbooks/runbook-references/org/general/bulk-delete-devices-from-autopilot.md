@@ -27,5 +27,6 @@ Organization → General → Bulk Delete Devices From Autopilot
 | Type | String |
 
 
-[Back to Table of Content](../../README.md)
+
+[Back to Runbook Reference overview](../../README.md)
 
