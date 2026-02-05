@@ -1,0 +1,122 @@
+name: 📚 Update Runbook Docs
+
+on:
+  workflow_dispatch:  # Manual trigger
+  schedule:
+    - cron: '0 2 * * *'  # Daily at 02:00 UTC
+
+permissions:
+  contents: write
+
+jobs:
+  update-runbook-docs:
+    name: 🔄 Generate Runbook Documentation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Documentation Repository
+        uses: actions/checkout@v6
+
+      - name: 📥 Checkout RealmJoin Runbooks Repository
+        uses: actions/checkout@v6
+        with:
+          repository: realmjoin/realmjoin-runbooks
+          ref: master
+          path: runbooks-repo
+
+      - name: 📁 Prepare Output Directory
+        shell: pwsh
+        run: |
+          Write-Host "🔍 Preparing output directory..."
+          
+          $outputPath = "docs/automation/runbooks/runbook-references"
+          
+          # Remove existing runbook references (but keep README.md if it exists at root level)
+          if (Test-Path $outputPath) {
+            Get-ChildItem -Path $outputPath -Exclude "README.md" | Remove-Item -Recurse -Force
+            Write-Host "✅ Cleaned existing runbook references"
+          }
+          
+          # Ensure directory exists
+          New-Item -Path $outputPath -ItemType Directory -Force | Out-Null
+          Write-Host "✅ Output directory ready"
+
+      - name: 📄 Generate Runbook Documentation
+        shell: pwsh
+        run: |
+          Write-Host "📝 Generating runbook documentation..."
+          
+          $scriptPath = "./.github/scripts/Get-RunbookDescriptions.ps1"
+          $outputPath = "./docs/automation/runbooks/runbook-references"
+          $runbooksPath = "./runbooks-repo"
+          
+          # Debug: Show paths and directory contents
+          Write-Host "=== Debug Information ==="
+          Write-Host "Current Directory: $(Get-Location)"
+          Write-Host "Runbooks Path: $runbooksPath"
+          Write-Host "Runbooks Path (Resolved): $((Resolve-Path $runbooksPath).Path)"
+          Write-Host ""
+          Write-Host "Contents of runbooks-repo:"
+          Get-ChildItem -Path $runbooksPath -Directory | Select-Object -First 10 | Format-Table Name
+          Write-Host "========================="
+          Write-Host ""
+          
+          # Run the documentation generation script
+          & $scriptPath `
+            -includedScope @("device", "group", "org", "user") `
+            -includePermissions `
+            -includeDocs `
+            -includeWhereToFind `
+            -includeParameters `
+            -outputMode "SeperateFileSeperateFolder" `
+            -nameTOCFilesAlwaysREADME `
+            -outputFolder $outputPath `
+            -rootFolder (Resolve-Path $runbooksPath).Path
+          
+          Write-Host "✅ Documentation generated successfully"
+
+      - name: 📄 Generate Runbook Changelog
+        shell: pwsh
+        run: |
+          Write-Host "🧾 Generating runbook changelog page..."
+
+          $scriptPath = "./.github/scripts/Get-RunbookChangelog.ps1"
+          $runbooksPath = "./runbooks-repo"
+          $outputFile = "./docs/automation/runbooks/runbook-changelog.md"
+
+          & $scriptPath `
+            -RunbooksRepoPath (Resolve-Path $runbooksPath).Path `
+            -OutputFilePath $outputFile
+
+          Write-Host "✅ Runbook changelog generated"
+
+      - name: 📝 Update SUMMARY.md
+        shell: pwsh
+        run: |
+          Write-Host "📝 Updating SUMMARY.md..."
+          
+          & ./.github/scripts/Update-SummaryMd.ps1 `
+            -SummaryPath ./docs/SUMMARY.md `
+            -RunbookReferencesPath ./docs/automation/runbooks/runbook-references `
+            -RunbookReferencesSummaryLevel 3
+          
+          Write-Host "✅ SUMMARY.md updated"
+
+      - name: 📤 Commit and Push Changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add docs/automation/runbooks/runbook-references
+          git add docs/automation/runbooks/runbook-changelog.md
+          git add docs/SUMMARY.md
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "docs: update runbook references from realmjoin/realmjoin-runbooks
+
+            Generated from realmjoin/realmjoin-runbooks@$(cd runbooks-repo && git rev-parse --short HEAD)"
+            git push
+            echo "✅ Changes committed and pushed"
+          fi

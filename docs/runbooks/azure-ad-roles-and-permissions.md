@@ -21,6 +21,7 @@ Please add the following AzureAD roles to the the managed identity
 * User administrator
 * Cloud device administrator
 * Exchange administrator
+* Teams administrator
 
 ### Graph API Permissions
 
@@ -97,23 +98,3 @@ Some cases may needed a ClientID/Secret-style authentication. There are currentl
 If needed, a ClientId and Secret can be stored in the managed credentials named "realmjoin-automation-cred" in the Azure Automation Account.
 
 Currently the "realmjoin-automation-cred" in the automation account is created by the RJ-Wizard by default, but filled with random values - they would have to be filled with correct values.
-
-### User account (problematic)
-
-Some cases like the MicrosoftTeams PS Module require the use of a full Azure AD user object for authentication/automation.
-
-If you want to use theses runbook (like "Assign Teams Phone Number"), you will have to
-
-* Create an (ADM-)User object, e.g. `ADM-ServiceUser.TeamsAutomation`
-* Assign a password to the user
-* Set the password to never expire (or track the password changes accordingly)
-* Disable MFA for this user / make sure conditional access is not blocking the user
-* Add the following AzureAD roles permanently to the user:
-  * Teams Administrator
-  * Skype for Business Administrator
-* Create a credentials object in the Azure Automation Account you use for the RealmJoin Runbooks, call the credentials `teamsautomation`
-* Store the credentials (username and password) in `teamsautomation`.
-
-This is not a recommended situation and will be fixed as soon as a technical solution is known.
-
-###
