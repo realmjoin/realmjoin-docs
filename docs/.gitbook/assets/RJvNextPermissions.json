@@ -1,0 +1,64 @@
+[
+    {
+        "Name": "Microsoft Graph",
+        "Id": "00000003-0000-0000-c000-000000000000",
+        "AppRoleAssignments": [
+            "AppCatalog.ReadWrite.All",
+            "Application.ReadWrite.All",
+            "AuditLog.Read.All",
+            "BitlockerKey.Read.All",
+            "Channel.Delete.All",
+            "ChannelMember.ReadWrite.All",
+            "ChannelSettings.ReadWrite.All",
+            "CloudPC.ReadWrite.All",
+            "Device.Read.All",
+            "DeviceLocalCredential.Read.All",
+            "DeviceManagementApps.ReadWrite.All",
+            "DeviceManagementConfiguration.ReadWrite.All",
+            "DeviceManagementManagedDevices.PrivilegedOperations.All",
+            "DeviceManagementManagedDevices.ReadWrite.All",
+            "DeviceManagementServiceConfig.ReadWrite.All",
+            "Directory.ReadWrite.All",
+            "Group.ReadWrite.All",
+            "IdentityRiskyUser.ReadWrite.All",
+            "InformationProtectionPolicy.Read.All",
+            "Mail.Send",
+            "Organization.Read.All",
+            "Place.Read.All",
+            "Policy.Read.All",
+            "Reports.Read.All",
+            "RoleManagement.Read.All",
+            "Team.Create",
+            "TeamSettings.ReadWrite.All",
+            "User.ReadWrite.All",
+            "UserAuthenticationMethod.ReadWrite.All",
+            "WindowsUpdates.ReadWrite.All"
+        ]
+    },
+    {
+        "Name": "Office 365 Exchange Online",
+        "Id": "00000002-0000-0ff1-ce00-000000000000",
+        "AppRoleAssignments": [
+            "Exchange.ManageAsApp"
+        ]
+    },
+    {
+        "Name": "Windows Defender ATP / Security Center",
+        "Id": "fc780465-2017-40d4-a0c5-307022471b92",
+        "AppRoleAssignments": [
+            "Machine.Read.All",
+            "Machine.Isolate",
+            "Machine.RestrictExecution",
+            "Ti.ReadWrite.All"
+        ]
+    },
+    {
+        "Id": "00000003-0000-0ff1-ce00-000000000000",
+        "Name": "Office 365 SharePoint Online",
+        "AppRoleAssignments": [
+            "User.Read.All",
+            "Sites.Read.All",
+            "Sites.FullControl.All"
+        ]
+    }
+]

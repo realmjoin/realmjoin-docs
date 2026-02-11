@@ -1,6 +1,6 @@
 # Package Details
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Package details page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Package details page</p></figcaption></figure>
 
 This page will show detailed information for a single package in your environment and allows you to manage its assignment to users and updates.
 
@@ -49,7 +49,7 @@ The following tabs are available:
 
 ### Overview
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Overview tab</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Overview tab</p></figcaption></figure>
 
 #### Title, Description and other Info
 

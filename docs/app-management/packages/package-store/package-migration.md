@@ -10,7 +10,7 @@ Package migration is only available for RealmJoin packages
 
 Currently only RealmJoin packages can be migrated from Basic to Managed deployment. This can be identified from the Packages table:<br>
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Migration
 
@@ -28,7 +28,7 @@ Currently only RealmJoin packages can be migrated from Basic to Managed deployme
        <figure><img src="../../../.gitbook/assets/image (19) (1).png" alt=""><figcaption><p>After Migration</p></figcaption></figure>
 3. (Optional) Pull members from nested groups directly into the RealmJoin managed groups. This setting migrates users directly to the RealmJoin managed group and optionally removes the nested group from the Managed group.
    1. Select relevant group -> More -> "Pull members up".&#x20;
-   2. Select the ![](<../../../.gitbook/assets/image (12) (1).png>) on the desired nested group
+   2. Select the ![](<../../../.gitbook/assets/image (12) (1) (1).png>) on the desired nested group
    3. Choose "Remove Assignment" to remove the nested group or "Keep Assignment" to keep the nested group in the RealmJoin managed group
    4.  Click Execute to begin the operation<br>
 

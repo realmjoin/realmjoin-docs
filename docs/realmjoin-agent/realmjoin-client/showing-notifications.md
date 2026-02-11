@@ -44,7 +44,7 @@ Effective notifications are concise, relevant, and timely. Always respect the us
 
 In order to publish a notification, the configured notification must first be saved as a draft.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 Drafts will appear in the notification list with a yellow "Draft" tag.
 
@@ -52,20 +52,20 @@ Drafts will appear in the notification list with a yellow "Draft" tag.
 
 Once a draft has been saved, the administrator will be prompted to either Publish or Delete.
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 * **Publish:** Selecting Publish will prompt for an additional Confirm Publish button.\
-  ![](<../../.gitbook/assets/image (8).png>) \
+  ![](<../../.gitbook/assets/image (8) (1).png>) \
   Once notifications are sent out, they are not easily retrieved. Please make sure the notification is configured as intended prior to publishing.
 * **Delete:** Selecting Delete will prompt for an additional Confirm Delete button.\
-  ![](<../../.gitbook/assets/image (10).png>) \
+  ![](<../../.gitbook/assets/image (10) (1).png>) \
   Once messages are deleted, they cannot be recovered. They will be deleted after 30 days.
 
 ### Cancelling a Notification
 
 Once a notification has been published, administrators will have the option to cancel the notification.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 Cancelling a notification will cause the notification to disappear from a user's device without their intervention. Cancelled notifications cannot be recovered, will be deleted after 30 days and appear in the notification list with a red "Cancelled" tag.
 

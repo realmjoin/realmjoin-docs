@@ -6,7 +6,7 @@
 Video tutorial
 {% endembed %}
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Package Store details page</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>Package Store details page</p></figcaption></figure>
 
 ## Subscription
 
@@ -74,7 +74,7 @@ Sometimes it is necessary to have multiple subscriptions of one craft package. T
 
 While subscribing to a craft package from the store, a suffix is automatically added to the ID of the package. If you want to edit the ID, you can simply click on "Set suffix" next to the orange dialog box showing the pre-defined ID. &#x20;
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 The suffix is only available for RealmJoin Deployment since it is not necessary for Intune Deployment!
