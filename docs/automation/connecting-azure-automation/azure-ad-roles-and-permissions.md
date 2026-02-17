@@ -8,13 +8,21 @@ description: >-
 
 ## PowerShell Modules
 
-The shared runbooks available on [GitHub](https://github.com/realmjoin/realmjoin-runbooks) expect/use the following Windows PowerShell 5.1 modules:
+The shared runbooks available on [GitHub](https://github.com/realmjoin/realmjoin-runbooks) expect/use the following Windows PowerShell modules:
 
-* `RealmJoin.RunbookHelper`
-* `Az.Accounts`
-* `Az.Storage`
-* `AzureAD`
-* `ExchangeOnlineManagement`
+| Module | Minimum version in runbooks |
+|---|---|
+| `Az.Accounts` | 5.1.1 |
+| `Az.Compute` | 5.1.1 |
+| `Az.DesktopVirtualization` | 5.4.1 |
+| `Az.ManagementPartner` | Not specified |
+| `Az.Resources` | Not specified |
+| `Az.Storage` | Not specified |
+| `ExchangeOnlineManagement` | 3.9.2 |
+| `Microsoft.Graph.Authentication` | 2.35.1 |
+| `MicrosoftTeams` | 7.6.0 |
+| `RealmJoin.RunbookHelper` | 0.8.5 |
+
 
 RealmJoin Portal will automatically import and install these modules if referenced from inside a runbook. This import will also honor specified minimum versions for modules.
 
