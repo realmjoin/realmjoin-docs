@@ -40,7 +40,7 @@ RealmJoin or Intune will uninstall the package from the assigned users and devic
 
 ### Update
 
-Additionally, RealmJoin provides an Update group that is created on demand. The Update group will automatically onboard loose installations of a software title into management.
+Additionally, RealmJoin provides an Update group that is created on demand. The Update group will automatically onboard loose installations of a software title into management. Devices will be removed from the group when the update is not required anymore. The group management is solely done by the RealmJoin portal and shall not be modified manually.
 
 Click [**Enable update group**](package-deployment.md#enable-additional-and-restore-default-groups) and a new Entra ID Group with the suffix "(update)" will be created. Software installations will be also assigned to this group. RealmJoin dynamically discovers installed copies of the software that are unmanaged and adds the devices to the group.
 
