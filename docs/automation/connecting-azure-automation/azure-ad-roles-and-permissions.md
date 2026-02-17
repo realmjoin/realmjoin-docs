@@ -124,23 +124,3 @@ Some private runbooks may need a ClientID/Secret-style authentication. There are
 If needed, a ClientID and Secret can be stored in the managed credentials named "realmjoin-automation-cred" in the Azure Automation Account.
 
 Currently the "realmjoin-automation-cred" in the automation account is created by the RJ-Wizard by default, but filled with random values - they would have to be filled with correct values.
-
-### User Account (Problematic)
-
-Older modules may need a "real" user object to operate.&#x20;
-
-{% hint style="info" %}
-Microsoft Teams is now able to operate via Managed Identity. All Voice/Phone runbooks have been adapted to use Managed Identity.
-{% endhint %}
-
-If you want to use a fake user, you will have to
-
-1. Create an (ADM-)User object, e.g. `ADM-ServiceUser.TeamsAutomation`
-2. Assign a password to the user
-3. Set the password to never expire (or track the password changes accordingly)
-4. Disable MFA for this user / make sure conditional access is not blocking the user
-5. Create a credentials object in the Azure Automation Account you use for the RealmJoin Runbooks, call the credentials e.g. `fakeuser` and store the credentials.
-
-{% hint style="warning" %}
-This is not a recommended approach and should be avoided. No default runbook uses this scenario anymore.
-{% endhint %}
