@@ -8,6 +8,8 @@ description: >-
 
 ## PowerShell Modules
 
+{% hint style="info" %} The PowerShell Modules section is automatically updated based on the <a href="https://github.com/realmjoin/realmjoin-runbooks">public repository</a>. {% endhint %}
+
 The shared runbooks available on [GitHub](https://github.com/realmjoin/realmjoin-runbooks) expect/use the following Windows PowerShell modules:
 
 | Module | Minimum version in runbooks |
@@ -18,15 +20,16 @@ The shared runbooks available on [GitHub](https://github.com/realmjoin/realmjoin
 | `Az.ManagementPartner` | Not specified |
 | `Az.Resources` | Not specified |
 | `Az.Storage` | Not specified |
-| `ExchangeOnlineManagement` | 3.9.2 |
-| `Microsoft.Graph.Authentication` | 2.35.1 |
-| `MicrosoftTeams` | 7.6.0 |
+| `ExchangeOnlineManagement` | 3.9.0 |
+| `Microsoft.Graph.Authentication` | 2.34.0 |
+| `MicrosoftTeams` | 7.5.0 |
 | `RealmJoin.RunbookHelper` | 0.8.5 |
-
 
 RealmJoin Portal will automatically import and install these modules if referenced from inside a runbook. This import will also honor specified minimum versions for modules.
 
 ## Permissions
+
+{% hint style="info" %} The Permissions section is automatically updated based on the <a href="https://github.com/realmjoin/realmjoin-runbooks">public repository</a>. {% endhint %}
 
 The RealmJoin shared runbooks use the Azure Automation's [system assigned managed identity](https://learn.microsoft.com/en-us/azure/automation/enable-managed-identity-for-automation) to interact with Entra ID, MS Graph API etc.
 
@@ -38,44 +41,47 @@ It is not recommended to reduce these roles/permissions as the runbooks are test
 
 Please assign the following Entra ID roles to the managed identity
 
-* User administrator
-* Cloud device administrator
-* Exchange administrator
-* Teams administrator
+* Application Developer
+* Cloud Device Administrator
+* Exchange Administrator
+* Teams Administrator
+* User Administrator
 
 ### Graph API Permissions
 
 Please grant the following Graph API-Permissions to the managed identity
 
-* `AppCatalog.ReadWrite.All`&#x20;
-* `Application.ReadWrite.All`&#x20;
-* `AuditLog.Read.All`&#x20;
-* `BitlockerKey.Read.All`&#x20;
-* `Channel.Delete.All`&#x20;
-* `ChannelMember.ReadWrite.All`&#x20;
-* `ChannelSettings.ReadWrite.All`&#x20;
-* `CloudPC.ReadWrite.All`&#x20;
-* `Device.Read.All`&#x20;
-* `DeviceLocalCredential.Read.All`&#x20;
-* `DeviceManagementApps.ReadWrite.All`&#x20;
-* `DeviceManagementConfiguration.ReadWrite.All`&#x20;
-* `DeviceManagementManagedDevices.PrivilegedOperations.All`&#x20;
-* `DeviceManagementManagedDevices.ReadWrite.All`&#x20;
-* `DeviceManagementServiceConfig.ReadWrite.All`&#x20;
-* `Directory.ReadWrite.All`&#x20;
-* `Group.ReadWrite.All`&#x20;
-* `IdentityRiskyUser.ReadWrite.All`&#x20;
-* `InformationProtectionPolicy.Read.All`&#x20;
-* `Mail.Send`&#x20;
-* `Organization.Read.All`&#x20;
+* `Application.Read.All`
+* `Application.ReadWrite.OwnedBy`
+* `AuditLog.Read.All`
+* `BitlockerKey.Read.All`
+* `CloudPC.ReadWrite.All`
+* `Device.ReadWrite.All`
+* `DeviceLocalCredential.Read.All`
+* `DeviceManagementApps.ReadWrite.All`
+* `DeviceManagementConfiguration.ReadWrite.All`
+* `DeviceManagementManagedDevices.DeleteAll`
+* `DeviceManagementManagedDevices.PrivilegedOperations.All`
+* `DeviceManagementManagedDevices.ReadWrite.All`
+* `DeviceManagementServiceConfig.ReadWrite.All`
+* `Directory.Read.All`
+* `Group.Create`
+* `Group.ReadWrite.All`
+* `GroupMember.ReadWrite.All`
+* `IdentityRiskyUser.ReadWrite.All`
+* `InformationProtectionPolicy.Read.All`
+* `Mail.Send`
+* `Organization.Read.All`
 * `Place.Read.All`
-* `Policy.Read.All`&#x20;
-* `Reports.Read.All`&#x20;
-* `RoleManagement.Read.All`&#x20;
-* `Team.Create`&#x20;
-* `TeamSettings.ReadWrite.All`&#x20;
-* `User.ReadWrite.All`&#x20;
-* `UserAuthenticationMethod.ReadWrite.All`&#x20;
+* `Policy.Read.All`
+* `Reports.Read.All`
+* `RoleManagement.Read.All`
+* `RoleManagement.Read.Directory`
+* `Team.Create`
+* `TeamSettings.ReadWrite.All`
+* `User.ReadWrite.All`
+* `User.SendMail`
+* `UserAuthenticationMethod.ReadWrite.All`
 * `WindowsUpdates.ReadWrite.All`
 
 ### Other App API Permissions
