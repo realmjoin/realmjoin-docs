@@ -21,9 +21,31 @@ This article links a file that contains the compute IP address ranges that you s
 IP addresses filtering alone is not a complete solution due to dependencies on internet-based services such as Domain Name Services (DNS), Content Delivery Networks (CDNs), Certificate Revocation Lists and other third party or dynamic services. These dependencies include dependencies on other Microsoft services such as the Azure Content Delivery Network and will result in network traces or firewall logs indicating connections to IP addresses owned by third parties or Microsoft but not listed on this page. These unlisted IP addresses, whether from third party or Microsoft owned CDN and DNS services, are dynamically assigned and can change at any time.
 {% endhint %}
 
-### Avoid VLANs / WLAN and Port-Isolation
+### BranchCache and Device isolation
 
-For **BranchCache** to be effective the clients need to be able to communicate directly with each other and therefore should not be separated by different VLANs, WLAN-Isolation or Port-Isolation. For mass rollouts, **BranchCache Servers** with pre-populated caches are recommended. BranchCache is limited to a single subnet, if a site has multiple subnets the BranchCache Servers must be placed in the same subnet as the clients to be effective.
+BranchCache is a Windows technology designed to **reduce WAN traffic** and **speed up content delivery** inside corporate networks. It does this by allowing Windows clients to share downloaded data with each other, instead of every device pulling the same content repeatedly from the cloud.
+
+{% hint style="info" %}
+For RealmJoin, BranchCache is **enabled by default** on CDN and client side.
+{% endhint %}
+
+Why not use Delivery Optimization? This mechanism does not support third‑party package sources. It works only with Microsoft‑controlled endpoints (e.g.: Windows Update, Store, M365 Apps or Intune).
+
+So within RealmJoin, we rely on BranchCache because it is a **built‑in Windows peering mechanism** that works for third‑party content:
+
+* **CDN side**: It is enabled by default. If requested, we can disable BranchCache entirely on the CDN side (per tenant), which makes the client‑side configuration irrelevant.
+* On the **client side**, the feature is enabled by default as well. By setting `BranchCache.Mode = "Undefined"` (see [User and Group Settings](../../ugd-management/user-and-group-settings/)), this default behaviour can be changed. However, for existing clients, the feature will not be actively disabled once it has been activated before. To disable, run `Disable-BC` on the desired devices.
+
+For BranchCache to be effective, the clients need to be able to communicate directly with each other. So, they should not be separated by different VLANs, subnets or communication blocked via device isolation. We use BranchCache in **Distributed Cache Mode**, where every client maintains a local cache and retrieves cached data from peers. The option **Hosted Cache Mode**, which requires a dedicated Windows Server and is configured on clients via the "Configure Hosted Cache Servers" policy, is **not supported** by RealmJoin.
+
+When a client device downloads software packages for the first time, the files are divided into chunks that are significantly smaller than the original content and cached on the device.  If the same package is afterwards requested from a different client device in the same network, it downloads content information instead of the complete content from the server. The content information is used to locate the desired content on other devices in the network. **Client peer discovery** in "Distributed Cache Mode" works as follows:
+
+* A client sends a multicast query such as "Does anyone have content ID XYZ?"
+* Any peer that holds the requested segment responds directly via uni-cast.
+
+Instead of downloading packages from the server, the content in form of the chopped up chunks is transferred to the client device. If the requested software is available on several devices, the load is balanced between them.
+
+For more details see Microsoft Learn: [BranchCache](https://learn.microsoft.com/en-us/windows-server/networking/branchcache/branchcache)
 
 ### RealmJoin Connection Endpoints
 
