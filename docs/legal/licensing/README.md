@@ -4,21 +4,29 @@
 The subscription for RealmJoin is **user-based**.
 {% endhint %}
 
-## User definition
+## User Definition
 
-The subscription of a "user" is required for each Intune subscription, that is assigned to a user in the Microsoft 365 tenant in scope for the RealmJoin instance. The maximum amount of Intune-users in the corresponding subscription term is the required number of users for RealmJoin.
+### Definitions
 
-The minimum amount of users that can be subscribed for one organization is 1.000.
+* **Tenant**: The Microsoft 365 tenant associated with the applicable RealmJoin instance.
+* **Intune User License Seat**: A user‑based Microsoft Intune entitlement purchased and present in the Tenant, whether as a standalone Intune license (e.g., Microsoft Intune Plan 1) or included within a Microsoft suite that confers Intune rights (e.g., Microsoft 365 E3/E5, EMS E3/E5, Business Premium, F1/F3).
+* **Subscription Term**: The invoicing period applicable to the RealmJoin subscription (e.g. monthly or annual).
+
+### Counting Rule
+
+* **Requirement**: One RealmJoin User subscription is required for each Intune User License Seat in the Tenant.
+* **Measurement**: The User quantity for RealmJoin equals the maximum number of Intune User License Seats present in the Tenant at any time during the Subscription Term, regardless of assignment to users.
+* The **minimum amount of users** that can be subscribed for one organization is 1,000.
 
 {% hint style="info" %}
 RealmJoin does not display your license consumption. Please ensure compliance with the licensing terms by monitoring the Intune subscriptions in your tenant on a regular basis.
 {% endhint %}
 
-## Device limits per user
+## Device Limits per User
 
 One single user may be assigned to up to 10 devices.
 
-## Subscription scope
+## Subscription Scope
 
 A RealmJoin subscription may be used for the clients and users of **one** organization.&#x20;
 
