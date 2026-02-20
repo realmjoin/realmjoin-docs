@@ -40,6 +40,8 @@ The following table shows an overview of the scope of the two editions. RealmJoi
 | ---------------------------------------------------------------------------------------------------- | :-----------------------------------: | :-----------------------------------: |
 | Application Store                                                                                    | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
 | Application Lifecycle                                                                                | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
+| Request [generic apps](../../app-management/packages/package-store/#generic-packages)                | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
+| Request [custom apps](../../app-management/packages/package-store/#custom-package)                   |                 Add-on                |                 Add-on                |
 | Deploy Binaries (Organics)                                                                           | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
 | App Agent                                                                                            | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
 | Multi-user support                                                                                   | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
