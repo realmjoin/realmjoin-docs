@@ -88,7 +88,9 @@ Here you can find all Organization Runbooks along with the available subcategori
   - [List Pim Rolegroups Without Owners (Scheduled)](security/list-pim-rolegroups-without-owners_scheduled.md)
   - [List Users By MFA Methods Count](security/list-users-by-mfa-methods-count.md)
   - [List Vulnerable App Regs](security/list-vulnerable-app-regs.md)
+  - [Monitor Pending EPM Requests (Scheduled)](security/monitor-pending-epm-requests_scheduled.md)
   - [Notify Changed CA Policies](security/notify-changed-ca-policies.md)
+  - [Report EPM Elevation Requests (Scheduled)](security/report-epm-elevation-requests_scheduled.md)
 
 
 [Back to Runbook Reference overview](../README.md)
