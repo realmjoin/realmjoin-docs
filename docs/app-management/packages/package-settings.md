@@ -50,7 +50,14 @@ For receiving **automated notification emails** for package updates, you can **e
 
 #### Arguments
 
-**Arguments** allow you to pass command line switches to an application installation. This is commonly used to customise your package with language options, a license key etc. that need to be present at installation time.
+**Arguments** allow you to pass command line switches to an application installation. This is commonly used to customize your package with language options, a license key etc. that need to be present at installation time.
+
+{% hint style="info" %}
+If a user already has the current subscribed version of a package installed and the package arguments are updated, the package will automatically re-run for that user using the new configuration.
+
+If **Auto upgrade** is **OFF** and the user has an older version installed than the currently assigned one, the new configuration will **not** be applied.\
+If **Auto upgrade** is **ON**, the user will receive both the new version and the updated configuration.
+{% endhint %}
 
 Some packages include a **Technical Help**, to explain possible **Arguments** and other Requirements.
 
