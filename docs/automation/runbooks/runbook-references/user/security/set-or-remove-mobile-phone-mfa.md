@@ -1,10 +1,10 @@
 ---
 title: Set Or Remove Mobile Phone Mfa
-description: Add, update or remove a user's mobile phone MFA information.
+description: Set or remove a user's mobile phone MFA method
 ---
 
 ## Description
-Add, update or remove a user's mobile phone MFA information. If you want to modify a number, remove it first and add a new number afterwards.
+Adds, updates, or removes the user's mobile phone authentication method. If you need to change a number, remove the existing method first and then add the new number.
 
 ## Location
 User → Security → Set Or Remove Mobile Phone Mfa
@@ -18,7 +18,7 @@ User → Security → Set Or Remove Mobile Phone Mfa
 ## Parameters
 ### UserName
 
-
+User principal name of the target user.
 
 | Property | Value |
 | --- | --- |
@@ -28,7 +28,7 @@ User → Security → Set Or Remove Mobile Phone Mfa
 
 ### phoneNumber
 
-Enter the user's mobile number in international format (e.g. +491701234567) to add, update, or remove.
+Mobile phone number in international E.164 format (e.g., +491701234567).
 
 | Property | Value |
 | --- | --- |
@@ -38,7 +38,7 @@ Enter the user's mobile number in international format (e.g. +491701234567) to a
 
 ### Remove
 
-
+"Set/Update Mobile Phone MFA Method" (final value: $false) or "Remove Mobile Phone MFA Method" (final value: $true) can be selected as action to perform. If set to true, the runbook will remove the mobile phone MFA method for the user. If set to false, it will add or update the mobile phone MFA method with the provided phone number.
 
 | Property | Value |
 | --- | --- |

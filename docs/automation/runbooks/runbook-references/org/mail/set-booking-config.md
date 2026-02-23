@@ -1,12 +1,10 @@
 ---
 title: Set Booking Config
-description: Configure Microsoft Bookings settings for the organization.
+description: Configure Microsoft Bookings settings for the organization
 ---
 
 ## Description
-Configure Microsoft Bookings settings at the organization level, including booking policies,
-naming conventions, and access restrictions. Optionally creates an OWA mailbox policy for
-Bookings creators and disables Bookings in the default OWA policy.
+Configures Microsoft Bookings settings at the organization level using Exchange Online organization configuration. The runbook can optionally create an OWA mailbox policy for Bookings creators and disable Bookings in the default OWA policy.
 
 ## Location
 Organization → Mail → Set Booking Config
@@ -23,7 +21,7 @@ Organization → Mail → Set Booking Config
 ## Parameters
 ### BookingsEnabled
 
-
+If set to true, Microsoft Bookings is enabled for the organization.
 
 | Property | Value |
 | --- | --- |
@@ -33,7 +31,7 @@ Organization → Mail → Set Booking Config
 
 ### BookingsAuthEnabled
 
-
+If set to true, Bookings uses authentication.
 
 | Property | Value |
 | --- | --- |
@@ -43,7 +41,7 @@ Organization → Mail → Set Booking Config
 
 ### BookingsSocialSharingRestricted
 
-
+If set to true, social sharing is restricted.
 
 | Property | Value |
 | --- | --- |
@@ -53,7 +51,7 @@ Organization → Mail → Set Booking Config
 
 ### BookingsExposureOfStaffDetailsRestricted
 
-
+If set to true, exposure of staff details is restricted.
 
 | Property | Value |
 | --- | --- |
@@ -63,7 +61,7 @@ Organization → Mail → Set Booking Config
 
 ### BookingsMembershipApprovalRequired
 
-
+If set to true, membership approval is required.
 
 | Property | Value |
 | --- | --- |
@@ -73,7 +71,7 @@ Organization → Mail → Set Booking Config
 
 ### BookingsSmsMicrosoftEnabled
 
-
+If set to true, Microsoft SMS notifications are enabled.
 
 | Property | Value |
 | --- | --- |
@@ -83,7 +81,7 @@ Organization → Mail → Set Booking Config
 
 ### BookingsSearchEngineIndexDisabled
 
-
+If set to true, search engine indexing is disabled.
 
 | Property | Value |
 | --- | --- |
@@ -93,7 +91,7 @@ Organization → Mail → Set Booking Config
 
 ### BookingsAddressEntryRestricted
 
-
+If set to true, address entry is restricted.
 
 | Property | Value |
 | --- | --- |
@@ -103,7 +101,7 @@ Organization → Mail → Set Booking Config
 
 ### BookingsCreationOfCustomQuestionsRestricted
 
-
+If set to true, creation of custom questions is restricted.
 
 | Property | Value |
 | --- | --- |
@@ -113,7 +111,7 @@ Organization → Mail → Set Booking Config
 
 ### BookingsNotesEntryRestricted
 
-
+If set to true, notes entry is restricted.
 
 | Property | Value |
 | --- | --- |
@@ -123,7 +121,7 @@ Organization → Mail → Set Booking Config
 
 ### BookingsPhoneNumberEntryRestricted
 
-
+If set to true, phone number entry is restricted.
 
 | Property | Value |
 | --- | --- |
@@ -133,7 +131,7 @@ Organization → Mail → Set Booking Config
 
 ### BookingsNamingPolicyEnabled
 
-
+If set to true, naming policies are enabled.
 
 | Property | Value |
 | --- | --- |
@@ -143,7 +141,7 @@ Organization → Mail → Set Booking Config
 
 ### BookingsBlockedWordsEnabled
 
-
+If set to true, blocked words are enabled for naming policies.
 
 | Property | Value |
 | --- | --- |
@@ -153,7 +151,7 @@ Organization → Mail → Set Booking Config
 
 ### BookingsNamingPolicyPrefixEnabled
 
-
+If set to true, the naming policy prefix is enabled.
 
 | Property | Value |
 | --- | --- |
@@ -163,7 +161,7 @@ Organization → Mail → Set Booking Config
 
 ### BookingsNamingPolicyPrefix
 
-
+Prefix applied by the naming policy.
 
 | Property | Value |
 | --- | --- |
@@ -173,7 +171,7 @@ Organization → Mail → Set Booking Config
 
 ### BookingsNamingPolicySuffixEnabled
 
-
+If set to true, the naming policy suffix is enabled.
 
 | Property | Value |
 | --- | --- |
@@ -183,7 +181,7 @@ Organization → Mail → Set Booking Config
 
 ### BookingsNamingPolicySuffix
 
-
+Suffix applied by the naming policy.
 
 | Property | Value |
 | --- | --- |
@@ -193,7 +191,7 @@ Organization → Mail → Set Booking Config
 
 ### CreateOwaPolicy
 
-
+If set to true, an OWA mailbox policy for Bookings creators is created if missing.
 
 | Property | Value |
 | --- | --- |
@@ -203,7 +201,7 @@ Organization → Mail → Set Booking Config
 
 ### OwaPolicyName
 
-
+Name of the OWA mailbox policy to create or use for Bookings creators.
 
 | Property | Value |
 | --- | --- |

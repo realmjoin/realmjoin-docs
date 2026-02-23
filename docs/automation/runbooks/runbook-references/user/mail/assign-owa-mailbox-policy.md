@@ -1,10 +1,10 @@
 ---
 title: Assign Owa Mailbox Policy
-description: Assign a given OWA mailbox policy to a user.
+description: Assign an OWA mailbox policy to a user
 ---
 
 ## Description
-Assign a given OWA mailbox policy to a user. E.g. to allow MS Bookings.
+Assigns an OWA mailbox policy to a mailbox in Exchange Online. This can be used to enable or restrict features such as Microsoft Bookings.
 
 ## Location
 User → Mail → Assign Owa Mailbox Policy
@@ -17,7 +17,7 @@ User → Mail → Assign Owa Mailbox Policy
 ## Parameters
 ### UserName
 
-
+User principal name of the target mailbox.
 
 | Property | Value |
 | --- | --- |
@@ -27,7 +27,7 @@ User → Mail → Assign Owa Mailbox Policy
 
 ### OwaPolicyName
 
-
+Name of the OWA mailbox policy to assign.
 
 | Property | Value |
 | --- | --- |

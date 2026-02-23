@@ -1,10 +1,10 @@
 ---
 title: Offboard User Temporarily
-description: Temporarily offboard a user.
+description: Temporarily offboard a user
 ---
 
 ## Description
-Temporarily offboard a user in cases like parental leaves or sabaticals.
+Temporarily offboards a user for scenarios such as parental leave or sabbatical by disabling access, adjusting group and license assignments, and optionally exporting memberships. Optionally removes or replaces group ownerships when required.
 
 ## Location
 User → General → Offboard User Temporarily
@@ -26,7 +26,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 ## Parameters
 ### UserName
 
-
+User principal name of the target user.
 
 | Property | Value |
 | --- | --- |
@@ -36,7 +36,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### RevokeAccess
 
-
+If set to true, revokes the user's refresh tokens and active sessions.
 
 | Property | Value |
 | --- | --- |
@@ -46,7 +46,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### DisableUser
 
-
+If set to true, disables the user account for sign-in.
 
 | Property | Value |
 | --- | --- |
@@ -56,7 +56,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### exportResourceGroupName
 
-
+Azure Resource Group name for exporting data to storage.
 
 | Property | Value |
 | --- | --- |
@@ -66,7 +66,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### exportStorAccountName
 
-
+Azure Storage Account name for exporting data to storage.
 
 | Property | Value |
 | --- | --- |
@@ -76,7 +76,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### exportStorAccountLocation
 
-
+Azure region used when creating the Storage Account.
 
 | Property | Value |
 | --- | --- |
@@ -86,7 +86,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### exportStorAccountSKU
 
-
+SKU name used when creating the Storage Account.
 
 | Property | Value |
 | --- | --- |
@@ -96,7 +96,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### exportStorContainerGroupMembershipExports
 
-
+Container name used for group membership exports.
 
 | Property | Value |
 | --- | --- |
@@ -106,7 +106,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### exportGroupMemberships
 
-
+If set to true, exports the user's current group memberships to Azure Storage.
 
 | Property | Value |
 | --- | --- |
@@ -116,7 +116,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### ChangeLicensesSelector
 
-
+Controls how directly assigned licenses should be handled.
 
 | Property | Value |
 | --- | --- |
@@ -126,7 +126,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### ChangeGroupsSelector
 
-"Change" and "Remove all" will both honour "groupToAdd"
+Controls how assigned groups should be handled. "Change" and "Remove all" will both honour "groupToAdd".
 
 | Property | Value |
 | --- | --- |
@@ -136,7 +136,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### GroupToAdd
 
-
+Group that should be added or kept when group changes are enabled.
 
 | Property | Value |
 | --- | --- |
@@ -146,7 +146,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### GroupsToRemovePrefix
 
-
+Prefix used to remove groups matching a naming convention.
 
 | Property | Value |
 | --- | --- |
@@ -156,7 +156,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### RevokeGroupOwnership
 
-
+If set to true, removes or replaces the user's group ownerships.
 
 | Property | Value |
 | --- | --- |

@@ -1,10 +1,10 @@
 ---
 title: List Inactive Devices
-description: List/export inactive devices, which had no recent user logons.
+description: List or export inactive devices with no recent logon or Intune sync
 ---
 
 ## Description
-Collect devices based on the date of last user logon or last Intune sync.
+Collects devices based on either last interactive sign-in or last Intune sync date and lists them in the console. Optionally exports the results to a CSV file in Azure Storage.
 
 ## Location
 Organization → Security → List Inactive Devices
@@ -20,7 +20,7 @@ Organization → Security → List Inactive Devices
 ## Parameters
 ### Days
 
-
+Number of days without sync or sign-in used to consider a device inactive.
 
 | Property | Value |
 | --- | --- |
@@ -30,7 +30,7 @@ Organization → Security → List Inactive Devices
 
 ### Sync
 
-
+If set to true, inactivity is based on last Intune sync; otherwise it is based on last interactive sign-in.
 
 | Property | Value |
 | --- | --- |
@@ -40,7 +40,7 @@ Organization → Security → List Inactive Devices
 
 ### ExportToFile
 
-
+If set to true, exports the results to a CSV file in Azure Storage.
 
 | Property | Value |
 | --- | --- |
@@ -50,7 +50,7 @@ Organization → Security → List Inactive Devices
 
 ### ContainerName
 
-
+Name of the Azure Storage container to upload the CSV report to.
 
 | Property | Value |
 | --- | --- |
@@ -60,7 +60,7 @@ Organization → Security → List Inactive Devices
 
 ### ResourceGroupName
 
-
+Name of the Azure Resource Group containing the Storage Account.
 
 | Property | Value |
 | --- | --- |
@@ -70,7 +70,7 @@ Organization → Security → List Inactive Devices
 
 ### StorageAccountName
 
-
+Name of the Azure Storage Account used for upload.
 
 | Property | Value |
 | --- | --- |
@@ -80,7 +80,7 @@ Organization → Security → List Inactive Devices
 
 ### StorageAccountLocation
 
-
+Azure region for the Storage Account if it needs to be created.
 
 | Property | Value |
 | --- | --- |
@@ -90,7 +90,7 @@ Organization → Security → List Inactive Devices
 
 ### StorageAccountSku
 
-
+SKU name for the Storage Account if it needs to be created.
 
 | Property | Value |
 | --- | --- |

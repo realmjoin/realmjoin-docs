@@ -1,10 +1,10 @@
 ---
 title: Set Room Mailbox Configuration
-description: Set room resource policies.
+description: Set room mailbox resource policies
 ---
 
 ## Description
-Set room resource policies.
+Updates room mailbox settings such as booking policy, calendar processing, and capacity. The runbook can optionally restrict BookInPolicy to members of a specific mail-enabled security group.
 
 ## Location
 User → Mail → Set Room Mailbox Configuration
@@ -21,7 +21,7 @@ User → Mail → Set Room Mailbox Configuration
 ## Parameters
 ### UserName
 
-
+User principal name of the room mailbox.
 
 | Property | Value |
 | --- | --- |
@@ -31,7 +31,7 @@ User → Mail → Set Room Mailbox Configuration
 
 ### AllBookInPolicy
 
-
+"Allow BookIn for everyone" (final value: $true) or "Custom BookIn Policy" (final value: $false) can be selected as action to perform. If set to true, the room will allow BookIn for everyone and the BookInPolicyGroup parameter will be ignored. If set to false, only members of the group specified in the BookInPolicyGroup parameter will be allowed to BookIn.
 
 | Property | Value |
 | --- | --- |
@@ -41,7 +41,7 @@ User → Mail → Set Room Mailbox Configuration
 
 ### BookInPolicyGroup
 
-
+Group whose members are allowed to book when AllBookInPolicy is false.
 
 | Property | Value |
 | --- | --- |
@@ -51,7 +51,7 @@ User → Mail → Set Room Mailbox Configuration
 
 ### AllowRecurringMeetings
 
-
+If set to true, allows recurring meetings.
 
 | Property | Value |
 | --- | --- |
@@ -61,7 +61,7 @@ User → Mail → Set Room Mailbox Configuration
 
 ### AutomateProcessing
 
-
+Calendar processing mode for the room mailbox.
 
 | Property | Value |
 | --- | --- |
@@ -71,7 +71,7 @@ User → Mail → Set Room Mailbox Configuration
 
 ### BookingWindowInDays
 
-
+How many days into the future bookings are allowed.
 
 | Property | Value |
 | --- | --- |
@@ -81,7 +81,7 @@ User → Mail → Set Room Mailbox Configuration
 
 ### MaximumDurationInMinutes
 
-
+Maximum meeting duration in minutes.
 
 | Property | Value |
 | --- | --- |
@@ -91,7 +91,7 @@ User → Mail → Set Room Mailbox Configuration
 
 ### AllowConflicts
 
-
+If set to true, allows scheduling conflicts.
 
 | Property | Value |
 | --- | --- |
@@ -101,7 +101,7 @@ User → Mail → Set Room Mailbox Configuration
 
 ### Capacity
 
-
+Capacity to set for the room when greater than 0.
 
 | Property | Value |
 | --- | --- |

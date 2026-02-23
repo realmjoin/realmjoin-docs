@@ -1,10 +1,10 @@
 ---
 title: Export All Autopilot Devices
-description: List/export all AutoPilot devices.
+description: List or export all Windows Autopilot devices
 ---
 
 ## Description
-List/export all AutoPilot devices.
+Lists all Windows Autopilot devices and optionally exports them to a CSV file in Azure Storage. If exporting is enabled, the runbook uploads the report and returns a time-limited SAS (download) link.
 
 ## Location
 Organization → General → Export All Autopilot Devices
@@ -20,7 +20,7 @@ Organization → General → Export All Autopilot Devices
 ## Parameters
 ### ExportToFile
 
-
+"List in Console" (final value: $false) or "Export to a CSV file" (final value: $true) can be selected as action to perform.
 
 | Property | Value |
 | --- | --- |
@@ -30,7 +30,7 @@ Organization → General → Export All Autopilot Devices
 
 ### ContainerName
 
-
+Name of the Azure Storage container to upload the CSV report to.
 
 | Property | Value |
 | --- | --- |
@@ -40,7 +40,7 @@ Organization → General → Export All Autopilot Devices
 
 ### ResourceGroupName
 
-
+Name of the Azure Resource Group containing the Storage Account.
 
 | Property | Value |
 | --- | --- |
@@ -50,7 +50,7 @@ Organization → General → Export All Autopilot Devices
 
 ### StorageAccountName
 
-
+Name of the Azure Storage Account used for upload.
 
 | Property | Value |
 | --- | --- |
@@ -60,7 +60,7 @@ Organization → General → Export All Autopilot Devices
 
 ### StorageAccountLocation
 
-
+Azure region for the Storage Account if it needs to be created.
 
 | Property | Value |
 | --- | --- |
@@ -70,7 +70,7 @@ Organization → General → Export All Autopilot Devices
 
 ### StorageAccountSku
 
-
+SKU name for the Storage Account if it needs to be created.
 
 | Property | Value |
 | --- | --- |

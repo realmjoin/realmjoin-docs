@@ -1,10 +1,10 @@
 ---
 title: Reset Mfa
-description: Remove all App- and Mobilephone auth methods for a user.
+description: Remove all App- and Mobilephone auth methods for a user
 ---
 
 ## Description
-Remove all App- and Mobilephone auth methods for a user. User can re-enroll MFA.
+Removes authenticator app and phone-based authentication methods for a user. This forces the user to re-enroll MFA methods after the reset.
 
 ## Location
 User → Security → Reset Mfa
@@ -18,7 +18,7 @@ User → Security → Reset Mfa
 ## Parameters
 ### UserName
 
-
+User principal name of the target user.
 
 | Property | Value |
 | --- | --- |

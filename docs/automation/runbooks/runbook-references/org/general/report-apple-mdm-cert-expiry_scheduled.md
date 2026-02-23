@@ -1,6 +1,6 @@
 ---
 title: Report Apple MDM Cert Expiry (Scheduled)
-description: Monitor/Report expiry of Apple device management certificates.
+description: Monitor/Report expiry of Apple device management certificates
 ---
 
 ## Description

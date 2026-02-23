@@ -1,10 +1,11 @@
 ---
 title: Add Microsoft Store App Logos
-description: Update logos of Microsoft Store Apps (new) in Intune.
+description: Update logos of Microsoft Store Apps (new) in Intune
 ---
 
 ## Description
-This script updates the logos for Microsoft Store Apps (new) in Intune by fetching them from the Microsoft Store.
+This runbook updates missing logos for Microsoft Store Apps (new) in Intune by fetching the icon from the Microsoft Store.
+It skips apps that already have a logo and reports how many apps were updated.
 
 ## Location
 Organization → General → Add Microsoft Store App Logos

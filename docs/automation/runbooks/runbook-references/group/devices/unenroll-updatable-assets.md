@@ -4,7 +4,9 @@ description: Unenroll devices from Windows Update for Business.
 ---
 
 ## Description
-This script unenrolls devices from Windows Update for Business.
+This runbook unenrolls all device members of a Microsoft Entra ID group from Windows Update for Business updatable assets.
+You can remove a specific update category enrollment or delete the updatable asset registration entirely.
+Use this to offboard devices from WUfB reporting or to reset their enrollment state.
 
 ## Location
 Group → Devices → Unenroll Updatable Assets
@@ -19,7 +21,7 @@ Group → Devices → Unenroll Updatable Assets
 ## Parameters
 ### GroupId
 
-Object ID of the group to unenroll its members.
+Object ID of the group whose device members will be unenrolled.
 
 | Property | Value |
 | --- | --- |
@@ -29,7 +31,7 @@ Object ID of the group to unenroll its members.
 
 ### UpdateCategory
 
-Category of updates to unenroll from. Possible values are: driver, feature, quality or all (delete).
+The update category to unenroll from. Supported values are driver, feature, quality, or all.
 
 | Property | Value |
 | --- | --- |

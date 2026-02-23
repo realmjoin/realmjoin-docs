@@ -1,11 +1,12 @@
 ---
 title: List Inactive Enterprise Applications
-description: List application registrations, which had no recent user logons.
+description: List enterprise applications with no recent sign-ins
 ---
 
 ## Description
-Identifies enterprise applications with no recent sign-in activity based on Entra ID audit logs.
-The report includes Entra ID applications with last sign-in older than specified days (default: 90 days) or applications with no sign-in records in the audit log.
+This runbook identifies enterprise applications with no recent sign-in activity based on Microsoft Entra ID sign-in logs.
+It lists apps that have not been used for the specified number of days and apps that have no sign-in records.
+Use it to find candidates for review, cleanup, or decommissioning.
 
 ## Location
 Organization → Applications → List Inactive Enterprise Applications

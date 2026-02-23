@@ -1,10 +1,12 @@
 ---
 title: List User Devices
-description: List all devices owned by group members.
+description: List devices owned by group members.
 ---
 
 ## Description
-List all devices owned by group members.
+This runbook enumerates the users in a group and lists their registered devices.
+Optionally, it can add the discovered devices to a specified device group.
+Use this to create or maintain a device group based on group member ownership.
 
 ## Location
 Group → General → List User Devices
@@ -18,7 +20,7 @@ Group → General → List User Devices
 ## Parameters
 ### GroupID
 
-
+Object ID of the group whose members will be evaluated.
 
 | Property | Value |
 | --- | --- |
@@ -28,7 +30,7 @@ Group → General → List User Devices
 
 ### moveGroup
 
-
+If set to true, the discovered devices are added to the target device group.
 
 | Property | Value |
 | --- | --- |
@@ -38,7 +40,7 @@ Group → General → List User Devices
 
 ### targetgroup
 
-
+Object ID of the target device group that receives the devices when moveGroup is enabled.
 
 | Property | Value |
 | --- | --- |

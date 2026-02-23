@@ -1,10 +1,10 @@
 ---
 title: Create Temporary Access Pass
-description: Create an AAD temporary access pass for a user.
+description: Create a temporary access pass for a user
 ---
 
 ## Description
-Create an AAD temporary access pass for a user.
+Creates a new Temporary Access Pass (TAP) authentication method for a user in Microsoft Entra ID. Existing TAPs for the user are removed before creating a new one.
 
 ## Location
 User → Security → Create Temporary Access Pass
@@ -18,7 +18,7 @@ User → Security → Create Temporary Access Pass
 ## Parameters
 ### UserName
 
-
+User principal name of the target user.
 
 | Property | Value |
 | --- | --- |
@@ -28,7 +28,7 @@ User → Security → Create Temporary Access Pass
 
 ### LifetimeInMinutes
 
-Time the pass will stay valid in minutes
+Lifetime of the temporary access pass in minutes.
 
 | Property | Value |
 | --- | --- |
@@ -38,7 +38,7 @@ Time the pass will stay valid in minutes
 
 ### OneTimeUseOnly
 
-
+If set to true, the pass can be used only once.
 
 | Property | Value |
 | --- | --- |

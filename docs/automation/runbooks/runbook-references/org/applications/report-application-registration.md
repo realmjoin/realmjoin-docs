@@ -4,8 +4,9 @@ description: Generate and email a comprehensive Application Registration report
 ---
 
 ## Description
-This runbook generates a report of all Entra ID Application Registrations and deleted Application Registrations,
-exports them to CSV files, and sends them via email.
+This runbook generates a report of all application registrations in Microsoft Entra ID and can optionally include deleted registrations.
+It exports the results to CSV files and sends them via email.
+Use it for periodic inventory, review, and audit purposes.
 
 ## Setup regarding email sending
 
@@ -40,7 +41,7 @@ The function sends individual emails to each recipient for privacy reasons.
 
 ### EmailFrom
 
-The sender email address. This needs to be configured in the runbook customization
+The sender email address. This needs to be configured in the runbook customization.
 
 | Property | Value |
 | --- | --- |

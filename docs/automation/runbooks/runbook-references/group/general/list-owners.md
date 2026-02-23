@@ -4,7 +4,9 @@ description: List all owners of an Office 365 group.
 ---
 
 ## Description
-List all owners of an Office 365 group.
+This runbook retrieves and lists the owners of the specified group.
+It uses Microsoft Graph to query the group and its owners and outputs the results as a table.
+Use this to quickly review ownership assignments.
 
 ## Location
 Group → General → List Owners
@@ -18,7 +20,7 @@ Group → General → List Owners
 ## Parameters
 ### GroupID
 
-
+Object ID of the target group.
 
 | Property | Value |
 | --- | --- |

@@ -4,7 +4,7 @@ description: List group ownerships for this user.
 ---
 
 ## Description
-List group ownerships for this user.
+Lists Entra ID groups where the specified user is an owner. Outputs the group names and IDs.
 
 ## Location
 User → General → List Group Ownerships
@@ -19,7 +19,7 @@ User → General → List Group Ownerships
 ## Parameters
 ### UserName
 
-
+User principal name of the target user.
 
 | Property | Value |
 | --- | --- |

@@ -4,7 +4,8 @@ description: Reset a mobile device's password/PIN code.
 ---
 
 ## Description
-Reset a mobile device's password/PIN code. Warning: Not possible for all types of devices.
+This runbook triggers an Intune reset passcode action for a managed mobile device.
+The action is only supported for certain, corporate-owned device types and will be rejected for personal or unsupported devices.
 
 ## Location
 Device → Security → Reset Mobile Device Pin
@@ -19,7 +20,7 @@ Device → Security → Reset Mobile Device Pin
 ## Parameters
 ### DeviceId
 
-
+The device ID of the target device.
 
 | Property | Value |
 | --- | --- |

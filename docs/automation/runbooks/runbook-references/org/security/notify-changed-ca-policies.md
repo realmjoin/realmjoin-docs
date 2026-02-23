@@ -1,10 +1,10 @@
 ---
 title: Notify Changed CA Policies
-description: Exports the current set of Conditional Access policies to an Azure storage account.
+description: Send notification email if Conditional Access policies have been created or modified in the last 24 hours.
 ---
 
 ## Description
-Exports the current set of Conditional Access policies to an Azure storage account.
+Checks Conditional Access policies for changes in the last 24 hours and sends an email with a text attachment listing the changed policies. If no changes are detected, no email is sent.
 
 ## Location
 Organization → Security → Notify Changed CA Policies
@@ -19,7 +19,7 @@ Organization → Security → Notify Changed CA Policies
 ## Parameters
 ### From
 
-
+Sender email address used to send the notification.
 
 | Property | Value |
 | --- | --- |
@@ -29,7 +29,7 @@ Organization → Security → Notify Changed CA Policies
 
 ### To
 
-
+Recipient email address for the notification.
 
 | Property | Value |
 | --- | --- |

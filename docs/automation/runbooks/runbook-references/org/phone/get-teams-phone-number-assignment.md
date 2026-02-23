@@ -1,10 +1,10 @@
 ---
 title: Get Teams Phone Number Assignment
-description: Looks up, if the given phone number is assigned to a user in Microsoft Teams.
+description: Check whether a phone number is assigned in Microsoft Teams
 ---
 
 ## Description
-This runbook looks up, if the given phone number is assigned to a user in Microsoft Teams. If the phone number is assigned to a user, information about the user will be returned.
+Looks up whether a given phone number is assigned to a user in Microsoft Teams. If the phone number is assigned, information about the user and relevant voice policies is returned.
 
 ## Additional documentation
 If a Teams user is found for the phone number, the following details are displayed:

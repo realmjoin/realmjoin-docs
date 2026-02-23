@@ -1,6 +1,6 @@
 ---
 title: Report EPM Elevation Requests (Scheduled)
-description: Generate report for Endpoint Privilege Management (EPM) elevation requests.
+description: Generate report for Endpoint Privilege Management (EPM) elevation requests
 ---
 
 ## Description

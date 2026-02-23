@@ -1,10 +1,11 @@
 ---
 title: Add Security Group
-description: This runbook creates a Microsoft Entra ID security group with membership type "Assigned".
+description: Create a Microsoft Entra ID security group
 ---
 
 ## Description
-This runbook creates a Microsoft Entra ID security group with membership type "Assigned".
+This runbook creates a Microsoft Entra ID security group with membership type Assigned.
+It validates the group name and optionally sets an owner during creation.
 
 ## Location
 Organization → General → Add Security Group
@@ -18,7 +19,7 @@ Organization → General → Add Security Group
 ## Parameters
 ### GroupName
 
-The name of the security group.
+Display name of the security group to create.
 
 | Property | Value |
 | --- | --- |
@@ -28,7 +29,7 @@ The name of the security group.
 
 ### GroupDescription
 
-The description of the security group.
+Optional description for the security group.
 
 | Property | Value |
 | --- | --- |
@@ -38,7 +39,7 @@ The description of the security group.
 
 ### Owner
 
-The owner of the security group.
+Optional owner to assign to the group.
 
 | Property | Value |
 | --- | --- |

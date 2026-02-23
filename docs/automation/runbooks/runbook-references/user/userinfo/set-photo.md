@@ -1,10 +1,10 @@
 ---
 title: Set Photo
-description: Set / update the photo / avatar picture of a user.
+description: Set the profile photo for a user
 ---
 
 ## Description
-Set / update the photo / avatar picture of a user.
+Downloads a JPEG image from a URL and uploads it as the user's profile photo. This is useful to set or update user avatars in Microsoft 365.
 
 ## Location
 User → Userinfo → Set Photo
@@ -18,7 +18,7 @@ User → Userinfo → Set Photo
 ## Parameters
 ### UserName
 
-
+User principal name of the target user.
 
 | Property | Value |
 | --- | --- |
@@ -28,7 +28,7 @@ User → Userinfo → Set Photo
 
 ### PhotoURI
 
-Needs to be a JPEG
+URL to a JPEG image that will be used as the profile photo.
 
 | Property | Value |
 | --- | --- |

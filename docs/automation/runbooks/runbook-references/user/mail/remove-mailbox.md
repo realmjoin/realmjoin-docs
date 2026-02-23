@@ -1,10 +1,10 @@
 ---
 title: Remove Mailbox
-description: Hard delete a shared mailbox, room or bookings calendar.
+description: Hard delete a shared mailbox, room or bookings calendar
 ---
 
 ## Description
-Hard delete a shared mailbox, room or bookings calendar.
+Forces a deletion of a shared mailbox, room mailbox, or bookings calendar. The mailbox type is validated before deletion.
 
 ## Location
 User → Mail → Remove Mailbox
@@ -17,7 +17,7 @@ User → Mail → Remove Mailbox
 ## Parameters
 ### UserName
 
-
+User principal name of the mailbox.
 
 | Property | Value |
 | --- | --- |

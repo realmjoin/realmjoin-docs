@@ -1,10 +1,10 @@
 ---
 title: Add Or Remove Trusted Site
-description: Add/Remove an entry to/from the Intune Windows 10 Trusted Sites Policy
+description: Add or remove a URL entry in the Intune Trusted Sites policy
 ---
 
 ## Description
-Add/Remove an entry to/from the Intune Windows 10 Trusted Sites Policy
+Adds or removes a URL to the Site-to-Zone Assignment List in a Windows custom configuration policy. The runbook can also list all existing Trusted Sites policies and their mappings.
 
 ## Location
 Organization → General → Add Or Remove Trusted Site
@@ -18,7 +18,7 @@ Organization → General → Add Or Remove Trusted Site
 ## Parameters
 ### Action
 
-
+Action to execute: add, remove, or list policies.
 
 | Property | Value |
 | --- | --- |
@@ -28,7 +28,7 @@ Organization → General → Add Or Remove Trusted Site
 
 ### Url
 
-Needs to be prefixed with "http://" or "https://"
+URL to add or remove; it must be prefixed with "http://" or "https://".
 
 | Property | Value |
 | --- | --- |
@@ -38,7 +38,7 @@ Needs to be prefixed with "http://" or "https://"
 
 ### Zone
 
-
+Internet Explorer zone id to assign the URL to.
 
 | Property | Value |
 | --- | --- |
@@ -48,7 +48,7 @@ Needs to be prefixed with "http://" or "https://"
 
 ### DefaultPolicyName
 
-
+Default policy name used when multiple Trusted Sites policies exist and no specific policy name is provided.
 
 | Property | Value |
 | --- | --- |
@@ -58,7 +58,7 @@ Needs to be prefixed with "http://" or "https://"
 
 ### IntunePolicyName
 
-Will use an existing policy or default policy name if left empty.
+Optional policy name; if provided, the runbook targets this policy instead of auto-selecting one.
 
 | Property | Value |
 | --- | --- |

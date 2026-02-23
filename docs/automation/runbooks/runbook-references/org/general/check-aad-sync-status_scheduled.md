@@ -1,10 +1,11 @@
 ---
 title: Check Aad Sync Status (Scheduled)
-description: Check for last Azure AD Connect Sync Cycle.
+description: Check last Azure AD Connect sync status
 ---
 
 ## Description
-This runbook checks the Azure AD Connect sync status and the last sync date and time.
+This runbook checks whether on-premises directory synchronization is enabled and when the last sync happened.
+It can send an email alert if synchronization is not enabled.
 
 ## Location
 Organization → General → Check Aad Sync Status_Scheduled
@@ -18,7 +19,7 @@ Organization → General → Check Aad Sync Status_Scheduled
 ## Parameters
 ### sendAlertTo
 
-
+Email address to send the report to.
 
 | Property | Value |
 | --- | --- |
@@ -28,7 +29,7 @@ Organization → General → Check Aad Sync Status_Scheduled
 
 ### sendAlertFrom
 
-
+Sender mailbox used for sending the report.
 
 | Property | Value |
 | --- | --- |

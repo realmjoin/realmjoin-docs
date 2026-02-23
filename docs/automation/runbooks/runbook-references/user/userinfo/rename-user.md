@@ -1,10 +1,10 @@
 ---
 title: Rename User
-description: Rename a user or mailbox. Will not update metadata like DisplayName, GivenName, Surname.
+description: Rename a user or mailbox
 ---
 
 ## Description
-Rename a user or mailbox. Will not update metadata like DisplayName, GivenName, Surname.
+Renames a user by changing the user principal name in Microsoft Entra ID and optionally updates mailbox properties in Exchange Online. This does not update user metadata such as display name, given name, or surname.
 
 ## Location
 User → Userinfo → Rename User
@@ -24,7 +24,7 @@ User → Userinfo → Rename User
 ## Parameters
 ### UserName
 
-
+User principal name of the user or mailbox to rename.
 
 | Property | Value |
 | --- | --- |
@@ -34,7 +34,7 @@ User → Userinfo → Rename User
 
 ### NewUpn
 
-
+New user principal name to set.
 
 | Property | Value |
 | --- | --- |
@@ -44,7 +44,7 @@ User → Userinfo → Rename User
 
 ### ChangeMailnickname
 
-
+If set to true, updates the mailbox alias and name based on the new UPN.
 
 | Property | Value |
 | --- | --- |
@@ -54,7 +54,7 @@ User → Userinfo → Rename User
 
 ### UpdatePrimaryAddress
 
-
+If set to true, updates the primary SMTP address and rewrites email addresses accordingly.
 
 | Property | Value |
 | --- | --- |

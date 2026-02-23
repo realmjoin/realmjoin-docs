@@ -1,11 +1,11 @@
 ---
 title: Delete Stale Devices (Scheduled)
-description: Scheduled deletion of stale devices based on last activity date and platform.
+description: Scheduled deletion of stale devices based on last activity
 ---
 
 ## Description
-Identifies, lists, and deletes devices that haven't been active for a specified number of days.
-Can be scheduled to run automatically and send a report via email.
+This runbook identifies Intune managed devices that have not been active for a defined number of days.
+It can optionally delete the matching devices and can send an email report.
 
 ## Location
 Organization → Devices → Delete Stale Devices_Scheduled
@@ -23,7 +23,7 @@ Organization → Devices → Delete Stale Devices_Scheduled
 ## Parameters
 ### Days
 
-Number of days without activity to be considered stale.
+Number of days without activity to be considered stale
 
 | Property | Value |
 | --- | --- |
@@ -33,7 +33,7 @@ Number of days without activity to be considered stale.
 
 ### Windows
 
-Include Windows devices in the results.
+Include Windows devices in the results
 
 | Property | Value |
 | --- | --- |
@@ -43,7 +43,7 @@ Include Windows devices in the results.
 
 ### MacOS
 
-Include macOS devices in the results.
+Include macOS devices in the results
 
 | Property | Value |
 | --- | --- |
@@ -53,7 +53,7 @@ Include macOS devices in the results.
 
 ### iOS
 
-Include iOS devices in the results.
+Include iOS devices in the results
 
 | Property | Value |
 | --- | --- |
@@ -63,7 +63,7 @@ Include iOS devices in the results.
 
 ### Android
 
-Include Android devices in the results.
+Include Android devices in the results
 
 | Property | Value |
 | --- | --- |

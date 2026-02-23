@@ -4,7 +4,9 @@ description: Check if devices in a group are onboarded to Windows Update for Bus
 ---
 
 ## Description
-This script checks if single or multiple devices (by Group Object ID) are onboarded to Windows Update for Business.
+This runbook checks the Windows Update for Business onboarding status for all device members of a Microsoft Entra ID group.
+It queries each device and reports the enrollment state per update category and any returned error details.
+Use this to validate whether group members are correctly registered as updatable assets.
 
 ## Location
 Group → Devices → Check Updatable Assets
@@ -23,7 +25,7 @@ Azure: Contributor on Storage Account
 ## Parameters
 ### GroupId
 
-Object ID of the group to check onboarding status for its members.
+Object ID of the group whose device members will be checked.
 
 | Property | Value |
 | --- | --- |

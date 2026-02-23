@@ -1,10 +1,10 @@
 ---
 title: Update User
-description: Update/Finalize an existing user object.
+description: Update user metadata and memberships
 ---
 
 ## Description
-Update the metadata, group memberships and Exchange settings of an existing user object.
+Updates user profile properties in Microsoft Entra ID and applies optional group memberships and Exchange Online settings. This runbook is typically used to finalize onboarding or to correct user metadata.
 
 ## Location
 User → Userinfo → Update User
@@ -22,7 +22,7 @@ User → Userinfo → Update User
 ## Parameters
 ### UserName
 
-
+User principal name of the target user.
 
 | Property | Value |
 | --- | --- |
@@ -32,7 +32,7 @@ User → Userinfo → Update User
 
 ### GivenName
 
-
+Given name to set for the user.
 
 | Property | Value |
 | --- | --- |
@@ -42,7 +42,7 @@ User → Userinfo → Update User
 
 ### Surname
 
-
+Surname to set for the user.
 
 | Property | Value |
 | --- | --- |
@@ -52,7 +52,7 @@ User → Userinfo → Update User
 
 ### DisplayName
 
-
+Display name to set for the user.
 
 | Property | Value |
 | --- | --- |
@@ -62,7 +62,7 @@ User → Userinfo → Update User
 
 ### CompanyName
 
-
+Company name to set for the user.
 
 | Property | Value |
 | --- | --- |
@@ -72,7 +72,7 @@ User → Userinfo → Update User
 
 ### City
 
-
+City to set for the user.
 
 | Property | Value |
 | --- | --- |
@@ -82,7 +82,7 @@ User → Userinfo → Update User
 
 ### Country
 
-
+Country to set for the user.
 
 | Property | Value |
 | --- | --- |
@@ -92,7 +92,7 @@ User → Userinfo → Update User
 
 ### JobTitle
 
-
+Job title to set for the user.
 
 | Property | Value |
 | --- | --- |
@@ -102,7 +102,7 @@ User → Userinfo → Update User
 
 ### Department
 
-
+Department to set for the user.
 
 | Property | Value |
 | --- | --- |
@@ -112,7 +112,7 @@ User → Userinfo → Update User
 
 ### OfficeLocation
 
-think "physicalDeliveryOfficeName" if you are coming from on-prem
+Office location to set for the user.
 
 | Property | Value |
 | --- | --- |
@@ -122,7 +122,7 @@ think "physicalDeliveryOfficeName" if you are coming from on-prem
 
 ### PostalCode
 
-
+Postal code to set for the user.
 
 | Property | Value |
 | --- | --- |
@@ -132,7 +132,7 @@ think "physicalDeliveryOfficeName" if you are coming from on-prem
 
 ### PreferredLanguage
 
-Examples: 'en-US' or 'de-DE'
+Preferred language to set for the user. Examples: "en-US" or "de-DE".
 
 | Property | Value |
 | --- | --- |
@@ -142,7 +142,7 @@ Examples: 'en-US' or 'de-DE'
 
 ### State
 
-
+State to set for the user.
 
 | Property | Value |
 | --- | --- |
@@ -152,7 +152,7 @@ Examples: 'en-US' or 'de-DE'
 
 ### StreetAddress
 
-
+Street address to set for the user.
 
 | Property | Value |
 | --- | --- |
@@ -162,7 +162,7 @@ Examples: 'en-US' or 'de-DE'
 
 ### UsageLocation
 
-Examples: "DE" or "US"
+Usage location to set for the user.
 
 | Property | Value |
 | --- | --- |
@@ -172,7 +172,7 @@ Examples: "DE" or "US"
 
 ### DefaultLicense
 
-
+Display name of a license group to assign.
 
 | Property | Value |
 | --- | --- |
@@ -182,7 +182,7 @@ Examples: "DE" or "US"
 
 ### DefaultGroups
 
-
+Comma-separated list of group display names to assign.
 
 | Property | Value |
 | --- | --- |
@@ -192,7 +192,7 @@ Examples: "DE" or "US"
 
 ### EnableEXOArchive
 
-
+If set to true, enables the Exchange Online archive mailbox.
 
 | Property | Value |
 | --- | --- |
@@ -202,7 +202,7 @@ Examples: "DE" or "US"
 
 ### ResetPassword
 
-
+If set to true, resets the user's password.
 
 | Property | Value |
 | --- | --- |

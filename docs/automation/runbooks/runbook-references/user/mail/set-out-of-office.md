@@ -1,10 +1,10 @@
 ---
 title: Set Out Of Office
-description: En-/Disable Out-of-office-notifications for a user/mailbox.
+description: Enable or disable out-of-office notifications for a mailbox
 ---
 
 ## Description
-En-/Disable Out-of-office-notifications for a user/mailbox.
+Configures automatic replies for a mailbox and optionally creates an out-of-office calendar event. The runbook can either enable scheduled replies or disable them.
 
 ## Location
 User → Mail → Set Out Of Office
@@ -21,7 +21,7 @@ User → Mail → Set Out Of Office
 ## Parameters
 ### UserName
 
-
+User principal name of the mailbox.
 
 | Property | Value |
 | --- | --- |
@@ -31,7 +31,7 @@ User → Mail → Set Out Of Office
 
 ### Disable
 
-
+"Enable Out-of-Office" (final value: $false) or "Disable Out-of-Office" (final value: $true) can be selected as action to perform.
 
 | Property | Value |
 | --- | --- |
@@ -41,7 +41,7 @@ User → Mail → Set Out Of Office
 
 ### Start
 
-
+Start time for scheduled out-of-office replies.
 
 | Property | Value |
 | --- | --- |
@@ -51,7 +51,7 @@ User → Mail → Set Out Of Office
 
 ### End
 
-10 years into the future ("forever") if left empty
+End time for scheduled out-of-office replies. If not specified, defaults to 10 years from the current date.
 
 | Property | Value |
 | --- | --- |
@@ -61,7 +61,7 @@ User → Mail → Set Out Of Office
 
 ### MessageInternal
 
-
+Internal automatic reply message.
 
 | Property | Value |
 | --- | --- |
@@ -71,7 +71,7 @@ User → Mail → Set Out Of Office
 
 ### MessageExternal
 
-
+External automatic reply message.
 
 | Property | Value |
 | --- | --- |
@@ -81,7 +81,7 @@ User → Mail → Set Out Of Office
 
 ### CreateEvent
 
-
+If set to true, creates an out-of-office calendar event.
 
 | Property | Value |
 | --- | --- |
@@ -91,7 +91,7 @@ User → Mail → Set Out Of Office
 
 ### EventSubject
 
-
+Subject for the optional out-of-office calendar event.
 
 | Property | Value |
 | --- | --- |

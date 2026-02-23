@@ -1,10 +1,12 @@
 ---
 title: Add Or Remove User
-description: Add/remove users to/from a group.
+description: Add or remove a group member
 ---
 
 ## Description
-Add/remove users to/from an AzureAD or Exchange Online group.
+This runbook adds a user to a group or removes a user from a group.
+It supports Microsoft Entra ID groups and Exchange Online distribution or mail-enabled security groups.
+Use the Remove switch to remove the user instead of adding the user.
 
 ## Location
 Group → General → Add Or Remove User
@@ -20,7 +22,7 @@ Group → General → Add Or Remove User
 ## Parameters
 ### GroupID
 
-
+Object ID of the target group.
 
 | Property | Value |
 | --- | --- |
@@ -30,7 +32,7 @@ Group → General → Add Or Remove User
 
 ### UserId
 
-
+Object ID of the user to add or remove.
 
 | Property | Value |
 | --- | --- |
@@ -40,7 +42,7 @@ Group → General → Add Or Remove User
 
 ### Remove
 
-
+"Add User to Group" (final value: $false) or "Remove User from Group" (final value: $true) can be selected as action to perform. If set to true, the runbook will remove the user from the group. If set to false, it will add the user to the group.
 
 | Property | Value |
 | --- | --- |

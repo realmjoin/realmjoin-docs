@@ -1,10 +1,10 @@
 ---
 title: Hide Mailboxes (Scheduled)
-description: Hide / Unhide special mailboxes in Global Address Book
+description: Hide or unhide special mailboxes in the Global Address List
 ---
 
 ## Description
-Hide / Unhide special mailboxes in Global Address Book. Currently intended for Booking calendars.
+Hides or unhides special mailboxes in the Global Address List, currently intended for Bookings calendars. The runbook updates all scheduling mailboxes accordingly.
 
 ## Location
 Organization → Mail → Hide Mailboxes_Scheduled
@@ -17,7 +17,7 @@ Organization → Mail → Hide Mailboxes_Scheduled
 ## Parameters
 ### HideBookingCalendars
 
-
+If set to true, booking calendars are hidden from address lists.
 
 | Property | Value |
 | --- | --- |

@@ -1,10 +1,10 @@
 ---
 title: Export All Intune Devices
-description: Export a list of all Intune devices and where they are registered.
+description: Export a list of all Intune devices and where they are registered
 ---
 
 ## Description
-Export all Intune devices and metadata based on their owner, like usageLocation.
+Exports all Intune managed devices and enriches them with selected owner metadata such as usage location. The report is uploaded as a CSV file to an Azure Storage container.
 
 ## Location
 Organization → General → Export All Intune Devices
@@ -13,12 +13,14 @@ Organization → General → Export All Intune Devices
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.Read.All
+  - GroupMember.Read.All
+  - Group.Read.All
 
 
 ## Parameters
 ### ContainerName
 
-
+Name of the Azure Storage container to upload the CSV report to.
 
 | Property | Value |
 | --- | --- |
@@ -28,7 +30,7 @@ Organization → General → Export All Intune Devices
 
 ### ResourceGroupName
 
-
+Name of the Azure Resource Group containing the Storage Account.
 
 | Property | Value |
 | --- | --- |
@@ -38,7 +40,7 @@ Organization → General → Export All Intune Devices
 
 ### StorageAccountName
 
-
+Name of the Azure Storage Account used for upload.
 
 | Property | Value |
 | --- | --- |
@@ -48,7 +50,7 @@ Organization → General → Export All Intune Devices
 
 ### StorageAccountLocation
 
-
+Azure region for the Storage Account if it needs to be created.
 
 | Property | Value |
 | --- | --- |
@@ -58,7 +60,7 @@ Organization → General → Export All Intune Devices
 
 ### StorageAccountSku
 
-
+SKU name for the Storage Account if it needs to be created.
 
 | Property | Value |
 | --- | --- |
@@ -68,7 +70,17 @@ Organization → General → Export All Intune Devices
 
 ### SubscriptionId
 
+Optional Azure Subscription Id to set the context for Storage Account operations.
 
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### FilterGroupID
+
+Optional group filter (ObjectId). When specified, only devices whose primary owner is a member of this group are exported.
 
 | Property | Value |
 | --- | --- |

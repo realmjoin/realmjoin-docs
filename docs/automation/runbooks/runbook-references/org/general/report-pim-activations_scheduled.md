@@ -1,10 +1,11 @@
 ---
 title: Report Pim Activations (Scheduled)
-description: Scheduled Report on PIM Activations.
+description: Scheduled report on PIM activations
 ---
 
 ## Description
-This runbook collects and reports PIM activation details, including date, requestor, UPN, role, primary target, PIM group, reason, and status, and sends it via email.
+This runbook queries Microsoft Entra ID audit logs for recent PIM activations.
+It builds an report and sends it via email.
 
 ## Location
 Organization → General → Report Pim Activations_Scheduled
@@ -19,7 +20,7 @@ Organization → General → Report Pim Activations_Scheduled
 ## Parameters
 ### sendAlertTo
 
-
+Recipient email address for the report.
 
 | Property | Value |
 | --- | --- |
@@ -29,7 +30,7 @@ Organization → General → Report Pim Activations_Scheduled
 
 ### sendAlertFrom
 
-
+Sender mailbox UPN used to send the report email.
 
 | Property | Value |
 | --- | --- |

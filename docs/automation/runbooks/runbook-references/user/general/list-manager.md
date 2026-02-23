@@ -1,10 +1,10 @@
 ---
 title: List Manager
-description: List manager information for this user.
+description: List manager information for this user
 ---
 
 ## Description
-List manager information for the specified user.
+Retrieves the manager object for a specified user. Outputs common manager attributes such as display name, email, and phone numbers.
 
 ## Location
 User → General → List Manager
@@ -18,7 +18,7 @@ User → General → List Manager
 ## Parameters
 ### UserName
 
-
+User principal name of the target user.
 
 | Property | Value |
 | --- | --- |

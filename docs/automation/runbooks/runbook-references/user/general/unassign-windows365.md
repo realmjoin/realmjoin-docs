@@ -1,10 +1,10 @@
 ---
 title: Unassign Windows365
-description: Remove/Deprovision a Windows 365 instance
+description: Remove and deprovision a Windows 365 Cloud PC for a user
 ---
 
 ## Description
-Remove/Deprovision a Windows 365 instance
+Removes Windows 365 assignments for a user and deprovisions the associated Cloud PC. Optionally ends the grace period immediately to trigger faster removal.
 
 ## Location
 User → General → Unassign Windows365
@@ -21,7 +21,7 @@ User → General → Unassign Windows365
 ## Parameters
 ### UserName
 
-
+User principal name of the target user.
 
 | Property | Value |
 | --- | --- |
@@ -31,7 +31,7 @@ User → General → Unassign Windows365
 
 ### licWin365GroupName
 
-
+Display name of the Windows 365 license group or Frontline provisioning policy to remove.
 
 | Property | Value |
 | --- | --- |
@@ -41,7 +41,7 @@ User → General → Unassign Windows365
 
 ### cfgProvisioningGroupPrefix
 
-
+Prefix used to detect provisioning-related configuration groups.
 
 | Property | Value |
 | --- | --- |
@@ -51,7 +51,7 @@ User → General → Unassign Windows365
 
 ### cfgUserSettingsGroupPrefix
 
-
+Prefix used to detect user-settings-related configuration groups.
 
 | Property | Value |
 | --- | --- |
@@ -61,7 +61,7 @@ User → General → Unassign Windows365
 
 ### licWin365GroupPrefix
 
-
+Prefix used to detect Windows 365 license groups.
 
 | Property | Value |
 | --- | --- |
@@ -71,7 +71,7 @@ User → General → Unassign Windows365
 
 ### skipGracePeriod
 
-
+If set to true, ends the Cloud PC grace period immediately.
 
 | Property | Value |
 | --- | --- |
@@ -81,7 +81,7 @@ User → General → Unassign Windows365
 
 ### KeepUserSettingsAndProvisioningGroups
 
-
+If set to true, does not remove related provisioning and user settings groups.
 
 | Property | Value |
 | --- | --- |

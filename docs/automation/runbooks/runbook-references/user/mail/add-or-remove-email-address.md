@@ -1,10 +1,10 @@
 ---
 title: Add Or Remove Email Address
-description: Add/remove eMail address to/from mailbox.
+description: Add or remove an email address for a mailbox
 ---
 
 ## Description
-Add/remove eMail address to/from mailbox, update primary eMail address.
+Adds or removes an alias email address on a mailbox and can optionally set it as the primary address.
 
 ## Location
 User → Mail → Add Or Remove Email Address
@@ -21,7 +21,7 @@ User → Mail → Add Or Remove Email Address
 ## Parameters
 ### UserName
 
-
+User principal name of the mailbox.
 
 | Property | Value |
 | --- | --- |
@@ -29,9 +29,9 @@ User → Mail → Add Or Remove Email Address
 | Default Value |  |
 | Type | String |
 
-### eMailAddress
+### EmailAddress
 
-
+Email address to add or remove.
 
 | Property | Value |
 | --- | --- |
@@ -41,7 +41,7 @@ User → Mail → Add Or Remove Email Address
 
 ### Remove
 
-
+If set to true, removes the address instead of adding it.
 
 | Property | Value |
 | --- | --- |
@@ -51,7 +51,7 @@ User → Mail → Add Or Remove Email Address
 
 ### asPrimary
 
-
+If set to true, sets the specified address as the primary SMTP address.
 
 | Property | Value |
 | --- | --- |

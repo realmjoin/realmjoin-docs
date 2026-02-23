@@ -1,11 +1,10 @@
 ---
 title: List Admin Users
-description: List AzureAD role holders and their MFA state.
+description: List Entra ID role holders and optionally evaluate their MFA methods
 ---
 
 ## Description
-Will list users and service principals that hold a builtin AzureAD role.
-Admins will be queried for valid MFA methods.
+Lists users and service principals holding built-in Entra ID roles and produces an admin-to-role report. Optionally queries each admin for registered authentication methods to assess MFA coverage.
 
 ## Location
 Organization → Security → List Admin Users
@@ -19,9 +18,9 @@ Organization → Security → List Admin Users
 
 
 ## Parameters
-### exportToFile
+### ExportToFile
 
-
+If set to true, exports the report to an Azure Storage Account.
 
 | Property | Value |
 | --- | --- |
@@ -29,9 +28,9 @@ Organization → Security → List Admin Users
 | Default Value | True |
 | Type | Boolean |
 
-### pimEligibleUntilInCSV
+### PimEligibleUntilInCSV
 
-
+If set to true, includes PIM eligible until information in the CSV report.
 
 | Property | Value |
 | --- | --- |
@@ -41,7 +40,7 @@ Organization → Security → List Admin Users
 
 ### ContainerName
 
-
+Name of the Azure Storage container to upload the CSV report to.
 
 | Property | Value |
 | --- | --- |
@@ -51,7 +50,7 @@ Organization → Security → List Admin Users
 
 ### ResourceGroupName
 
-
+Name of the Azure Resource Group containing the Storage Account.
 
 | Property | Value |
 | --- | --- |
@@ -61,7 +60,7 @@ Organization → Security → List Admin Users
 
 ### StorageAccountName
 
-
+Name of the Azure Storage Account used for upload.
 
 | Property | Value |
 | --- | --- |
@@ -71,7 +70,7 @@ Organization → Security → List Admin Users
 
 ### StorageAccountLocation
 
-
+Azure region for the Storage Account if it needs to be created.
 
 | Property | Value |
 | --- | --- |
@@ -81,7 +80,7 @@ Organization → Security → List Admin Users
 
 ### StorageAccountSku
 
-
+SKU name for the Storage Account if it needs to be created.
 
 | Property | Value |
 | --- | --- |
@@ -91,7 +90,7 @@ Organization → Security → List Admin Users
 
 ### QueryMfaState
 
-
+"Check and report every admin's MFA state" (final value: $true) or "Do not check admin MFA states" (final value: $false) can be selected as action to perform.
 
 | Property | Value |
 | --- | --- |
@@ -101,7 +100,7 @@ Organization → Security → List Admin Users
 
 ### TrustEmailMfa
 
-
+If set to true, regards email as a valid MFA method.
 
 | Property | Value |
 | --- | --- |
@@ -111,7 +110,7 @@ Organization → Security → List Admin Users
 
 ### TrustPhoneMfa
 
-
+If set to true, regards phone/SMS as a valid MFA method.
 
 | Property | Value |
 | --- | --- |
@@ -121,7 +120,7 @@ Organization → Security → List Admin Users
 
 ### TrustSoftwareOathMfa
 
-
+If set to true, regards software OATH token as a valid MFA method.
 
 | Property | Value |
 | --- | --- |
@@ -131,7 +130,7 @@ Organization → Security → List Admin Users
 
 ### TrustWinHelloMFA
 
-
+If set to true, regards Windows Hello for Business as a valid MFA method.
 
 | Property | Value |
 | --- | --- |

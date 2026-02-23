@@ -1,7 +1,11 @@
 ---
 title: Export Policy Report
-description: Create a report of a tenant's polcies from Intune and AAD and write them to a markdown file.
+description: Create a report of tenant policies from Intune and Entra ID.
 ---
+
+## Description
+This runbook exports configuration policies from Intune and Entra ID and writes the results to a Markdown report.
+It can optionally export raw JSON and create downloadable links for exported artifacts.
 
 ## Location
 Organization → General → Export Policy Report
@@ -19,7 +23,7 @@ Azure Storage Account: Contributor role on the Storage Account used for exportin
 ## Parameters
 ### produceLinks
 
-
+If set to true, creates links for exported artifacts based on settings.
 
 | Property | Value |
 | --- | --- |
@@ -29,7 +33,7 @@ Azure Storage Account: Contributor role on the Storage Account used for exportin
 
 ### exportJson
 
-
+If set to true, also exports raw JSON policy payloads.
 
 | Property | Value |
 | --- | --- |
@@ -39,7 +43,7 @@ Azure Storage Account: Contributor role on the Storage Account used for exportin
 
 ### renderLatexPagebreaks
 
-
+If set to true, adds LaTeX page breaks to the generated Markdown.
 
 | Property | Value |
 | --- | --- |
@@ -49,7 +53,7 @@ Azure Storage Account: Contributor role on the Storage Account used for exportin
 
 ### ContainerName
 
-
+Storage container name used for uploads.
 
 | Property | Value |
 | --- | --- |
@@ -59,7 +63,7 @@ Azure Storage Account: Contributor role on the Storage Account used for exportin
 
 ### ResourceGroupName
 
-
+Resource group that contains the storage account.
 
 | Property | Value |
 | --- | --- |
@@ -69,7 +73,7 @@ Azure Storage Account: Contributor role on the Storage Account used for exportin
 
 ### StorageAccountName
 
-
+Storage account name used for uploads.
 
 | Property | Value |
 | --- | --- |
@@ -79,7 +83,7 @@ Azure Storage Account: Contributor role on the Storage Account used for exportin
 
 ### StorageAccountLocation
 
-
+Azure region for the storage account.
 
 | Property | Value |
 | --- | --- |
@@ -89,7 +93,7 @@ Azure Storage Account: Contributor role on the Storage Account used for exportin
 
 ### StorageAccountSku
 
-
+Storage account SKU.
 
 | Property | Value |
 | --- | --- |

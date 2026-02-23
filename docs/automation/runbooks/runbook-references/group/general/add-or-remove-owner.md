@@ -1,10 +1,12 @@
 ---
 title: Add Or Remove Owner
-description: Add/remove owners to/from an Office 365 group.
+description: Add or remove a Office 365 group owner
 ---
 
 ## Description
-Add/remove owners to/from an Office 365 group.
+This runbook adds a user as an owner of a group or removes an existing owner.
+For Microsoft 365 groups, it also ensures that newly added owners are members of the group.
+Use the Remove switch to remove ownership instead of adding it.
 
 ## Location
 Group → General → Add Or Remove Owner
@@ -25,7 +27,7 @@ Group → General → Add Or Remove Owner
 ## Parameters
 ### GroupID
 
-[ValidateScript( { Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process; Use-RJInterface -Type Graph -Entity Group -DisplayName "Group" } )]
+Object ID of the target group.
 
 | Property | Value |
 | --- | --- |
@@ -35,7 +37,7 @@ Group → General → Add Or Remove Owner
 
 ### UserId
 
-
+Object ID of the user to add or remove.
 
 | Property | Value |
 | --- | --- |
@@ -45,7 +47,7 @@ Group → General → Add Or Remove Owner
 
 ### Remove
 
-
+"Add User as Owner" (final value: $false) or "Remove User as Owner" (final value: $true) can be selected as action to perform. If set to true, the runbook will remove the user from the group owners. If set to false, it will add the user as an owner of the group.
 
 | Property | Value |
 | --- | --- |

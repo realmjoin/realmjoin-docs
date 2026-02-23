@@ -4,7 +4,7 @@ description: Microsoft Teams telephony offboarding
 ---
 
 ## Description
-Remove the phone number and specific policies from a teams-enabled user.
+Removes the assigned phone number and clears selected Teams voice policies for a Teams-enabled user. This fullfills the telephony offboarding scenarios.
 
 ## Location
 User → Phone → Disable Teams Phone

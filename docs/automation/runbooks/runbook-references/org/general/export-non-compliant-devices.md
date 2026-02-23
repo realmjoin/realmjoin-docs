@@ -1,10 +1,11 @@
 ---
 title: Export Non Compliant Devices
-description: Report on non-compliant devices and policies
+description: Export non-compliant Intune devices and settings
 ---
 
 ## Description
-Report on non-compliant devices and policies
+This runbook queries Intune for non-compliant and in-grace-period devices and retrieves detailed policy and setting compliance data.
+It can export the results to CSV with SAS (download) links.
 
 ## Location
 Organization → General → Export Non Compliant Devices
@@ -21,7 +22,7 @@ Azure IaaS: Access to create/manage Azure Storage resources if producing links
 ## Parameters
 ### produceLinks
 
-
+If set to true, uploads artifacts and produces SAS (download) links when storage settings are available.
 
 | Property | Value |
 | --- | --- |
@@ -31,7 +32,7 @@ Azure IaaS: Access to create/manage Azure Storage resources if producing links
 
 ### ContainerName
 
-
+Storage container name used for uploads.
 
 | Property | Value |
 | --- | --- |
@@ -41,7 +42,7 @@ Azure IaaS: Access to create/manage Azure Storage resources if producing links
 
 ### ResourceGroupName
 
-
+Resource group that contains the storage account.
 
 | Property | Value |
 | --- | --- |
@@ -51,7 +52,7 @@ Azure IaaS: Access to create/manage Azure Storage resources if producing links
 
 ### StorageAccountName
 
-
+Storage account name used for uploads.
 
 | Property | Value |
 | --- | --- |
@@ -61,7 +62,7 @@ Azure IaaS: Access to create/manage Azure Storage resources if producing links
 
 ### StorageAccountLocation
 
-
+Azure region for the storage account.
 
 | Property | Value |
 | --- | --- |
@@ -71,7 +72,7 @@ Azure IaaS: Access to create/manage Azure Storage resources if producing links
 
 ### StorageAccountSku
 
-
+Storage account SKU.
 
 | Property | Value |
 | --- | --- |
@@ -81,7 +82,7 @@ Azure IaaS: Access to create/manage Azure Storage resources if producing links
 
 ### SubscriptionId
 
-
+Azure subscription ID used for storage operations.
 
 | Property | Value |
 | --- | --- |

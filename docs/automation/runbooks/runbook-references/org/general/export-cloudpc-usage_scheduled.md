@@ -1,10 +1,10 @@
 ---
 title: Export Cloudpc Usage (Scheduled)
-description: Write daily Windows 365 Utilization Data to Azure Tables
+description: Write daily Windows 365 utilization data to Azure Table Storage
 ---
 
 ## Description
-Write daily Windows 365 Utilization Data to Azure Tables. Will write data about the last full day.
+Collects Windows 365 Cloud PC remote connection usage for the last full day and writes it to an Azure Table. The runbook creates the table if needed and merges records per tenant and timestamp.
 
 ## Location
 Organization → General → Export Cloudpc Usage_Scheduled
@@ -21,7 +21,7 @@ Azure IaaS: `Contributor` role on the Azure Storage Account used for storing Clo
 ## Parameters
 ### Table
 
-CallerName is tracked purely for auditing purposes
+Name of the Azure Table Storage table to write to.
 
 | Property | Value |
 | --- | --- |
@@ -31,7 +31,7 @@ CallerName is tracked purely for auditing purposes
 
 ### ResourceGroupName
 
-
+Name of the Azure Resource Group containing the Storage Account.
 
 | Property | Value |
 | --- | --- |
@@ -41,7 +41,7 @@ CallerName is tracked purely for auditing purposes
 
 ### StorageAccountName
 
-
+Name of the Azure Storage Account hosting the table.
 
 | Property | Value |
 | --- | --- |
@@ -49,9 +49,9 @@ CallerName is tracked purely for auditing purposes
 | Default Value |  |
 | Type | String |
 
-### days
+### Days
 
-
+Number of days to look back when collecting usage data.
 
 | Property | Value |
 | --- | --- |

@@ -1,10 +1,10 @@
 ---
 title: Hide Or Unhide In Addressbook
-description: (Un)Hide this mailbox in address book.
+description: Hide or unhide a mailbox in the address book
 ---
 
 ## Description
-(Un)Hide this mailbox in address book.
+Hides or unhides a mailbox from the global address lists. Important: This change can take up to 72 hours until it is reflected in the global address list.
 
 ## Location
 User → Mail → Hide Or Unhide In Addressbook
@@ -21,7 +21,7 @@ User → Mail → Hide Or Unhide In Addressbook
 ## Parameters
 ### UserName
 
-
+User principal name of the mailbox.
 
 | Property | Value |
 | --- | --- |
@@ -31,7 +31,7 @@ User → Mail → Hide Or Unhide In Addressbook
 
 ### HideMailbox
 
-
+If set to true, hides the mailbox from address lists.
 
 | Property | Value |
 | --- | --- |

@@ -1,10 +1,11 @@
 ---
 title: Check Assignments Of Devices
-description: Check Intune assignments for a given (or multiple) Device Names.
+description: Check Intune assignments for one or more device names
 ---
 
 ## Description
-This script checks the Intune assignments for a single or multiple specified Device Names.
+This runbook queries Intune policies and optionally app assignments relevant to the specified device(s).
+It resolves device group memberships and reports matching assignments.
 
 ## Location
 Organization → General → Check Assignments Of Devices
@@ -22,7 +23,7 @@ Organization → General → Check Assignments Of Devices
 ## Parameters
 ### DeviceNames
 
-Device Names of the devices to check assignments for, separated by commas.
+Comma-separated list of device names to check.
 
 | Property | Value |
 | --- | --- |
@@ -32,7 +33,7 @@ Device Names of the devices to check assignments for, separated by commas.
 
 ### IncludeApps
 
-Boolean to specify whether to include application assignments in the search.
+If set to true, also evaluates application assignments.
 
 | Property | Value |
 | --- | --- |

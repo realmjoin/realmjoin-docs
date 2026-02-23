@@ -1,6 +1,6 @@
 ---
 title: Add Shared Mailbox
-description: Create a shared mailbox.
+description: Create a shared mailbox
 ---
 
 ## Description
@@ -32,7 +32,7 @@ The alias (mailbox name) for the shared mailbox.
 
 ### DisplayName
 
-The display name for the shared mailbox.
+Display name for the shared mailbox.
 
 | Property | Value |
 | --- | --- |
@@ -42,7 +42,7 @@ The display name for the shared mailbox.
 
 ### DomainName
 
-The domain name to be used for the primary SMTP address of the shared mailbox. If not specified, the default domain will be used.
+Optional domain used for the primary SMTP address; if not provided, the default domain is used.
 
 | Property | Value |
 | --- | --- |
@@ -62,7 +62,7 @@ The language/locale for the shared mailbox. This setting affects folder names li
 
 ### DelegateTo
 
-The user to delegate access to the shared mailbox.
+Optional user who receives delegated access to the mailbox.
 
 | Property | Value |
 | --- | --- |
@@ -72,7 +72,7 @@ The user to delegate access to the shared mailbox.
 
 ### AutoMapping
 
-If set to true, the shared mailbox will be automatically mapped in Outlook for the delegate user.
+If set to true, the mailbox is automatically mapped in Outlook for the delegate.
 
 | Property | Value |
 | --- | --- |
@@ -82,7 +82,7 @@ If set to true, the shared mailbox will be automatically mapped in Outlook for t
 
 ### MessageCopyForSentAsEnabled
 
-If set to true, a copy of sent emails will be saved in the shared mailbox's Sent Items folder when sent as the shared mailbox.
+If set to true, copies of messages sent as the mailbox are stored in the mailbox sent items.
 
 | Property | Value |
 | --- | --- |
@@ -92,7 +92,7 @@ If set to true, a copy of sent emails will be saved in the shared mailbox's Sent
 
 ### MessageCopyForSendOnBehalfEnabled
 
-If set to true, a copy of sent emails will be saved in the shared mailbox's Sent Items folder when sent on behalf of the shared mailbox.
+If set to true, copies of messages sent on behalf of the mailbox are stored in the mailbox sent items.
 
 | Property | Value |
 | --- | --- |
@@ -102,7 +102,7 @@ If set to true, a copy of sent emails will be saved in the shared mailbox's Sent
 
 ### DisableUser
 
-If set to true, the associated EntraID user account will be disabled.
+If set to true, the associated Entra ID user account is disabled.
 
 | Property | Value |
 | --- | --- |

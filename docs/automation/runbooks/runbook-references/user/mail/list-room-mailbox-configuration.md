@@ -1,10 +1,10 @@
 ---
 title: List Room Mailbox Configuration
-description: List Room configuration.
+description: List room mailbox configuration
 ---
 
 ## Description
-List Room configuration.
+Reads room metadata and lists calendar processing settings. This helps validate room resource configuration and booking behavior.
 
 ## Location
 User → Mail → List Room Mailbox Configuration
@@ -18,7 +18,7 @@ User → Mail → List Room Mailbox Configuration
 ## Parameters
 ### UserName
 
-
+User principal name of the room mailbox.
 
 | Property | Value |
 | --- | --- |

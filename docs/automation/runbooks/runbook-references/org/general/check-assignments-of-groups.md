@@ -1,10 +1,11 @@
 ---
 title: Check Assignments Of Groups
-description: Check Intune assignments for a given (or multiple) Group Names.
+description: Check Intune assignments for one or more group names
 ---
 
 ## Description
-This script checks the Intune assignments for a single or multiple specified Group Names.
+This runbook queries Intune policies and optionally app assignments that target the specified group(s).
+It resolves group IDs and reports matching assignments.
 
 ## Location
 Organization → General → Check Assignments Of Groups
@@ -32,7 +33,7 @@ Group Names of the groups to check assignments for, separated by commas.
 
 ### IncludeApps
 
-Boolean to specify whether to include application assignments in the search.
+If set to true, also evaluates application assignments.
 
 | Property | Value |
 | --- | --- |

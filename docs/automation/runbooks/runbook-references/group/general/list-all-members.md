@@ -1,6 +1,6 @@
 ---
 title: List All Members
-description: Retrieves the members of a specified EntraID group, including members from nested groups.
+description: List all members of a group, including members that are part of nested groups
 ---
 
 ## Description
@@ -21,7 +21,7 @@ Group → General → List All Members
 ## Parameters
 ### GroupId
 
-The ObjectId of the EntraID group whose membership is to be retrieved.
+The Object ID of the Microsoft Entra ID group whose membership will be retrieved.
 
 | Property | Value |
 | --- | --- |

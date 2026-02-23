@@ -4,7 +4,9 @@ description: Isolate this device.
 ---
 
 ## Description
-Isolate this device using Defender for Endpoint.
+This runbook isolates a device in Microsoft Defender for Endpoint to reduce the risk of lateral movement and data exfiltration.
+Optionally, it can release a previously isolated device.
+Provide a short reason so the action is documented in the service.
 
 ## Location
 Device → Security → Isolate Or Release Device
@@ -19,7 +21,7 @@ Device → Security → Isolate Or Release Device
 ## Parameters
 ### DeviceId
 
-
+The device ID of the target device.
 
 | Property | Value |
 | --- | --- |
@@ -29,7 +31,7 @@ Device → Security → Isolate Or Release Device
 
 ### Release
 
-
+"Isolate Device" (final value: false) or "Release Device from Isolation" (final value: true) can be selected as action to perform. If set to false, the runbook will isolate the device in Defender for Endpoint. If set to true, it will release a previously isolated device from isolation in Defender for Endpoint.
 
 | Property | Value |
 | --- | --- |
@@ -39,7 +41,7 @@ Device → Security → Isolate Or Release Device
 
 ### IsolationType
 
-
+The isolation type to use when isolating the device.
 
 | Property | Value |
 | --- | --- |
@@ -49,7 +51,7 @@ Device → Security → Isolate Or Release Device
 
 ### Comment
 
-
+A short reason for the (un)isolation action.
 
 | Property | Value |
 | --- | --- |

@@ -1,10 +1,10 @@
 ---
 title: Offboard User Permanently
-description: Permanently offboard a user.
+description: Permanently offboard a user
 ---
 
 ## Description
-Permanently offboard a user.
+Permanently offboards a user by revoking access, disabling or deleting the account, adjusting group and license assignments, and optionally exporting memberships. Optionally removes or replaces group ownerships when required.
 
 ## Location
 User → General → Offboard User Permanently
@@ -26,7 +26,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 ## Parameters
 ### UserName
 
-
+User principal name of the target user.
 
 | Property | Value |
 | --- | --- |
@@ -36,7 +36,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### DeleteUser
 
-
+"Delete user object" (final value: $true) or "Keep the user object" (final value: $false) can be selected as action to perform. If set to true, the user object will be deleted. If set to false, the user object will be kept but access will be revoked and sign-in will be blocked.
 
 | Property | Value |
 | --- | --- |
@@ -46,7 +46,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### DisableUser
 
-
+If set to true, disables the user account for sign-in.
 
 | Property | Value |
 | --- | --- |
@@ -56,7 +56,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### RevokeAccess
 
-
+If set to true, revokes the user's refresh tokens and active sessions.
 
 | Property | Value |
 | --- | --- |
@@ -66,7 +66,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### exportResourceGroupName
 
-
+Azure Resource Group name for exporting data to storage.
 
 | Property | Value |
 | --- | --- |
@@ -76,7 +76,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### exportStorAccountName
 
-
+Azure Storage Account name for exporting data to storage.
 
 | Property | Value |
 | --- | --- |
@@ -86,7 +86,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### exportStorAccountLocation
 
-
+Azure region used when creating the Storage Account.
 
 | Property | Value |
 | --- | --- |
@@ -96,7 +96,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### exportStorAccountSKU
 
-
+SKU name used when creating the Storage Account.
 
 | Property | Value |
 | --- | --- |
@@ -106,7 +106,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### exportStorContainerGroupMembershipExports
 
-
+Container name used for group membership exports.
 
 | Property | Value |
 | --- | --- |
@@ -116,7 +116,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### exportGroupMemberships
 
-
+If set to true, exports the user's current group memberships to Azure Storage.
 
 | Property | Value |
 | --- | --- |
@@ -126,7 +126,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### ChangeLicensesSelector
 
-
+Controls how directly assigned licenses should be handled.
 
 | Property | Value |
 | --- | --- |
@@ -146,7 +146,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### GroupToAdd
 
-
+Group that should be added or kept when group changes are enabled.
 
 | Property | Value |
 | --- | --- |
@@ -156,7 +156,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### GroupsToRemovePrefix
 
-
+Prefix used to remove groups matching a naming convention.
 
 | Property | Value |
 | --- | --- |
@@ -166,7 +166,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### RevokeGroupOwnership
 
-
+"Remove/Replace this user's group ownerships" (final value: $true) or "User will remain owner / Do not change" (final value: $false) can be selected as action to perform. If set to true, the runbook will attempt to remove the user from group ownerships. If the user is the last owner of a group, it will attempt to assign a replacement owner; if that fails, it will skip ownership change for that group and log it for manual follow-up.
 
 | Property | Value |
 | --- | --- |
@@ -176,7 +176,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### ManagerAsReplacementOwner
 
-
+If set to true, uses the user's manager as replacement owner where applicable.
 
 | Property | Value |
 | --- | --- |
@@ -186,7 +186,7 @@ Azure IaaS: Contributor access on subscription or resource group used for the ex
 
 ### ReplacementOwnerName
 
-Who will take over group ownership if the offboarded user is the last remaining group owner? Will only be used if needed.
+User who will take over group or resource ownership if required.
 
 | Property | Value |
 | --- | --- |

@@ -1,10 +1,10 @@
 ---
 title: Add Equipment Mailbox
-description: Create an equipment mailbox.
+description: Create an equipment mailbox
 ---
 
 ## Description
-Create an equipment mailbox.
+Creates an Exchange Online equipment mailbox and optionally configures delegate access and calendar processing. If requested, the associated Entra ID user account is disabled after creation.
 
 ## Location
 Organization → Mail → Add Equipment Mailbox
@@ -21,7 +21,7 @@ Organization → Mail → Add Equipment Mailbox
 ## Parameters
 ### MailboxName
 
-
+Alias (mail nickname) for the equipment mailbox.
 
 | Property | Value |
 | --- | --- |
@@ -31,7 +31,7 @@ Organization → Mail → Add Equipment Mailbox
 
 ### DisplayName
 
-
+Optional display name for the equipment mailbox.
 
 | Property | Value |
 | --- | --- |
@@ -41,7 +41,7 @@ Organization → Mail → Add Equipment Mailbox
 
 ### DelegateTo
 
-
+Optional user who receives delegated access to the mailbox.
 
 | Property | Value |
 | --- | --- |
@@ -51,7 +51,7 @@ Organization → Mail → Add Equipment Mailbox
 
 ### AutoAccept
 
-
+If set to true, meeting requests are automatically accepted.
 
 | Property | Value |
 | --- | --- |
@@ -61,7 +61,7 @@ Organization → Mail → Add Equipment Mailbox
 
 ### AutoMapping
 
-
+If set to true, the mailbox is automatically mapped in Outlook for the delegate.
 
 | Property | Value |
 | --- | --- |
@@ -71,7 +71,7 @@ Organization → Mail → Add Equipment Mailbox
 
 ### DisableUser
 
-
+If set to true, the associated Entra ID user account is disabled.
 
 | Property | Value |
 | --- | --- |

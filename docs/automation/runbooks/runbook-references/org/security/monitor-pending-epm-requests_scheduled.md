@@ -1,6 +1,6 @@
 ---
 title: Monitor Pending EPM Requests (Scheduled)
-description: Monitor and report pending Endpoint Privilege Management (EPM) elevation requests.
+description: Monitor and report pending Endpoint Privilege Management (EPM) elevation requests
 ---
 
 ## Description

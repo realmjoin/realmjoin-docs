@@ -21,7 +21,7 @@ Device → General → Rename Device
 ## Parameters
 ### DeviceId
 
-
+The device ID of the target device.
 
 | Property | Value |
 | --- | --- |
@@ -31,7 +31,7 @@ Device → General → Rename Device
 
 ### NewDeviceName
 
-
+The new device name to set. This runbook validates the name against common Windows hostname constraints.
 
 | Property | Value |
 | --- | --- |

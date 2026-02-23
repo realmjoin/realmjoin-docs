@@ -4,7 +4,8 @@ description: Create an Office 365 group and SharePoint site, optionally create a
 ---
 
 ## Description
-Create an Office 365 group and SharePoint site, optionally create a (Teams) team.
+This runbook creates a Microsoft 365 group and provisions the related SharePoint site.
+It can optionally promote the group to a Microsoft Teams team after creation.
 
 ## Location
 Organization → General → Add Office365 Group
@@ -19,7 +20,7 @@ Organization → General → Add Office365 Group
 ## Parameters
 ### MailNickname
 
-
+Mail nickname used for group creation.
 
 | Property | Value |
 | --- | --- |
@@ -29,7 +30,7 @@ Organization → General → Add Office365 Group
 
 ### DisplayName
 
-
+Optional display name. If empty, MailNickname is used.
 
 | Property | Value |
 | --- | --- |
@@ -39,7 +40,7 @@ Organization → General → Add Office365 Group
 
 ### CreateTeam
 
-
+Choose to "Only create a SharePoint Site" (final value: $false) or "Create a Team (and SharePoint Site)" (final value: $true). A team needs an owner, so if CreateTeam is set to true and no owner is specified, the runbook will set the caller as the owner.
 
 | Property | Value |
 | --- | --- |
@@ -49,7 +50,7 @@ Organization → General → Add Office365 Group
 
 ### Private
 
-[ValidateScript( { Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process; Use-RJInterface -DisplayName "Group is private" } )]
+Choose the group visibility: "Public" (final value: $false) or "Private" (final value: $true).
 
 | Property | Value |
 | --- | --- |
@@ -59,7 +60,7 @@ Organization → General → Add Office365 Group
 
 ### MailEnabled
 
-[ValidateScript( { Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process; Use-RJInterface -DisplayName "Group is mail-enabled" } )]
+If set to true, the group is mail-enabled.
 
 | Property | Value |
 | --- | --- |
@@ -69,7 +70,7 @@ Organization → General → Add Office365 Group
 
 ### SecurityEnabled
 
-[ValidateScript( { Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process; Use-RJInterface -DisplayName "Group is security-enabled" } )]
+If set to true, the group is security-enabled.
 
 | Property | Value |
 | --- | --- |
@@ -79,7 +80,7 @@ Organization → General → Add Office365 Group
 
 ### Owner
 
-
+Optional owner of the group.
 
 | Property | Value |
 | --- | --- |
@@ -89,7 +90,7 @@ Organization → General → Add Office365 Group
 
 ### Owner2
 
-
+Optional second owner of the group.
 
 | Property | Value |
 | --- | --- |

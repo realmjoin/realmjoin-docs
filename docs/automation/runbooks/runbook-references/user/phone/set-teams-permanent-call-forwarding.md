@@ -1,10 +1,10 @@
 ---
 title: Set Teams Permanent Call Forwarding
-description: Set up immediate call forwarding for a Microsoft Teams Enterprise Voice user.
+description: Set immediate call forwarding for a Teams user
 ---
 
 ## Description
-Set up instant call forwarding for a Microsoft Teams Enterprise Voice user. Forwarding to another Microsoft Teams Enterprise Voice user or to an external phone number.
+Configures immediate call forwarding for a Teams Enterprise Voice user to a Teams user, a phone number, voicemail, or the user's delegates. The runbook can also disable immediate forwarding.
 
 ## Location
 User → Phone → Set Teams Permanent Call Forwarding
@@ -21,7 +21,7 @@ User → Phone → Set Teams Permanent Call Forwarding
 ## Parameters
 ### UserName
 
-User which should be set up. Could be filled with the user picker in the UI.
+User principal name of the target user.
 
 | Property | Value |
 | --- | --- |
@@ -31,7 +31,7 @@ User which should be set up. Could be filled with the user picker in the UI.
 
 ### ForwardTargetPhoneNumber
 
-Phone number to which calls should be forwarded. Must be in E.164 format (e.g. +49123456789).
+Phone number to which calls should be forwarded. Must be in E.164 format (e.g. +49123456789)
 
 | Property | Value |
 | --- | --- |
@@ -41,7 +41,7 @@ Phone number to which calls should be forwarded. Must be in E.164 format (e.g. +
 
 ### ForwardTargetTeamsUser
 
-Teams user to which calls should be forwarded. Could be filled with the user picker in the UI.
+User principal name of the Teams user to forward calls to.
 
 | Property | Value |
 | --- | --- |
@@ -51,7 +51,7 @@ Teams user to which calls should be forwarded. Could be filled with the user pic
 
 ### ForwardToVoicemail
 
-Forward calls to voicemail.
+If set to true, forwards calls to voicemail.
 
 | Property | Value |
 | --- | --- |
@@ -61,7 +61,7 @@ Forward calls to voicemail.
 
 ### ForwardToDelegates
 
-Forward calls to delegates which are defined by the user.
+If set to true, forwards calls to the delegates defined by the user.
 
 | Property | Value |
 | --- | --- |
@@ -71,7 +71,7 @@ Forward calls to delegates which are defined by the user.
 
 ### TurnOffForward
 
-Turn off immediate call forwarding.
+If set to true, disables immediate call forwarding.
 
 | Property | Value |
 | --- | --- |

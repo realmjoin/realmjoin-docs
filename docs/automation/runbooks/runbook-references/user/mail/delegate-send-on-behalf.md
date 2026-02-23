@@ -1,10 +1,11 @@
 ---
 title: Delegate Send On Behalf
-description: Grant another user sendOnBehalf permissions on this mailbox.
+description: Delegate SendOnBehalf permissions for the user's mailbox
 ---
 
 ## Description
-Grant another user sendOnBehalf permissions on this mailbox.
+Grants or removes SendOnBehalf permissions for a delegate on the user's mailbox. Outputs the resulting SendOnBehalf trustees after applying the change.
+This allows the delegate to send emails on behalf of the mailbox owner.
 
 ## Location
 User → Mail → Delegate Send On Behalf
@@ -21,7 +22,7 @@ User → Mail → Delegate Send On Behalf
 ## Parameters
 ### UserName
 
-
+User principal name of the mailbox.
 
 | Property | Value |
 | --- | --- |
@@ -31,7 +32,7 @@ User → Mail → Delegate Send On Behalf
 
 ### delegateTo
 
-
+User principal name of the delegate.
 
 | Property | Value |
 | --- | --- |
@@ -41,7 +42,7 @@ User → Mail → Delegate Send On Behalf
 
 ### Remove
 
-
+If set to true, removes the delegation instead of granting it.
 
 | Property | Value |
 | --- | --- |

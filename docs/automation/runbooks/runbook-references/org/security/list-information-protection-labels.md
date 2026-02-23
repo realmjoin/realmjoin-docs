@@ -1,10 +1,10 @@
 ---
 title: List Information Protection Labels
-description: Prints a list of all available InformationProtectionPolicy labels.
+description: List Microsoft Information Protection labels
 ---
 
 ## Description
-Prints a list of all available InformationProtectionPolicy labels.
+Retrieves all available Microsoft Information Protection labels in the tenant. This can be used to get the label IDs for use in other runbooks, e.g. for auto-labeling based on sensitivity.
 
 ## Location
 Organization → Security → List Information Protection Labels

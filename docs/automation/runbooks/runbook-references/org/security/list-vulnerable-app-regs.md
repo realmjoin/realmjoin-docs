@@ -1,10 +1,10 @@
 ---
 title: List Vulnerable App Regs
-description: List all app registrations that suffer from the CVE-2021-42306 vulnerability.
+description: List app registrations potentially vulnerable to CVE-2021-42306
 ---
 
 ## Description
-List all app registrations that suffer from the CVE-2021-42306 vulnerability.
+Lists Azure AD app registrations that may be affected by CVE-2021-42306 by inspecting stored key credentials. Optionally exports the findings to a CSV file in Azure Storage.
 
 ## Location
 Organization → Security → List Vulnerable App Regs
@@ -18,7 +18,7 @@ Organization → Security → List Vulnerable App Regs
 ## Parameters
 ### ExportToFile
 
-
+"List in Console" (final value: $false) or "Export to a CSV file" (final value: $true) can be selected as action to perform. The export saves the findings to a CSV file in Azure Storage.
 
 | Property | Value |
 | --- | --- |
@@ -28,7 +28,7 @@ Organization → Security → List Vulnerable App Regs
 
 ### ContainerName
 
-
+Name of the Azure Storage container to upload the CSV report to.
 
 | Property | Value |
 | --- | --- |
@@ -38,7 +38,7 @@ Organization → Security → List Vulnerable App Regs
 
 ### ResourceGroupName
 
-
+Name of the Azure Resource Group containing the Storage Account.
 
 | Property | Value |
 | --- | --- |
@@ -48,7 +48,7 @@ Organization → Security → List Vulnerable App Regs
 
 ### StorageAccountName
 
-
+Name of the Azure Storage Account used for upload.
 
 | Property | Value |
 | --- | --- |
@@ -58,7 +58,7 @@ Organization → Security → List Vulnerable App Regs
 
 ### StorageAccountLocation
 
-
+Azure region for the Storage Account if it needs to be created.
 
 | Property | Value |
 | --- | --- |
@@ -68,7 +68,7 @@ Organization → Security → List Vulnerable App Regs
 
 ### StorageAccountSku
 
-
+SKU name for the Storage Account if it needs to be created.
 
 | Property | Value |
 | --- | --- |

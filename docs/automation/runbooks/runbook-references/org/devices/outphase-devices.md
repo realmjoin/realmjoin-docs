@@ -1,10 +1,11 @@
 ---
 title: Outphase Devices
-description: Remove/Outphase multiple devices
+description: Remove or outphase multiple devices
 ---
 
 ## Description
-Remove/Outphase multiple devices. You can choose if you want to wipe the device and/or delete it from Intune an AutoPilot.
+This runbook outphases multiple devices based on a comma-separated list of device IDs or serial numbers.
+It can optionally wipe devices in Intune and delete or disable the corresponding Entra ID device objects.
 
 ## Location
 Organization → Devices → Outphase Devices
@@ -24,7 +25,7 @@ Organization → Devices → Outphase Devices
 ## Parameters
 ### DeviceListChoice
 
-
+Determines whether the list contains device IDs or serial numbers.
 
 | Property | Value |
 | --- | --- |
@@ -34,7 +35,7 @@ Organization → Devices → Outphase Devices
 
 ### DeviceList
 
-
+Comma-separated list of device IDs or serial numbers.
 
 | Property | Value |
 | --- | --- |
@@ -44,7 +45,7 @@ Organization → Devices → Outphase Devices
 
 ### intuneAction
 
-
+Determines whether to wipe the device, delete it from Intune, or skip Intune actions.
 
 | Property | Value |
 | --- | --- |
@@ -54,7 +55,7 @@ Organization → Devices → Outphase Devices
 
 ### aadAction
 
-
+Determines whether to delete the Entra ID device, disable it, or skip Entra ID actions.
 
 | Property | Value |
 | --- | --- |
@@ -64,7 +65,7 @@ Organization → Devices → Outphase Devices
 
 ### wipeDevice
 
-
+Internal flag derived from intuneAction.
 
 | Property | Value |
 | --- | --- |
@@ -74,7 +75,7 @@ Organization → Devices → Outphase Devices
 
 ### removeIntuneDevice
 
-
+Internal flag derived from intuneAction.
 
 | Property | Value |
 | --- | --- |
@@ -84,7 +85,7 @@ Organization → Devices → Outphase Devices
 
 ### removeAutopilotDevice
 
-
+"Remove the device from Autopilot" (final value: true) or "Keep device in Autopilot" (final value: false) handles whether to delete the device from the Autopilot database.
 
 | Property | Value |
 | --- | --- |
@@ -94,7 +95,7 @@ Organization → Devices → Outphase Devices
 
 ### removeAADDevice
 
-
+Internal flag derived from aadAction.
 
 | Property | Value |
 | --- | --- |
@@ -104,7 +105,7 @@ Organization → Devices → Outphase Devices
 
 ### disableAADDevice
 
-
+Internal flag derived from aadAction.
 
 | Property | Value |
 | --- | --- |

@@ -1,6 +1,6 @@
 ---
 title: List Users By MFA Methods Count
-description: Reports users by the count of their registered MFA methods.
+description: Report users by the count of their registered MFA methods
 ---
 
 ## Description
