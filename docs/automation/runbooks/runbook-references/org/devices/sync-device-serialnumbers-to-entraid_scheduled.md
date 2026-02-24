@@ -14,15 +14,15 @@ Organization → Devices → Sync Device Serialnumbers To Entraid_Scheduled
 ### Application permissions
 - **Type**: Microsoft Graph
   - Organization.Read.All
-  - DeviceManagementManagedDevices.Read.All
   - Device.ReadWrite.All
+  - DeviceManagementManagedDevices.Read.All
   - Mail.Send
 
 
 ## Parameters
 ### ExtensionAttributeNumber
 
-Extension attribute number to update.
+Extension attribute number to update
 
 | Property | Value |
 | --- | --- |
