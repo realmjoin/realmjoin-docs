@@ -57,7 +57,7 @@ Also the document for each runbook contains information about permissions, where
 
 - [Devices](group/README.md#group-devices)
   - [Check Updatable Assets](group/devices/check-updatable-assets.md)
-  - [Unenroll Updatable Assets](group/devices/unenroll-updatable-assets.md)
+  - [Unenroll Updatable Assets (Scheduled)](group/devices/unenroll-updatable-assets_scheduled.md)
 - [General](group/README.md#group-general)
   - [Add Or Remove Nested Group](group/general/add-or-remove-nested-group.md)
   - [Add Or Remove Owner](group/general/add-or-remove-owner.md)

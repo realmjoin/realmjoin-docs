@@ -85,7 +85,7 @@
     * [Group Runbooks](automation/runbooks/runbook-references/group/README.md)
       * [Devices](automation/runbooks/runbook-references/group/devices/README.md)
         * [Check Updatable Assets](automation/runbooks/runbook-references/group/devices/check-updatable-assets.md)
-        * [Unenroll Updatable Assets](automation/runbooks/runbook-references/group/devices/unenroll-updatable-assets.md)
+        * [Unenroll Updatable Assets Scheduled](automation/runbooks/runbook-references/group/devices/unenroll-updatable-assets_scheduled.md)
       * [General](automation/runbooks/runbook-references/group/general/README.md)
         * [Add Or Remove Nested Group](automation/runbooks/runbook-references/group/general/add-or-remove-nested-group.md)
         * [Add Or Remove Owner](automation/runbooks/runbook-references/group/general/add-or-remove-owner.md)
