@@ -39,6 +39,10 @@ Please make sure to only use the "Reload-Button" in the top right corner if you 
 
 Advanced Search allows querying across available table values using a flexible and powerful syntax. Below are the key features and rules:
 
+{% hint style="success" %}
+Click [here](advanced-search-syntax.md) for more examples and sample use cases
+{% endhint %}
+
 * **Tokenized Search**:\
   Search terms are automatically tokenized to improve matching accuracy. For example, typing `lu sk` will match names like **Luke Skywalker**. The search always uses a **starts-with** approach rather than a full-text or "contains" search. This means a search for `walk` would **not** return **Skywalker**.
 * **Logical AND**:\
@@ -87,7 +91,7 @@ In the top right corner of each table, there's a button to refresh the cached da
 
 The table is available for all users in the same RealmJoin portal instance. Thus, a triggered rebuild will do so for all those users.&#x20;
 
-#### What is an RealmJoin portal instance?
+#### What is a RealmJoin portal instance?
 
 The RealmJoin portal has three different instances for load balancing and redundancy reasons.&#x20;
 
