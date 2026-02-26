@@ -81,6 +81,7 @@
         * [Isolate Or Release Device](automation/runbooks/runbook-references/device/security/isolate-or-release-device.md)
         * [Reset Mobile Device Pin](automation/runbooks/runbook-references/device/security/reset-mobile-device-pin.md)
         * [Restrict Or Release Code Execution](automation/runbooks/runbook-references/device/security/restrict-or-release-code-execution.md)
+        * [Show Bitlocker Recovery Key](automation/runbooks/runbook-references/device/security/show-bitlocker-recovery-key.md)
         * [Show Laps Password](automation/runbooks/runbook-references/device/security/show-laps-password.md)
     * [Group Runbooks](automation/runbooks/runbook-references/group/README.md)
       * [Devices](automation/runbooks/runbook-references/group/devices/README.md)

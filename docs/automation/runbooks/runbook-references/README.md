@@ -51,6 +51,7 @@ Also the document for each runbook contains information about permissions, where
   - [Isolate Or Release Device](device/security/isolate-or-release-device.md)
   - [Reset Mobile Device Pin](device/security/reset-mobile-device-pin.md)
   - [Restrict Or Release Code Execution](device/security/restrict-or-release-code-execution.md)
+  - [Show Bitlocker Recovery Key](device/security/show-bitlocker-recovery-key.md)
   - [Show Laps Password](device/security/show-laps-password.md)
 
 ### Group Runbooks

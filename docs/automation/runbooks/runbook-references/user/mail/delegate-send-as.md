@@ -22,7 +22,7 @@ User → Mail → Delegate Send As
 ## Parameters
 ### UserName
 
-
+User principal name of the mailbox.
 
 | Property | Value |
 | --- | --- |
