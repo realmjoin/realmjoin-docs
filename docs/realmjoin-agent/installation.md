@@ -7,8 +7,8 @@ This guide outlines the recommended and supported method for installing the Real
 
 ### Microsoft Intune (intunewin)
 
-{% hint style="info" %}
-Recommended and fully supported.
+{% hint style="success" %}
+Recommended
 {% endhint %}
 
 RealmJoin integrates directly with your Microsoft Intune tenant by adding and updating the agent as an intunewin package:
@@ -24,7 +24,7 @@ RealmJoin integrates directly with your Microsoft Intune tenant by adding and up
 <figure><img src="../.gitbook/assets/image (56) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-RealmJoin agent will **check for newer versions** during **inital deployment** and **update if required**. To speed up this process, we still recommend "Automation Main channel". This ensures that the most current version is installed right from the start.
+RealmJoin agent will **check for newer versions** during **initial deployment** and **update if required**. To speed up this process, we still recommend "Automate Main channel". This ensures that the most current version is installed right from the start.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -105,7 +105,7 @@ RealmJoin can be deployed via [MSI installer](installation.md#msi-installer) as 
 
 ### Interactive Installation via Command Line
 
-If an administrator wants to install RealmJoin Agent on a device without mass deployment or the Microsoft Intune infrastructure, one may download the MSI and do an interactive installation. As alternative, you can also copy one of the command lines below to download and run the Agent in a single step.
+If an administrator wants to install RealmJoin Agent on a device without mass deployment or the Microsoft Intune infrastructure, one may download the MSI and do an interactive installation. As an alternative, you can also copy one of the command lines below to download and run the Agent in a single step.
 
 #### MSI installer and EXE
 

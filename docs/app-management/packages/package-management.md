@@ -1,6 +1,6 @@
 # Package Management Overview
 
-Package Management allows to show all packages that currently exist in your environment across RealmJoin and Microsoft Intune.
+Package Management shows all packages that currently exist in your environment across RealmJoin and Microsoft Intune.
 
 <figure><img src="../../.gitbook/assets/image (143).png" alt=""><figcaption><p>Package Management List</p></figcaption></figure>
 

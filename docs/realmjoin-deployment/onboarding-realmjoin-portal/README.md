@@ -1,5 +1,5 @@
 ---
-description: Step by step guide to use RealmJoin Portal in a new tenant
+description: Step by step guide on deploying the RealmJoin Portal to a new tenant
 ---
 
 # Onboarding

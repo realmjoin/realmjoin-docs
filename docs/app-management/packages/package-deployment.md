@@ -4,7 +4,7 @@
 
 ## Managed Subscription
 
-Packages subscribed as managed come with automatically created and RealmJoin managed user groups. There are different types of groups available that can be chosen based on the specifics of the scenario.
+Packages subscribed as managed come with managed user groups. There are different types of groups available that can be chosen based on your scenario.
 
 {% hint style="info" %}
 Managed packages are the preferred way to deploy software to your users. You can combine it with automated package updates and lifecycle to ensure your users receive latest features and patches.
@@ -40,7 +40,7 @@ RealmJoin or Intune will uninstall the package from the assigned users and devic
 
 ### Update
 
-Additionally, RealmJoin provides an Update group that is created on demand. The Update group will automatically onboard loose installations of a software title into management. Devices will be removed from the group when the update is not required anymore. The group management is solely done by the RealmJoin portal and shall not be modified manually.
+The Update group is created on demand. The Update group will automatically onboard loose installations of a software title into management. Devices will be removed from the group when the update is not required anymore. The group is managed by the RealmJoin portal and cannot be modified manually.
 
 Click [**Enable update group**](package-deployment.md#enable-additional-and-restore-default-groups) and a new Entra ID Group with the suffix "(update)" will be created. Software installations will be also assigned to this group. RealmJoin dynamically discovers installed copies of the software that are unmanaged and adds the devices to the group.
 
@@ -82,7 +82,7 @@ Via the "More"-Button you can activate the optional update group, manage exclude
 Users and devices should only be in one RealmJoin managed group at any given time.
 {% endhint %}
 
-Users and devices can easily be moved across groups using the Managed users function.
+Users and devices can easily be moved across groups using the _Managed users_ function.
 
 <figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 

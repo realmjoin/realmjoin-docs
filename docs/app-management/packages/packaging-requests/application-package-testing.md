@@ -34,6 +34,3 @@ Most application packaging requests undergo a four-stage testing cycle to valida
 * Exit codes are validated across all scenarios
 * **Malware scanning** is performed on generic-packages during the automated build as a mandatory security gate
 
-
-
-###

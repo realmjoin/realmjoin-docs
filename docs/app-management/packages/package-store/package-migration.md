@@ -4,7 +4,9 @@ description: Packages can be migrated to "Managed" if previously deployed as "Ba
 
 # Package Migration
 
-Package migration is only available for RealmJoin packages
+{% hint style="warning" %}
+Package migration is only available for **RealmJoin** packages
+{% endhint %}
 
 ## Identifying Packages
 

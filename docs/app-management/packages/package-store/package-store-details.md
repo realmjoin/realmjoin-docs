@@ -12,14 +12,15 @@ Video tutorial
 
 <figure><img src="../../../.gitbook/assets/image (35) (1).png" alt=""><figcaption><p>Subscribe Buttons</p></figcaption></figure>
 
-Packages will either be pushed directly to Intune as .intunewin packages or deployed using the RealmJoin agent on the device (recommended).&#x20;
+Packages will either be pushed directly to Intune as intunewin packages or deployed using the RealmJoin agent on the device (recommended).&#x20;
 
 ## Subscription Type
 
 Packages can be subscribed as _managed_ or _basic_.
 
-* _Basic_ packages are available for assignment to groups or users and do not offer additional features. If you've used RealmJoin Classic (2015-2024), you'll be familiar with Basic packages.&#x20;
-* _Managed_ packages leave the group management and assignment to the RealmJoin backend. A fixed number if groups is created. The assignment of the package is only available to those. The groups include preview and uninstall groups. The static connection between the RealmJoin backend and the Entra group also allows utilize additional features like the automatic update of packages if a new version is published in RealmJoin. Find more on the managed groups [here](https://docs.realmjoin.com/app-management/packages/package-deployment#managed-deployment)
+* _Basic_ packages are available for assignment to groups or users and do not offer additional features. &#x20;
+* _Managed_ packages allow RealmJoin to handle group creation and assignment.\
+  The backend automatically creates a fixed set of groups, including preview and uninstall groups, and package assignments can only be made to these groups. Find more about managed groups [here](https://docs.realmjoin.com/app-management/packages/package-deployment#managed-deployment)
 
 
 
@@ -33,14 +34,14 @@ Nearly all packages from the RealmJoin store can either be subscribed for RealmJ
 
 ### RealmJoin Deployment
 
-RealmJoin driven deployment relies on the RealmJoin agent installed on the device. Using a modified Chocolatey engine and Powershell, all code and installation commands are executed directly on the device. Binaries are downloaded during the installation.&#x20;
+RealmJoin driven deployment relies on the RealmJoin agent installed on the device. Using a modified Chocolatey engine and PowerShell, all code and installation commands are executed directly on the device. Binaries are downloaded during the installation.&#x20;
 
 ### Intune Deployment
 
-The Intune driven deployment pushes the .intunewin version of the package directly into the tenant. It can be managed either from the RealmJoin portal or in Intune directly. The .intunewin packages contain all binaries as well as a Powershell based deploy kit.&#x20;
+The Intune driven deployment pushes the intunewin version of the package directly into the tenant. It can be managed either from the RealmJoin portal or in Intune directly. The intunewin packages contain all binaries as well as a PowerShell based deploy kit.&#x20;
 
 {% hint style="info" %}
-As of today, we recommend RealmJoin driven deployment, as it offers more options and manageability.&#x20;
+We recommend RealmJoin driven deployment, as it offers more options and manageability.&#x20;
 {% endhint %}
 
 ## App Categories

@@ -1,20 +1,21 @@
-# Packaging Requests
+---
+description: >-
+  RealmJoin provides Packaging‑as‑a‑Service (PACKaaS) for applications not
+  available in the RJ Store or for outdated packages. For details, contact your
+  RealmJoin consultant, partner, or support team.
+---
 
-RealmJoin offers a Packaging-as-a-Services (PACKaaS) if application packages are required, that are not already available in the RJ store, or are outdated. This section shall give a comprehensive overview over different scenarios. For more detailed information get in touch with your RealmJoin consultant/partner/support.&#x20;
+# Packaging Requests
 
 ## Architecture (Win11 & macOS)
 
-The glueckkanja Packaging Factory is currently optimized for Windows 11 application requests, providing comprehensive support and reliable packaging services for the Windows ecosystem. We are actively developing full macOS integration, which will significantly expand our capabilities and introduce hundreds of ready-to-use applications in the RealmJoin store, creating a more comprehensive cross-platform experience for our users.
+The RealmJoin Packaging Factory is currently optimized for Windows 11 application requests, delivering robust and reliable packaging services across the Windows ecosystem. Full macOS support is in active development and will add hundreds of ready‑to‑use macOS applications to the RealmJoin Store, enabling a more complete cross‑platform experience.
 
-While macOS packages remain in preview status as we continue to refine our macOS packaging pipeline, we accept macOS application requests on a best-effort basis. Our team will work diligently to accommodate these requests within our current development framework, though please note that processing times and availability may vary as we continue to enhance our macOS integration capabilities.
+macOS packages are currently in preview as we continue refining the macOS packaging pipeline. We accept macOS application requests on a best‑effort basis, though processing times and availability may vary during this development phase. Our team will handle these requests as effectively as possible within the current framework.
 
 We appreciate your patience as we work toward delivering the same level of excellence for macOS that our Windows 11 users currently enjoy.
 
-## Request Types
-
-Three different PACKaaS requests are currently available: new package, update existing package and [organic packages](organic-packages.md).&#x20;
-
-### Private vs. generic packaging
+### Private vs Generic Packaging
 
 #### Generic Packages in RealmJoin
 
@@ -22,9 +23,13 @@ We aim to create packages as **generic** as possible. This allows all settings t
 
 #### Private Packages in RealmJoin
 
-**Custom** packages are exclusively available for customers in their **custom** section of the RealmJoin store. The **custom** namespaces are used for modified installers, including those customized by the vendor for the customer, such as SAP, or for customer-developed apps and similar cases.
+**Custom** packages are exclusively available for customers in their **custom** section of the RealmJoin **Package Store**. The **custom** namespaces are used for modified installers, including those customized by the vendor for the customer, such as SAP, or for customer-developed apps and similar cases.
 
-We invite customers to share their evaluation on whether an application can be packaged as _generic_ or requires a _custom_ package. However, the final decision is made by the glueckkanja Packaging Factory. Note that _private_ packages incur additional costs.
+We invite customers to share their evaluation on whether an application can be packaged as _generic_ or requires a _custom_ package, however, the final decision is made by the RealmJoin Packaging Factory. Note that _private_ packages incur additional costs.
+
+## Request Types
+
+Three different PACKaaS requests are currently available: new package, update existing package and [organic packages](organic-packages.md).&#x20;
 
 ### New Packages
 
@@ -33,7 +38,7 @@ If an application is not available in the RealmJoin Store, it can be requested f
 * **Application binaries**, which must always be uploaded for regular packaging requests (a download URL may be added for reference but is **not** sufficient).
 * **Documentation** describing all required configuration switches as command‑line parameters, registry keys, configuration files, or similar (screenshots are not accepted; PACKaaS does not include Scripting‑as‑a‑Service).
 * **Packaging type selection**, specifying whether the application should be created as a _generic_ package (when no customer‑specific data is included) or as a _private/custom_ package (additional fees may apply). The Packaging Factory may change a request from generic to private if justified; for example, when customer‑specific details are identified during processing. Customers will be informed of such changes before the request is completed.
-* **A contact email address**, which may differ from the currently authenticated user’s email.
+* **Contact email address**, which may differ from the currently authenticated user’s email.
 * **Installation parameters**, which may be entered directly in the request instead of embedding them in the ZIP file.
 * **Use of “skip upload”**, which is allowed only when updating or adding parameters to an existing package—binaries must still be provided for all standard packaging requests.
 
@@ -41,7 +46,7 @@ If an application is not available in the RealmJoin Store, it can be requested f
 
 ### Package Updates
 
-If an application is required in a newer version than the one available in the RealmJoin Store, the same processes and requirements apply as for new package requests. When the updated binary behaves identically to the existing version, command‑line parameters may be omitted from the request. A dropdown list is available showing all packages currently subscribed to within the tenant, and update requests can only be submitted for those subscribed packages.
+If an application is required in a newer version than the one available in the RealmJoin Store, the same processes and requirements apply as new package requests. When the updated binary behaves identically to the existing version, command‑line parameters may be omitted from the request. A dropdown list is available showing all packages currently subscribed to within the tenant, and update requests can only be submitted for those subscribed packages.
 
 <figure><img src="../../../.gitbook/assets/26-02-09-10_07_45_msedge.png" alt=""><figcaption><p>RealmJoin package request form for package updates.</p></figcaption></figure>
 

@@ -4,7 +4,7 @@
 
 **Maintained Packages**
 
-* **Regular Updates**: These packages are consistently monitored by the GK Packaging Factory.
+* **Regular Updates**: These packages are consistently monitored by the RealmJoin Packaging Factory.
 * **Update Process**: After rigorous checks, updates are published in the store.
 * **Support Options**: If updates are missing, customers can open a support ticket to address this.
 
@@ -31,9 +31,9 @@
 
 **Responsibilities**
 
-Maintained application packages will be updated once the vendor releases updates. The GK Packaging Factory does not monitor non-maintained applications. Customers are responsible for monitoring and request updates for all other applications themselves.
+Maintained application packages will be updated once the vendor releases updates. The RealmJoin Packaging Factory does not monitor non-maintained applications. Customers are responsible for monitoring and request updates for all other applications themselves.
 
-| Process Step                | glueckkanja                   | Customer                                   |
+| Process Step                | RealmJoin                     | Customer                                   |
 | --------------------------- | ----------------------------- | ------------------------------------------ |
 | creation generic packages   | packaging                     | requesting                                 |
 | custom package creation     | packaging                     | requesting                                 |
