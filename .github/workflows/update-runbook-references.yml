@@ -90,6 +90,21 @@ jobs:
 
           Write-Host "✅ Runbook changelog generated"
 
+      - name: 📦 Update Runbook Requirements
+        shell: pwsh
+        run: |
+          Write-Host "📦 Updating runbook requirements page..."
+
+          $scriptPath = "./.github/scripts/Get-RunbookRequirements.ps1"
+          $runbooksPath = "./runbooks-repo"
+          $targetFile = "./docs/automation/connecting-azure-automation/azure-ad-roles-and-permissions.md"
+
+          & $scriptPath `
+            -RunbooksRepoPath (Resolve-Path $runbooksPath).Path `
+            -TargetMarkdownFilePath $targetFile
+
+          Write-Host "✅ Requirements updated"
+
       - name: 📝 Update SUMMARY.md
         shell: pwsh
         run: |
@@ -109,6 +124,7 @@ jobs:
           
           git add docs/automation/runbooks/runbook-references
           git add docs/automation/runbooks/runbook-changelog.md
+          git add docs/automation/connecting-azure-automation/azure-ad-roles-and-permissions.md
           git add docs/SUMMARY.md
           
           if git diff --staged --quiet; then
