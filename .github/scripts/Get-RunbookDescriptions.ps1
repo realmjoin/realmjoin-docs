@@ -753,6 +753,9 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
                 }
                 if ($includeWhereToFind) {
                     $locationPath = $runbook.RunbookDisplayPath -replace ' \\\\ ', ' → '
+                    if ($locationPath -match '_[Ss]cheduled$') {
+                        $locationPath = $locationPath -replace '_[Ss]cheduled$', ' (Scheduled)'
+                    }
                     Add-Content -Path $runbookFilePath -Value "## Location"
                     Add-Content -Path $runbookFilePath -Value $locationPath
                     Add-Content -Path $runbookFilePath -Value ""
