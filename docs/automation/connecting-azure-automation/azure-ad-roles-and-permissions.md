@@ -14,15 +14,15 @@ The shared runbooks available on [GitHub](https://github.com/realmjoin/realmjoin
 
 | Module | Minimum version in runbooks |
 |---|---|
-| `Az.Accounts` | 5.1.1 |
+| `Az.Accounts` | 5.3.2 |
 | `Az.Compute` | 5.1.1 |
 | `Az.DesktopVirtualization` | 5.4.1 |
 | `Az.ManagementPartner` | Not specified |
-| `Az.Resources` | Not specified |
-| `Az.Storage` | Not specified |
-| `ExchangeOnlineManagement` | 3.9.0 |
-| `Microsoft.Graph.Authentication` | 2.34.0 |
-| `MicrosoftTeams` | 7.5.0 |
+| `Az.Resources` | 9.0.1 |
+| `Az.Storage` | 9.6.0 |
+| `ExchangeOnlineManagement` | 3.9.2 |
+| `Microsoft.Graph.Authentication` | 2.35.1 |
+| `MicrosoftTeams` | 7.6.0 |
 | `RealmJoin.RunbookHelper` | 0.8.5 |
 
 RealmJoin Portal will automatically import and install these modules if referenced from inside a runbook. This import will also honor specified minimum versions for modules.
@@ -60,7 +60,6 @@ Please grant the following Graph API-Permissions to the managed identity
 * `DeviceLocalCredential.Read.All`
 * `DeviceManagementApps.ReadWrite.All`
 * `DeviceManagementConfiguration.ReadWrite.All`
-* `DeviceManagementManagedDevices.DeleteAll`
 * `DeviceManagementManagedDevices.PrivilegedOperations.All`
 * `DeviceManagementManagedDevices.ReadWrite.All`
 * `DeviceManagementServiceConfig.ReadWrite.All`
@@ -80,7 +79,6 @@ Please grant the following Graph API-Permissions to the managed identity
 * `Team.Create`
 * `TeamSettings.ReadWrite.All`
 * `User.ReadWrite.All`
-* `User.SendMail`
 * `UserAuthenticationMethod.ReadWrite.All`
 * `WindowsUpdates.ReadWrite.All`
 

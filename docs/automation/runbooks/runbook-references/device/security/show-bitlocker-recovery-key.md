@@ -13,7 +13,7 @@ Device → Security → Show Bitlocker Recovery Key
 ## Permissions
 ### Application permissions
 - **Type**: Microsoft Graph
-  - BitLockerKey.Read.All
+  - BitlockerKey.Read.All
 
 
 ## Parameters

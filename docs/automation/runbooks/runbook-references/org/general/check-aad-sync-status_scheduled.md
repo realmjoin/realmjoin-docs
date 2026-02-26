@@ -8,7 +8,7 @@ This runbook checks whether on-premises directory synchronization is enabled and
 It can send an email alert if synchronization is not enabled.
 
 ## Location
-Organization → General → Check Aad Sync Status_Scheduled
+Organization → General → Check Aad Sync Status (Scheduled)
 
 ## Permissions
 ### Application permissions

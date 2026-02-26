@@ -8,7 +8,7 @@ This runbook identifies Windows Autopilot devices that are not yet enrolled in I
 It also removes devices from the group once they are no longer in scope.
 
 ## Location
-Organization → General → Check Device Onboarding Exclusion_Scheduled
+Organization → General → Check Device Onboarding Exclusion (Scheduled)
 
 ## Permissions
 ### Application permissions

@@ -8,7 +8,7 @@ This runbook reports recent device enrollments based on a configurable time rang
 It can group results by a selected attribute and can optionally export the report as a CSV file.
 
 ## Location
-Organization → General → Enrolled Devices Report_Scheduled
+Organization → General → Enrolled Devices Report (Scheduled)
 
 ## Permissions
 ### Application permissions

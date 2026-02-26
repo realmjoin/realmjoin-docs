@@ -16,7 +16,7 @@ This process is described in detail in the [Setup Email Reporting](https://githu
 
 
 ## Location
-Organization → Security → Report EPM Elevation Requests_Scheduled
+Organization → Security → Report EPM Elevation Requests (Scheduled)
 
 ## Permissions
 ### Application permissions

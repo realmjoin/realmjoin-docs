@@ -15,7 +15,7 @@ This process is described in detail in the [Setup Email Reporting](https://githu
 
 
 ## Location
-Organization → General → Report Apple MDM Cert Expiry_Scheduled
+Organization → General → Report Apple MDM Cert Expiry (Scheduled)
 
 ## Permissions
 ### Application permissions

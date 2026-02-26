@@ -15,7 +15,7 @@ This process is described in detail in the [Setup Email Reporting](https://githu
 
 
 ## Location
-Organization → Applications → Report Expiring Application Credentials_Scheduled
+Organization → Applications → Report Expiring Application Credentials (Scheduled)
 
 ## Permissions
 ### Application permissions

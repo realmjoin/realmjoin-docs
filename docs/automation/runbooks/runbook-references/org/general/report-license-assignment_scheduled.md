@@ -150,7 +150,7 @@ Legacy `WarningThreshold` automatically maps to `MinThreshold` - old configurati
 
 
 ## Location
-Organization → General → Report License Assignment_Scheduled
+Organization → General → Report License Assignment (Scheduled)
 
 ## Permissions
 ### Application permissions

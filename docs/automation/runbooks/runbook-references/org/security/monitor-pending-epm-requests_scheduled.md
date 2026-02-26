@@ -16,7 +16,7 @@ This process is described in detail in the [Setup Email Reporting](https://githu
 
 
 ## Location
-Organization → Security → Monitor Pending EPM Requests_Scheduled
+Organization → Security → Monitor Pending EPM Requests (Scheduled)
 
 ## Permissions
 ### Application permissions

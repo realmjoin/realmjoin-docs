@@ -7,7 +7,7 @@ description: Hide or unhide special mailboxes in the Global Address List
 Hides or unhides special mailboxes in the Global Address List, currently intended for Bookings calendars. The runbook updates all scheduling mailboxes accordingly.
 
 ## Location
-Organization → Mail → Hide Mailboxes_Scheduled
+Organization → Mail → Hide Mailboxes (Scheduled)
 
 ## Permissions
 ### RBAC roles

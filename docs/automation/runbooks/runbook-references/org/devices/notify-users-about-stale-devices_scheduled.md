@@ -56,7 +56,7 @@ To use a custom mail template (e.g., in Dutch, Spanish, or any other language), 
 
 
 ## Location
-Organization → Devices → Notify Users About Stale Devices_Scheduled
+Organization → Devices → Notify Users About Stale Devices (Scheduled)
 
 ## Permissions
 ### Application permissions

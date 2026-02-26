@@ -11,7 +11,7 @@ User → Mail → Convert To Shared Mailbox
 
 ## Permissions
 ### Application permissions
-- **Type**: Office 365 Exchange Online API
+- **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp
 
 ### RBAC roles

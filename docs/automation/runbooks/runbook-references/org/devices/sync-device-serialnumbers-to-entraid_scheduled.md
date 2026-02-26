@@ -8,7 +8,7 @@ This runbook retrieves Intune managed devices and syncs their serial numbers int
 It can process all devices or only devices with missing or mismatched values and can optionally send an email report.
 
 ## Location
-Organization → Devices → Sync Device Serialnumbers To Entraid_Scheduled
+Organization → Devices → Sync Device Serialnumbers To Entraid (Scheduled)
 
 ## Permissions
 ### Application permissions

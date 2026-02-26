@@ -7,7 +7,7 @@ description: Write daily Windows 365 utilization data to Azure Table Storage
 Collects Windows 365 Cloud PC remote connection usage for the last full day and writes it to an Azure Table. The runbook creates the table if needed and merges records per tenant and timestamp.
 
 ## Location
-Organization → General → Export Cloudpc Usage_Scheduled
+Organization → General → Export Cloudpc Usage (Scheduled)
 
 ## Permissions
 ### Application permissions

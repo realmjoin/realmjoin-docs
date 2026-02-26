@@ -7,7 +7,7 @@ description: List role-assignable groups with eligible role assignments but with
 Finds role-assignable groups that have PIM eligible role assignments but no owners assigned. Optionally sends an email alert containing the group names.
 
 ## Location
-Organization → Security → List Pim Rolegroups Without Owners_Scheduled
+Organization → Security → List Pim Rolegroups Without Owners (Scheduled)
 
 ## Permissions
 ### Application permissions

@@ -8,7 +8,7 @@ This runbook adds users from a source group to one or more target groups.
 Target groups are provided via a template-driven string and can be resolved by group ID or display name.
 
 ## Location
-Organization → General → Assign Groups By Template_Scheduled
+Organization → General → Assign Groups By Template (Scheduled)
 
 ## Permissions
 ### Application permissions

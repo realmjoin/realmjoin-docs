@@ -13,7 +13,7 @@ User → Mail → Delegate Full Access
 
 ## Permissions
 ### Application permissions
-- **Type**: Office 365 Exchange Online API
+- **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp
 
 ### RBAC roles

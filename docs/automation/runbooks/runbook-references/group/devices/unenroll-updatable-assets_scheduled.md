@@ -9,7 +9,7 @@ You can remove a specific update category enrollment or delete the updatable ass
 Use this to offboard devices from WUfB reporting or to reset their enrollment state.
 
 ## Location
-Group → Devices → Unenroll Updatable Assets_Scheduled
+Group → Devices → Unenroll Updatable Assets (Scheduled)
 
 ## Permissions
 ### Application permissions

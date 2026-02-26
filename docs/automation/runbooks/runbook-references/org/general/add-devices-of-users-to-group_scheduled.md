@@ -8,7 +8,7 @@ This runbook reads accounts from a specified users group and adds their devices 
 It can filter devices by operating system and keeps the target group in sync.
 
 ## Location
-Organization → General → Add Devices Of Users To Group_Scheduled
+Organization → General → Add Devices Of Users To Group (Scheduled)
 
 ## Permissions
 ### Application permissions

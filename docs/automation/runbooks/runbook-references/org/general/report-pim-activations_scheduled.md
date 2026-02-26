@@ -8,7 +8,7 @@ This runbook queries Microsoft Entra ID audit logs for recent PIM activations.
 It builds an report and sends it via email.
 
 ## Location
-Organization → General → Report Pim Activations_Scheduled
+Organization → General → Report Pim Activations (Scheduled)
 
 ## Permissions
 ### Application permissions

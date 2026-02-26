@@ -8,13 +8,12 @@ This runbook identifies Intune managed devices that have not been active for a d
 It can optionally delete the matching devices and can send an email report.
 
 ## Location
-Organization → Devices → Delete Stale Devices_Scheduled
+Organization → Devices → Delete Stale Devices (Scheduled)
 
 ## Permissions
 ### Application permissions
 - **Type**: Microsoft Graph
-  - DeviceManagementManagedDevices.Read.All
-  - DeviceManagementManagedDevices.DeleteAll
+  - DeviceManagementManagedDevices.ReadWrite.All
   - Directory.Read.All
   - Device.Read.All
   - Mail.Send
