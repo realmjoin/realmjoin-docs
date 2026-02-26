@@ -12,7 +12,8 @@ Users interact with this app for self-service. Admins use this app to interact w
 
 All the following permissions are of the permission type “**Delegated**” ( = can only operate when a user is interactively signed in). Also, this app can be **consented per User** ( = admin consent is optional).
 
-All the following permissions target [MS Graph API](https://docs.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0). You can read more about the individual permissions [here](https://docs.microsoft.com/en-us/graph/permissions-reference).
+All the following permissions target [MS Graph API](https://docs.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0). \
+You can read more about the individual permissions [here](https://docs.microsoft.com/en-us/graph/permissions-reference).
 
 These permissions are required for basic functionality of the app per user.
 
@@ -27,8 +28,6 @@ The following permissions are from type "Delegated" and are mainly used for logi
 | `email`          | Reading user info (email address)           |
 | `openid`         | Sign in / authentication                    |
 | `offline_access` | Keep persisting data per user               |
-
-You can read more about MS Graph permissions here.
 
 ## RealmJoin Portal - Core Features
 
