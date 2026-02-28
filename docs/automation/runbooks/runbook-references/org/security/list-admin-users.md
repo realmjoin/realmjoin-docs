@@ -15,6 +15,7 @@ Organization → Security → List Admin Users
   - User.Read.All
   - Directory.Read.All
   - RoleManagement.Read.All
+  - RoleAssignmentSchedule.Read.Directory
 
 
 ## Parameters
@@ -30,7 +31,7 @@ If set to true, exports the report to an Azure Storage Account.
 
 ### PimEligibleUntilInCSV
 
-If set to true, includes PIM eligible until information in the CSV report.
+If set to true, includes PIM eligible/active until information in the CSV report.
 
 | Property | Value |
 | --- | --- |

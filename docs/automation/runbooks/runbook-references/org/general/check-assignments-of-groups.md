@@ -17,19 +17,20 @@ Organization → General → Check Assignments Of Groups
   - Group.Read.All
   - DeviceManagementConfiguration.Read.All
   - DeviceManagementManagedDevices.Read.All
+  - DeviceManagementApps.Read.All
   - Device.Read.All
 
 
 ## Parameters
-### GroupNames
+### GroupIDs
 
-Group Names of the groups to check assignments for, separated by commas.
+Group IDs of the groups to check assignments for
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
-| Type | String |
+| Type | String[] |
 
 ### IncludeApps
 

@@ -80,7 +80,7 @@ Optional Azure Subscription Id to set the context for Storage Account operations
 
 ### FilterGroupID
 
-Optional group filter (ObjectId). When specified, only devices whose primary owner is a member of this group are exported.
+Group filter. When specified, only devices whose primary owner is a member of this group are exported.
 
 | Property | Value |
 | --- | --- |
