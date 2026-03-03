@@ -9,7 +9,7 @@ Checks Conditional Access policies for changes in the last 24 hours and sends an
 ## Location
 Organization → Security → Notify Changed CA Policies
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-org_security_notify-changed-CA-Policies
 

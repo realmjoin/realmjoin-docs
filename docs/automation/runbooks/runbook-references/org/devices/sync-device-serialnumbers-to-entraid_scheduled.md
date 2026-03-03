@@ -10,7 +10,7 @@ It can process all devices or only devices with missing or mismatched values and
 ## Location
 Organization → Devices → Sync Device Serialnumbers To Entraid (Scheduled)
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-org_devices_sync-device-serialnumbers-to-entraid_scheduled
 

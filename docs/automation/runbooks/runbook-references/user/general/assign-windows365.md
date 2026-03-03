@@ -9,7 +9,7 @@ Assigns the required groups and license or Frontline provisioning policy to init
 ## Location
 User → General → Assign Windows365
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-user_general_assign-windows365
 

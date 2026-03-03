@@ -11,7 +11,7 @@ Use this to decommission inactive teams while preserving their contents for revi
 ## Location
 Group → Teams → Archive Team
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-group_teams_archive-team
 

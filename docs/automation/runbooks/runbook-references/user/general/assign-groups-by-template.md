@@ -9,7 +9,7 @@ Adds a user to one or more Entra ID groups using either group object IDs or disp
 ## Location
 User → General → Assign Groups By Template
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-user_general_assign-groups-by-template
 

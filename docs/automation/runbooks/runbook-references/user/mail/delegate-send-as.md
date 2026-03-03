@@ -10,7 +10,7 @@ This allows the delegate to send emails as if they were the mailbox owner.
 ## Location
 User → Mail → Delegate Send As
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-user_mail_delegate-send-as
 

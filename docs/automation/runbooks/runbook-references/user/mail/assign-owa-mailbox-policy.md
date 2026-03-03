@@ -10,7 +10,7 @@ This can be used to enable or restrict features such as the ability to use email
 ## Location
 User → Mail → Assign Owa Mailbox Policy
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-user_mail_assign-owa-mailbox-policy
 

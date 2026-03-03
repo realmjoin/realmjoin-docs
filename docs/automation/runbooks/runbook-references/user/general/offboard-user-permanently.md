@@ -9,7 +9,7 @@ Permanently offboards a user by revoking access, disabling or deleting the accou
 ## Location
 User → General → Offboard User Permanently
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-user_general_offboard-user-permanently
 

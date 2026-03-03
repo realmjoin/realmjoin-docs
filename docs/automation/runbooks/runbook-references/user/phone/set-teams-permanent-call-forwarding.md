@@ -9,7 +9,7 @@ Configures immediate call forwarding for a Teams Enterprise Voice user to a Team
 ## Location
 User → Phone → Set Teams Permanent Call Forwarding
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-user_phone_set-teams-permanent-call-forwarding
 

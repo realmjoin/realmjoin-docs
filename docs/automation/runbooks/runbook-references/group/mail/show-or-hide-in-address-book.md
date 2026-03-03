@@ -10,7 +10,7 @@ You can also query the current visibility state without making changes.
 ## Location
 Group → Mail → Show Or Hide In Address Book
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-group_mail_show-or-hide-in-address-book
 

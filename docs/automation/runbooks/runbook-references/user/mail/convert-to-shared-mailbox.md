@@ -9,7 +9,7 @@ Converts a mailbox to a shared mailbox or reverts it back to a regular user mail
 ## Location
 User → Mail → Convert To Shared Mailbox
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-user_mail_convert-to-shared-mailbox
 

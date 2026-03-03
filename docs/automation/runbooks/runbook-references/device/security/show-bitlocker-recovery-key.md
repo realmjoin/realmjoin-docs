@@ -10,7 +10,7 @@ Keys are sorted by creation date (newest first). Use it for disk recovery scenar
 ## Location
 Device → Security → Show Bitlocker Recovery Key
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-device_security_show-bitlocker-recovery-key
 

@@ -9,7 +9,7 @@ This script unenrolls devices from Windows Update for Business.
 ## Location
 Device → General → Unenroll Updatable Assets
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-device_general_unenroll-updatable-assets
 

@@ -10,7 +10,7 @@ Also if specified, it disables the associated EntraID user account.
 ## Location
 Organization → Mail → Add Shared Mailbox
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-org_mail_add-shared-mailbox
 

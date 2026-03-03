@@ -10,7 +10,7 @@ It builds an report and sends it via email.
 ## Location
 Organization → General → Report Pim Activations (Scheduled)
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-org_general_report-pim-activations_scheduled
 

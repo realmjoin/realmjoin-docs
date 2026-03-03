@@ -10,7 +10,7 @@ It allows to assign the following policies: Online Voice Routing Policy, Tenant 
 ## Location
 User → Phone → Grant Teams User Policies
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-user_phone_grant-teams-user-policies
 

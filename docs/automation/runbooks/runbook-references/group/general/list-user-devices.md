@@ -11,7 +11,7 @@ Use this to create or maintain a device group based on group member ownership.
 ## Location
 Group → General → List User Devices
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-group_general_list-user-devices
 

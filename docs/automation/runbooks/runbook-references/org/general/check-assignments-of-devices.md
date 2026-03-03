@@ -10,7 +10,7 @@ It resolves device group memberships and reports matching assignments.
 ## Location
 Organization → General → Check Assignments Of Devices
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-org_general_check-assignments-of-devices
 

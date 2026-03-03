@@ -9,7 +9,7 @@ Creates an Exchange Online room mailbox and optionally configures delegation and
 ## Location
 Organization → Mail → Add Room Mailbox
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-org_mail_add-room-mailbox
 

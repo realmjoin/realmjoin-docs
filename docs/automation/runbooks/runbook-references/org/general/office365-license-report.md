@@ -10,7 +10,7 @@ It can export the results to Azure Storage and generate SAS links for downloads.
 ## Location
 Organization → General → Office365 License Report
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-org_general_office365-license-report
 

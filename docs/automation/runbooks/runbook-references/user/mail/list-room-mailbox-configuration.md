@@ -9,7 +9,7 @@ Reads room metadata and lists calendar processing settings. This helps validate 
 ## Location
 User → Mail → List Room Mailbox Configuration
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-user_mail_list-room-mailbox-configuration
 

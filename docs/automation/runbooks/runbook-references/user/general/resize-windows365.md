@@ -10,7 +10,7 @@ WARNING: This operation deprovisions and reprovisions the Cloud PC and local dat
 ## Location
 User → General → Resize Windows365
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-user_general_resize-windows365
 

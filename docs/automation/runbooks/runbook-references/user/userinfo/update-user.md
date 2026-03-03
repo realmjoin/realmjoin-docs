@@ -9,7 +9,7 @@ Updates user profile properties in Microsoft Entra ID and applies optional group
 ## Location
 User → Userinfo → Update User
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-user_userinfo_update-user
 

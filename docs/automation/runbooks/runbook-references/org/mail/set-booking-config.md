@@ -9,7 +9,7 @@ Configures Microsoft Bookings settings at the organization level using Exchange 
 ## Location
 Organization → Mail → Set Booking Config
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-org_mail_set-booking-config
 

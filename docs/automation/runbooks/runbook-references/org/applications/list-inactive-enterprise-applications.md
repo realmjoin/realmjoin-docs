@@ -11,7 +11,7 @@ Use it to find candidates for review, cleanup, or decommissioning.
 ## Location
 Organization → Applications → List Inactive Enterprise Applications
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-org_applications_list-inactive-enterprise-applications
 

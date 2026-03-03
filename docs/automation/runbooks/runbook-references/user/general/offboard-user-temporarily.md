@@ -9,7 +9,7 @@ Temporarily offboards a user for scenarios such as parental leave or sabbatical 
 ## Location
 User → General → Offboard User Temporarily
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-user_general_offboard-user-temporarily
 

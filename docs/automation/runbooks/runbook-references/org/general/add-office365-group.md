@@ -10,7 +10,7 @@ It can optionally promote the group to a Microsoft Teams team after creation.
 ## Location
 Organization → General → Add Office365 Group
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-org_general_add-office365-group
 

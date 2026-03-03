@@ -10,7 +10,7 @@ It requires the DeviceId of the target device and the name of the caller for aud
 ## Location
 Device → General → Remove Primary User
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-device_general_remove-primary-user
 

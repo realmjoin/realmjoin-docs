@@ -9,7 +9,7 @@ Downloads a JPEG image from a URL and uploads it as the user's profile photo. Th
 ## Location
 User → Userinfo → Set Photo
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-user_userinfo_set-photo
 

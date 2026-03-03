@@ -9,7 +9,7 @@ Collects devices based on either last interactive sign-in or last Intune sync da
 ## Location
 Organization → Security → List Inactive Devices
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-org_security_list-inactive-devices
 

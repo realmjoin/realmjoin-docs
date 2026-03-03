@@ -9,7 +9,7 @@ Updates the password policy for a user in Microsoft Entra ID. This can be used t
 ## Location
 User → Security → Enable Or Disable Password Expiration
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-user_security_enable-or-disable-password-expiration
 

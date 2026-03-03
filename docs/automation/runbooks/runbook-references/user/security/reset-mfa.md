@@ -9,7 +9,7 @@ Removes authenticator app and phone-based authentication methods for a user. Thi
 ## Location
 User → Security → Reset Mfa
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-user_security_reset-mfa
 

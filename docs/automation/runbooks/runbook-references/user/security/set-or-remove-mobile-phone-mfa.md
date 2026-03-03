@@ -9,7 +9,7 @@ Adds, updates, or removes the user's mobile phone authentication method. If you 
 ## Location
 User → Security → Set Or Remove Mobile Phone Mfa
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-user_security_set-or-remove-mobile-phone-mfa
 

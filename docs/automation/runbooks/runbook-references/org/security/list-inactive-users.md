@@ -9,7 +9,7 @@ Lists users and guests that have not signed in interactively for a specified num
 ## Location
 Organization → Security → List Inactive Users
 
-### Full Runbook name:
+**Full Runbook name**
 
 rjgit-org_security_list-inactive-users
 
