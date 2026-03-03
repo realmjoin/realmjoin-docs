@@ -17,7 +17,11 @@ This process is described in detail in the [Setup Email Reporting](https://githu
 ## Location
 Organization → Devices → Report Stale Devices (Scheduled)
 
+Full Runbook name:
+rjgit-org_devices_report-stale-devices_scheduled
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.Read.All

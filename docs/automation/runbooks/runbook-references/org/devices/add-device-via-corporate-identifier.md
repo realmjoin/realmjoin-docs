@@ -10,7 +10,11 @@ It can overwrite existing entries and optionally stores a description for the im
 ## Location
 Organization → Devices → Add Device Via Corporate Identifier
 
+Full Runbook name:
+rjgit-org_devices_add-device-via-corporate-identifier
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementServiceConfig.ReadWrite.All

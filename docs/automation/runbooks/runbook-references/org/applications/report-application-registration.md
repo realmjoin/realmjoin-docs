@@ -18,7 +18,11 @@ This process is described in detail in the [Setup Email Reporting](https://githu
 ## Location
 Organization → Applications → Report Application Registration
 
+Full Runbook name:
+rjgit-org_applications_report-application-registration
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Application.Read.All

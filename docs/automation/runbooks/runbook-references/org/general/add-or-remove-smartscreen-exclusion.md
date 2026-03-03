@@ -10,7 +10,11 @@ It can allow, audit, warn, or block a given domain by creating an indicator entr
 ## Location
 Organization → General → Add Or Remove Smartscreen Exclusion
 
+Full Runbook name:
+rjgit-org_general_add-or-remove-smartscreen-exclusion
+
 ## Permissions
+
 ### Application permissions
 - **Type**: WindowsDefenderATP
   - Ti.ReadWrite.All

@@ -10,7 +10,11 @@ If the policy name of a policy is left blank, the corresponding policy will not 
 ## Location
 User → Phone → Set Teams Phone
 
+Full Runbook name:
+rjgit-user_phone_set-teams-phone
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Organization.Read.All

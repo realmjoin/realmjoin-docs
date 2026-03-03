@@ -11,7 +11,11 @@ This does not change group membership, owners, or email addresses.
 ## Location
 Group → General → Change Visibility
 
+Full Runbook name:
+rjgit-group_general_change-visibility
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Group.ReadWrite.All

@@ -9,7 +9,11 @@ Lists different types of permissions like mailbox access, SendAs, and SendOnBeha
 ## Location
 User → Mail → List Mailbox Permissions
 
+Full Runbook name:
+rjgit-user_mail_list-mailbox-permissions
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp

@@ -152,7 +152,11 @@ Legacy `WarningThreshold` automatically maps to `MinThreshold` - old configurati
 ## Location
 Organization → General → Report License Assignment (Scheduled)
 
+Full Runbook name:
+rjgit-org_general_report-license-assignment_scheduled
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Organization.Read.All

@@ -9,7 +9,11 @@ Assigns the required groups and license or Frontline provisioning policy to init
 ## Location
 User → General → Assign Windows365
 
+Full Runbook name:
+rjgit-user_general_assign-windows365
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All

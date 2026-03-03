@@ -11,7 +11,11 @@ Use the Remove switch to remove ownership instead of adding it.
 ## Location
 Group → General → Add Or Remove Owner
 
+Full Runbook name:
+rjgit-group_general_add-or-remove-owner
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All

@@ -9,7 +9,11 @@ Resets the password for a user in Microsoft Entra ID and optionally enables the 
 ## Location
 User → Security → Reset Password
 
+Full Runbook name:
+rjgit-user_security_reset-password
+
 ## Permissions
+
 ### RBAC roles
 - User administrator
 

@@ -9,7 +9,11 @@ Creates a classic Exchange Online distribution group with optional owner configu
 ## Location
 Organization → Mail → Add Distribution List
 
+Full Runbook name:
+rjgit-org_mail_add-distribution-list
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Organization.Read.All

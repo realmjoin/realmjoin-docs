@@ -9,7 +9,11 @@ Retires multiple Intune devices based on a comma-separated list of serial number
 ## Location
 Organization → General → Bulk Retire Devices From Intune
 
+Full Runbook name:
+rjgit-org_general_bulk-retire-devices-from-intune
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.ReadWrite.All

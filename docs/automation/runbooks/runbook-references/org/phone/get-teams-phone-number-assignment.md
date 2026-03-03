@@ -20,7 +20,11 @@ If a Teams user is found for the phone number, the following details are display
 ## Location
 Organization → Phone → Get Teams Phone Number Assignment
 
+Full Runbook name:
+rjgit-org_phone_get-teams-phone-number-assignment
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Organization.Read.All

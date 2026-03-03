@@ -10,7 +10,11 @@ It prints the affected group names and object IDs.
 ## Location
 Organization → General → List Group License Assignment Errors
 
+Full Runbook name:
+rjgit-org_general_list-group-license-assignment-errors
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - GroupMember.Read.All

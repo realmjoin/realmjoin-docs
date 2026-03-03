@@ -9,7 +9,11 @@ Collects Windows 365 Cloud PC remote connection usage for the last full day and 
 ## Location
 Organization → General → Export Cloudpc Usage (Scheduled)
 
+Full Runbook name:
+rjgit-org_general_export-cloudpc-usage_scheduled
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - CloudPC.Read.All

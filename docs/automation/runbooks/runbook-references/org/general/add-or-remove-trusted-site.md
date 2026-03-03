@@ -9,7 +9,11 @@ Adds or removes a URL to the Site-to-Zone Assignment List in a Windows custom co
 ## Location
 Organization → General → Add Or Remove Trusted Site
 
+Full Runbook name:
+rjgit-org_general_add-or-remove-trusted-site
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementConfiguration.ReadWrite.All

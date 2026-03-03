@@ -18,7 +18,11 @@ This process is described in detail in the [Setup Email Reporting](https://githu
 ## Location
 Organization → Security → Monitor Pending EPM Requests (Scheduled)
 
+Full Runbook name:
+rjgit-org_security_monitor-pending-EPM-requests_scheduled
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementConfiguration.Read.All

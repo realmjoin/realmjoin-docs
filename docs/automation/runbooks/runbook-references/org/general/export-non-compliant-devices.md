@@ -10,7 +10,11 @@ It can export the results to CSV with SAS (download) links.
 ## Location
 Organization → General → Export Non Compliant Devices
 
+Full Runbook name:
+rjgit-org_general_export-non-compliant-devices
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementConfiguration.Read.All

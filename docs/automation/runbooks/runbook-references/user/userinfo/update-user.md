@@ -9,7 +9,11 @@ Updates user profile properties in Microsoft Entra ID and applies optional group
 ## Location
 User → Userinfo → Update User
 
+Full Runbook name:
+rjgit-user_userinfo_update-user
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - UserAuthenticationMethod.Read.All

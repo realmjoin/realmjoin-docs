@@ -9,7 +9,11 @@ Wipe a Windows or MacOS device. For Windows devices, you can choose between a re
 ## Location
 Device → General → Wipe Device
 
+Full Runbook name:
+rjgit-device_general_wipe-device
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.PrivilegedOperations.All

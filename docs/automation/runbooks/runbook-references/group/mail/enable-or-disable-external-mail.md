@@ -11,7 +11,11 @@ You can also query the current state without making changes.
 ## Location
 Group → Mail → Enable Or Disable External Mail
 
+Full Runbook name:
+rjgit-group_mail_enable-or-disable-external-mail
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp

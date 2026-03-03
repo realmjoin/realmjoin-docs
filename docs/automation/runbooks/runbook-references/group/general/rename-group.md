@@ -11,7 +11,11 @@ Provide only the fields you want to update; empty values are ignored.
 ## Location
 Group → General → Rename Group
 
+Full Runbook name:
+rjgit-group_general_rename-group
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Group.ReadWrite.All

@@ -11,7 +11,11 @@ Use this to validate whether group members are correctly registered as updatable
 ## Location
 Group → Devices → Check Updatable Assets
 
+Full Runbook name:
+rjgit-group_devices_check-updatable-assets
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Device.Read.All

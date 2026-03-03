@@ -9,7 +9,11 @@ Updates room mailbox settings such as booking policy, calendar processing, and c
 ## Location
 User → Mail → Set Room Mailbox Configuration
 
+Full Runbook name:
+rjgit-user_mail_set-room-mailbox-configuration
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp

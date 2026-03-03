@@ -10,7 +10,11 @@ It can optionally add the invited user to a specified group.
 ## Location
 Organization → General → Invite External Guest Users
 
+Full Runbook name:
+rjgit-org_general_Invite-external-guest-users
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.ReadWrite.All

@@ -10,7 +10,11 @@ WARNING: This operation deprovisions and reprovisions the Cloud PC and local dat
 ## Location
 User → General → Resize Windows365
 
+Full Runbook name:
+rjgit-user_general_resize-windows365
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - GroupMember.ReadWrite.All

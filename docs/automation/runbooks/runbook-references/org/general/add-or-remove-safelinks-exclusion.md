@@ -9,7 +9,11 @@ Adds or removes a SafeLinks URL pattern exclusion in a specified policy. The run
 ## Location
 Organization → General → Add Or Remove Safelinks Exclusion
 
+Full Runbook name:
+rjgit-org_general_add-or-remove-safeLinks-exclusion
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp

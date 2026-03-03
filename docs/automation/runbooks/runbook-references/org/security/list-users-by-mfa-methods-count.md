@@ -11,7 +11,11 @@ The output includes the user display name, user principal name, and the count of
 ## Location
 Organization → Security → List Users By MFA Methods Count
 
+Full Runbook name:
+rjgit-org_security_list-users-by-MFA-methods-count
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All

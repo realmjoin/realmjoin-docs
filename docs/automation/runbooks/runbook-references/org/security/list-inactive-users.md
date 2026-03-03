@@ -9,7 +9,11 @@ Lists users and guests that have not signed in interactively for a specified num
 ## Location
 Organization → Security → List Inactive Users
 
+Full Runbook name:
+rjgit-org_security_list-inactive-users
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All

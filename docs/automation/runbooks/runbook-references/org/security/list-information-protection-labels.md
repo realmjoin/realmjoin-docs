@@ -9,7 +9,11 @@ Retrieves all available Microsoft Information Protection labels in the tenant. T
 ## Location
 Organization → Security → List Information Protection Labels
 
+Full Runbook name:
+rjgit-org_security_list-information-protection-labels
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - InformationProtectionPolicy.Read.All

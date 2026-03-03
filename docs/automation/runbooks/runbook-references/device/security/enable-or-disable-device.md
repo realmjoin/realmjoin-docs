@@ -10,7 +10,11 @@ Use it to temporarily block sign-ins from a compromised or lost device, or to re
 ## Location
 Device → Security → Enable Or Disable Device
 
+Full Runbook name:
+rjgit-device_security_enable-or-disable-device
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Device.Read.All

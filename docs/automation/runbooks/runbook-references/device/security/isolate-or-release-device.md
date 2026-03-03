@@ -11,7 +11,11 @@ Provide a short reason so the action is documented in the service.
 ## Location
 Device → Security → Isolate Or Release Device
 
+Full Runbook name:
+rjgit-device_security_isolate-or-release-device
+
 ## Permissions
+
 ### Application permissions
 - **Type**: WindowsDefenderATP
   - Machine.Read.All

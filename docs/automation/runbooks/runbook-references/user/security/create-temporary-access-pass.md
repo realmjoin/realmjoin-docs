@@ -9,7 +9,11 @@ Creates a new Temporary Access Pass (TAP) authentication method for a user in Mi
 ## Location
 User → Security → Create Temporary Access Pass
 
+Full Runbook name:
+rjgit-user_security_create-temporary-access-pass
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - UserAuthenticationMethod.ReadWrite.All

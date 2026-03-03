@@ -11,7 +11,11 @@ Use the Remove switch to remove the nested group instead of adding it.
 ## Location
 Group → General → Add Or Remove Nested Group
 
+Full Runbook name:
+rjgit-group_general_add-or-remove-nested-group
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All

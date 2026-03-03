@@ -10,7 +10,11 @@ It verifies that the application exists before deletion and performs a best-effo
 ## Location
 Organization → Applications → Delete Application Registration
 
+Full Runbook name:
+rjgit-org_applications_delete-application-registration
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Application.ReadWrite.OwnedBy

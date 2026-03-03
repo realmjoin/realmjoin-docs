@@ -10,7 +10,11 @@ It can optionally assign a license group, add the user to additional groups, and
 ## Location
 Organization → General → Add User
 
+Full Runbook name:
+rjgit-org_general_add-user
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.Read.All

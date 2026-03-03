@@ -10,7 +10,11 @@ This allows the delegate to send emails as if they were the mailbox owner.
 ## Location
 User → Mail → Delegate Send As
 
+Full Runbook name:
+rjgit-user_mail_delegate-send-as
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp

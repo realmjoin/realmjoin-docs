@@ -9,7 +9,11 @@ Lists users and service principals holding built-in Entra ID roles and produces 
 ## Location
 Organization → Security → List Admin Users
 
+Full Runbook name:
+rjgit-org_security_list-admin-users
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All

@@ -10,7 +10,11 @@ It can group results by a selected attribute and can optionally export the repor
 ## Location
 Organization → General → Enrolled Devices Report (Scheduled)
 
+Full Runbook name:
+rjgit-org_general_enrolled-devices-report_scheduled
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementServiceConfig.Read.All

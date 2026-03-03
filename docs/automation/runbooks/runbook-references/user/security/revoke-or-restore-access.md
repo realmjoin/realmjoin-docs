@@ -9,7 +9,11 @@ Blocks or re-enables a user account and optionally revokes active sign-in sessio
 ## Location
 User → Security → Revoke Or Restore Access
 
+Full Runbook name:
+rjgit-user_security_revoke-or-restore-access
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.ReadWrite.All

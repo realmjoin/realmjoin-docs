@@ -10,7 +10,11 @@ Also if specified, it disables the associated EntraID user account.
 ## Location
 Organization → Mail → Add Shared Mailbox
 
+Full Runbook name:
+rjgit-org_mail_add-shared-mailbox
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp

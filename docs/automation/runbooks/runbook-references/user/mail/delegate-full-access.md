@@ -11,7 +11,11 @@ Automapping allows the delegated mailbox to automatically appear in the delegate
 ## Location
 User → Mail → Delegate Full Access
 
+Full Runbook name:
+rjgit-user_mail_delegate-full-access
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp

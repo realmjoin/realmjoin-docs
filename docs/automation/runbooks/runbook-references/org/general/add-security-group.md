@@ -10,7 +10,11 @@ It validates the group name and optionally sets an owner during creation.
 ## Location
 Organization → General → Add Security Group
 
+Full Runbook name:
+rjgit-org_general_add-security-group
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Group.Create

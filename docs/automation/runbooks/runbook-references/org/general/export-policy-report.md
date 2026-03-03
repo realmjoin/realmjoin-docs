@@ -10,7 +10,11 @@ It can optionally export raw JSON and create downloadable links for exported art
 ## Location
 Organization → General → Export Policy Report
 
+Full Runbook name:
+rjgit-org_general_export-policy-report
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementConfiguration.Read.All

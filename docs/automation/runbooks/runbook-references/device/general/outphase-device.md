@@ -9,7 +9,11 @@ Remove/Outphase a windows device. You can choose if you want to wipe the device 
 ## Location
 Device → General → Outphase Device
 
+Full Runbook name:
+rjgit-device_general_outphase-device
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.PrivilegedOperations.All

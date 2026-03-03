@@ -10,7 +10,11 @@ It returns the serial numbers found and lists any missing serial numbers.
 ## Location
 Organization → General → Check Autopilot Serialnumbers
 
+Full Runbook name:
+rjgit-org_general_check-autopilot-serialnumbers
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementServiceConfig.Read.All

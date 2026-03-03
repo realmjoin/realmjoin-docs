@@ -9,7 +9,11 @@ Retrieves voice-related status information for a Teams user such as phone number
 ## Location
 User → Phone → Get Teams User Info
 
+Full Runbook name:
+rjgit-user_phone_get-teams-user-info
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Organization.Read.All

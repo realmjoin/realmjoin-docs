@@ -10,7 +10,11 @@ Target groups are provided via a template-driven string and can be resolved by g
 ## Location
 Organization → General → Assign Groups By Template (Scheduled)
 
+Full Runbook name:
+rjgit-org_general_assign-groups-by-template_scheduled
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All

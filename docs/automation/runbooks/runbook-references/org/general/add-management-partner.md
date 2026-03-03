@@ -10,7 +10,11 @@ It uses the Azure Management Partner API and supports an interactive action sele
 ## Location
 Organization → General → Add Management Partner
 
+Full Runbook name:
+rjgit-org_general_add-management-partner
+
 ## Permissions
+
 ### Permission notes
 Owner or Contributor role on the Azure Subscription
 

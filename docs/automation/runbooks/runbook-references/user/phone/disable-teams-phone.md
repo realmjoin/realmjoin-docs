@@ -9,7 +9,11 @@ Removes the assigned phone number and clears selected Teams voice policies for a
 ## Location
 User → Phone → Disable Teams Phone
 
+Full Runbook name:
+rjgit-user_phone_disable-teams-phone
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Organization.Read.All

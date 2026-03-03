@@ -9,7 +9,11 @@ This Runbook assigns a new AutoPilot GroupTag to the device. This can be used to
 ## Location
 Device → General → Change Grouptag
 
+Full Runbook name:
+rjgit-device_general_change-groupTag
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Device.Read.All

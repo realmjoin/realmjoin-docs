@@ -11,7 +11,11 @@ Use this to decommission inactive teams while preserving their contents for revi
 ## Location
 Group → Teams → Archive Team
 
+Full Runbook name:
+rjgit-group_teams_archive-team
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - TeamSettings.ReadWrite.All

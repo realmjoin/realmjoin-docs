@@ -9,7 +9,11 @@ Renames a user by changing the user principal name in Microsoft Entra ID and opt
 ## Location
 User → Userinfo → Rename User
 
+Full Runbook name:
+rjgit-user_userinfo_rename-user
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Directory.Read.All

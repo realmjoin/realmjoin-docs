@@ -9,7 +9,11 @@ Rename a device (in Intune and Autopilot).
 ## Location
 Device → General → Rename Device
 
+Full Runbook name:
+rjgit-device_general_rename-device
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Device.Read.All

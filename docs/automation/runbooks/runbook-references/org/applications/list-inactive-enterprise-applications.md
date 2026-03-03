@@ -11,7 +11,11 @@ Use it to find candidates for review, cleanup, or decommissioning.
 ## Location
 Organization → Applications → List Inactive Enterprise Applications
 
+Full Runbook name:
+rjgit-org_applications_list-inactive-enterprise-applications
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Directory.Read.All

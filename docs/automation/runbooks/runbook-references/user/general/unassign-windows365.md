@@ -9,7 +9,11 @@ Removes Windows 365 assignments for a user and deprovisions the associated Cloud
 ## Location
 User → General → Unassign Windows365
 
+Full Runbook name:
+rjgit-user_general_unassign-windows365
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All

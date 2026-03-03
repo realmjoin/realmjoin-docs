@@ -9,7 +9,11 @@ Configures Microsoft Bookings settings at the organization level using Exchange 
 ## Location
 Organization → Mail → Set Booking Config
 
+Full Runbook name:
+rjgit-org_mail_set-booking-config
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp

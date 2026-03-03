@@ -11,7 +11,11 @@ Use it to standardize application registration setup, including visibility and a
 ## Location
 Organization → Applications → Add Application Registration
 
+Full Runbook name:
+rjgit-org_applications_add-application-registration
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Application.ReadWrite.OwnedBy

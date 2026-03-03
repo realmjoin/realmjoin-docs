@@ -10,7 +10,11 @@ The action is only supported for certain, corporate-owned device types and will 
 ## Location
 Device → Security → Reset Mobile Device Pin
 
+Full Runbook name:
+rjgit-device_security_reset-mobile-device-pin
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.Read.All

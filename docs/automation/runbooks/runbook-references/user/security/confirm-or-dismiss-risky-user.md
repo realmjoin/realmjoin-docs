@@ -9,7 +9,11 @@ Confirms a user compromise or dismisses a risky user entry using Microsoft Entra
 ## Location
 User → Security → Confirm Or Dismiss Risky User
 
+Full Runbook name:
+rjgit-user_security_confirm-or-dismiss-risky-user
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - IdentityRiskyUser.ReadWrite.All

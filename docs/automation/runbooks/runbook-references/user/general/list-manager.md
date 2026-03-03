@@ -9,7 +9,11 @@ Retrieves the manager object for a specified user. Outputs common manager attrib
 ## Location
 User → General → List Manager
 
+Full Runbook name:
+rjgit-user_general_list-manager
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All

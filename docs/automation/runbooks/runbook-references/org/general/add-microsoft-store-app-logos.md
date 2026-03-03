@@ -10,7 +10,11 @@ It skips apps that already have a logo and reports how many apps were updated.
 ## Location
 Organization → General → Add Microsoft Store App Logos
 
+Full Runbook name:
+rjgit-org_general_add-microsoft-store-app-logos
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementApps.ReadWrite.All

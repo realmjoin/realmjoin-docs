@@ -9,7 +9,11 @@ Removes authenticator app and phone-based authentication methods for a user. Thi
 ## Location
 User → Security → Reset Mfa
 
+Full Runbook name:
+rjgit-user_security_reset-mfa
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - UserAuthenticationMethod.ReadWrite.All

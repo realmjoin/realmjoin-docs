@@ -9,7 +9,11 @@ Triggers a reprovision action for an existing Windows 365 Cloud PC without assig
 ## Location
 User → General → Reprovision Windows365
 
+Full Runbook name:
+rjgit-user_general_reprovision-windows365
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - GroupMember.ReadWrite.All

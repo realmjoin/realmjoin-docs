@@ -10,7 +10,11 @@ It can send an email alert if synchronization is not enabled.
 ## Location
 Organization → General → Check Aad Sync Status (Scheduled)
 
+Full Runbook name:
+rjgit-org_general_check-aad-sync-status_scheduled
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Directory.Read.All

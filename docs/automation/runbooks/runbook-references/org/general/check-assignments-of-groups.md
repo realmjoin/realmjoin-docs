@@ -10,7 +10,11 @@ It resolves group IDs and reports matching assignments.
 ## Location
 Organization → General → Check Assignments Of Groups
 
+Full Runbook name:
+rjgit-org_general_check-assignments-of-groups
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All

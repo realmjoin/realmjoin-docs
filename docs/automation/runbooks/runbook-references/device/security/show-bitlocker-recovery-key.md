@@ -10,7 +10,11 @@ Keys are sorted by creation date (newest first). Use it for disk recovery scenar
 ## Location
 Device → Security → Show Bitlocker Recovery Key
 
+Full Runbook name:
+rjgit-device_security_show-bitlocker-recovery-key
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - BitlockerKey.Read.All

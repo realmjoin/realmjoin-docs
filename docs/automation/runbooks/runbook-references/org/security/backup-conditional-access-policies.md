@@ -9,7 +9,11 @@ Exports the current set of Conditional Access policies via Microsoft Graph and u
 ## Location
 Organization → Security → Backup Conditional Access Policies
 
+Full Runbook name:
+rjgit-org_security_backup-conditional-access-policies
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Policy.Read.All

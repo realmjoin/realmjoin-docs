@@ -10,7 +10,11 @@ It searches for each serial number and deletes the matching Autopilot object if 
 ## Location
 Organization → General → Bulk Delete Devices From Autopilot
 
+Full Runbook name:
+rjgit-org_general_bulk-delete-devices-from-autopilot
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementServiceConfig.ReadWrite.All

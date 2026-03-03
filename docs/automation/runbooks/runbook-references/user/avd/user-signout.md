@@ -10,7 +10,11 @@ The SubscriptionIds value must be defined in the runbooks customization.
 ## Location
 User → AVD → User Signout
 
+Full Runbook name:
+rjgit-user_AVD_user-signout
+
 ## Permissions
+
 ### Permission notes
 Azure: Desktop Virtualization Host Pool Contributor on Subscription which contains the Hostpool
 

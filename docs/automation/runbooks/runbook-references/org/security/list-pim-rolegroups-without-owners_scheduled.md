@@ -9,7 +9,11 @@ Finds role-assignable groups that have PIM eligible role assignments but no owne
 ## Location
 Organization → Security → List Pim Rolegroups Without Owners (Scheduled)
 
+Full Runbook name:
+rjgit-org_security_list-pim-rolegroups-without-owners_scheduled
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - Group.Read.All

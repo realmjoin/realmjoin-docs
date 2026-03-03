@@ -9,7 +9,11 @@ Temporarily offboards a user for scenarios such as parental leave or sabbatical 
 ## Location
 User → General → Offboard User Temporarily
 
+Full Runbook name:
+rjgit-user_general_offboard-user-temporarily
+
 ## Permissions
+
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.ReadWrite.All
