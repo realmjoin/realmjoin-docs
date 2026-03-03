@@ -421,6 +421,7 @@ if ($outputMode -eq "OneFile") {
                 Add-Content -Path $ResultFile -Value $locationPath
                 Add-Content -Path $ResultFile -Value ""
                 Add-Content -Path $ResultFile -Value "Full Runbook name:"
+                Add-Content -Path $ResultFile -Value ""
                 Add-Content -Path $ResultFile -Value $fullRunbookName
                 Add-Content -Path $ResultFile -Value ""
             }
@@ -784,6 +785,7 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
                     Add-Content -Path $runbookFilePath -Value $locationPath
                     Add-Content -Path $runbookFilePath -Value ""
                     Add-Content -Path $runbookFilePath -Value "Full Runbook name:"
+                    Add-Content -Path $runbookFilePath -Value ""
                     Add-Content -Path $runbookFilePath -Value $fullRunbookName
                     Add-Content -Path $runbookFilePath -Value ""
                 }
