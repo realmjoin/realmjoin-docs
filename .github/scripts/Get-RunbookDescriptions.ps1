@@ -407,8 +407,21 @@ if ($outputMode -eq "OneFile") {
 
             if ($includeWhereToFind) {
                 $locationPath = $runbook.RunbookDisplayPath -replace ' \\\\ ', ' → '
+                $runbookPathParts = $runbook.RelativeRunbookPath -split "[\\/]" | Where-Object { $_ -and $_.Trim() }
+                $rootFolderName = if ($runbookPathParts.Count -ge 2) { $runbookPathParts[0] } else { $runbookPathParts[0] }
+                $subFolderName = if ($runbookPathParts.Count -ge 3) { $runbookPathParts[1] } else { $null }
+                $runbookFileBase = [System.IO.Path]::GetFileNameWithoutExtension($runbook.RelativeRunbookPath)
+                $fullRunbookName = if ($subFolderName) {
+                    "rjgit-$rootFolderName`_$subFolderName`_$runbookFileBase"
+                }
+                else {
+                    "rjgit-$rootFolderName`_$runbookFileBase"
+                }
                 Add-Content -Path $ResultFile -Value "#### Location"
                 Add-Content -Path $ResultFile -Value $locationPath
+                Add-Content -Path $ResultFile -Value ""
+                Add-Content -Path $ResultFile -Value "Full Runbook name:"
+                Add-Content -Path $ResultFile -Value $fullRunbookName
                 Add-Content -Path $ResultFile -Value ""
             }
 
@@ -433,6 +446,7 @@ if ($outputMode -eq "OneFile") {
                     # Solange in $RunbookPermissions bzw. in einer der Properties ein Wert vorhanden ist, wird der Abschnitt ausgegeben
                     if (($RunbookPermissions.Permissions) -or ($RunbookPermissions.RBACRoles) -or ($RunbookPermissions.ManualPermissions)) {
                         Add-Content -Path $ResultFile -Value "#### Permissions"
+                        Add-Content -Path $ResultFile -Value ""
                         if ($RunbookPermissions.Permissions) {
                             Add-Content -Path $ResultFile -Value "##### Application permissions"
                             Add-Content -Path $ResultFile -Value $RunbookPermissions.Permissions
@@ -756,8 +770,21 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
                     if ($locationPath -match '_[Ss]cheduled$') {
                         $locationPath = $locationPath -replace '_[Ss]cheduled$', ' (Scheduled)'
                     }
+                    $runbookPathParts = $runbook.RelativeRunbookPath -split "[\\/]" | Where-Object { $_ -and $_.Trim() }
+                    $rootFolderName = if ($runbookPathParts.Count -ge 2) { $runbookPathParts[0] } else { $runbookPathParts[0] }
+                    $subFolderName = if ($runbookPathParts.Count -ge 3) { $runbookPathParts[1] } else { $null }
+                    $runbookFileBase = [System.IO.Path]::GetFileNameWithoutExtension($runbook.RelativeRunbookPath)
+                    $fullRunbookName = if ($subFolderName) {
+                        "rjgit-$rootFolderName`_$subFolderName`_$runbookFileBase"
+                    }
+                    else {
+                        "rjgit-$rootFolderName`_$runbookFileBase"
+                    }
                     Add-Content -Path $runbookFilePath -Value "## Location"
                     Add-Content -Path $runbookFilePath -Value $locationPath
+                    Add-Content -Path $runbookFilePath -Value ""
+                    Add-Content -Path $runbookFilePath -Value "Full Runbook name:"
+                    Add-Content -Path $runbookFilePath -Value $fullRunbookName
                     Add-Content -Path $runbookFilePath -Value ""
                 }
                 if ($includeNotes) {
@@ -772,6 +799,7 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
                         $RunbookPermissions = Convert-PermissionJsonToMarkdown -JsonContent $runbook.PermissionsContent
                         if (($RunbookPermissions.Permissions) -or ($RunbookPermissions.RBACRoles) -or ($RunbookPermissions.ManualPermissions)) {
                             Add-Content -Path $runbookFilePath -Value "## Permissions"
+                            Add-Content -Path $runbookFilePath -Value ""
                             if ($RunbookPermissions.Permissions) {
                                 Add-Content -Path $runbookFilePath -Value "### Application permissions"
                                 Add-Content -Path $runbookFilePath -Value $RunbookPermissions.Permissions
