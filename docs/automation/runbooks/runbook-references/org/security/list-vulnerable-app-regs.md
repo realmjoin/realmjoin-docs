@@ -9,7 +9,7 @@ Lists Azure AD app registrations that may be affected by CVE-2021-42306 by inspe
 ## Location
 Organization → Security → List Vulnerable App Regs
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-org_security_list-vulnerable-app-regs
 

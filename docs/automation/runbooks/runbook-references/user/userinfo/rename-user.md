@@ -9,7 +9,7 @@ Renames a user by changing the user principal name in Microsoft Entra ID and opt
 ## Location
 User → Userinfo → Rename User
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-user_userinfo_rename-user
 

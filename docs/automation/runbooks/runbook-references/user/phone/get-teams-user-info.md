@@ -9,7 +9,7 @@ Retrieves voice-related status information for a Teams user such as phone number
 ## Location
 User → Phone → Get Teams User Info
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-user_phone_get-teams-user-info
 

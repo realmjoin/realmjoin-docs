@@ -9,7 +9,7 @@ Configures automatic replies for a mailbox and optionally creates an out-of-offi
 ## Location
 User → Mail → Set Out Of Office
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-user_mail_set-out-of-office
 

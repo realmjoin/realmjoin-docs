@@ -10,7 +10,7 @@ It prints the affected group names and object IDs.
 ## Location
 Organization → General → List Group License Assignment Errors
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-org_general_list-group-license-assignment-errors
 

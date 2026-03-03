@@ -9,7 +9,7 @@ Creates an Exchange Online equipment mailbox and optionally configures delegate 
 ## Location
 Organization → Mail → Add Equipment Mailbox
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-org_mail_add-equipment-mailbox
 

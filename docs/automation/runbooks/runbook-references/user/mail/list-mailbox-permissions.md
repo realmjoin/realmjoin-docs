@@ -9,7 +9,7 @@ Lists different types of permissions like mailbox access, SendAs, and SendOnBeha
 ## Location
 User → Mail → List Mailbox Permissions
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-user_mail_list-mailbox-permissions
 

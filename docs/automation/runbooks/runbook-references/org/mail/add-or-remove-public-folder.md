@@ -9,7 +9,7 @@ Creates or removes an Exchange Online public folder. The runbook assumes that at
 ## Location
 Organization → Mail → Add Or Remove Public Folder
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-org_mail_add-or-remove-public-folder
 

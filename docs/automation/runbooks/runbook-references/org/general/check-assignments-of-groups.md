@@ -10,7 +10,7 @@ It resolves group IDs and reports matching assignments.
 ## Location
 Organization → General → Check Assignments Of Groups
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-org_general_check-assignments-of-groups
 

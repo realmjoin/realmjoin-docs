@@ -19,7 +19,7 @@ This process is described in detail in the [Setup Email Reporting](https://githu
 ## Location
 Organization → Devices → Report Devices Without Primary User
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-org_devices_report-devices-without-primary-user
 

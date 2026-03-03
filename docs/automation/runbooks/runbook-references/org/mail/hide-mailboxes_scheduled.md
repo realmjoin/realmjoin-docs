@@ -9,7 +9,7 @@ Hides or unhides special mailboxes in the Global Address List, currently intende
 ## Location
 Organization → Mail → Hide Mailboxes (Scheduled)
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-org_mail_hide-mailboxes_scheduled
 

@@ -9,7 +9,7 @@ Retrieves all available Microsoft Information Protection labels in the tenant. T
 ## Location
 Organization → Security → List Information Protection Labels
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-org_security_list-information-protection-labels
 

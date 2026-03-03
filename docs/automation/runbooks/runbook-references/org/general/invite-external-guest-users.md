@@ -10,7 +10,7 @@ It can optionally add the invited user to a specified group.
 ## Location
 Organization → General → Invite External Guest Users
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-org_general_Invite-external-guest-users
 

@@ -10,7 +10,7 @@ It resolves transitive group membership and reports matching assignments.
 ## Location
 Organization → General → Check Assignments Of Users
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-org_general_check-assignments-of-users
 

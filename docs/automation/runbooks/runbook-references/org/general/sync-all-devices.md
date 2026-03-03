@@ -10,7 +10,7 @@ It forces devices to check in and apply pending policies and configurations.
 ## Location
 Organization → General → Sync All Devices
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-org_general_sync-all-devices
 

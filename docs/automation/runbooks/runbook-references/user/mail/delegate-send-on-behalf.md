@@ -10,7 +10,7 @@ This allows the delegate to send emails on behalf of the mailbox owner.
 ## Location
 User → Mail → Delegate Send On Behalf
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-user_mail_delegate-send-on-behalf
 

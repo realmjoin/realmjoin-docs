@@ -11,7 +11,7 @@ You can also query the current state without making changes.
 ## Location
 Group → Mail → Enable Or Disable External Mail
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-group_mail_enable-or-disable-external-mail
 

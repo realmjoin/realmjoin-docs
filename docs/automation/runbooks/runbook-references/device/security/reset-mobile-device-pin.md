@@ -10,7 +10,7 @@ The action is only supported for certain, corporate-owned device types and will 
 ## Location
 Device → Security → Reset Mobile Device Pin
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-device_security_reset-mobile-device-pin
 

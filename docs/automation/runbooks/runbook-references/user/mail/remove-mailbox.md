@@ -9,7 +9,7 @@ Forces a deletion of a shared mailbox, room mailbox, or bookings calendar. The m
 ## Location
 User → Mail → Remove Mailbox
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-user_mail_remove-mailbox
 

@@ -9,7 +9,7 @@ Lists group memberships for this user and supports filtering by group type, memb
 ## Location
 User → General → List Group Memberships
 
-Full Runbook name:
+### Full Runbook name:
 
 rjgit-user_general_list-group-memberships
 
