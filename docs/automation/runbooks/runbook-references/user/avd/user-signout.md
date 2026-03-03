@@ -11,6 +11,7 @@ The SubscriptionIds value must be defined in the runbooks customization.
 User → AVD → User Signout
 
 Full Runbook name:
+
 rjgit-user_AVD_user-signout
 
 ## Permissions

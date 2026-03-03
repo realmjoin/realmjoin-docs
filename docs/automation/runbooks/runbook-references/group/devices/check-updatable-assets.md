@@ -12,6 +12,7 @@ Use this to validate whether group members are correctly registered as updatable
 Group → Devices → Check Updatable Assets
 
 Full Runbook name:
+
 rjgit-group_devices_check-updatable-assets
 
 ## Permissions

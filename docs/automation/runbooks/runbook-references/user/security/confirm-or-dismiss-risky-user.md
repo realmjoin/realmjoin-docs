@@ -10,6 +10,7 @@ Confirms a user compromise or dismisses a risky user entry using Microsoft Entra
 User → Security → Confirm Or Dismiss Risky User
 
 Full Runbook name:
+
 rjgit-user_security_confirm-or-dismiss-risky-user
 
 ## Permissions

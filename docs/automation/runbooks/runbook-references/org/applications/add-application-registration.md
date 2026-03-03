@@ -12,6 +12,7 @@ Use it to standardize application registration setup, including visibility and a
 Organization → Applications → Add Application Registration
 
 Full Runbook name:
+
 rjgit-org_applications_add-application-registration
 
 ## Permissions

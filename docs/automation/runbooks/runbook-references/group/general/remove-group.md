@@ -10,6 +10,7 @@ This runbook deletes the specified group, which for Microsoft 365 groups means, 
 Group → General → Remove Group
 
 Full Runbook name:
+
 rjgit-group_general_remove-group
 
 ## Permissions

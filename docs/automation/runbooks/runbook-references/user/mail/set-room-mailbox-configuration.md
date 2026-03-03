@@ -10,6 +10,7 @@ Updates room mailbox settings such as booking policy, calendar processing, and c
 User → Mail → Set Room Mailbox Configuration
 
 Full Runbook name:
+
 rjgit-user_mail_set-room-mailbox-configuration
 
 ## Permissions

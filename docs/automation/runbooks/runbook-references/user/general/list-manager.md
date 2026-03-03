@@ -10,6 +10,7 @@ Retrieves the manager object for a specified user. Outputs common manager attrib
 User → General → List Manager
 
 Full Runbook name:
+
 rjgit-user_general_list-manager
 
 ## Permissions

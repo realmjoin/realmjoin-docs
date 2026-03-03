@@ -10,6 +10,7 @@ Retrieves voice-related status information for a Teams user such as phone number
 User → Phone → Get Teams User Info
 
 Full Runbook name:
+
 rjgit-user_phone_get-teams-user-info
 
 ## Permissions

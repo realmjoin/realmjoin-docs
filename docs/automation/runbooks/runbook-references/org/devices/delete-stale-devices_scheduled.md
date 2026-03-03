@@ -11,6 +11,7 @@ It can optionally delete the matching devices and can send an email report.
 Organization → Devices → Delete Stale Devices (Scheduled)
 
 Full Runbook name:
+
 rjgit-org_devices_delete-stale-devices_scheduled
 
 ## Permissions

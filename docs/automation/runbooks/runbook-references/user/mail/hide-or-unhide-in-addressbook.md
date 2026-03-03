@@ -10,6 +10,7 @@ Hides or unhides a mailbox from the global address lists. Important: This change
 User → Mail → Hide Or Unhide In Addressbook
 
 Full Runbook name:
+
 rjgit-user_mail_hide-or-unhide-in-addressbook
 
 ## Permissions

@@ -10,6 +10,7 @@ Wipe a Windows or MacOS device. For Windows devices, you can choose between a re
 Device → General → Wipe Device
 
 Full Runbook name:
+
 rjgit-device_general_wipe-device
 
 ## Permissions

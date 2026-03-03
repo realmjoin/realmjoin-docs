@@ -11,6 +11,7 @@ The SubscriptionId value must be defined in the runbooks customization.
 Device → AVD → Toggle Drain Mode
 
 Full Runbook name:
+
 rjgit-device_AVD_toggle-drain-mode
 
 ## Permissions

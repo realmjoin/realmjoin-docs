@@ -10,6 +10,7 @@ Lists Entra ID groups where the specified user is an owner. Outputs the group na
 User → General → List Group Ownerships
 
 Full Runbook name:
+
 rjgit-user_general_list-group-ownerships
 
 ## Permissions
