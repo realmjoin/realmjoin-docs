@@ -54,14 +54,14 @@ If an application is required in a newer version than the one available in the R
 Note: Additional switches, new parameters or configuration files for an existing package are considered updates and shall be requested the identical way.
 {% endhint %}
 
-{% hint style="info" %}
-Tickets, Files and Setup
+{% hint style="danger" icon="exclamation" %}
+**Tickets, Files and Setup**
 
 Please note that:
 
 * all update and new package requests necessitate the provision of both binaries and documentation detailing the required command line parameters.
-* if an update request does not entail changes from the previous version, the submission of new parameters is not required.&#x20;
-* the request creates a ticket. All communication will be handled in this ticket, and it will only be sent to the account that created it. If this account does not have any active mailbox, the requester will not get any information.&#x20;
+* if an update request does not entail changes from the previous version, the submission of new parameters is not required but need to be referred.&#x20;
+* the request creates a ticket. All communication will be handled in this ticket, and it will only be sent to the account that created it. **If this account does not have any active mailbox, the requester will not get any information.** The request form allows to set a new reply address in case an ADM account without mailbox is used to create the text. Once the ticket is created, the reply address can not and will not be changed.&#x20;
 * the software requester role can be assigned to any user group in the tenant, therefore, an ADM account may not be required.&#x20;
 * organic packages and PACKaaS might be not available right away, please get in touch with support@realmjoin.com if a feature is missing
 {% endhint %}
