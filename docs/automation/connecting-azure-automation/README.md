@@ -94,7 +94,7 @@ cd c:\temp\myfolder
 ```
 
 5. Unblock scripts if necessary\
-   ![](../../.gitbook/assets/image.png)
+   ![](<../../.gitbook/assets/image (1).png>)
 6. Assign MS Graph Permissions to your Azure Automation Account using GrantAppPermToEntApp.ps1, replacing xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx with your Automation Account's Object ID
 
 ```

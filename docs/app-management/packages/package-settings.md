@@ -4,7 +4,7 @@ description: This page details the different settings available for deployed pac
 
 # Package Settings
 
-### Automation
+## Automation
 
 <figure><img src="../../.gitbook/assets/image (228).png" alt=""><figcaption><p>Package Automation</p></figcaption></figure>
 
@@ -38,17 +38,17 @@ These values can be globally preconfigured for newly imported packages in [Setti
 
 
 
-### Config
+## Config
 
 <figure><img src="../../.gitbook/assets/image (324).png" alt=""><figcaption><p>Package Config</p></figcaption></figure>
 
-#### Technical Application Owners
+### Technical Application Owners
 
 If wanted, you can assign multiple **Technical Application Owners** (TAO) to a package via storing their email-addresses.
 
 For receiving **automated notification emails** for package updates, you can **enable** the switch below in addition.
 
-#### Arguments
+### Arguments
 
 **Arguments** allow you to pass command line switches to an application installation. This is commonly used to customize your package with language options, a license key etc. that need to be present at installation time.
 
@@ -63,7 +63,29 @@ Some packages include a **Technical Help**, to explain possible **Arguments** an
 
 ![Technical Help for a Package](<../../.gitbook/assets/image (56).png>)
 
-#### Expert Settings
+#### Special arguments for Intunewin packages
+
+For Intunewin packages we offer a configurable package update UI notification which lets the user interact with the install / update of an application and gives control over the process.
+
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-04 at 14.39.28.png" alt=""><figcaption></figcaption></figure>
+
+You can configure this dialog with the following settings in the arguments section:
+
+```
+--rjNotifyUser // Activate dialog
+```
+
+```
+--rjNotifyAllowDefer[=n] // snooze option with x possible deferrals
+```
+
+```
+--rjNotifyTimeout=n // when no user action is performed -> automatic snooze after x seconds (if deferral allowed), otherwise update
+```
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+### Expert Settings
 
 {% hint style="info" %}
 RealmJoin App Deployment required.\
