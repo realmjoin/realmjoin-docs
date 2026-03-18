@@ -36,7 +36,7 @@ Three different PACKaaS requests are currently available: new package, update ex
 If an application is not available in the RealmJoin Store, it can be requested for packaging via the RealmJoin Packaging Factory. A valid PACKaaS request must include:
 
 * **Application binaries**, which must always be uploaded for regular packaging requests (a download URL may be added for reference but is **not** sufficient).
-* **Documentation** describing all required configuration switches as command‑line parameters, registry keys, configuration files, or similar (screenshots are not accepted; PACKaaS does not include Scripting‑as‑a‑Service).
+* **Documentation** describing all required configuration switches as command‑line parameters, registry keys, configuration files, or similar (screenshots are not accepted; PACKaaS does not include Scripting‑as‑a‑Service). Silent/unattended installation commands are always required.
 * **Packaging type selection**, specifying whether the application should be created as a _generic_ package (when no customer‑specific data is included) or as a _private/custom_ package (additional fees may apply). The Packaging Factory may change a request from generic to private if justified; for example, when customer‑specific details are identified during processing. Customers will be informed of such changes before the request is completed.
 * **Contact email address**, which may differ from the currently authenticated user’s email.
 * **Installation parameters**, which may be entered directly in the request instead of embedding them in the ZIP file.
