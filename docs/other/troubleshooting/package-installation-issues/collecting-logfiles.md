@@ -43,4 +43,13 @@ The sync can be forced from the client by running `Sync this device` from the Re
 The log ZIP file download is available to every user that has access to the RealmJoin Portal, not only the requesting account.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/logs-portal.png" alt=""><figcaption><p>Requesting Logs using the RealmJoin Portal</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>Requesting Logs using the RealmJoin Portal</p></figcaption></figure>
+
+## Log files on AVD and MU devices
+
+On devices with multiple users a drop down section allows to request logs for specific users.&#x20;
+
+
+
+<figure><img src="../../../.gitbook/assets/26-03-27-14_54_17_SnippingTool.png" alt=""><figcaption></figcaption></figure>
+

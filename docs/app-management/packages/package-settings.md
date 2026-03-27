@@ -83,7 +83,7 @@ You can configure this dialog with the following settings in the arguments secti
 --rjNotifyTimeout=n // when no user action is performed -> automatic snooze after x seconds (if deferral allowed), otherwise update
 ```
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Expert Settings
 
