@@ -48,6 +48,12 @@ Thus, new versions will also be installed on these devices to assert deployment 
 
 <figure><img src="../../.gitbook/assets/app-deploy-2.png" alt=""><figcaption><p>Update Group Enabled</p></figcaption></figure>
 
+{% hint style="info" %}
+Update eligibility is determined using Intune reporting data across the entire tenant. By default, the Update Group feature targets all reported devices. To restrict this to specific devices, assign the "Eligible for Update Group" permission to your desired device groups in the portal's settings.&#x20;
+
+Once this permission is assigned to at least one group, the feature will only process devices within those specific groups.
+{% endhint %}
+
 ### Exclude
 
 Needs to be explicitly activated through "More" > "Exclude assignments" (like shown in the [picture below](package-deployment.md#enable-additional-and-restore-default-groups)). Users in the specified group will be excluded from assignments all over the package and associated managed groups.&#x20;
