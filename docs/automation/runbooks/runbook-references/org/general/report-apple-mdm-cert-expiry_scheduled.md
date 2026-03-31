@@ -35,7 +35,7 @@ rjgit-org_general_report-apple-mdm-cert-expiry_scheduled
 ### Days
 
 The warning threshold in days. Certificates and tokens expiring within this many days will be
-flagged as alerts in the report. Default is 300 days (approximately 10 months).
+flagged as alerts in the report. Default is 30 days.
 
 | Property | Value |
 | --- | --- |

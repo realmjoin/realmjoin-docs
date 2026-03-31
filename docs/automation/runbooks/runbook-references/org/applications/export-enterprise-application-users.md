@@ -66,25 +66,15 @@ Storage account name used for the upload.
 | Default Value |  |
 | Type | String |
 
-### StorageAccountLocation
+### LinkExpiryDays
 
-Azure region for the storage account, used when the account needs to be created.
-
-| Property | Value |
-| --- | --- |
-| Required | false |
-| Default Value |  |
-| Type | String |
-
-### StorageAccountSku
-
-Storage account SKU, used when the account needs to be created.
+Number of days until the generated download link expires.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
-| Default Value |  |
-| Type | String |
+| Default Value | 6 |
+| Type | Int32 |
 
 
 

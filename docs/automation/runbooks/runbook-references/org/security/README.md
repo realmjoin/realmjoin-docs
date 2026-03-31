@@ -10,6 +10,7 @@ On this overview page you can find all Organization Runbooks in the Security sub
 
 - [Add Defender Indicator](add-defender-indicator.md)
 - [Backup Conditional Access Policies](backup-conditional-access-policies.md)
+- [Find SMS Auth Phone Number](find-sms-auth-phone-number.md)
 - [List Admin Users](list-admin-users.md)
 - [List Expiring Role Assignments](list-expiring-role-assignments.md)
 - [List Inactive Devices](list-inactive-devices.md)
