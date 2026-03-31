@@ -11,10 +11,10 @@ All runbooks are organized into different folders based on their area of applica
 
 The following categories are currently available:
 
-- device
-- group
-- org
-- user
+- Device
+- Group
+- Organization
+- User
 
 Each category contains multiple runbooks that are further divided into subcategories based on their functionality. The runbooks are listed in alphabetical order within each subcategory.
 
