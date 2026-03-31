@@ -51,7 +51,7 @@ In the following table `$` represents any of the three `Account` JSON object fro
 | $.PasswordPreset   | 0                                                                    | Preset password templates, see [Password generation](./#password-generation).                |
 | $.MaxStaleness     | Special. See [Account recreation](./#account-recreation).            | Preset password templates, see [Password generation](./#password-generation).                |
 | $.OnDemand         | Special. See [Support account](./#support-account).                  | Create account only when requested.                                                          |
-| $.Expiration       | Special. See [Privileged account](./#privileged-account).            | Fixed account expiration date (ISO-8601 format)                                              |
+| $.Expiration       | Special. See [Support account](./#support-account).                  | Fixed account expiration date (ISO-8601 format)                                              |
 | $.PasswordRenewals | Special. See [Privileged account](./#privileged-account).            | Fixed account expiration date (ISO-8601 format)                                              |
 
 ## Password **generation**
