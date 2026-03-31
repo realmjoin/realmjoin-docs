@@ -342,7 +342,8 @@ if ($outputMode -eq "OneFile") {
     Add-Content -Path $ResultFile -Value ""
     Add-Content -Path $ResultFile -Value "To ensure easy navigation, the runbooks are categorized into different sections based on their area of application. The following categories are currently available:"
     foreach ($scope in $includedScope) {
-        Add-Content -Path $ResultFile -Value "- $scope"
+        $scopeDisplayName = if ($scope -eq 'org') { 'Organization' } else { (Get-Culture).TextInfo.ToTitleCase($scope) }
+        Add-Content -Path $ResultFile -Value "- $scopeDisplayName"
     }
     Add-Content -Path $ResultFile -Value ""
     Add-Content -Path $ResultFile -Value "Each category contains multiple runbooks that are further divided into subcategories based on their functionality. The runbooks are listed in alphabetical order within each subcategory."
@@ -514,7 +515,8 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
     Add-Content -Path $ResultFile -Value "The following categories are currently available:"
     Add-Content -Path $ResultFile -Value ""
     foreach ($scope in $includedScope) {
-        Add-Content -Path $ResultFile -Value "- $scope"
+        $scopeDisplayName = if ($scope -eq 'org') { 'Organization' } else { (Get-Culture).TextInfo.ToTitleCase($scope) }
+        Add-Content -Path $ResultFile -Value "- $scopeDisplayName"
     }
     Add-Content -Path $ResultFile -Value ""
     Add-Content -Path $ResultFile -Value "Each category contains multiple runbooks that are further divided into subcategories based on their functionality. The runbooks are listed in alphabetical order within each subcategory."
