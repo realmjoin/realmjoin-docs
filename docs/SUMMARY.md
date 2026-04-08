@@ -283,6 +283,7 @@
 
 * [MSP & Advanced Features](other/msp-and-advanced-features.md)
 * [Security & Privacy](other/security-and-privacy.md)
+* [RealmJoin Unlocked Vidcast](other/realmjoin-unlocked-vidcast.md)
 * [FAQ](other/faq.md)
 * [Troubleshooting](other/troubleshooting/README.md)
   * [Package Installation Issues](other/troubleshooting/package-installation-issues/README.md)
