@@ -22,11 +22,11 @@ The vidcast is hosted by Dr. Moritz Pohl of our product team, featuring rotating
 
 #### Episode Overview
 
-<table><thead><tr><th width="105">Episode</th><th width="115">Title</th><th width="198">Key Topics</th><th width="202">Guest</th><th>Link</th></tr></thead><tbody><tr><td>1</td><td>RealmJoin: What's New</td><td>Product Wrap-up, vNext Portal, macOS Support, Managed App Subscriptions</td><td>Steffen Schwerdtfeger, Cloud Architect and RealmJoin Champion</td><td><a href="https://www.youtube.com/watch?v=pm-VfgOB1kc">Watch on YouTube</a></td></tr></tbody></table>
+<table><thead><tr><th width="105">Episode</th><th width="115">Title</th><th width="198">Key Topics</th><th width="202">Guest</th><th>Link</th></tr></thead><tbody><tr><td>1</td><td>RealmJoin: What's New</td><td>Product Wrap-up, vNext Portal, macOS Support, Managed App Subscriptions</td><td>Steffen Schwerdtfeger, Cloud Architect and RealmJoin Champion</td><td><a href="https://www.youtube.com/watch?v=pm-VfgOB1kc">Watch on YouTube</a></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
 
 ***
 
-#### Episode 1 Wrap-up & What's New
+#### Episode 1 Wrap-up & What's New  ![Views](https://img.shields.io/youtube/views/pm-VfgOB1kc?style=flat-square\&label=Views\&color=red)
 
 In this kick-off episode, we take a deep dive into the evolution of RealmJoin over the last 12 to 18 months. We discuss how the product has transitioned from a specialized patch management tool to a comprehensive "Companion to Intune."
 
