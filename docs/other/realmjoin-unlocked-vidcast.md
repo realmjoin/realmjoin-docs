@@ -22,9 +22,7 @@ The vidcast is hosted by Dr. Moritz Pohl of our product team, featuring rotating
 
 #### Episode Overview
 
-| Episode | Title                 | Key Topics                                                              | Guest                                                         | Link                                                            |
-| ------- | --------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------- | --------------------------------------------------------------- |
-| 1       | RealmJoin: What's New | Product Wrap-up, vNext Portal, macOS Support, Managed App Subscriptions | Steffen Schwerdtfeger, Cloud Architect and RealmJoin Champion | [Watch on YouTube](https://www.youtube.com/watch?v=pm-VfgOB1kc) |
+<table><thead><tr><th width="105">Episode</th><th width="115">Title</th><th width="198">Key Topics</th><th width="202">Guest</th><th>Link</th></tr></thead><tbody><tr><td>1</td><td>RealmJoin: What's New</td><td>Product Wrap-up, vNext Portal, macOS Support, Managed App Subscriptions</td><td>Steffen Schwerdtfeger, Cloud Architect and RealmJoin Champion</td><td><a href="https://www.youtube.com/watch?v=pm-VfgOB1kc">Watch on YouTube</a></td></tr></tbody></table>
 
 ***
 
