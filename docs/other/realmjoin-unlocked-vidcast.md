@@ -26,7 +26,7 @@ The vidcast is hosted by Dr. Moritz Pohl of our product team, featuring rotating
 
 ***
 
-#### Episode 1 Wrap-up & What's New  ![Views](https://img.shields.io/youtube/views/pm-VfgOB1kc?style=flat-square\&label=Views\&color=red)
+#### Episode 1: Wrap-up & What's New  ![Views](https://img.shields.io/youtube/views/pm-VfgOB1kc?style=flat-square\&label=Views\&color=red)
 
 In this kick-off episode, we take a deep dive into the evolution of RealmJoin over the last 12 to 18 months. We discuss how the product has transitioned from a specialized patch management tool to a comprehensive "Companion to Intune."
 
