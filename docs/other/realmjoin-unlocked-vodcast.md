@@ -38,7 +38,7 @@ In this kick-off episode, we take a deep dive into the evolution of RealmJoin ov
 * [**00:13:58**](https://www.youtube.com/watch?v=pm-VfgOB1kc\&t=838s) **Advanced LAPS Features:** Managing local administrator passwords with self-service options.
 * [**00:18:34**](https://www.youtube.com/watch?v=pm-VfgOB1kc\&t=1114s) **Runbooks & Remediation:** Leveraging a library of over 100 community-driven PowerShell scripts with Azure automation.
 * [**00:24:36**](https://www.youtube.com/watch?v=pm-VfgOB1kc\&t=1476s) **Managed Subscriptions:** Automating the application lifecycle with "update rings."
-* [**00:29:42**](https://www.youtube.com/watch?v=pm-VfgOB1kc\&t=1782s) **The Packaging Factory:** Accessing over 10,000 generic and private application packages.
+* [**00:29:42**](https://www.youtube.com/watch?v=pm-VfgOB1kc\&t=1782s) **The Packaging Factory:** Accessing over 8.000 generic and private application packages.
 * [**00:33:28**](https://www.youtube.com/watch?v=pm-VfgOB1kc\&t=2008s) **macOS as a First-Class Citizen:** Managing Apple devices agentlessly through the RealmJoin portal.
 * [**00:36:56**](https://www.youtube.com/watch?v=pm-VfgOB1kc\&t=2216s) **LAPS for macOS:** Implementing self-service password management for Mac users.
 
