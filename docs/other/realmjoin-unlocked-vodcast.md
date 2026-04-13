@@ -5,7 +5,7 @@ description: >-
   application for our customers and partners.
 ---
 
-# RealmJoin Unlocked Vidcast
+# RealmJoin Unlocked Vodcast
 
 ## The Idea Behind RealmJoin Unlocked
 
@@ -16,7 +16,7 @@ The goal of this cast is to ensure that every RealmJoin user – especially thos
 * **Share Field Experience:** We bring in "RealmJoin Champions" and Workplace experts from our team to discuss best practices.
 * **Solve Problems:** We address frequently asked questions and common challenges directly in the episodes.
 
-The vidcast is hosted by Dr. Moritz Pohl of our product team, featuring rotating guests from our RealmJoin and Microsoft Intune departments.
+The vodcast is hosted by Dr. Moritz Pohl of our product team, featuring rotating guests from our RealmJoin and Microsoft Intune departments.
 
 ***
 
