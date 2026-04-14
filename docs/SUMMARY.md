@@ -4,6 +4,8 @@
 
 ## RealmJoin Deployment
 
+* [Getting Started](realmjoin-deployment/getting-started/README.md)
+  * [Extended Guide](realmjoin-deployment/getting-started/extended-guide.md)
 * [Onboarding](realmjoin-deployment/onboarding-realmjoin-portal/README.md)
   * [Quick Setup](realmjoin-deployment/onboarding-realmjoin-portal/quick-setup.md)
   * [Advanced Setup](realmjoin-deployment/onboarding-realmjoin-portal/advanced-setup.md)
