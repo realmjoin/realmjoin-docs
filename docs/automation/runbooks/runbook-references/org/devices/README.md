@@ -11,6 +11,7 @@ On this overview page you can find all Organization Runbooks in the Devices subc
 - [Add Autopilot Device](add-autopilot-device.md)
 - [Add Device Via Corporate Identifier](add-device-via-corporate-identifier.md)
 - [Auto Approve Driver Updates (Scheduled)](auto-approve-driver-updates_scheduled.md)
+- [Create Endpoint Analytics Baseline](create-endpoint-analytics-baseline.md)
 - [Delete Stale Devices (Scheduled)](delete-stale-devices_scheduled.md)
 - [Get Bitlocker Recovery Key](get-bitlocker-recovery-key.md)
 - [Notify Users About Stale Devices (Scheduled)](notify-users-about-stale-devices_scheduled.md)

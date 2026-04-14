@@ -87,9 +87,9 @@ If set to true, an alert is generated when the indicator matches.
 
 | Property | Value |
 | --- | --- |
-| Required | true |
+| Required | false |
 | Default Value | False |
-| Type | String |
+| Type | Boolean |
 
 
 

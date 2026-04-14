@@ -8,6 +8,7 @@ On this overview page you can find all Device Runbooks in the General subcategor
 
 ## Runbooks
 
+- [Assign Groups By Template](assign-groups-by-template.md)
 - [Change Grouptag](change-grouptag.md)
 - [Check Device Compliance](check-device-compliance.md)
 - [Check Updatable Assets](check-updatable-assets.md)

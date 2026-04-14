@@ -38,6 +38,7 @@ Also the document for each runbook contains information about permissions, where
   - [Restart Host](device/avd/restart-host.md)
   - [Toggle Drain Mode](device/avd/toggle-drain-mode.md)
 - [General](device/README.md#device-general)
+  - [Assign Groups By Template](device/general/assign-groups-by-template.md)
   - [Change Grouptag](device/general/change-grouptag.md)
   - [Check Device Compliance](device/general/check-device-compliance.md)
   - [Check Updatable Assets](device/general/check-updatable-assets.md)
@@ -54,6 +55,7 @@ Also the document for each runbook contains information about permissions, where
   - [Reset Mobile Device Pin](device/security/reset-mobile-device-pin.md)
   - [Restrict Or Release Code Execution](device/security/restrict-or-release-code-execution.md)
   - [Show Bitlocker Recovery Key](device/security/show-bitlocker-recovery-key.md)
+  - [Show Filevault Recovery Key](device/security/show-filevault-recovery-key.md)
   - [Show Laps Password](device/security/show-laps-password.md)
 
 ### Group Runbooks
@@ -91,6 +93,7 @@ Also the document for each runbook contains information about permissions, where
   - [Add Autopilot Device](org/devices/add-autopilot-device.md)
   - [Add Device Via Corporate Identifier](org/devices/add-device-via-corporate-identifier.md)
   - [Auto Approve Driver Updates (Scheduled)](org/devices/auto-approve-driver-updates_scheduled.md)
+  - [Create Endpoint Analytics Baseline](org/devices/create-endpoint-analytics-baseline.md)
   - [Delete Stale Devices (Scheduled)](org/devices/delete-stale-devices_scheduled.md)
   - [Get Bitlocker Recovery Key](org/devices/get-bitlocker-recovery-key.md)
   - [Notify Users About Stale Devices (Scheduled)](org/devices/notify-users-about-stale-devices_scheduled.md)
