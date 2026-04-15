@@ -1,47 +1,45 @@
 # Overview
 
-RealmJoin Portal's Settings allows administrators to customize their experience, manage RealmJoin features and integrate with Azure resources.
-
-<figure><img src="../.gitbook/assets/image (55) (1).png" alt=""><figcaption></figcaption></figure>
+RealmJoin Portal settings allow administrators to customize their experience, manage RealmJoin features and interact with Microsoft Azure resources.
 
 ## Navigation
 
-### [General](settings.md#general)
+### General
 
-General settings for RealmJoin such as app deployment defaults, app configurations, user interface etc.
+General settings for RealmJoin such as app deployment defaults, app configurations, user interface or Global Agent settings.&#x20;
 
-### [Permissions](settings.md#permissions)
+### Permissions
 
-Delegate different levels of permissions to users of the RealmJoin Portal.
+Delegate different levels of permissions to users of the RealmJoin Portal (RBAC).
 
-### [Groups](groups.md)
+### Groups
 
 Configure group prefixes to descriptive names within the RealmJoin Portal.
 
-### [Log Analytics](../logs/log-analytics.md)
+### Log Analytics
 
 Connect Log Analytics Workspace to RealmJoin for in-depth logging.
 
-### [Workplace cloud storage](settings.md#workplace-cloud-storage)
+### Workplace cloud storage
 
-Manage files within your Workspace.
+Manage files within your cloud storage.
 
-### [Runbooks](../automation/connecting-azure-automation/)
+### RunBooks
 
-Connect Azure Automation to automate repetitive tasks
+Connect Azure Automation to automate repetitive tasks with RunBooks.
 
-### [Runbook Customizations](settings.md#runbook-customizations)
+### RunBook Customizations
 
-Customize parameters within existing Runbooks
+Customize parameters within existing RunBooks.
 
-### [Runbook Permissions](settings.md#runbook-permissions)
+### RunBook Permissions
 
-Create granular access permissions for team members
+Create granular access permissions for team members using RunBooks.
 
-### [Custom Roles](settings.md#custom-roles)
+### Custom Roles
 
-Create additional RealmJoin Portal roles
+Create additional RealmJoin Portal roles to catch use-cases that the standard permission roles are not covering.
 
 ### App Categories
 
-Create and manage Intune app categories
+Create and manage Intune app categories.
