@@ -6,17 +6,17 @@ Settings can be used to control RealmJoin Client's behavior and configure featur
 
 If settings have been created/assigned to users, you can review them under ![](<../../.gitbook/assets/image (162).png>) - User Settings
 
-Accordingly, if settings have been applied to any group, including "**RealmJoin - All Users"**, these can be reviewed under ![](<../../.gitbook/assets/image (146).png>) - Group Settings
+Accordingly, if settings have been applied to any group, including "**RealmJoin - All Users"**, these can be reviewed under ![](<../../.gitbook/assets/image (146).png>) - Group Settings.
 
-### List of Settings
+## Default Values
 
-"User Settings" will list all settings applied to users and allows you to manipulate or delete them.
+You can define default group setting values by adding them to the built-in RealmJoin group "RealmJoin - All Users". These group settings can be overwritten by group settings assigned to any other group.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (251).png" alt=""><figcaption></figcaption></figure>
+Example:
 
-You can click on the name of a setting to open it in the settings editor.
+Set the RealmJoin Agent Channel to "release" for all your users (using "RealmJoin - All Users) and assign the "beta" channel to another 'real' group. This will overwrite the channel setting for these users because a 'real' group has higher priority.&#x20;
 
-### Settings Editor
+## Settings Editor
 
 <figure><img src="../../.gitbook/assets/image (229).png" alt=""><figcaption><p>Settings Editor</p></figcaption></figure>
 
