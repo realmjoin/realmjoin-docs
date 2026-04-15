@@ -166,7 +166,39 @@ SoftwarePackaging.AutoUpgradeCanDowngrade
 "true" | "false"
 ```
 
+### Global override of software package behavior
 
+These settings are primarily intended for Deployment/DEM users on shared devices
+
+**Key**
+
+SoftwarePackageOverrides.AllowBackgroundInstall
+
+**Value**
+
+```
+true | false
+```
+
+**Key**
+
+SoftwarePackageOverrides.IgnorePhaseRestrictions
+
+**Value**
+
+```
+true
+```
+
+**Key**
+
+SoftwarePackageOverrides.IgnoreUserRestrictions
+
+**Value**
+
+```
+true
+```
 
 ### AnyDesk Feature
 
