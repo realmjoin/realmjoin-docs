@@ -54,3 +54,9 @@ You can use the following variables:
 * **$healthScriptName** - Name of the Managed Remediation Script
 * **$modifier** - either "included" or "excluded" (Assignment vs. Exception)
 * **$groupName** - (only in description) Name of the Managed Group
+
+## Client Configuration
+
+With this tenant setting you can configure the timespan in which the RealmJoin Agent detects the primary user.&#x20;
+
+<figure><img src="../.gitbook/assets/image (352).png" alt=""><figcaption></figcaption></figure>
