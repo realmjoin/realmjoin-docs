@@ -79,13 +79,13 @@ Deleting a managed script will also remove its [Managed Groups](remediation-scri
 
 #### Assignment
 
-You can assign managed scripts to users and devices in the **Assignments** tab.
+You can assign managed scripts to users and devices in the **Assignments** tab, create managed groups or use your existing groups for assignments. You can also exclude groups from the assignment.
 
 <figure><img src="../.gitbook/assets/image (108).png" alt=""><figcaption><p>Assign Managed Scrips</p></figcaption></figure>
 
 When assigning a **staged** script, its status will change to **deployed**. At this point it can affect clients and users.
 
-You can use **Assign to All Users** and **Assign to All Devices** to you Intune's default assignment targets for this script. This will show a dialogue to define the desired schedule for evaluation (detection):
+You can use **Assign to All Users** and **Assign to All Devices** to use Intune's default assignment targets for this script. This will show a dialogue to define the desired schedule for evaluation (detection):
 
 <figure><img src="../.gitbook/assets/image (258).png" alt=""><figcaption><p>Script Schedule Editor</p></figcaption></figure>
 
@@ -100,5 +100,3 @@ The naming scheme for Managed Groups can be defined in [Settings -> General](../
 When updates for the managed remediation script become available, RealmJoin will make sure that these groups will be assigned to the update remediation script.
 
 You can use **change schedule** to open the Script Schedule Editor for this assignment.
-
-Using **Unassign** will remove individual group assignments.
