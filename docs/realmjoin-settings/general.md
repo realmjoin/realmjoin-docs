@@ -60,3 +60,9 @@ You can use the following variables:
 With this tenant setting you can configure the timespan in which the RealmJoin Agent detects the primary user.&#x20;
 
 <figure><img src="../.gitbook/assets/image (352).png" alt=""><figcaption></figcaption></figure>
+
+## LAPS Configuration
+
+With this tenant setting you can configure the expiration time of the RealmJoin LAPS Support Account.&#x20;
+
+<figure><img src="../.gitbook/assets/image (353).png" alt=""><figcaption></figcaption></figure>
