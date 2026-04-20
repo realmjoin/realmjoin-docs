@@ -2,7 +2,7 @@
 
 ## Overview
 
-The RealmJoin backend expects application credentials (username and secret) presented via [http basic authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication).
+The RealmJoin backend expects application credentials (username and secret).
 
 Username and secret will be created for you by our RealmJoin operations team. Please feel free to reach out if you want to integrate RealmJoin into your own tools and processes!
 
@@ -20,4 +20,4 @@ Now, on every request against the RealmJoins backend service present an http hea
 Authorization: Basic dC0xMjM0MTIzNDpteVMzY3JldCE=
 ```
 
-RealmJoin will then allow you to interact with ressources in your envorinment. It will not allow yuo to interact with resources foreign to your tenant. Remember that RealmJoin Portal requires SSL/TLS transport layer encryption on every request - your credentials will not be exposed to the traversing networks.
+RealmJoin will then allow you to interact with resources in your environment. It will not allow you to interact with resources foreign to your tenant. Remember that RealmJoin Portal requires SSL/TLS transport layer encryption on every request - your credentials will not be exposed to the traversing networks.

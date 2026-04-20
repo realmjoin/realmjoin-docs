@@ -4,10 +4,6 @@ description: Integrate RealmJoin in your applications and workflows
 
 # RealmJoin API
 
-Third party applications can interact with RealmJoin via its API. The API can enable administrators to perform actions such as:
+Third party applications can interact with RealmJoin via its API. The API can enable administrators to perform actions and retrieve information from the RealmJoin Tenant and available data.&#x20;
 
-* Retrieve statistics about their own tenant regarding RealmJoin usage
-* Request and fetch "Support Account" information for remote support (see LAPS)
-* Execute runbooks and query their status and output
-
-A [swagger specification](https://swagger.io/docs/specification/2-0/what-is-swagger/) of the API is available at [https://customer-api.realmjoin.com/swagger/index.html](https://customer-api.realmjoin.com/swagger/index.html)
+A Scalar documentation is available under: [https://customer-api.realmjoin.com/scalar/](https://customer-api.realmjoin.com/scalar/)
