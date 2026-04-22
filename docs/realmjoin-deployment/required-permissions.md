@@ -16,13 +16,13 @@ These permissions are required for basic functionality of the app per user.
 
 The following permissions are from type "Delegated" and are mainly used for login to the Portal.
 
-| Claim            | Usage                                       |
-| ---------------- | ------------------------------------------- |
-| `User.Read`      | Sign in and reading basic user properties   |
-| `profile`        | Reading user info (name, picture, username) |
-| `email`          | Reading user info (email address)           |
-| `openid`         | Sign in / authentication                    |
-| `offline_access` | Keep persisting data per user               |
+| Claim           | Permission                                          |
+| --------------- | --------------------------------------------------- |
+| User.Read       | Sign in and read user profile                       |
+| profile         | View users' basic profile                           |
+| email           | View users' email address                           |
+| openid          | Sign users in                                       |
+| offline\_access | Maintain access to data you have given it access to |
 
 {% hint style="info" %}
 Depending on the way you onboarded your tenant, you may find the "RealmJoin Portal - Core Features" permissions from below inside the "RealmJoin Portal" Application or in the separate one described below.&#x20;
