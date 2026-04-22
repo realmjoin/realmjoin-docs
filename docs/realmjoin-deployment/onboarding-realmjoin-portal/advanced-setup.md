@@ -32,11 +32,14 @@ We recommend installing and running the RealmJoin PowerShell module on your devi
 
 The script will prompt you to authenticate with Microsoft Graph. Sign in with your Global Administrator.
 
+```
+Install-Module -Force -Name RealmJoin
+Complete-RJTenantOnboarding -Token 1234ABCD 6>&1
+```
+
 <figure><img src="../../.gitbook/assets/Snipaste_2026-01-27_12-00-54.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/Snipaste_2026-01-28_18-16-31.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Snipaste_2026-01-27_12-00-54.png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
