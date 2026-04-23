@@ -32,7 +32,8 @@
 
 * [Advanced Search](analyze-and-export/advanced-search/README.md)
   * [Advanced Search examples](analyze-and-export/advanced-search/advanced-search-syntax.md)
-* [Data Export](analyze-and-export/data-export.md)
+* [Specific Data Export](analyze-and-export/data-export.md)
+* [General Data Export](analyze-and-export/general-data-export.md)
 
 ## App Management
 

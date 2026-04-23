@@ -8,8 +8,6 @@ By providing a transparent view of the RealmJoin environment, it allows users to
 
 ***
 
-## <mark style="color:$danger;">PREVIEW ONLY</mark>
-
 ## User Profile Dashboard
 
 Upon successful authentication, the portal presents a user-centric dashboard. This view is designed to provide immediate visibility into the user's digital footprint within the corporate environment.
