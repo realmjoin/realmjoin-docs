@@ -96,7 +96,7 @@ Selecting Main, Preview, Available and Uninstall will add the user to the chosen
 
 Selecting Assign will add users to the Main group by default.
 
-## Basic Subscription
+## Basic Subscription (Legacy)
 
 Basic packages do not have any associated Microsoft Entra groups. You will have to manually assign groups, devices or users.
 
