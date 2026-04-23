@@ -105,3 +105,13 @@ Groups, devices and users that are assigned to a Basic package will be assigned 
 <figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+#### Migrating from Basic to Managed subscriptions
+
+To migrate a legacy basic package subscription to the standard managed format, the RealmJoin Portal provides a built-in conversion function. In the assigned groups section of the basic subscribed application package, the "Convert to Managed App" option is available behind the "More" button.
+
+This feature creates the default managed subscription groups, in which the legacy users can be added vial bulk operation or nesting.
+
+<figure><img src="../../.gitbook/assets/image (358).png" alt=""><figcaption><p>Preparation to migrate a basic app to a managed app</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (359).png" alt=""><figcaption><p>Result of the migration process</p></figcaption></figure>
