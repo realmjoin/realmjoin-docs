@@ -92,6 +92,14 @@ For the first installation in each active session on the device, a confirmation 
 **Note:** After execution, the status update (e.g., "Installing" to "Success") may have a slight latency of a few seconds as the agent reports back to the portal.
 {% endhint %}
 
+{% hint style="info" %}
+To automatically allow RealmJoin portal triggering RJ agent from Microsoft Edge (hides dialog "This site is trying to open..."), you can use the following policy: [Define a list of protocols that can launch an external application from listed origins without prompting the user](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-browser-policies/autolaunchprotocolsfromorigins)
+
+```
+[ { "allowed_origins": [ "realmjoin.com" ], "protocol": "realmjoin" } ]
+```
+{% endhint %}
+
 ***
 
 ## Self Service Forms&#x20;
