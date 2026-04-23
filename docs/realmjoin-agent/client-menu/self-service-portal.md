@@ -77,10 +77,20 @@ The App Catalog serves as a modern, web-based replacement for the legacy RealmJo
 
 <figure><img src="../../.gitbook/assets/26-04-16-15_32_20_msedge.png" alt=""><figcaption><p>App Catalog for self service</p></figcaption></figure>
 
+The Self Service App Catalog uses the RealmJoin [custom protocol](https://docs.realmjoin.com/dev-reference/custom-protocol) to start the locally installed RealmJoin agent and imitating the user click, which triggers the installation of the assigned package configuration on the device.
+
+{% hint style="warning" %}
+Self service application installation via the App Catalog is **only available for deployment using the RealmJoin agent**. Since the installation is executed directly on the device in use, it is not possible for administrative accounts to start installations on other devices.
+{% endhint %}
+
+For the first installation in each active session on the device, a confirmation dialog is presented to the user to prevent unwanted or accidental installations.
+
+<figure><img src="../../.gitbook/assets/image (357).png" alt=""><figcaption></figcaption></figure>
+
 {% hint style="warning" %}
 **Note:** After execution, the status update (e.g., "Installing" to "Success") may have a slight latency of a few seconds as the agent reports back to the portal.
 
-Self service application installation via the App Catalog is **only available for deployment using the RealmJoin** agent.&#x20;
+
 {% endhint %}
 
 ***
