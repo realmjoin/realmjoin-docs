@@ -85,7 +85,7 @@ Self service application installation via the App Catalog is **only available fo
 
 For the first installation in each active session on the device, a confirmation dialog is presented to the user to prevent unwanted or accidental installations.
 
-<figure><img src="../../.gitbook/assets/image (357).png" alt=""><figcaption><p>Warning dialogue</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (357).png" alt=""><figcaption><p>Warning dialog</p></figcaption></figure>
 
 {% hint style="warning" %}
 **Note:** After execution, the status update (e.g., "Installing" to "Success") may have a slight latency of a few seconds as the agent reports back to the portal.
