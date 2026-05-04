@@ -96,7 +96,7 @@ If you decide to disable **Recurring billing**, your subscription will not renew
 
 ## **Trials**
 
-In case you would like to test RealmJoin, please [get in contact with us](https://www.realmjoin.com/start-now/) or send us an email to [sales@realmjoin.com](mailto:sales@realmjoin.com).
+In case you would like to test RealmJoin, simply [self-enrol your tenant via our website](https://www.realmjoin.com/start-now/) or send us an email to [sales@realmjoin.com](mailto:sales@realmjoin.com).
 
 ## FAQs
 
