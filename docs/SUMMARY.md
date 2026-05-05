@@ -123,6 +123,7 @@
         * [Add Device Via Corporate Identifier](automation/runbooks/runbook-references/org/devices/add-device-via-corporate-identifier.md)
         * [Auto Approve Driver Updates Scheduled](automation/runbooks/runbook-references/org/devices/auto-approve-driver-updates_scheduled.md)
         * [Create Endpoint Analytics Baseline](automation/runbooks/runbook-references/org/devices/create-endpoint-analytics-baseline.md)
+        * [Dedup Device Names Scheduled](automation/runbooks/runbook-references/org/devices/dedup-device-names_scheduled.md)
         * [Delete Stale Devices Scheduled](automation/runbooks/runbook-references/org/devices/delete-stale-devices_scheduled.md)
         * [Get Bitlocker Recovery Key](automation/runbooks/runbook-references/org/devices/get-bitlocker-recovery-key.md)
         * [Notify Users About Stale Devices Scheduled](automation/runbooks/runbook-references/org/devices/notify-users-about-stale-devices_scheduled.md)

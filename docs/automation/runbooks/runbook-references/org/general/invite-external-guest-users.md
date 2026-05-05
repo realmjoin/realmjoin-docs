@@ -5,7 +5,8 @@ description: Invite external guest users to the organization
 
 ## Description
 This runbook invites an external user as a guest user in Microsoft Entra ID.
-It can optionally add the invited user to a specified group.
+Optional profile properties such as given name, surname, company name, usage location, and manager can be set after the invitation is accepted.
+The invited user can optionally be added to a specified group.
 
 ## Location
 Organization → General → Invite External Guest Users
@@ -39,14 +40,63 @@ Display name of the guest user.
 
 | Property | Value |
 | --- | --- |
-| Required | true |
+| Required | false |
 | Default Value |  |
 | Type | String |
 
 ### GroupId
 
-The object ID of the group to add the guest user to.
-If not specified, the user will not be added to any group.
+The object ID of the group to add the guest user to. If not specified, the user will not be added to any group.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### GivenName
+
+Given name (first name) of the guest user.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### Surname
+
+Surname (last name) of the guest user.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### CompanyName
+
+Company name of the guest user.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### ManagerName
+
+Manager to assign to the guest user. Select a user from the directory.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### UsageLocation
+
+ISO 3166-1 alpha-2 country code for the usage location of the guest user (e.g. "US", "DE").
 
 | Property | Value |
 | --- | --- |

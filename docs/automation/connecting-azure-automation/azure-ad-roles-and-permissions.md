@@ -14,7 +14,7 @@ The shared runbooks available on [GitHub](https://github.com/realmjoin/realmjoin
 
 | Module | Minimum version in runbooks |
 |---|---|
-| `Az.Accounts` | 5.3.2 |
+| `Az.Accounts` | 5.3.4 |
 | `Az.Compute` | 5.1.1 |
 | `Az.DesktopVirtualization` | 5.4.1 |
 | `Az.ManagementPartner` | 0.7.5 |
@@ -74,6 +74,7 @@ Please grant the following Graph API-Permissions to the managed identity
 * `Place.Read.All`
 * `Policy.Read.All`
 * `Reports.Read.All`
+* `ReportSettings.ReadWrite.All`
 * `RoleAssignmentSchedule.Read.Directory`
 * `RoleManagement.Read.All`
 * `RoleManagement.Read.Directory`

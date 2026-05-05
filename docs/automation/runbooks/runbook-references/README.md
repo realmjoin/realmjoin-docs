@@ -94,6 +94,7 @@ Also the document for each runbook contains information about permissions, where
   - [Add Device Via Corporate Identifier](org/devices/add-device-via-corporate-identifier.md)
   - [Auto Approve Driver Updates (Scheduled)](org/devices/auto-approve-driver-updates_scheduled.md)
   - [Create Endpoint Analytics Baseline](org/devices/create-endpoint-analytics-baseline.md)
+  - [Dedup Device Names (Scheduled)](org/devices/dedup-device-names_scheduled.md)
   - [Delete Stale Devices (Scheduled)](org/devices/delete-stale-devices_scheduled.md)
   - [Get Bitlocker Recovery Key](org/devices/get-bitlocker-recovery-key.md)
   - [Notify Users About Stale Devices (Scheduled)](org/devices/notify-users-about-stale-devices_scheduled.md)
