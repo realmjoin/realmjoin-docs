@@ -4,9 +4,9 @@ When deploying packages/configurations via RealmJoin Agent, notifications inform
 
 <figure><img src="../../.gitbook/assets/RealmJoin_App_Notification.png" alt=""><figcaption></figcaption></figure>
 
-The screen above shows the RealmJoin app notification with a customizable **hero image** (for more information about hero images, click [here](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts#hero-image))
+The screen above shows the RealmJoin app notification with a customizable **hero image** (for more information about hero images, click [here](https://learn.microsoft.com/en-us/windows/apps/develop/notifications/app-notifications/app-notifications-content?tabs=appsdk#hero-image))
 
-Below this hero image you can see information on packages and a comment when the installation will start. You can also start it immediately.&#x20;
+Below this hero image you can see information on packages and a comment when the installation will start. You can also start it immediately.
 
 ## Configuration
 
@@ -29,11 +29,10 @@ SoftwarePackaging.Toast
 {% endcode %}
 
 {% hint style="warning" %}
-Please note that the filename must match the SHA-1 value of the hero image file. \
+Please note that the filename must match the SHA-1 value of the hero image file.\
 Please generate it, rename the file and upload it afterwards to your desired Cloud Storage (You can also use the [RealmJoin WCS Feature](../../realmjoin-settings/workplace-cloud-storage.md))\
 \
-Please also be aware of the file size and the image dimensions defined by Microsoft.&#x20;
+Please also be aware of the file size and the image dimensions defined by Microsoft.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-11-10 at 11.42.01 (1).png" alt=""><figcaption></figcaption></figure>
-
+<figure><img src="../../.gitbook/assets/Screenshot 2025-11-10 at 11.42.01.png" alt=""><figcaption></figcaption></figure>
