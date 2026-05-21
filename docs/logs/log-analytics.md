@@ -10,7 +10,7 @@ Also, RealmJoin Portal will use Log Analytics to store Audit Log information and
 
 ### Azure App Registration
 
-RealmJoin will interact with both Log Analytics workspaces via an [Entra ID application registration](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals).&#x20;
+RealmJoin will interact with both Log Analytics workspaces via an [Entra ID application registration](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals).
 
 {% hint style="info" %}
 You can reuse the App Registration "RealmJoin Runbook Management" which is created when [onboarding runbooks](../automation/connecting-azure-automation/).
@@ -61,7 +61,7 @@ If you have not integrated runbooks or prefer a separate app registration, do th
 1. Select "New Registration"
 2.  Provide a Name<br>
 
-    <figure><img src="../.gitbook/assets/image (327).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (326).png" alt=""><figcaption></figcaption></figure>
 3. Register the application
 4. Select the application
 5. Navigate to Manage > Certificates & Secrets
@@ -112,8 +112,6 @@ Windows Update for Business reports may take up to 24 hours to apply
     <figure><img src="../.gitbook/assets/image (328).png" alt=""><figcaption></figcaption></figure>
 5. Review and Save the role assignment
 
-
-
 ### Part 5 - Connecting RealmJoin and Azure Log Analytics Workspace
 
 <figure><img src="../.gitbook/assets/image (282).png" alt=""><figcaption><p>Log Analytics Settings Page</p></figcaption></figure>
@@ -146,13 +144,13 @@ Windows Update for Business reports may take up to 24 hours to apply
     * **Workspace Name:** Please provide the Workspace Name from the [RealmJoin Audit Logs](log-analytics.md#realmjoin-audit-logs) Log Analytics account.
     *   **Customer Workspace Id:** Please provide / create a Log Analytics workspace to store [RealmJoin audit log and runbook log data](log-analytics.md#realmjoin-audit-logs).<br>
 
-        <figure><img src="../.gitbook/assets/image (337).png" alt=""><figcaption></figcaption></figure>
+        <figure><img src="../.gitbook/assets/image (336).png" alt=""><figcaption></figcaption></figure>
     * **Customer Workspace Key:** RealmJoin will act as an agent to Log Analytics. Please provide the "Primary Key" to this workspace, as to allow writing data to the workspace.
       * "The Primary Key" can be obtained via different methods:
         * [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/monitor/log-analytics/workspace?view=azure-cli-latest#az-monitor-log-analytics-workspace-get-shared-keys):\
           `az monitor log-analytics workspace get-shared-keys --resource-group MyResourceGroup --workspace-name MyWorkspace`
         * [PowerShell](https://learn.microsoft.com/en-us/powershell/module/az.operationalinsights/get-azoperationalinsightsworkspacesharedkey?view=azps-14.6.0):\
-          `Get-AzOperationalInsightsWorkspaceSharedKey -ResourceGroupName "MyResourceGroup" -Name "MyWorkspace"`&#x20;
+          `Get-AzOperationalInsightsWorkspaceSharedKey -ResourceGroupName "MyResourceGroup" -Name "MyWorkspace"`
         * [RestAPI](https://learn.microsoft.com/en-us/rest/api/loganalytics/shared-keys/get-shared-keys?view=rest-loganalytics-2025-07-01\&tabs=HTTP):\
           `POST https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/sharedKeys?api-version=2025-07-01`
 3. Press **Save** after filling out all fields. The system will give you feedback if everything worked.

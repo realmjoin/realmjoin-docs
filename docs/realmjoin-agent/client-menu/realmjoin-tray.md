@@ -4,7 +4,7 @@
 
 After being successfully installed, RealmJoin is automatically started upon user login and is permanently active in the background. It is represented with an ID card icon.
 
-<figure><img src="../../.gitbook/assets/image (311).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (310).png" alt=""><figcaption></figcaption></figure>
 
 Clicking on the icon opens the RealmJoin client menu. It contains basic information in the lower part and several links in the upper part. These links are ordered in two different sections - **Web Links** and **Software Packages**.
 

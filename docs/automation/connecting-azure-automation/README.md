@@ -12,7 +12,7 @@ description: >-
 
 To enable RealmJoin Portal to deliver [runbooks ](../runbooks/)for automating daily tasks, you must connect an [Azure Automation](https://learn.microsoft.com/en-us/azure/automation/overview) Account. This Automation Account will act as the host for your runbooks and provide the [permissions](azure-ad-roles-and-permissions.md) required for the runbooks to function within your environment.
 
-## Considerations&#x20;
+## Considerations
 
 The Automation Account's [Managed Identity](https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) requires extensive [permissions ](azure-ad-roles-and-permissions.md)in your environment, such as the ability to modify group or user objects in Entra ID or manage mailboxes in Exchange Online. Limit administrative access to this account to prevent misuse of these privileges.
 
@@ -29,9 +29,9 @@ When using an existing Automation Account, note that RealmJoin Portal automatica
 
 {% stepper %}
 {% step %}
-### Create an Azure Automation Account
+#### Create an Azure Automation Account
 
-1. Navigate to your [Azure Portal > Automation Accounts](https://portal.azure.com/#create/Microsoft.AutomationAccount)&#x20;
+1. Navigate to your [Azure Portal > Automation Accounts](https://portal.azure.com/#create/Microsoft.AutomationAccount)
 2. Create a new Automation Account
 3.  In the Basics tab, choose your desired Subscription, Resource Group, Automation Account Name and Region<br>
 
@@ -43,22 +43,20 @@ A separate Resource Group for your Automation Account is recommended
 
 4.  In the Advanced tab, ensure the System Assigned Managed Identity is enabled
 
-    <figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
-
-
+    <figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 5. Select Review + Create and create your Automation Account
 6. Navigate to the Resource Group containing your Azure Automation Account
 7. In the IAM tab, assign the Azure Automation Account as a Contributor
 {% endstep %}
 
 {% step %}
-### Assign Permissions to Azure Automation Account
+#### Assign Permissions to Azure Automation Account
 
 The RealmJoin shared runbooks use the Azure Automation's system assigned managed identity to interact with Entra ID, MS Graph API etc.
 
 Managed Identity permissions cannot currently be granted through the Azure Portal. Use Microsoft Graph or PowerShell to assign these permissions.
 
-1. Download the following PowerShell scripts and JSON files to the same folder. \
+1. Download the following PowerShell scripts and JSON files to the same folder.\
    The script will assign the full permission set required by RealmJoin. Roles and permissions can be reviewed in the [Requirements](azure-ad-roles-and-permissions.md) section and adjusted as needed in the JSON files.
 
 {% tabs %}
@@ -79,13 +77,9 @@ Managed Identity permissions cannot currently be granted through the Azure Porta
 {% endtab %}
 {% endtabs %}
 
-
-
 2.  Note down the Object ID of the Azure Automation Account's Managed Identity in Account Settings > Identity
 
     <figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
-
-
 3. Open a PowerShell window.
 4. Navigate to the folder containing the downloaded files
 
@@ -111,7 +105,7 @@ cd c:\temp\myfolder
 {% endstep %}
 
 {% step %}
-### RealmJoin Runbook Configuration - Part 1
+#### RealmJoin Runbook Configuration - Part 1
 
 1.  In RealmJoin Portal go to '[Settings -> Runbooks](https://portal.realmjoin.com/settings/runbooks-configuration)'.<br>
 
@@ -129,7 +123,7 @@ cd c:\temp\myfolder
 {% endstep %}
 
 {% step %}
-### Granting Access for RealmJoin to Azure Automation
+#### Granting Access for RealmJoin to Azure Automation
 
 {% hint style="info" %}
 You can use [Azure CloudShell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview), so you don't need to install and authenticate a local copy of AZ CLI.
@@ -138,22 +132,20 @@ You can use [Azure CloudShell](https://docs.microsoft.com/en-us/azure/cloud-shel
 1.  Run the script copied previously in PowerShell.
 
     <figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
-
-
 2.  Note down the values for `appId` and `password`.\
     The App Registration "RealmJoin Runbook Management" will be created.<br>
 
-    ![App Registrations in Azure Portal](<../../.gitbook/assets/image (268).png>)
+    ![App Registrations in Azure Portal](<../../.gitbook/assets/image (69).png>)
 {% endstep %}
 
 {% step %}
-### RealmJoin Runbook Configuration - Part 2
+#### RealmJoin Runbook Configuration - Part 2
 
 1. In RealmJoin Portal return to the open window/wizard for '[Settings -> Runbooks](https://portal.realmjoin.com/settings/runbooks-configuration)'
 2. Fill in the missing values for `appId` and `password` created in the last step
 3. Fill in the name of the Automation Account created [previously](./#create-an-azure-automation-account)
-4. Choose the Branch of the shared runbook repository you want to follow. \
-   If unsure, please choose `production` \
+4. Choose the Branch of the shared runbook repository you want to follow.\
+   If unsure, please choose `production`\
    All runbook branches may be viewed here: [https://github.com/realmjoin/realmjoin-runbooks](https://github.com/realmjoin/realmjoin-runbooks)
 5. Choose the same location as your Azure Automation Account to make sure your runbooks are executed in the correct [Azure region](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview)
 

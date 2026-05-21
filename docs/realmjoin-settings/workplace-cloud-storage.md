@@ -45,7 +45,7 @@ If so, please move to "Settings" of your storage account and set "Allow Blob ano
 <figure><img src="../.gitbook/assets/image (285).png" alt=""><figcaption></figcaption></figure>
 
 6. Navigate to RealmJoin Portal (as administrator)
-7. Open settings and switch to the tab "Workplace cloud storage".&#x20;
+7. Open settings and switch to the tab "Workplace cloud storage".
 8. Paste in the previously copied connection string into "Access key (Connection string) for Azure Storage account" and click on "Save":
 
 <figure><img src="../.gitbook/assets/image (302).png" alt=""><figcaption></figcaption></figure>
@@ -83,7 +83,7 @@ Please also delete the obsolete Enterprise App in Entra ID (naming might be diff
 
 RealmJoin allows you to add and maintain several favorite lists via a simple UI. Afterwards, they can be exported or copied in formats like JSON or XML.
 
-1. Navigate to the favorites feature in the main menu and create a new list. The newly create list will get an ID that can be changed on your needs (just for internal identification of the corresponding list).&#x20;
+1. Navigate to the favorites feature in the main menu and create a new list. The newly create list will get an ID that can be changed on your needs (just for internal identification of the corresponding list).
 
 <figure><img src="../.gitbook/assets/image (289).png" alt=""><figcaption></figcaption></figure>
 
@@ -132,9 +132,9 @@ This feature allows you to add templates for Outlook signatures. In conjunction 
 
 ### Create or edit signature
 
-1. Navigate to the organization section in the menu and switch to tab "Signatures".&#x20;
+1. Navigate to the organization section in the menu and switch to tab "Signatures".
 2. Simply create or edit a signature in the WYSIWYG editor. Variables are added directly into the text.
-3. &#x20;Copy the public link to use in signature distribution
+3. Copy the public link to use in signature distribution
 
 <figure><img src="../.gitbook/assets/image (296).png" alt=""><figcaption></figcaption></figure>
 
@@ -169,6 +169,6 @@ This feature allows you to add templates for Outlook signatures. In conjunction 
 
 2. Configure the package as described in the Technical Help and paste the copied URL to your template:
 
-<figure><img src="../.gitbook/assets/image (300).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (299).png" alt=""><figcaption></figcaption></figure>
 
 3. The package provides several other options like distribution of multiple signatures, automatic renewal via task, setting of default signature etc.

@@ -4,11 +4,11 @@ Our notification system allows you to send notifications directly to user’s co
 
 ## User Experience
 
-Once you have created your notification, the target groups will receive a notification at the scheduled time. This notification appears on the desktop of a client.&#x20;
+Once you have created your notification, the target groups will receive a notification at the scheduled time. This notification appears on the desktop of a client.
 
 The user receives different colored notifications based off the notification category chosen. Once a notification has been closed and acknowledged by the user, it will not re-appear.
 
-<div><figure><img src="../../.gitbook/assets/Screenshot 2024-07-11 172006 (2).png" alt=""><figcaption><p>Category: None</p></figcaption></figure> <figure><img src="../../.gitbook/assets/Screenshot 2024-07-11 171544 (3).png" alt=""><figcaption><p>Category: Info</p></figcaption></figure> <figure><img src="../../.gitbook/assets/Screenshot 2024-07-11 171242 (2).png" alt=""><figcaption><p>Category: Alert</p></figcaption></figure></div>
+<div><figure><img src="../../.gitbook/assets/Screenshot 2024-07-11 172006.png" alt=""><figcaption><p>Category: None</p></figcaption></figure> <figure><img src="../../.gitbook/assets/Screenshot 2024-07-11 171544.png" alt=""><figcaption><p>Category: Info</p></figcaption></figure> <figure><img src="../../.gitbook/assets/Screenshot 2024-07-11 171242.png" alt=""><figcaption><p>Category: Alert</p></figcaption></figure></div>
 
 The notifications are transparent and are able to be clicked through to minimize disruption. This can be changed in the [Advanced Settings](showing-notifications.md#advanced-settings).
 
@@ -23,7 +23,7 @@ The notifications are transparent and are able to be clicked through to minimize
 2. **Notification Schedule**: Set a Start and End date for the notification. The notification will only be active during this period. Use the prompts to quickly fill
 3. **Target Groups**: Specify which [groups](../../ugd-management/user-list/) should receive the alert. You can also exclude certain groups if needed.
 4. **Notification Content**: This includes:
-   * **Language (Optional)**: Additional language versions of your notification. This field accepts IETF language tags and the language is evaluated by the current Windows language by the agent. The default and fallback is always _en._&#x20;
+   * **Language (Optional)**: Additional language versions of your notification. This field accepts IETF language tags and the language is evaluated by the current Windows language by the agent. The default and fallback is always _en._
    * **Title**: The headline of your notification.
    * **Body**: The main content of your notification.
 
@@ -55,17 +55,17 @@ Once a draft has been saved, the administrator will be prompted to either Publis
 <figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 * **Publish:** Selecting Publish will prompt for an additional Confirm Publish button.\
-  ![](<../../.gitbook/assets/image (8) (1).png>) \
+  ![](<../../.gitbook/assets/image (8) (1).png>)\
   Once notifications are sent out, they are not easily retrieved. Please make sure the notification is configured as intended prior to publishing.
 * **Delete:** Selecting Delete will prompt for an additional Confirm Delete button.\
-  ![](<../../.gitbook/assets/image (10) (1).png>) \
+  ![](<../../.gitbook/assets/image (9) (1).png>)\
   Once messages are deleted, they cannot be recovered. They will be deleted after 30 days.
 
 ### Cancelling a Notification
 
-Once a notification has been published, administrators will have the option to cancel the notification.&#x20;
+Once a notification has been published, administrators will have the option to cancel the notification.
 
-<figure><img src="../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 Cancelling a notification will cause the notification to disappear from a user's device without their intervention. Cancelled notifications cannot be recovered, will be deleted after 30 days and appear in the notification list with a red "Cancelled" tag.
 

@@ -1,7 +1,5 @@
 # Package Subscription Options
 
-
-
 {% embed url="https://www.youtube.com/watch?v=QYBx9yto560" %}
 Video tutorial
 {% endembed %}
@@ -12,36 +10,34 @@ Video tutorial
 
 <figure><img src="../../../.gitbook/assets/image (35) (1).png" alt=""><figcaption><p>Subscribe Buttons</p></figcaption></figure>
 
-Packages will either be pushed directly to Intune as intunewin packages or deployed using the RealmJoin agent on the device (recommended).&#x20;
+Packages will either be pushed directly to Intune as intunewin packages or deployed using the RealmJoin agent on the device (recommended).
 
 ## Subscription Type
 
 Packages can be subscribed as _managed_ or _basic_.
 
-* _Basic_ packages are available for assignment to groups or users and do not offer additional features. &#x20;
+* _Basic_ packages are available for assignment to groups or users and do not offer additional features.
 * _Managed_ packages allow RealmJoin to handle group creation and assignment.\
   The backend automatically creates a fixed set of groups, including preview and uninstall groups, and package assignments can only be made to these groups. Find more about managed groups [here](https://docs.realmjoin.com/app-management/packages/package-deployment#managed-deployment)
 
-
-
 <figure><img src="../../../.gitbook/assets/image (344).png" alt=""><figcaption><p>Application Groups</p></figcaption></figure>
 
-The created Entra ID groups can be managed from both the RealmJoin Portal and Microsoft Entra ID.&#x20;
+The created Entra ID groups can be managed from both the RealmJoin Portal and Microsoft Entra ID.
 
 ## Package Types
 
-Nearly all packages from the RealmJoin store can either be subscribed for RealmJoin Agent or Intune driven deployment.&#x20;
+Nearly all packages from the RealmJoin store can either be subscribed for RealmJoin Agent or Intune driven deployment.
 
 ### RealmJoin Deployment
 
-RealmJoin driven deployment relies on the RealmJoin agent installed on the device. Using a modified Chocolatey engine and PowerShell, all code and installation commands are executed directly on the device. Binaries are downloaded during the installation.&#x20;
+RealmJoin driven deployment relies on the RealmJoin agent installed on the device. Using a modified Chocolatey engine and PowerShell, all code and installation commands are executed directly on the device. Binaries are downloaded during the installation.
 
 ### Intune Deployment
 
-The Intune driven deployment pushes the intunewin version of the package directly into the tenant. It can be managed either from the RealmJoin portal or in Intune directly. The intunewin packages contain all binaries as well as a PowerShell based deploy kit.&#x20;
+The Intune driven deployment pushes the intunewin version of the package directly into the tenant. It can be managed either from the RealmJoin portal or in Intune directly. The intunewin packages contain all binaries as well as a PowerShell based deploy kit.
 
 {% hint style="info" %}
-We recommend RealmJoin driven deployment, as it offers more options and manageability.&#x20;
+We recommend RealmJoin driven deployment, as it offers more options and manageability.
 {% endhint %}
 
 ## App Categories
@@ -63,7 +59,7 @@ The name and group name/category can now be customized when subscribing to a new
 
 <figure><img src="../../../.gitbook/assets/image (42) (1).png" alt=""><figcaption><p>Configuration of Category/Group Name during the subscription process</p></figcaption></figure>
 
-The total of categories can be managed from the _App Categories_ tab in the general settings section in the RealmJoin portal.&#x20;
+The total of categories can be managed from the _App Categories_ tab in the general settings section in the RealmJoin portal.
 
 <figure><img src="../../../.gitbook/assets/image (41) (1).png" alt=""><figcaption><p>All categories available in the tenant</p></figcaption></figure>
 
@@ -73,7 +69,7 @@ The total of categories can be managed from the _App Categories_ tab in the gene
 
 Sometimes it is necessary to have multiple subscriptions of one craft package. Those craft packages are often used for configurations like printer or network drive mapping and need to be subscribed and assigned multiple times to users because there are multiple printer or network drives to be mapped. Therefore it is important to have a suffix, because RealmJoin only accepts every package ID once. The suffix is modifying the unique ID from "this-id" to "this-id#\[your-suffix]".
 
-While subscribing to a craft package from the store, a suffix is automatically added to the ID of the package. If you want to edit the ID, you can simply click on "Set suffix" next to the orange dialog box showing the pre-defined ID. &#x20;
+While subscribing to a craft package from the store, a suffix is automatically added to the ID of the package. If you want to edit the ID, you can simply click on "Set suffix" next to the orange dialog box showing the pre-defined ID.
 
 <figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
@@ -83,13 +79,13 @@ The suffix is only available for RealmJoin Deployment since it is not necessary 
 
 ### Choco Packages
 
-If you need multiple configurations of an application, e.g. "Microsoft 365 Apps for Enterprise", you can subscribe it multiple times and change the name during the subscription process, i.e. "Microsoft 365 Apps for Enterprise - DE", which will be reflected in the managed package groups created by RealmJoin.&#x20;
+If you need multiple configurations of an application, e.g. "Microsoft 365 Apps for Enterprise", you can subscribe it multiple times and change the name during the subscription process, i.e. "Microsoft 365 Apps for Enterprise - DE", which will be reflected in the managed package groups created by RealmJoin.
 
 {% hint style="danger" %}
 **Suffixes are not required—and therefore not available—for these types of packages, as each user can only be assigned and install a single instance of an application with a specific configuration at any given time. This limitation ensures that identical Chocolatey or IntuneWin applications, which share the same unique identifier, cannot be deployed to the same user more than once. Attempting to assign multiple copies of the same app with the same ID will result in conflicts and is not supported.**
 {% endhint %}
 
-You can change the name by choosing your package and subscription type and before hitting continue clicking next to the name in the top left corner to adjust it.&#x20;
+You can change the name by choosing your package and subscription type and before hitting continue clicking next to the name in the top left corner to adjust it.
 
 ## Package Properties
 
@@ -137,7 +133,7 @@ The following tabs are available:
 
 ### Overview / Subscribe
 
-<figure><img src="../../../.gitbook/assets/image (342).png" alt=""><figcaption><p>Overview and Provisioning</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (341).png" alt=""><figcaption><p>Overview and Provisioning</p></figcaption></figure>
 
 #### Title, Description and other info
 

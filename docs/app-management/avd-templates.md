@@ -45,14 +45,14 @@ Copy the following definition and make sure to change the GroupID accordingly.
 
 <figure><img src="../.gitbook/assets/image (157).png" alt=""><figcaption><p>Templates List</p></figcaption></figure>
 
-2. Select the <img src="../.gitbook/assets/image (149).png" alt="" data-size="line"> icon (1), enter a meaningful name (2) and Click "Save" (3).&#x20;
+2. Select the <img src="../.gitbook/assets/image (147).png" alt="" data-size="line"> icon (1), enter a meaningful name (2) and Click "Save" (3).
 
 <figure><img src="../.gitbook/assets/image-1.png" alt=""><figcaption><p>Create a template</p></figcaption></figure>
 
 ### Add Applications to a Template
 
 1. Open the template by clicking on its name.
-2. To add packages to the template, click the <img src="../.gitbook/assets/image (147).png" alt="" data-size="line"> icon.&#x20;
+2. To add packages to the template, click the <img src="../.gitbook/assets/image (147).png" alt="" data-size="line"> icon.
 
 <figure><img src="../.gitbook/assets/image-2.png" alt=""><figcaption><p>Add packages to a template - 1</p></figcaption></figure>
 
@@ -68,24 +68,24 @@ Intune Packages can not be assigned using AVD templates.
 ### Remove Applications from a Template
 
 1. Open the template by clicking on its name.
-2. If you want to remove applications, click on **Unassign**. If you want to define arguments overwriting those set on the package level, you can do so by clicking on **Settings**.&#x20;
+2. If you want to remove applications, click on **Unassign**. If you want to define arguments overwriting those set on the package level, you can do so by clicking on **Settings**.
 
 <figure><img src="../.gitbook/assets/image-4.png" alt=""><figcaption><p>Remote packages from a template</p></figcaption></figure>
 
 ### Create a Token
 
-To use the template via RealmJoin Client, you also need a token.&#x20;
+To use the template via RealmJoin Client, you also need a token.
 
 {% hint style="warning" %}
-Please handle the token with care. If you think the token might have been leaked, revoke it by hitting the **Revoke** button next to the token.&#x20;
+Please handle the token with care. If you think the token might have been leaked, revoke it by hitting the **Revoke** button next to the token.
 {% endhint %}
 
 1. Create a token, click on the **Tokens** tab.
-2. Click the <img src="../.gitbook/assets/image (149).png" alt="" data-size="line"> icon (1), enter a meaningful name (2) and click **Save** (3).&#x20;
+2. Click the <img src="../.gitbook/assets/image (147).png" alt="" data-size="line"> icon (1), enter a meaningful name (2) and click **Save** (3).
 
 <figure><img src="../.gitbook/assets/image-6.png" alt=""><figcaption><p>Create a token</p></figcaption></figure>
 
-## Using a Template&#x20;
+## Using a Template
 
 ### AVD / Headless Provisioning
 

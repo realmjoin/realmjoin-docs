@@ -22,13 +22,13 @@ To add all features or individual features, see [Other Commands](advanced-setup.
 
 {% stepper %}
 {% step %}
-### Open PowerShell on Windows/Mac
+#### Open PowerShell on Windows/Mac
 
 We recommend installing and running the RealmJoin PowerShell module on your device's PowerShell rather than Azure CloudShell.
 {% endstep %}
 
 {% step %}
-### Copy and Run the RealmJoin Onboarding Script
+#### Copy and Run the RealmJoin Onboarding Script
 
 The script will prompt you to authenticate with Microsoft Graph. Sign in with your Global Administrator.
 
@@ -43,7 +43,7 @@ Complete-RJTenantOnboarding -Token 1234ABCD 6>&1
 {% endstep %}
 
 {% step %}
-### Begin using RealmJoin
+#### Begin using RealmJoin
 
 Once finished, the script will launch the RealmJoin Portal
 
@@ -120,6 +120,3 @@ Get-Help New-RJTenant -Full
 Get-Help Update-RJTenant -Examples
 Get-Help Show-RJInteractiveSetup -Detailed
 ```
-
-
-

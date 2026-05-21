@@ -218,7 +218,7 @@ if ($ExtraWorkflow) {
 
 If not customized, it will be presented like this in the frontend:
 
-![Demo - before](<../../.gitbook/assets/runbook-customization-img4 (1).png>)
+![Demo - before](../../.gitbook/assets/runbook-customization-img4.png)
 
 Thoughts:
 
@@ -287,11 +287,11 @@ Each parameter has its own section in `ParameterList`. [Modifiers](runbook-custo
 
 The result will look like this:
 
-![Demo - after hidden](<../../.gitbook/assets/runbook-customization-img5 (1).png>)
+![Demo - after hidden](../../.gitbook/assets/runbook-customization-img5.png)
 
 Choosing the additional workflow will present (unhide) more parameters:
 
-![Demo - after unhidden](<../../.gitbook/assets/runbook-customization-img6 (1).png>)
+![Demo - after unhidden](../../.gitbook/assets/runbook-customization-img6.png)
 
 This shows less clutter in comparison to before applying the customization. At the same time more information about the alternatives of "Extra Workflow" is available to the user. Also, a user now will only worry about "Extra Workflow Time" if it is relevant.
 
@@ -561,9 +561,9 @@ So, we can have a runbook specific customziation in `Runbooks` reusable accross 
 
 This will create the following UI:
 
-![Demo - ref-location](<../../.gitbook/assets/runbook-customization-img7 (1).png>)
+![Demo - ref-location](../../.gitbook/assets/runbook-customization-img7.png)
 
-![Demo - ref-address](<../../.gitbook/assets/runbook-customization-img8 (1).png>)
+![Demo - ref-address](../../.gitbook/assets/runbook-customization-img8.png)
 
 ### Graph Filters
 

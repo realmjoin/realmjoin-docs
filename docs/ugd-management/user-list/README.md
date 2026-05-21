@@ -58,13 +58,13 @@ You can use the filters above the list to limit search results to specific User,
 * **Members** - Users native to your tenant (default)
 * **Guests** - Azure B2B Guests invited from other tenants
 
-#### ADM Accounts
+**ADM Accounts**
 
 * **Any** - Displays all user accounts (default)
 * **ADM** - Filter to only show users whose DisplayName starts with "ADM" (admin accounts)
 * **Non-ADM** - Negation of the "ADM" Filter
 
-#### Data completeness
+**Data completeness**
 
 * **Any** - Show users with both complete and missing data (default)
 * **No Data** - Show only users with missing data in "job title", "city" or "country"
@@ -73,7 +73,7 @@ You can use the filters above the list to limit search results to specific User,
 {% tab title="Groups" %}
 <figure><img src="../../.gitbook/assets/image (140).png" alt=""><figcaption><p>Group Filters</p></figcaption></figure>
 
-#### Only RealmJoin Groups
+**Only RealmJoin Groups**
 
 Turn this toggle **off** to include groups that do not match any RealmJoin naming scheme. When **off** all Entra ID groups will be shown.
 
@@ -83,7 +83,7 @@ By default (**on**), RealmJoin only lists groups related to RealmJoin's operatio
 * Application-Assignment Groups ("app -")
 * Configuration/Permission Groups ("cfg -")
 
-#### Membership Type
+**Membership Type**
 
 Limit the groups shown to
 
@@ -91,7 +91,7 @@ Limit the groups shown to
 * **Dynamic** - Groups with dynamic membership
 * **Any** - All groups (default)
 
-#### Group Type
+**Group Type**
 
 Limit the search results to the type of Entra ID group
 
@@ -102,13 +102,13 @@ Limit the search results to the type of Entra ID group
 {% tab title="Devices" %}
 <figure><img src="../../.gitbook/assets/image (119).png" alt=""><figcaption><p>Device Filters</p></figcaption></figure>
 
-#### Only Enabled
+**Only Enabled**
 
 If toggled **on** (default) devices that have been disabled in Entra ID will not be shown.
 
 Switch to **off** to see all devices including ones that are not enabled.
 
-#### Operating System / Device Type
+**Operating System / Device Type**
 
 Use this filter to select devices based on their operating system or deployment method.
 
@@ -121,7 +121,7 @@ Use this filter to select devices based on their operating system or deployment 
 * **Printer** - Show Printers (from Universal Printing)
 * **Other** - Show devices not matched by any other filters
 
-#### Compliance State
+**Compliance State**
 
 For managed devices, you can choose to limit the results according to their [compliance state](https://docs.microsoft.com/en-us/mem/intune/protect/device-compliance-get-started) in Intune.
 

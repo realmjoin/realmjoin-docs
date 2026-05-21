@@ -26,7 +26,7 @@ description: >-
 
 {% stepper %}
 {% step %}
-### Onboard the RealmJoin Portal
+#### Onboard the RealmJoin Portal
 
 Onboarding onto the RealmJoin Portal will establish the initial connection to RealmJoin. Administrators will be able to choose from the Quick or Advanced Setup once complete. This guide continues with the **Advanced Setup** path.
 
@@ -36,7 +36,7 @@ Onboarding onto the RealmJoin Portal will establish the initial connection to Re
 {% endstep %}
 
 {% step %}
-### Proceed with the Advanced Setup
+#### Proceed with the Advanced Setup
 
 Use **Advanced Setup** to deploy RealmJoin with granular permission control. You can add or remove permissions later with the RealmJoin PowerShell module.
 
@@ -46,7 +46,7 @@ Use **Advanced Setup** to deploy RealmJoin with granular permission control. You
 {% endstep %}
 
 {% step %}
-### Establish Group Permissions
+#### Establish Group Permissions
 
 Assign RealmJoin access through Entra groups.
 
@@ -66,7 +66,7 @@ Assign permissions carefully. Some roles grant **elevated access** in RealmJoin 
 {% endstep %}
 
 {% step %}
-### Set up the RealmJoin Agent
+#### Set up the RealmJoin Agent
 
 Install the RealmJoin Agent on Windows devices to unlock agent-based features such as application lifecycle management, RealmJoin ESP, LAPS, notifications, AnyDesk integration, audit tasks, and compliance checks.
 
@@ -78,7 +78,7 @@ If you do not need the agent, continue to the next relevant step.
 {% endstep %}
 
 {% step %}
-### Set up optional RealmJoin Agent add-ons
+#### Set up optional RealmJoin Agent add-ons
 
 Enable optional add-ons that require additional configuration after the agent is installed.
 
@@ -99,7 +99,7 @@ If you do not need these add-ons, continue to the next step.
 {% endstep %}
 
 {% step %}
-### Connect Azure Automation
+#### Connect Azure Automation
 
 Connect Azure Automation to enable runbooks and remediation scripts.
 
@@ -111,7 +111,7 @@ These features automate recurring administrative tasks, reduce manual effort, an
 {% endstep %}
 
 {% step %}
-### Connect Azure Log Analytics Workspace
+#### Connect Azure Log Analytics Workspace
 
 Connect a Log Analytics Workspace to store RealmJoin audit data and runbook execution logs.
 
@@ -123,7 +123,7 @@ This also enables integrations such as Windows Update for Business reporting.
 {% endstep %}
 
 {% step %}
-### Deploy Packages
+#### Deploy Packages
 
 RealmJoin Portal provides and maintains a large library of ready-to-use packages for Windows and macOS.
 
@@ -153,7 +153,7 @@ A typical rollout is: import package → configure assignments → test with pil
 {% endstep %}
 
 {% step %}
-### Configure optional platform features
+#### Configure optional platform features
 
 After the core setup is complete, you can enable additional features for daily operations.
 

@@ -8,7 +8,7 @@ You can use Self Service Forms to collect structured data from users. This can b
 
 We will use a workflow to "indicate a new pet" as an example.
 
-<figure><img src="../.gitbook/assets/image (187).png" alt=""><figcaption><p>Form Example</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (144).png" alt=""><figcaption><p>Form Example</p></figcaption></figure>
 
 ## Using Forms
 

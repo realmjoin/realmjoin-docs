@@ -7,7 +7,7 @@ description: >-
 
 # MSP & Advanced Features
 
-### Tenant Switcher&#x20;
+### Tenant Switcher
 
 The Tenant Switcher feature enables MSPs to establish parent-daughter tenant relationships in a 1:N hierarchy, allowing centralized management across multiple customer environments.
 
@@ -34,13 +34,11 @@ To establish parent-daughter tenant relationships:
 
 #### Using the Tenant Switcher
 
-Once configured, authorized administrators will see a tenant switcher control in the RealmJoin Portal interface. Select the target daughter tenant from the dropdown to switch context. Your parent tenant credentials remain active, and all actions are performed with the appropriate permissions within the daughter tenant scope.
+Once configured, authorized administrators can access the tenant switcher by clicking on the tenant name in the middle of the top header bar. Select the target daughter tenant from the menu to switch context. Your parent tenant credentials remain active, and all actions are performed with the appropriate permissions within the daughter tenant scope.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Step 1: Select the Tenant Switcher in the parent tenant</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Step 2: Select the desired tenant</p></figcaption></figure>
-
-***
+<figure><img src="../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
 ### Custom Role permissions
 

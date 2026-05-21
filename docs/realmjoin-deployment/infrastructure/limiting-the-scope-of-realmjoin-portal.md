@@ -9,7 +9,7 @@ RealmJoin Portal supports [Microsoft Entra ID Administrative Units (AU)](https:/
 ### Restricted Management Administrative Unit
 
 To hide/protect some sensitive groups from RealmJoin, you can create a **restricted management Administrative Unit in Microsoft Entra ID**. After creating that restricted AU, you can assign **sensitive groups** to that AU and "hide" these groups from RealmJoin Portal (and everybody using the RealmJoin Portal).\
-This is a good idea for **high-sensitive groups** that you want to protect, e.g. groups used for granting permissions/roles or to exclude users from certain Conditional Access Policies etc. \
+This is a good idea for **high-sensitive groups** that you want to protect, e.g. groups used for granting permissions/roles or to exclude users from certain Conditional Access Policies etc.\
 Users and applications **must explicitly be granted/added** to the scope of the AU to be able to interact with groups that are "protected" by the restricted management AU.
 
 To make use of restricted management administrative units, there are **no settings needed in RealmJoin**.
@@ -37,7 +37,7 @@ As a result, RealmJoin Portal will create groups only in that specific AU - and 
 6. Wait for verification from RealmJoin Support.
 7. Now you can safely remove the following application permissions from the RealmJoin Portal app (Application ID: "b0130885-16be-4c6f-83de-5b1042b5d2e3") as these are not AU-aware:\
    \
-   `"Group.ReadWrite.All"` & `"GroupMember.ReadWrite.All"` \
+   `"Group.ReadWrite.All"` & `"GroupMember.ReadWrite.All"`\
    \
    Instead the Entra Role "Group Administrator" is used. Make sure that you added the role beforehand (Step 2).
 
@@ -46,10 +46,9 @@ Please keep in mind that you can only add/remove the Microsoft Graph API permiss
 
 You can use the Grant-Script from the [RealmJoin Portal features page](https://portal.realmjoin.com/organization/features) shown below to add the `"AdministrativeUnit.Read.All"` permission.
 
-* Copy the script, add the permission in the marked $permissions section, execute the script, confirm execution in the Portal.&#x20;
+* Copy the script, add the permission in the marked $permissions section, execute the script, confirm execution in the Portal.
 * RealmJoin will automatically check for the new permission and will display it in the granted section.
-* For removal of `"Group.ReadWrite.All"` & `"GroupMember.ReadWrite.All"` you can use the "Revoke" option next to the permissions to generate a script only for that specific permission.&#x20;
+* For removal of `"Group.ReadWrite.All"` & `"GroupMember.ReadWrite.All"` you can use the "Revoke" option next to the permissions to generate a script only for that specific permission.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/Untitled picture (1).png" alt=""><figcaption></figcaption></figure>
-
+<figure><img src="../../.gitbook/assets/Untitled picture.png" alt=""><figcaption></figcaption></figure>
