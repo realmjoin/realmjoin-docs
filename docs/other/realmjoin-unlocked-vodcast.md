@@ -22,7 +22,7 @@ The vodcast is hosted by Dr. Moritz Pohl of our product team, featuring rotating
 
 #### Episode Overview
 
-<table><thead><tr><th width="105">Episode</th><th width="115">Title</th><th width="198">Key Topics</th><th width="202">Guest</th><th>Link</th></tr></thead><tbody><tr><td>1</td><td>RealmJoin: What's New</td><td>Product Wrap-up, vNext Portal, macOS Support, Managed App Subscriptions</td><td>Steffen Schwerdtfeger, Cloud Architect and RealmJoin Champion</td><td><a href="https://www.youtube.com/watch?v=pm-VfgOB1kc">Watch on YouTube</a></td></tr><tr><td>2</td><td></td><td>New self-service App Catalog, extended data export, ARM, FAQ</td><td>Jonas Heckmann, Cloud Engineer and RJ team member</td><td></td></tr></tbody></table>
+<table><thead><tr><th width="105">Episode</th><th width="115">Title</th><th width="198">Key Topics</th><th width="202">Guest</th><th>Link</th></tr></thead><tbody><tr><td>1</td><td>RealmJoin: What's New</td><td>Product Wrap-up, vNext Portal, macOS Support, Managed App Subscriptions</td><td>Steffen Schwerdtfeger, Cloud Architect and RealmJoin Champion</td><td><a href="https://www.youtube.com/watch?v=pm-VfgOB1kc">Watch on YouTube</a></td></tr><tr><td>2</td><td>RealmJoin: Self-Service update</td><td>New self-service App Catalog, extended data export, ARM, FAQ</td><td>Jonas Heckmann, Cloud Engineer and RJ team member</td><td><a href="https://www.youtube.com/watch?v=y2NJ8AuRBkA">Watch on YouTube</a></td></tr></tbody></table>
 
 ***
 
@@ -46,12 +46,17 @@ In this kick-off episode, we take a deep dive into the evolution of RealmJoin ov
 
 ***
 
-#### Episode 2:&#x20;
+#### Episode 2: RealmJoin Self-Service update ![Views](https://img.shields.io/youtube/views/y2NJ8AuRBkA?style=flat-square\&label=Views\&color=red)
 
-In our second episode, Dr. Moritz Pohl is joined by **Jonas Heckmann (Cloud Engineer & RealmJoin Core Team)** to shift the focus to user empowerment, data accessibility, and platform compatibility. They dive into key updates including the brand-new user self-service app catalog, extended reporting downloads for better analytics, and a look at native ARM support.
+In our second episode, Dr. Moritz Pohl is joined by **Jonas Heckmann (Cloud Engineer & RealmJoin Core Team)** to shift the focus to user empowerment, data accessibility, and platform compatibility. They dive into key updates including the brand-new user self-service app catalog, extended reporting downloads for better analytics, and a detailed look at native ARM support.
 
-**Highlights:**
+**Key Highlights & Timestamps:**
 
-**Watch the full Episode:**
+* [**00:00:00**](https://www.youtube.com/watch?v=y2NJ8AuRBkA\&t=0s) **Introduction:** Moritz welcomes Jonas to discuss the recent portal updates.
+* [**00:01:40**](https://www.youtube.com/watch?v=y2NJ8AuRBkA\&t=100s) **User Self-Service App Catalog:** Showcase of the new user portal and "Reinstall" functionality.
+* [**00:07:15**](https://www.youtube.com/watch?v=y2NJ8AuRBkA\&t=435s) **Extended Reporting Downloads:** Exporting detailed inventory and deployment data from the vNext portal.
+* [**00:13:40**](https://www.youtube.com/watch?v=y2NJ8AuRBkA\&t=820s) **Native ARM Support:** Addressing current compatibility and native architecture support.
+
+**Watch the Full Episode:** [RealmJoin Self-Service update: App Catalog, Reporting & ARM Support](https://www.youtube.com/watch?v=y2NJ8AuRBkA)
 
 > **Get Involved:** For questions regarding the topics mentioned in our podcast, please reach out to our support team at support@realmjoin.com or visit our [feedback portal](https://feedback.realmjoin.com).
