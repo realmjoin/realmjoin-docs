@@ -48,7 +48,7 @@ In this kick-off episode, we take a deep dive into the evolution of RealmJoin ov
 
 #### Episode 2: RealmJoin Self-Service update ![Views](https://img.shields.io/youtube/views/y2NJ8AuRBkA?style=flat-square\&label=Views\&color=red)
 
-In our second episode, Dr. Moritz Pohl is joined by **Jonas Heckmann (Cloud Engineer & RealmJoin Core Team)** to shift the focus to user empowerment, data accessibility, and platform compatibility. They dive into key updates including the brand-new user self-service app catalog, extended reporting downloads for better analytics, and a detailed look at native ARM support.
+In our second episode, Moritz  is joined by **Jonas Heckmann (Cloud Engineer & RealmJoin Core Team)** to shift the focus to user empowerment, data accessibility, and platform compatibility. They dive into key updates including the brand-new user self-service app catalog, extended reporting downloads for better analytics, and a detailed look at native ARM support.
 
 **Key Highlights & Timestamps:**
 
