@@ -1,6 +1,6 @@
 # Self Service Portal
 
-The RealmJoin Self-Service Portal (SSP) is a central web-based interface that bridges the gap between IT administration and end-user autonomy.\
+The RealmJoin Self-Service Portal (SSP) is a central web-based interface that bridges the gap between IT administration and end-user autonomy.\
 By providing a transparent view of the RealmJoin environment, it allows users to manage their own devices, software, and identity attributes, reducing the volume of standard IT support tickets.
 
 * **Public Access URL:** [portal.realmjoin.com](https://portal.realmjoin.com)
@@ -20,7 +20,7 @@ The persistent sidebar on the left side of the dashboard provides high-level obj
 * **Department/Location:** Metadata pulled from the identity provider.
 * **Identity GUIDs:** Unique identifiers used for backend troubleshooting.
 
-#### &#x20;Primary Data Objects
+#### Primary Data Objects
 
 The main interface displays five primary categories:
 
@@ -36,14 +36,14 @@ The main interface displays five primary categories:
 
 Clicking on a windows device navigates the user to the [**Device detail view**](https://docs.realmjoin.com/ugd-management/user-list/device-details). This section is the core of the self-service troubleshooting experience.
 
-#### Device Control Sidebar&#x20;
+#### Device Control Sidebar
 
 This sidebar focuses on the specific hardware asset:
 
 * **Metadata:** Displays Device Name, Hardware Flags (e.g., Autopilot status), Entra owner, and Intune/RJ Device IDs.
 * **Sync Action:**
-  * **Sync**: Triggers the Intune MDM (Mobile Device Management) check-in as well the local RealmJoin agent to pull the latest configurations and app assignments and upload log files if applicable.&#x20;
-  * **Defender Scan**: Start the defender scan of the device. Only available with the RealmJoin admin role.&#x20;
+  * **Sync**: Triggers the Intune MDM (Mobile Device Management) check-in as well the local RealmJoin agent to pull the latest configurations and app assignments and upload log files if applicable.
+  * **Defender Scan**: Start the defender scan of the device. Only available with the RealmJoin admin role.
 
 #### **Overview Tab**
 
@@ -51,7 +51,7 @@ The landing page for device details. It provides:
 
 * **Local Admin Management:** If the user is enabled for [selfLAPS](https://docs.realmjoin.com/realmjoin-agent/realmjoin-client/local-admin-password-solution-laps#support-account), the function allows to request a temporary support administrator account or a persistent administrator account for the device.
 * **Groups:** All group memberships of the device
-* **Installed Software:** List of applications found on the device. Glossary:&#x20;
+* **Installed Software:** List of applications found on the device. Glossary:
   * **Choco:** Installed using the chocolatey engine, e.g. via RealmJoin.
   * **APPX:** Modern Windows applications (Windows Store / UWP packages).
   * **Win32:** "Classic" Windows applications (installed via .exe or .msi).
@@ -80,7 +80,7 @@ The App Catalog serves as a modern, web-based replacement for the legacy RealmJo
 The Self Service App Catalog uses the RealmJoin [custom protocol](https://docs.realmjoin.com/dev-reference/custom-protocol) to start the locally installed RealmJoin agent and imitating the user click, which triggers the installation of the assigned package configuration on the device.
 
 {% hint style="warning" %}
-Self service application installation via the App Catalog is **only available for deployment using the RealmJoin agent and packages listed in the App Store**. \
+Self service application installation via the App Catalog is **only available for deployment using the RealmJoin agent and packages listed in the App Store**.\
 Since the installation is executed directly on the device in use, it is not possible for administrative accounts to start installations on other devices.
 {% endhint %}
 
@@ -100,13 +100,26 @@ To automatically allow RealmJoin portal triggering RJ agent from Microsoft Edge 
 ```
 {% endhint %}
 
+#### One-Click Access: Self-Service Portal from the Tray
+
+Using the [Weblinks](https://docs.realmjoin.com/ugd-management/user-and-group-settings/additional-settings#weblinks-for-realmjoin-tray) feature, you can add a tray entry that opens the device-specific Self-Service Portal in Microsoft Edge's app mode (a clean, chromeless window). The configuration dynamically resolves the Entra Device ID at launch, so it works across all Entra-joined devices without per-device customization.&#x20;
+
+```
+{
+    "Name": "My App Catalog",
+    "Target": "conhost",
+    "Args": "--headless powershell -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -Command $id=(dsregcmd /status|Select-String DeviceId).ToString().Split(':')[1].Trim();Start-Process msedge -ArgumentList ('--app=https://portal.realmjoin.com/devices/'+$id+'/user-app-catalog')",
+    "Platform": "any"
+}
+```
+
 ***
 
-## Self Service Forms&#x20;
+## Self Service Forms
 
 The portal can be configured to host interactive forms. These allow users to request specific changes, update their own metadata, or trigger automated backend scripts.
 
-&#x20;[Learn more about Self-Service Forms](https://docs.realmjoin.com/realmjoin-settings/self-service-forms)
+[Learn more about Self-Service Forms](https://docs.realmjoin.com/realmjoin-settings/self-service-forms)
 
 <figure><img src="../../.gitbook/assets/image (354).png" alt=""><figcaption><p>Self service forms</p></figcaption></figure>
 
@@ -116,7 +129,7 @@ Users can request new application packages that is not yet in the official catal
 
 * **Permission-Based:** This option only appears if the user has been granted the necessary permissions in the RealmJoin backend.
 
-&#x20;[Learn more about Packaging Requests](https://docs.realmjoin.com/app-management/packages/packaging-requests)
+[Learn more about Packaging Requests](https://docs.realmjoin.com/app-management/packages/packaging-requests)
 
 <figure><img src="../../.gitbook/assets/image (355).png" alt=""><figcaption><p>Package request form</p></figcaption></figure>
 
