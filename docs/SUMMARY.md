@@ -241,6 +241,7 @@
         * [Rename User](automation/runbooks/runbook-references/user/userinfo/rename-user.md)
         * [Set Photo](automation/runbooks/runbook-references/user/userinfo/set-photo.md)
         * [Update User](automation/runbooks/runbook-references/user/userinfo/update-user.md)
+  * [Runbook Report Settings](automation/runbooks/runbook-report-settings.md)
   * [Runbook Scheduling](automation/runbooks/scheduling.md)
   * [Runbook Changelog](automation/runbooks/runbook-changelog.md)
 * [Remediation Scripts](automation/remediation-scripts.md)
@@ -283,6 +284,9 @@
 
 * [RealmJoin API](dev-reference/realmjoin-api/README.md)
   * [Authentication](dev-reference/realmjoin-api/authentication.md)
+* [Report Functions](dev-reference/report-functions/README.md)
+  * [Send-RjReportEmail](dev-reference/report-functions/send-rjreportemail.md)
+  * [Publish-RjRbFilesToStorageContainer](dev-reference/report-functions/publish-rjrbfilestostoragecontainer.md)
 * [Interacting with Runbooks](dev-reference/interacting-with-runbooks.md)
 * [Simulating a Runbook Environment](dev-reference/simulating-a-runbook-environment.md)
 * [Local Admin Password Management](dev-reference/local-admin-password-management.md)
