@@ -1,30 +1,32 @@
 ---
-title: Reset Mfa
-description: Remove all App- and Mobilephone auth methods for a user
+title: List MFA Methods
+description: List all MFA / authentication methods of a user
 ---
 
 ## Description
-Removes authenticator app and phone-based authentication methods for a user. This forces the user to re-enroll MFA methods after the reset. Optionally a notification email can be sent to the user informing them that their MFA methods have been reset through this runbook.
+Retrieves and displays every Microsoft Entra ID authentication method registered for a target user, including phone numbers for phone-based methods. Phone numbers can optionally be masked, showing only the last four digits. Optionally a notification email can be sent to the user informing them that their MFA methods have been retrieved through this runbook.
 
 ## Location
-User → Security → Reset Mfa
+User → Security → List MFA Methods
 
 **Full Runbook name**
 
-rjgit-user_security_reset-mfa
+rjgit-user_security_list-MFA-methods
 
 ## Permissions
 
 ### Application permissions
 - **Type**: Microsoft Graph
-  - UserAuthenticationMethod.ReadWrite.All
   - Mail.Send
+  - Organization.Read.All
+  - User.Read.All
+  - UserAuthenticationMethod.Read.All
 
 
 ## Parameters
 ### UserName
 
-User principal name of the target user.
+User Principal Name of the target user. Auto-filled by the RealmJoin portal in the user context.
 
 | Property | Value |
 | --- | --- |
@@ -34,7 +36,17 @@ User principal name of the target user.
 
 ### NotifyUser
 
-When enabled, sends a notification email to the target user informing them that their MFA methods were reset by an administrator. Default is disabled.
+When enabled, sends a notification email to the target user informing them that their MFA methods were retrieved by an administrator. Default is disabled.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | False |
+| Type | Boolean |
+
+### MaskPhoneNumbers
+
+When enabled, all phone numbers are masked except for the last four digits (for example +491234567890 becomes ********7890). Default is disabled.
 
 | Property | Value |
 | --- | --- |

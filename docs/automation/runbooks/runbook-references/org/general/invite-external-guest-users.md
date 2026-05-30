@@ -5,7 +5,7 @@ description: Invite external guest users to the organization
 
 ## Description
 This runbook invites an external user as a guest user in Microsoft Entra ID.
-Optional profile properties such as given name, surname, company name, usage location, and manager can be set after the invitation is accepted.
+Optional profile properties such as given name, surname, company name, usage location, manager, and sponsor can be set after the invitation is accepted.
 The invited user can optionally be added to a specified group.
 
 ## Location
@@ -87,6 +87,46 @@ Company name of the guest user.
 ### ManagerName
 
 Manager to assign to the guest user. Select a user from the directory.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### SponsorName
+
+Sponsor to assign to the guest user. Select a user from the directory.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### CustomizeInvitation
+
+Enable to customize the invitation message and redirect URL.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | False |
+| Type | Boolean |
+
+### InvitationMessage
+
+Custom message body to include in the invitation email. Only used when CustomizeInvitation is enabled.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### InviteRedirectUrl
+
+Custom URL the user is redirected to after accepting the invitation. Only used when CustomizeInvitation is enabled.
 
 | Property | Value |
 | --- | --- |

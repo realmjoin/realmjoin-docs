@@ -17,6 +17,7 @@ On this overview page you can find all User Runbooks in the Mail subcategory.
 - [Hide Or Unhide In Addressbook](hide-or-unhide-in-addressbook.md)
 - [List Mailbox Permissions](list-mailbox-permissions.md)
 - [List Room Mailbox Configuration](list-room-mailbox-configuration.md)
+- [Manage Archive Mailbox](manage-archive-mailbox.md)
 - [Remove Mailbox](remove-mailbox.md)
 - [Set Out Of Office](set-out-of-office.md)
 - [Set Room Mailbox Configuration](set-room-mailbox-configuration.md)
