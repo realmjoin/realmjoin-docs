@@ -18,8 +18,10 @@ On this overview page you can find all Organization Runbooks in the Devices subc
 - [Notify Users About Stale Devices (Scheduled)](notify-users-about-stale-devices_scheduled.md)
 - [Outphase Devices](outphase-devices.md)
 - [Report Devices Without Primary User](report-devices-without-primary-user.md)
+- [Report Primary User Mismatch (Scheduled)](report-primary-user-mismatch_scheduled.md)
 - [Report Stale Devices (Scheduled)](report-stale-devices_scheduled.md)
 - [Report Users With More Than 5-Devices](report-users-with-more-than-5-devices.md)
+- [Report Windows Devices Without Autopilot](report-windows-devices-without-autopilot.md)
 - [Sync Device Serialnumbers To Entraid (Scheduled)](sync-device-serialnumbers-to-entraid_scheduled.md)
 
 [Back to Runbook Reference overview](../../README.md)

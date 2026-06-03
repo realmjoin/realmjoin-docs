@@ -14,16 +14,16 @@ The shared runbooks available on [GitHub](https://github.com/realmjoin/realmjoin
 
 | Module | Minimum version in runbooks |
 |---|---|
-| `Az.Accounts` | 5.3.4 |
+| `Az.Accounts` | 5.5.0 |
 | `Az.Compute` | 5.1.1 |
 | `Az.DesktopVirtualization` | 5.4.1 |
 | `Az.ManagementPartner` | 0.7.5 |
 | `Az.Resources` | 9.0.1 |
 | `Az.Storage` | 9.6.0 |
 | `ExchangeOnlineManagement` | 3.9.2 |
-| `Microsoft.Graph.Authentication` | 2.35.1 |
+| `Microsoft.Graph.Authentication` | 2.37.0 |
 | `MicrosoftTeams` | 7.6.0 |
-| `RealmJoin.RunbookHelper` | 0.8.5 |
+| `RealmJoin.RunbookHelper` | 0.8.6 |
 
 RealmJoin Portal will automatically import and install these modules if referenced from inside a runbook. This import will also honor specified minimum versions for modules.
 
@@ -55,6 +55,8 @@ Please grant the following Graph API-Permissions to the managed identity
 * `Application.ReadWrite.OwnedBy`
 * `AuditLog.Read.All`
 * `BitlockerKey.Read.All`
+* `Channel.ReadBasic.All`
+* `ChannelMember.ReadWrite.All`
 * `CloudPC.ReadWrite.All`
 * `Device.ReadWrite.All`
 * `DeviceLocalCredential.Read.All`
