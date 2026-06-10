@@ -104,12 +104,12 @@ To automatically allow RealmJoin portal triggering RJ agent from Microsoft Edge 
 
 Using the [Weblinks](https://docs.realmjoin.com/ugd-management/user-and-group-settings/additional-settings#weblinks-for-realmjoin-tray) feature, you can add a tray entry that opens the device-specific Self-Service Portal in Microsoft Edge's app mode (a clean, chromeless window). The configuration dynamically resolves the Entra Device ID at launch, so it works across all Entra-joined devices without per-device customization.&#x20;
 
-```
+```json
 [
   {
     "Name": "My App Catalog",
     "Target": "conhost",
-    "Args": "--headless powershell -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -Command $id=(dsregcmd /status|Select-String DeviceId).ToString().Split(':')[1].Trim();Start-Process msedge -ArgumentList ('--app=https://portal.realmjoin.com/devices/'+$id+'/user-app-catalog')",
+    "Args": "--headless powershell -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -Command $id=(dsregcmd /status|Select-String '^\\s*DeviceId\\s*:'|Select-Object -First 1).ToString().Split(':')[1].Trim();Start-Process msedge -ArgumentList ('--app=https://portal.realmjoin.com/devices/'+$id+'/user-app-catalog')",
     "Platform": "any"
   }
 ]
