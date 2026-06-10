@@ -1,3 +1,9 @@
+---
+description: >-
+  Understand and configure RealmJoin Agent app notifications, including the
+  customizable hero image, that inform users about package installations.
+---
+
 # RealmJoin App Notification
 
 When deploying packages/configurations via RealmJoin Agent, notifications inform the user or allow to interact with the installation process.

@@ -1,3 +1,9 @@
+---
+description: >-
+  Manage individualized local admin (LAPS) accounts with RealmJoin, requesting
+  support accounts via the API with passwords stored encrypted in Azure Key Vault.
+---
+
 # Local Admin Password Management
 
 ## Overview

@@ -1,3 +1,9 @@
+---
+description: >-
+  Integrate AnyDesk with RealmJoin to grant remote device access and elevate
+  rights via LAPS, using per-device IDs instead of manually shared IDs.
+---
+
 # AnyDesk Integration
 
 AnyDesk provides access to devices, including the ability to elevate rights using the RealmJoin [LAPS feature](../local-admin-password-solution-laps/). It can be installed on both Windows and macOS devices.

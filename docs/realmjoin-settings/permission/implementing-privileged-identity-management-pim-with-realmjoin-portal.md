@@ -1,3 +1,9 @@
+---
+description: >-
+  Implement Microsoft Entra ID PIM for Groups with RealmJoin Portal to grant
+  just-in-time administrative access and reduce persistent privilege.
+---
+
 # Implementing Privileged Identity Management (PIM) with RealmJoin Portal
 
 ### Overview

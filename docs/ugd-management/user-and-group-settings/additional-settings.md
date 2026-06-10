@@ -1,3 +1,9 @@
+---
+description: >-
+  Reference list of available RealmJoin Client settings and policies that can be
+  configured and assigned per user or group.
+---
+
 # Available RealmJoin Policies
 
 The following article shows you a list of possible RealmJoin Client settings/policies. These can be configured and assigned per [user or group](../user-group-device-management.md).

@@ -1,3 +1,9 @@
+---
+description: >-
+  Configure AnyDesk for RealmJoin by hosting the end-user client on a public URL
+  and requesting the supporter client as a custom RealmJoin package.
+---
+
 # AnyDesk configuration
 
 ## Deploy AnyDesk clients

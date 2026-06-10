@@ -1,3 +1,9 @@
+---
+description: >-
+  Understand the four-stage testing cycle that validates installation mechanics,
+  exit codes, and deployment behavior for application packaging requests.
+---
+
 # Application Package Testing
 
 ### Overview

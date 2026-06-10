@@ -1,3 +1,9 @@
+---
+description: >-
+  Review recent and archived runbook executions, scoped by type and category,
+  and search or sort runbook jobs in RealmJoin Portal.
+---
+
 # Runbook Logs
 
 ## Overview

@@ -1,3 +1,9 @@
+---
+description: >-
+  The User Profile tab gives users quick access to their apps, account, devices,
+  and groups, and lets administrators view their directory roles.
+---
+
 # User Profile
 
 ![About Me - User](<../.gitbook/assets/image (205).png>)

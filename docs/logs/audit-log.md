@@ -1,3 +1,9 @@
+---
+description: >-
+  Review actions and changes made in RealmJoin Portal, such as group membership,
+  runbook jobs, and app management, once Log Analytics is configured.
+---
+
 # Audit Log
 
 ## Overview

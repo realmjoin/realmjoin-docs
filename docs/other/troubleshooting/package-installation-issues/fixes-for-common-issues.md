@@ -1,3 +1,9 @@
+---
+description: >-
+  Targeted fixes for common package installation problems, such as BranchCache
+  errors, to apply only in the specific scenarios described.
+---
+
 # Fixes for common issues
 
 {% hint style="danger" %}

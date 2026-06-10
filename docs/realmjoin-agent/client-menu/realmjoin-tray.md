@@ -1,3 +1,9 @@
+---
+description: >-
+  Use the RealmJoin Tray client menu to access customizable web links and
+  install or update software packages directly from the device.
+---
+
 # RealmJoin Tray
 
 ## Client Menu
