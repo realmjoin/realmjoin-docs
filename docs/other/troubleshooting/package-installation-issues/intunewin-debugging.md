@@ -1,3 +1,9 @@
+---
+description: >-
+  Debug intunewin package installations by locating and reading the RjImeHost,
+  package installer, and Intune Management Extension log files.
+---
+
 # Intunewin Debugging
 
 As intunewin packages do not utilize the RealmJoin agent for installing applications, but Intune, the logging is different.&#x20;

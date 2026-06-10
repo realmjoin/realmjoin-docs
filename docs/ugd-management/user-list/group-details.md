@@ -1,3 +1,9 @@
+---
+description: >-
+  View details of a single group, covering Entra static and dynamic groups,
+  Exchange mail-enabled and distribution groups, and Microsoft 365 groups.
+---
+
 # Group Details
 
 ![Application management group](<../../.gitbook/assets/image (107).png>)

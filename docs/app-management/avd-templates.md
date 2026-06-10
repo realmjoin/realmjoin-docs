@@ -1,3 +1,9 @@
+---
+description: >-
+  Define application templates and apply them unattended via RealmJoin Client to
+  build golden images for Azure Virtual Desktop multi-session pooled hosts.
+---
+
 # AVD Templates
 
 ## Overview

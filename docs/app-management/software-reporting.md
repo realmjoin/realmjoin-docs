@@ -1,3 +1,9 @@
+---
+description: >-
+  Gain insights into applications installed across all company devices,
+  aggregating data from Microsoft Intune and RealmJoin with deployment methods and versions.
+---
+
 # Software Reporting
 
 The software reporting feature in the portal provides comprehensive insights into the applications installed across all devices within the company. This feature aggregates data from both Microsoft Intune and RealmJoin, leveraging a small agent running on user devices to collect and report detailed information.

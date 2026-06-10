@@ -1,3 +1,9 @@
+---
+description: >-
+  Overview of the two ways users interact with RealmJoin on their device: the
+  classic RealmJoin Tray and the web-based Self-Service Portal.
+---
+
 # User Interface
 
 Modern endpoint management thrives when users are empowered to solve their own needs through a frictionless, intuitive interface.

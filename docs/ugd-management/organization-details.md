@@ -1,3 +1,9 @@
+---
+description: >-
+  View an overview of your Azure tenant, including user and group counts, Intune
+  and runbook statistics, feature status, and recent app changes.
+---
+
 # Organization Details
 
 ![Organization Details View](<../.gitbook/assets/2022-02-07 RJ ORG.png>)

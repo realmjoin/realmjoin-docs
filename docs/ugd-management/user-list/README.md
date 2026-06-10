@@ -1,3 +1,9 @@
+---
+description: >-
+  Search and browse users, groups, and devices from the list interfaces and open
+  any object's details page directly from RealmJoin Portal.
+---
+
 # User, Group and Device Lists
 
 {% embed url="https://www.youtube.com/watch?v=IlIEnhoaaIA" %}

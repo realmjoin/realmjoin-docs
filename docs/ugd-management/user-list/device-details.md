@@ -1,3 +1,9 @@
+---
+description: >-
+  View detailed information about a single device, including the logged-on user,
+  installed apps, and security recommendations and their status.
+---
+
 # Device Details
 
 ## Overview

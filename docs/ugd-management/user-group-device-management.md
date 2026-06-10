@@ -1,3 +1,9 @@
+---
+description: >-
+  Review and interact with Entra ID users, groups, and devices in one view that
+  combines Intune, Defender, Autopilot, and sign-in log data.
+---
+
 # Overview
 
 RealmJoin allows you to review and interact with Entra ID objects like users, groups and devices.&#x20;

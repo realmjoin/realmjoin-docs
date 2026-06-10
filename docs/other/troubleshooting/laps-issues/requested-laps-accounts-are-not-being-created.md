@@ -1,3 +1,9 @@
+---
+description: >-
+  Resolve LAPS Supporter Accounts stuck in the "Requested" state by logging off
+  existing on-demand admin sessions or rebooting the device.
+---
+
 # Requested LAPS Accounts are not being created
 
 If you are facing the issue that requested LAPS Supporter Accounts are not created and the RJ Portal Device Page seems stuck on the "Requested..." message, you need to make sure all previously on-demand LAPS accounts on the device are no longer used and logged off.

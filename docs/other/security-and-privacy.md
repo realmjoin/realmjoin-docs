@@ -1,3 +1,9 @@
+---
+description: >-
+  Frequently asked questions about RealmJoin information security, data
+  processing, privacy, and quality assurance, including data centers and storage.
+---
+
 # Security & Privacy
 
 This chapter provides an overview on frequently asked questions surrounding information security, privacy and quality assurance.

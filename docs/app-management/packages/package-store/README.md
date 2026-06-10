@@ -1,3 +1,9 @@
+---
+description: >-
+  Browse and search the RealmJoin Package Store, a maintained library of
+  ready-to-use packages deployable via the RealmJoin Client or Intune.
+---
+
 # Package Store
 
 

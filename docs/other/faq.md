@@ -1,3 +1,9 @@
+---
+description: >-
+  Answers to common RealmJoin questions, including useful links, maintaining
+  your own software packages, and how RealmJoin integrates with Intune.
+---
+
 # FAQ
 
 ## Which links should I bookmark?

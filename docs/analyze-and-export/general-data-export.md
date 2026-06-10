@@ -1,3 +1,9 @@
+---
+description: >-
+  Export key datasets such as devices, users, and groups from RealmJoin Portal
+  as one-click Excel (.xlsx) downloads for reporting and auditing.
+---
+
 # General Data Export
 
 RealmJoin Portal allows administrators to export key datasets directly from the portal as Excel (.xlsx) files. This gives you a convenient way to extract and work with your environment's data for reporting, auditing, or further analysis outside of the portal.

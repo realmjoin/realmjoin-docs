@@ -1,3 +1,9 @@
+---
+description: >-
+  Find your way around RealmJoin Portal, starting from the About me page, with
+  navigation areas that adapt to your permission level.
+---
+
 # Navigation
 
 When you visit [RealmJoin Portal](https://portal.realmjoin.com), you will first be presented with an "About me" page.

@@ -1,3 +1,9 @@
+---
+description: >-
+  Send scheduled, category-based notifications to users' desktops to share
+  general information or important issues directly from RealmJoin.
+---
+
 # Notifications
 
 Our notification system allows you to send notifications directly to user’s computers. This can be useful for displaying general information or important issues.

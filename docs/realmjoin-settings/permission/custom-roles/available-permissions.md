@@ -1,3 +1,9 @@
+---
+description: >-
+  Reference of the granular permissions available for RealmJoin custom roles,
+  with auto-complete in the editor showing the complete current list.
+---
+
 # Available Permissions
 
 ## Overview

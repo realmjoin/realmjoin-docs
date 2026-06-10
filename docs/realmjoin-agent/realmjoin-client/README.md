@@ -1,3 +1,9 @@
+---
+description: >-
+  Overview of optional RealmJoin Agent features on Windows clients, including
+  ESP, app deployment, LAPS, notifications, AnyDesk, and compliance checks.
+---
+
 # Features
 
 RealmJoin Agent is an optional component that you can use alongside RealmJoin Portal on Windows 10/11 clients. It enables additional features such as:

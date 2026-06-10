@@ -1,3 +1,9 @@
+---
+description: >-
+  View detailed information for a single package in your environment and manage
+  its properties, user assignments, and updates from the package details page.
+---
+
 # Package Details
 
 <figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Package details page</p></figcaption></figure>
