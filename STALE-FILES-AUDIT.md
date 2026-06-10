@@ -6,19 +6,32 @@ This report lists Markdown files under `docs/` that are **not referenced** from 
 
 1. Parsed all Markdown link targets ending in `.md` from `docs/SUMMARY.md` to build the set of **live (referenced)** pages.
 2. Enumerated all `*.md` files under `docs/` (recursively).
-3. The difference (`all − referenced`) yields the **stale / orphaned** set.
+3. The difference (`all − referenced`) yields the **stale / orphaned** set. `docs/SUMMARY.md` itself is excluded (it is the TOC, never linked from itself).
 4. For each stale file, identified a **likely canonical replacement** by mapping legacy top-level folders to their current SUMMARY.md location (e.g. `realmjoin-client/…` → `realmjoin-agent/realmjoin-client/…`, `settings/…` → `realmjoin-settings/…`, `runbooks/…` → `automation/runbooks/…`, etc.) and matching by basename.
-5. Searched all live pages (Markdown links and HTML `href`s, both file links and directory-style links) for any inbound references to the stale paths.
-6. Captured each stale file's last commit date via `git log`.
+5. Searched all live pages for inbound references to the stale paths. Five link-syntax forms were checked:
+   - Markdown links `[text](path.md)` and image links `![alt](path.png)`
+   - HTML `href="…"` and `src="…"` attributes
+   - GitBook `{% content-ref url="…" %}` blocks
+   - GitBook `{% include "…" %}` blocks (for `.gitbook/includes/` files)
+   - GitBook `{% embed url="…" %}` blocks
+   For each match the target was resolved relative to the source file, and three candidate paths were tested against the stale set: the literal path, the path + `.md`, and the path + `/README.md` (GitBook resolves directory links to README).
+6. Searched all non-Markdown files in the repo (`*.yml`, `*.yaml`, `*.json`, `*.ps1`, `*.html`, `*.js`, `*.ts`, `*.toml`, etc.), including `.github/scripts/` and `.github/workflows/`, for literal mentions of any stale path.
+7. Captured each stale file's last commit date via `git log` (after `git fetch --unshallow`).
 
 ## Summary
 
 - Total `.md` files under `docs/`: **362**
-- Files referenced by `SUMMARY.md` (resolving to existing files): **280**
+- Files referenced by `SUMMARY.md` (resolving to existing files): **280** (plus `SUMMARY.md` itself = 281 live)
 - **Stale / orphaned files: 82**
-- **Inbound references from live pages to stale files: 0** (verified for both Markdown links `[…](path.md)` and `href="…"` attributes; also for directory-style links resolving to `<dir>/README.md`).
+- **Inbound references from live pages to stale files: 0** (verified across all five link-syntax forms listed above).
+- **Mentions of stale paths in scripts/workflows/configs: 0** (the `update-runbook-references.yml` workflow and `Update-SummaryMd.ps1` only touch `docs/automation/runbooks/runbook-references/` and `docs/SUMMARY.md`; they do not depend on any stale path).
 
-Because no live page links into any of these files, deleting them will not produce broken inbound links from the published documentation. The only "references" to these paths are between the stale files themselves.
+Because no live page, script, workflow, or config file links into any of these files, deleting them will not produce broken inbound links anywhere in the published documentation or the automation. The only "references" to these paths are between the stale files themselves.
+
+### What is *not* included in this audit (scope limits)
+
+- **Assets** under `.gitbook/assets/` are not analyzed. Some images may only be referenced from stale files and become orphaned after deletion. They cause no broken links in live content and can be cleaned up separately.
+- **GitBook UI-only metadata** (reusable block embeddings managed in the GitBook UI rather than in `.md` text) cannot be detected by a repo scan. The single GitBook include file (`pre-shared-key-per-customer.md`) is therefore listed under "Special case" and recommended for manual verification, not automatic deletion.
 
 ## Stale top-level folders
 
@@ -37,19 +50,19 @@ These entire top-level folders under `docs/` appear to be legacy locations that 
 
 Top-level loose stale files: `audit-log.md`, `licensing.md`, `self-service-forms.md`, `workplace-cloud-storage.md` (all have canonical replacements; see table).
 
-## ⚠️ Drift detected (review before deleting)
+## ⚠️ Drift detected (reviewed — safe to delete)
 
-Five stale files were edited as recently as **2025-09 / 2026-01** even though they are not part of the live SUMMARY.md. This confirms the drift problem described in the task: a contributor edited the stale copy via GitHub while the canonical (GitBook-visible) file lives elsewhere. The edits below are **not visible in the published GitBook** and are effectively lost unless replayed onto the canonical files. Please diff each pair and decide whether the edit is still wanted:
+Five stale files were edited as recently as **2025-09 / 2026-01** even though they are not part of the live SUMMARY.md. This confirms the drift problem described in the task: someone edited the stale copy via GitHub. **However**, after diffing each stale file against its canonical counterpart, in every case the **canonical (live) file is already newer and already contains a superset of the stale file's content** (text rewrites, image updates, expanded sections). No edit on the stale side is "stranded" or needs to be replayed.
 
-| Stale (recently edited) path | Canonical replacement | Last commit on stale | Last commit message on stale |
-|---|---|---|---|
-| `docs/runbooks/azure-ad-roles-and-permissions.md` | `docs/automation/connecting-azure-automation/azure-ad-roles-and-permissions.md` | 2026-01-23 | "Remove old Teams Service User note" |
-| `docs/runbooks/customization.md` | `docs/automation/runbooks/runbook-customization.md` | 2025-09-04 | (see `git log`) |
-| `docs/runbooks/logs/README.md` | `docs/automation/runbooks/runbook-logs/README.md` | 2025-09-04 | (see `git log`) |
-| `docs/runbooks/logs/runbook-job-details.md` | `docs/automation/runbooks/runbook-logs/runbook-job-details.md` | 2025-09-04 | (see `git log`) |
-| `docs/runbooks/permissions.md` | `docs/automation/runbooks/runbook-permissions.md` | 2025-09-04 | (see `git log`) |
+| Stale (recently edited) path | Last commit on stale | Canonical replacement | Last commit on canonical | Verdict |
+|---|---|---|---|---|
+| `docs/runbooks/azure-ad-roles-and-permissions.md` | 2026-01-23 | `docs/automation/connecting-azure-automation/azure-ad-roles-and-permissions.md` | 2026-05-05 | Canonical newer & expanded — safe to delete |
+| `docs/runbooks/customization.md` | 2025-09-04 | `docs/automation/runbooks/runbook-customization.md` | 2025-11-27 | Canonical newer — safe to delete |
+| `docs/runbooks/logs/README.md` | 2025-09-04 | `docs/automation/runbooks/runbook-logs/README.md` | 2025-11-27 | Canonical newer (fixed image paths, updated cross-links) — safe to delete |
+| `docs/runbooks/logs/runbook-job-details.md` | 2025-09-04 | `docs/automation/runbooks/runbook-logs/runbook-job-details.md` | 2025-11-27 | Canonical newer (refreshed screenshots) — safe to delete |
+| `docs/runbooks/permissions.md` | 2025-09-04 | `docs/automation/runbooks/runbook-permissions.md` | 2026-01-30 | Canonical newer & expanded — safe to delete |
 
-Each pair was confirmed to differ via `diff -q`. **Recommendation:** before deleting, run `diff` on each pair and cherry-pick any wanted prose changes onto the canonical file, then proceed with deletion. All other stale files (last touched 2024-08-07 in the "restructure github repo" commit) can be deleted as-is.
+All other stale files (last touched 2024-08-07 in the "restructure github repo" commit) can be deleted as-is.
 
 ## Special case
 
