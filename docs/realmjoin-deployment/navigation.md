@@ -24,17 +24,17 @@ This will give you information and statistics about your Azure tenant, recent ap
 
 ### ![](../.gitbook/assets/group.png) [Groups](../ugd-management/user-list/)
 
-"Groups" includes regular Entra ID groups, Teams in Microsoft Teams, Offce365 groups as well as Exchange distribution groups. You can also switch to the groups settings to set advanced RealmJoin configurations.&#x20;
+"Groups" includes regular Entra ID groups, Teams in Microsoft Teams, Offce365 groups as well as Exchange distribution groups. You can also switch to the groups settings to set advanced RealmJoin configurations.
 
 ### ![](../.gitbook/assets/device.png) [Devices](../ugd-management/user-list/)
 
 "Devices" includes all Entra ID joined clients as well as devices registered in Entra ID, like mobile phones.
 
-## [Application Management](/broken/pages/gEcwXq0N7AG3Ru0s348a)
+## [Application Management](https://app.gitbook.com/s/-MkrcM7cKOpXKri1kVrh/app-management)
 
 ### ![](../.gitbook/assets/packages.png) [Packages](../app-management/packages/package-management.md)
 
-The list of subscribed packages includes your checked in applications from RealmJoin's application store and gives you an overview about current versions and automation for each package.&#x20;
+The list of subscribed packages includes your checked in applications from RealmJoin's application store and gives you an overview about current versions and automation for each package.
 
 ### ![](../.gitbook/assets/appstore.png) [Package Store](../app-management/packages/package-store/)
 
@@ -42,13 +42,13 @@ In the store you can search for and import ready-to-use generic application pack
 
 ### ![](<../.gitbook/assets/image (349).png>) [Software Report](../app-management/software-reporting.md)
 
-The Software Report gives you an overview of the different versions of each deployed and found application on your devices.&#x20;
+The Software Report gives you an overview of the different versions of each deployed and found application on your devices.
 
 ### ![](<../.gitbook/assets/image (158).png>) [Request Package](../app-management/packages/packaging-requests/)
 
-Request packages as generic applications for the store or custom packages for your environment. Please refer to the guidelines.&#x20;
+Request packages as generic applications for the store or custom packages for your environment. Please refer to the guidelines.
 
-## [Automation](/broken/pages/pEsEBUCYe3thEqa7rRjW)
+## [Automation](https://app.gitbook.com/s/-MkrcM7cKOpXKri1kVrh/automation)
 
 ### ![](../.gitbook/assets/jobs.png) [Runbook Jobs](../automation/runbooks/runbook-logs/)
 
