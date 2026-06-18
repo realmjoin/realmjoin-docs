@@ -15,7 +15,7 @@ Supporting both delivery channels is the intended standard for all reporting run
 
 All shared settings are configured once in the [RealmJoin Runbook Customization](https://portal.realmjoin.com/settings/runbooks-customizations) and automatically apply to all runbooks that use the respective feature. Settings that differ per runbook (such as the target container name) are not part of this central configuration and are set directly in the respective runbook.
 
-The functions that consume these settings — [`Send-RjReportEmail`](../../dev-reference/report-functions/send-rjreportemail.md) and [`Publish-RjRbFilesToStorageContainer`](../../dev-reference/report-functions/publish-rjrbfilestostoragecontainer.md) — are provided by the **RealmJoin.RunbookHelper** PowerShell module. See [Report Functions](../../dev-reference/report-functions/) for detailed usage documentation.
+The functions that consume these settings — [`Send-RjRbReportEmail`](../../dev-reference/report-functions/send-rjrbreportemail.md) and [`Publish-RjRbFilesToStorageContainer`](../../dev-reference/report-functions/publish-rjrbfilestostoragecontainer.md) — are provided by the **RealmJoin.RunbookHelper** PowerShell module. See [Report Functions](../../dev-reference/report-functions/) for detailed usage documentation.
 
 ## Email Delivery
 

@@ -50,7 +50,7 @@ If `Az.Accounts` is not available at runtime the function fails fast with a clea
 >
 > `Az.Accounts` is intentionally listed only under `ExternalModuleDependencies` (informational) and *not* under `RequiredModules` (enforced at `Import-Module` time):
 >
-> - **Pay-only-for-what-you-use.** Many runbooks consume only Graph-based helpers (e.g. `Send-RjReportEmail` without `-UseNativeGraphRequest`, or `Invoke-RjRbRestMethodGraph`) and never touch any Az.* cmdlet. Promoting `Az.Accounts` to `RequiredModules` would force every consuming runbook to ship the module even when nothing in its code path needs it — measurably increasing cold-start time in Azure Automation.
+> - **Pay-only-for-what-you-use.** Many runbooks consume only Graph-based helpers (e.g. `Send-RjRbReportEmail` without `-UseNativeGraphRequest`, or `Invoke-RjRbRestMethodGraph`) and never touch any Az.* cmdlet. Promoting `Az.Accounts` to `RequiredModules` would force every consuming runbook to ship the module even when nothing in its code path needs it — measurably increasing cold-start time in Azure Automation.
 > - **Avoid version skirmishes.** A hard `RequiredModules` constraint triggers auto-resolution at import time and can drag in a specific `Az.Accounts` version that conflicts with what the runbook itself pins (Az.* sub-modules are notoriously version-sensitive). Letting the runbook declare its own `#Requires -Modules` keeps the version choice with the caller.
 > - **Per-runbook authority.** In Azure Automation the canonical place to declare module requirements is at the runbook level via `#Requires`, not at the helper-module level. The helper module surfaces the dependency informationally (via `ExternalModuleDependencies` in the manifest) and via the runtime check above, so misconfiguration fails loudly with an actionable message rather than silently masking a version conflict.
 
@@ -184,7 +184,7 @@ Publish-RjRbFilesToStorageContainer `
 
 Useful when the runbook spans multiple subscriptions, or when downstream recipients need a longer window than the 6-day default.
 
-### Combining with `Send-RjReportEmail`
+### Combining with `Send-RjRbReportEmail`
 
 A common pattern is to upload bulky data to blob storage and embed the SAS link in a report email, keeping the email well below the 4 MB Graph `sendMail` limit:
 
@@ -207,14 +207,14 @@ The full device list is available as a download:
 $linkLine
 "@
 
-Send-RjReportEmail `
+Send-RjRbReportEmail `
     -EmailFrom       $emailFrom `
     -EmailTo         'it-reports@contoso.com' `
     -Subject         "Device Inventory — $(Get-Date -Format 'yyyy-MM-dd')" `
     -MarkdownContent $reportMd
 ```
 
-See [Send-RjReportEmail](send-rjreportemail.md) for the email side of this pattern.
+See [Send-RjRbReportEmail](send-rjrbreportemail.md) for the email side of this pattern.
 
 ## Behavior & Error Handling
 
@@ -274,6 +274,6 @@ Results are returned in the same order as `FilePaths`. Even when uploading a sin
 ## See Also
 
 - [Runbook Report Settings — Storage Account Delivery](../../automation/runbooks/runbook-report-settings.md#storage-account-delivery) — central configuration of the storage account, link expiry and blob-name prefix used by reporting runbooks.
-- [Send-RjReportEmail](send-rjreportemail.md) — companion helper for delivering reports via email; commonly combined with this function to keep the email payload small.
+- [Send-RjRbReportEmail](send-rjrbreportemail.md) — companion helper for delivering reports via email; commonly combined with this function to keep the email payload small.
 - Microsoft Docs: [Authorize with Shared Key](https://learn.microsoft.com/en-us/rest/api/storageservices/authorize-with-shared-key) — signing scheme used by the helper.
 - Microsoft Docs: [Create a service SAS](https://learn.microsoft.com/en-us/rest/api/storageservices/create-service-sas) — SAS token format returned in `SASLink`.

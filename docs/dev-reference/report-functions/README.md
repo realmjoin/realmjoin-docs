@@ -8,5 +8,5 @@ This section documents the shared PowerShell helper functions available to Realm
 
 | Function | Purpose |
 |---|---|
-| [Send-RjReportEmail](send-rjreportemail.md) | Sends branded HTML report emails via Microsoft Graph. Converts Markdown content to responsive HTML and delivers one email per recipient. |
+| [Send-RjRbReportEmail](send-rjrbreportemail.md) | Sends branded HTML report emails via Microsoft Graph. Converts Markdown content to responsive HTML and delivers one email per recipient. |
 | [Publish-RjRbFilesToStorageContainer](publish-rjrbfilestostoragecontainer.md) | Uploads report files to Azure Blob Storage and returns time-limited SAS download links. |

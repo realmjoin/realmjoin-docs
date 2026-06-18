@@ -2,11 +2,13 @@
 description: Send branded HTML report emails from Azure Automation runbooks via Microsoft Graph using Markdown content.
 ---
 
-# Send-RjReportEmail
+# Send-RjRbReportEmail
 
 ## Overview
 
-`Send-RjReportEmail` is the standard helper for delivering report emails from RealmJoin reporting runbooks. It takes Markdown content, converts it to a RealmJoin-branded responsive HTML email, attaches optional files and inline branding graphics (header/footer), and sends the result through the Microsoft Graph `sendMail` endpoint.
+`Send-RjRbReportEmail` is the standard helper for delivering report emails from RealmJoin reporting runbooks. It takes Markdown content, converts it to a RealmJoin-branded responsive HTML email, attaches optional files and inline branding graphics (header/footer), and sends the result through the Microsoft Graph `sendMail` endpoint.
+
+> **Renamed in this release.** The function was renamed from `Send-RjReportEmail` to `Send-RjRbReportEmail` for naming consistency with the rest of the module (`*-RjRb*`). The old name `Send-RjReportEmail` is exported as a backwards-compatible alias, so existing runbooks keep working unchanged — but new runbooks should call `Send-RjRbReportEmail`.
 
 Key characteristics:
 
@@ -40,7 +42,7 @@ By default the function uses `Invoke-RjRbRestMethodGraph` from this module. If n
 The minimum viable call requires only the sender, the recipient, a subject and the Markdown body:
 
 ```powershell
-Send-RjReportEmail `
+Send-RjRbReportEmail `
     -EmailFrom "realmjoin-report@contoso.com" `
     -EmailTo   "alice@contoso.com" `
     -Subject   "Weekly Report" `
@@ -103,7 +105,7 @@ This produces a fully branded RealmJoin email with the default header and footer
 `EmailTo` accepts a single string containing one or more comma-separated addresses. Each address is trimmed, empty entries are removed, and **one individual email is sent per recipient** — recipients do not see each other.
 
 ```powershell
-Send-RjReportEmail `
+Send-RjRbReportEmail `
     -EmailFrom "realmjoin-report@contoso.com" `
     -EmailTo   "alice@contoso.com, bob@contoso.com, team-lead@contoso.com" `
     -Subject   "Monthly Inventory" `
@@ -116,7 +118,7 @@ Send-RjReportEmail `
 $csvPath = Join-Path $env:TEMP 'devices.csv'
 $exportData | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
 
-Send-RjReportEmail `
+Send-RjRbReportEmail `
     -EmailFrom         "realmjoin-report@contoso.com" `
     -EmailTo           "it-reports@contoso.com" `
     -Subject           "Device Inventory — $(Get-Date -Format 'yyyy-MM-dd')" `
@@ -140,7 +142,7 @@ $footerPath = Join-Path $env:TEMP 'contoso-footer.png'
 Get-AzStorageBlobContent -Container 'branding' -Blob 'header.png' -Destination $headerPath -Force | Out-Null
 Get-AzStorageBlobContent -Container 'branding' -Blob 'footer.png' -Destination $footerPath -Force | Out-Null
 
-Send-RjReportEmail `
+Send-RjRbReportEmail `
     -EmailFrom        "realmjoin-report@contoso.com" `
     -EmailTo          "alice@contoso.com" `
     -Subject          "Branded Report" `
@@ -157,7 +159,7 @@ If `$headerPath` is missing or unreadable, the call still succeeds — the bundl
 For alert-style notifications that should not look like a marketing email:
 
 ```powershell
-Send-RjReportEmail `
+Send-RjRbReportEmail `
     -EmailFrom       "realmjoin-report@contoso.com" `
     -EmailTo         "oncall@contoso.com" `
     -Subject         "[ALERT] License threshold exceeded" `
@@ -173,7 +175,7 @@ If the runbook is already authenticated through `Connect-MgGraph` (managed ident
 ```powershell
 Connect-MgGraph -Identity -NoWelcome
 
-Send-RjReportEmail `
+Send-RjRbReportEmail `
     -EmailFrom             "realmjoin-report@contoso.com" `
     -EmailTo               "alice@contoso.com" `
     -Subject               "Native Graph send" `
@@ -188,12 +190,34 @@ For larger reports, generate the Markdown to a `.md` file and read it in:
 ```powershell
 $reportMd = Get-Content -Path .\generated-report.md -Raw
 
-Send-RjReportEmail `
+Send-RjRbReportEmail `
     -EmailFrom       "realmjoin-report@contoso.com" `
     -EmailTo         "alice@contoso.com" `
     -Subject         "Weekly Report" `
     -MarkdownContent $reportMd
 ```
+
+### Action buttons (call-to-action)
+
+Render one or more branded buttons by appending `{button}` to a Markdown link. Buttons placed on the same line are grouped into a single row:
+
+```powershell
+$reportMd = @"
+# Access request
+
+A new device access request is awaiting your decision.
+
+[Approve](https://portal.contoso.com/approve/123){button} [Reject](https://portal.contoso.com/reject/123){button}
+"@
+
+Send-RjRbReportEmail `
+    -EmailFrom       "realmjoin-report@contoso.com" `
+    -EmailTo         "approver@contoso.com" `
+    -Subject         "Action required: device access request" `
+    -MarkdownContent $reportMd
+```
+
+Each button is a normal hyperlink styled as a CTA — safe in all clients, with rounded corners in modern clients and square corners in Outlook Classic.
 
 ## Markdown Support
 
@@ -206,6 +230,7 @@ The function ships with a built-in lightweight Markdown → HTML converter. **No
 | `` `inline code` `` | Rendered as `<code>` with a light grey background. |
 | ``` ```lang ... ``` ``` fenced code blocks | Language tag is preserved as `class="language-…"`. Also tolerates malformed single-backtick fences. |
 | `[text](url)` links | Open in new tab with `noopener noreferrer`. |
+| `[label](url){button}` link buttons | Rendered as a branded orange call-to-action button instead of a plain link. Multiple `{button}` links on the **same line** render side by side in one row (width split equally). Rounded corners show in modern clients (New Outlook, OWA, mobile); Outlook Classic (Word engine) renders square corners. |
 | `![alt](url)` images | Inserted as `<img>` (no inline-attachment magic — the URL must be reachable by the mail client). |
 | `- item` / `1. item` lists | Nested lists supported via 2-space indentation per level. Mixing ordered and unordered closes the previous list. |
 | Multi-line list items | An indented, non-empty line directly under a `<li>` is folded into the same item with a `<br>` soft break — no need to keep each item on one line. |
@@ -261,7 +286,7 @@ if (-not $emailFrom) {
     throw "No EmailSender configured. See https://docs.realmjoin.com/ for setup instructions."
 }
 
-Send-RjReportEmail `
+Send-RjRbReportEmail `
     -EmailFrom       $emailFrom `
     -EmailTo         $RecipientParameter `
     -Subject         $Subject `
@@ -273,6 +298,18 @@ Send-RjReportEmail `
 ## Outputs
 
 The function returns nothing on success. All progress is written via `Write-RjRbLog -Verbose` (visible when the runbook is run with `-Verbose` or `$VerbosePreference = 'Continue'`). Warnings are forced through `$WarningPreference = 'Continue'` regardless of caller-side overrides, so they reliably appear in the Azure Automation job stream.
+
+## Related Exported Helpers
+
+The building blocks behind `Send-RjRbReportEmail` are now exported from the module too, so runbooks can compose or preview the HTML without sending:
+
+| Function | Purpose |
+| --- | --- |
+| `ConvertFrom-RjRbMarkdownToHtml` | Standalone Markdown → HTML converter (the same lightweight engine used internally, including the `{button}` syntax). |
+| `Get-RjRbReportEmailBody` | Assembles the full branded HTML body (header/footer, tenant-info box, attachment list) from HTML or Markdown — useful to render and inspect the email before sending. |
+| `Resolve-RjRbImageSource` | Resolves a header/footer image path to its inline CID source, falling back to the bundled default on error. |
+
+These are primarily intended for advanced/testing scenarios; the normal path is to call `Send-RjRbReportEmail` directly.
 
 ## See Also
 
