@@ -1,7 +1,7 @@
 ---
 description: >-
-  View detailed information about a single user object, including the user
-  summary and glanceable status such as enabled and member state.
+  RealmJoin user details show a single user object's summary and glanceable status
+  such as enabled and member state.
 ---
 
 # User Details

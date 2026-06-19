@@ -1,7 +1,7 @@
 ---
 description: >-
-  The User Profile tab gives users quick access to their apps, account, devices,
-  and groups, and lets administrators view their directory roles.
+  The RealmJoin User Profile tab gives users quick access to their apps, account,
+  devices, and groups, with directory roles for admins.
 ---
 
 # User Profile

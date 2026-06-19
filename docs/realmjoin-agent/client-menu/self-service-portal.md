@@ -1,7 +1,7 @@
 ---
 description: >-
-  The web-based RealmJoin Self-Service Portal lets users manage their own
-  devices, software, and identity attributes via Entra ID single sign-on.
+  The RealmJoin Self-Service Portal lets users manage their devices, software, and
+  identity attributes via Entra ID single sign-on.
 ---
 
 # Self Service Portal

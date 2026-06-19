@@ -1,7 +1,7 @@
 ---
 description: >-
-  Diagnose failed Chocolatey package installations by understanding the install
-  stages and finding the relevant error messages in the logs.
+  Diagnose failed Chocolatey package installs by understanding the install stages
+  and finding error messages in the logs.
 ---
 
 # Troubleshooting failed chocolatey packages

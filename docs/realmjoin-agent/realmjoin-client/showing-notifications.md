@@ -1,7 +1,7 @@
 ---
 description: >-
-  Send scheduled, category-based notifications to users' desktops to share
-  general information or important issues directly from RealmJoin.
+  Send scheduled, category-based desktop notifications to users from RealmJoin to
+  share information or important issues.
 ---
 
 # Notifications

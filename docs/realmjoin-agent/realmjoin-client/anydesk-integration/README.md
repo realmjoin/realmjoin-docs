@@ -1,7 +1,7 @@
 ---
 description: >-
-  Integrate AnyDesk with RealmJoin to grant remote device access and elevate
-  rights via LAPS, using per-device IDs instead of manually shared IDs.
+  AnyDesk integration with RealmJoin grants remote device access and elevates
+  rights via LAPS using per-device IDs instead of shared IDs.
 ---
 
 # AnyDesk Integration

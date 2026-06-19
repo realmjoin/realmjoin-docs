@@ -1,7 +1,7 @@
 ---
 description: >-
-  Browse the RealmJoin catalogue of ready-to-use Windows and macOS application
-  packages deployable via RealmJoin Client or Microsoft Intune.
+  RealmJoin's catalogue of ready-to-use Windows and macOS application packages
+  deployable via RealmJoin Client or Microsoft Intune.
 ---
 
 # Packages

@@ -1,7 +1,7 @@
 ---
 description: >-
-  RealmJoin LAPS generates strong local account passwords stored in your own
-  Azure Key Vault, with auditing via Application Insights or Log Analytics.
+  RealmJoin LAPS generates strong local account passwords stored in your own Azure
+  Key Vault, audited via Application Insights or Log Analytics.
 ---
 
 # Local Admin Password Solution (LAPS)

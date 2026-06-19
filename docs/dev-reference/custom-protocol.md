@@ -1,7 +1,7 @@
 ---
 description: >-
-  Reference for the realmjoin: custom protocol handlers that trigger sync,
-  install, upgrade, and remote support actions for software packages by package ID.
+  RealmJoin custom protocol (realmjoin:) handlers that trigger sync, install,
+  upgrade, and remote support actions for packages by package ID.
 ---
 
 # Custom Protocol

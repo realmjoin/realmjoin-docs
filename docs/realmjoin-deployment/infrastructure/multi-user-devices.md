@@ -1,7 +1,7 @@
 ---
 description: >-
-  Provision devices for multiple users with the Device Enrollment Manager (DEM)
-  and enable self-service software installs via RealmJoin Client.
+  Provision multi-user devices with the Device Enrollment Manager (DEM) and enable
+  self-service installs via RealmJoin Client.
 ---
 
 # Multi User Devices

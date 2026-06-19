@@ -1,7 +1,7 @@
 ---
 description: >-
-  Reference of the Microsoft Graph and Azure permissions required by the
-  RealmJoin Portal apps for self-service and administrative functionality.
+  Microsoft Graph and Azure permissions required by the RealmJoin Portal apps for
+  self-service and administrative functionality.
 ---
 
 # Required Permissions

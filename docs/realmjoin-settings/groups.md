@@ -1,7 +1,7 @@
 ---
 description: >-
-  Define group name prefixes and map them to descriptive titles so RealmJoin can
-  categorize Microsoft Entra groups, such as app assignment groups.
+  RealmJoin group namespaces map name prefixes to descriptive titles so it can
+  categorize Microsoft Entra groups like app assignment groups.
 ---
 
 # Group Namespaces

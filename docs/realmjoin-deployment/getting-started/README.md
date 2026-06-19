@@ -1,7 +1,7 @@
 ---
 description: >-
-  Use the decision matrix to choose between the standard and extended RealmJoin
-  deployment guides based on your required features and scope.
+  A decision matrix to choose between the standard and extended RealmJoin
+  deployment guides based on required features and scope.
 ---
 
 # Getting Started

@@ -1,7 +1,7 @@
 ---
 description: >-
-  Overview of the two ways users interact with RealmJoin on their device: the
-  classic RealmJoin Tray and the web-based Self-Service Portal.
+  Two ways users interact with RealmJoin on their device: the classic RealmJoin
+  Tray and the web-based Self-Service Portal.
 ---
 
 # User Interface

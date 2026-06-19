@@ -1,7 +1,7 @@
 ---
 description: >-
-  Export key datasets such as devices, users, and groups from RealmJoin Portal
-  as one-click Excel (.xlsx) downloads for reporting and auditing.
+  Export RealmJoin datasets such as devices, users, and groups as one-click Excel
+  (.xlsx) downloads for reporting and auditing.
 ---
 
 # General Data Export

@@ -1,7 +1,7 @@
 ---
 description: >-
-  Review recent and archived runbook executions, scoped by type and category,
-  and search or sort runbook jobs in RealmJoin Portal.
+  Review recent and archived RealmJoin runbook executions, scoped by type and
+  category, with search and sort.
 ---
 
 # Runbook Logs

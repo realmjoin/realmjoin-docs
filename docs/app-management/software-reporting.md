@@ -1,7 +1,7 @@
 ---
 description: >-
-  Gain insights into applications installed across all company devices,
-  aggregating data from Microsoft Intune and RealmJoin with deployment methods and versions.
+  RealmJoin Software Reporting shows apps installed across all company devices,
+  with versions and deployment methods from Microsoft Intune.
 ---
 
 # Software Reporting

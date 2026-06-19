@@ -1,7 +1,7 @@
 ---
 description: >-
-  RealmJoin ESP shows its own Enrollment Status Page to ensure mandatory
-  installations and configurations complete before the Windows Desktop appears.
+  RealmJoin ESP shows its own Enrollment Status Page so mandatory installs and
+  configurations finish before the Windows desktop appears.
 ---
 
 # RealmJoin ESP

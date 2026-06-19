@@ -1,7 +1,7 @@
 ---
 description: >-
-  View details of a single group, covering Entra static and dynamic groups,
-  Exchange mail-enabled and distribution groups, and Microsoft 365 groups.
+  RealmJoin group details for Entra static and dynamic groups, Exchange mail-
+  enabled and distribution groups, and Microsoft 365 groups.
 ---
 
 # Group Details

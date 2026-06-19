@@ -1,7 +1,7 @@
 ---
 description: >-
-  Create RealmJoin custom roles with granular permissions defined as JSON and
-  bind them to Entra groups or users using the built-in JSON editor.
+  RealmJoin custom roles define granular permissions as JSON and bind to Entra
+  groups or users via the built-in JSON editor.
 ---
 
 # Custom Roles

@@ -1,7 +1,7 @@
 ---
 description: >-
-  Configure the parameters such as TenantID and SubscriptionID needed to connect
-  RealmJoin to Azure Automation and enable runbook process automation.
+  RealmJoin runbook parameters such as TenantID and SubscriptionID that connect to
+  Azure Automation and enable process automation.
 ---
 
 # Runbook Parameters

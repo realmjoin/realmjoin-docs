@@ -1,7 +1,7 @@
 ---
 description: >-
-  Answers to common RealmJoin questions, including useful links, maintaining
-  your own software packages, and how RealmJoin integrates with Intune.
+  RealmJoin FAQ: useful links, maintaining your own software packages, and how
+  RealmJoin integrates with Microsoft Intune.
 ---
 
 # FAQ

@@ -1,7 +1,7 @@
 ---
 description: >-
-  Create organic packages by uploading .zip files that are automatically built,
-  secured, and published to the Package Store for binary file transport.
+  RealmJoin organic packages build from uploaded .zip files and publish
+  automatically to the Package Store for binary file transport.
 ---
 
 # Organic Packages

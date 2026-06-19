@@ -1,7 +1,7 @@
 ---
 description: >-
-  Use Self Service Forms to collect structured data from users, such as incident
-  reports or change requests, once enabled by RealmJoin Support.
+  RealmJoin Self Service Forms collect structured data from users, such as
+  incident reports or change requests, once enabled by Support.
 ---
 
 # Self Service Forms

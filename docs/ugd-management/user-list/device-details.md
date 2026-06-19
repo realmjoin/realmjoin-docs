@@ -1,7 +1,7 @@
 ---
 description: >-
-  View detailed information about a single device, including the logged-on user,
-  installed apps, and security recommendations and their status.
+  RealmJoin device details show a single device's logged-on user, installed apps,
+  and security recommendations with status.
 ---
 
 # Device Details

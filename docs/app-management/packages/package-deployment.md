@@ -1,7 +1,7 @@
 ---
 description: >-
-  Configure package subscriptions and assignment types such as Main (Required)
-  and Available to deploy software to users via RealmJoin or Intune.
+  RealmJoin package subscriptions and assignment types such as Main (Required) and
+  Available deploy software via RealmJoin or Intune.
 ---
 
 # Package Configuration and Assignments

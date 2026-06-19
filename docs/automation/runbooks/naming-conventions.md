@@ -1,7 +1,7 @@
 ---
 description: >-
-  Learn the file and naming structure of the shared runbook repository and how
-  context and category map runbook names into Azure Automation and RealmJoin Portal.
+  RealmJoin runbook naming conventions: how context and category map shared-
+  repository runbook names into Azure Automation and the portal.
 ---
 
 # Naming Conventions

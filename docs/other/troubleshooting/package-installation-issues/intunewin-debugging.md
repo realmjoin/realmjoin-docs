@@ -1,7 +1,7 @@
 ---
 description: >-
-  Debug intunewin package installations by locating and reading the RjImeHost,
-  package installer, and Intune Management Extension log files.
+  Debug intunewin package installs using the RjImeHost, package installer, and
+  Intune Management Extension log files.
 ---
 
 # Intunewin Debugging

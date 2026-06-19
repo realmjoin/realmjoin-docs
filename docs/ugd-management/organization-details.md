@@ -1,7 +1,7 @@
 ---
 description: >-
-  View an overview of your Azure tenant, including user and group counts, Intune
-  and runbook statistics, feature status, and recent app changes.
+  RealmJoin organization details show an Azure tenant overview: user and group
+  counts, Intune and runbook stats, and recent app changes.
 ---
 
 # Organization Details

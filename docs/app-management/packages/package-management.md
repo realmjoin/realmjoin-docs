@@ -1,7 +1,7 @@
 ---
 description: >-
-  See all packages across RealmJoin and Microsoft Intune, filter, search, sort,
-  and manage staged version updates from the Package Management overview.
+  RealmJoin Package Management lists all packages across RealmJoin and Microsoft
+  Intune to filter, search, sort, and manage version updates.
 ---
 
 # Package Management Overview

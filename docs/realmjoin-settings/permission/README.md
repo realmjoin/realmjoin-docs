@@ -1,7 +1,7 @@
 ---
 description: >-
-  Delegate access to RealmJoin Portal functionality to Entra users using
-  pre-defined roles with fixed permissions or flexible custom roles.
+  Delegate RealmJoin Portal access to Entra users with pre-defined roles or
+  flexible custom roles.
 ---
 
 # Roles and Permissions

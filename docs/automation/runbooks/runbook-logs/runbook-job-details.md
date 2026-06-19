@@ -1,7 +1,7 @@
 ---
 description: >-
-  View runbook job metadata, real-time console output, and other details from
-  Azure Automation jobs directly in RealmJoin Portal.
+  View RealmJoin runbook job metadata, real-time console output, and details from
+  Azure Automation jobs.
 ---
 
 # Runbook Job Details

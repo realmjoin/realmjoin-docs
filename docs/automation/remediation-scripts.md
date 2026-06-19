@@ -1,7 +1,7 @@
 ---
 description: >-
-  Review Intune remediation scripts in your environment and use RealmJoin's set
-  of managed, constantly updated scripts to detect and fix issues on Windows clients.
+  RealmJoin's managed, continuously updated Intune remediation scripts that detect
+  and fix issues on Windows clients.
 ---
 
 # Remediation Scripts

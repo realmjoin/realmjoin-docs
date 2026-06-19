@@ -1,7 +1,7 @@
 ---
 description: >-
-  Reference list of available RealmJoin Client settings and policies that can be
-  configured and assigned per user or group.
+  Reference of available RealmJoin Client settings and policies configurable per
+  user or group.
 ---
 
 # Available RealmJoin Policies

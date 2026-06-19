@@ -1,7 +1,7 @@
 ---
 description: >-
-  Find your way around RealmJoin Portal, starting from the About me page, with
-  navigation areas that adapt to your permission level.
+  RealmJoin Portal navigation from the About me page, with areas that adapt to
+  your permission level.
 ---
 
 # Navigation

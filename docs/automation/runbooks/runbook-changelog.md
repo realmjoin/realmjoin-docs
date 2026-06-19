@@ -1,7 +1,7 @@
 ---
 description: >-
-  Track dated changes to RealmJoin's shared runbooks, including new, updated, and
-  removed runbooks across organization, user, group, and device scopes.
+  Dated changelog of RealmJoin's shared runbooks: new, updated, and removed
+  runbooks across organization, user, group, and device scopes.
 ---
 
 # RealmJoin Runbooks Changelog

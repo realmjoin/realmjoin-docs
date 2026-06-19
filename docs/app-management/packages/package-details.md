@@ -1,7 +1,7 @@
 ---
 description: >-
-  View detailed information for a single package in your environment and manage
-  its properties, user assignments, and updates from the package details page.
+  The RealmJoin package details page shows a single package's properties and
+  manages its user assignments and updates.
 ---
 
 # Package Details

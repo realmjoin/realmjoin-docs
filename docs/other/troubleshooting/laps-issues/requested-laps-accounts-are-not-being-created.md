@@ -1,7 +1,7 @@
 ---
 description: >-
-  Resolve LAPS Supporter Accounts stuck in the "Requested" state by logging off
-  existing on-demand admin sessions or rebooting the device.
+  Fix RealmJoin LAPS Supporter Accounts stuck in 'Requested' by logging off on-
+  demand admin sessions or rebooting the device.
 ---
 
 # Requested LAPS Accounts are not being created

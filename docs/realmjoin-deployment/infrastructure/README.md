@@ -1,7 +1,7 @@
 ---
 description: >-
-  Network and infrastructure considerations for deploying RealmJoin, including
-  proxy guidance and the Azure and Office 365 IP ranges that must be reachable.
+  RealmJoin infrastructure and network requirements, including proxy guidance and
+  the Azure and Office 365 IP ranges that must be reachable.
 ---
 
 # Infrastructure Considerations

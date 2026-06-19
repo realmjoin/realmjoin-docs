@@ -1,7 +1,7 @@
 ---
 description: >-
-  Understand the four-stage testing cycle that validates installation mechanics,
-  exit codes, and deployment behavior for application packaging requests.
+  RealmJoin's four-stage package testing cycle validates installation mechanics,
+  exit codes, and deployment behavior for packaging requests.
 ---
 
 # Application Package Testing

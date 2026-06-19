@@ -1,7 +1,7 @@
 ---
 description: >-
-  Assign RealmJoin's pre-defined roles to Entra groups, optionally managed via
-  PIM, and review the permissions each available role grants.
+  Assign RealmJoin pre-defined roles to Entra groups, optionally via PIM, and
+  review the permissions each role grants.
 ---
 
 # Pre-defined Roles

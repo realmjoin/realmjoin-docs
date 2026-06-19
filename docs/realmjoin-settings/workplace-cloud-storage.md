@@ -1,7 +1,7 @@
 ---
 description: >-
-  Manage files referenced by Intune policies, such as managed favourites,
-  backgrounds, and Outlook signatures, through RealmJoin Workplace Cloud Storage.
+  RealmJoin Workplace Cloud Storage manages files referenced by Intune policies,
+  such as managed favourites, backgrounds, and Outlook signatures.
 ---
 
 # Workplace Cloud Storage

@@ -1,7 +1,7 @@
 ---
 description: >-
-  Review and interact with Entra ID users, groups, and devices in one view that
-  combines Intune, Defender, Autopilot, and sign-in log data.
+  Manage Entra ID users, groups, and devices in one RealmJoin view combining
+  Intune, Defender, Autopilot, and sign-in data.
 ---
 
 # Overview

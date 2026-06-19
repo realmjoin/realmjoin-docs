@@ -1,7 +1,7 @@
 ---
 description: >-
-  Subscribe to packages from the store as managed or basic and choose whether to
-  deploy them via Intune or the RealmJoin agent.
+  Subscribe to RealmJoin Package Store packages as managed or basic and deploy
+  them via Intune or the RealmJoin agent.
 ---
 
 # Package Subscription Options

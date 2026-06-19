@@ -1,7 +1,7 @@
 ---
 description: >-
-  Understand maintained versus unmaintained package types and the
-  responsibilities for updates between the RealmJoin Packaging Factory and customers.
+  RealmJoin maintained versus unmaintained package types and update
+  responsibilities split between the Packaging Factory and customers.
 ---
 
 # Packaging Roles & Responsibilities

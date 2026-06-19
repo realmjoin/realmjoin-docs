@@ -1,7 +1,7 @@
 ---
 description: >-
-  Overview of the RealmJoin Portal settings sections for customizing the portal,
-  managing features, permissions, and Microsoft Azure resources.
+  Overview of RealmJoin Portal settings for customizing the portal and managing
+  features, permissions, and Microsoft Azure resources.
 ---
 
 # Overview

@@ -1,7 +1,7 @@
 ---
 description: >-
-  Create an Azure Application Insights instance for LAPS auditing and send its
-  instrumentation key to RealmJoin Support to enable logging.
+  Create an Azure Application Insights instance for RealmJoin LAPS auditing and
+  send its instrumentation key to Support.
 ---
 
 # Application Insights
