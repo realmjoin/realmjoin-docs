@@ -1,3 +1,9 @@
+---
+description: >-
+  RealmJoin support eligibility, what support services cover, and how to open a
+  ticket.
+---
+
 # Support & Service Level
 
 ## Support

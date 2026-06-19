@@ -1,3 +1,9 @@
+---
+description: >-
+  Diagnose failed Chocolatey package installs by understanding the install stages
+  and finding error messages in the logs.
+---
+
 # Troubleshooting failed chocolatey packages
 
 As explained in the previous section, a chocolatey package installation consists of several stages:

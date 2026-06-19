@@ -1,3 +1,9 @@
+---
+description: >-
+  RealmJoin organic packages build from uploaded .zip files and publish
+  automatically to the Package Store for binary file transport.
+---
+
 # Organic Packages
 
 Organic packages are used for binary file transportation with a fixed configuration, which can not be changed. Uploaded .zip files are automatically added to the list of available packages in the tenant, and secured with a strong password. The content will be extracted to _`$env:SystemDrive\Install\packagename`_ during package execution. This path can not be changed. An optional antivirus scan is available.

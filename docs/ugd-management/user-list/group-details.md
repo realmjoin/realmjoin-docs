@@ -1,3 +1,9 @@
+---
+description: >-
+  RealmJoin group details for Entra static and dynamic groups, Exchange Online
+  mail-enabled groups and distribution groups, and Microsoft 365 groups.
+---
+
 # Group Details
 
 ![Application management group](<../../.gitbook/assets/image (107).png>)

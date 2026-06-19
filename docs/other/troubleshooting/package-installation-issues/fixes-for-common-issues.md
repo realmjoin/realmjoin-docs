@@ -1,3 +1,9 @@
+---
+description: >-
+  Targeted fixes for common RealmJoin package installation problems, such as
+  BranchCache errors, for specific scenarios.
+---
+
 # Fixes for common issues
 
 {% hint style="danger" %}

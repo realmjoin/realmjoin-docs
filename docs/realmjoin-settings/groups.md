@@ -1,3 +1,9 @@
+---
+description: >-
+  RealmJoin group namespaces map name prefixes to descriptive titles so it can
+  categorize Microsoft Entra groups like app assignment groups.
+---
+
 # Group Namespaces
 
 RealmJoin Portal uses naming prefixes to attribute functions to specific Microsoft Entra groups. By default application assignment groups are prefixed with `app`, so that a group that will assign Google Chrome to users will be named `app - Google Chrome`.&#x20;

@@ -1,3 +1,9 @@
+---
+description: >-
+  The RealmJoin audit log records portal actions such as group membership, runbook
+  jobs, and app management once Log Analytics is configured.
+---
+
 # Audit Log
 
 ## Overview

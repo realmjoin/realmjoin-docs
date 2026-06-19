@@ -1,3 +1,9 @@
+---
+description: >-
+  General RealmJoin settings, including runbook sync from the public repository
+  and package automation defaults.
+---
+
 # General
 
 ## Runbook Sync

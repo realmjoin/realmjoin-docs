@@ -1,3 +1,9 @@
+---
+description: >-
+  RealmJoin's catalogue of ready-to-use Windows and macOS application packages
+  deployable via RealmJoin Client or Microsoft Intune.
+---
+
 # Packages
 
 RealmJoin Packages are ready‑to‑use software packages provided through the RealmJoin Portal, offering a large, continuously maintained catalogue of Windows and macOS applications that can be easily deployed via the **RealmJoin Client** or **Microsoft Intune**. They include **generic packages** available to all customers, **custom and organic packages** tailored for specific environments, and **macOS‑specific packages**, all designed to simplify app deployment and lifecycle management for modern workplaces.

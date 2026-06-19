@@ -1,3 +1,9 @@
+---
+description: >-
+  Deploy the RealmJoin Agent to Windows clients with the ready-to-use intunewin
+  package from the Package Store via Intune.
+---
+
 # Deploying the Agent
 
 The RealmJoin Agent can be seamlessly deployed using Microsoft Intune. A ready-to-use package is available in our Package Store, simplifying the setup process.\

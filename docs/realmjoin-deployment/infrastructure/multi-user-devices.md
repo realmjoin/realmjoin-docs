@@ -1,3 +1,9 @@
+---
+description: >-
+  Provision multi-user devices with the Device Enrollment Manager (DEM) and enable
+  self-service installs via RealmJoin Client.
+---
+
 # Multi User Devices
 
 Multi-User Devices allow an administrator to provision devices intended to be used by more than one user. A tool for Multi-User Devices is **Device Enrollment Manager** (short DEM).

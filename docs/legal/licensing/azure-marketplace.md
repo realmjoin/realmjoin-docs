@@ -1,3 +1,9 @@
+---
+description: >-
+  Purchase RealmJoin via Azure Marketplace: prerequisites, the user-segment
+  pricing model, base fees, and invoicing.
+---
+
 # Azure Marketplace
 
 ## Prerequisites

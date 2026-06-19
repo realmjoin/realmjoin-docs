@@ -1,3 +1,9 @@
+---
+description: >-
+  The RealmJoin Self-Service Portal lets users manage their devices, software, and
+  identity attributes via Entra ID single sign-on.
+---
+
 # Self Service Portal
 
 The RealmJoin Self-Service Portal (SSP) is a central web-based interface that bridges the gap between IT administration and end-user autonomy.\

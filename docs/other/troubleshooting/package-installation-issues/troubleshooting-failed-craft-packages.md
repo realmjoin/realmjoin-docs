@@ -1,3 +1,9 @@
+---
+description: >-
+  Diagnose failed craft package installs by reading tray.log for user scope or
+  realmjoin.log for system scope.
+---
+
 # Troubleshooting failed craft packages
 
 For craft packages there are no separate logs (unless explicitly written by an installer inside the craft package).\

@@ -1,3 +1,9 @@
+---
+description: >-
+  RealmJoin custom protocol (realmjoin:) handlers that trigger sync, install,
+  upgrade, and remote support actions for packages by package ID.
+---
+
 # Custom Protocol
 
 The `CustomProtocol` class defines a set of URI-like prefixes that can be used to trigger specific actions within the system by providing a package ID. These custom protocol handlers are designed to streamline operations such as syncing, installing, upgrading, or initiating remote support for software packages.

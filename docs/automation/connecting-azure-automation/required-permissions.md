@@ -1,3 +1,9 @@
+---
+description: >-
+  Permissions and the RealmJoin Runbook Management app registration required for
+  RealmJoin to interact with Azure Automation and runbooks.
+---
+
 # Required Permissions
 
 This page describes the permissions needed for RealmJoin to interact with Azure Automation / Runbooks.&#x20;

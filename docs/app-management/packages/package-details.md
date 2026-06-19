@@ -1,3 +1,9 @@
+---
+description: >-
+  The RealmJoin package details page shows a single package's properties and
+  manages its user assignments and updates.
+---
+
 # Package Details
 
 <figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Package details page</p></figcaption></figure>

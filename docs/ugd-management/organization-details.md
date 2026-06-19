@@ -1,3 +1,9 @@
+---
+description: >-
+  RealmJoin organization details show an Azure tenant overview: user and group
+  counts, Intune and runbook stats, and recent app changes.
+---
+
 # Organization Details
 
 ![Organization Details View](<../.gitbook/assets/2022-02-07 RJ ORG.png>)

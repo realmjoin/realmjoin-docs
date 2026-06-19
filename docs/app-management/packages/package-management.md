@@ -1,3 +1,9 @@
+---
+description: >-
+  RealmJoin Package Management lists all packages across RealmJoin and Microsoft
+  Intune to filter, search, sort, and manage version updates.
+---
+
 # Package Management Overview
 
 Package Management shows all packages that currently exist in your environment across RealmJoin and Microsoft Intune.

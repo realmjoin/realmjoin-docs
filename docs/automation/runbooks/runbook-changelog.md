@@ -1,3 +1,9 @@
+---
+description: >-
+  Dated changelog of RealmJoin's shared runbooks: new, updated, and removed
+  runbooks across organization, user, group, and device scopes.
+---
+
 # RealmJoin Runbooks Changelog
 
 ## 2026-06-03

@@ -1,3 +1,9 @@
+---
+description: >-
+  The RealmJoin User Profile tab gives users quick access to their apps, account,
+  devices, and groups, with directory roles for admins.
+---
+
 # User Profile
 
 ![About Me - User](<../.gitbook/assets/image (205).png>)
