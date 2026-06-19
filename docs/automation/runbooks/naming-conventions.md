@@ -1,6 +1,6 @@
 ---
 description: >-
-  RealmJoin runbook naming conventions: how context and category map shared-
+  RealmJoin runbook naming conventions: how context and category map shared
   repository runbook names into Azure Automation and the portal.
 ---
 
