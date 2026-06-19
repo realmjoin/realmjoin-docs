@@ -1,7 +1,7 @@
 ---
 description: >-
-  Reference of granular permissions for RealmJoin custom roles, with editor auto-
-  complete showing the complete current list.
+  Reference of granular permissions for RealmJoin custom roles, with editor
+  auto-complete showing the complete current list.
 ---
 
 # Available Permissions
