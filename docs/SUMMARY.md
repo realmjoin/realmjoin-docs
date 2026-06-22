@@ -5,6 +5,7 @@
 ## Introduction
 
 * [Navigation](introduction/navigation.md)
+* [Useful Links](introduction/useful-links.md)
 * [RealmJoin Unlocked Vodcast](introduction/realmjoin-unlocked-vodcast.md)
 
 ## Deployment
