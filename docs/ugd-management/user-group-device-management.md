@@ -10,7 +10,7 @@ RealmJoin allows you to review and interact with Entra ID objects like users, gr
 
 It combines information from multiple sources such as Intune, Microsoft Defender, the Windows Autopilot service and sign-in security logs into one single view.&#x20;
 
-Use the [navigation](../introduction/navigation.md) to inspect your [tenant/organization](organization-details.md), [users, groups or devices](user-list/) and search and drill down across corelated objects and trigger [operations ](../automation/runbooks/)directly in context.
+Use the [navigation](../introduction/navigation.md) to inspect your [tenant/organization](organization-details.md), [users, groups or devices](user-list/) and search and drill down across correlated objects and trigger [operations](../automation/runbooks/) directly in context.
 
 Users, Groups and Devices all have a list interface to find the object of interest and a [details page](user-list/user-details.md) for reviewing and interacting with each object individually.&#x20;
 
