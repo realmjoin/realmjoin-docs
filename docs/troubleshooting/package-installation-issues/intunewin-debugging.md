@@ -16,7 +16,7 @@ Intunewin deployed application packages write three different logfiles.&#x20;
 * Package installer logs: if available: $env:Systemroot\Logs\RealmJoin\Packages\\\<package-id>\\\*.log
 * Generell IME logs: C:\ProgramData\Microsoft\IntuneManagementExtension\Logs\intuneManagementExtension.log
 
-<figure><img src="../../../.gitbook/assets/24-09-26-13_56_01_vmconnect.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/24-09-26-13_56_01_vmconnect.png" alt=""><figcaption></figcaption></figure>
 
 The following RjImeHost.log lines state the installation command:&#x20;
 

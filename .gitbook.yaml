@@ -3,3 +3,31 @@ root: ./docs/
 structure:
   readme: README.md
   summary: SUMMARY.md
+
+redirects:
+  # Moved pages
+  realmjoin-deployment/navigation: introduction/navigation.md
+  other/realmjoin-unlocked-vodcast: introduction/realmjoin-unlocked-vodcast.md
+  app-management/software-reporting: analyze-and-export/software-reporting.md
+  app-management/avd-templates: realmjoin-deployment/infrastructure/avd-templates.md
+  ugd-management/about-me: ugd-management/user-profile.md
+  other/msp-and-advanced-features: administration/msp-and-advanced-features.md
+  other/security-and-privacy: security-and-privacy/README.md
+  other/faq: troubleshooting/faq.md
+  other/troubleshooting: troubleshooting/README.md
+  other/troubleshooting/package-installation-issues: troubleshooting/package-installation-issues/README.md
+  other/troubleshooting/package-installation-issues/collecting-logfiles: troubleshooting/package-installation-issues/collecting-logfiles.md
+  other/troubleshooting/package-installation-issues/logfiles-structure: troubleshooting/package-installation-issues/logfiles-structure.md
+  other/troubleshooting/package-installation-issues/analysing-chocolatey.log: troubleshooting/package-installation-issues/analysing-chocolatey.log.md
+  other/troubleshooting/package-installation-issues/troubleshooting-failed-chocolatey-packages: troubleshooting/package-installation-issues/troubleshooting-failed-chocolatey-packages.md
+  other/troubleshooting/package-installation-issues/troubleshooting-failed-craft-packages: troubleshooting/package-installation-issues/troubleshooting-failed-craft-packages.md
+  other/troubleshooting/package-installation-issues/fixes-for-common-issues: troubleshooting/package-installation-issues/fixes-for-common-issues.md
+  other/troubleshooting/package-installation-issues/intunewin-debugging: troubleshooting/package-installation-issues/intunewin-debugging.md
+  other/troubleshooting/laps-issues: troubleshooting/laps-issues/README.md
+  other/troubleshooting/laps-issues/laps-account-passwords-cannot-be-retrieved: troubleshooting/laps-issues/laps-account-passwords-cannot-be-retrieved.md
+  other/troubleshooting/laps-issues/requested-laps-accounts-are-not-being-created: troubleshooting/laps-issues/requested-laps-accounts-are-not-being-created.md
+  # Merged page
+  analyze-and-export/general-data-export: analyze-and-export/data-export.md
+  # Removed pages
+  realmjoin-deployment/migration-to-realmjoin-vnext: realmjoin-deployment/getting-started/README.md
+  realmjoin-deployment/onboarding-realmjoin-portal/quick-setup: realmjoin-deployment/onboarding-realmjoin-portal/README.md

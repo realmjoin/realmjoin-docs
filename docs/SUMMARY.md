@@ -2,23 +2,28 @@
 
 * [Welcome](README.md)
 
-## RealmJoin Deployment
+## Introduction
+
+* [Navigation](introduction/navigation.md)
+* [RealmJoin Unlocked Vodcast](introduction/realmjoin-unlocked-vodcast.md)
+
+## Deployment
 
 * [Getting Started](realmjoin-deployment/getting-started/README.md)
   * [Extended Guide](realmjoin-deployment/getting-started/extended-guide.md)
 * [Onboarding](realmjoin-deployment/onboarding-realmjoin-portal/README.md)
   * [Advanced Setup](realmjoin-deployment/onboarding-realmjoin-portal/advanced-setup.md)
-* [Required Permissions](realmjoin-deployment/required-permissions.md)
+* [Required Permissions](realmjoin-deployment/required-permissions.md "Portal Required Permissions")
 * [Infrastructure Considerations](realmjoin-deployment/infrastructure/README.md)
   * [Limiting the Scope of RealmJoin Portal](realmjoin-deployment/infrastructure/limiting-the-scope-of-realmjoin-portal.md)
   * [Multi User Devices](realmjoin-deployment/infrastructure/multi-user-devices.md)
-* [Navigation](realmjoin-deployment/navigation.md)
+  * [AVD Templates](realmjoin-deployment/infrastructure/avd-templates.md)
 
-## User, Group and Device Management <a href="#ugd-management" id="ugd-management"></a>
+## User, Group & Device Management <a href="#ugd-management" id="ugd-management"></a>
 
 * [Overview](ugd-management/user-group-device-management.md)
 * [Organization Details](ugd-management/organization-details.md)
-* [User Profile](ugd-management/about-me.md)
+* [User Profile](ugd-management/user-profile.md)
 * [User, Group and Device Lists](ugd-management/user-list/README.md)
   * [User Details](ugd-management/user-list/user-details.md)
   * [Group Details](ugd-management/user-list/group-details.md)
@@ -30,10 +35,10 @@
 
 * [Advanced Search](analyze-and-export/advanced-search/README.md)
   * [Advanced Search examples](analyze-and-export/advanced-search/advanced-search-syntax.md)
-* [Specific Data Export](analyze-and-export/data-export.md)
-* [General Data Export](analyze-and-export/general-data-export.md)
+* [Data Export](analyze-and-export/data-export.md)
+* [Software Reporting](analyze-and-export/software-reporting.md)
 
-## App Management
+## Application Management
 
 * [Packages](app-management/packages/README.md)
   * [Package Store](app-management/packages/package-store/README.md)
@@ -48,14 +53,12 @@
     * [Application Package Testing](app-management/packages/packaging-requests/application-package-testing.md)
     * [Organic Packages](app-management/packages/packaging-requests/organic-packages.md)
   * [Migration Guide: RealmJoin to Intune Managed Packages](app-management/packages/migration-guide-realmjoin-to-intune-managed-packages.md)
-* [Software Reporting](app-management/software-reporting.md)
-* [AVD Templates](app-management/avd-templates.md)
 
 ## Automation
 
 * [Connecting Azure Automation](automation/connecting-azure-automation/README.md)
-  * [Required Permissions](automation/connecting-azure-automation/required-permissions.md)
-  * [Requirements](automation/connecting-azure-automation/azure-ad-roles-and-permissions.md)
+  * [Runbook Management App Permissions](automation/connecting-azure-automation/required-permissions.md)
+  * [Runbook Execution Requirements](automation/connecting-azure-automation/azure-ad-roles-and-permissions.md)
 * [Runbooks](automation/runbooks/README.md)
   * [Runbook Customization](automation/runbooks/runbook-customization.md)
   * [Runbook Logs](automation/runbooks/runbook-logs/README.md)
@@ -265,14 +268,9 @@
   * [RealmJoin Tray](realmjoin-agent/client-menu/realmjoin-tray.md)
   * [Self Service Portal](realmjoin-agent/client-menu/self-service-portal.md)
 
-## Logs
+## Administration & Settings
 
-* [Connecting Azure Log Analytics Workspace](logs/log-analytics.md)
-* [Audit Log](logs/audit-log.md)
-
-## RealmJoin Settings
-
-* [Overview](realmjoin-settings/settings.md)
+* [Settings Overview](realmjoin-settings/settings.md)
 * [General](realmjoin-settings/general.md)
 * [Roles and Permissions](realmjoin-settings/permission/README.md)
   * [Pre-defined Roles](realmjoin-settings/permission/pre-defined-roles.md)
@@ -282,6 +280,12 @@
 * [Group Namespaces](realmjoin-settings/groups.md)
 * [Workplace Cloud Storage](realmjoin-settings/workplace-cloud-storage.md)
 * [Self Service Forms](realmjoin-settings/self-service-forms.md)
+* [MSP & Advanced Features](administration/msp-and-advanced-features.md)
+
+## Monitoring & Logs
+
+* [Connecting Azure Log Analytics Workspace](logs/log-analytics.md)
+* [Audit Log](logs/audit-log.md)
 
 ## Developer Reference <a href="#dev-reference" id="dev-reference"></a>
 
@@ -295,24 +299,25 @@
 * [Local Admin Password Management](dev-reference/local-admin-password-management.md)
 * [Custom Protocol](dev-reference/custom-protocol.md)
 
-## Other
+## Security & Privacy
 
-* [MSP & Advanced Features](other/msp-and-advanced-features.md)
-* [Security & Privacy](other/security-and-privacy.md)
-* [RealmJoin Unlocked Vodcast](other/realmjoin-unlocked-vodcast.md)
-* [FAQ](other/faq.md)
-* [Troubleshooting](other/troubleshooting/README.md)
-  * [Package Installation Issues](other/troubleshooting/package-installation-issues/README.md)
-    * [Collecting Logfiles](other/troubleshooting/package-installation-issues/collecting-logfiles.md)
-    * [Logfiles Structure](other/troubleshooting/package-installation-issues/logfiles-structure.md)
-    * [Analysing chocolatey.log](other/troubleshooting/package-installation-issues/analysing-chocolatey.log.md)
-    * [Troubleshooting failed chocolatey packages](other/troubleshooting/package-installation-issues/troubleshooting-failed-chocolatey-packages.md)
-    * [Troubleshooting failed craft packages](other/troubleshooting/package-installation-issues/troubleshooting-failed-craft-packages.md)
-    * [Fixes for common issues](other/troubleshooting/package-installation-issues/fixes-for-common-issues.md)
-    * [Intunewin Debugging](other/troubleshooting/package-installation-issues/intunewin-debugging.md)
-  * [LAPS Issues](other/troubleshooting/laps-issues/README.md)
-    * [LAPS account passwords cannot be retrieved](other/troubleshooting/laps-issues/laps-account-passwords-cannot-be-retrieved.md)
-    * [Requested LAPS Accounts are not being created](other/troubleshooting/laps-issues/requested-laps-accounts-are-not-being-created.md)
+* [Security & Privacy](security-and-privacy/README.md)
+
+## Troubleshooting & FAQ
+
+* [FAQ](troubleshooting/faq.md)
+* [Troubleshooting](troubleshooting/README.md)
+  * [Package Installation Issues](troubleshooting/package-installation-issues/README.md)
+    * [Collecting Logfiles](troubleshooting/package-installation-issues/collecting-logfiles.md)
+    * [Logfiles Structure](troubleshooting/package-installation-issues/logfiles-structure.md)
+    * [Analysing chocolatey.log](troubleshooting/package-installation-issues/analysing-chocolatey.log.md)
+    * [Troubleshooting failed chocolatey packages](troubleshooting/package-installation-issues/troubleshooting-failed-chocolatey-packages.md)
+    * [Troubleshooting failed craft packages](troubleshooting/package-installation-issues/troubleshooting-failed-craft-packages.md)
+    * [Fixes for common issues](troubleshooting/package-installation-issues/fixes-for-common-issues.md)
+    * [Intunewin Debugging](troubleshooting/package-installation-issues/intunewin-debugging.md)
+  * [LAPS Issues](troubleshooting/laps-issues/README.md)
+    * [LAPS account passwords cannot be retrieved](troubleshooting/laps-issues/laps-account-passwords-cannot-be-retrieved.md)
+    * [Requested LAPS Accounts are not being created](troubleshooting/laps-issues/requested-laps-accounts-are-not-being-created.md)
 * [Changelog](https://feedback.realmjoin.com/)
 
 ## Legal
