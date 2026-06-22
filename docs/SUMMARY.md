@@ -7,14 +7,12 @@
 * [Getting Started](realmjoin-deployment/getting-started/README.md)
   * [Extended Guide](realmjoin-deployment/getting-started/extended-guide.md)
 * [Onboarding](realmjoin-deployment/onboarding-realmjoin-portal/README.md)
-  * [Quick Setup](realmjoin-deployment/onboarding-realmjoin-portal/quick-setup.md)
   * [Advanced Setup](realmjoin-deployment/onboarding-realmjoin-portal/advanced-setup.md)
 * [Required Permissions](realmjoin-deployment/required-permissions.md)
 * [Infrastructure Considerations](realmjoin-deployment/infrastructure/README.md)
   * [Limiting the Scope of RealmJoin Portal](realmjoin-deployment/infrastructure/limiting-the-scope-of-realmjoin-portal.md)
   * [Multi User Devices](realmjoin-deployment/infrastructure/multi-user-devices.md)
 * [Navigation](realmjoin-deployment/navigation.md)
-* [Migration to RealmJoin vNext](realmjoin-deployment/migration-to-realmjoin-vnext.md)
 
 ## User, Group and Device Management <a href="#ugd-management" id="ugd-management"></a>
 
