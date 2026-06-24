@@ -25,7 +25,7 @@ description: >-
   2. Run `Reset-BC -Force`&#x20;
 
 {% hint style="warning" %}
-We strongly recommend deploying the **Reset or Clear BranchCache** Remediation Script with a daily schedule. It can be found in the [Remediation Scripts](../../../automation/remediation-scripts.md) section of the RealmJoin Portal.&#x20;
+We strongly recommend deploying the **Reset or Clear BranchCache** Remediation Script with a daily schedule. It can be found in the [Remediation Scripts](../../automation/remediation-scripts.md) section of the RealmJoin Portal.&#x20;
 
 By using this method the above mentioned BranchCache issues will proactively be detected and automatically remediated (if possible).
 {% endhint %}
@@ -77,7 +77,7 @@ Steps to fix this issue:
 
 ## ConfigUpdater unauthorized <a href="#user-content-broken-chocolatey-config" id="user-content-broken-chocolatey-config"></a>
 
-<figure><img src="../../../.gitbook/assets/25-07-02-10_40_03_Photos.png" alt=""><figcaption><p>The RJ agent can not access the configuration</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/25-07-02-10_40_03_Photos.png" alt=""><figcaption><p>The RJ agent can not access the configuration</p></figcaption></figure>
 
 The primary issue causing this problem is that the access token was not refreshed automatically as expected. Typically, access tokens are updated automatically to ensure uninterrupted access to resources. However, in this case, the expected process failed, leading to the token becoming outdated and thus resulting in access issues. This highlights the importance of ensuring that the automated token refresh mechanisms are functioning correctly to prevent similar issues in the future. Addressing this root cause will help maintain consistent access and avoid disruptions in
 

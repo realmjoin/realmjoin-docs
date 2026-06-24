@@ -201,7 +201,7 @@ RealmJoin uses point-in-time restore technology on all critical data. GitLab (ho
 
 ### 7. Are there backup restore tests?
 
-No. Please see [Availability](security-and-privacy.md#id-1.-how-do-you-ensure-the-availability-of-realmjoin) for details.
+No. Please see [Availability](#id-1.-how-do-you-ensure-the-availability-of-realmjoin) for details.
 
 ### 8. What makes RealmJoin packages safer than community solutions?
 

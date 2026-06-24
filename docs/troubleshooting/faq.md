@@ -1,25 +1,10 @@
 ---
 description: >-
-  RealmJoin FAQ: useful links, maintaining your own software packages, and how
-  RealmJoin integrates with Microsoft Intune.
+  RealmJoin FAQ: maintaining your own software packages and runbooks, expected
+  Azure resource costs, and how RealmJoin integrates with Microsoft Intune.
 ---
 
 # FAQ
-
-## Which links should I bookmark?
-
-*   RealmJoin Portal:
-
-    [https://portal.realmjoin.com](https://portal.realmjoin.com)
-*   Public Runbook Repository:
-
-    [https://github.com/realmjoin/realmjoin-runbooks](https://github.com/realmjoin/realmjoin-runbooks)
-*   General RealmJoin website:
-
-    [https://realmjoin.com/](https://realmjoin.com)
-*   Documentation:
-
-    [https://docs.realmjoin.com/](https://docs.realmjoin.com)
 
 ## Am I able to maintain my own software packages and updates?
 

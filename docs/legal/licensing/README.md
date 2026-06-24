@@ -60,7 +60,7 @@ The following table shows an overview of the scope of the two editions. RealmJoi
 | App Agent                                                                                            | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
 | Multi-user support                                                                                   | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
 | VDI support                                                                                          | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
-| <p><a href="../../app-management/avd-templates.md">AVD templates support</a><br>(headless agent)</p> |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
+| <p><a href="../../realmjoin-deployment/infrastructure/avd-templates.md">AVD templates support</a><br>(headless agent)</p> |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 | Software Inventory                                                                                   |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 | Supporter Insights & Device Warranty                                                                 |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
 | [RealmJoin API](../../dev-reference/realmjoin-api/)                                                  |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |

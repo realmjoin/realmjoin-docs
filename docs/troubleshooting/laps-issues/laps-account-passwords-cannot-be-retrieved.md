@@ -6,13 +6,13 @@ description: Checking Azure Key Vault
 
 If LAPS account passwords fail to be retrieved, it is most likely because they cannot be found in the Azure Key Vault.
 
-If you are facing this issue, first of all check if your Key Vault is correctly configured for RJ LAPS, especially the permissions as documented here: [keyvault.md](../../../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/keyvault.md "mention")
+If you are facing this issue, first of all check if your Key Vault is correctly configured for RJ LAPS, especially the permissions as documented here: [keyvault.md](../../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/keyvault.md "mention")
 
 
 
 As an indicator to see if the basic communication between RealmJoin and the KeyVault works, check the Certificates section of the Key Vault in the Azure Portal. Provided you have the right permissions on the KeyVault, you should see a certificate called `realmjoin-master` that has been created by RealmJoin:
 
-<figure><img src="../../../.gitbook/assets/image (315).png" alt=""><figcaption><p>realmjoin-master Certificate</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (315).png" alt=""><figcaption><p>realmjoin-master Certificate</p></figcaption></figure>
 
 
 

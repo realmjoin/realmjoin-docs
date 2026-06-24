@@ -16,7 +16,7 @@ The icon of the current location is highlighted in light blue.
 
 ## [User, Group and Device management](../ugd-management/user-group-device-management.md)
 
-### ![](../.gitbook/assets/me.png) [User Profile](../ugd-management/about-me.md)
+### ![](../.gitbook/assets/me.png) [User Profile](../ugd-management/user-profile.md)
 
 See information about the signed in user, including merged information from Entra and Intune.
 
@@ -46,7 +46,7 @@ The list of subscribed packages includes your checked in applications from Realm
 
 In the store you can search for and import ready-to-use generic application packages for Windows and macOS and get access to your requested custom application packages.
 
-### ![](<../.gitbook/assets/image (349).png>) [Software Report](../app-management/software-reporting.md)
+### ![](<../.gitbook/assets/image (349).png>) [Software Report](../analyze-and-export/software-reporting.md)
 
 The Software Report gives you an overview of the different versions of each deployed and found application on your devices.
 
@@ -82,7 +82,7 @@ See a list of recent form submissions and review senders and submission contents
 
 Users can report incidents or request equipment using forms. See [Self Service Forms](../realmjoin-settings/self-service-forms.md) for more information.
 
-### ![](<../.gitbook/assets/image (153).png>) [AVD Templates](../app-management/avd-templates.md)
+### ![](<../.gitbook/assets/image (153).png>) [AVD Templates](../realmjoin-deployment/infrastructure/avd-templates.md)
 
 Use RealmJoin to prepare templates for AVD deployment.
 

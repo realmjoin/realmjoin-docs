@@ -181,8 +181,8 @@ After the core setup is complete, you can enable additional features for daily o
 
 The **Software Report** aggregates data from the RealmJoin Agent and Intune to provide a list of all applications, their versions and the method of deployment.
 
-{% content-ref url="../../app-management/software-reporting.md" %}
-[software-reporting.md](../../app-management/software-reporting.md)
+{% content-ref url="../../analyze-and-export/software-reporting.md" %}
+[software-reporting.md](../../analyze-and-export/software-reporting.md)
 {% endcontent-ref %}
 {% endstep %}
 {% endstepper %}

@@ -24,6 +24,6 @@ To delegate/limit which subset of runbooks can be used by different operators, p
 
 ### Permission Defaults
 
-By default, all users will have access to the [User profile](../../ugd-management/about-me.md) page to facilitate self-service scenarios.
+By default, all users will have access to the [User profile](../../ugd-management/user-profile.md) page to facilitate self-service scenarios.
 
 During initial onboarding, the Entra role "Global Administrators" is also assigned as a RealmJoin Administrator to facilitate the initial configuration process.
