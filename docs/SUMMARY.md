@@ -282,6 +282,8 @@
 * [Workplace Cloud Storage](realmjoin-settings/workplace-cloud-storage.md)
 * [Self Service Forms](realmjoin-settings/self-service-forms.md)
 * [MSP & Advanced Features](administration/msp-and-advanced-features.md)
+* [Third-party integrations](administration-and-settings/third-party-integrations/README.md)
+  * [LaMetric Time](administration-and-settings/third-party-integrations/lametric-time.md)
 
 ## Monitoring & Logs
 
