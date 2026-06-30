@@ -11,8 +11,6 @@ This guide is only valid for software deployment using the RealmJoin client (not
 
 Especially the convenient way of collecting the required logfiles, directly on the client as well as remotely using the RealmJoin portal, only works with the RealmJoin tray application rolled out to your clients.
 
-
-
 When using intunewin deployment, the logfiles will need to be collected manually from the clients, the most relevant folder being `C:\WINDOWS\Logs\RealmJoin`.
 {% endhint %}
 
@@ -27,7 +25,9 @@ The required log files needed for troubleshooting failed installations reside in
 * `%LOCALAPPDATA%\RealmJoin\Logs`
 * `C:\ProgramData\chocolatey\logs\`
 
-Please always provide the ZIP file containing the logs with any service request raised to the RealmJoin support.
+{% hint style="warning" %}
+**Please always provide the ZIP file containing the logs with any service request raised to the RealmJoin support.**
+{% endhint %}
 
 <figure><img src="../../.gitbook/assets/zip-filestructure.png" alt=""><figcaption><p>File structure of a RealmJoin exported logs ZIP file</p></figcaption></figure>
 
