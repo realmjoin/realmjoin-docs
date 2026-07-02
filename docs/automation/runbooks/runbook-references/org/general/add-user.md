@@ -116,6 +116,16 @@ Optional manager user ID to set for the user.
 | Default Value |  |
 | Type | String |
 
+### SponsorIds
+
+Optional sponsor user IDs to set for the user. Multiple sponsors supported.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String[] |
+
 ### MobilePhone
 
 Mobile phone number of the user.

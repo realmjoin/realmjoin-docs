@@ -43,7 +43,7 @@ On this overview page you can find all Organization Runbooks in the General subc
 - [Report Pim Activations (Scheduled)](report-pim-activations_scheduled.md)
 - [Sync All Devices](sync-all-devices.md)
 - [Sync Apple Tokens](sync-apple-tokens.md)
-- [Sync Sharedchannel Owners (Scheduled)](sync-sharedchannel-owners_scheduled.md)
+- [Sync Shared Channel Owners (Scheduled)](sync-shared-channel-owners_scheduled.md)
 
 [Back to Runbook Reference overview](../../README.md)
 

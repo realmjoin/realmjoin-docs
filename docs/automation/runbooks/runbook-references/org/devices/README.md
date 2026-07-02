@@ -11,6 +11,7 @@ On this overview page you can find all Organization Runbooks in the Devices subc
 - [Add Autopilot Device](add-autopilot-device.md)
 - [Add Device Via Corporate Identifier](add-device-via-corporate-identifier.md)
 - [Auto Approve Driver Updates (Scheduled)](auto-approve-driver-updates_scheduled.md)
+- [Cleanup Autopilot Devices (Scheduled)](cleanup-autopilot-devices_scheduled.md)
 - [Create Endpoint Analytics Baseline](create-endpoint-analytics-baseline.md)
 - [Dedup Device Names (Scheduled)](dedup-device-names_scheduled.md)
 - [Delete Stale Devices (Scheduled)](delete-stale-devices_scheduled.md)

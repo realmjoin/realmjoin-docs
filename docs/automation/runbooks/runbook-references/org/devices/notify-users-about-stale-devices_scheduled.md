@@ -176,6 +176,26 @@ Service Desk phone number for user contact information (optional).
 | Default Value |  |
 | Type | String |
 
+### ServiceDeskPortalUrl
+
+Service Desk portal URL for user contact information, rendered as a clickable link (optional).
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### ServiceDeskTicketUrl
+
+Direct link to a Service Desk ticket, rendered as a clickable link (optional). Empty by default, so no ticket link is added.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
 ### UseUserScope
 
 Enable user scope filtering to include or exclude users based on group membership.

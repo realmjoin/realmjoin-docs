@@ -39,6 +39,7 @@ rjgit-org_devices_report-primary-user-mismatch_scheduled
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.Read.All
+  - Directory.Read.All
   - Mail.Send
   - Organization.Read.All
 
@@ -93,6 +94,46 @@ Include devices that exist in RealmJoin but have no matching Intune device in th
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+
+### IncludePrimaryUserDeleted
+
+Include devices whose Intune primary user has been deleted from Entra ID in the report. Intune mangles the user principal name of a deleted user by prefixing its object id, which would otherwise show up as a false Mismatch. Enabled by default.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | False |
+| Type | Boolean |
+
+### UseDeviceScope
+
+Enable device scope filtering to include or exclude devices based on Entra device group membership.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | False |
+| Type | Boolean |
+
+### IncludeDeviceGroup
+
+Only include devices that are members of this Entra device group in the report. Requires device scope filtering to be enabled.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### ExcludeDeviceGroup
+
+Exclude devices that are members of this Entra device group from the report. Requires device scope filtering to be enabled.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
 
 ### EmailTo
 

@@ -21,9 +21,9 @@ The shared runbooks available on [GitHub](https://github.com/realmjoin/realmjoin
 | `Az.Resources` | 9.0.1 |
 | `Az.Storage` | 9.6.0 |
 | `ExchangeOnlineManagement` | 3.9.2 |
-| `Microsoft.Graph.Authentication` | 2.37.0 |
+| `Microsoft.Graph.Authentication` | 2.38.0 |
 | `MicrosoftTeams` | 7.6.0 |
-| `RealmJoin.RunbookHelper` | 0.8.6 |
+| `RealmJoin.RunbookHelper` | 0.8.7 |
 
 RealmJoin Portal will automatically import and install these modules if referenced from inside a runbook. This import will also honor specified minimum versions for modules.
 

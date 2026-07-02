@@ -21,6 +21,8 @@ rjgit-device_general_wipe-device
   - DeviceManagementManagedDevices.ReadWrite.All
   - DeviceManagementServiceConfig.ReadWrite.All
   - Device.Read.All
+- **Type**: WindowsDefenderATP
+  - Machine.Read.All
 
 ### RBAC roles
 - Cloud device administrator
@@ -90,6 +92,16 @@ Windows-only. "Delete device from AutoPilot database?" (final value: true) or "K
 ### disableAADDevice
 
 "Disable device in EntraID?" (final value: true) or "Keep device / do not care" (final value: false) can be selected as action to perform. If set to true, the runbook will disable the device object in Entra ID (Azure AD). If set to false, the device object will remain enabled in Entra ID (Azure AD).
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | False |
+| Type | Boolean |
+
+### skipWipeIfAtRisk
+
+If set to true, the wipe is only performed when the device's Microsoft Defender for Endpoint risk score is not Medium or High. This protects forensic data (e.g. logs) of devices that may be involved in a security incident from being destroyed by the wipe.
 
 | Property | Value |
 | --- | --- |

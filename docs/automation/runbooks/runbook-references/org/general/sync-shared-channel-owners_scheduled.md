@@ -1,10 +1,10 @@
 ---
-title: Sync Sharedchannel Owners (Scheduled)
+title: Sync Shared Channel Owners (Scheduled)
 description: Ensure a security group's members are owners of mapped Teams and their shared channels.
 ---
 
 ## Description
-Teams shared channels do not inherit ownership from their parent team. This scheduled runbook closes
+Teams Shared Channels do not inherit ownership from their parent team. This scheduled runbook closes
 that gap: for each team named in a mapping, it ensures the members of a mapped security group are owners
 of the team and of every shared channel the team hosts. The team-name-to-owner-group mapping is
 maintained centrally as a RealmJoin org setting. The runbook is add-only - existing owners and members
@@ -60,11 +60,11 @@ Designed to run unattended on a schedule. Because configuration is centralized i
 
 
 ## Location
-Organization → General → Sync Sharedchannel Owners (Scheduled)
+Organization → General → Sync Shared Channel Owners (Scheduled)
 
 **Full Runbook name**
 
-rjgit-org_general_sync-sharedchannel-owners_scheduled
+rjgit-org_general_sync-shared-channel-owners_scheduled
 
 ## Permissions
 

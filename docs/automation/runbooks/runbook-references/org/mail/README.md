@@ -10,6 +10,7 @@ On this overview page you can find all Organization Runbooks in the Mail subcate
 
 - [Add Distribution List](add-distribution-list.md)
 - [Add Equipment Mailbox](add-equipment-mailbox.md)
+- [Add Mail Contact](add-mail-contact.md)
 - [Add Or Remove Public Folder](add-or-remove-public-folder.md)
 - [Add Or Remove Teams Mailcontact](add-or-remove-teams-mailcontact.md)
 - [Add Or Remove Tenant Allow Block List](add-or-remove-tenant-allow-block-list.md)

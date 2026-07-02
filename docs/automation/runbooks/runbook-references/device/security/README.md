@@ -8,6 +8,7 @@ On this overview page you can find all Device Runbooks in the Security subcatego
 
 ## Runbooks
 
+- [Check Defender Status](check-defender-status.md)
 - [Enable Or Disable Device](enable-or-disable-device.md)
 - [Isolate Or Release Device](isolate-or-release-device.md)
 - [Reset Mobile Device Pin](reset-mobile-device-pin.md)
