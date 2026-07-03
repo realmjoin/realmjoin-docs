@@ -9,7 +9,7 @@ description: >-
 When you roll out the RealmJoin Agent, we recommend deploying the following packages from the **Package Store** as well. Together they provide the agent itself, the shared helper functions our packages rely on, additional telemetry, and a better end-user experience.
 
 {% hint style="info" %}
-Assign these packages to **devices** just like the RealmJoin Agent.
+Assign the **RealmJoin Agent (Device)** to **devices**. The additional packages (Core Choco Extension, Telemetry, and Promote Tray Icon) should be assigned to **users**.
 {% endhint %}
 
 ## RealmJoin Agent (Device)
