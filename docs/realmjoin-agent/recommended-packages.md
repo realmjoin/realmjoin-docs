@@ -9,12 +9,12 @@ description: >-
 When you roll out the RealmJoin Agent, we recommend deploying the following packages from the **Package Store** as well. Together they provide the agent itself, the shared helper functions our packages rely on, additional telemetry, and a better end-user experience.
 
 {% hint style="info" %}
-All packages listed below can be found in the **Package Store** by searching for their package identifier (shown in each section). Assign them to **devices** just like the RealmJoin Agent.
+Assign these packages to **devices** just like the RealmJoin Agent.
 {% endhint %}
 
 ## RealmJoin Agent (Device)
 
-`generic-realmjoin-agent-special-esp-device-phase`
+[Package Store: RealmJoin Agent (Device)](https://portal.realmjoin.com/packagestore/49465/overview) — `generic-realmjoin-agent-special-esp-device-phase`
 
 The RealmJoin Agent is the core client component running on your Windows devices. It enables features such as the RealmJoin ESP, application and configuration deployment, LAPS, notifications, and telemetry.
 
@@ -24,22 +24,32 @@ For the full, supported deployment procedure — including the required Intune c
 
 ## RealmJoin Core Choco Extension
 
-`realmjoin-core.extension`
+[Package Store: RealmJoin Core Choco Extension](https://portal.realmjoin.com/packagestore/59828/overview) — `realmjoin-core.extension`
 
-The Core Choco Extension is a foundational Chocolatey package that provides the shared PowerShell helper functions (cmdlets) used by RealmJoin packages during installation and uninstallation. It extends Chocolatey with helpers for software deployment, registry and INI handling, shortcuts, scheduled tasks, firewall rules, error handling, and more.
+Required helper for all RealmJoin package installations outside of Intune. It provides the shared PowerShell helper functions (cmdlets) that RealmJoin packages rely on during installation and uninstallation.
 
 {% hint style="warning" %}
-Because most RealmJoin packages depend on these helpers, the Core Choco Extension should be deployed to **all clients** so that packages can install and uninstall reliably.
+Please ensure this package is always up-to-date. We strongly recommend enabling **Automation** for the **Main** channel with a short delay (this requires a managed subscription).
+
+The package should be assigned **mandatory to all users**, with **auto-upgrade enabled**.
 {% endhint %}
 
 ## RealmJoin Telemetry Package
 
-`generic-realmjoin-publishstate-computersystem-information`
+[Package Store: RealmJoin Telemetry Package](https://portal.realmjoin.com/packagestore/58078/overview) — `generic-realmjoin-publishstate-computersystem-information`
 
-This package publishes computer system information (such as hardware and operating system details) as state to the RealmJoin Portal. It enriches the data available for reporting and inventory, powering the advanced telemetry shown in the portal.
+This package collects additional telemetry information from clients:
+
+* Computer System Information (Vendor, Model, BIOS)
+* Office ClickToRun Settings (Channel, Excluded Apps, ...)
+* Enhanced Machine Information (CPU, Memory, Diskdrives, MACs, OEM LicenseKey, Secure Boot certificate ...)
+* Windows Update SafeGuardHolds
+* Windows Login (LastLoggedOnProvider)
+* Device certificates (with details like Subject, Thumbprint, Issuer, Validity etc.)
+* RealmJoin BIOS Management report (with BIOS password and settings status)
 
 ## RealmJoin Promote Tray Icon
 
-`generic-realmjoin-promote-tray-icon`
+[Package Store: RealmJoin Promote Tray Icon](https://portal.realmjoin.com/packagestore/37448/overview) — `generic-realmjoin-promote-tray-icon`
 
-This package promotes the RealmJoin tray icon so that it is always visible in the Windows notification area instead of being hidden in the overflow menu. This makes the [RealmJoin Tray](client-menu/realmjoin-tray.md) and [Self Service Portal](client-menu/self-service-portal.md) readily accessible to end users.
+Sets the RealmJoin tray icon to "always show" in the Windows notification area instead of being hidden in the overflow menu. This makes the [RealmJoin Tray](client-menu/realmjoin-tray.md) and [Self Service Portal](client-menu/self-service-portal.md) readily accessible to end users.
