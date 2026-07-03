@@ -259,6 +259,7 @@
 ## RealmJoin Agent
 
 * [Deploying the Agent](realmjoin-agent/installation.md)
+* [Recommended Packages](realmjoin-agent/recommended-packages.md)
 * [Features](realmjoin-agent/realmjoin-client/README.md)
   * [RealmJoin ESP](realmjoin-agent/realmjoin-client/realmjoin-esp.md)
   * [RealmJoin App Notification](realmjoin-agent/realmjoin-client/deploy-apps.md)
