@@ -14,7 +14,7 @@ The RealmJoin PowerShell module automates the setup of your RealmJoin tenant. It
 * Configures RealmJoin features (Portal, Intune LAPS, Autopilot, device actions, remediation scripts, security features)
 * Cleans up legacy applications from previous configurations
 
-The module is published on the [PowerShell Gallery](https://www.powershellgallery.com/packages/RealmJoin). Full command reference and source code are available in the [realmjoin-psmodule repository](https://github.com/realmjoin/realmjoin-psmodule).
+The module is published on the [PowerShell Gallery](https://www.powershellgallery.com/packages/RealmJoin).
 
 ## Prerequisites
 
