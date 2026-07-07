@@ -325,6 +325,7 @@
   * [LAPS Issues](troubleshooting/laps-issues/README.md)
     * [LAPS account passwords cannot be retrieved](troubleshooting/laps-issues/laps-account-passwords-cannot-be-retrieved.md)
     * [Requested LAPS Accounts are not being created](troubleshooting/laps-issues/requested-laps-accounts-are-not-being-created.md)
+* [Offboarding](troubleshooting/offboarding.md)
 * [Changelog](https://feedback.realmjoin.com/)
 
 ## Legal
