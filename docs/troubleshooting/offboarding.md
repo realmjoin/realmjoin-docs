@@ -10,7 +10,7 @@ description: >-
 If you decide to stop using RealmJoin, follow the steps below to remove it cleanly from your tenant. The exact steps depend on how RealmJoin is deployed in your environment.
 
 {% hint style="warning" %}
-**Remove managed groups first.** Managed groups are only deleted automatically when a subscribed package is removed regularly from the portal. During tenant deletion we do **not** touch any groups, so any managed groups you no longer need must be deleted in the portal **before** you start offboarding.
+**Remove managed applications first.** Managed the groups  are only deleted automatically when a subscribed package is removed regularly from the portal manually. During tenant deletion we do **not** touch any groups or packages pushed to Intune, so any managed application you no longer need must be deleted in the portal **before** you start offboarding.&#x20;
 {% endhint %}
 
 ## Intune only
@@ -37,7 +37,7 @@ If the RealmJoin Agent is deployed to your devices, complete all of the steps ab
 
 {% stepper %}
 {% step %}
-### Request the cleanup script
+### Request the clean-up script
 
 [Contact us](../legal/support.md) for a PowerShell script that removes any remaining traces of RealmJoin from your devices.
 {% endstep %}
@@ -52,5 +52,5 @@ Once we remove the tenant connection on our side:
 * Devices will no longer receive new configurations for the RealmJoin Agent.
 
 {% hint style="info" %}
-Managed groups are **not** removed during tenant deletion. Make sure to delete any groups you no longer need in the portal before offboarding.
+Managed groups are **not** removed during tenant deletion. Make sure to delete any groups/applications in Intune you no longer need in the RealmJoin portal before offboarding.
 {% endhint %}
