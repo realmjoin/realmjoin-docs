@@ -2,6 +2,8 @@
 description: >-
   RealmJoin's user-based subscription model: how Intune User License Seats are
   counted and the minimum number of subscribed users.
+layout:
+  width: wide
 ---
 
 # Licensing
@@ -45,39 +47,84 @@ It is **not** allowed to&#x20;
 
 You can choose between two RealmJoin editions:
 
-* RealmJoin **Apps**
-* RealmJoin **Enterprise**
+* RealmJoin **Apps** — everything you need to deliver and manage applications across your fleet.
+* RealmJoin **Enterprise** — the full platform, adding automation, reporting, advanced support and security capabilities on top of **Apps**.
 
-The following table shows an overview of the scope of the two editions. RealmJoin is a continuously evolving Software-as-a-Service. We therefore reserve the right to add, change and remove features from plans without any further notice.
+The tables below give an overview of the scope of the two editions, grouped by area. RealmJoin is a continuously evolving Software-as-a-Service. We therefore reserve the right to add, change and remove features from plans without any further notice.
 
-| Feature                                                                                              |             RealmJoin Apps            |          RealmJoin Enterprise         |
-| ---------------------------------------------------------------------------------------------------- | :-----------------------------------: | :-----------------------------------: |
-| Application Store                                                                                    | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
-| Application Lifecycle                                                                                | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
-| Request [generic apps](../../app-management/packages/package-store/#generic-packages)                | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
-| Request [custom apps](../../app-management/packages/package-store/#custom-package)                   |                 Add-on                |                 Add-on                |
-| Deploy Binaries (Organics)                                                                           | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
-| App Agent                                                                                            | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
-| Multi-user support                                                                                   | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
-| VDI support                                                                                          | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
-| <p><a href="../../realmjoin-deployment/infrastructure/avd-templates.md">AVD templates support</a><br>(headless agent)</p> |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
-| Software Inventory                                                                                   |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
-| Supporter Insights & Device Warranty                                                                 |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
-| [RealmJoin API](../../dev-reference/realmjoin-api/)                                                  |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
-| Supporter Runbooks                                                                                   |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
-| Scheduled Runbooks                                                                                   |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
-| Supporter Permissions (RBAC)                                                                         |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
-| Advanced Custom Telemetry                                                                            |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
-| LAPS                                                                                                 |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
-| Unintended Local Admin Monitoring (ULAM)                                                             |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
-| Secondary Identity and Metadata                                                                      |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
-| User Notification & Alerting                                                                         |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
-| Remote Support Agent Integration (Anydesk)\*                                                         |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
-| Enhanced & Reliable Autopilot ESP                                                                    |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
-| Autopilot Manager                                                                                    |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
-| Corporate Forms                                                                                      |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
+### Application Management
 
-\*The Anydesk license is not included in the RealmJoin subscription. To subscribe to Anydesk, please refer to [https://anydesk.com](https://anydesk.com/).
+| Feature                                                                             | Description                                                          |             RealmJoin Apps            |          RealmJoin Enterprise         |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------- | :-----------------------------------: | :-----------------------------------: |
+| Application Store                                                                   | Curated catalog of ready-to-deploy application packages.            | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
+| Application Lifecycle                                                               | Automatic updates and patching of deployed applications.            | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
+| Request [generic apps](../../app-management/packages/package-store/#generic-packages) | Deploy standard packages from the public app store.               | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
+| Request [custom apps](../../app-management/packages/package-store/#custom-package)   | Private packages built for your organization only.                  |                 Add-on                |                 Add-on                |
+| Deploy Binaries (Organics)                                                          | Distribute your own binaries and installers.                        | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
+| RealmJoin Agent                                                                     | Client-side agent that delivers apps and runs device tasks.         | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
+| Multi-user support                                                                  | Manage devices shared by multiple users.                            | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
+| VDI support                                                                         | Support for virtual desktop infrastructure environments.            | <mark style="color:green;">Yes</mark> | <mark style="color:green;">Yes</mark> |
+| [AVD templates support](../../realmjoin-deployment/infrastructure/avd-templates.md) | Templates for Azure Virtual Desktop (headless agent).               |   <mark style="color:red;">No</mark>  | <mark style="color:green;">Yes</mark> |
+
+### Analytics & Reporting
+
+| Feature                              | Description                                                        |            RealmJoin Apps            |          RealmJoin Enterprise         |
+| ------------------------------------ | ----------------------------------------------------------------- | :----------------------------------: | :-----------------------------------: |
+| [Software Report](../../analyze-and-export/software-reporting.md) | Inventory and reporting of the software installed in your tenant. | <mark style="color:red;">No</mark> | <mark style="color:green;">Yes</mark> |
+| Supporter Insights & Device Warranty | Device details and warranty information for supporters.           | <mark style="color:red;">No</mark> | <mark style="color:green;">Yes</mark> |
+| Advanced Custom Telemetry            | Collect and evaluate custom device telemetry.                     | <mark style="color:red;">No</mark> | <mark style="color:green;">Yes</mark> |
+
+### Automation & Integration
+
+| Feature                                          | Description                                                              |            RealmJoin Apps            |          RealmJoin Enterprise         |
+| ------------------------------------------------ | ----------------------------------------------------------------------- | :----------------------------------: | :-----------------------------------: |
+| [RealmJoin API](../../dev-reference/realmjoin-api/) | Programmatic access to RealmJoin functionality.                      | <mark style="color:red;">No</mark> | <mark style="color:green;">Yes</mark> |
+| Automation Tools                                 | [RunBooks](../../automation/runbooks/README.md) and [Remediation Script](../../automation/remediation-scripts.md) integration. | <mark style="color:red;">No</mark> | <mark style="color:green;">Yes</mark> |
+| Remote Support Agent Integration (AnyDesk)\*     | Remote-control sessions with end users via AnyDesk.                     | <mark style="color:red;">No</mark> | <mark style="color:green;">Yes</mark> |
+
+### Security & Access
+
+| Feature                                                                     | Description                                                    |            RealmJoin Apps            |          RealmJoin Enterprise         |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------- | :----------------------------------: | :-----------------------------------: |
+| [Custom Roles](../../realmjoin-settings/permission/custom-roles/README.md)  | Granular, role-based access control (RBAC) for supporters.    | <mark style="color:red;">No</mark> | <mark style="color:green;">Yes</mark> |
+| LAPS                                                                        | Local Administrator Password Solution.                        | <mark style="color:red;">No</mark> | <mark style="color:green;">Yes</mark> |
+
+### Support & Communication
+
+| Feature                     | Description                                            |            RealmJoin Apps            |          RealmJoin Enterprise         |
+| --------------------------- | ------------------------------------------------------ | :----------------------------------: | :-----------------------------------: |
+| User Notification & Alerting | Send notifications and alerts directly to end users.  | <mark style="color:red;">No</mark> | <mark style="color:green;">Yes</mark> |
+| Corporate Forms             | Custom self-service forms for your organization.       | <mark style="color:red;">No</mark> | <mark style="color:green;">Yes</mark> |
+
+\*The AnyDesk license is not included in the RealmJoin subscription. To subscribe to AnyDesk, please refer to [https://anydesk.com](https://anydesk.com/).
+
+## Free Trial
+
+You can evaluate RealmJoin free of charge for **30 days**. In most cases you can get started entirely on your own — no sales call required.
+
+{% stepper %}
+{% step %}
+### Start your trial
+
+Onboard your Microsoft 365 tenant yourself via [realmjoin.com/start-now](https://www.realmjoin.com/start-now/).
+{% endstep %}
+
+{% step %}
+### Explore the basics
+
+The **basic features** are automatically enabled right after onboarding, so you can start exploring RealmJoin immediately.
+{% endstep %}
+
+{% step %}
+### Unlock more (optional)
+
+Want to try more? [Contact us](../support.md) to enable additional capabilities for your trial — up to the full **RealmJoin Enterprise** feature set.
+{% endstep %}
+{% endstepper %}
+
+{% hint style="info" %}
+The trial period runs for **30 days**. Reach out to [sales@realmjoin.com](mailto:sales@realmjoin.com) if you have any questions or would like to convert your trial into a subscription.
+{% endhint %}
 
 ## Software Package Licensing
 
