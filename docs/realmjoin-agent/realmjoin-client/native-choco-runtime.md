@@ -17,8 +17,6 @@ When the RealmJoin Agent installs software packages outside of Intune (see [pack
 
 The **Native Choco Runtime** replaces that bundled Chocolatey binary with RealmJoin's **own, purpose-built implementation** that runs **in-process** inside the RealmJoin service. It _shims_ Chocolatey: it understands the same package format (`.nupkg`) and behaves the same way from a package author's and administrator's point of view, but it no longer depends on the ageing Chocolatey 0.10.3 codebase.
 
-In our deployments, classic Chocolatey is essentially "a vehicle for a ZIP" — RealmJoin only relies on a small slice of what it does. Re-implementing that slice natively removes an outdated third-party dependency and lets us fix issues, tighten security, and integrate installation, logging, and error handling directly.
-
 In other words, packages you already use keep working unchanged — only the engine underneath them changes.
 
 ## How it works
