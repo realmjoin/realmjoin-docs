@@ -19,6 +19,7 @@
   * [Limiting the Scope of RealmJoin Portal](realmjoin-deployment/infrastructure/limiting-the-scope-of-realmjoin-portal.md)
   * [Multi User Devices](realmjoin-deployment/infrastructure/multi-user-devices.md)
   * [AVD Templates](realmjoin-deployment/infrastructure/avd-templates.md)
+* [Architecture Overview](realmjoin-deployment/architecture-overview.md)
 
 ## User, Group & Device Management <a href="#ugd-management" id="ugd-management"></a>
 
