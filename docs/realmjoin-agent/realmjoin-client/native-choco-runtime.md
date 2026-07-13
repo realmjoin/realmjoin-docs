@@ -15,19 +15,11 @@ The Native Choco Runtime was introduced with **RealmJoin Agent 4.21.6 (Beta)**. 
 
 When the RealmJoin Agent installs software packages outside of Intune (see [package installation](deploy-apps.md#package-installation)), it has traditionally relied on [Chocolatey](https://chocolatey.org/) as the underlying package engine. RealmJoin shipped a pinned, heavily patched build of the open-source Chocolatey CLI — version **0.10.3** — bundled as `choco.exe` under `C:\ProgramData\chocolatey\`.
 
-The **Native Choco Runtime** replaces that bundled Chocolatey binary with RealmJoin's **own, purpose-built implementation**. It *shims* Chocolatey: it understands the same package format and behaves the same way from a package author's and administrator's point of view, but it no longer depends on the ageing Chocolatey 0.10.3 codebase.
+The **Native Choco Runtime** replaces that bundled Chocolatey binary with RealmJoin's **own, purpose-built implementation**. It _shims_ Chocolatey: it understands the same package format and behaves the same way from a package author's and administrator's point of view, but it no longer depends on the ageing Chocolatey 0.10.3 codebase.
 
 In other words, packages you already use keep working unchanged — only the engine underneath them changes.
 
-## Why we built it
 
-The bundled Chocolatey 0.10.3 has served RealmJoin well for many years, but it carries some long-standing drawbacks:
-
-* **It is outdated.** 0.10.3 is many major versions behind current Chocolatey and no longer receives fixes. Moving to a newer upstream Chocolatey release would introduce breaking changes and behavioural differences that are hard to control across a fleet.
-* **External dependency.** Relying on a third-party binary and its own configuration (`chocolatey.config`, the `lib`/`lib-bad` folders, its logging, etc.) limits how tightly RealmJoin can integrate installation, logging, and error handling.
-* **Maintainability & security.** Owning the runtime lets us fix issues directly, tighten security, and evolve behaviour without waiting on — or diverging from — an upstream project.
-
-By implementing the runtime natively, RealmJoin gains full control over the install pipeline while keeping the familiar Chocolatey-compatible package experience.
 
 ## Compatibility
 
@@ -45,6 +37,12 @@ As this runtime is in beta, we recommend validating your most important packages
 ## How to use it
 
 The runtime is selected through a RealmJoin **setting**, so you can control it centrally instead of touching individual clients. RealmJoin settings cascade, which means you can set a **tenant-wide default** and, where needed, **override it for specific groups** (and the objects within them).
+
+{% hint style="info" %}
+Setting Key: Chocolatey.UseNativeRuntime
+
+Setting Value: true/false
+{% endhint %}
 
 {% stepper %}
 {% step %}
