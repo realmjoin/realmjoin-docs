@@ -267,6 +267,7 @@
     * [KeyVault](realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/keyvault.md)
     * [Application Insights](realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/application-insights.md)
   * [Notifications](realmjoin-agent/realmjoin-client/showing-notifications.md)
+  * [Native Choco Runtime](realmjoin-agent/realmjoin-client/native-choco-runtime.md)
   * [AnyDesk Integration](realmjoin-agent/realmjoin-client/anydesk-integration/README.md)
     * [AnyDesk configuration](realmjoin-agent/realmjoin-client/anydesk-integration/customer-tasks.md)
 * [User Interface](realmjoin-agent/client-menu/README.md)
