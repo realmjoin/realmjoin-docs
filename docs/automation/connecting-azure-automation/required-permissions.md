@@ -1,4 +1,5 @@
 ---
+type: Automation Guide
 description: >-
   Permissions and the RealmJoin Runbook Management app registration required for
   RealmJoin to interact with Azure Automation and runbooks.

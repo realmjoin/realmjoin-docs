@@ -1,4 +1,5 @@
 ---
+type: Troubleshooting
 description: Troubleshooting Guide for failed software package installations
 ---
 

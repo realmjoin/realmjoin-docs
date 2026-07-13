@@ -1,4 +1,5 @@
 ---
+type: Application Management
 description: >-
   RealmJoin's catalogue of ready-to-use Windows and macOS application packages
   deployable via RealmJoin Client or Microsoft Intune.

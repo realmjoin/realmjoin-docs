@@ -1,4 +1,5 @@
 ---
+type: Deployment Guide
 description: >-
   This will guide you through all steps to deploy RealmJoin for an
   enterprise-grade environment with advanced requirements e.g. Runbooks, Logging

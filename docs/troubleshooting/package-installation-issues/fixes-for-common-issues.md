@@ -1,4 +1,5 @@
 ---
+type: Troubleshooting
 description: >-
   Targeted fixes for common RealmJoin package installation problems, such as
   BranchCache errors, for specific scenarios.

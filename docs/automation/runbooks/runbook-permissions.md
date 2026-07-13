@@ -1,4 +1,5 @@
 ---
+type: Automation Guide
 description: How to grant/deny access to certain runbooks.
 ---
 

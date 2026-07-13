@@ -1,4 +1,5 @@
 ---
+type: User, Group & Device Management
 description: >-
   The RealmJoin User Profile tab gives users quick access to their apps, account,
   devices, and groups, with directory roles for admins.

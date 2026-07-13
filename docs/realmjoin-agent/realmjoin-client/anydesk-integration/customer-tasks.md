@@ -1,4 +1,5 @@
 ---
+type: RealmJoin Agent
 description: >-
   AnyDesk configuration for RealmJoin: host the end-user client on a public URL
   and request the supporter client as a custom package.

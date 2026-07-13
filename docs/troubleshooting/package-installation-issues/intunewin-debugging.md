@@ -1,4 +1,5 @@
 ---
+type: Troubleshooting
 description: >-
   Debug intunewin package installs using the RjImeHost, package installer, and
   Intune Management Extension log files.

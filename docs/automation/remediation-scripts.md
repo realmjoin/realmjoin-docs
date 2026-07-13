@@ -1,4 +1,5 @@
 ---
+type: Automation Guide
 description: >-
   RealmJoin's managed, continuously updated Intune remediation scripts that detect
   and fix issues on Windows clients.

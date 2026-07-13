@@ -1,4 +1,5 @@
 ---
+type: RealmJoin Agent
 description: >-
   Optional RealmJoin Agent features for Windows clients: ESP, app deployment,
   LAPS, notifications, AnyDesk, and compliance checks.

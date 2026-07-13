@@ -1,4 +1,5 @@
 ---
+type: RealmJoin Agent
 description: >-
   Send scheduled, category-based desktop notifications to users from RealmJoin to
   share information or important issues.

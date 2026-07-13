@@ -1,4 +1,5 @@
 ---
+type: Developer Reference
 description: Upload local files to an Azure Storage container from Azure Automation runbooks and return time-limited SAS download links.
 ---
 

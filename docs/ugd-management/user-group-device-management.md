@@ -1,4 +1,5 @@
 ---
+type: User, Group & Device Management
 description: >-
   Manage Entra ID users, groups, and devices in one RealmJoin view combining
   Intune, Defender, Autopilot, and sign-in data.

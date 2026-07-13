@@ -1,4 +1,5 @@
 ---
+type: RealmJoin Agent
 description: >-
   AnyDesk integration with RealmJoin grants remote device access and elevates
   rights via LAPS using per-device IDs instead of shared IDs.

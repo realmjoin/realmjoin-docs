@@ -1,4 +1,5 @@
 ---
+type: Introduction
 description: Key RealmJoin links to bookmark for quick access.
 ---
 

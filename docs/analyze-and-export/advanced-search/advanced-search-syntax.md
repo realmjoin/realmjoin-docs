@@ -1,4 +1,5 @@
 ---
+type: Analyze & Export
 description: >-
   This page lists some typical use cases when working with the Advanced Search.
   There are many more variables and search queries - please contact us if you

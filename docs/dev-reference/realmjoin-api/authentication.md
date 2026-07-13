@@ -1,4 +1,5 @@
 ---
+type: Developer Reference
 description: >-
   Authenticate to the RealmJoin backend API with application credentials in a
   Base64-encoded HTTP Basic Authorization header.

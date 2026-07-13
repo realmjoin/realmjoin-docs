@@ -1,4 +1,5 @@
 ---
+type: Application Management
 description: >-
   The RealmJoin Package Store is a maintained library of ready-to-use packages
   deployable via RealmJoin Client or Intune.

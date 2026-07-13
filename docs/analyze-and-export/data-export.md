@@ -1,4 +1,5 @@
 ---
+type: Analyze & Export
 description: >-
   Export Data of queried tables to perform filtering and analysis with your
   tenant data

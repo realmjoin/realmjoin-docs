@@ -1,4 +1,5 @@
 ---
+type: Troubleshooting
 description: >-
   Fix RealmJoin LAPS Supporter Accounts stuck in 'Requested' by logging off on-
   demand admin sessions or rebooting the device.

@@ -1,4 +1,5 @@
 ---
+type: RealmJoin Agent
 description: >-
   Deploy the RealmJoin Agent to Windows clients with the ready-to-use intunewin
   package from the Package Store via Intune.

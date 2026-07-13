@@ -1,4 +1,5 @@
 ---
+type: Introduction
 description: >-
   RealmJoin Portal navigation from the About me page, with areas that adapt to
   your permission level.

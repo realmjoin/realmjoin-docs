@@ -1,4 +1,5 @@
 ---
+type: Troubleshooting
 description: Troubleshooting common LAPS issues
 ---
 

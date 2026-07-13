@@ -1,4 +1,5 @@
 ---
+type: Administration & Settings
 description: >-
   This section covers advanced features designed for Managed Service Providers
   (MSPs) and power users who need enhanced control and flexibility within

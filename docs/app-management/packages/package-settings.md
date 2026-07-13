@@ -1,4 +1,5 @@
 ---
+type: Application Management
 description: This page details the different settings available for deployed packages
 ---
 

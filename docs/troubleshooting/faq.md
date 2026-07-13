@@ -1,4 +1,5 @@
 ---
+type: Troubleshooting
 description: >-
   RealmJoin FAQ: maintaining your own software packages and runbooks, expected
   Azure resource costs, and how RealmJoin integrates with Microsoft Intune.

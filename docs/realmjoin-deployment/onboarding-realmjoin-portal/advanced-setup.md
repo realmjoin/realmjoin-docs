@@ -1,4 +1,5 @@
 ---
+type: Deployment Guide
 description: >-
   The Advanced Setup allows you to assign permissions in a more granular and
   customized way. This approach is more flexible but more complex and requires

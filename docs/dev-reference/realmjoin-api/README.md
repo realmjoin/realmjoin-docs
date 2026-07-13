@@ -1,4 +1,5 @@
 ---
+type: Developer Reference
 description: Integrate RealmJoin in your applications and workflows
 ---
 

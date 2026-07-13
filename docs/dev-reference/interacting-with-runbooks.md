@@ -1,4 +1,5 @@
 ---
+type: Developer Reference
 description: Run runbooks and query their status using RealmJoins API
 ---
 

@@ -1,4 +1,5 @@
 ---
+type: RealmJoin Agent
 description: >-
   The Native Choco Runtime is RealmJoin's own in-process package installation
   engine that replaces the outdated Chocolatey 0.10.3 binary while staying fully

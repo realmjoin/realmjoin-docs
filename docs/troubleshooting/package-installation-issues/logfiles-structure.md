@@ -1,4 +1,5 @@
 ---
+type: Troubleshooting
 description: Detailed explanation of the different log files collected by RealmJoin
 ---
 

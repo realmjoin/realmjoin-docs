@@ -1,4 +1,5 @@
 ---
+type: Troubleshooting
 description: How to easily collect logfiles required for troubleshooting
 ---
 

@@ -1,4 +1,5 @@
 ---
+type: RealmJoin Agent
 description: >-
   RealmJoin Agent app notifications, including the customizable hero image, inform
   users about package installations.

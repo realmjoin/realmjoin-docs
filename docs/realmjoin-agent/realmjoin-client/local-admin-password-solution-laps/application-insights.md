@@ -1,4 +1,5 @@
 ---
+type: RealmJoin Agent
 description: >-
   Create an Azure Application Insights instance for RealmJoin LAPS auditing and
   send its instrumentation key to Support.

@@ -1,4 +1,5 @@
 ---
+type: Introduction
 description: Application Lifecycle and Management Companion to Microsoft Intune
 ---
 

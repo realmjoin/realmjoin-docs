@@ -1,4 +1,5 @@
 ---
+type: Automation Guide
 description: Adapt RealmJoin's generic runbooks to your environments' needs.
 ---
 

@@ -1,4 +1,5 @@
 ---
+type: Developer Reference
 description: Helper functions used by reporting runbooks to deliver results via email or Azure Storage.
 ---
 

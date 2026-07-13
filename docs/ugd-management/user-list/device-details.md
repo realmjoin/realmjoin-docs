@@ -1,4 +1,5 @@
 ---
+type: User, Group & Device Management
 description: >-
   RealmJoin device details show a single device's logged-on user, installed apps,
   and security recommendations with status.

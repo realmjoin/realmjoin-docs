@@ -1,4 +1,5 @@
 ---
+type: Deployment Guide
 description: Step by step guide on deploying the RealmJoin Portal to a new tenant
 ---
 

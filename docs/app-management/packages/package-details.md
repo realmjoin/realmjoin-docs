@@ -1,4 +1,5 @@
 ---
+type: Application Management
 description: >-
   The RealmJoin package details page shows a single package's properties and
   manages its user assignments and updates.

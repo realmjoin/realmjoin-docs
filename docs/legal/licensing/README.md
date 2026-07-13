@@ -1,4 +1,5 @@
 ---
+type: Legal
 description: >-
   RealmJoin's user-based subscription model: how Intune User License Seats are
   counted and the minimum number of subscribed users.

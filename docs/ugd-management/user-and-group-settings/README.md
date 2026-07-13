@@ -1,4 +1,5 @@
 ---
+type: User, Group & Device Management
 description: >-
   RealmJoin Client settings and features like LAPS applied at tenant, group, or
   user scope, with narrower scopes overriding broader ones.

@@ -1,4 +1,5 @@
 ---
+type: Introduction
 description: >-
   Welcome to RealmJoin Unlocked, our official video podcast series. This series
   is designed to bridge the gap between technical innovation and practical
