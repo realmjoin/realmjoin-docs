@@ -1,4 +1,5 @@
 ---
+type: Automation Guide
 description: Configure centralized email and storage delivery settings for reporting runbooks.
 ---
 

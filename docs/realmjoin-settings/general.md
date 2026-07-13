@@ -1,4 +1,5 @@
 ---
+type: RealmJoin Settings
 description: >-
   General RealmJoin settings, including runbook sync from the public repository
   and package automation defaults.

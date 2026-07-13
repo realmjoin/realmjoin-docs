@@ -1,4 +1,5 @@
 ---
+type: Developer Reference
 description: >-
   RealmJoin custom protocol (realmjoin:) handlers that trigger sync, install,
   upgrade, and remote support actions for packages by package ID.

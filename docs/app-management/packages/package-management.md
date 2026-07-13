@@ -1,4 +1,5 @@
 ---
+type: Application Management
 description: >-
   RealmJoin Package Management lists all packages across RealmJoin and Microsoft
   Intune to filter, search, sort, and manage version updates.

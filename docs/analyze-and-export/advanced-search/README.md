@@ -1,4 +1,5 @@
 ---
+type: Analyze & Export
 description: Experience nearly load-free access to your data
 ---
 

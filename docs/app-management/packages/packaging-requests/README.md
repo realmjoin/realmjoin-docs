@@ -1,4 +1,5 @@
 ---
+type: Application Management
 description: >-
   RealmJoin provides Packaging‑as‑a‑Service (PACKaaS) for applications not
   available in the RJ Store or for outdated packages. For details, contact your

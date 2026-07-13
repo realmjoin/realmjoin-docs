@@ -1,4 +1,5 @@
 ---
+type: User, Group & Device Management
 description: >-
   RealmJoin user details show a single user object's summary and glanceable status
   such as enabled and member state.

@@ -1,4 +1,5 @@
 ---
+type: Monitoring & Logs
 description: >-
   Connect an Azure Log Analytics workspace to RealmJoin Portal to surface Windows
   Update issues and store audit and runbook data.

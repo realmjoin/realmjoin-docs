@@ -1,4 +1,5 @@
 ---
+type: Application Management
 description: >-
   This document outlines the best practices for transitioning package management
   from RealmJoin managed packages to Intune managed packages.

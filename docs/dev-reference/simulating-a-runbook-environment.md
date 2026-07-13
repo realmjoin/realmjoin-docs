@@ -1,4 +1,5 @@
 ---
+type: Developer Reference
 description: >-
   To develop new runbooks, you might need to enable RealmJoin.RunbookHelper to
   authenticate as if you were running inside a Runbook.

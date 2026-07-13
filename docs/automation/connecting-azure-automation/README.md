@@ -1,4 +1,5 @@
 ---
+type: Automation Guide
 description: >-
   This guide outlines the onboarding process for both new and existing
   Automation Accounts.

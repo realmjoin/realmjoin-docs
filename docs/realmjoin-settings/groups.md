@@ -1,4 +1,5 @@
 ---
+type: RealmJoin Settings
 description: >-
   RealmJoin group namespaces map name prefixes to descriptive titles so it can
   categorize Microsoft Entra groups like app assignment groups.

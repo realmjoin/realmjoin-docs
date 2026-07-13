@@ -1,4 +1,5 @@
 ---
+type: Automation Guide
 description: >-
   RealmJoin runbook naming conventions: how context and category map shared
   repository runbook names into Azure Automation and the portal.

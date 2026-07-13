@@ -1,4 +1,5 @@
 ---
+type: Application Management
 description: >-
   RealmJoin organic packages build from uploaded .zip files and publish
   automatically to the Package Store for binary file transport.

@@ -1,4 +1,5 @@
 ---
+type: Automation Guide
 description: >-
   This wiki pages addresses what requirements and (system-level) permissions
   have to be given, so that runbooks can be executed.

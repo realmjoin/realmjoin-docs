@@ -1,4 +1,5 @@
 ---
+type: RealmJoin Settings
 description: >-
   Overview of RealmJoin Portal settings for customizing the portal and managing
   features, permissions, and Microsoft Azure resources.

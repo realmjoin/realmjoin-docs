@@ -1,4 +1,5 @@
 ---
+type: RealmJoin Agent
 description: >-
   RealmJoin ESP shows its own Enrollment Status Page so mandatory installs and
   configurations finish before the Windows desktop appears.

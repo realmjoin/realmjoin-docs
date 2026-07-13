@@ -1,4 +1,5 @@
 ---
+type: RealmJoin Agent
 description: >-
   Two ways users interact with RealmJoin on their device: the classic RealmJoin
   Tray and the web-based Self-Service Portal.

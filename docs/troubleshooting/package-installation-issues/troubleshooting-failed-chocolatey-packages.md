@@ -1,4 +1,5 @@
 ---
+type: Troubleshooting
 description: >-
   Diagnose failed Chocolatey package installs by understanding the install stages
   and finding error messages in the logs.

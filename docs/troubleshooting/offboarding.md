@@ -1,4 +1,5 @@
 ---
+type: Troubleshooting
 description: >-
   How to offboard RealmJoin from your tenant, covering both Intune-only and full
   RealmJoin deployments and what tenant deletion means for your data, portal

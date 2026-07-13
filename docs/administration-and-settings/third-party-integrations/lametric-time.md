@@ -1,3 +1,10 @@
+---
+type: Administration & Settings
+description: >-
+  Display the number of RealmJoin-managed Modern Workplace devices on a physical
+  LaMetric Time device.
+---
+
 # LaMetric Time
 
 ## Modern Client Deployment Counter

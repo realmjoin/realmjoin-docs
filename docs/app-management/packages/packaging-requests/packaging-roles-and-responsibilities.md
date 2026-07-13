@@ -1,4 +1,5 @@
 ---
+type: Application Management
 description: >-
   RealmJoin maintained versus unmaintained package types and update
   responsibilities split between the Packaging Factory and customers.

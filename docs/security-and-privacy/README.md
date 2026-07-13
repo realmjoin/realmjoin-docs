@@ -1,4 +1,5 @@
 ---
+type: Security & Privacy
 description: >-
   RealmJoin information security, data processing, and privacy FAQ, covering data
   centers, storage, and quality assurance.

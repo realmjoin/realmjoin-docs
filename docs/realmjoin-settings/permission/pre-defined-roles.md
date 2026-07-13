@@ -1,4 +1,5 @@
 ---
+type: RealmJoin Settings
 description: >-
   Assign RealmJoin pre-defined roles to Entra groups, optionally via PIM, and
   review the permissions each role grants.

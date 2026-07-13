@@ -1,4 +1,5 @@
 ---
+type: Deployment Guide
 description: Use of Administrative Units with RealmJoin
 ---
 

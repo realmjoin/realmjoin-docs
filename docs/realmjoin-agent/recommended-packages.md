@@ -1,4 +1,5 @@
 ---
+type: RealmJoin Agent
 description: >-
   Packages we recommend deploying from the Package Store alongside the RealmJoin
   Agent to get the most out of it.

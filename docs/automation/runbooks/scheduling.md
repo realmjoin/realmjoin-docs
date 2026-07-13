@@ -1,4 +1,5 @@
 ---
+type: Automation Guide
 description: Execute Runbooks repeatedly over time
 ---
 

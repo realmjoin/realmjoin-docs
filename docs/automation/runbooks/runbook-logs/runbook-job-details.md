@@ -1,4 +1,5 @@
 ---
+type: Automation Guide
 description: >-
   View RealmJoin runbook job metadata, real-time console output, and details from
   Azure Automation jobs.

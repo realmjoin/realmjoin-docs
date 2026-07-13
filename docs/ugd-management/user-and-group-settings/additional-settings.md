@@ -1,4 +1,5 @@
 ---
+type: User, Group & Device Management
 description: >-
   Reference of available RealmJoin Client settings and policies configurable per
   user or group.

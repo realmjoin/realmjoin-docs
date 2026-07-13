@@ -1,4 +1,5 @@
 ---
+type: User, Group & Device Management
 description: >-
   Search and browse users, groups, and devices, and open any object's details page
   from RealmJoin Portal.

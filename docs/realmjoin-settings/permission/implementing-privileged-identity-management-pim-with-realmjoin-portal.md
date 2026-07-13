@@ -1,4 +1,5 @@
 ---
+type: RealmJoin Settings
 description: >-
   Implement Microsoft Entra PIM for Groups with RealmJoin Portal for just-in-time
   admin access and less persistent privilege.

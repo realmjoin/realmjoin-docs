@@ -1,4 +1,5 @@
 ---
+type: Deployment Guide
 description: >-
   RealmJoin AVD templates apply application sets unattended via RealmJoin Client
   to build golden images for Azure Virtual Desktop hosts.

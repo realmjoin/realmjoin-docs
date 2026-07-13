@@ -1,4 +1,5 @@
 ---
+type: Troubleshooting
 description: Checking Azure Key Vault
 ---
 

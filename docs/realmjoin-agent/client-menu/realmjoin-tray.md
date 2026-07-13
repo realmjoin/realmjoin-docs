@@ -1,4 +1,5 @@
 ---
+type: RealmJoin Agent
 description: >-
   The RealmJoin Tray menu provides customizable web links and installs or updates
   software packages from the device.

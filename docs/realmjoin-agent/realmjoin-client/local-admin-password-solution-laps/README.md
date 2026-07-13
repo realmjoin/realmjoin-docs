@@ -1,4 +1,5 @@
 ---
+type: RealmJoin Agent
 description: >-
   RealmJoin LAPS generates strong local account passwords stored in your own Azure
   Key Vault, audited via Application Insights or Log Analytics.

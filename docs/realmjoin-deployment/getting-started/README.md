@@ -1,4 +1,5 @@
 ---
+type: Deployment Guide
 description: >-
   A decision matrix to choose between the standard and extended RealmJoin
   deployment guides based on required features and scope.

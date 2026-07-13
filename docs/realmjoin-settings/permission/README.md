@@ -1,4 +1,5 @@
 ---
+type: RealmJoin Settings
 description: >-
   Delegate RealmJoin Portal access to Entra users with pre-defined roles or
   flexible custom roles.

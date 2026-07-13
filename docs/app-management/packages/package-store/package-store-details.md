@@ -1,4 +1,5 @@
 ---
+type: Application Management
 description: >-
   Subscribe to RealmJoin Package Store packages as managed or basic and deploy
   them via Intune or the RealmJoin agent.

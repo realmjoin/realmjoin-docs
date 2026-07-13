@@ -1,4 +1,5 @@
 ---
+type: Troubleshooting
 description: >-
   This part will focus on how to troubleshoot failed chocolatey package
   installations.

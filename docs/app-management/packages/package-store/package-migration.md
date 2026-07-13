@@ -1,4 +1,5 @@
 ---
+type: Application Management
 description: Packages can be migrated to "Managed" if previously deployed as "Basic".
 ---
 

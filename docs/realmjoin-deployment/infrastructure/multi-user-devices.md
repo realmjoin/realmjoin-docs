@@ -1,4 +1,5 @@
 ---
+type: Deployment Guide
 description: >-
   Provision multi-user devices with the Device Enrollment Manager (DEM) and enable
   self-service installs via RealmJoin Client.

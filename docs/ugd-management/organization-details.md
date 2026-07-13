@@ -1,4 +1,5 @@
 ---
+type: User, Group & Device Management
 description: >-
   RealmJoin organization details show an Azure tenant overview: user and group
   counts, Intune and runbook stats, and recent app changes.

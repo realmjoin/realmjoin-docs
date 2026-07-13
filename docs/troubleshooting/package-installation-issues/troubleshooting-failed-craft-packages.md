@@ -1,4 +1,5 @@
 ---
+type: Troubleshooting
 description: >-
   Diagnose failed craft package installs by reading tray.log for user scope or
   realmjoin.log for system scope.

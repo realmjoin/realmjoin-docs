@@ -1,4 +1,5 @@
 ---
+type: Legal
 description: >-
   RealmJoin support eligibility, what support services cover, and how to open a
   ticket.

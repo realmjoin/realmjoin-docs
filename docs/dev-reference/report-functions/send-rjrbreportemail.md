@@ -1,4 +1,5 @@
 ---
+type: Developer Reference
 description: Send branded HTML report emails from Azure Automation runbooks via Microsoft Graph using Markdown content.
 ---
 
