@@ -8,7 +8,7 @@ description: >-
 # Native Choco Runtime
 
 {% hint style="info" %}
-The Native Choco Runtime was introduced with **RealmJoin Agent 4.21.6 (Beta)**. While in beta it is **opt-in**: existing clients keep using the classic Chocolatey engine until you explicitly enable the native runtime.
+The Native Choco Runtime was introduced with **RealmJoin Agent 4.21.6 (Beta)**. The feature is **opt-in**: existing clients keep using the classic Chocolatey engine until you explicitly enable the native runtime.
 {% endhint %}
 
 ## What it is
@@ -36,7 +36,7 @@ The Native Choco Runtime is designed as a **drop-in replacement**:
 * [RealmJoin ESP](realmjoin-esp.md) / Autopilot are supported: on a fresh device with the native runtime enabled, `winchoco` packages are installed natively during enrollment, with their dependencies resolved automatically.
 
 {% hint style="warning" %}
-As this runtime is in beta, we recommend validating your most important packages on a pilot ring before rolling it out tenant-wide. Please report any behavioural differences to RealmJoin support so we can address them before general availability.
+As this runtime is in beta, we recommend validating your most important packages on a pilot ring before rolling it out tenant-wide. Please report any behavioural differences to RealmJoin Support so we can address them before general availability.
 {% endhint %}
 
 ## How to use it
@@ -79,7 +79,7 @@ Configuration follows the same tenant-setting / group-override model as the othe
 
 ## What is the default
 
-During the 4.21.6 Beta the Native Choco Runtime is **disabled by default** (`Chocolatey.UseNativeRuntime = false`). Clients continue to use the classic, bundled Chocolatey 0.10.3 engine until an administrator enables the native runtime — either tenant-wide or for a specific group. This lets you adopt the new runtime at your own pace and roll it back just as easily while the feature is in beta.
+Native Choco Runtime is **disabled by default** (`Chocolatey.UseNativeRuntime = false`). Clients continue to use the classic, bundled Chocolatey 0.10.3 engine until an administrator enables the native runtime — either tenant-wide or for a specific group. This lets you adopt the new runtime at your own pace and roll it back just as easily while the feature is in beta.
 
 ## Migrating existing devices
 
@@ -120,4 +120,9 @@ C:\ProgramData\RealmJoin\choco\logs\<package-id>\<timestamp>_<version>_<operatio
 
 ### File & path reference
 
-<table><thead><tr><th>Path</th><th>Purpose</th></tr></thead><tbody><tr><td><code>C:\ProgramData\RealmJoin\choco\lib\&#x3C;id></code></td><td>Native runtime package install root.</td></tr><tr><td><code>C:\ProgramData\RealmJoin\choco\extensions\&#x3C;id></code></td><td>Auto-imported PowerShell helper modules.</td></tr><tr><td><code>C:\ProgramData\RealmJoin\choco\logs\&#x3C;id></code></td><td>Per-install logs (last 10 per package).</td></tr><tr><td><code>C:\Program Files\RealmJoin\choco-shim\choco.exe</code></td><td>The <code>choco.exe</code> shim.</td></tr></tbody></table>
+| Path                                              | Purpose                                  |
+| ------------------------------------------------- | ---------------------------------------- |
+| `C:\ProgramData\RealmJoin\choco\lib\<id>`         | Native runtime package install root.     |
+| `C:\ProgramData\RealmJoin\choco\extensions\<id>`  | Auto-imported PowerShell helper modules. |
+| `C:\ProgramData\RealmJoin\choco\logs\<id>`        | Per-install logs (last 10 per package).  |
+| `C:\Program Files\RealmJoin\choco-shim\choco.exe` | The `choco.exe` shim.                    |
