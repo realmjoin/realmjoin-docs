@@ -16,17 +16,17 @@ macOS packages are currently in preview as we continue refining the macOS packag
 
 We appreciate your patience as we work toward delivering the same level of excellence for macOS that our Windows 11 users currently enjoy.
 
-### Private vs Generic Packaging
+### Custom vs Generic Packaging
 
 #### Generic Packages in RealmJoin
 
 We aim to create packages as **generic** as possible. This allows all settings to be configured via the RealmJoin portal post-app subscription. Our **generic** packages feature unmodified installers provided by vendors, without any customer-specific alterations. These packages are accessible to all customers in the RealmJoin store.
 
-#### Private Packages in RealmJoin
+#### Custom Packages in RealmJoin
 
 **Custom** packages are exclusively available for customers in their **custom** section of the RealmJoin **Package Store**. The **custom** namespaces are used for modified installers, including those customized by the vendor for the customer, such as SAP, or for customer-developed apps and similar cases.
 
-We invite customers to share their evaluation on whether an application can be packaged as _generic_ or requires a _custom_ package, however, the final decision is made by the RealmJoin Packaging Factory. Note that _private_ packages incur additional costs.
+We invite customers to share their evaluation on whether an application can be packaged as _generic_ or requires a _custom_ package, however, the final decision is made by the RealmJoin Packaging Factory. Note that _custom_ packages incur additional costs.
 
 ## Request Types
 
@@ -38,10 +38,15 @@ If an application is not available in the RealmJoin Store, it can be requested f
 
 * **Application binaries**, which must always be uploaded for regular packaging requests (a download URL may be added for reference but is **not** sufficient).
 * **Documentation** describing all required configuration switches as command‑line parameters, registry keys, configuration files, or similar (screenshots are not accepted; PACKaaS does not include Scripting‑as‑a‑Service). Silent/unattended installation commands are always required.
-* **Packaging type selection**, specifying whether the application should be created as a _generic_ package (when no customer‑specific data is included) or as a _private/custom_ package (additional fees may apply). The Packaging Factory may change a request from generic to private if justified; for example, when customer‑specific details are identified during processing. Customers will be informed of such changes before the request is completed.
+* **Packaging type selection**, specifying whether the application should be created as a _generic_ package (when no customer‑specific data is included) or as a _custom_ package (additional fees may apply). The Packaging Factory may change a request from generic to custom if justified; for example, when customer‑specific details are identified during processing. Customers will be informed of such changes before the request is completed.
 * **Contact email address**, which may differ from the currently authenticated user’s email.
 * **Installation parameters**, which may be entered directly in the request instead of embedding them in the ZIP file.
+* **Optional description**, a free‑text field for any additional context you want to pass to the Packaging Factory.
 * **Use of “skip upload”**, which is allowed only when updating or adding parameters to an existing package—binaries must still be provided for all standard packaging requests.
+
+{% hint style="info" %}
+When you start a new package request, the form now highlights existing packages that match your input, helping you spot software that is already available in the RealmJoin Store and avoid duplicate requests.
+{% endhint %}
 
 <figure><img src="../../../.gitbook/assets/26-02-09-10_06_07_msedge.png" alt=""><figcaption><p>RealmJoin packaging request form for new requests. </p></figcaption></figure>
 
