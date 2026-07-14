@@ -1,10 +1,3 @@
----
-type: Automation Guide
-description: >-
-  Chronological log of changes, additions, and fixes to RealmJoin's ready-to-use
-  runbooks.
----
-
 # RealmJoin Runbooks Changelog
 
 ## 2026-06-30
