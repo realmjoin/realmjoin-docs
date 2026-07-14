@@ -76,6 +76,16 @@ The Support Account will automatically be removed after 12 hours.
 
 See the [LAPS documentation](../../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/) for more details.
 
+### Recovery Keys
+
+For encrypted devices, RealmJoin Portal can work with the disk-encryption recovery key — **BitLocker** on Windows and **FileVault** on macOS.
+
+Starting with **Portal v2026.29**, you can **rotate** a device's recovery key directly from the RealmJoin Portal. Rotating replaces the existing recovery key with a new one, which takes effect after the device next syncs.
+
+{% hint style="info" %}
+Recovery keys can also be retrieved via the [Show BitLocker Recovery Key](../../automation/runbooks/runbook-references/device/security/show-bitlocker-recovery-key.md) and [Show FileVault Recovery Key](../../automation/runbooks/runbook-references/device/security/show-filevault-recovery-key.md) runbooks.
+{% endhint %}
+
 ## Warranty
 
 Use the **Warranty** tab to display information like remaining vendor warranty time for **supported vendors/devices.**
