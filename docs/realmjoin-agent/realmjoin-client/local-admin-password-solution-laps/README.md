@@ -214,6 +214,10 @@ The value can also be pure boolean `true`/`false`. This may be used as a wildcar
 In the past it was recommended to set this setting to `true`. However, as we continue to expand RealmJoin, new account types will be added. It is therefore strongly recommended to migrate all `true` values to the more explicit object notation
 {% endhint %}
 
+{% hint style="info" %}
+Starting with **Portal v2026.29**, SelfLAPS can be scoped **per platform**, so you can grant self-service access to Windows and macOS devices independently.
+{% endhint %}
+
 A sample configuration may look like this:
 
 | Group              |                                                           | Comment                                                                                                                                   |
