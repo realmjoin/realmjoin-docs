@@ -132,6 +132,22 @@ Exports antivirus status information across all devices:
 | Last Seen           | Timestamp of last activity                             |
 | RJ Version          | Installed RealmJoin agent version                      |
 
+#### Shadow IT
+
+Exports Windows software found on devices that was **not** installed via RealmJoin, aggregated per product with device and user counts. It also includes a best-effort match against your assigned Intune apps, to help you spot software that could be brought under management:
+
+| Column           | Description                                                            |
+| ---------------- | --------------------------------------------------------------------- |
+| Type             | Software type / source (e.g. `Windows: Appx`)                         |
+| Name             | Product name                                                          |
+| Publisher        | Publisher, taken from the software's signing certificate subject      |
+| Known as         | Normalized / friendly product name, when RealmJoin can map one        |
+| Versions         | Number of distinct versions found across all devices                  |
+| Devices          | Number of devices the product was found on                           |
+| Users            | Number of users associated with those devices                        |
+| Installations    | Total number of installations found                                   |
+| Intune App Match | Whether the product could be matched to an assigned Intune app (best-effort) |
+
 {% hint style="info" %}
 The data in these exports is sourced from the RealmJoin agent and Intune and combined into the individual reports. Future iterations may include additional information; changes will be posted in the changelog and reflected in this documentation.
 {% endhint %}
