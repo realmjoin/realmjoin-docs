@@ -109,7 +109,7 @@ To automatically allow RealmJoin portal triggering RJ agent from Microsoft Edge 
 
 #### One-Click Access: Self-Service Portal from the Tray
 
-Starting with RealmJoin agent 4.21.15, the App Catalog can be opened directly from the tray menu and, optionally, from the Windows Start Menu, without any manual link configuration.
+The App Catalog can be opened directly from the tray menu and, optionally, from the Windows Start Menu, without any manual link configuration.
 
 * Enable the [`AppCatalog.Enabled`](https://docs.realmjoin.com/ugd-management/user-and-group-settings/additional-settings#appcatalog-feature) setting to add an **App Catalog** entry to the RealmJoin tray menu, opening the device's App Catalog page in Microsoft Edge's app mode (a clean, chromeless window).
 * Additionally enable `AppCatalog.CreateStartMenuShortcut` to also create a per-user Start Menu shortcut ("App Catalog") that opens the same page, so it can be found via Start search or pinned to the taskbar.

@@ -309,7 +309,7 @@ LocalAdminManagement.SupportAccount
 
 ### AppCatalog Feature
 
-This setting controls native, one-click access to the [App Catalog](../../realmjoin-agent/client-menu/self-service-portal.md#app-catalog-tab) from the RealmJoin tray menu and Windows Start Menu, available from RealmJoin agent 4.21.15 onwards.
+This setting controls native, one-click access to the [App Catalog](../../realmjoin-agent/client-menu/self-service-portal.md#app-catalog-tab) from the RealmJoin tray menu and Windows Start Menu.
 
 **Key**\
 AppCatalog
