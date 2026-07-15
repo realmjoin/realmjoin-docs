@@ -117,7 +117,7 @@ Starting with RealmJoin agent 4.21.15, the App Catalog can be opened directly fr
 Both entries dynamically resolve the current device and signed-in user at launch, so they work across all Entra-joined devices without per-device customization.
 
 {% hint style="info" %}
-For agent versions prior to 4.21.15, or as an alternative to the native settings above, you can use the [Weblinks](https://docs.realmjoin.com/ugd-management/user-and-group-settings/additional-settings#weblinks-for-realmjoin-tray) feature to add a similar tray entry manually:
+You can use the [Weblinks](https://docs.realmjoin.com/ugd-management/user-and-group-settings/additional-settings#weblinks-for-realmjoin-tray) feature to add a similar tray entry manually:
 
 ```json
 [
