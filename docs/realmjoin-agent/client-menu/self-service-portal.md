@@ -116,21 +116,6 @@ Starting with RealmJoin agent 4.21.15, the App Catalog can be opened directly fr
 
 Both entries dynamically resolve the current device and signed-in user at launch, so they work across all Entra-joined devices without per-device customization.
 
-{% hint style="info" %}
-You can use the [Weblinks](https://docs.realmjoin.com/ugd-management/user-and-group-settings/additional-settings#weblinks-for-realmjoin-tray) feature to add a similar tray entry manually:
-
-```json
-[
-  {
-    "Name": "My App Catalog",
-    "Target": "conhost",
-    "Args": "--headless powershell -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -Command $id=(dsregcmd /status|Select-String '^\\s*DeviceId\\s*:'|Select-Object -First 1).ToString().Split(':')[1].Trim();Start-Process msedge -ArgumentList ('--app=https://portal.realmjoin.com/devices/'+$id+'/user-app-catalog')",
-    "Platform": "any"
-  }
-]
-```
-{% endhint %}
-
 ***
 
 ## Self Service Forms
