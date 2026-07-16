@@ -307,6 +307,27 @@ LocalAdminManagement.SupportAccount
 }
 ```
 
+### AppCatalog Feature
+
+This setting controls native, one-click access to the [App Catalog](../../realmjoin-agent/client-menu/self-service-portal.md#app-catalog-tab) from the RealmJoin tray menu and Windows Start Menu.
+
+**Key**\
+AppCatalog
+
+**Value**
+
+```json
+{
+  "Enabled": true | false,
+  "HidePackages": true | false,
+  "CreateStartMenuShortcut": true | false
+}
+```
+
+* **Enabled:** Adds an **App Catalog** entry to the RealmJoin tray menu that opens the device's App Catalog page in Microsoft Edge app mode.
+* **HidePackages:** Hides the individual software packages from the classic tray "Install"/"Update" submenu, useful once users are directed to the App Catalog instead.
+* **CreateStartMenuShortcut:** Requires `Enabled: true`. Creates a per-user Start Menu shortcut ("App Catalog") that opens the same page, so it can be found via Start search or pinned to the taskbar.
+
 ### Weblinks for RealmJoin Tray
 
 The following setting generates a weblink in the tray.
