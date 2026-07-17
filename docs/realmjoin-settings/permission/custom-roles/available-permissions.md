@@ -244,7 +244,7 @@ The changelog is the change/version history of an object, shown as a **Changelog
 
 | Permission | Requires | Description |
 | ---------- | -------- | ----------- |
-| `CanSeeChangelog` | — | See the **Changelog** tab on an object's detail page (App, Package Store, Device, User, Group, Organization) — its change/version history. |
+| `CanSeeChangelog` | — | See the changelog (change/version history) tab on an object's detail page — labeled **History** on RealmJoin apps and **Versions** in the Package Store, and available on Device, User, Group and Organization details. |
 | `CanReadChangelogTable` | — | **Reserved** — registered but not currently surfaced in the Portal. |
 | `CanReadChangelogDetails` | — | **Reserved** — registered but not currently surfaced in the Portal. |
 
