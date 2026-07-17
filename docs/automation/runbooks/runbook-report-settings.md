@@ -44,7 +44,9 @@ Replace `realmjoin-report@contoso.com` with your actual shared mailbox address.
 
 ### Service Desk Contact Information (optional)
 
-To include Service Desk contact information in notification emails, add the following properties to the `RJReport` section:
+This central configuration only provides the unified Service Desk values for all runbooks. Whether the contact information is actually included in a notification email is determined by the respective runbook itself — only runbooks that implement the corresponding Service Desk parameters (e.g. `ServiceDeskDisplayName`, `ServiceDeskPortalUrl`) read these values and render them in their emails.
+
+To provide the Service Desk contact information for these runbooks, add the following properties to the `RJReport` section:
 
 ```json
 {
