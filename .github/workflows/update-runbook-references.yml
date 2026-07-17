@@ -199,16 +199,16 @@ jobs:
                     type: "AdaptiveCard",
                     version: "1.4",
                     body: [
-                      { type: "TextBlock", size: "Medium", weight: "Bolder", text: "⚠️ Runbook-Docs-Sync: Abruf fehlgeschlagen" },
-                      { type: "TextBlock", wrap: true, text: "Mindestens eine Quelle konnte nicht abgerufen werden. Der zuletzt veröffentlichte Stand bleibt erhalten." },
+                      { type: "TextBlock", size: "Medium", weight: "Bolder", text: "⚠️ Runbook Docs Sync: Fetch failed" },
+                      { type: "TextBlock", wrap: true, text: "At least one source could not be fetched. The previously published content was kept in place." },
                       { type: "FactSet", facts: [
                         { title: "Repository", value: $repo },
-                        { title: "Fehlgeschlagen", value: $failed },
+                        { title: "Failed", value: $failed },
                         { title: "Workflow", value: "📚 Update Runbook Docs" }
                       ] }
                     ],
                     actions: [
-                      { type: "Action.OpenUrl", title: "Workflow-Lauf öffnen", url: $runUrl }
+                      { type: "Action.OpenUrl", title: "Open workflow run", url: $runUrl }
                     ]
                   }
                 }
