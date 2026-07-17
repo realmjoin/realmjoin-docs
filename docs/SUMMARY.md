@@ -254,7 +254,7 @@
         * [Update User](automation/runbooks/runbook-references/user/userinfo/update-user.md)
   * [Runbook Report Settings](automation/runbooks/runbook-report-settings.md)
   * [Runbook Scheduling](automation/runbooks/scheduling.md)
-  * [Release Notes](automation/runbooks/release-notes.md)
+  * [Runbook Release Notes](automation/runbooks/release-notes.md)
 * [Remediation Scripts](automation/remediation-scripts.md)
 
 ## RealmJoin Agent

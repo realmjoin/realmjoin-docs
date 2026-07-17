@@ -282,7 +282,7 @@ param (
         )
 
         # Fixed widths (in px) for the Type (index 0) and Runbook (index 3) columns.
-        $typeWidth = if ($Compact) { 48 } else { 64 }
+        $typeWidth = if ($Compact) { 62 } else { 64 }
         $runbookWidth = if ($Compact) { 140 } else { 176 }
         # Content-driven sizing for the remaining leading columns (rendered as plain text).
         $charWidth = 9
@@ -306,7 +306,8 @@ param (
             } elseif ($c -eq 3) {
                 $leadingWidths += $runbookWidth
             } else {
-                $maxLen = 0
+                # Size to the longest value, and never narrower than the header label so it never wraps.
+                $maxLen = ($header[$c] -replace '[`*]', '').Length
                 foreach ($row in $dataRows) {
                     if ($c -lt $row.Count) {
                         # Strip inline code/bold markers so only the visible text length counts.
