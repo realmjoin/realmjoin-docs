@@ -309,6 +309,7 @@
 * [Report Functions](dev-reference/report-functions/README.md)
   * [Send-RjRbReportEmail](dev-reference/report-functions/send-rjrbreportemail.md)
   * [Publish-RjRbFilesToStorageContainer](dev-reference/report-functions/publish-rjrbfilestostoragecontainer.md)
+  * [Export-RjRbXlsx](dev-reference/report-functions/export-rjrbxlsx.md)
 * [Interacting with Runbooks](dev-reference/interacting-with-runbooks.md)
 * [Simulating a Runbook Environment](dev-reference/simulating-a-runbook-environment.md)
 * [Local Admin Password Management](dev-reference/local-admin-password-management.md)
