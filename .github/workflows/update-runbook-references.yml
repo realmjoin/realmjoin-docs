@@ -75,20 +75,22 @@ jobs:
           
           Write-Host "✅ Documentation generated successfully"
 
-      - name: 📄 Generate Runbook Changelog
+      - name: 📄 Generate Runbook Release Notes
         shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
-          Write-Host "🧾 Generating runbook changelog page..."
+          Write-Host "🧾 Generating runbook release notes page..."
 
           $scriptPath = "./.github/scripts/Get-RunbookChangelog.ps1"
-          $runbooksPath = "./runbooks-repo"
-          $outputFile = "./docs/automation/runbooks/runbook-changelog.md"
+          $outputFile = "./docs/automation/runbooks/release-notes.md"
 
           & $scriptPath `
-            -RunbooksRepoPath (Resolve-Path $runbooksPath).Path `
-            -OutputFilePath $outputFile
+            -OutputFilePath $outputFile `
+            -Style "Hybrid" `
+            -Token $env:GITHUB_TOKEN
 
-          Write-Host "✅ Runbook changelog generated"
+          Write-Host "✅ Runbook release notes generated"
 
       - name: 📦 Update Runbook Requirements
         shell: pwsh
@@ -123,7 +125,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
           git add docs/automation/runbooks/runbook-references
-          git add docs/automation/runbooks/runbook-changelog.md
+          git add docs/automation/runbooks/release-notes.md
           git add docs/automation/connecting-azure-automation/azure-ad-roles-and-permissions.md
           git add docs/SUMMARY.md
           

@@ -28,6 +28,8 @@ redirects:
   other/troubleshooting/laps-issues/requested-laps-accounts-are-not-being-created: troubleshooting/laps-issues/requested-laps-accounts-are-not-being-created.md
   # Merged page
   analyze-and-export/general-data-export: analyze-and-export/data-export.md
+  # Renamed page
+  automation/runbooks/runbook-changelog: automation/runbooks/release-notes.md
   # Removed pages
   realmjoin-deployment/migration-to-realmjoin-vnext: realmjoin-deployment/getting-started/README.md
   realmjoin-deployment/onboarding-realmjoin-portal/quick-setup: realmjoin-deployment/onboarding-realmjoin-portal/README.md
