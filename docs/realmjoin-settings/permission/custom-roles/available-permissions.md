@@ -19,6 +19,10 @@ The definitive, always-current list is shown by the [Auto-Complete](./#auto-comp
 Permissions build on each other. A permission that shows or changes *details* usually also requires the matching *read* permission (for example, changing a setting requires being able to see it first). Where a specific prerequisite applies, it is noted in the **Requires** column.
 {% endhint %}
 
+{% hint style="warning" %}
+A few permissions are marked **Reserved**. They can be selected in the editor but are not currently surfaced anywhere in the Portal, so assigning them has no effect today. They are listed here for completeness.
+{% endhint %}
+
 ## Settings & Administration
 
 | Permission | Requires | Description |
@@ -90,7 +94,7 @@ Permissions build on each other. A permission that shows or changes *details* us
 | `CanSeeRealmJoinUserSettings` | `CanReadUserDetails` | See the [RealmJoin Client settings](../../../ugd-management/user-and-group-settings/) assigned to a user. |
 | `CanChangeRealmJoinUserSettings` | `CanSeeRealmJoinUserSettings` | Add, modify or delete the RealmJoin Client settings assigned to a user. |
 | `CanReadUserSettingTable` | — | See the list of [user settings](../../../ugd-management/user-and-group-settings/) across all users. |
-| `CanReadUserSettingDetails` | — | Inspect all user settings' details. |
+| `CanReadUserSettingDetails` | — | **Reserved** — registered but not currently surfaced in the Portal. |
 | `CanSeeUserJsonAzureAD`, `CanSeeUserJsonRealmJoin` | `CanReadUserDetails` | See diagnostic JSON tabs for a user. Only shown when *Show advanced info* is enabled in [Settings](../../general.md). |
 | `CanSeeUserSignIns` | `CanReadUserDetails` | See Microsoft Entra sign-in information for a user. |
 
@@ -106,7 +110,7 @@ Permissions build on each other. A permission that shows or changes *details* us
 | `CanSeeRealmJoinGroupSettings` | `CanReadGroupDetails` | See the [RealmJoin Client settings](../../../ugd-management/user-and-group-settings/) assigned to a group. |
 | `CanChangeRealmJoinGroupSettings` | `CanSeeRealmJoinGroupSettings` | Add, modify or delete the RealmJoin Client settings assigned to a group. |
 | `CanReadGroupSettingTable` | — | See the list of [group settings](../../../ugd-management/user-and-group-settings/) across all groups. |
-| `CanReadGroupSettingDetails` | — | Inspect all group settings' details. |
+| `CanReadGroupSettingDetails` | — | **Reserved** — registered but not currently surfaced in the Portal. |
 | `CanSeeGroupJsonAzureAD`, `CanSeeGroupJsonRealmJoin` | `CanReadGroupDetails` | See diagnostic JSON for a group. Only shown when *Show advanced info* is enabled in [Settings](../../general.md). |
 | `CanSeeOwnGroups` | — | Allow a (non-external) user to see the groups and teams they are a member of. |
 
@@ -236,33 +240,35 @@ Manage Intune [remediation / device health scripts](../../../automation/remediat
 
 ## Changelog
 
+The changelog is the change/version history of an object, shown as a **Changelog** tab on its detail page.
+
 | Permission | Requires | Description |
 | ---------- | -------- | ----------- |
-| `CanReadChangelogTable` | — | See the changelog list. |
-| `CanReadChangelogDetails` | `CanReadChangelogTable` | Inspect a changelog entry. |
-| `CanSeeChangelog` | — | See changelog information in the Portal. |
+| `CanSeeChangelog` | — | See the changelog (change/version history) tab on an object's detail page — labeled **History** on RealmJoin apps and **Versions** in the Package Store, and available on Device, User, Group and Organization details. |
+| `CanReadChangelogTable` | — | **Reserved** — registered but not currently surfaced in the Portal. |
+| `CanReadChangelogDetails` | — | **Reserved** — registered but not currently surfaced in the Portal. |
 
 ## Profiles
 
 | Permission | Requires | Description |
 | ---------- | -------- | ----------- |
-| `CanReadProfileTable` | — | See the list of profiles. |
-| `CanReadProfileDetails` | `CanReadProfileTable` | Inspect a profile. |
+| `CanReadProfileTable` | — | **Reserved** — registered but not currently surfaced in the Portal. |
+| `CanReadProfileDetails` | — | **Reserved** — registered but not currently surfaced in the Portal. |
 
 ## Operations
 
 | Permission | Requires | Description |
 | ---------- | -------- | ----------- |
-| `CanReadOperationsTable` | — | See the operations list. |
-| `CanReadOperationsDetails` | `CanReadOperationsTable` | Inspect an operation. |
+| `CanReadOperationsTable` | — | See the operations list. *(Currently a preview feature.)* |
+| `CanReadOperationsDetails` | — | **Reserved** — registered but not currently surfaced in the Portal. |
 
 ## Networks & Delivery Optimization
 
 | Permission | Requires | Description |
 | ---------- | -------- | ----------- |
-| `CanReadNetworksTable` | — | See the networks list. |
-| `CanReadDONetworkTable` | — | See the Delivery Optimization networks list. |
-| `CanReadDONetworkDetails` | `CanReadDONetworkTable` | Inspect a Delivery Optimization network. |
+| `CanReadNetworksTable` | — | See the networks list. *(Currently a preview feature.)* |
+| `CanReadDONetworkTable` | — | **Reserved** — registered but not currently surfaced in the Portal. |
+| `CanReadDONetworkDetails` | — | **Reserved** — registered but not currently surfaced in the Portal. |
 
 ## Logs
 
