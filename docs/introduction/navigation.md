@@ -37,7 +37,7 @@ This will give you information and statistics about your Azure tenant, recent ap
 
 "Devices" includes all Entra ID joined clients as well as devices registered in Entra ID, like mobile phones.
 
-## [Application Management](/broken/pages/gEcwXq0N7AG3Ru0s348a)
+## [Application Management](../app-management/packages/README.md)
 
 ### ![](../.gitbook/assets/packages.png) [Packages](../app-management/packages/package-management.md)
 
