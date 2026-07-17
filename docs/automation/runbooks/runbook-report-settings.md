@@ -53,7 +53,8 @@ To include Service Desk contact information in notification emails, add the foll
             "EmailSender": "realmjoin-report@contoso.com",
             "ServiceDesk_DisplayName": "IT Service Desk",
             "ServiceDesk_EMail": "servicedesk@domain.com",
-            "ServiceDesk_Phone": "+49123456789"
+            "ServiceDesk_Phone": "+49123456789",
+            "ServiceDesk_PortalUrl": "https://servicedesk.domain.com"
         }
     }
 }
@@ -64,8 +65,11 @@ To include Service Desk contact information in notification emails, add the foll
 - `ServiceDesk_DisplayName` — Display name of your Service Desk (e.g., "IT Support", "Help Desk")
 - `ServiceDesk_EMail` — Service Desk email address (shown as a clickable `mailto:` link)
 - `ServiceDesk_Phone` — Service Desk phone number in international format (shown as a clickable `tel:` link)
+- `ServiceDesk_PortalUrl` — URL of your Service Desk portal or website (shown as a clickable link)
 
-All three parameters are optional. If configured, they will appear in the email footer as clickable links.
+All parameters are optional. If configured, they will appear in the email footer as clickable links.
+
+> **Note:** Some runbooks additionally accept a per-run ticket link (e.g. `ServiceDeskTicketUrl`) to reference the specific ticket that triggered the request. This is a runbook parameter, not part of this central configuration.
 
 ## Storage Account Delivery
 
@@ -119,6 +123,7 @@ The following snippet shows a complete `RJReport` configuration with all feature
             "ServiceDesk_DisplayName": "IT Service Desk",
             "ServiceDesk_EMail": "servicedesk@domain.com",
             "ServiceDesk_Phone": "+49123456789",
+            "ServiceDesk_PortalUrl": "https://servicedesk.domain.com",
             "StorageAccount": {
                 "ResourceGroup": "rg-reports",
                 "StorageAccountName": "stcontosoreports",

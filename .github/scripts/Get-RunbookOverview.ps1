@@ -41,8 +41,8 @@ param (
 # Relative path of the source file inside the runbooks repository
 $sourceRelativePath = "docs/lists/custom/RealmJoinRunbook-RunbookList-noToc.md"
 
-# GitBook frontmatter prepended to the generated page
-$frontmatter = "---`nlayout:`n  width: wide`n---`n"
+# GitBook frontmatter prepended to the generated page (title is set here instead of an H1 in the content to avoid a duplicated page title)
+$frontmatter = "---`ntitle: Runbook Overview`nlayout:`n  width: wide`n---`n"
 
 #endregion Variables
 
@@ -151,8 +151,9 @@ $frontmatter = "---`nlayout:`n  width: wide`n---`n"
     # Normalize line endings to LF
     $content = $sourceContent -replace "`r`n", "`n"
 
-    # Capitalize the main heading for GitBook page title consistency
-    $content = $content -replace '(?m)^#\s+Runbook overview\s*$', '# Runbook Overview'
+    # Remove the leading anchor and main heading; the page title is provided via frontmatter,
+    # otherwise GitBook would render both the page title and the H1 (duplicated title)
+    $content = $content -replace "(?m)^<a name='runbook-overview'></a>\s*\n#\s+Runbook overview\s*\n?", ''
 
     # Trim trailing whitespace and ensure a single trailing newline
     $content = $content.TrimEnd() + "`n"
