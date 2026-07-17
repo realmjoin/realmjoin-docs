@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: write
-  issues: write
 
 jobs:
   update-runbook-docs:
@@ -161,43 +160,7 @@ jobs:
             echo "✅ Changes committed and pushed"
           fi
 
-      - name: 📝 Report Fetch Failures As Issue
-        if: steps.overview.outcome == 'failure' || steps.release_notes.outcome == 'failure'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          OVERVIEW_OUTCOME: ${{ steps.overview.outcome }}
-          RELEASE_NOTES_OUTCOME: ${{ steps.release_notes.outcome }}
-          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        run: |
-          FAILED_STEPS=""
-          if [ "$OVERVIEW_OUTCOME" = "failure" ]; then
-            FAILED_STEPS="${FAILED_STEPS}- Runbook Overview (source: RealmJoinRunbook-RunbookList-noToc.md)"$'\n'
-          fi
-          if [ "$RELEASE_NOTES_OUTCOME" = "failure" ]; then
-            FAILED_STEPS="${FAILED_STEPS}- Runbook Release Notes (source: GitHub releases API)"$'\n'
-          fi
-
-          TITLE="Content sync failure: fetching runbook docs failed"
-          BODY="The scheduled runbook documentation sync could not fetch all sources.
-
-          **Failed steps:**
-          ${FAILED_STEPS}
-          **Workflow run:** ${RUN_URL}
-
-          The previously published content was kept in place. Please check whether the source files still exist in [realmjoin/realmjoin-runbooks](https://github.com/realmjoin/realmjoin-runbooks)."
-
-          # Reuse an existing open issue if present, otherwise create a new one
-          EXISTING=$(gh issue list --repo "$GITHUB_REPOSITORY" --label "content-sync-failure" --state open --json number --jq '.[0].number // empty')
-
-          if [ -n "$EXISTING" ]; then
-            echo "Updating existing issue #$EXISTING"
-            gh issue comment "$EXISTING" --repo "$GITHUB_REPOSITORY" --body "$BODY"
-          else
-            gh label create "content-sync-failure" --repo "$GITHUB_REPOSITORY" --description "Automated content sync from realmjoin-runbooks failed" --color "D93F0B" --force || true
-            gh issue create --repo "$GITHUB_REPOSITORY" --title "$TITLE" --body "$BODY" --label "content-sync-failure"
-          fi
-
-      - name: 📣 Notify Teams Group Chat About Fetch Failures
+      - name:  Notify Teams Group Chat About Fetch Failures
         if: steps.overview.outcome == 'failure' || steps.release_notes.outcome == 'failure'
         env:
           TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
