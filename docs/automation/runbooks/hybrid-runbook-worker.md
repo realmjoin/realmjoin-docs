@@ -7,6 +7,10 @@ description: >-
 
 # Hybrid Runbook Worker
 
+{% hint style="warning" %}
+This feature is currently only available on [portal-staging.realmjoin.com](https://portal-staging.realmjoin.com).
+{% endhint %}
+
 By default, RealmJoin runbooks run in Microsoft's **Azure Automation cloud**. That is perfect for tasks against cloud services (Entra ID, Intune, Exchange Online, …), but the cloud has no line of sight into your **on-premises** or otherwise private network.
 
 A **Hybrid Runbook Worker** solves this. It is a machine you run inside your own environment (for example on-premises, or in a private cloud network) and register with your Azure Automation Account. Runbooks that target that worker execute **on that machine, inside your network**, while still being started, tracked, and audited through RealmJoin just like any other runbook.
