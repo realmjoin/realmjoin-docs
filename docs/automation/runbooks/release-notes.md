@@ -5,6 +5,8 @@ layout:
 
 # Runbook Release Notes
 
+Stay up to date with the latest changes to the RealmJoin Runbooks. Runbook updates are typically published here in monthly release cycles.
+
 ## v2026.07
 
 > This release strengthens device security and Defender for Endpoint integration, automates Autopilot cleanup, and adds Exchange Online contact management — backed by module updates and improved notification emails.

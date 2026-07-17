@@ -82,7 +82,7 @@ jobs:
         run: |
           Write-Host "🧾 Generating runbook release notes page..."
 
-          $scriptPath = "./.github/scripts/Get-RunbookChangelog.ps1"
+          $scriptPath = "./.github/scripts/Get-RunbookReleaseNotes.ps1"
           $outputFile = "./docs/automation/runbooks/release-notes.md"
 
           & $scriptPath `

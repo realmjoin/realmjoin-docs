@@ -565,6 +565,8 @@ try {
     [void]$page.AppendLine("")
     [void]$page.AppendLine("# $PageTitle")
     [void]$page.AppendLine("")
+    [void]$page.AppendLine("Stay up to date with the latest changes to the RealmJoin Runbooks. Runbook updates are typically published here in monthly release cycles.")
+    [void]$page.AppendLine("")
     [void]$page.AppendLine($releasesMarkdown)
     [void]$page.AppendLine("")
     [void]$page.AppendLine("***")
