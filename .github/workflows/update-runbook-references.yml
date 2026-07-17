@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   update-runbook-docs:
@@ -31,9 +32,10 @@ jobs:
           
           $outputPath = "docs/automation/runbooks/runbook-references"
           
-          # Remove existing runbook references (but keep README.md if it exists at root level)
+          # Remove existing runbook references (but keep README.md and overview.md at root level;
+          # overview.md is preserved so a failed fetch keeps the last known good version)
           if (Test-Path $outputPath) {
-            Get-ChildItem -Path $outputPath -Exclude "README.md" | Remove-Item -Recurse -Force
+            Get-ChildItem -Path $outputPath -Exclude "README.md", "overview.md" | Remove-Item -Recurse -Force
             Write-Host "✅ Cleaned existing runbook references"
           }
           
@@ -75,7 +77,26 @@ jobs:
           
           Write-Host "✅ Documentation generated successfully"
 
+      - name: 📄 Generate Runbook Overview
+        id: overview
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          Write-Host "📋 Generating runbook overview page..."
+
+          $scriptPath = "./.github/scripts/Get-RunbookOverview.ps1"
+          $outputFile = "./docs/automation/runbooks/runbook-references/overview.md"
+
+          & $scriptPath `
+            -RunbooksRepoPath ./runbooks-repo `
+            -OutputFilePath $outputFile
+
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Write-Host "✅ Runbook overview generated"
+
       - name: 📄 Generate Runbook Release Notes
+        id: release_notes
+        continue-on-error: true
         shell: pwsh
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -90,6 +111,7 @@ jobs:
             -Style "Hybrid" `
             -Token $env:GITHUB_TOKEN
 
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           Write-Host "✅ Runbook release notes generated"
 
       - name: 📦 Update Runbook Requirements
@@ -138,3 +160,114 @@ jobs:
             git push
             echo "✅ Changes committed and pushed"
           fi
+
+      - name: 📝 Report Fetch Failures As Issue
+        if: steps.overview.outcome == 'failure' || steps.release_notes.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OVERVIEW_OUTCOME: ${{ steps.overview.outcome }}
+          RELEASE_NOTES_OUTCOME: ${{ steps.release_notes.outcome }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          FAILED_STEPS=""
+          if [ "$OVERVIEW_OUTCOME" = "failure" ]; then
+            FAILED_STEPS="${FAILED_STEPS}- Runbook Overview (source: RealmJoinRunbook-RunbookList-noToc.md)"$'\n'
+          fi
+          if [ "$RELEASE_NOTES_OUTCOME" = "failure" ]; then
+            FAILED_STEPS="${FAILED_STEPS}- Runbook Release Notes (source: GitHub releases API)"$'\n'
+          fi
+
+          TITLE="Content sync failure: fetching runbook docs failed"
+          BODY="The scheduled runbook documentation sync could not fetch all sources.
+
+          **Failed steps:**
+          ${FAILED_STEPS}
+          **Workflow run:** ${RUN_URL}
+
+          The previously published content was kept in place. Please check whether the source files still exist in [realmjoin/realmjoin-runbooks](https://github.com/realmjoin/realmjoin-runbooks)."
+
+          # Reuse an existing open issue if present, otherwise create a new one
+          EXISTING=$(gh issue list --repo "$GITHUB_REPOSITORY" --label "content-sync-failure" --state open --json number --jq '.[0].number // empty')
+
+          if [ -n "$EXISTING" ]; then
+            echo "Updating existing issue #$EXISTING"
+            gh issue comment "$EXISTING" --repo "$GITHUB_REPOSITORY" --body "$BODY"
+          else
+            gh label create "content-sync-failure" --repo "$GITHUB_REPOSITORY" --description "Automated content sync from realmjoin-runbooks failed" --color "D93F0B" --force || true
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$TITLE" --body "$BODY" --label "content-sync-failure"
+          fi
+
+      - name: 📣 Notify Teams Group Chat About Fetch Failures
+        if: steps.overview.outcome == 'failure' || steps.release_notes.outcome == 'failure'
+        env:
+          TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
+          TEAMS_WEBHOOK_SECRET: ${{ secrets.TEAMS_WEBHOOK_SECRET }}
+          OVERVIEW_OUTCOME: ${{ steps.overview.outcome }}
+          RELEASE_NOTES_OUTCOME: ${{ steps.release_notes.outcome }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          if [ -z "$TEAMS_WEBHOOK_URL" ] || [ -z "$TEAMS_WEBHOOK_SECRET" ]; then
+            echo "::notice::Secrets TEAMS_WEBHOOK_URL and/or TEAMS_WEBHOOK_SECRET are not configured - skipping Teams notification. Create both repository secrets to enable it."
+            exit 0
+          fi
+
+          FAILED_STEPS=""
+          if [ "$OVERVIEW_OUTCOME" = "failure" ]; then
+            FAILED_STEPS="${FAILED_STEPS}Runbook Overview; "
+          fi
+          if [ "$RELEASE_NOTES_OUTCOME" = "failure" ]; then
+            FAILED_STEPS="${FAILED_STEPS}Runbook Release Notes; "
+          fi
+
+          PAYLOAD=$(jq -n \
+            --arg secret "$TEAMS_WEBHOOK_SECRET" \
+            --arg repo "$REPOSITORY" \
+            --arg failed "$FAILED_STEPS" \
+            --arg runUrl "$RUN_URL" \
+            '{
+              type: "message",
+              notifySecret: $secret,
+              attachments: [
+                {
+                  contentType: "application/vnd.microsoft.card.adaptive",
+                  content: {
+                    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                    type: "AdaptiveCard",
+                    version: "1.4",
+                    body: [
+                      { type: "TextBlock", size: "Medium", weight: "Bolder", text: "⚠️ Runbook-Docs-Sync: Abruf fehlgeschlagen" },
+                      { type: "TextBlock", wrap: true, text: "Mindestens eine Quelle konnte nicht abgerufen werden. Der zuletzt veröffentlichte Stand bleibt erhalten." },
+                      { type: "FactSet", facts: [
+                        { title: "Repository", value: $repo },
+                        { title: "Fehlgeschlagen", value: $failed },
+                        { title: "Workflow", value: "📚 Update Runbook Docs" }
+                      ] }
+                    ],
+                    actions: [
+                      { type: "Action.OpenUrl", title: "Workflow-Lauf öffnen", url: $runUrl }
+                    ]
+                  }
+                }
+              ]
+            }')
+
+          HTTP_CODE=$(curl -sS -o /dev/null -w "%{http_code}" -X POST \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD" \
+            "$TEAMS_WEBHOOK_URL")
+
+          if [ "$HTTP_CODE" -ge 200 ] && [ "$HTTP_CODE" -lt 300 ]; then
+            echo "✅ Teams notification sent (HTTP $HTTP_CODE)"
+          else
+            echo "::warning::Teams notification failed with HTTP $HTTP_CODE"
+          fi
+
+      - name: ❌ Fail Workflow On Fetch Errors
+        if: steps.overview.outcome == 'failure' || steps.release_notes.outcome == 'failure'
+        env:
+          OVERVIEW_OUTCOME: ${{ steps.overview.outcome }}
+          RELEASE_NOTES_OUTCOME: ${{ steps.release_notes.outcome }}
+        run: |
+          echo "::error::One or more content fetches failed (overview: $OVERVIEW_OUTCOME, release notes: $RELEASE_NOTES_OUTCOME). Other updates were committed normally; the previously published content for the failed pages was kept."
+          exit 1
