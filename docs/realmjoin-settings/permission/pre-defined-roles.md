@@ -22,7 +22,7 @@ Simply click on "\[x] groups" and add or remove the desired Entra groups.
 This will grant **full administrative and configuration control** over RealmJoin Portal. This includes e.g.:
 
 * Access to all features of [User, Group and Device Management](../../ugd-management/user-group-device-management.md) and [Process Automation](../../automation/runbooks/)
-* Access to all features of [Application Management](/broken/pages/gEcwXq0N7AG3Ru0s348a)
+* Access to all features of [Application Management](../../app-management/packages/README.md)
 * Full access to [Settings](../settings.md) including:
   * Modifying permissions / delegations
   * Onboarding/modifying Runbook integration
@@ -36,7 +36,7 @@ This will grant **full administrative and configuration control** over RealmJoin
 This will grant read-only access to all areas of RealmJoin Portal.
 
 * Read-only access to all areas of [User, Group and Device Management](../../ugd-management/user-group-device-management.md)
-* Read-only access to all features of [Application Management](/broken/pages/gEcwXq0N7AG3Ru0s348a)
+* Read-only access to all features of [Application Management](../../app-management/packages/README.md)
 * Reading Runbook Job logs
 
 This permission does not include:
@@ -108,7 +108,7 @@ This will grant:
 
 * Read-only access to [User and Group Management](../../ugd-management/user-group-device-management.md)
   * Full access on application management groups
-* Access to all features of [Application Management](/broken/pages/gEcwXq0N7AG3Ru0s348a)
+* Access to all features of [Application Management](../../app-management/packages/README.md)
 
 This permission does not include:
 
@@ -124,7 +124,7 @@ This allows a user to file a request to RealmJoin for a new software package to 
 This permission does not include:
 
 * Access to [User, Group and Device Management](../../ugd-management/user-group-device-management.md)
-* Access to [Application Management](/broken/pages/gEcwXq0N7AG3Ru0s348a)
+* Access to [Application Management](../../app-management/packages/README.md)
 * Starting Runbooks or reading Runbook Job logs
 * Access to [Settings](../settings.md)
 
@@ -135,7 +135,7 @@ This allows a user to automatically create a software package from uploaded sour
 This permission does not include:
 
 * Access to [User, Group and Device Management](../../ugd-management/user-group-device-management.md)
-* Access to [Application Management](/broken/pages/gEcwXq0N7AG3Ru0s348a)
+* Access to [Application Management](../../app-management/packages/README.md)
 * Starting Runbooks or reading Runbook Job logs
 * Access to [Settings](../settings.md)
 
@@ -146,6 +146,6 @@ This allows a user to create and publish notifications.
 This permission does not include:
 
 * Access to [User, Group and Device Management](../../ugd-management/user-group-device-management.md)
-* Access to [Application Management](/broken/pages/gEcwXq0N7AG3Ru0s348a)
+* Access to [Application Management](../../app-management/packages/README.md)
 * Starting Runbooks or reading Runbook Job logs
 * Access to [Settings](../settings.md)
