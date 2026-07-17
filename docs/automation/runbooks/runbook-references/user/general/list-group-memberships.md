@@ -19,6 +19,8 @@ rjgit-user_general_list-group-memberships
 - **Type**: Microsoft Graph
   - User.Read.All
   - Group.Read.All
+  - Mail.Send
+  - Organization.Read.All
 
 
 ## Parameters
@@ -91,6 +93,96 @@ Filter groups by writeback enablement.
 | Required | false |
 | Default Value | All |
 | Type | String |
+
+### SendMail
+
+If enabled, the report is sent via email with the selected report file format(s) attached. Toggling this on reveals the recipient address and report file format fields.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | False |
+| Type | Boolean |
+
+### EmailTo
+
+Recipient address or multiple comma-separated addresses for the email report. Only used when SendMail is enabled.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### EmailFrom
+
+The sender email address. This needs to be configured in the runbook customization.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### ReportFileFormat
+
+Controls which report file formats are generated and delivered: "CSV only", "CSV & XLSX" (default) or "XLSX only".
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | CSV & XLSX |
+| Type | String |
+
+### CreateDownloadLink
+
+If enabled, the report files (CSV and Excel) are uploaded to an Azure Storage Account and time-limited download links are returned in the output.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | False |
+| Type | Boolean |
+
+### ContainerName
+
+Storage container name used for the upload.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | user-group-memberships |
+| Type | String |
+
+### ResourceGroupName
+
+Resource group that contains the storage account.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### StorageAccountName
+
+Storage account name used for the upload.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### LinkExpiryDays
+
+Number of days until the generated download link expires.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | 6 |
+| Type | Int32 |
 
 
 

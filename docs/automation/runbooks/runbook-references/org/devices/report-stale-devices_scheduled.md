@@ -5,7 +5,10 @@ description: Scheduled report of stale devices based on last activity date and p
 
 ## Description
 Identifies and lists devices that haven't been active for a specified number of days.
-Automatically sends a report via email.
+Automatically sends a report via email with CSV and/or Excel (xlsx) attachments.
+The report files can also be uploaded to an Azure Storage Account, returning time-limited download links.
+The ReportFileFormat parameter controls which file formats are generated and delivered (CSV only, CSV & XLSX, or XLSX only).
+When the CSV attachment exceeds the email size limit and "CSV & XLSX" is selected, the email falls back to the Excel workbook alone.
 
 ## Setup regarding email sending
 
@@ -104,6 +107,66 @@ The sender email address. This needs to be configured in the runbook customizati
 | Default Value |  |
 | Type | String |
 
+### ReportFileFormat
+
+Controls which report file formats are generated and delivered: "CSV only", "CSV & XLSX" (default) or "XLSX only".
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | CSV & XLSX |
+| Type | String |
+
+### CreateDownloadLink
+
+If enabled, the report files are uploaded to an Azure Storage Account and time-limited download links are returned. Disabled by default.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | False |
+| Type | Boolean |
+
+### ContainerName
+
+Storage container name used for the upload. Configured per runbook (not a global RJReport setting).
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | report-stale-devices |
+| Type | String |
+
+### ResourceGroupName
+
+Resource group that contains the storage account. Sourced from the RJReport tenant settings.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### StorageAccountName
+
+Storage account name used for the upload. Sourced from the RJReport tenant settings.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### LinkExpiryDays
+
+Number of days until the generated download link expires. Sourced from the RJReport tenant settings.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | 6 |
+| Type | Int32 |
+
 ### UseUserScope
 
 Enable user scope filtering to include or exclude devices based on primary user group membership.
@@ -136,12 +199,13 @@ Exclude devices whose primary users are members of this group. Requires UseUserS
 
 ### EmailTo
 
+If specified, an email with the report will be sent to the provided address(es).
 Can be a single address or multiple comma-separated addresses (string).
 The function sends individual emails to each recipient for privacy reasons.
 
 | Property | Value |
 | --- | --- |
-| Required | true |
+| Required | false |
 | Default Value |  |
 | Type | String |
 

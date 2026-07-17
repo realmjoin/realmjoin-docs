@@ -22,6 +22,7 @@ On this overview page you can find all Organization Runbooks in the Security sub
 - [Monitor Pending EPM Requests (Scheduled)](monitor-pending-epm-requests_scheduled.md)
 - [Notify Changed CA Policies](notify-changed-ca-policies.md)
 - [Report EPM Elevation Requests (Scheduled)](report-epm-elevation-requests_scheduled.md)
+- [Sync MFA Secure Users To Group (Scheduled)](sync-mfa-secure-users-to-group_scheduled.md)
 
 [Back to Runbook Reference overview](../../README.md)
 
