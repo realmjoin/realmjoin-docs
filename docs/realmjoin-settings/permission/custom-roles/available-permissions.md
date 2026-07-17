@@ -1,464 +1,298 @@
 ---
 type: RealmJoin Settings
 description: >-
-  Reference of granular permissions for RealmJoin custom roles, with editor
-  auto-complete showing the complete current list.
+  Complete reference of the granular permissions you can assign to RealmJoin
+  custom roles, grouped by area.
 ---
 
 # Available Permissions
 
 ## Overview
 
-This page will try to list and explain available permissions for Custom Roles.
+This page lists the granular permissions you can assign to [Custom Roles](./), grouped by the area of RealmJoin Portal they apply to.
 
 {% hint style="info" %}
-This list is not complete, as the feature-set of RealmJoin is continually growing.&#x20;
-
-Please use [Auto-Complete](./#auto-complete) in Custom Roles' editor to see all currently available permissions.
+The definitive, always-current list is shown by the [Auto-Complete](./#auto-complete) in the Custom Roles editor. Because RealmJoin's feature set keeps growing, the editor may occasionally offer a permission that is newer than this page.
 {% endhint %}
 
-## Settings
+{% hint style="info" %}
+Permissions build on each other. A permission that shows or changes *details* usually also requires the matching *read* permission (for example, changing a setting requires being able to see it first). Where a specific prerequisite applies, it is noted in the **Requires** column.
+{% endhint %}
 
-### CanReadSettingsDetails
+## Settings & Administration
 
-The user gains access to to [Settings](../../settings.md)
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadSettingsDetails` | — | Access the [Settings](../../settings.md) area. |
+| `CanChangeTenantSettings` | `CanReadSettingsDetails` | Modify tenant-wide settings. |
+| `CanReadOrganizationFeatures` | — | View the tenant's enabled RealmJoin features. |
+| `CanEditOrganizationFeatures` | `CanReadOrganizationFeatures` | Enable or disable RealmJoin features for the tenant. |
+| `CanEditTenantLaMetricSecret` | — | Manage the secret for the [LaMetric Time](../../../administration-and-settings/third-party-integrations/lametric-time.md) integration. |
 
 ## App Management
 
-### CanReadAppTable
-
-The user gains read access to [Package Management](../../../app-management/packages/package-management.md) (Package Management List). This does not grant permission to the package details.
-
-### CanReadIntuneAppDetails
-
-**Given**:
-
-* User has access [Package Management](../../../app-management/packages/package-management.md)&#x20;
-
-The user gains read only access to Intune packages / [package details](../../../app-management/packages/package-details.md).
-
-### CanReadRealmJoinAppDetails
-
-**Given**:
-
-* User has access [Package Management](../../../app-management/packages/package-management.md)&#x20;
-
-The user gains read only access to RealmJoin Client packages / [package details](../../../app-management/packages/package-details.md).
-
-### CanChangeAppAssignments
-
-**Given**:
-
-* User has access to [Package Details](../../../app-management/packages/package-details.md)
-
-The user gains the ability to add/remove user or group assignments in a packages details. &#x20;
-
-### CanChangeAppAssignmentSettings
-
-**Given**:
-
-* User has access to [Package Details](../../../app-management/packages/package-details.md)
-
-On RealmJoin Client Packages, the option to change [per assignment settings](../../../app-management/packages/package-details.md#assignment-settings) will be shown and users can modify the settings.
-
-### CanEditAppArgs&#x20;
-
-**Given**:
-
-* User has access to [Package Details](../../../app-management/packages/package-details.md)
-
-The user gains the ability to modify an app's command line arguments in [Package Details](../../../app-management/packages/package-details.md).
-
-### CanEditAppAutomation&#x20;
-
-**Given**:
-
-* User has access to [Package Details](../../../app-management/packages/package-details.md)
-
-The user gains the ability to modify an [Intune app's automation](../../../app-management/packages/package-details.md#automation) settings ( = If and when newer versions of the package from the store will be automatically rolled out to existing users.)&#x20;
-
-### CanEditAppDisplayName&#x20;
-
-**Given**:
-
-* User has access to [Package Details](../../../app-management/packages/package-details.md)
-
-The user gains the ability to modify an app's display name.
-
-### CanEditAppExpertSettings&#x20;
-
-**Given**:
-
-* User has access to [Package Details](../../../app-management/packages/package-details.md)
-
-The user gains the ability to modify an [app's expert settings](../../../app-management/packages/package-details.md#expert-settings).
-
-### CanEditAppTechnicalApplicationOwners&#x20;
-
-**Given**:
-
-* User has access to [Package Details](../../../app-management/packages/package-details.md)
-
-The user gains the ability to modify an app's Technical App. Owners in [Config](../../../app-management/packages/package-details.md#config).
-
-### CanDeleteApp
-
-**Given**:
-
-* User has access to [Package Details](../../../app-management/packages/package-details.md)
-
-The user gains the ability to delete an app from a [Package Management](../../../app-management/packages/package-management.md). This will not remove an app from the package store and will not trigger uninstallations on existing deployments.
-
-### CanRequestSoftware
-
-The user gains the ability to submit a software packaging request to RealmJoin.
-
-{% hint style="warning" %}
-Please combine this with either **CanRequestSoftwareOrganic** or **CanRequestSoftwarePaas**
-{% endhint %}
-
-### CanRequestSoftwareOrganic
-
-The user gains the ability to submit an "organic" software package to RealmJoin for distribution via RealmJoin Client to specific users.
-
-Organic packages contain raw and unprocessed application setups. When handling those, RealmJoin is used as a transport vehicle to move the zipped container to a specified location. Depending on its payload, the installer then has to be manually started by the user (if user mode) or a remote administrator or field service.
-
-The software deployment will not be tested by RealmJoin.
-
-### CanRequestSoftwarePaas
-
-The user gains the ability to submit a software packaging request to RealmJoin.
-
-The software will be packaged by RealmJoin and will become available for consumption through the [Package Store](../../../app-management/packages/package-store/).
-
-### CanReadPackageStoreTable
-
-The user gains access to the [Package Store](../../../app-management/packages/package-store/) (Package Store List).
-
-This does not grant permission to the package details or to subscribe to an app.
-
-### CanReadPackageStoreDetails
-
-Given:
-
-* CanReadPackageStoreTable
-
-Allow a user to inspect a package store offering. This does not grant permission to subscribe to an app.
-
-### CanSubscribeApp
-
-Given:
-
-* CanReadPackageStoreDetails
-
-Allow the user to subscribe to an offering from package store.
-
-### CanSeeIntuneAppJson, CanSeeIntuneAppStoreJson, CanSeeRealmJoinAppJson, CanSeeRealmJoinAppStoreJson
-
-Allow to see additional, diagnostic JSON information for a package in [Package Store](../../../app-management/packages/package-store/) or [Package Management](../../../app-management/packages/package-management.md).&#x20;
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadAppTable` | — | Read access to [Package Management](../../../app-management/packages/package-management.md) (the package list). Does not grant access to package details. |
+| `CanReadIntuneAppDetails` | `CanReadAppTable` | Read-only access to Intune [package details](../../../app-management/packages/package-details.md). |
+| `CanReadRealmJoinAppDetails` | `CanReadAppTable` | Read-only access to RealmJoin Client [package details](../../../app-management/packages/package-details.md). |
+| `CanChangeAppAssignments` | Package details access | Add or remove user/group assignments on a package. |
+| `CanSeeAppAssignmentSettings` | Package details access | See the [per-assignment settings](../../../app-management/packages/package-details.md#assignment-settings) of a RealmJoin Client package. |
+| `CanChangeAppAssignmentSettings` | `CanSeeAppAssignmentSettings` | Modify the per-assignment settings of a RealmJoin Client package. |
+| `CanSeeAppExpertSettings` | Package details access | See an [app's expert settings](../../../app-management/packages/package-details.md#expert-settings). |
+| `CanEditAppExpertSettings` | `CanSeeAppExpertSettings` | Modify an app's expert settings. |
+| `CanEditAppSettings` | Package details access | Modify an app's general settings. |
+| `CanEditAppAutomation` | Package details access | Modify an [app's automation](../../../app-management/packages/package-details.md#automation) (if/when newer store versions roll out automatically). |
+| `CanEditAppDisplayName` | Package details access | Modify an app's display name. |
+| `CanEditAppTechnicalApplicationOwners` | Package details access | Modify an app's Technical Application Owners in [Config](../../../app-management/packages/package-details.md#config). |
+| `CanEnableAppUpdateGroup` | Package details access | Enable or disable a package's update group. |
+| `CanUpgradeApp` | Package details access | Trigger an upgrade of a package to a newer version. |
+| `CanSubscribeApp` | `CanReadPackageStoreDetails` | Subscribe to an offering from the [Package Store](../../../app-management/packages/package-store/). |
+| `CanDeleteApp` | Package details access | Delete an app from [Package Management](../../../app-management/packages/package-management.md). Does not remove it from the store or uninstall existing deployments. |
+| `CanSeeSoftwareSecurityVulnerabilities` | — | See known security vulnerabilities for software. |
+| `CanSeeIntuneAppJson`, `CanSeeIntuneAppStoreJson`, `CanSeeRealmJoinAppJson`, `CanSeeRealmJoinAppStoreJson` | — | See diagnostic JSON for a package in [Package Store](../../../app-management/packages/package-store/) or [Package Management](../../../app-management/packages/package-management.md). Only shown when *Show advanced info* is enabled in [Settings](../../general.md). |
+
+## Package Store
+
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadPackageStoreTable` | — | Access the [Package Store](../../../app-management/packages/package-store/) list. Does not grant access to details or the ability to subscribe. |
+| `CanReadPackageStoreDetails` | `CanReadPackageStoreTable` | Inspect a package store offering. Does not grant the ability to subscribe. |
+
+## Software Requests
+
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanRequestSoftware` | — | Submit a software packaging request to RealmJoin. Combine with `CanRequestSoftwarePaas` or `CanRequestSoftwareOrganic`. |
+| `CanRequestSoftwarePaas` | — | Request a package to be produced by RealmJoin and made available in the [Package Store](../../../app-management/packages/package-store/). |
+| `CanRequestSoftwareOrganic` | — | Submit an ["organic" package](../../../app-management/packages/packaging-requests/organic-packages.md) (raw, untested setup) for distribution via RealmJoin Client. |
+
+## App Categories
+
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadAppCategories` | — | View the tenant's Intune app categories. |
+| `CanEditAppCategories` | `CanReadAppCategories` | Create, edit and delete Intune app categories. |
+
+## Software Report
+
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadSoftwareReportTable` | — | Access the [Software Report](../../../analyze-and-export/software-reporting.md) list. |
+| `CanReadSoftwareReportDetails` | `CanReadSoftwareReportTable` | Inspect Software Report details. |
 
 ## User Management
 
-### CanReadUserTable&#x20;
-
-The user gains the ability to see the [list of all Entra ID users](../../../ugd-management/user-list/).
-
-### CanReadUserDetails&#x20;
-
-The user gains the ability to inspect an individual [user's details](../../../ugd-management/user-list/user-details.md).
-
-### CanSeeRealmJoinUserSettings&#x20;
-
-**Given**:&#x20;
-
-* CanReadUserDetails
-
-Allow the user to see/inspect [RealmJoin Client Settings](../../../ugd-management/user-and-group-settings/) assigned to a specific user.
-
-### CanChangeRealmJoinUserSettings
-
-**Given**:&#x20;
-
-* CanReadUserDetails
-* CanSeeRealmJoinUserSettings
-
-Allow the user to add/modify/delete[ RealmJoin Client Settings](../../../ugd-management/user-and-group-settings/) assigned to a specific user.
-
-### CanReadUserSettingTable&#x20;
-
-The user gains the ability to see the list of [user settings](../../../ugd-management/user-and-group-settings/) (across all users) from the [navigation](available-permissions.md#navigation).
-
-### CanReadUserSettingDetails&#x20;
-
-The user gains the ability to inspect all [user settings](../../../ugd-management/user-and-group-settings/)' details.
-
-### CanSeeUserJsonAzureAD and CanSeeUserJsonRealmJoin&#x20;
-
-**Given**:&#x20;
-
-* CanReadUserDetails
-
-These permissions allow a user to see specific diagnostic information as JSON in separate tabs if "show advanced info" is enabled in [Settings](../../general.md).
-
-### CanSeeUserSignIns&#x20;
-
-**Given**:&#x20;
-
-* CanReadUserDetails
-
-These permissions allow a user to see Microsoft Entra user sign in information as JSON in a separate tab.
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadUserTable` | — | See the [list of all Entra ID users](../../../ugd-management/user-list/). |
+| `CanReadUserDetails` | — | Inspect an individual [user's details](../../../ugd-management/user-list/user-details.md). |
+| `CanSeeRealmJoinUserSettings` | `CanReadUserDetails` | See the [RealmJoin Client settings](../../../ugd-management/user-and-group-settings/) assigned to a user. |
+| `CanChangeRealmJoinUserSettings` | `CanSeeRealmJoinUserSettings` | Add, modify or delete the RealmJoin Client settings assigned to a user. |
+| `CanReadUserSettingTable` | — | See the list of [user settings](../../../ugd-management/user-and-group-settings/) across all users. |
+| `CanReadUserSettingDetails` | — | Inspect all user settings' details. |
+| `CanSeeUserJsonAzureAD`, `CanSeeUserJsonRealmJoin` | `CanReadUserDetails` | See diagnostic JSON tabs for a user. Only shown when *Show advanced info* is enabled in [Settings](../../general.md). |
+| `CanSeeUserSignIns` | `CanReadUserDetails` | See Microsoft Entra sign-in information for a user. |
 
 ## Group Management
 
-### CanReadGroupTable
-
-The user gains the ability to see the list of all [Entra ID and RealmJoin internal groups](../../../ugd-management/user-list/).&#x20;
-
-### CanReadGroupDetails
-
-The user gains the ability to inspect an individual Microsoft Entra / RealmJoin internal [group's details](../../../ugd-management/user-list/group-details.md).
-
-### CanChangeGroupMembers
-
-**Given**:&#x20;
-
-* CanReadGroupDetails
-
-The user gains the ability to add or remove members from groups.&#x20;
-
-### CanDeleteGroup
-
-**Given**:&#x20;
-
-* CanReadGroupDetails
-
-The user gains the ability to delete a group.
-
-### CanEditGroupDisplayName
-
-**Given**:&#x20;
-
-* CanReadGroupDetails
-
-The user gains the ability to change a group's display name.
-
-### CanSeeGroupJsonAzureAD and CanSeeGroupJsonRealmJoin
-
-**Given**:&#x20;
-
-* CanReadGroupDetails
-
-Allow the user to see diagnostic metadata about a Microsoft Entra or RealmJoin internal group, if "Show advanced info" is enabled in [Settings](../../general.md).
-
-### CanSeeRealmJoinGroupSettings
-
-**Given**:&#x20;
-
-* CanReadGroupDetails
-
-Allow the user to see/inspect [RealmJoin Client Settings](../../../ugd-management/user-and-group-settings/) assigned to a specific group.
-
-### CanChangeRealmJoinGroupSettings
-
-**Given**:&#x20;
-
-* CanReadGroupDetails
-* CanSeeRealmJoinGroupSettings
-
-Allow the user to add/modify/delete[ RealmJoin Client Settings](../../../ugd-management/user-and-group-settings/) assigned to a specific group.
-
-### CanReadGroupSettingTable
-
-The user gains the ability to see the list of [group settings](../../../ugd-management/user-and-group-settings/) (across all groups) from the [navigation](available-permissions.md#navigation).
-
-### CanReadGroupSettingDetails
-
-The user gains the ability to inspect all [group settings](../../../ugd-management/user-and-group-settings/)' details.
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadGroupTable` | — | See the list of all [Entra ID and RealmJoin internal groups](../../../ugd-management/user-list/). |
+| `CanReadGroupDetails` | — | Inspect an individual [group's details](../../../ugd-management/user-list/group-details.md). |
+| `CanChangeGroupMembers` | `CanReadGroupDetails` | Add or remove group members. |
+| `CanEditGroupDisplayName` | `CanReadGroupDetails` | Change a group's display name. |
+| `CanDeleteGroup` | `CanReadGroupDetails` | Delete a group. |
+| `CanSeeRealmJoinGroupSettings` | `CanReadGroupDetails` | See the [RealmJoin Client settings](../../../ugd-management/user-and-group-settings/) assigned to a group. |
+| `CanChangeRealmJoinGroupSettings` | `CanSeeRealmJoinGroupSettings` | Add, modify or delete the RealmJoin Client settings assigned to a group. |
+| `CanReadGroupSettingTable` | — | See the list of [group settings](../../../ugd-management/user-and-group-settings/) across all groups. |
+| `CanReadGroupSettingDetails` | — | Inspect all group settings' details. |
+| `CanSeeGroupJsonAzureAD`, `CanSeeGroupJsonRealmJoin` | `CanReadGroupDetails` | See diagnostic JSON for a group. Only shown when *Show advanced info* is enabled in [Settings](../../general.md). |
+| `CanSeeOwnGroups` | — | Allow a (non-external) user to see the groups and teams they are a member of. |
 
 ## Device Management
 
-### CanReadDeviceTable&#x20;
+Actions and operations on devices from [Device Details](../../../ugd-management/user-list/device-details.md).
 
-The user gains the ability to see the list of all [Entra ID devices](../../../ugd-management/user-list/).
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadDeviceTable` | — | See the list of all [Entra ID devices](../../../ugd-management/user-list/). |
+| `CanReadDeviceDetails` | — | Inspect an individual [device's details](../../../ugd-management/user-list/device-details.md). |
+| `CanSyncDevice` | — | Trigger an Intune sync for a managed Windows device. |
+| `CanScanDevice` | — | Trigger a Defender for Endpoint scan for a Windows device. |
+| `CanRequestDeviceLogs` | — | Trigger collection of "Extended Logs" for a device via RealmJoin Client. |
+| `CanChangeRealmJoinPrimaryUser` | — | Assign a different primary user in RealmJoin. |
+| `CanRotateIntuneManagedDeviceLocalCredentials` | — | Rotate the Intune-managed local administrator (Windows LAPS) credentials of a device. |
+| `CanRotateRecoveryKeys` | — | Rotate a device's disk-encryption recovery key (BitLocker on Windows, FileVault on macOS). |
+| `CanUseDeviceAnyDeskInterface` | — | Connect to a device using [AnyDesk AnyConnect](../../../realmjoin-agent/realmjoin-client/anydesk-integration/) from RealmJoin Portal. |
 
-### CanReadDeviceDetails&#x20;
+## Device Information
 
-The user gains the ability to inspect an individual [device's details](../../../ugd-management/user-list/device-details.md).
+Individual information panels/tabs shown on [Device Details](../../../ugd-management/user-list/device-details.md).
 
-### CanRequestDeviceLogs&#x20;
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanSeeDeviceHardwareInformation` | — | See a device's hardware information. |
+| `CanSeeDeviceIdentifierInformation` | — | See a device's identifiers. |
+| `CanSeeDeviceGroups` | — | See the groups a device is a member of. |
+| `CanSeeDeviceRealmJoinInformation` | — | See RealmJoin Client details for a device. |
+| `CanSeeDeviceNetworkInformation` | — | See network information for a device, including Delivery Optimization data if available. |
+| `CanSeeDeviceUsers` | — | See the device's logged-on user. *(Without it, users who can see device details can still see the device owner.)* |
+| `CanSeeDeviceAutopilotInformation` | — | See a device's Autopilot information (if present). |
+| `CanSeeDeviceSoftwarePackagesInstalled` | — | See the software packages installed on a device. |
+| `CanSeeDeviceSafeguardHold` | — | See [Safeguard Holds](https://learn.microsoft.com/en-us/windows/deployment/update/safeguard-holds) that prevent a Windows feature update. |
+| `CanSeeWindowsDeviceUpdatesEnrollmentState` | — | See a Windows device's update (Windows Update for Business) enrollment state. |
+| `CanSeeDeviceIntuneManagedLapsStatus` | — | See the Intune-managed LAPS status of a device. |
+| `CanSeeWarranty` | — | Use the [Warranty tab](../../../ugd-management/user-list/device-details.md#warranty) for a device. |
+| `CanSeeDeviceExternalLinks` | — | See links to Intune, Microsoft Entra, etc. for a device. |
+| `CanSeeUserAppCatalog` | — | See the App Catalog tab for a Windows device. |
+| `CanEndUserSeeDeviceStorageInformation` | — | Allow an end user to see storage information for their own device. |
+| `CanSeeDeviceJsonAtp`, `CanSeeDeviceJsonAutopilot`, `CanSeeDeviceJsonAzureAD`, `CanSeeDeviceJsonIntune`, `CanSeeDeviceJsonRealmJoin` | — | See diagnostic JSON tabs for a device. Only shown when *Show advanced info* is enabled in [Settings](../../general.md). |
 
-The user can trigger collecting "Extended Logs" for a device using RealmJoin Client .
+## Device Security
 
-<figure><img src="../../../.gitbook/assets/image (279).png" alt=""><figcaption><p>Request RealmJoin Client Logs</p></figcaption></figure>
-
-### CanScanDevice&#x20;
-
-The user can trigger a Defender for Endpoint scan for a Windows device.
-
-### CanSyncDevice&#x20;
-
-The user can trigger an Intune sync for a managed Windows device.
-
-### CanChangeRealmJoinPrimaryUser&#x20;
-
-Allow the user to assign a different primary user in RealmJoin.&#x20;
-
-{% hint style="info" %}
-When transferring a Windows device to a different user, you should wipe the device from Intune.&#x20;
-
-When a new user logs on after the wipe, this will update the Intune and RealmJoin primary user automatically.
-{% endhint %}
-
-### CanSeeDeviceAutopilotInformation&#x20;
-
-Allow the user to see a device's Autopilot information (if present)
-
-<figure><img src="../../../.gitbook/assets/image (250).png" alt="" width="354"><figcaption><p>Autopilot info</p></figcaption></figure>
-
-### CanSeeDeviceExtendedSecurityInformation
-
-Allow the user to see a device's extended sec. info from Defender for Endpoint - if available.
-
-<figure><img src="../../../.gitbook/assets/image (243).png" alt="" width="325"><figcaption><p>Extended Security Information</p></figcaption></figure>
-
-### CanSeeDeviceExternalLinks&#x20;
-
-Allow the user to see links to Intune, Microsoft Entra etc. Only useful if the user is allowed to use these portals.
-
-<figure><img src="../../../.gitbook/assets/image (275).png" alt=""><figcaption><p>Device External Links</p></figcaption></figure>
-
-### CanSeeDeviceJson...
-
-These permissions allow a user to see specific diagnostic information as JSON in separate tabs if "show advanced info" is enabled in [Settings](../../general.md).
-
-* CanSeeDeviceJsonAtp
-* CanSeeDeviceJsonAutopilot&#x20;
-* CanSeeDeviceJsonAzureAD&#x20;
-* CanSeeDeviceJsonIntune&#x20;
-* CanSeeDeviceJsonRealmJoin&#x20;
-
-### CanSeeDeviceNetworkInformation&#x20;
-
-Allow the user to see network information for a device if available.&#x20;
-
-&#x20;This will include "Delivery Optimization" information if available.&#x20;
-
-<figure><img src="../../../.gitbook/assets/image (233).png" alt="" width="337"><figcaption><p>Network Information</p></figcaption></figure>
-
-### CanSeeDeviceRealmJoinInformation&#x20;
-
-Allow the user to see RealmJoin Client details or a device.
-
-<figure><img src="../../../.gitbook/assets/image (126).png" alt="" width="375"><figcaption><p>RealmJoin Client Information</p></figcaption></figure>
-
-### CanSeeDeviceSafeguardHold&#x20;
-
-Allow the use to see the **Safeguard Holds** for a device.&#x20;
-
-Safeguard Holds indicate that a Windows device can not upgrade to a newer version of Windows.
-
-See [Safeguard Holds (Microsoft Docs)](https://learn.microsoft.com/en-us/windows/deployment/update/safeguard-holds).
-
-### CanSeeDeviceSecurityInformation&#x20;
-
-Allow the user to see a device's security state, especially **device compliance**.
-
-<figure><img src="../../../.gitbook/assets/image (266).png" alt="" width="332"><figcaption><p>Device Security Information</p></figcaption></figure>
-
-### CanSeeDeviceSecurityRecommendations and CanSeeDeviceSecurityVulnerabilities&#x20;
-
-RealmJoin Portal can pull security recommendations and vulnerabilities from the Microsoft Security Center. This permission allows a user to see these for a device respectively.
-
-<figure><img src="../../../.gitbook/assets/image (128).png" alt="" width="375"><figcaption><p>Security Vulnerability</p></figcaption></figure>
-
-<figure><img src="../../../.gitbook/assets/image (256).png" alt="" width="349"><figcaption><p>Security Recommendations</p></figcaption></figure>
-
-### CanSeeDeviceUsers&#x20;
-
-Allow the user to see the devices logged in user.
-
-{% hint style="warning" %}
-Be aware: If not given this permission, a user able to see the device's details can still see the device's owner.
-{% endhint %}
-
-### CanSeeWarranty&#x20;
-
-Allow the user to use the[ warranty tab](../../../ugd-management/user-list/device-details.md#warranty) for a device.
-
-### CanUseDeviceAnyDeskInterface
-
-Allow the user to use / connect to a device using [AnyDesk AnyConnect](../../../realmjoin-agent/realmjoin-client/anydesk-integration/) from RealmJoin Portal.
-
-<figure><img src="../../../.gitbook/assets/image (255).png" alt="" width="521"><figcaption><p>AnyConnect Remote Support</p></figcaption></figure>
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanSeeDeviceSecurityInformation` | — | See a device's security state, especially device compliance. |
+| `CanSeeDeviceExtendedSecurityInformation` | — | See extended security info from Defender for Endpoint (if available). |
+| `CanSeeDeviceSecurityRecommendations` | — | See Microsoft Security Center recommendations for a device. |
+| `CanSeeDeviceSecurityVulnerabilities` | — | See Microsoft Security Center vulnerabilities for a device. |
+| `CanSeeDeviceSecurityAlerts` | — | See security alerts for a device. |
+| `CanSeeBitLockerKeys` | — | View a device's BitLocker recovery keys. |
+| `CanSeeRecoveryKeys` | — | View a device's disk-encryption recovery keys (BitLocker/FileVault). |
 
 ## Organization
 
-### CanReadOrganizationDetails
-
-Allow the user to see / read the [Organization details](../../../ugd-management/organization-details.md).
-
-### CanSeeOrganizationJsonAzureAD
-
-These permissions allow a user to see specific diagnostic information as JSON in separate tabs if "show advanced info" is enabled in [Settings](../../general.md).
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadOrganizationDetails` | — | See the [Organization details](../../../ugd-management/organization-details.md). |
+| `CanSeeOrganizationJsonAzureAD` | — | See organization diagnostic JSON. Only shown when *Show advanced info* is enabled in [Settings](../../general.md). |
 
 ## Self Service Forms
 
-### CanReadSelfServiceFormsHistoryTable
-
-The user can see the list of recent [Self Service Forms](../../self-service-forms.md) submissions.
-
-### CanReadSelfServiceFormsHistoryDetails
-
-The user can inspect individual [Self Service Forms](../../self-service-forms.md) submission details and contents.
-
-### CanAddSelfServiceForms and CanDeleteSelfServiceForms
-
-**Given**:&#x20;
-
-* Self Service Forms are enabled for your tenant
-* User has access to [Settings](../../settings.md)
-
-The user can create new or delete Self Service Forms in [Settings->Self Service Forms](../../self-service-forms.md#settings-page) respectively.&#x20;
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadSelfServiceFormsHistoryTable` | — | See the list of recent [Self Service Forms](../../self-service-forms.md) submissions. |
+| `CanReadSelfServiceFormsHistoryDetails` | — | Inspect individual Self Service Forms submissions. |
+| `CanSeeSelfServiceForms` | — | See the configured Self Service Forms. |
+| `CanAddSelfServiceForms` | [Settings](../../settings.md) access | Create new [Self Service Forms](../../self-service-forms.md#settings-page). |
+| `CanEditSelfServiceForms` | [Settings](../../settings.md) access | Edit existing Self Service Forms. |
+| `CanDeleteSelfServiceForms` | [Settings](../../settings.md) access | Delete Self Service Forms. |
 
 ## Runbooks
 
-### CanSeeRunbooks
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanSeeRunbooks` | — | See the list of available runbooks (limited by object types the user can see and by [Runbook Permissions](../../../automation/runbooks/runbook-permissions.md)). Does not allow starting jobs. |
+| `CanRunRunbooks` | `CanSeeRunbooks` | Start runbook jobs. |
+| `CanEditRunbookSchedules` | `CanSeeRunbooks` | Create and manage [runbook schedules](../../../automation/runbooks/). |
+| `CanApproveRunbookExecution` | — | Approve runbook executions that require approval. |
+| `CanSyncRunbooksWithUpstream` | [Settings](../../settings.md) access | Sync runbooks from RealmJoin's shared repository. |
 
-The user can see the list of available runbooks, limited by:
+## Runbook Logs
 
-* Object types (Users/Groups/Devices/Org) the user can see
-* Runbooks as limited by [Runbook Permissions](../../../automation/runbooks/runbook-permissions.md)
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadRunbookTable` | — | See the [Runbook Logs](../../../automation/runbooks/runbook-logs/) list. |
+| `CanReadRunbookDetails` | `CanReadRunbookTable` | Inspect a Runbook Logs item and its output. |
 
-This does not grant the right to actually start Runbook jobs.
+## Remediation Scripts
 
-### CanRunRunbooks
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanSeeRemediationScripts` | — | See the [remediation scripts](../../../automation/remediation-scripts.md). |
+| `CanRunRemediationScripts` | `CanSeeRemediationScripts` | Run proactive remediation scripts. |
 
-The user can start Runbooks, if CanSeeRunbooks is given and the conditions listed there are met.
+## Device Health Scripts
 
-### CanEditRunbookSchedules
+Manage Intune [remediation / device health scripts](../../../automation/remediation-scripts.md).
 
-If the user is able to see Runbooks, he/she can create/manage [Runbook Schedules](../../../automation/runbooks/scheduling.md).
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadDeviceHealthScriptsTable` | — | See the list of device health scripts. |
+| `CanReadDeviceHealthScriptsDetails` | `CanReadDeviceHealthScriptsTable` | Inspect a device health script. |
+| `CanStageDeviceHealthScripts` | — | Stage / import device health scripts. |
+| `CanAssignDeviceHealthScripts` | — | Assign device health scripts to groups. |
+| `CanScheduleDeviceHealthScripts` | — | Schedule device health scripts. |
+| `CanDeleteDeviceHealthScripts` | — | Delete device health scripts. |
+
+## Notifications
+
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadNotificationTable` | — | See the list of [notifications](../../../realmjoin-agent/realmjoin-client/showing-notifications.md). |
+| `CanReadNotificationDetails` | `CanReadNotificationTable` | Inspect a notification. |
+
+## Templates
+
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadTemplateTable` | — | See the list of templates. |
+| `CanReadTemplateDetails` | `CanReadTemplateTable` | Inspect a template. |
+| `CanEditTemplate` | — | Edit a template. |
+| `CanDeleteTemplate` | — | Delete a template. |
+| `CanChangeTemplatePackages` | — | Change the packages contained in a template. |
+| `CanChangeTemplateTokens` | — | Change a template's tokens. |
+
+## Changelog
+
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadChangelogTable` | — | See the changelog list. |
+| `CanReadChangelogDetails` | `CanReadChangelogTable` | Inspect a changelog entry. |
+| `CanSeeChangelog` | — | See changelog information in the Portal. |
+
+## Profiles
+
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadProfileTable` | — | See the list of profiles. |
+| `CanReadProfileDetails` | `CanReadProfileTable` | Inspect a profile. |
+
+## Operations
+
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadOperationsTable` | — | See the operations list. |
+| `CanReadOperationsDetails` | `CanReadOperationsTable` | Inspect an operation. |
+
+## Networks & Delivery Optimization
+
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadNetworksTable` | — | See the networks list. |
+| `CanReadDONetworkTable` | — | See the Delivery Optimization networks list. |
+| `CanReadDONetworkDetails` | `CanReadDONetworkTable` | Inspect a Delivery Optimization network. |
 
 ## Logs
 
-### CanReadRunbookTable
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadLogsTable` | — | See the audit/log list. |
+| `CanReadLogDetails` | `CanReadLogsTable` | Inspect a log entry. |
 
-Allow a user to see the [Runbook Logs](../../../automation/runbooks/runbook-logs/) list.
+## Data Export
 
-### CanReadRunbookDetails
-
-Allow a user to inspect a [Runbook Logs](../../../automation/runbooks/runbook-logs/) item and output.
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadExportsTable` | — | Access the [Data Export](../../../analyze-and-export/data-export.md) page and download predefined exports. |
 
 ## Workplace Cloud Storage
 
-### CanSeeOrganizationBackgroundFiles, CanSeeOrganizationSignatureFiles, CanSeeOrganizationOtherFiles and CanReadFavoritesTable
+See, upload/edit and delete the different areas of [Workplace Cloud Storage](../../workplace-cloud-storage.md).
 
-View the named areas of Workplace Cloud storage.
-
-### CanUploadOrganizationBackgroundFiles, CanEditOrganizationSignatureFiles, CanUploadOrganizationOtherFiles and CanEditFavorites
-
-Upload resp. edit the named areas of Workplace Cloud storage.
-
-### CanDeleteOrganizationBackgroundFiles, CanDeleteOrganizationSignatureFiles, CanDeleteOrganizationOtherFiles and CanDeleteFavorites
-
-Delete files in the named areas of Workplace Cloud storage.
+| Permission | Requires | Description |
+| ---------- | -------- | ----------- |
+| `CanReadFavoritesTable` | — | View the Favorites list. |
+| `CanReadFavoritesDetails` | `CanReadFavoritesTable` | Inspect Favorites details. |
+| `CanEditFavorites` | — | Edit Favorites. |
+| `CanDeleteFavorites` | — | Delete Favorites. |
+| `CanSeeOrganizationBackgroundFiles` | — | View background image files. |
+| `CanUploadOrganizationBackgroundFiles` | — | Upload background image files. |
+| `CanDeleteOrganizationBackgroundFiles` | — | Delete background image files. |
+| `CanSeeOrganizationSignatureFiles` | — | View e-mail signature files. |
+| `CanEditOrganizationSignatureFiles` | — | Edit e-mail signature files. |
+| `CanDeleteOrganizationSignatureFiles` | — | Delete e-mail signature files. |
+| `CanSeeOrganizationOtherFiles` | — | View other organization files. |
+| `CanUploadOrganizationOtherFiles` | — | Upload other organization files. |
+| `CanDeleteOrganizationOtherFiles` | — | Delete other organization files. |
