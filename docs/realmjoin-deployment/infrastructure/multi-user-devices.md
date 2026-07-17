@@ -1,97 +1,132 @@
 ---
 type: Deployment Guide
-description: >-
-  Provision multi-user devices with the Device Enrollment Manager (DEM) and enable
-  self-service installs via RealmJoin Client.
+description: Provision multi-user devices with RealmJoin Agent-based software deployment.
 ---
 
 # Multi User Devices
 
-Multi-User Devices allow an administrator to provision devices intended to be used by more than one user. A tool for Multi-User Devices is **Device Enrollment Manager** (short DEM).
+This article describes the approach for deploying and managing **Intune Multi-User Devices** using **Windows Autopilot Self-Deployment** combined with a **RealmJoin DEM (Device Enrollment Manager) account**.
 
-DEM is an Intune permission that can be applied to an Azure Active Directory user account and lets the user enroll up to 1,000 devices. A DEM account is useful for scenarios where devices are enrolled and prepared before handing them out to the users of the devices.
+The concept allows administrators to:
 
-RealmJoin Client can be used to allow self-service software installations on Multi-User Devices.
+* Provision devices **without assigning** a real **user** during **Autopilot/Intune enrollment**
+* Use a dedicated **RealmJoin DEM account** to establish the **Primary User**
+* **Deploy packages** and ensure that updates are applied reliably on shared devices
 
-## Licenses
+## Concept
 
-Devices enrolled by DEM accounts need to be licensed. Therefore, each DEM account needs an Intune user or device license assigned.
+* Deploy the device using **Windows Autopilot Self-Deployment Mode** - this completes Autopilot provisioning without a user assigned.
+* **Sign in initially** using a dedicated **RealmJoin DEM account**.
+  * The DEM account is identified through a dedicated group that is marked as a special Multi-User Device account type in the RealmJoin database.
+* RealmJoin automatically sets this DEM account as the **Primary User** of the device.
+* **Assign** required **RealmJoin packages** using one of the supported assignment methods to make them available all users on the shared device.
 
-Example:
+## Requirements
 
-* Enterprise Mobility + Security (user license) or
-* A simple device license
+### Intune Autopilot Enrollment
 
-![](<../../.gitbook/assets/spaces_-LoFsqW9gZ0AjMnSuPaT_uploads_git-blob-47c2a54892a3e4fa7b50f6cc14d1c3fb376dcefb_dem1 (1).png>)
+Choose deployment mode "Self-Deploying" for enrolling those shared devices:
 
-## Preparations
+<figure><img src="../../.gitbook/assets/image (268).png" alt=""><figcaption></figcaption></figure>
 
-Before you can start with a device enrollment you have to do some preparations.
+### RealmJoin DEM account (or multiple)
 
-### Create DEM User
+Create a corresponding service account. The account:
 
-Create a generic user account that is not assigned to a real person. Please make sure that this account never gets deleted. In that case, enrolled devices will not stay under management anymore. Assign a suitable Intune license as described before.
+* Must be licensed appropriately (e.g. Intune License)
+* Must remain available for the lifetime of the shared devices
+* Should be added to the following dedicated DEM group
 
-![](<../../.gitbook/assets/spaces_-LoFsqW9gZ0AjMnSuPaT_uploads_git-blob-d9ea0b7aef42bb8e641fd934ae909a57f19a7b92_dem2 (1).png>)
+### RealmJoin DEM Group
 
-### Create User Group for DEM Accounts
+Create a dedicated group **containing all DEM accounts** to represent shared device enrollment accounts.
 
-A new user group is necessary that contains all DEM users. Ad one (e.g. **CFG - All multi-user device accounts DEM**) and assign the previously created user.
+{% hint style="info" %}
+Once created, please send the **Object ID** of the group to our **RJ support**. We will flag this special group in our backend.
+{% endhint %}
 
-![](<../../.gitbook/assets/spaces_-LoFsqW9gZ0AjMnSuPaT_uploads_git-blob-aa7ab331b291cec2a175fc45db6c7d114c817fa7_dem3 (1) (1).png>)
+### Package Assignment Options
 
-### Prepare Group
+Both options will **automatically change** the **default Script Restrictions** - so that, **secondary users** can **install/update software packages** **assigned** to the **shared device or DEM user**.
 
-In **Intune** the following actions are necessary for that group:
+#### Option A: Assign Packages to Devices
 
-* Assign compliance policies and device configurations (that should apply for these devices)
-* Assign Intune distributed apps (e. g. RealmJoin Installer)
-* Check if DEM group can enroll and register new devices in Intune/Entra ID (e. g. enrollment restrictions and Entra ID Join)
+Packages are **assigned directly to devices** (e.g. put a shared device in corresponding RJ app group).
 
-The following steps must be done in **RealmJoin**
+{% hint style="info" %}
+Please ask RJ support, if **device assignment feature** is active in your tenant.
+{% endhint %}
 
-* Add RealmJoin configuration policies to that group
-* Add Software packages (that should be installed when the device is set up by DEM account)
-* Let RealmJoin mark this group as **Primary Users** (obtain Entra ID Object ID)
+#### Option B: Assign Packages to DEM Users
 
-## Device Setup
+Packages can alternatively be **assigned directly to the DEM user account**. Secondary users will automatically inherit assigned software. For this, a DEM account per use-case might be useful.
 
-A new and clean device will be set up with the DEM user account created before:
+## Recommendations
 
-![](<../../.gitbook/assets/spaces_-LoFsqW9gZ0AjMnSuPaT_uploads_git-blob-578ad5cd4ba355fca1a666221331513599318cfa_dem5 (1).png>)
+### Package Settings
 
-Depending on configuration second factor authentication will be enforced:
+{% hint style="info" %}
+Because multi-user devices are typically used for relatively short sessions, the opportunity to perform package installations and updates during regular operation is limited. To **ensure** that **software deployments and updates** are **processed** as **quickly** and **reliably** as possible, we **strongly recommend** applying the following **settings**.
 
-![](<../../.gitbook/assets/spaces_-LoFsqW9gZ0AjMnSuPaT_uploads_git-blob-02a403937e7746d021079b8e52cef29d6145c65c_dem6 (1).png>)
+You can scope them to the **RealmJoin DEM group**.
+{% endhint %}
 
-Device enrollment and provisioning will start:
+| Setting                                            | Value  | Description                                                                                                                                                                             |
+| -------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `SoftwarePackageOverrides.AllowBackgroundInstall`  | `true` | Executes **package updates/installations directly** after **config updates**.                                                                                                           |
+| `SoftwarePackageOverrides.IgnorePhaseRestrictions` | `true` | Overrides package phase restrictions and enables all phases, including **Logon**. This allows pending software installations and updates to be processed **directly after user logon**. |
 
-![](<../../.gitbook/assets/spaces_-LoFsqW9gZ0AjMnSuPaT_uploads_git-blob-ee84cba5c366ade4e57c27b5f0c868d7968dae9e_dem7 (1) (1) (1) (1) (1).png>)
+Reference: [#global-override-of-software-package-behavior](../../ugd-management/user-and-group-settings/additional-settings.md#global-override-of-software-package-behavior "mention")
 
-Prompt for Windows Hello setup appears (depending on configuration):
+## Enrollment Flow
 
-![](<../../.gitbook/assets/spaces_-LoFsqW9gZ0AjMnSuPaT_uploads_git-blob-d2f944ba10dc06d977c35583d9c123b972fa1265_dem8 (1) (1).png>)
+{% stepper %}
+{% step %}
+### Preparations
 
-After that, RealmJoin will start and install the defined set of software for the DEM account:
+* [ ] Setup Autopilot "Self-Deploying" enrollment
+* [ ] Create RealmJoin DEM account
+* [ ] Create RealmJoin DEM group
+* [ ] Contact RJ support
+  * [ ] to mark "RealmJoin DEM group"
+  * [ ] verify that device assignment feature is active in your tenant
+* [ ] Assign desired packages
+{% endstep %}
 
-![](<../../.gitbook/assets/spaces_-LoFsqW9gZ0AjMnSuPaT_uploads_git-blob-db3e50950cdc154e9a54dd6f26280cee04d69a3e_dem9 (1).png>)
+{% step %}
+### Autopilot Self-Deploying
 
-When logging in via DEM account (primary user) the software should be installed:
+Device starts Autopilot enrollment  - the Intune Enrollment Status Page (ESP) runs through phases:
 
-![](<../../.gitbook/assets/spaces_-LoFsqW9gZ0AjMnSuPaT_uploads_git-blob-f59dd6e4b4073ec8485a48bb7a23bb0266f0f0ed_dem10 (1).png>)
+* Device preparation: e.g. Entra Join and Intune Onboarding
+* Device setup: **RealmJoin agent** has to be **installed in that phase**
+{% endstep %}
 
-## Secondary User Experience
+{% step %}
+### Windows Sign-in
 
-Secondary users are now able to log in:
+Windows waits for the first user sign-in. At this stage, the **dedicated RealmJoin DEM account must be used to log on**. RealmJoin will automatically detect the account and **assign** it as the **device's Primary User**.
 
-![](<../../.gitbook/assets/spaces_-LoFsqW9gZ0AjMnSuPaT_uploads_git-blob-5bae77229a33711fec36d362ca64e15572695694_dem11 (1).png>)
+{% hint style="info" %}
+Do not log on with another account than the DEM account. This would result in a wrong primary user assignment and multi-user device logic will not function.
+{% endhint %}
+{% endstep %}
 
-Software assigned and installed by DEM account should be available
+{% step %}
+### Autopilot completes
 
-Additional software can be installed by this secondary user:
+Rest of Autopilot enrollment runs through.
+{% endstep %}
 
-![](<../../.gitbook/assets/spaces_-LoFsqW9gZ0AjMnSuPaT_uploads_git-blob-00a6e4efde40c57f2ac2d4694ce3e3139fd21c11_dem13 (1).png>)
+{% step %}
+### Deployment of Packages
 
-![](<../../.gitbook/assets/spaces_-LoFsqW9gZ0AjMnSuPaT_uploads_git-blob-3e07ce7d949c749c80ed39867bf0f030fc5a5d63_dem14 (1).png>)
+RealmJoin starts initial phase and **deploys software assigned** to the **DEM account and/or shared device**.
+{% endstep %}
 
-![](<../../.gitbook/assets/spaces_-LoFsqW9gZ0AjMnSuPaT_uploads_git-blob-c83bb44f418d491bbe9ea18e1675b8efeb872148_dem15 (1).png>)
+{% step %}
+### Device is ready for other users
+
+Other users log-in. **Software** assigned to the DEM is **inherited** to them and packages assigned to the **device** are available, too.
+{% endstep %}
+{% endstepper %}
