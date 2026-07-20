@@ -41,6 +41,7 @@
 
 ## Application Management
 
+* [Deployment Methods: RealmJoin Agent vs. Intune](app-management/deployment-methods.md)
 * [Packages](app-management/packages/README.md)
   * [Package Store](app-management/packages/package-store/README.md)
     * [Package Subscription Options](app-management/packages/package-store/package-store-details.md)
