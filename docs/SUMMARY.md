@@ -48,6 +48,7 @@
     * [Package Migration](app-management/packages/package-store/package-migration.md)
   * [Package Management Overview](app-management/packages/package-management.md)
   * [Package Configuration and Assignments](app-management/packages/package-deployment.md)
+  * [Update Group](app-management/packages/update-group.md)
   * [Package Details](app-management/packages/package-details.md)
   * [Package Settings](app-management/packages/package-settings.md)
   * [Packaging Requests](app-management/packages/packaging-requests/README.md)

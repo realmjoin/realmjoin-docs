@@ -47,19 +47,9 @@ RealmJoin or Intune will uninstall the package from the assigned users and devic
 
 ### Update
 
-The Update group is created on demand. The Update group will automatically onboard loose installations of a software title into management. Devices will be removed from the group when the update is not required anymore. The group is managed by the RealmJoin portal and cannot be modified manually.
+The Update group is created on demand and automatically onboards loose installations of a software title into management, so that new versions — including security patches — also reach those devices. It is the mechanism that keeps Intune **Available** apps up to date, by temporarily assigning outdated devices as **Required**.
 
-Click [**Enable update group**](package-deployment.md#enable-additional-and-restore-default-groups) and a new Entra ID Group with the suffix "(update)" will be created. Software installations will be also assigned to this group. RealmJoin dynamically discovers installed copies of the software that are unmanaged and adds the devices to the group.
-
-Thus, new versions will also be installed on these devices to assert deployment of security patches across your environment.
-
-<figure><img src="../../.gitbook/assets/app-deploy-2.png" alt=""><figcaption><p>Update Group Enabled</p></figcaption></figure>
-
-{% hint style="info" %}
-Update eligibility is determined using Intune reporting data across the entire tenant. By default, the Update Group feature targets all reported devices. To restrict this to specific devices, assign the "Eligible for Update Group" permission to your desired device groups in the portal's settings.&#x20;
-
-Once this permission is assigned to at least one group, the feature will only process devices within those specific groups.
-{% endhint %}
+For details, see [Update Group](update-group.md).
 
 ### Exclude
 

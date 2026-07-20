@@ -28,6 +28,8 @@ redirects:
   other/troubleshooting/laps-issues/requested-laps-accounts-are-not-being-created: troubleshooting/laps-issues/requested-laps-accounts-are-not-being-created.md
   # Merged page
   analyze-and-export/general-data-export: analyze-and-export/data-export.md
+  # Promoted section to its own page
+  app-management/packages/package-deployment/update: app-management/packages/update-group.md
   # Renamed page
   automation/runbooks/runbook-changelog: automation/runbooks/release-notes.md
   # Removed pages

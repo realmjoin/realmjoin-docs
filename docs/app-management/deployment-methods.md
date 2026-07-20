@@ -70,7 +70,7 @@ The real value shows during provisioning: the [RealmJoin ESP](../realmjoin-agent
 
 ### Auto-upgrade for Available apps, not just mandatory ones
 
-When a newer version enters the channel, the RealmJoin Agent upgrades both **Required** *and* **Available** packages already installed on a device, directly. Intune can also bring assigned **Available** apps up to date, but only indirectly via the [Update group](packages/package-deployment.md#update). RealmJoin keeps self-service software patched to the same level as mandatory software out of the box, closing a common gap where optional apps drift out of date.
+When a newer version enters the channel, the RealmJoin Agent upgrades both **Required** *and* **Available** packages already installed on a device, directly. Intune can also bring assigned **Available** apps up to date, but only indirectly via the [Update group](packages/update-group.md). RealmJoin keeps self-service software patched to the same level as mandatory software out of the box, closing a common gap where optional apps drift out of date.
 
 ### Fine-grained control over *when* and *for whom*
 
@@ -82,7 +82,7 @@ Each package can define its **install phase** — after logon, only when the use
 
 ### Onboarding of existing installations
 
-The [**Update group**](packages/package-deployment.md#update) dynamically discovers copies of a software title that were installed outside of management and pulls those devices into the managed deployment. Newer versions — including security patches — then reach those machines too, so unmanaged installs stop being blind spots. The Update group is available for Intune deployment as well, but it is more tightly integrated with RealmJoin thanks to RealmJoin's richer software inventory, which detects installations more completely.
+The [**Update group**](packages/update-group.md) dynamically discovers copies of a software title that were installed outside of management and pulls those devices into the managed deployment. Newer versions — including security patches — then reach those machines too, so unmanaged installs stop being blind spots. The Update group is available for Intune deployment as well, but it is more tightly integrated with RealmJoin thanks to RealmJoin's richer software inventory, which detects installations more completely.
 
 ### Configurations, not just applications
 
