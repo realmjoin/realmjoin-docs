@@ -13,10 +13,6 @@ RealmJoin Packages are ready‑to‑use software packages provided through the R
 [package-store](package-store/)
 {% endcontent-ref %}
 
-{% content-ref url="deployment-methods.md" %}
-[deployment-methods.md](deployment-methods.md)
-{% endcontent-ref %}
-
 {% content-ref url="package-management.md" %}
 [package-management.md](package-management.md)
 {% endcontent-ref %}
