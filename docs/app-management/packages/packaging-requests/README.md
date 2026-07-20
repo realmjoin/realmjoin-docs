@@ -30,13 +30,13 @@ We invite customers to share their evaluation on whether an application can be p
 
 ## Request Types
 
-Three different PACKaaS requests are currently available: new package, update existing package and [organic packages](organic-packages.md).&#x20;
+Three different PACKaaS requests are currently available: new package, update existing package and [organic packages](organic-packages.md).
 
 ### New Packages
 
 If an application is not available in the RealmJoin Store, it can be requested for packaging via the RealmJoin Packaging Factory. A valid PACKaaS request must include:
 
-* **Application binaries**, which must always be uploaded for regular packaging requests (a download URL may be added for reference but is **not** sufficient).
+* **Application binaries**, which must always be uploaded for regular packaging requests (a download URL may be added for reference but is **not** sufficient). If there are multiple files, please use a zip container.&#x20;
 * **Documentation** describing all required configuration switches as command‑line parameters, registry keys, configuration files, or similar (screenshots are not accepted; PACKaaS does not include Scripting‑as‑a‑Service). Silent/unattended installation commands are always required.
 * **Packaging type selection**, specifying whether the application should be created as a _generic_ package (when no customer‑specific data is included) or as a _custom_ package (additional fees may apply). The Packaging Factory may change a request from generic to custom if justified; for example, when customer‑specific details are identified during processing. Customers will be informed of such changes before the request is completed.
 * **Contact email address**, which may differ from the currently authenticated user’s email.
@@ -48,7 +48,7 @@ If an application is not available in the RealmJoin Store, it can be requested f
 When you start a new package request, the form now highlights existing packages that match your input, helping you spot software that is already available in the RealmJoin Store and avoid duplicate requests.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/26-02-09-10_06_07_msedge.png" alt=""><figcaption><p>RealmJoin packaging request form for new requests. </p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/26-02-09-10_06_07_msedge.png" alt=""><figcaption><p>RealmJoin packaging request form for new requests.</p></figcaption></figure>
 
 ### Package Updates
 
@@ -65,11 +65,10 @@ Note: Additional switches, new parameters or configuration files for an existing
 
 Please note that:
 
-* all update and new package requests necessitate the provision of both binaries and documentation detailing the required command line parameters. Silent/unattended installation parameters are not optional and **must** be provided.&#x20;
-* if an update request does not entail changes from the previous version, the submission of new parameters is not required but need to be referred.&#x20;
-* the request creates a ticket. All communication will be handled in this ticket, and it will only be sent to the account that created it. **If this account does not have any active mailbox, the requester will not get any information.** The request form allows to set a new reply address in case an ADM account without mailbox is used to create the text. Once the ticket is created, the reply address can not and will not be changed.&#x20;
-* the software requester role can be assigned to any user group in the tenant, therefore, an ADM account may not be required.&#x20;
+* all update and new package requests necessitate the provision of both binaries and documentation detailing the required command line parameters. Silent/unattended installation parameters are not optional and **must** be provided.
+* if an update request does not entail changes from the previous version, the submission of new parameters is not required but need to be referred.
+* the request creates a ticket. All communication will be handled in this ticket, and it will only be sent to the account that created it. **If this account does not have any active mailbox, the requester will not get any information.** The request form allows to set a new reply address in case an ADM account without mailbox is used to create the text. Once the ticket is created, the reply address can not and will not be changed.
+* the software requester role can be assigned to any user group in the tenant, therefore, an ADM account may not be required.
 * organic packages and PACKaaS might be not available right away, please get in touch with support@realmjoin.com if a feature is missing
-* any incomplete request will be rejeceted.&#x20;
+* any incomplete request will be rejeceted.
 {% endhint %}
-
