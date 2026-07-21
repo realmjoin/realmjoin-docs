@@ -60,6 +60,27 @@ Other bits of information are presented as tags:
 
 ### Local Admin Management (LAPS)
 
+RealmJoin Portal can surface a device's local administrator credentials in two independent ways, and both can appear on the same device details page:
+
+* **RealmJoin LAPS (agent-based)** – RealmJoin's own Local Admin Password Solution, delivered by the [RealmJoin Client](../../realmjoin-agent/realmjoin-client/) and stored in your own Azure Key Vault.
+* **Intune LAPS integration** – retrieval of credentials that Microsoft's native **Windows LAPS** has backed up to Microsoft Entra ID, read directly from Microsoft Graph. No RealmJoin Client required.
+
+The two solutions are complementary. The table below summarizes the differences:
+
+|                             | RealmJoin LAPS (agent-based)                             | Intune LAPS integration                             |
+| --------------------------- | ------------------------------------------------------- | --------------------------------------------------- |
+| Credentials come from       | RealmJoin Client, stored in **your own** Azure Key Vault | **Windows LAPS**, backed up to Microsoft Entra ID   |
+| Requires the RealmJoin Client | Yes                                                     | No                                                  |
+| Account types               | **Emergency**, **Support** (on-demand) and **Privileged** | Single managed local admin account per device       |
+| Actions                     | Reveal password, request on-demand Support Account, renew | Reveal / copy password, rotate password             |
+| Platforms                   | Windows (and macOS)                                     | Windows and macOS                                   |
+
+{% hint style="info" %}
+RealmJoin LAPS is the more capable option — multiple account types, on-demand support accounts, forced rotations and your own Key Vault as the store. The **Intune LAPS integration** is aimed at tenants that already rely on Microsoft's native Windows LAPS and simply want to retrieve those credentials without leaving the Portal.
+{% endhint %}
+
+#### RealmJoin LAPS (agent-based)
+
 When combined with the [RealmJoin Client](../../realmjoin-agent/realmjoin-client/), RealmJoin Portal can help with support tasks on windows clients that need local admin permissions by offering on-demand support accounts on clients. In many cases this removes the need to grant local admin permissions to the primary user of the device just to solve a one-time need.
 
 ![LAPS management](<../../.gitbook/assets/image (241).png>)
@@ -75,6 +96,61 @@ Click the dots to reveal the password.
 The Support Account will automatically be removed after 12 hours.
 
 See the [LAPS documentation](../../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/) for more details.
+
+#### Intune LAPS integration
+
+If you manage local administrator passwords with Microsoft's native **Windows LAPS** — deployed through an Intune [account protection policy](https://learn.microsoft.com/intune/device-security/laps/deploy-policy) that backs the credential up to Microsoft Entra ID — RealmJoin Portal can read those credentials for you, so support staff don't have to switch to the Intune or Entra admin center.
+
+Unlike RealmJoin LAPS, this integration does **not** require the RealmJoin Client. The Portal simply reads whatever Windows LAPS has already backed up, via Microsoft Graph.
+
+When the prerequisites below are met, an **Intune Local Admin Management** section appears on the device details page. It lists:
+
+* **Username** – the local admin account name backed up from the device (Windows only; macOS does not report an account name).
+* **Last Updated** – when the password was last backed up or rotated.
+* **Expires** – when Windows LAPS will next rotate the password (Windows only).
+* **Password** – hidden by default. Select the eye icon to reveal it (it is shown briefly, then masked again automatically) or click the masked value to copy it straight to your clipboard.
+
+If your role allows it, a **Rotate Password** action is available. This asks Intune to generate and back up a fresh password; it is a request that Intune applies the next time the device processes it, not an instant change.
+
+{% hint style="info" %}
+Retrieving or rotating an Intune LAPS password is audited — both within RealmJoin and in the Microsoft Entra / Intune audit logs.
+{% endhint %}
+
+{% hint style="warning" %}
+Credentials can only be shown when Windows LAPS backs the account up to **Microsoft Entra ID**. Passwords for accounts backed up to on-premises Active Directory cannot be displayed — the same limitation applies in the Intune admin center.
+{% endhint %}
+
+**Prerequisites**
+
+* The device is **Entra ID joined** and **enrolled in Intune**.
+* **Windows LAPS is configured in Intune** and the credential is backed up to Microsoft Entra ID. See Microsoft's [Windows LAPS support in Intune](https://learn.microsoft.com/intune/device-security/laps/overview) for setup. macOS devices are supported when enrolled via Automated Device Enrollment (ADE) with a LAPS-managed local account.
+* The **required Microsoft Graph permissions** are granted to the RealmJoin app registration. An administrator can grant these under **Organization ▸ Features**, in the **Optional: Intune LAPS** card:
+  * `DeviceLocalCredential.Read.All` – read Windows LAPS credentials.
+  * `DeviceManagementManagedDevices.PrivilegedOperations.All` – read macOS LAPS credentials **and** rotate passwords (this scope is also required to rotate a Windows password).
+
+If a device isn't Entra/Intune managed, or the Graph permissions aren't consented, the Intune Local Admin Management section simply doesn't appear.
+
+**Who can view and rotate**
+
+* **View** the Intune LAPS password: Tenant Admin, Global Admin, Tenant Supporter, Tenant Advanced Supporter and Tenant Auditor roles (as well as Entra Global Administrators).
+* **Rotate** the password: the same roles **except** Tenant Auditor — auditors can read credentials but not rotate them.
+
+**Self-service for end users**
+
+Users can be allowed to view (and optionally rotate) the Intune LAPS credential of a device they own — where they are the primary user or registered owner — using the `Allow.SelfLAPSIntune` user or group setting. This is the Intune counterpart to the agent-based [`Allow.SelfLAPS`](../../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/#enable-self-service) setting.
+
+The value can be:
+
+* a boolean `true` / `false` (an explicit `false` always wins),
+* a platform string `"windows"` or `"macos"` to grant access for that platform only, or
+* an object with `CanReadPassword` / `CanRotatePassword` (optionally platform-specific via `CanReadPasswordWindows`, `CanRotatePasswordWindows`, `CanReadPasswordMacOS`, `CanRotatePasswordMacOS`).
+
+```json
+{
+  "CanReadPassword": true,
+  "CanRotatePassword": false
+}
+```
 
 ### Recovery Keys
 
