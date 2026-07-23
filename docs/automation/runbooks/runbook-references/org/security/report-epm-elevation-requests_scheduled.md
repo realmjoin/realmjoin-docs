@@ -6,7 +6,10 @@ description: Generate report for Endpoint Privilege Management (EPM) elevation r
 ## Description
 Queries Microsoft Intune for EPM elevation requests with flexible filtering options.
 Supports filtering by multiple status types and time range.
-Sends an email report with summary statistics and detailed CSV attachment.
+Sends an email report with summary statistics and detailed report file attachments.
+The report files can also be uploaded to an Azure Storage Account, returning time-limited download links.
+The ReportFileFormat parameter controls which file formats are generated and delivered (CSV only, CSV & XLSX, or XLSX only).
+When the CSV attachment exceeds the email size limit and "CSV & XLSX" is selected, the email falls back to the Excel workbook alone.
 
 ## Setup regarding email sending
 
@@ -124,6 +127,66 @@ The sender email address. This needs to be configured in the runbook customizati
 | Required | false |
 | Default Value |  |
 | Type | String |
+
+### ReportFileFormat
+
+Controls which report file formats are generated and delivered: "CSV only", "CSV & XLSX" (default) or "XLSX only".
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | CSV & XLSX |
+| Type | String |
+
+### CreateDownloadLink
+
+If enabled, the report files are uploaded to an Azure Storage Account and time-limited download links are returned. Disabled by default.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | False |
+| Type | Boolean |
+
+### ContainerName
+
+Storage container name used for the upload. Configured per runbook (not a global RJReport setting).
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | report-epm-elevation-requests |
+| Type | String |
+
+### ResourceGroupName
+
+Resource group that contains the storage account. Sourced from the RJReport tenant settings.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### StorageAccountName
+
+Storage account name used for the upload. Sourced from the RJReport tenant settings.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### LinkExpiryDays
+
+Number of days until the generated download link expires. Sourced from the RJReport tenant settings.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | 6 |
+| Type | Int32 |
 
 
 

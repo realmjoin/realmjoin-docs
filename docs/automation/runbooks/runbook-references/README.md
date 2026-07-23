@@ -49,6 +49,7 @@ Also the document for each runbook contains information about permissions, where
   - [Set Primary User](device/general/set-primary-user.md)
   - [Unenroll Updatable Assets](device/general/unenroll-updatable-assets.md)
   - [Wipe Device](device/general/wipe-device.md)
+  - [Wipe Managed App Data](device/general/wipe-managed-app-data.md)
 - [Security](device/README.md#device-security)
   - [Check Defender Status](device/security/check-defender-status.md)
   - [Enable Or Disable Device](device/security/enable-or-disable-device.md)
@@ -84,7 +85,9 @@ Also the document for each runbook contains information about permissions, where
 
 - [Applications](org/README.md#org-applications)
   - [Add Application Registration](org/applications/add-application-registration.md)
+  - [Add Gsa Application Registration](org/applications/add-gsa-application-registration.md)
   - [Delete Application Registration](org/applications/delete-application-registration.md)
+  - [Delete Gsa Application Registration](org/applications/delete-gsa-application-registration.md)
   - [Export Enterprise Application Users](org/applications/export-enterprise-application-users.md)
   - [List Inactive Enterprise Applications](org/applications/list-inactive-enterprise-applications.md)
   - [Report Application Registration](org/applications/report-application-registration.md)
@@ -101,11 +104,11 @@ Also the document for each runbook contains information about permissions, where
   - [Get Bitlocker Recovery Key](org/devices/get-bitlocker-recovery-key.md)
   - [Notify Users About Stale Devices (Scheduled)](org/devices/notify-users-about-stale-devices_scheduled.md)
   - [Outphase Devices](org/devices/outphase-devices.md)
-  - [Report Devices Without Primary User](org/devices/report-devices-without-primary-user.md)
+  - [Report Devices Without Primary User (Scheduled)](org/devices/report-devices-without-primary-user_scheduled.md)
   - [Report Primary User Mismatch (Scheduled)](org/devices/report-primary-user-mismatch_scheduled.md)
   - [Report Stale Devices (Scheduled)](org/devices/report-stale-devices_scheduled.md)
-  - [Report Users With More Than 5-Devices](org/devices/report-users-with-more-than-5-devices.md)
-  - [Report Windows Devices Without Autopilot](org/devices/report-windows-devices-without-autopilot.md)
+  - [Report Users With More Than 5-Devices (Scheduled)](org/devices/report-users-with-more-than-5-devices_scheduled.md)
+  - [Report Windows Devices Without Autopilot (Scheduled)](org/devices/report-windows-devices-without-autopilot_scheduled.md)
   - [Sync Device Serialnumbers To Entraid (Scheduled)](org/devices/sync-device-serialnumbers-to-entraid_scheduled.md)
 - [General](org/README.md#org-general)
   - [Add Devices Of Users To Group (Scheduled)](org/general/add-devices-of-users-to-group_scheduled.md)
@@ -143,6 +146,7 @@ Also the document for each runbook contains information about permissions, where
   - [Report Pim Activations (Scheduled)](org/general/report-pim-activations_scheduled.md)
   - [Sync All Devices](org/general/sync-all-devices.md)
   - [Sync Apple Tokens](org/general/sync-apple-tokens.md)
+  - [Sync Channel Or Group Members (Scheduled)](org/general/sync-channel-or-group-members_scheduled.md)
   - [Sync Shared Channel Owners (Scheduled)](org/general/sync-shared-channel-owners_scheduled.md)
 - [Mail](org/README.md#org-mail)
   - [Add Distribution List](org/mail/add-distribution-list.md)
@@ -172,6 +176,7 @@ Also the document for each runbook contains information about permissions, where
   - [Monitor Pending EPM Requests (Scheduled)](org/security/monitor-pending-epm-requests_scheduled.md)
   - [Notify Changed CA Policies](org/security/notify-changed-ca-policies.md)
   - [Report EPM Elevation Requests (Scheduled)](org/security/report-epm-elevation-requests_scheduled.md)
+  - [Sync MFA Secure Users To Group (Scheduled)](org/security/sync-mfa-secure-users-to-group_scheduled.md)
 
 ### User Runbooks
 

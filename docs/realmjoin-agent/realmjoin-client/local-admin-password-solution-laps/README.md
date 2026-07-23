@@ -125,10 +125,10 @@ Key `LocalAdminManagement.EmergencyAccount` (for common settings see [group sett
 
 ## Support account
 
-This account type can be configured for on-demand creation. It is designed for use in a limited time window of 12 hours in on-demand mode.
+This account type can be configured for on-demand creation. It is designed for use in a limited time window—12 hours by default—in on-demand mode. The expiration window can be adjusted per tenant in the _RealmJoin Portal_ (LAPS tenant configuration).
 
 {% hint style="danger" %}
-Support accounts and their profiles will be deleted 12 hours after requesting the account regardless of usage (after the support user has signed out). **All files will be permanently deleted.**
+Support accounts and their profiles will be deleted after the configured expiration window (12 hours by default) has elapsed since requesting the account, regardless of usage (after the support user has signed out). **All files will be permanently deleted.**
 {% endhint %}
 
 {% hint style="danger" %}
@@ -212,10 +212,6 @@ The value can also be pure boolean `true`/`false`. This may be used as a wildcar
 
 {% hint style="info" %}
 In the past it was recommended to set this setting to `true`. However, as we continue to expand RealmJoin, new account types will be added. It is therefore strongly recommended to migrate all `true` values to the more explicit object notation
-{% endhint %}
-
-{% hint style="info" %}
-Starting with **Portal v2026.29**, SelfLAPS can be scoped **per platform**, so you can grant self-service access to Windows and macOS devices independently.
 {% endhint %}
 
 A sample configuration may look like this:

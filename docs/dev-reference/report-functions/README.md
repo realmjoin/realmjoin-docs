@@ -11,3 +11,4 @@ This section documents the shared PowerShell helper functions available to Realm
 | --- | --- |
 | [Send-RjRbReportEmail](send-rjrbreportemail.md) | Sends branded HTML report emails via Microsoft Graph. Converts Markdown content to responsive HTML and delivers one email per recipient. |
 | [Publish-RjRbFilesToStorageContainer](publish-rjrbfilestostoragecontainer.md) | Uploads report files to Azure Blob Storage and returns time-limited SAS download links. |
+| [Export-RjRbXlsx](export-rjrbxlsx.md) | Exports objects to styled native Excel workbooks (.xlsx) without external module dependencies. Not yet part of the module — planned for the next release. |

@@ -7,7 +7,10 @@ description: Generate and email a license availability report based on threshold
 This runbook checks the license availability based on the transmitted SKUs and sends an email report if any thresholds are reached.
 Two types of thresholds can be configured. The first type is a minimum threshold, which triggers an alert when the number of available licenses falls below a specified number.
 The second type is a maximum threshold, which triggers an alert when the number of available licenses exceeds a specified number.
-The report includes detailed information about licenses that are outside the configured thresholds, exports them to CSV files, and sends them via email.
+The report includes detailed information about licenses that are outside the configured thresholds, exports them to CSV and/or Excel (xlsx) files, and sends them via email.
+The report files can also be uploaded to an Azure Storage Account, returning time-limited download links.
+The ReportFileFormat parameter controls which file formats are generated and delivered (CSV only, CSV & XLSX, or XLSX only).
+When the CSV attachment exceeds the email size limit and "CSV & XLSX" is selected, the email falls back to the Excel workbook alone.
 
 ## Runbook Customization
 
@@ -180,13 +183,74 @@ This needs to be configured in the runbook customization
 | Default Value |  |
 | Type | Object |
 
-### EmailTo
+### ReportFileFormat
 
-Recipient email address or comma-separated recipient list.
+Controls which report file formats are generated and delivered: "CSV only", "CSV & XLSX" (default) or "XLSX only".
 
 | Property | Value |
 | --- | --- |
-| Required | true |
+| Required | false |
+| Default Value | CSV & XLSX |
+| Type | String |
+
+### CreateDownloadLink
+
+If enabled, the report files are uploaded to an Azure Storage Account and time-limited download links are returned. Disabled by default.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | False |
+| Type | Boolean |
+
+### ContainerName
+
+Storage container name used for the upload. Configured per runbook (not a global RJReport setting).
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | report-license-assignment |
+| Type | String |
+
+### ResourceGroupName
+
+Resource group that contains the storage account. Sourced from the RJReport tenant settings.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### StorageAccountName
+
+Storage account name used for the upload. Sourced from the RJReport tenant settings.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### LinkExpiryDays
+
+Number of days until the generated download link expires. Sourced from the RJReport tenant settings.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | 6 |
+| Type | Int32 |
+
+### EmailTo
+
+If specified, an email with the report will be sent to the provided address(es).
+Can be a single address or multiple comma-separated addresses (string).
+
+| Property | Value |
+| --- | --- |
+| Required | false |
 | Default Value |  |
 | Type | String |
 

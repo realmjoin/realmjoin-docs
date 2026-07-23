@@ -4,7 +4,10 @@ description: Compare primary user assignments in Intune against RealmJoin for Wi
 ---
 
 ## Description
-For Windows managed devices, this scheduled report compares the primary user recorded in Intune against the primary user recorded in the RealmJoin customer API. It correlates the two datasets per device, flags any device where the primary user differs, and emails the differences with a CSV attachment.
+For Windows managed devices, this scheduled report compares the primary user recorded in Intune against the primary user recorded in the RealmJoin customer API. It correlates the two datasets per device, flags any device where the primary user differs, and emails the differences with CSV and/or Excel (xlsx) attachments.
+The report files can also be uploaded to an Azure Storage Account, returning time-limited download links.
+The ReportFileFormat parameter controls which file formats are generated and delivered (CSV only, CSV & XLSX, or XLSX only).
+When the CSV attachment exceeds the email size limit and "CSV & XLSX" is selected, the email falls back to the Excel workbook alone.
 
 ## Setup regarding email sending
 
@@ -137,11 +140,11 @@ Exclude devices that are members of this Entra device group from the report. Req
 
 ### EmailTo
 
-Recipient email address (or multiple comma-separated addresses) that should receive the report.
+If specified, an email with the report will be sent to the provided address(es). Can be a single address or multiple comma-separated addresses.
 
 | Property | Value |
 | --- | --- |
-| Required | true |
+| Required | false |
 | Default Value |  |
 | Type | String |
 
@@ -154,6 +157,66 @@ The sender email address. This is configured via the runbook customization setti
 | Required | false |
 | Default Value |  |
 | Type | String |
+
+### ReportFileFormat
+
+Controls which report file formats are generated and delivered: "CSV only", "CSV & XLSX" (default) or "XLSX only".
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | CSV & XLSX |
+| Type | String |
+
+### CreateDownloadLink
+
+If enabled, the report files are uploaded to an Azure Storage Account and time-limited download links are returned. Disabled by default.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | False |
+| Type | Boolean |
+
+### ContainerName
+
+Storage container name used for the upload. Configured per runbook (not a global RJReport setting).
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | report-primary-user-mismatch |
+| Type | String |
+
+### ResourceGroupName
+
+Resource group that contains the storage account. Sourced from the RJReport tenant settings.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### StorageAccountName
+
+Storage account name used for the upload. Sourced from the RJReport tenant settings.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+
+### LinkExpiryDays
+
+Number of days until the generated download link expires. Sourced from the RJReport tenant settings.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | 6 |
+| Type | Int32 |
 
 
 

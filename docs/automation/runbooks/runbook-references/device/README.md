@@ -23,6 +23,7 @@ Here you can find all Device Runbooks along with the available subcategories.
   - [Set Primary User](general/set-primary-user.md)
   - [Unenroll Updatable Assets](general/unenroll-updatable-assets.md)
   - [Wipe Device](general/wipe-device.md)
+  - [Wipe Managed App Data](general/wipe-managed-app-data.md)
 <a name='device-security'></a>
 ## Security
   - [Check Defender Status](security/check-defender-status.md)

@@ -58,6 +58,23 @@ or specifically:
 }
 ```
 
+Starting with **Portal v2026.29**, access can be scoped **per platform** (Windows/macOS). A platform-specific property overrides the generic `CanReadPassword`/`CanRotatePassword` for the matching device platform:
+
+```
+{
+  "CanReadPasswordWindows": true,
+  "CanRotatePasswordWindows": true,
+  "CanReadPasswordMacOS": true,
+  "CanRotatePasswordMacOS": false
+}
+```
+
+A plain string value acts like `true` for the matching platform only:
+
+```
+"windows"|"macos"
+```
+
 ### Configure BranchCache for RJ packages
 
 This setting changes BranchCache mode for **new** clients.

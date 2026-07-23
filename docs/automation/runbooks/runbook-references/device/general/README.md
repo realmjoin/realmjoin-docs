@@ -19,6 +19,7 @@ On this overview page you can find all Device Runbooks in the General subcategor
 - [Set Primary User](set-primary-user.md)
 - [Unenroll Updatable Assets](unenroll-updatable-assets.md)
 - [Wipe Device](wipe-device.md)
+- [Wipe Managed App Data](wipe-managed-app-data.md)
 
 [Back to Runbook Reference overview](../../README.md)
 

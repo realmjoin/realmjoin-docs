@@ -45,6 +45,7 @@ Please assign the following Entra ID roles to the managed identity
 * Application Developer
 * Cloud Device Administrator
 * Exchange Administrator
+* Intune Administrator
 * Teams Administrator
 * User Administrator
 
@@ -52,8 +53,9 @@ Please assign the following Entra ID roles to the managed identity
 
 Please grant the following Graph API-Permissions to the managed identity
 
-* `Application.Read.All`
+* `Application.ReadWrite.All`
 * `Application.ReadWrite.OwnedBy`
+* `AppRoleAssignment.ReadWrite.All`
 * `AuditLog.Read.All`
 * `BitlockerKey.Read.All`
 * `Channel.ReadBasic.All`
@@ -66,7 +68,7 @@ Please grant the following Graph API-Permissions to the managed identity
 * `DeviceManagementManagedDevices.PrivilegedOperations.All`
 * `DeviceManagementManagedDevices.ReadWrite.All`
 * `DeviceManagementServiceConfig.ReadWrite.All`
-* `Directory.Read.All`
+* `Directory.ReadWrite.All`
 * `Group.Create`
 * `Group.ReadWrite.All`
 * `GroupMember.ReadWrite.All`
@@ -82,6 +84,7 @@ Please grant the following Graph API-Permissions to the managed identity
 * `RoleManagement.Read.All`
 * `RoleManagement.Read.Directory`
 * `Team.Create`
+* `TeamMember.ReadWrite.All`
 * `TeamSettings.ReadWrite.All`
 * `User.ReadWrite.All`
 * `UserAuthenticationMethod.ReadWrite.All`
