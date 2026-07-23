@@ -69,6 +69,7 @@
   * [Runbook Naming Conventions](automation/runbooks/naming-conventions.md)
   * [Runbook Parameters](automation/runbooks/runbooks.md)
   * [Runbook Permissions](automation/runbooks/runbook-permissions.md)
+  * [Hybrid Runbook Worker](automation/runbooks/hybrid-runbook-worker.md)
   * [Runbook References](automation/runbooks/runbook-references/README.md)
     * [Overview](automation/runbooks/runbook-references/overview.md)
     * [Device Runbooks](automation/runbooks/runbook-references/device/README.md)
