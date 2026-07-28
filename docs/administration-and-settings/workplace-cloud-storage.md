@@ -37,9 +37,9 @@ Please contact RealmJoin support to activate this feature for your tenant.
 
 <figure><img src="../.gitbook/assets/image (291).png" alt=""><figcaption></figcaption></figure>
 
-3. Enable the setting "Allow enabling anonymous access on individual containers" needs to be enabled (tab "Advanced"). This is required for stored files like backgrounds which have to be accessible anonymously
+3. Enable the setting "Allow enabling anonymous access on individual containers" needs to be enabled (tab "Security"). This is required for stored files like backgrounds which have to be accessible anonymously
 
-<figure><img src="../.gitbook/assets/image (307).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 If the setting "Allow enabling anonymous access on individual containers" is not enabled during creation of the storage account, RealmJoin will display the error "Error uploading file. Please try again".\
