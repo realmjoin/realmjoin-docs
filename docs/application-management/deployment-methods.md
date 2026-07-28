@@ -1,9 +1,9 @@
 ---
 type: Application Management
 description: >-
-  Comparison of the two ways to deploy Windows packages with RealmJoin — native
-  Intune deployment (intunewin + Intune Management Extension) versus RealmJoin
-  Agent deployment — and the additional capabil
+  Comparison of native Intune deployment (intunewin + Intune Management
+  Extension) and RealmJoin Agent deployment for Windows packages — and the
+  additional capabilities the Agent adds.
 ---
 
 # Deployment Methods: RealmJoin Agent vs. Intune
