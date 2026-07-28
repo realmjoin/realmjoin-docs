@@ -8,29 +8,29 @@ description: Experience nearly load-free access to your data
 RealmJoin introduces a revamped search mechanism that enables real-time access to tenant data. This enhancement ensures efficient performance even for tenants with a large volume of user, device, and group objects.
 
 {% hint style="success" %}
-The Advanced Search experience is available for the Users-, Groups-, Devices- & Packages-Table. \
-Check out the Use Cases subpage for examples that help you get more value from your tenant data.&#x20;
+The Advanced Search experience is available for the Users-, Groups-, Devices- & Packages-Table.\
+Check out the Use Cases subpage for examples that help you get more value from your tenant data.
 {% endhint %}
 
-Tables can be searched using the _basic_ or the _advanced_ search feature.&#x20;
+Tables can be searched using the _basic_ or the _advanced_ search feature.
 
 {% hint style="info" %}
-<mark style="background-color:yellow;">**All searches have to be confirmed by either using the**</mark><mark style="background-color:yellow;">**&#x20;**</mark>_<mark style="background-color:yellow;">**enter key**</mark>_<mark style="background-color:yellow;">**&#x20;**</mark><mark style="background-color:yellow;">**or the**</mark>  <img src="../../.gitbook/assets/image (31) (1).png" alt="" data-size="line"> <mark style="background-color:yellow;">**symbol.**</mark>&#x20;
+<mark style="background-color:yellow;">**All searches have to be confirmed by either using the**</mark><mark style="background-color:yellow;">**&#x20;**</mark>_<mark style="background-color:yellow;">**enter key**</mark>_<mark style="background-color:yellow;">**&#x20;**</mark><mark style="background-color:yellow;">**or the**</mark> <img src="../../.gitbook/assets/image (379).png" alt="" data-size="line"> <mark style="background-color:yellow;">**symbol.**</mark>
 {% endhint %}
 
 ### Basic Search
 
-Basic Search uses the Graph API to directly query tenant data, providing real-time results.&#x20;
+Basic Search uses the Graph API to directly query tenant data, providing real-time results.
 
 Basic Search is always available as a fallback when Advanced Search is not. It also appears during the initial loading of the cached table, allowing users to search immediately—even before the cache is fully built.
 
 ### Advanced Search
 
-RealmJoin's advanced search feature uses caching and tokenization, making searches fast and reliable, and supports Unicode characters like Ø. This tokenization enables partial name searches, so a query like "Ma Mu" can locate a user named "Maren Müller".&#x20;
+RealmJoin's advanced search feature uses caching and tokenization, making searches fast and reliable, and supports Unicode characters like Ø. This tokenization enables partial name searches, so a query like "Ma Mu" can locate a user named "Maren Müller".
 
-Additionally, information not displayed in the table is also searchable, like post-codes or UPN.&#x20;
+Additionally, information not displayed in the table is also searchable, like post-codes or UPN.
 
-<figure><img src="../../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (380).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
 Please make sure to only use the "Reload-Button" in the top right corner if you are missing very recently added information from Entra / Intune.
@@ -82,7 +82,7 @@ Click [here](advanced-search-syntax.md) for more examples and sample use cases
 
 #### How often is the data cached?
 
-The table is cached on a schedule, currently set to 1 hour.&#x20;
+The table is cached on a schedule, currently set to 1 hour.
 
 #### Can I refresh the data manually?
 
@@ -90,11 +90,11 @@ In the top right corner of each table, there's a button to refresh the cached da
 
 #### Can other users use my refreshed data?
 
-The table is available for all users in the same RealmJoin portal instance. Thus, a triggered rebuild will do so for all those users.&#x20;
+The table is available for all users in the same RealmJoin portal instance. Thus, a triggered rebuild will do so for all those users.
 
 #### What is a RealmJoin portal instance?
 
-The RealmJoin portal has three different instances for load balancing and redundancy reasons.&#x20;
+The RealmJoin portal has three different instances for load balancing and redundancy reasons.
 
 #### How long will a rebuild/refresh of the advanced search take?
 

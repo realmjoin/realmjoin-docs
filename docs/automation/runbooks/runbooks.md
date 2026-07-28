@@ -1,19 +1,19 @@
 ---
 type: Automation Guide
 description: >-
-  RealmJoin runbook parameters such as TenantID and SubscriptionID that connect to
-  Azure Automation and enable process automation.
+  RealmJoin runbook parameters such as TenantID and SubscriptionID that connect
+  to Azure Automation and enable process automation.
 ---
 
 # Runbook Parameters
 
 ## Overview
 
-This page allows you to specify the components needed to interact with Azure Automation and enable the use of [Runbooks (Process Automation)](../runbooks/).
+This page allows you to specify the components needed to interact with Azure Automation and enable the use of [Runbooks (Process Automation)](./).
 
 ## Parameters
 
-![Runbook Integration Parameters](<../../.gitbook/assets/image (163).png>)
+![Runbook Integration Parameters](<../../.gitbook/assets/image (178).png>)
 
 ### TenantID
 
@@ -33,15 +33,15 @@ RealmJoin will create an application in your Azure environment called "RealmJoin
 
 Please provide the app's ClientID ("AppId") and ClientSecret, so that RealmJoin can authenticate against Azure Automation.
 
-Make sure, that you securely store the ClientSecret. It will not be readable after saving this dialogue. If you click "Reset Setup", the field will be reset/emptied.&#x20;
+Make sure, that you securely store the ClientSecret. It will not be readable after saving this dialogue. If you click "Reset Setup", the field will be reset/emptied.
 
 ### Branch
 
-RealmJoin maintains a public repository of shared runbooks at [https://github.com/realmjoin/realmjoin-runbooks](https://github.com/realmjoin/realmjoin-runbooks)&#x20;
+RealmJoin maintains a public repository of shared runbooks at [https://github.com/realmjoin/realmjoin-runbooks](https://github.com/realmjoin/realmjoin-runbooks)
 
-These runbooks are imported when you sync runbooks on the [General Settings](../../realmjoin-settings/general.md) page.&#x20;
+These runbooks are imported when you sync runbooks on the [General Settings](../../administration-and-settings/general.md) page.
 
-Currently there are different git branches in this repository.&#x20;
+Currently there are different git branches in this repository.
 
 * **production** - The main branch for production use. These runbooks are thoroughly tested, and we recommend using this branch.
 * **master** - Early / Insider versions runbooks. These should be usable at any given time but are less well tested.

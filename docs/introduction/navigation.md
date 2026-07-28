@@ -9,7 +9,7 @@ description: >-
 
 When you visit [RealmJoin Portal](https://portal.realmjoin.com), you will first be presented with an "About me" page.
 
-!["About me" page](<../.gitbook/assets/image (151).png>)
+!["About me" page](<../.gitbook/assets/image (166).png>)
 
 Your permissions level will determine what is visible within the navigation bar. These allow you to navigate to different areas of interest.
 
@@ -37,21 +37,21 @@ This will give you information and statistics about your Azure tenant, recent ap
 
 "Devices" includes all Entra ID joined clients as well as devices registered in Entra ID, like mobile phones.
 
-## [Application Management](../app-management/packages/README.md)
+## [Application Management](../application-management/packages/)
 
-### ![](../.gitbook/assets/packages.png) [Packages](../app-management/packages/package-management.md)
+### ![](../.gitbook/assets/packages.png) [Packages](../application-management/packages/package-management.md)
 
 The list of subscribed packages includes your checked in applications from RealmJoin's application store and gives you an overview about current versions and automation for each package.
 
-### ![](../.gitbook/assets/appstore.png) [Package Store](../app-management/packages/package-store/)
+### ![](../.gitbook/assets/appstore.png) [Package Store](../application-management/packages/package-store/)
 
 In the store you can search for and import ready-to-use generic application packages for Windows and macOS and get access to your requested custom application packages.
 
-### ![](<../.gitbook/assets/image (349).png>) [Software Report](../analyze-and-export/software-reporting.md)
+### ![](<../.gitbook/assets/image (410).png>) [Software Report](../analyze-and-export/software-reporting.md)
 
 The Software Report gives you an overview of the different versions of each deployed and found application on your devices.
 
-### ![](<../.gitbook/assets/image (158).png>) [Request Package](../app-management/packages/packaging-requests/)
+### ![](<../.gitbook/assets/image (173).png>) [Request Package](../application-management/packages/packaging-requests/)
 
 Request packages as generic applications for the store or custom packages for your environment. Please refer to the guidelines.
 
@@ -61,38 +61,38 @@ Request packages as generic applications for the store or custom packages for yo
 
 See the results and logfiles/output of recent [Process Automation](../automation/runbooks/) tasks
 
-### ![](<../.gitbook/assets/image (129).png>) [Remediation Scripts](../automation/remediation-scripts.md)
+### ![](<../.gitbook/assets/image (145).png>) [Remediation Scripts](../automation/remediation-scripts.md)
 
 Review and manage Intune Remediation Scripts and assignments. You can leverage premade templates from our repository and stage them into your Intune environment.
 
 ## Tools
 
-### ![](<../.gitbook/assets/image (350).png>) [Notifications](../realmjoin-agent/realmjoin-client/showing-notifications.md)
+### ![](<../.gitbook/assets/image (411).png>) [Notifications](../realmjoin-agent/realmjoin-client/showing-notifications.md)
 
 Configure Notifications that can be displayed on devices based on groups and timeframes.
 
-### ![](<../.gitbook/assets/image (351).png>) Favorites
+### ![](<../.gitbook/assets/image (412).png>) Favorites
 
 Use this tool to create JSON or XML files to configure browser favorites for Microsoft Edge and Google Chrome for Windows and macOS.
 
-### ![](<../.gitbook/assets/image (280).png>) [Self Service Form History](../realmjoin-settings/self-service-forms.md#review-submissions)
+### ![](<../.gitbook/assets/image (287).png>) [Self Service Form History](../administration-and-settings/self-service-forms.md#review-submissions)
 
 See a list of recent form submissions and review senders and submission contents.
 
-### ![](<../.gitbook/assets/image (194).png>) [Self Service Forms](../realmjoin-settings/self-service-forms.md#using-forms)
+### ![](<../.gitbook/assets/image (205).png>) [Self Service Forms](../administration-and-settings/self-service-forms.md#using-forms)
 
-Users can report incidents or request equipment using forms. See [Self Service Forms](../realmjoin-settings/self-service-forms.md) for more information.
+Users can report incidents or request equipment using forms. See [Self Service Forms](../administration-and-settings/self-service-forms.md) for more information.
 
-### ![](<../.gitbook/assets/image (153).png>) [AVD Templates](../realmjoin-deployment/infrastructure/avd-templates.md)
+### ![](<../.gitbook/assets/image (168).png>) [AVD Templates](../deployment/infrastructure/avd-templates.md)
 
 Use RealmJoin to prepare templates for AVD deployment.
 
 ## Other
 
-### ![](<../.gitbook/assets/image (204).png>) [Audit Logs](../logs/audit-log.md)
+### ![](<../.gitbook/assets/image (215).png>) [Audit Logs](../monitoring-and-logs/audit-log.md)
 
 Review and audit all actions done in RealmJoin Portal (synced to a Log Analytics Workspace in your Azure environment).
 
-### ![](../.gitbook/assets/settings.png) [RealmJoin Settings](../realmjoin-settings/settings.md)
+### ![](../.gitbook/assets/settings.png) [RealmJoin Settings](../administration-and-settings/settings.md)
 
 Configuration and customization of RealmJoin. This area is only available to RealmJoin Administrators.

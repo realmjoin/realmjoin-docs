@@ -16,7 +16,7 @@ In short, the following actions are required:
 
 ### End-User client
 
-Please host the end-user client on a **publicly available URL**. You can use [**RealmJoin's Workplace Cloud Storage Solution**](../../../realmjoin-settings/workplace-cloud-storage.md) for this, but it is not required.
+Please host the end-user client on a **publicly available URL**. You can use [**RealmJoin's Workplace Cloud Storage Solution**](../../../administration-and-settings/workplace-cloud-storage.md) for this, but it is not required.
 
 {% hint style="warning" %}
 A direct (public available) download from my.anydesk.com is not supported as it might be protected by services like Cloudflare.
@@ -32,17 +32,15 @@ Note, that **you are** **responsible** for **updating the version on a regular b
 
 #### Hosting the end-user client using RealmJoin WCS
 
-If you choose to host it using **RealmJoin's Workplace Cloud Storage Solution**, please first ensure the [feature is set up correctly](../../../realmjoin-settings/workplace-cloud-storage.md#setup). Then simply go to [https://portal.realmjoin.com/organization/other-files](https://portal.realmjoin.com/organization/other-files), upload your **EXE** and _copy the link_ and use that URL for the [configuration setting](customer-tasks.md#group-settings-for-end-user-client).
+If you choose to host it using **RealmJoin's Workplace Cloud Storage Solution**, please first ensure the [feature is set up correctly](../../../administration-and-settings/workplace-cloud-storage.md#setup). Then simply go to [https://portal.realmjoin.com/organization/other-files](https://portal.realmjoin.com/organization/other-files), upload your **EXE** and _copy the link_ and use that URL for the [configuration setting](customer-tasks.md#group-settings-for-end-user-client).
 
-<figure><img src="../../../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
-
-
+<figure><img src="../../../.gitbook/assets/image (376).png" alt=""><figcaption></figcaption></figure>
 
 ### Supporter client
 
 Please download your current supporter client (as MSI) and request it as a new RealmJoin software package via the package request formular under [portal.realmjoin.com](https://portal.realmjoin.com).
 
-<figure><img src="../../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (377).png" alt=""><figcaption></figcaption></figure>
 
 Once the package is ready assign it to the desired users/supporters. Old AnyDesk versions will be uninstalled automatically.
 
@@ -69,7 +67,7 @@ Use a JSON policy to **configure AnyDesk in the group settings**. The following 
 }
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (390).png" alt=""><figcaption></figcaption></figure>
 
 **Key**: Integration.AnyDesk.Ui\
 **Value**:
@@ -80,7 +78,7 @@ Use a JSON policy to **configure AnyDesk in the group settings**. The following 
 }
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (391).png" alt=""><figcaption></figcaption></figure>
 
 ## Back-End Integration
 
@@ -92,4 +90,4 @@ To enable the backend integration the following information is required:
 
 Send this information to [RealmJoin support](mailto:support@realmjoin.com) to have the integration activated.
 
-![Overview in the portal](<../../../.gitbook/assets/image (196).png>)
+![Overview in the portal](<../../../.gitbook/assets/image (207).png>)

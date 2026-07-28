@@ -7,25 +7,25 @@ description: >-
 
 # Data Export
 
-RealmJoin introduces an export functionality which enables you to work with your tenant data outside of the portal.&#x20;
+RealmJoin introduces an export functionality which enables you to work with your tenant data outside of the portal.
 
 ## General Exporting
 
-You can query the User, Group, Device and Package tables for your requested data and generate an OpenXML file containing the queried data with all columns.&#x20;
+You can query the User, Group, Device and Package tables for your requested data and generate an OpenXML file containing the queried data with all columns.
 
 Simply go to a table, perform your search and press the download button in the top right corner:
 
-<figure><img src="../.gitbook/assets/image (33) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (381).png" alt=""><figcaption></figcaption></figure>
 
 ## Export Use Case: Software Report
 
-You can query for specific software and packages in the [software report](https://portal.realmjoin.com/softwarereport/all) and get a resulting table of users or devices with the different installed versions.&#x20;
+You can query for specific software and packages in the [software report](https://portal.realmjoin.com/softwarereport/all) and get a resulting table of users or devices with the different installed versions.
 
-Clicking on an entry in the "Devices" or "Users" column will result in a pre-filtered table-view which can be easily exported via the export button shown in the screenshot above.&#x20;
+Clicking on an entry in the "Devices" or "Users" column will result in a pre-filtered table-view which can be easily exported via the export button shown in the screenshot above.
 
-This enables you to do evaluations on installed software and identify Devices and Users with outdated versions.&#x20;
+This enables you to do evaluations on installed software and identify Devices and Users with outdated versions.
 
-<figure><img src="../.gitbook/assets/image (34) (1).png" alt=""><figcaption><p>Overview of installed versions of Git for Windows</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (382).png" alt=""><figcaption><p>Overview of installed versions of Git for Windows</p></figcaption></figure>
 
 {% hint style="info" %}
 Find more information about Software Reporting with RealmJoin in the [Software Reporting Section](software-reporting.md).
@@ -35,7 +35,7 @@ Find more information about Software Reporting with RealmJoin in the [Software R
 
 In addition to ad-hoc table exports, RealmJoin Portal offers one-click Excel (.xlsx) downloads of key datasets for reporting and auditing. You will find the **General Data Export** section in the portal navigation. Each export is available as a one-click download.
 
-<figure><img src="../.gitbook/assets/image (356).png" alt=""><figcaption><p>Export section in the RealmJoin portal</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (419).png" alt=""><figcaption><p>Export section in the RealmJoin portal</p></figcaption></figure>
 
 ### Available Exports
 
@@ -136,16 +136,16 @@ Exports antivirus status information across all devices:
 
 Exports Windows software found on devices that was **not** installed via RealmJoin, aggregated per product with device and user counts. It also includes a best-effort match against your assigned Intune apps, to help you spot software that could be brought under management:
 
-| Column           | Description                                                            |
-| ---------------- | --------------------------------------------------------------------- |
-| Type             | Software type / source (e.g. `Windows: Appx`)                         |
-| Name             | Product name                                                          |
-| Publisher        | Publisher, taken from the software's signing certificate subject      |
-| Known as         | Normalized / friendly product name, when RealmJoin can map one        |
-| Versions         | Number of distinct versions found across all devices                  |
-| Devices          | Number of devices the product was found on                           |
-| Users            | Number of users associated with those devices                        |
-| Installations    | Total number of installations found                                   |
+| Column           | Description                                                                  |
+| ---------------- | ---------------------------------------------------------------------------- |
+| Type             | Software type / source (e.g. `Windows: Appx`)                                |
+| Name             | Product name                                                                 |
+| Publisher        | Publisher, taken from the software's signing certificate subject             |
+| Known as         | Normalized / friendly product name, when RealmJoin can map one               |
+| Versions         | Number of distinct versions found across all devices                         |
+| Devices          | Number of devices the product was found on                                   |
+| Users            | Number of users associated with those devices                                |
+| Installations    | Total number of installations found                                          |
 | Intune App Match | Whether the product could be matched to an assigned Intune app (best-effort) |
 
 {% hint style="info" %}

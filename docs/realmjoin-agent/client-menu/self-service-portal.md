@@ -1,8 +1,8 @@
 ---
 type: RealmJoin Agent
 description: >-
-  The RealmJoin Self-Service Portal lets users manage their devices, software, and
-  identity attributes via Entra ID single sign-on.
+  The RealmJoin Self-Service Portal lets users manage their devices, software,
+  and identity attributes via Entra ID single sign-on.
 ---
 
 # Self Service Portal
@@ -93,7 +93,7 @@ Since the installation is executed directly on the device in use, it is not poss
 
 For the first installation in each active session on the device, a confirmation dialog is presented to the user to prevent unwanted or accidental installations.
 
-<figure><img src="../../.gitbook/assets/image (357).png" alt=""><figcaption><p>Warning dialog</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (420).png" alt=""><figcaption><p>Warning dialog</p></figcaption></figure>
 
 {% hint style="warning" %}
 **Note:** After execution, the status update (e.g., "Installing" to "Success") may have a slight latency of a few seconds as the agent reports back to the portal.
@@ -124,7 +124,7 @@ The portal can be configured to host interactive forms. These allow users to req
 
 [Learn more about Self-Service Forms](https://docs.realmjoin.com/realmjoin-settings/self-service-forms)
 
-<figure><img src="../../.gitbook/assets/image (354).png" alt=""><figcaption><p>Self service forms</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (417).png" alt=""><figcaption><p>Self service forms</p></figcaption></figure>
 
 ## Application Packaging Requests
 
@@ -134,6 +134,6 @@ Users can request new application packages that is not yet in the official catal
 
 [Learn more about Packaging Requests](https://docs.realmjoin.com/app-management/packages/packaging-requests)
 
-<figure><img src="../../.gitbook/assets/image (355).png" alt=""><figcaption><p>Package request form</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (418).png" alt=""><figcaption><p>Package request form</p></figcaption></figure>
 
 ***

@@ -13,7 +13,7 @@ The **Modern Client Deployment Counter** for **LaMetric Time** is a lightweight,
 
 {% embed url="https://apps.lametric.com/apps/realmjoin/15767?apps_for=time" %}
 
-<figure><img src="../../.gitbook/assets/image (165).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (426).png" alt=""><figcaption></figcaption></figure>
 
 ### Setup Guide
 
@@ -29,15 +29,15 @@ Please request the required Secret via RealmJoin Support.
 
 Open the LaMetric mobile app and choose the desired device:
 
-<figure><img src="../../.gitbook/assets/image (183).png" alt="" width="172"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (427).png" alt="" width="172"><figcaption></figcaption></figure>
 
 Navigate to the **Apps** section and open "Market":
 
-<figure><img src="../../.gitbook/assets/image (187).png" alt="" width="206"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (428).png" alt="" width="206"><figcaption></figcaption></figure>
 
 Search for **RealmJoin** and **install:**
 
-<figure><img src="../../.gitbook/assets/image (193).png" alt="" width="188"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (429).png" alt="" width="188"><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -45,18 +45,18 @@ Search for **RealmJoin** and **install:**
 
 Open the recently opened App:
 
-<figure><img src="../../.gitbook/assets/image (217).png" alt="" width="251"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (430).png" alt="" width="251"><figcaption></figcaption></figure>
 
 Choose "Login":
 
-<figure><img src="../../.gitbook/assets/image (227).png" alt="" width="148"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (431).png" alt="" width="148"><figcaption></figcaption></figure>
 
 Enter:
 
 * Username = `lametric`
 * Password = **`API Secret`**
 
-<figure><img src="../../.gitbook/assets/image (257).png" alt="" width="296"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (432).png" alt="" width="296"><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}

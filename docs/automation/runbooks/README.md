@@ -7,7 +7,7 @@ description: Automate day-to-day operations in your environment.
 
 {% embed url="https://www.youtube.com/watch?v=TfL7xRasVUg" %}
 
-RealmJoin provides administrators with the ability to automate tasks by using [Azure Automation](https://learn.microsoft.com/en-us/azure/automation/overview) to execute [PowerShell Runbooks](https://docs.microsoft.com/en-us/azure/automation/automation-runbook-types#powershell-runbooks). &#x20;
+RealmJoin provides administrators with the ability to automate tasks by using [Azure Automation](https://learn.microsoft.com/en-us/azure/automation/overview) to execute [PowerShell Runbooks](https://docs.microsoft.com/en-us/azure/automation/automation-runbook-types#powershell-runbooks).
 
 Runbooks are scripts, automating tasks that normally must be executed by a support engineer / operator or administrator. Automating these tasks lowers the risk of manual error and allows better auditing of actions.
 
@@ -24,7 +24,7 @@ You can offer RealmJoin Portal to your support and administration teams to simpl
 
 ### Migration to PowerShell Runtime Environments
 
-RealmJoin is currently in the process of migrating from Windows PowerShell v5.1 to a PowerShell v7.4 [Runtime Environment](https://learn.microsoft.com/en-us/azure/automation/manage-runtime-environment).&#x20;
+RealmJoin is currently in the process of migrating from Windows PowerShell v5.1 to a PowerShell v7.4 [Runtime Environment](https://learn.microsoft.com/en-us/azure/automation/manage-runtime-environment).
 
 {% hint style="info" %}
 Make sure the "Runtime Environment" experience in your Automation Account is enabled.
@@ -44,7 +44,7 @@ Due to **varying process durations** that might cause errors like 404, please **
 You can use Azure Portal and use "Edit in Portal" on these runbooks to manually migrate them. Make sure to "publish" the runbooks for the change to take effect.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
 ## Common Runbooks
 
@@ -58,7 +58,7 @@ You can trigger a sync from the shared repository to your Azure Automation accou
 
 [https://portal.realmjoin.com/settings/general](https://portal.realmjoin.com/settings/general)
 
-![Trigger a sync of your runbooks](<../../.gitbook/assets/image (201).png>)
+![Trigger a sync of your runbooks](<../../.gitbook/assets/image (212).png>)
 
 Wait for the "Sync completed" message. Please keep the browser window open while the sync process is running.
 
@@ -66,7 +66,7 @@ As described in the [naming convention](naming-conventions.md) this will add, up
 
 ## Customization
 
-You can customize existing and new runbooks to your environment. For example, you can&#x20;
+You can customize existing and new runbooks to your environment. For example, you can
 
 * Use templates for common pieces of information, like office locations
 * Prefill / preconfigure parameters, like to not allow deleting user object when offboarding
@@ -84,7 +84,7 @@ See [Naming Conventions](naming-conventions.md) to learn about how runbooks are 
 
 Access/Permissions to use certain runbooks can be granularly given on a runbook level. For example, Runbook Permissions could help you:
 
-* Only allow access to this runbook to the 3rd level operators&#x20;
+* Only allow access to this runbook to the 3rd level operators
 * Only allow our VIP support crew to change the CEO's email address
 
 See [Runbook Permissions](runbook-permissions.md) for details on how to implement such rules in your environment.

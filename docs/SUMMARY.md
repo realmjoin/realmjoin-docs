@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Welcome](README.md)
+* [RealmJoin Documentation](README.md)
 
 ## Introduction
 
@@ -10,15 +10,15 @@
 
 ## Deployment
 
-* [Getting Started](realmjoin-deployment/getting-started/README.md)
-  * [Extended Guide](realmjoin-deployment/getting-started/extended-guide.md)
-* [Onboarding](realmjoin-deployment/onboarding-realmjoin-portal/README.md)
-  * [Advanced Setup](realmjoin-deployment/onboarding-realmjoin-portal/advanced-setup.md)
-* [Required Permissions](realmjoin-deployment/required-permissions.md "Portal Required Permissions")
-* [Infrastructure Considerations](realmjoin-deployment/infrastructure/README.md)
-  * [Limiting the Scope of RealmJoin Portal](realmjoin-deployment/infrastructure/limiting-the-scope-of-realmjoin-portal.md)
-  * [AVD Templates](realmjoin-deployment/infrastructure/avd-templates.md)
-* [Architecture Overview](realmjoin-deployment/architecture-overview.md)
+* [Getting Started](deployment/getting-started/README.md)
+  * [Extended Guide](deployment/getting-started/extended-guide.md)
+* [Onboarding](deployment/onboarding-realmjoin-portal/README.md)
+  * [Advanced Setup](deployment/onboarding-realmjoin-portal/advanced-setup.md)
+* [Required Permissions](deployment/required-permissions.md "Portal Required Permissions")
+* [Infrastructure Considerations](deployment/infrastructure/README.md)
+  * [Limiting the Scope of RealmJoin Portal](deployment/infrastructure/limiting-the-scope-of-realmjoin-portal.md)
+  * [AVD Templates](deployment/infrastructure/avd-templates.md)
+* [Architecture Overview](deployment/architecture-overview.md)
 
 ## User, Group & Device Management <a href="#ugd-management" id="ugd-management"></a>
 
@@ -41,21 +41,21 @@
 
 ## Application Management
 
-* [Deployment Methods: RealmJoin Agent vs. Intune](app-management/deployment-methods.md)
-* [Packages](app-management/packages/README.md)
-  * [Package Store](app-management/packages/package-store/README.md)
-    * [Package Subscription Options](app-management/packages/package-store/package-store-details.md)
-    * [Package Migration](app-management/packages/package-store/package-migration.md)
-  * [Package Management Overview](app-management/packages/package-management.md)
-  * [Package Configuration and Assignments](app-management/packages/package-deployment.md)
-  * [Update Group](app-management/packages/update-group.md)
-  * [Package Details](app-management/packages/package-details.md)
-  * [Package Settings](app-management/packages/package-settings.md)
-  * [Packaging Requests](app-management/packages/packaging-requests/README.md)
-    * [Packaging Roles & Responsibilities](app-management/packages/packaging-requests/packaging-roles-and-responsibilities.md)
-    * [Application Package Testing](app-management/packages/packaging-requests/application-package-testing.md)
-    * [Organic Packages](app-management/packages/packaging-requests/organic-packages.md)
-  * [Migration Guide: RealmJoin to Intune Managed Packages](app-management/packages/migration-guide-realmjoin-to-intune-managed-packages.md)
+* [Deployment Methods: RealmJoin Agent vs. Intune](application-management/deployment-methods.md)
+* [Packages](application-management/packages/README.md)
+  * [Package Store](application-management/packages/package-store/README.md)
+    * [Package Subscription Options](application-management/packages/package-store/package-store-details.md)
+    * [Package Migration](application-management/packages/package-store/package-migration.md)
+  * [Package Management Overview](application-management/packages/package-management.md)
+  * [Package Configuration and Assignments](application-management/packages/package-deployment.md)
+  * [Update Group](application-management/packages/update-group.md)
+  * [Package Details](application-management/packages/package-details.md)
+  * [Package Settings](application-management/packages/package-settings.md)
+  * [Packaging Requests](application-management/packages/packaging-requests/README.md)
+    * [Packaging Roles & Responsibilities](application-management/packages/packaging-requests/packaging-roles-and-responsibilities.md)
+    * [Application Package Testing](application-management/packages/packaging-requests/application-package-testing.md)
+    * [Organic Packages](application-management/packages/packaging-requests/organic-packages.md)
+  * [Migration Guide: RealmJoin to Intune Managed Packages](application-management/packages/migration-guide-realmjoin-to-intune-managed-packages.md)
 
 ## Automation
 
@@ -285,24 +285,24 @@
 
 ## Administration & Settings
 
-* [Settings Overview](realmjoin-settings/settings.md)
-* [General](realmjoin-settings/general.md)
-* [Roles and Permissions](realmjoin-settings/permission/README.md)
-  * [Pre-defined Roles](realmjoin-settings/permission/pre-defined-roles.md)
-  * [Custom Roles](realmjoin-settings/permission/custom-roles/README.md)
-    * [Available Permissions](realmjoin-settings/permission/custom-roles/available-permissions.md)
-  * [Implementing Privileged Identity Management (PIM) with RealmJoin Portal](realmjoin-settings/permission/implementing-privileged-identity-management-pim-with-realmjoin-portal.md)
-* [Group Namespaces](realmjoin-settings/groups.md)
-* [Workplace Cloud Storage](realmjoin-settings/workplace-cloud-storage.md)
-* [Self Service Forms](realmjoin-settings/self-service-forms.md)
-* [MSP & Advanced Features](administration/msp-and-advanced-features.md)
+* [Settings Overview](administration-and-settings/settings.md)
+* [General](administration-and-settings/general.md)
+* [Roles and Permissions](administration-and-settings/permission/README.md)
+  * [Pre-defined Roles](administration-and-settings/permission/pre-defined-roles.md)
+  * [Custom Roles](administration-and-settings/permission/custom-roles/README.md)
+    * [Available Permissions](administration-and-settings/permission/custom-roles/available-permissions.md)
+  * [Implementing Privileged Identity Management (PIM) with RealmJoin Portal](administration-and-settings/permission/implementing-privileged-identity-management-pim-with-realmjoin-portal.md)
+* [Group Namespaces](administration-and-settings/groups.md)
+* [Workplace Cloud Storage](administration-and-settings/workplace-cloud-storage.md)
+* [Self Service Forms](administration-and-settings/self-service-forms.md)
+* [MSP & Advanced Features](administration-and-settings/msp-and-advanced-features.md)
 * [Third-party integrations](administration-and-settings/third-party-integrations/README.md)
   * [LaMetric Time](administration-and-settings/third-party-integrations/lametric-time.md)
 
 ## Monitoring & Logs
 
-* [Connecting Azure Log Analytics Workspace](logs/log-analytics.md)
-* [Audit Log](logs/audit-log.md)
+* [Connecting Azure Log Analytics Workspace](monitoring-and-logs/log-analytics.md)
+* [Audit Log](monitoring-and-logs/audit-log.md)
 
 ## Developer Reference <a href="#dev-reference" id="dev-reference"></a>
 
@@ -319,24 +319,24 @@
 
 ## Security & Privacy
 
-* [Security & Privacy](security-and-privacy/README.md)
+* [Security & Privacy](security-and-privacy/security-and-privacy.md)
 
 ## Troubleshooting & FAQ
 
-* [FAQ](troubleshooting/faq.md)
-* [Troubleshooting](troubleshooting/README.md)
-  * [Package Installation Issues](troubleshooting/package-installation-issues/README.md)
-    * [Collecting Logfiles](troubleshooting/package-installation-issues/collecting-logfiles.md)
-    * [Logfiles Structure](troubleshooting/package-installation-issues/logfiles-structure.md)
-    * [Analysing chocolatey.log](troubleshooting/package-installation-issues/analysing-chocolatey.log.md)
-    * [Troubleshooting failed chocolatey packages](troubleshooting/package-installation-issues/troubleshooting-failed-chocolatey-packages.md)
-    * [Troubleshooting failed craft packages](troubleshooting/package-installation-issues/troubleshooting-failed-craft-packages.md)
-    * [Fixes for common issues](troubleshooting/package-installation-issues/fixes-for-common-issues.md)
-    * [Intunewin Debugging](troubleshooting/package-installation-issues/intunewin-debugging.md)
-  * [LAPS Issues](troubleshooting/laps-issues/README.md)
-    * [LAPS account passwords cannot be retrieved](troubleshooting/laps-issues/laps-account-passwords-cannot-be-retrieved.md)
-    * [Requested LAPS Accounts are not being created](troubleshooting/laps-issues/requested-laps-accounts-are-not-being-created.md)
-* [Offboarding](troubleshooting/offboarding.md)
+* [FAQ](troubleshooting-and-faq/faq.md)
+* [Troubleshooting](troubleshooting-and-faq/troubleshooting/README.md)
+  * [Package Installation Issues](troubleshooting-and-faq/troubleshooting/package-installation-issues/README.md)
+    * [Collecting Logfiles](troubleshooting-and-faq/troubleshooting/package-installation-issues/collecting-logfiles.md)
+    * [Logfiles Structure](troubleshooting-and-faq/troubleshooting/package-installation-issues/logfiles-structure.md)
+    * [Analysing chocolatey.log](troubleshooting-and-faq/troubleshooting/package-installation-issues/analysing-chocolatey.log.md)
+    * [Troubleshooting failed chocolatey packages](troubleshooting-and-faq/troubleshooting/package-installation-issues/troubleshooting-failed-chocolatey-packages.md)
+    * [Troubleshooting failed craft packages](troubleshooting-and-faq/troubleshooting/package-installation-issues/troubleshooting-failed-craft-packages.md)
+    * [Fixes for common issues](troubleshooting-and-faq/troubleshooting/package-installation-issues/fixes-for-common-issues.md)
+    * [Intunewin Debugging](troubleshooting-and-faq/troubleshooting/package-installation-issues/intunewin-debugging.md)
+  * [LAPS Issues](troubleshooting-and-faq/troubleshooting/laps-issues/README.md)
+    * [LAPS account passwords cannot be retrieved](troubleshooting-and-faq/troubleshooting/laps-issues/laps-account-passwords-cannot-be-retrieved.md)
+    * [Requested LAPS Accounts are not being created](troubleshooting-and-faq/troubleshooting/laps-issues/requested-laps-accounts-are-not-being-created.md)
+* [Offboarding](troubleshooting-and-faq/offboarding.md)
 * [Changelog](https://feedback.realmjoin.com/)
 
 ## Legal

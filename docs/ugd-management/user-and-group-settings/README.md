@@ -11,9 +11,9 @@ description: >-
 
 Settings can be used to control RealmJoin Client's behavior and configure features like [LAPS](../../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/).
 
-If settings have been created/assigned to users, you can review them under ![](<../../.gitbook/assets/image (162).png>) - User Settings
+If settings have been created/assigned to users, you can review them under ![](<../../.gitbook/assets/image (177).png>) - User Settings
 
-Accordingly, if settings have been applied to any group, including "**RealmJoin - All Users"**, these can be reviewed under ![](<../../.gitbook/assets/image (146).png>) - Group Settings.
+Accordingly, if settings have been applied to any group, including "**RealmJoin - All Users"**, these can be reviewed under ![](<../../.gitbook/assets/image (162).png>) - Group Settings.
 
 ## Tenant Default Values
 
@@ -31,7 +31,7 @@ To define a baseline channel for all users, set the RealmJoin Agent Channel to "
 
 ## Settings Editor
 
-<figure><img src="../../.gitbook/assets/image (229).png" alt=""><figcaption><p>Settings Editor</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (238).png" alt=""><figcaption><p>Settings Editor</p></figcaption></figure>
 
 Be aware: The value of the setting must be valid JSON, which includes singular values like `true` or strings (without brackets).
 

@@ -31,7 +31,7 @@ In other words, packages you already use keep working unchanged — only the eng
 
 The Native Choco Runtime is designed as a **drop-in replacement**:
 
-* Existing RealmJoin packages (including everything from the [Package Store](../../app-management/packages/package-store/)) install and uninstall the same way.
+* Existing RealmJoin packages (including everything from the [Package Store](../../application-management/packages/package-store/)) install and uninstall the same way.
 * Package arguments / params configured in the RealmJoin Portal continue to work.
 * The [RealmJoin Core Choco Extension](../recommended-packages.md#realmjoin-core-choco-extension) helper cmdlets used inside package scripts remain available.
 * [RealmJoin ESP](realmjoin-esp.md) / Autopilot are supported: on a fresh device with the native runtime enabled, `winchoco` packages are installed natively during enrollment, with their dependencies resolved automatically.
@@ -64,7 +64,7 @@ Open the settings of a RealmJoin **group** that contains a small set of pilot de
 {% step %}
 ### Validate your packages
 
-Let the pilot devices run their normal package assignments and upgrades. Confirm that installations succeed and check the logs if anything looks off (see [Package Installation Issues](../../troubleshooting/package-installation-issues/)).
+Let the pilot devices run their normal package assignments and upgrades. Confirm that installations succeed and check the logs if anything looks off (see [Package Installation Issues](../../troubleshooting-and-faq/troubleshooting/package-installation-issues/)).
 {% endstep %}
 
 {% step %}
@@ -75,7 +75,7 @@ Once you are confident, set `Chocolatey.UseNativeRuntime` to `true` as the **ten
 {% endstepper %}
 
 {% hint style="info" %}
-Configuration follows the same tenant-setting / group-override model as the other agent settings described under [General settings](../../realmjoin-settings/general.md) (for example the **Client Configuration** and **LAPS Configuration** tenant settings).
+Configuration follows the same tenant-setting / group-override model as the other agent settings described under [General settings](../../administration-and-settings/general.md) (for example the **Client Configuration** and **LAPS Configuration** tenant settings).
 {% endhint %}
 
 ## What is the default
@@ -117,7 +117,7 @@ Native runtime installs write a per-package log to:
 C:\ProgramData\RealmJoin\choco\logs\<package-id>\<timestamp>_<version>_<operation>.log
 ```
 
-(kept to the 10 most recent entries per package). This is separate from classic Chocolatey's `C:\ProgramData\chocolatey\logs\`. When collecting logs for a support request, include the `C:\ProgramData\RealmJoin\` folder as described in [Package Installation Issues](../../troubleshooting/package-installation-issues/).
+(kept to the 10 most recent entries per package). This is separate from classic Chocolatey's `C:\ProgramData\chocolatey\logs\`. When collecting logs for a support request, include the `C:\ProgramData\RealmJoin\` folder as described in [Package Installation Issues](../../troubleshooting-and-faq/troubleshooting/package-installation-issues/).
 
 ### File & path reference
 

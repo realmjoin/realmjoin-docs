@@ -258,9 +258,7 @@ This ensures US Supporters have permissions limited strictly to their intended t
    1. All-Users group must Restrict the Role USSupporters with an empty value (no Entra group object ID is added here). This is an implicit denial!
    2. US Users group must Restrict the Role USSupporters to the US Supporters Entra group object ID
 
-
-
-<figure><img src="../../.gitbook/assets/image (24) (1).png" alt=""><figcaption><p>Restricting US Support Staff to manage only US Users</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (371).png" alt=""><figcaption><p>Restricting US Support Staff to manage only US Users</p></figcaption></figure>
 
 Below the complete example for this scenario:
 
@@ -332,7 +330,7 @@ The following example describes the default behaviour if SchedulingEnabledRunboo
 
 This section contains a list of runbooks that will be blacklisted from being flagged as "schedulable". RealmJoin Port will not allow to assign / manage schedules for these runbooks. See [scheduling.md](scheduling.md "mention").
 
-A runbook present in both SchedulingEnabledRunbookPatterns and SchedulingDisabledRunbookPatterns will **not** be schedulable.&#x20;
+A runbook present in both SchedulingEnabledRunbookPatterns and SchedulingDisabledRunbookPatterns will **not** be schedulable.
 
 By default no runbooks are blacklisted. The following example just demonstrates the syntax:
 

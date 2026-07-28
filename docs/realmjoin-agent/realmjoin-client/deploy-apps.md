@@ -1,8 +1,8 @@
 ---
 type: RealmJoin Agent
 description: >-
-  RealmJoin Agent app notifications, including the customizable hero image, inform
-  users about package installations.
+  RealmJoin Agent app notifications, including the customizable hero image,
+  inform users about package installations.
 ---
 
 # RealmJoin App Notification
@@ -37,7 +37,7 @@ SoftwarePackaging.Toast
 
 {% hint style="warning" %}
 Please note that the filename must match the SHA-1 value of the hero image file.\
-Please generate it, rename the file and upload it afterwards to your desired Cloud Storage (You can also use the [RealmJoin WCS Feature](../../realmjoin-settings/workplace-cloud-storage.md))\
+Please generate it, rename the file and upload it afterwards to your desired Cloud Storage (You can also use the [RealmJoin WCS Feature](../../administration-and-settings/workplace-cloud-storage.md))\
 \
 Please also be aware of the file size and the image dimensions defined by Microsoft.
 {% endhint %}

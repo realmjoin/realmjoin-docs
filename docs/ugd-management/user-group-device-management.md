@@ -7,13 +7,13 @@ description: >-
 
 # Overview
 
-RealmJoin allows you to review and interact with Entra ID objects like users, groups and devices.&#x20;
+RealmJoin allows you to review and interact with Entra ID objects like users, groups and devices.
 
-It combines information from multiple sources such as Intune, Microsoft Defender, the Windows Autopilot service and sign-in security logs into one single view.&#x20;
+It combines information from multiple sources such as Intune, Microsoft Defender, the Windows Autopilot service and sign-in security logs into one single view.
 
 Use the [navigation](../introduction/navigation.md) to inspect your [tenant/organization](organization-details.md), [users, groups or devices](user-list/) and search and drill down across correlated objects and trigger [operations](../automation/runbooks/) directly in context.
 
-Users, Groups and Devices all have a list interface to find the object of interest and a [details page](user-list/user-details.md) for reviewing and interacting with each object individually.&#x20;
+Users, Groups and Devices all have a list interface to find the object of interest and a [details page](user-list/user-details.md) for reviewing and interacting with each object individually.
 
 The details pages share some common elements for all these areas:
 
@@ -28,9 +28,9 @@ Every object's detail page will show an overview of the core properties such as
 
 The object properties are static and be visible in any tab.
 
-![Core Object Properties](<../.gitbook/assets/image (83).png>)
+![Core Object Properties](<../.gitbook/assets/image (99).png>)
 
-The right side of the screen shows the current tab, which can be&#x20;
+The right side of the screen shows the current tab, which can be
 
 * "Overview" with more information about the object
 * "[Runbooks](user-group-device-management.md#runbooks)" showing available runbooks - as the name implies
@@ -49,6 +49,3 @@ RealmJoin Portal collects information from multiple sources. You can review the 
 Raw source data is only available to RealmJoin administrators.
 
 ![Raw JSON Source Data](<../.gitbook/assets/2022-02-07 json source.png>)
-
-
-

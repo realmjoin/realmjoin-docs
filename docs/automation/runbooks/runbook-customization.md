@@ -14,7 +14,7 @@ The RealmJoin runbook implementation offers customizing capabilities to a runboo
 * Present human readable explanations of parameters
 * Hide unneeded UI elements
 
-<figure><img src="../../.gitbook/assets/image (308).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (314).png" alt=""><figcaption></figcaption></figure>
 
 The customizations can be included in the runbook itself and/or stored in the customer's RealmJoin Portal instance. By default, we will try to offer sensible defaults in the runbooks offered on [GitHub](https://github.com/realmjoin/realmjoin-runbooks).
 

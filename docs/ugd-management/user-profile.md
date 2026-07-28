@@ -1,15 +1,15 @@
 ---
 type: User, Group & Device Management
 description: >-
-  The RealmJoin User Profile tab gives users quick access to their apps, account,
-  devices, and groups, with directory roles for admins.
+  The RealmJoin User Profile tab gives users quick access to their apps,
+  account, devices, and groups, with directory roles for admins.
 ---
 
 # User Profile
 
-![About Me - User](<../.gitbook/assets/image (205).png>)
+![About Me - User](<../.gitbook/assets/image (216).png>)
 
-The User Profile ![](<../.gitbook/assets/image (312).png>) tab allows users to quickly access resources they may need in a modern workplace environment, e.g.
+The User Profile ![](<../.gitbook/assets/image (317).png>) tab allows users to quickly access resources they may need in a modern workplace environment, e.g.
 
 * Microsoft's "My Applications" page to manage apps and services you have access to
 * Access to Microsoft's "My Account" page to manage authentication factors

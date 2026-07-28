@@ -11,9 +11,9 @@ description: >-
 
 ### Create an Application Registration
 
-We create an Azure Application Registration to simulate the application-style signin to Microsoft Entra.&#x20;
+We create an Azure Application Registration to simulate the application-style signin to Microsoft Entra.
 
-<figure><img src="../.gitbook/assets/image (53).png" alt=""><figcaption><p>Create an App Registration</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (69).png" alt=""><figcaption><p>Create an App Registration</p></figcaption></figure>
 
 ### Grant Permissions
 
@@ -29,7 +29,7 @@ cd "approle-and-directoryrole-granter\RealmJoinVnext"
 
 ### Create and Upload a Dev-Certificate
 
-See [here ](https://github.com/realmjoin/RealmJoin.RunbookHelper/blob/main/DevCertificates.ps1)for a sample on how to create a RunbookHelper Dev-Certificate. Replace `{Variables}` accordingly.&#x20;
+See [here ](https://github.com/realmjoin/RealmJoin.RunbookHelper/blob/main/DevCertificates.ps1)for a sample on how to create a RunbookHelper Dev-Certificate. Replace `{Variables}` accordingly.
 
 The `{AppID}` refers to the Application Regsitrations App / Client ID.
 
@@ -51,10 +51,10 @@ You can then select which the environment/certificate (e.g. "OtherEnv") to conne
 This way you can access multiple environments from the same machine.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (54).png" alt=""><figcaption><p>Certificate upload</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (70).png" alt=""><figcaption><p>Certificate upload</p></figcaption></figure>
 
 ### Usage
 
-Just use `Connect-RjRbGraph` to authenticate to the app.&#x20;
+Just use `Connect-RjRbGraph` to authenticate to the app.
 
-Make sure to remove older Dev-Certificates using mmc.exe  from your set of personal certificates if present to avoid conflicts/login failures.
+Make sure to remove older Dev-Certificates using mmc.exe from your set of personal certificates if present to avoid conflicts/login failures.

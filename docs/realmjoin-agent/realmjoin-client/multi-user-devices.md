@@ -3,7 +3,7 @@ type: Deployment Guide
 description: Provision multi-user devices with RealmJoin Agent-based software deployment.
 ---
 
-# Multi User Devices
+# Multi-user Shared Devices
 
 This article describes the approach for deploying and managing **Intune Multi-User Devices** using **Windows Autopilot Self-Deployment** combined with a **RealmJoin DEM (Device Enrollment Manager) account**.
 
@@ -27,7 +27,7 @@ The concept allows administrators to:
 
 Choose deployment mode "Self-Deploying" for enrolling those shared devices:
 
-<figure><img src="../../.gitbook/assets/image (268).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (433).png" alt=""><figcaption></figcaption></figure>
 
 ### RealmJoin DEM account (or multiple)
 

@@ -1,8 +1,8 @@
 ---
 type: RealmJoin Agent
 description: >-
-  Send scheduled, category-based desktop notifications to users from RealmJoin to
-  share information or important issues.
+  Send scheduled, category-based desktop notifications to users from RealmJoin
+  to share information or important issues.
 ---
 
 # Notifications
@@ -34,14 +34,14 @@ The notifications are transparent and are able to be clicked through to minimize
    * **Title**: The headline of your notification.
    * **Body**: The main content of your notification.
 
-<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
 ### Advanced Settings
 
 1. **Disable Click Through**: If enabled, users will not be able to click on the notification to navigate to a different page.
 2. **Disable Transparency**: If enabled, the notification window will not be transparent.
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
 Please note that these advanced options might affect the user experience, so use them wisely.
 
@@ -51,29 +51,29 @@ Effective notifications are concise, relevant, and timely. Always respect the us
 
 In order to publish a notification, the configured notification must first be saved as a draft.
 
-<figure><img src="../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
 Drafts will appear in the notification list with a yellow "Draft" tag.
 
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 
 Once a draft has been saved, the administrator will be prompted to either Publish or Delete.
 
-<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
 * **Publish:** Selecting Publish will prompt for an additional Confirm Publish button.\
-  ![](<../../.gitbook/assets/image (8) (1).png>)\
+  ![](<../../.gitbook/assets/image (30).png>)\
   Once notifications are sent out, they are not easily retrieved. Please make sure the notification is configured as intended prior to publishing.
 * **Delete:** Selecting Delete will prompt for an additional Confirm Delete button.\
-  ![](<../../.gitbook/assets/image (9) (1).png>)\
+  ![](<../../.gitbook/assets/image (31).png>)\
   Once messages are deleted, they cannot be recovered. They will be deleted after 30 days.
 
 ### Cancelling a Notification
 
 Once a notification has been published, administrators will have the option to cancel the notification.
 
-<figure><img src="../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
 Cancelling a notification will cause the notification to disappear from a user's device without their intervention. Cancelled notifications cannot be recovered, will be deleted after 30 days and appear in the notification list with a red "Cancelled" tag.
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>

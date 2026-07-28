@@ -27,25 +27,16 @@ The software reporting includes the following key details for each application f
   * **Appx**: Applications deployed via the Windows Store.
 * **Version Installed**: The specific version of the application that is installed on the device.
 
+<figure><img src="../.gitbook/assets/image (385).png" alt=""><figcaption><p>Software Report filtered on "Adobe Reader"</p></figcaption></figure>
 
+For each entry, all versions and all devices / users having the specific version installed can be displayed. The results are a filtered devices/user list, and can be exported for further usage (see [Data Export](https://docs.realmjoin.com/ugd-management/user-list/data-export)).
 
-<figure><img src="../.gitbook/assets/image (38) (1).png" alt=""><figcaption><p>Software Report filtered on "Adobe Reader"</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (386).png" alt=""><figcaption><p>All installed version of "Adobe Reader" in the company inventory</p></figcaption></figure>
 
-For each entry, all versions and all devices / users having the specific version installed can be displayed. The results are a filtered devices/user list, and can be exported for further usage (see [Data Export](https://docs.realmjoin.com/ugd-management/user-list/data-export)).&#x20;
-
-<figure><img src="../.gitbook/assets/image (39) (1).png" alt=""><figcaption><p>All installed version of "Adobe Reader" in the company inventory</p></figcaption></figure>
-
-<figure><img src="../.gitbook/assets/image (40) (1).png" alt=""><figcaption><p>All devices with the same version of "Adobe Reader" installed. May be exported to be further processed.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (387).png" alt=""><figcaption><p>All devices with the same version of "Adobe Reader" installed. May be exported to be further processed.</p></figcaption></figure>
 
 {% hint style="info" %}
-**Special Considerations:**&#x20;
+**Special Considerations:**
 
 **Applications with Auto-Updaters**: For applications that have an auto-update feature, the version reported as RealmJoin (Choco) reflects only the initially installed version. To obtain the most current version, it is necessary to also check the Win32 entry.
 {% endhint %}
-
-
-
-
-
-
-
