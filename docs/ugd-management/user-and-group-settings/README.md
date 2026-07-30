@@ -35,7 +35,11 @@ To define a baseline channel for all users, set the RealmJoin Agent Channel to "
 
 Be aware: The value of the setting must be valid JSON, which includes singular values like `true` or strings (without brackets).
 
-The switches in the lower half of the wizard allow scoping this setting to certain scenarios like VDI / Windows365 machines.
+The switches in the lower half of the wizard allow scoping this setting to certain scenarios like VDI / Windows365 machines. A setting that is filtered out by these switches behaves as if it had never been assigned:
+
+* **Only in VDI** / **Ignore in VDI** — apply the setting only on, or never on, VDI (W365/AVD) devices. The two switches are mutually exclusive.
+* **Only on hybrid-joined devices** / **Ignore on hybrid-joined devices** — apply the setting only on, or never on, hybrid-joined devices. These two are mutually exclusive as well.
+* **Ignore on private devices** — skip the setting on private devices (not Entra ID joined).
 
 You can modify and delete settings from the Settings Editor. You cannot create new settings here - Please navigate to the user or group you want a setting applied to and create the setting there.
 
