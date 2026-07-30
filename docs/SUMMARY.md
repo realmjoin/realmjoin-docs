@@ -280,6 +280,7 @@
   * [Native Choco Runtime](realmjoin-agent/realmjoin-client/native-choco-runtime.md)
   * [AnyDesk Integration](realmjoin-agent/realmjoin-client/anydesk-integration/README.md)
     * [AnyDesk configuration](realmjoin-agent/realmjoin-client/anydesk-integration/customer-tasks.md)
+  * [Advanced Telemetry](realmjoin-agent/realmjoin-client/advanced-telemetry.md)
 * [User Interface](realmjoin-agent/client-menu/README.md)
   * [RealmJoin Tray](realmjoin-agent/client-menu/realmjoin-tray.md)
   * [Self Service Portal](realmjoin-agent/client-menu/self-service-portal.md)
