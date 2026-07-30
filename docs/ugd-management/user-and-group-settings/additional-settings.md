@@ -9,7 +9,18 @@ description: >-
 
 The following article shows you a list of possible RealmJoin Client settings/policies. These can be configured and assigned per [user or group](../user-group-device-management.md).
 
+Each setting consists of a **key** and a **value**:
 
+* The key is a dot-separated path (for example `Integration.Notification`). RealmJoin merges the value into the client configuration at that path, on top of the [tenant-wide defaults](README.md#tenant-default-values).
+* The value must be valid JSON — including plain values such as `true` or `"release"` (quoted, without brackets).
+
+{% hint style="info" %}
+A value of `undefined` **removes** the key from the effective configuration. Use this to drop a value that a broader scope (tenant-wide client config or "RealmJoin - All Users") has set, instead of overwriting it with a different value.
+{% endhint %}
+
+{% hint style="info" %}
+The keys `Allow.*`, `Restrict.*` and `SoftwarePackageOverrides.*` are evaluated by the RealmJoin backend and are stripped from the configuration before it is sent to a device — they never reach the client.
+{% endhint %}
 
 ### Allow users to access RealmJoin LAPS for their devices
 
@@ -22,7 +33,7 @@ Allow.SelfLAPS
 **Value**
 
 ```
-"true"|"false"
+true | false
 ```
 
 or per account type
@@ -35,6 +46,16 @@ or per account type
 }
 ```
 
+See [Local Admin Password Solution (LAPS)](../../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/#enable-self-service) for the full self-service description.
+
+{% hint style="info" %}
+`Allow.*` settings do not follow the usual "narrower scope wins" precedence. All values assigned to the user and to their groups are combined, and an explicit `false` always wins over any `true`.
+{% endhint %}
+
+{% hint style="warning" %}
+`Allow.*` and `Restrict.*` are resolved against the user's **Entra ID group memberships**. Assigning them to the built-in "RealmJoin - All Users" group has no effect — use a real Entra ID group or assign them directly to the user.
+{% endhint %}
+
 ### Allow users to access Intune LAPS for their devices
 
 Users may access and rotate the LAPS password for their devices.
@@ -46,7 +67,7 @@ Allow.SelfLAPSIntune
 **Value**
 
 ```
-"true"|"false"
+true | false
 ```
 
 or specifically:
@@ -74,6 +95,8 @@ A plain string value acts like `true` for the matching platform only:
 ```
 "windows"|"macos"
 ```
+
+Access is only granted to the device's primary user or registered owner. As with `Allow.SelfLAPS`, all assigned values are combined and an explicit `false` wins over any `true`.
 
 ### Configure BranchCache for RJ packages
 
@@ -131,6 +154,10 @@ Environment.Channel
 ```
 "release" | "beta" | "canary"
 ```
+
+{% hint style="info" %}
+This setting is ignored on shared VDI clients — they always stay on the channel of their image.
+{% endhint %}
 
 ### Configure RealmJoin ESP
 
@@ -192,7 +219,9 @@ SoftwarePackaging.AutoUpgradeCanDowngrade
 
 ### Global override of software package behavior
 
-These settings are primarily intended for Deployment/DEM users on shared devices
+These settings are primarily intended for Deployment/DEM users on shared devices. They are applied to **all** software packages assigned to the receiving user.
+
+Forces the background installation flag on every package.
 
 **Key**
 
@@ -204,6 +233,8 @@ SoftwarePackageOverrides.AllowBackgroundInstall
 true | false
 ```
 
+Ignores the phase part of the [main app / user part restrictions](../../application-management/packages/package-settings.md) (Logon, Manual, Initial, Normal) of every package.
+
 **Key**
 
 SoftwarePackageOverrides.IgnorePhaseRestrictions
@@ -213,6 +244,8 @@ SoftwarePackageOverrides.IgnorePhaseRestrictions
 ```
 true
 ```
+
+Ignores the primary/secondary user part of those restrictions of every package.
 
 **Key**
 
@@ -224,9 +257,15 @@ SoftwarePackageOverrides.IgnoreUserRestrictions
 true
 ```
 
+{% hint style="info" %}
+`IgnorePhaseRestrictions` and `IgnoreUserRestrictions` only take effect when set to `true`; `false` is the same as not setting them at all. Restrictions can only be lifted this way, never added.
+
+When the device's primary user is a deployment (DEM) user, these overrides also apply to the packages that secondary users inherit from that deployment user.
+{% endhint %}
+
 ### AnyDesk Feature
 
-This setting enables or disables the AnyDesk feature.
+This setting enables or disables the [AnyDesk feature](../../realmjoin-agent/realmjoin-client/anydesk-integration/).
 
 **Key**\
 Integration.AnyDesk
@@ -236,9 +275,18 @@ Integration.AnyDesk
 ```json
 {
 "Enabled": true | false,
-"BootstrapperUrl": "https://.../.../AnyDesk.exe"
+"BootstrapperUrl": "https://.../.../AnyDesk.exe",
+"CustomClientSuffix": "myorg",
+"Ui": {
+    "TrayMenuTextEnglish": "Start remote session"
+  }
 }
 ```
+
+* **Enabled:** Turns the AnyDesk integration on or off.
+* **BootstrapperUrl:** Download location of the AnyDesk client used by the integration.
+* **CustomClientSuffix:** Suffix of your custom AnyDesk client. It is used to build the `anydesk:` link the RealmJoin Portal opens when starting a session. Leave it out when using the generic client.
+* **Ui.TrayMenuTextEnglish:** Caption of the entry in the RealmJoin tray menu. Defaults to `"Start remote session"`.
 
 ### ExecutionMonitor Feature
 
@@ -258,7 +306,7 @@ Integration.ExecutionMonitor
 
 ### Notifier Feature
 
-This setting enables or disables the Notifier feature and it also activates or deactivates the editor UI.
+This setting enables or disables the [Notifier feature](../../realmjoin-agent/realmjoin-client/showing-notifications.md) and it also activates or deactivates the editor UI.
 
 **Key**\
 Integration.Notification
@@ -269,9 +317,15 @@ Integration.Notification
 {
 "Enabled": true | false,
 "SourceUrl": "URL_PROVIDED_BY_GK",
-"FallbackCulture": "en"
+"FallbackCulture": "en",
+"CheckInterval": "00:01"
 }
 ```
+
+* **Enabled:** Turns the Notifier on or off.
+* **SourceUrl:** Location of the notification definitions. This value is created by RealmJoin when the feature is enabled for your tenant — do not change it.
+* **FallbackCulture:** Language used when a notification has no content for the user's language. Defaults to `"en"`.
+* **CheckInterval:** How often the client checks for new notifications ([HH:mm](https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings)). Defaults to `"00:01"`.
 
 ### LocalAdminManagement Features
 
@@ -304,7 +358,7 @@ LocalAdminManagement.EmergencyAccount
 {
     "MaxStaleness": "00:45",
     "NamePattern": "ADM-{HEX:4}",
-    "Display": "Local Emergency Account",
+    "DisplayName": "Local Emergency Account",
     "PasswordCharSet": "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
     "PasswordLength": 14
 }
@@ -312,6 +366,8 @@ LocalAdminManagement.EmergencyAccount
 
 **Key**\
 LocalAdminManagement.SupportAccount
+
+**Value**
 
 ```json
 {
@@ -323,6 +379,25 @@ LocalAdminManagement.SupportAccount
     "OnDemand": true | false
 }
 ```
+
+**Key**\
+LocalAdminManagement.PrivilegedAccount
+
+**Value**
+
+```json
+{
+    "NamePattern": "Privileged-User-{COUNT:1}",
+    "DisplayName": "Privileged User",
+    "PasswordRenewals": ["DayAfterCreate", "Monthly", "Thursday"],
+    "PasswordPreset": 3,
+    "PasswordLength": 3
+}
+```
+
+{% hint style="info" %}
+All three account types share the same common properties (`NamePattern`, `DisplayName`, `PasswordCharSet`, `PasswordLength`, `PasswordPreset`, `MaxStaleness`). `OnDemand` and `Expiration` are specific to the support account, `Expiration` and `PasswordRenewals` to the privileged account. An account type that is not configured at all stays inactive. The [LAPS article](../../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/) describes every property, the defaults and the password presets in detail.
+{% endhint %}
 
 ### AppCatalog Feature
 
@@ -375,6 +450,8 @@ WebLinks
 Currently only LAPS is supported
 {% endhint %}
 
+Assign this setting to the groups of the **device owners** you want to protect. It then restricts which administrators may use LAPS on the devices of those users.
+
 **Key**\
 Restrict.LAPS
 
@@ -393,8 +470,17 @@ Value
 }
 ```
 
+Each property holds the object IDs of Entra ID groups. One list exists per RealmJoin role:
+
+```
+"Admin" | "Auditor" | "Supporter" | "AdvancedSupporter" | "RunbookRunner" |
+"SoftwareAgent" | "SoftwareRequester" | "OrganicRequester" | "NotificationAgent" | "Deny"
+```
+
 {% hint style="warning" %}
-Attach Restriction: keys of targeted user groups. This list is inclusive: Only the listed Admin and Support groups are allowed to use LAPS. Additionally user groups can be excluded from the list.
+The lists are inclusive: as soon as at least one list is filled, only administrators who hold the matching RealmJoin role **and** are a member of one of the groups listed for that role may use LAPS on these devices. Everyone else is denied.
+
+Membership in a group listed under `Deny` always denies access, regardless of the other lists. Global admins are never restricted.
 {% endhint %}
 
 ### Various Toggles
