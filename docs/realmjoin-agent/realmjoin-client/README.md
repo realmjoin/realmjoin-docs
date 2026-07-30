@@ -16,7 +16,7 @@ RealmJoin Agent is an optional component that you can use alongside RealmJoin Po
 * [Native Choco Runtime](native-choco-runtime.md)
 * [AnyDesk Integration](anydesk-integration/)
 * Audit tasks (collecting device/client information)
-* Advanced Telemetry
+* [Advanced Telemetry](advanced-telemetry.md)
 
 ## Compliance Checks
 
