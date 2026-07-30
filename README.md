@@ -16,3 +16,4 @@ This repository is connected to GitBook via **Git Sync**, so the published site 
 | 🆕 Changelog | [feedback.realmjoin.com](https://feedback.realmjoin.com) |
 | 📶 Status & uptime | [status.realmjoin.com](https://status.realmjoin.com) |
 | 🤖 Runbooks repository | [realmjoin/realmjoin-runbooks](https://github.com/realmjoin/realmjoin-runbooks) |
+| 🛠️ Remediation scripts repository | [realmjoin/realmjoin-remediation](https://github.com/realmjoin/realmjoin-remediation) |
