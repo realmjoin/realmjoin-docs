@@ -69,12 +69,12 @@ Managed Identity permissions cannot currently be granted through the Azure Porta
 {% @github-files/github-code-block url="https://github.com/Workplace-Foundation/approle-and-directoryrole-granter/blob/main/AssignAzureADRoleToEntApp.ps1" %}
 {% endtab %}
 
-{% tab title="RJvNextPermissions.json" %}
-{% @github-files/github-code-block url="https://github.com/Workplace-Foundation/approle-and-directoryrole-granter/blob/main/RealmJoinVnext/RJvNextPermissions.json" %}
+{% tab title="AllRealmJoinRunbooks_collected_permissions.json" %}
+{% @github-files/github-code-block url="https://github.com/realmjoin/realmjoin-runbooks/blob/production/docs/other/json/AllRealmJoinRunbooks_collected_permissions.json" %}
 {% endtab %}
 
-{% tab title="RJvNextRoles.json" %}
-{% @github-files/github-code-block url="https://github.com/Workplace-Foundation/approle-and-directoryrole-granter/blob/main/RealmJoinVnext/RJvNextRoles.json" %}
+{% tab title="AllRealmJoinRunbooks_collected_rbacroles.json" %}
+{% @github-files/github-code-block url="https://github.com/realmjoin/realmjoin-runbooks/blob/production/docs/other/json/AllRealmJoinRunbooks_collected_rbacroles.json" %}
 {% endtab %}
 {% endtabs %}
 
@@ -93,13 +93,13 @@ cd c:\temp\myfolder
 6. Assign MS Graph Permissions to your Azure Automation Account using GrantAppPermToEntApp.ps1, replacing xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx with your Automation Account's Object ID
 
 ```
-. .\GrantAppPermToEntApp.ps1 -enterpriseAppObjId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" -permissionsTemplate .\RJvNextPermissions.json
+. .\GrantAppPermToEntApp.ps1 -enterpriseAppObjId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" -permissionsTemplate .\AllRealmJoinRunbooks_collected_permissions.json
 ```
 
 7. Assign Entra ID Admin Roles to your Azure Automation Account using AssignAzureADRoleToEntApp.ps1 replacing xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx with your Automation Account's Object ID
 
 ```
-. .\AssignAzureADRoleToEntApp.ps1 -objectId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" -rolesTemplate .\RJvNextRoles.json
+. .\AssignAzureADRoleToEntApp.ps1 -objectId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" -rolesTemplate .\AllRealmJoinRunbooks_collected_rbacroles.json
 ```
 
 8. The Azure Automation Account should now have the correct permissions to execute Runbooks<br>
