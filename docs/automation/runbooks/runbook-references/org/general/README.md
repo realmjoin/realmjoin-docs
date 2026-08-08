@@ -37,6 +37,7 @@ On this overview page you can find all Organization Runbooks in the General subc
 - [Invite External Guest Users](invite-external-guest-users.md)
 - [List All Administrative Template Policies](list-all-administrative-template-policies.md)
 - [List Group License Assignment Errors](list-group-license-assignment-errors.md)
+- [Monitor Service Health (Scheduled)](monitor-service-health_scheduled.md)
 - [Office365 License Report](office365-license-report.md)
 - [Report Apple MDM Cert Expiry (Scheduled)](report-apple-mdm-cert-expiry_scheduled.md)
 - [Report License Assignment (Scheduled)](report-license-assignment_scheduled.md)

@@ -16,7 +16,7 @@ rjgit-user_mail_list-room-mailbox-configuration
 ## Permissions
 
 ### Application permissions
-- **Type**: MG Graph
+- **Type**: Microsoft Graph
   - Place.Read.All
 
 

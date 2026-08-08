@@ -22,7 +22,7 @@ The shared runbooks available on [GitHub](https://github.com/realmjoin/realmjoin
 | `Az.Resources` | 9.0.1 |
 | `Az.Storage` | 9.6.0 |
 | `ExchangeOnlineManagement` | 3.9.2 |
-| `Microsoft.Graph.Authentication` | 2.38.0 |
+| `Microsoft.Graph.Authentication` | 2.39.0 |
 | `MicrosoftTeams` | 7.6.0 |
 | `RealmJoin.RunbookHelper` | 0.8.7 |
 
@@ -83,6 +83,7 @@ Please grant the following Graph API-Permissions to the managed identity
 * `RoleAssignmentSchedule.Read.Directory`
 * `RoleManagement.Read.All`
 * `RoleManagement.Read.Directory`
+* `ServiceHealth.Read.All`
 * `Team.Create`
 * `TeamMember.ReadWrite.All`
 * `TeamSettings.ReadWrite.All`

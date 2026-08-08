@@ -176,6 +176,7 @@
         * [Invite External Guest Users](automation/runbooks/runbook-references/org/general/invite-external-guest-users.md)
         * [List All Administrative Template Policies](automation/runbooks/runbook-references/org/general/list-all-administrative-template-policies.md)
         * [List Group License Assignment Errors](automation/runbooks/runbook-references/org/general/list-group-license-assignment-errors.md)
+        * [Monitor Service Health Scheduled](automation/runbooks/runbook-references/org/general/monitor-service-health_scheduled.md)
         * [Office365 License Report](automation/runbooks/runbook-references/org/general/office365-license-report.md)
         * [Report Apple Mdm Cert Expiry Scheduled](automation/runbooks/runbook-references/org/general/report-apple-mdm-cert-expiry_scheduled.md)
         * [Report License Assignment Scheduled](automation/runbooks/runbook-references/org/general/report-license-assignment_scheduled.md)

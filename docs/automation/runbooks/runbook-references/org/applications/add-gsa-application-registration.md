@@ -1,5 +1,5 @@
 ---
-title: Add Gsa Application Registration
+title: Add GSA Application Registration
 description: Add a GSA application registration to Azure AD
 ---
 
@@ -15,11 +15,11 @@ If a later step fails anyway, objects created in this run (application, group) a
 Pre-existing objects (update mode) are never removed.
 
 ## Location
-Organization → Applications → Add Gsa Application Registration
+Organization → Applications → Add GSA Application Registration
 
 **Full Runbook name**
 
-rjgit-org_applications_add-gsa-application-registration
+rjgit-org_applications_add-GSA-application-registration
 
 ## Permissions
 
