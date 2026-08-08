@@ -16,7 +16,9 @@ jobs:
     steps:
       - name: 📥 Checkout Documentation Repository
         uses: actions/checkout@v6
-
+        with:
+          ssh-key: ${{ secrets.update_runbook_references }}
+          
       - name: 📥 Checkout RealmJoin Runbooks Repository
         uses: actions/checkout@v6
         with:
