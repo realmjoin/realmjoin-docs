@@ -412,13 +412,17 @@ AppCatalog
 {
   "Enabled": true | false,
   "HidePackages": true | false,
-  "CreateStartMenuShortcut": true | false
+  "CreateStartMenuShortcut": true | false,
+  "Ui": {
+    "DisplayName": "App Catalog"
+  }
 }
 ```
 
 * **Enabled:** Adds an **App Catalog** entry to the RealmJoin tray menu that opens the device's App Catalog page in Microsoft Edge app mode.
 * **HidePackages:** Hides the individual software packages from the classic tray "Install"/"Update" submenu, useful once users are directed to the App Catalog instead.
 * **CreateStartMenuShortcut:** Requires `Enabled: true`. Creates a per-user Start Menu shortcut ("App Catalog") that opens the same page, so it can be found via Start search or pinned to the taskbar.
+* **Ui.DisplayName:** Caption of the App Catalog entry in the RealmJoin tray menu. The same text is also used for the Start Menu shortcut created by `CreateStartMenuShortcut`. Defaults to `"App Catalog"`.
 
 ### Weblinks for RealmJoin Tray
 
