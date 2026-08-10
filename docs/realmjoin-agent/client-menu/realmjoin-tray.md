@@ -28,3 +28,12 @@ A further useful feature is **Sync this device:**
 ![](<../../.gitbook/assets/image (106).png>)
 
 When you click **Sync this device** RealmJoin will install or update mandatory packages. Furthermore, **Sync this device** helps to speed up background processes (e. g. waiting for new weblinks or waiting for an admin account).
+
+## App Catalog Entry
+
+The tray menu can also show an **App Catalog** entry that opens the device's [App Catalog](self-service-portal.md#app-catalog-tab) directly. This entry is enabled and customized via the [`AppCatalog`](https://docs.realmjoin.com/ugd-management/user-and-group-settings/additional-settings#appcatalog-feature) client setting:
+
+* Enable it with `AppCatalog.Enabled`.
+* Rename the entry with [`AppCatalog.Ui.DisplayName`](https://docs.realmjoin.com/ugd-management/user-and-group-settings/additional-settings#appcatalog-feature) (defaults to `"App Catalog"`).
+
+See [One-Click Access: Self-Service Portal from the Tray](self-service-portal.md#one-click-access-self-service-portal-from-the-tray) for details.
