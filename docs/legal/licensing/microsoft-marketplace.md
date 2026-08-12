@@ -5,7 +5,7 @@ description: >-
   pricing model, base fees, and invoicing.
 ---
 
-# Azure Marketplace
+# Microsoft Marketplace
 
 ## Prerequisites
 
@@ -101,7 +101,7 @@ You will only be charged by Microsoft, once you have completed the enrolment on 
 
 ## Pricing Model
 
-* RealmJoin is offered as a **monthly or** **annual subscription plan** with different [User Segments](azure-marketplace.md#user-segments). The correct **user segment** is automatically selected by our platform based on the amount of desired users.
+* RealmJoin is offered as a **monthly or** **annual subscription plan** with different [User Segments](microsoft-marketplace.md#user-segments). The correct **user segment** is automatically selected by our platform based on the amount of desired users.
 * All subscription plans consist of a **base fee** which includes a certain amount of users per subscription cycle - depending on the **user segment**. For example, the **base fee** for the user segment _RealmJoin Enterprise (M) 1000_ includes 1000 users per month.
 * If more than the included amount of users is required, **additional users** can be added to the plan. For each additional user, we charge an additional per-user fee.
 

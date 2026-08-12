@@ -346,7 +346,7 @@
 ## Legal
 
 * [Licensing](legal/licensing/README.md)
-  * [Azure Marketplace](legal/licensing/azure-marketplace.md)
+  * [Microsoft Marketplace](legal/licensing/microsoft-marketplace.md)
 * [Support & Service Level](legal/support.md)
 
 ***
