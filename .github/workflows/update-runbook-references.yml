@@ -34,7 +34,7 @@ jobs:
           $outputPath = "docs/automation/runbooks/runbook-references"
           
           # Remove existing runbook references (but keep README.md and overview.md at root level;
-          # overview.md is preserved so a failed fetch keeps the last known good version)
+          # both are regenerated in place by the generation step below)
           if (Test-Path $outputPath) {
             Get-ChildItem -Path $outputPath -Exclude "README.md", "overview.md" | Remove-Item -Recurse -Force
             Write-Host "✅ Cleaned existing runbook references"
@@ -65,35 +65,22 @@ jobs:
           Write-Host ""
           
           # Run the documentation generation script
+          # (also generates the linked overview.md alongside the detail pages, plus a
+          # link-free variant under exports/ that external sync workflows consume)
           & $scriptPath `
             -includedScope @("device", "group", "org", "user") `
             -includePermissions `
             -includeDocs `
             -includeWhereToFind `
+            -includeNotes `
             -includeParameters `
             -outputMode "SeperateFileSeperateFolder" `
             -nameTOCFilesAlwaysREADME `
             -outputFolder $outputPath `
-            -rootFolder (Resolve-Path $runbooksPath).Path
-          
+            -rootFolder (Resolve-Path $runbooksPath).Path `
+            -plainOverviewOutfile "./exports/runbook-overview-plain.md"
+
           Write-Host "✅ Documentation generated successfully"
-
-      - name: 📄 Generate Runbook Overview
-        id: overview
-        continue-on-error: true
-        shell: pwsh
-        run: |
-          Write-Host "📋 Generating runbook overview page..."
-
-          $scriptPath = "./.github/scripts/Get-RunbookOverview.ps1"
-          $outputFile = "./docs/automation/runbooks/runbook-references/overview.md"
-
-          & $scriptPath `
-            -RunbooksRepoPath ./runbooks-repo `
-            -OutputFilePath $outputFile
-
-          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          Write-Host "✅ Runbook overview generated"
 
       - name: 📄 Generate Runbook Release Notes
         id: release_notes
@@ -151,6 +138,7 @@ jobs:
           git add docs/automation/runbooks/release-notes.md
           git add docs/automation/connecting-azure-automation/azure-ad-roles-and-permissions.md
           git add docs/SUMMARY.md
+          git add exports
           
           if git diff --staged --quiet; then
             echo "No changes to commit"
@@ -162,12 +150,11 @@ jobs:
             echo "✅ Changes committed and pushed"
           fi
 
-      - name:  Notify Teams Group Chat About Fetch Failures
-        if: steps.overview.outcome == 'failure' || steps.release_notes.outcome == 'failure'
+      - name:  Notify Teams Group Chat About Workflow Failures
+        if: failure() || steps.release_notes.outcome == 'failure'
         env:
           TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
           TEAMS_WEBHOOK_SECRET: ${{ secrets.TEAMS_WEBHOOK_SECRET }}
-          OVERVIEW_OUTCOME: ${{ steps.overview.outcome }}
           RELEASE_NOTES_OUTCOME: ${{ steps.release_notes.outcome }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           REPOSITORY: ${{ github.repository }}
@@ -178,11 +165,11 @@ jobs:
           fi
 
           FAILED_STEPS=""
-          if [ "$OVERVIEW_OUTCOME" = "failure" ]; then
-            FAILED_STEPS="${FAILED_STEPS}Runbook Overview; "
-          fi
           if [ "$RELEASE_NOTES_OUTCOME" = "failure" ]; then
             FAILED_STEPS="${FAILED_STEPS}Runbook Release Notes; "
+          fi
+          if [ -z "$FAILED_STEPS" ]; then
+            FAILED_STEPS="See workflow run for details"
           fi
 
           PAYLOAD=$(jq -n \
@@ -201,8 +188,8 @@ jobs:
                     type: "AdaptiveCard",
                     version: "1.4",
                     body: [
-                      { type: "TextBlock", size: "Medium", weight: "Bolder", text: "⚠️ Runbook Docs Sync: Fetch failed" },
-                      { type: "TextBlock", wrap: true, text: "At least one source could not be fetched. The previously published content was kept in place." },
+                      { type: "TextBlock", size: "Medium", weight: "Bolder", text: "⚠️ Runbook Docs Sync: Workflow failed" },
+                      { type: "TextBlock", wrap: true, text: "At least one step of the workflow failed. The previously published content stays in place until the next successful run." },
                       { type: "FactSet", facts: [
                         { title: "Repository", value: $repo },
                         { title: "Failed", value: $failed },
@@ -229,10 +216,9 @@ jobs:
           fi
 
       - name: ❌ Fail Workflow On Fetch Errors
-        if: steps.overview.outcome == 'failure' || steps.release_notes.outcome == 'failure'
+        if: steps.release_notes.outcome == 'failure'
         env:
-          OVERVIEW_OUTCOME: ${{ steps.overview.outcome }}
           RELEASE_NOTES_OUTCOME: ${{ steps.release_notes.outcome }}
         run: |
-          echo "::error::One or more content fetches failed (overview: $OVERVIEW_OUTCOME, release notes: $RELEASE_NOTES_OUTCOME). Other updates were committed normally; the previously published content for the failed pages was kept."
+          echo "::error::One or more content fetches failed (release notes: $RELEASE_NOTES_OUTCOME). Other updates were committed normally; the previously published content for the failed pages was kept."
           exit 1

@@ -66,7 +66,12 @@ param(
     [switch]$nameTOCFilesAlwaysREADME,
     [string]$mainOutfile = "RealmJoin-RunbookOverview.md",
     [string]$outputFolder = $(Join-Path -Path (Get-Location).Path -ChildPath "docs"),
-    [string]$rootFolder = (Get-Location).Path
+    [string]$rootFolder = (Get-Location).Path,
+    # Optional: additionally write a link-free variant of the overview page to this path.
+    # This variant is consumed by external synchronization workflows that copy the
+    # overview into contexts where the relative links of the regular overview.md
+    # would not resolve. Keep the file name and location stable for those consumers.
+    [string]$plainOverviewOutfile
 )
 
 ######################################
@@ -149,6 +154,20 @@ function Get-RunbookBasics {
         $global:MissingRunbookHelp += $runbookPath
     }
 
+    # Parse the RunbookCustomization JSON from the .INPUTS comment-based help block.
+    # A parse failure must not abort the run - the page is then rendered without portal information.
+    $runbookCustomization = $null
+    $inputTypeName = [string]($runbookHelp.inputTypes.inputType.type.name | Select-Object -First 1)
+    if (-not [string]::IsNullOrWhiteSpace($inputTypeName) -and $inputTypeName -match '(?s)^\s*RunbookCustomization:\s*(.+)$') {
+        $customizationJson = $Matches[1]
+        try {
+            $runbookCustomization = $customizationJson | ConvertFrom-Json -ErrorAction Stop
+        }
+        catch {
+            Write-Warning "Could not parse RunbookCustomization JSON from .INPUTS of runbook '$runbookPath': $($_.Exception.Message)"
+        }
+    }
+
     $TextInfo = (Get-Culture).TextInfo
     $runbookDisplayName = (Split-Path -LeafBase $runbookPath | ForEach-Object { $TextInfo.ToTitleCase($_) }) -replace "([a-zA-Z0-9])-([a-zA-Z0-9])", '$1 $2'
     $runbookDisplayName = $runbookDisplayName -replace '\bAvd\b', 'AVD'
@@ -168,29 +187,78 @@ function Get-RunbookBasics {
         Description        = $runbookHelp.Description.Text
         Notes              = $runbookHelp.alertSet.alert.Text
         Parameters         = $runbookHelp.Parameters
+        Customization      = $runbookCustomization
     }
 }
 
 function Convert-PermissionJsonToMarkdown {
     param (
-        [string]$JsonContent
+        [string]$JsonContent,
+        [string]$RunbookPathForWarnings
     )
 
     $permissionsMarkdown = ""
     $rbacRolesMarkdown = ""
     $manualPermissionsMarkdown = ""
 
-    $jsonObject = $JsonContent | ConvertFrom-Json
+    # A malformed permissions file must not abort the whole generation run - render the page without a permissions section instead.
+    try {
+        $jsonObject = $JsonContent | ConvertFrom-Json -ErrorAction Stop
+    }
+    catch {
+        Write-Warning "Could not parse permissions JSON for runbook '$RunbookPathForWarnings': $($_.Exception.Message)"
+        return @{
+            Permissions       = ""
+            RBACRoles         = ""
+            ManualPermissions = ""
+        }
+    }
 
     foreach ($permission in $jsonObject.Permissions) {
         $permissionsMarkdown += "- **Type**: $($permission.Name)`n"
         foreach ($assignment in $permission.AppRoleAssignments) {
-            $permissionsMarkdown += "  - $assignment`n"
+            # Schema v1: plain permission string. Schema v2: object with Value/Reason (and optional Optional/Feature flags).
+            if ($assignment -is [string]) {
+                $permissionsMarkdown += "  - $assignment`n"
+            }
+            else {
+                $assignmentValue = [string]$assignment.Value
+                if ([string]::IsNullOrWhiteSpace($assignmentValue)) {
+                    Write-Warning "Skipping app role assignment without 'Value' in permissions of runbook '$RunbookPathForWarnings'"
+                    continue
+                }
+                $suffixParts = @()
+                if ($assignment.PSObject.Properties['Optional'] -and $assignment.Optional) {
+                    $suffixParts += 'optional'
+                }
+                if ($assignment.PSObject.Properties['Feature'] -and -not [string]::IsNullOrWhiteSpace([string]$assignment.Feature)) {
+                    $suffixParts += "feature: $($assignment.Feature)"
+                }
+                $suffix = if ($suffixParts.Count -gt 0) { " *($($suffixParts -join ' — '))*" } else { "" }
+                $permissionsMarkdown += "  - $assignmentValue$suffix`n"
+                if ($assignment.PSObject.Properties['Reason'] -and -not [string]::IsNullOrWhiteSpace([string]$assignment.Reason)) {
+                    $permissionsMarkdown += "    - *$($assignment.Reason)*`n"
+                }
+            }
         }
     }
 
     foreach ($role in $jsonObject.Roles) {
-        $rbacRolesMarkdown += "- $role`n"
+        # Schema v1: plain role name string. Schema v2: object with Name/TemplateId/Reason.
+        if ($role -is [string]) {
+            $rbacRolesMarkdown += "- $role`n"
+        }
+        else {
+            $roleName = [string]$role.Name
+            if ([string]::IsNullOrWhiteSpace($roleName)) {
+                Write-Warning "Skipping RBAC role without 'Name' in permissions of runbook '$RunbookPathForWarnings'"
+                continue
+            }
+            $rbacRolesMarkdown += "- $roleName`n"
+            if ($role.PSObject.Properties['Reason'] -and -not [string]::IsNullOrWhiteSpace([string]$role.Reason)) {
+                $rbacRolesMarkdown += "  - *$($role.Reason)*`n"
+            }
+        }
     }
 
     foreach ($manualPermission in $jsonObject.ManualPermissions) {
@@ -202,6 +270,109 @@ function Convert-PermissionJsonToMarkdown {
         RBACRoles         = $rbacRolesMarkdown
         ManualPermissions = $manualPermissionsMarkdown
     }
+}
+
+function Get-RequiredModulesFromScript {
+    <#
+    .SYNOPSIS
+        Extracts required modules from a PowerShell script's '#Requires -Modules' directive using AST parsing.
+    #>
+    param (
+        [Parameter(Mandatory = $true)]
+        [string]$ScriptPath
+    )
+
+    $tokens = $null
+    $errors = $null
+
+    $ast = [System.Management.Automation.Language.Parser]::ParseFile(
+        $ScriptPath,
+        [ref]$tokens,
+        [ref]$errors
+    )
+
+    if ($null -eq $ast -or $null -eq $ast.ScriptRequirements) {
+        return @()
+    }
+
+    if ($null -eq $ast.ScriptRequirements.RequiredModules) {
+        return @()
+    }
+
+    return @($ast.ScriptRequirements.RequiredModules)
+}
+
+function Format-CustomizationValue {
+    <#
+    .SYNOPSIS
+        Formats a RunbookCustomization option value for markdown output (JSON booleans lowercase, complex objects suppressed).
+    #>
+    param ($Value)
+
+    if ($null -eq $Value) {
+        return ""
+    }
+    if ($Value -is [bool]) {
+        return $Value.ToString().ToLower()
+    }
+    if ($Value -is [string] -or $Value.GetType().IsPrimitive -or $Value -is [decimal]) {
+        return ([string]$Value -replace '\|', '\|')
+    }
+    # Complex values (objects/arrays) would render as PowerShell object dumps - suppress them.
+    return ""
+}
+
+function Get-PortalOptionRows {
+    <#
+    .SYNOPSIS
+        Extracts portal selector options (Display/Value pairs) from a parameter's RunbookCustomization entry.
+        Returns an empty array for unsupported forms (e.g. $ref-based selects).
+    #>
+    param ($ParameterCustomization)
+
+    $optionRows = @()
+
+    if ($null -eq $ParameterCustomization -or $ParameterCustomization -is [string]) {
+        return $optionRows
+    }
+
+    if ($ParameterCustomization.PSObject.Properties['SelectSimple']) {
+        $selectSimple = $ParameterCustomization.SelectSimple
+        if ($selectSimple -is [System.Management.Automation.PSCustomObject]) {
+            foreach ($option in $selectSimple.PSObject.Properties) {
+                $optionRows += [PSCustomObject]@{
+                    Display = $option.Name
+                    Value   = $option.Value
+                }
+            }
+        }
+        return $optionRows
+    }
+
+    if ($ParameterCustomization.PSObject.Properties['Select']) {
+        $select = $ParameterCustomization.Select
+        if ($null -eq $select -or $select -is [string]) {
+            return $optionRows
+        }
+        if (-not $select.PSObject.Properties['Options'] -or $select.Options -isnot [array]) {
+            return $optionRows
+        }
+        foreach ($option in $select.Options) {
+            if ($null -eq $option -or $option -is [string]) {
+                continue
+            }
+            if (-not $option.PSObject.Properties['Display']) {
+                continue
+            }
+            $optionValue = if ($option.PSObject.Properties['Value']) { $option.Value } else { $null }
+            $optionRows += [PSCustomObject]@{
+                Display = [string]$option.Display
+                Value   = $optionValue
+            }
+        }
+    }
+
+    return $optionRows
 }
 #endregion
 
@@ -270,6 +441,38 @@ Get-ChildItem -Path $rootFolder -Recurse -Include "*.ps1" -Exclude $MyInvocation
     $docsContent = if ($null -ne $docsPath) { Get-Content -Path $docsPath -Raw }
     $permissionsContent = if ($null -ne $permissionsPath) { Get-Content -Path $permissionsPath -Raw }
 
+    # Extract the runbook version from the '$Version = "x.y.z"' assignment in the script body
+    $runbookVersion = $null
+    $scriptRawContent = Get-Content -Path $CurrentObject.FullName -Raw
+    if ($scriptRawContent -match '(?m)^\s*\$Version\s*=\s*["'']([^"'']+)["'']') {
+        $runbookVersion = $Matches[1]
+    }
+
+    # Extract required modules from the '#Requires -Modules' directive and render them for the details table
+    $requiredModulesMarkdown = $null
+    try {
+        $requiredModules = Get-RequiredModulesFromScript -ScriptPath $CurrentObject.FullName
+        $moduleEntries = foreach ($moduleSpec in $requiredModules) {
+            if ($null -ne $moduleSpec.RequiredVersion) {
+                "$($moduleSpec.Name) (= $($moduleSpec.RequiredVersion))"
+            }
+            elseif ($null -ne $moduleSpec.Version) {
+                "$($moduleSpec.Name) (>= $($moduleSpec.Version))"
+            }
+            else {
+                "$($moduleSpec.Name)"
+            }
+        }
+        if ($moduleEntries) {
+            $requiredModulesMarkdown = @($moduleEntries) -join '<br>'
+        }
+    }
+    catch {
+        Write-Warning "Could not extract required modules from runbook '$($CurrentObject.FullName)': $($_.Exception.Message)"
+    }
+
+    $isScheduled = [System.IO.Path]::GetFileNameWithoutExtension($relativeRunbookPath) -match '_[Ss]cheduled$'
+
     $runbookDescriptions += [PSCustomObject]@{
         RunbookDisplayName           = $CurrentRunbookBasics.RunbookDisplayName
         RunbookDisplayPath           = $CurrentRunbookBasics.RunbookDisplayPath
@@ -283,6 +486,10 @@ Get-ChildItem -Path $rootFolder -Recurse -Include "*.ps1" -Exclude $MyInvocation
         Parameters                   = $CurrentRunbookBasics.Parameters.parameter
         DocsContent                  = $docsContent
         PermissionsContent           = $permissionsContent
+        Customization                = $CurrentRunbookBasics.Customization
+        Version                      = $runbookVersion
+        RequiredModulesMarkdown      = $requiredModulesMarkdown
+        IsScheduled                  = $isScheduled
     }
 }
 
@@ -444,7 +651,7 @@ if ($outputMode -eq "OneFile") {
 
             if ($includePermissions) {
                 if ($runbook.PermissionsContent) {
-                    $RunbookPermissions = Convert-PermissionJsonToMarkdown -JsonContent $runbook.PermissionsContent
+                    $RunbookPermissions = Convert-PermissionJsonToMarkdown -JsonContent $runbook.PermissionsContent -RunbookPathForWarnings $runbook.RelativeRunbookPath
                     # Solange in $RunbookPermissions bzw. in einer der Properties ein Wert vorhanden ist, wird der Abschnitt ausgegeben
                     if (($RunbookPermissions.Permissions) -or ($RunbookPermissions.RBACRoles) -or ($RunbookPermissions.ManualPermissions)) {
                         Add-Content -Path $ResultFile -Value "#### Permissions"
@@ -523,100 +730,14 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
     Add-Content -Path $ResultFile -Value ""
     Add-Content -Path $ResultFile -Value "## RealmJoin Runbook overview"
     Add-Content -Path $ResultFile -Value ""
-    Add-Content -Path $ResultFile -Value "In the following, each runbook is listed along with a brief description or synopsis to give a clear understanding of its purpose and functionality."
-    Add-Content -Path $ResultFile -Value "Also the document for each runbook contains information about permissions, where to find, notes, and parameters and further information in general."
+    Add-Content -Path $ResultFile -Value "A complete list of all runbooks - including synopsis and links to the detailed reference pages - is available on the [Runbook Overview](overview.md) page."
+    Add-Content -Path $ResultFile -Value ""
+    Add-Content -Path $ResultFile -Value "The document for each runbook contains information about permissions, where to find, notes, and parameters and further information in general."
     Add-Content -Path $ResultFile -Value ""
 
-    # Build a 2-level overview (primary folder + subfolder) based on the actual runbooks found.
-    # Keep ordering stable using includedScope (device/group/org/user).
-    $scopeOrder = @()
-    foreach ($scope in $includedScope) {
-        $scopeOrder += $scope.ToLower()
-    }
-
-    $TextInfo = (Get-Culture).TextInfo
-    $subFoldersByScope = @{}
-    foreach ($scope in $scopeOrder) {
-        $primaryFolderName = $TextInfo.ToTitleCase($scope)
-        # For display, use "Organization" instead of "Org"
-        $primaryFolderLabel = if ($scope -eq 'org') { 'Organization' } else { $TextInfo.ToTitleCase($scope) }
-
-        $subFolders = $groupedRunbooks |
-        Where-Object { $_.Group[0].PrimaryFolder -eq $primaryFolderName } |
-        ForEach-Object { $_.Group[0].SubFolder } |
-        Sort-Object -Unique
-
-        $subFoldersByScope[$scope] = [PSCustomObject]@{
-            Label     = $primaryFolderLabel
-            SubFolders = $subFolders
-        }
-    }
-
-    Add-Content -Path $ResultFile -Value "### Runbook categorie overview"
-    Add-Content -Path $ResultFile -Value ""
-    Add-Content -Path $ResultFile -Value "| Category | Subcategory |"
-    Add-Content -Path $ResultFile -Value "|---|---|"
-    foreach ($scope in $scopeOrder) {
-        $scopeInfo = $subFoldersByScope[$scope]
-        if (-not $scopeInfo) {
-            continue
-        }
-
-        $primaryFolderPath = "$scope/README.md"
-        $categoryCell = "[$($scopeInfo.Label)]($primaryFolderPath)"
-
-        if (-not $scopeInfo.SubFolders -or $scopeInfo.SubFolders.Count -eq 0) {
-            Add-Content -Path $ResultFile -Value "| $categoryCell |  |"
-            continue
-        }
-
-        $subCategoryLinks = foreach ($subFolder in $scopeInfo.SubFolders) {
-            $subFolderSlug = ($subFolder -replace ' ', '-').ToLower()
-            $subFolderAnchor = "$scope-$subFolderSlug"
-            "[$subFolder]($primaryFolderPath#$subFolderAnchor)"
-        }
-
-        $subCategoryCell = $subCategoryLinks -join '<br>'
-        Add-Content -Path $ResultFile -Value "| $categoryCell | $subCategoryCell |"
-    }
-
-    Add-Content -Path $ResultFile -Value ""
-    foreach ($scope in $scopeOrder) {
-        $scopeInfo = $subFoldersByScope[$scope]
-        if (-not $scopeInfo) {
-            continue
-        }
-
-        Add-Content -Path $ResultFile -Value "### $($scopeInfo.Label) Runbooks"
-        Add-Content -Path $ResultFile -Value ""
-
-        $primaryFolderPath = "$scope/README.md"
-        $primaryFolderName = $TextInfo.ToTitleCase($scope)
-
-        foreach ($subFolder in $scopeInfo.SubFolders) {
-            $subFolderSlug = ($subFolder -replace ' ', '-').ToLower()
-            $subFolderAnchor = "$scope-$subFolderSlug"
-
-            Add-Content -Path $ResultFile -Value "- [$subFolder]($primaryFolderPath#$subFolderAnchor)"
-
-            $runbooks = $groupedRunbooks |
-            Where-Object { $_.Name -eq "$primaryFolderName, $subFolder" } |
-            Select-Object -ExpandProperty Group |
-            Sort-Object -Property RunbookDisplayName
-
-            foreach ($runbook in $runbooks) {
-                $runbookFileName = ($runbook.RunbookDisplayName -replace ' ', '-').ToLower() + ".md"
-                $runbookLinkText = $runbook.RunbookDisplayName
-                if ($runbookLinkText -match '_[Ss]cheduled$') {
-                    $runbookLinkText = $runbookLinkText -replace '_[Ss]cheduled$', ' (Scheduled)'
-                }
-
-                Add-Content -Path $ResultFile -Value "  - [$runbookLinkText]($scope/$subFolderSlug/$runbookFileName)"
-            }
-        }
-
-        Add-Content -Path $ResultFile -Value ""
-    }
+    # The category table and the full per-scope runbook listing were removed from
+    # this page - the linked overview.md (generated below) provides the complete
+    # list of all runbooks, and the per-scope README pages cover the navigation.
 
     if ($includeAdditionalLinks) {
         Add-Content -Path $ResultFile -Value ""
@@ -632,6 +753,60 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
 
     # Initialize Array to collect all primaryFolderOverviewFiles
     $primaryFolderOverviewFiles = @()
+
+    # Overview page (overview.md): generated in the same loops as the detail pages below,
+    # so the runbook links are guaranteed to be consistent with the generated file names.
+    $overviewFile = Join-Path -Path $outputFolder -ChildPath "overview.md"
+    Remove-Item -Path $overviewFile -Force -ErrorAction SilentlyContinue
+    Add-Content -Path $overviewFile -Value "---"
+    Add-Content -Path $overviewFile -Value "title: Runbook Overview"
+    Add-Content -Path $overviewFile -Value "layout:"
+    Add-Content -Path $overviewFile -Value "  width: wide"
+    Add-Content -Path $overviewFile -Value "---"
+    Add-Content -Path $overviewFile -Value ""
+    Add-Content -Path $overviewFile -Value "This document provides a comprehensive overview of all runbooks currently available in the RealmJoin portal. Each runbook is listed along with a brief description or synopsis to give a clear understanding of its purpose and functionality. The runbook name links to the detailed reference page of the respective runbook."
+    Add-Content -Path $overviewFile -Value ""
+    Add-Content -Path $overviewFile -Value "To ensure easy navigation, the runbooks are categorized into different sections based on their area of application. The following categories are currently available:"
+    Add-Content -Path $overviewFile -Value ""
+    foreach ($scope in $includedScope) {
+        $scopeDisplayName = if ($scope -eq 'org') { 'Organization' } else { (Get-Culture).TextInfo.ToTitleCase($scope) }
+        Add-Content -Path $overviewFile -Value "- $scopeDisplayName"
+    }
+    Add-Content -Path $overviewFile -Value ""
+    Add-Content -Path $overviewFile -Value "Each category contains multiple runbooks that are further divided into subcategories based on their functionality. The runbooks are listed in alphabetical order within each subcategory."
+    Add-Content -Path $overviewFile -Value ""
+
+    # Optional link-free overview variant for external synchronization consumers
+    # (same content as overview.md, but plain runbook names instead of relative links,
+    # which would not resolve outside of this documentation tree).
+    $writePlainOverview = -not [string]::IsNullOrWhiteSpace($plainOverviewOutfile)
+    if ($writePlainOverview) {
+        $plainOverviewFile = [System.IO.Path]::GetFullPath($plainOverviewOutfile)
+        $plainOverviewDirectory = Split-Path -Path $plainOverviewFile -Parent
+        if (-not (Test-Path -Path $plainOverviewDirectory)) {
+            New-Item -Path $plainOverviewDirectory -ItemType Directory -Force | Out-Null
+        }
+        Remove-Item -Path $plainOverviewFile -Force -ErrorAction SilentlyContinue
+        Add-Content -Path $plainOverviewFile -Value "---"
+        Add-Content -Path $plainOverviewFile -Value "title: Runbook Overview"
+        Add-Content -Path $plainOverviewFile -Value "layout:"
+        Add-Content -Path $plainOverviewFile -Value "  width: wide"
+        Add-Content -Path $plainOverviewFile -Value "---"
+        Add-Content -Path $plainOverviewFile -Value ""
+        Add-Content -Path $plainOverviewFile -Value "<!-- NOTE: This file is generated for consumption by external synchronization workflows. Do not rename, move or delete it without checking those consumers. It is intentionally free of links. -->"
+        Add-Content -Path $plainOverviewFile -Value ""
+        Add-Content -Path $plainOverviewFile -Value "This document provides a comprehensive overview of all runbooks currently available in the RealmJoin portal. Each runbook is listed along with a brief description or synopsis to give a clear understanding of its purpose and functionality."
+        Add-Content -Path $plainOverviewFile -Value ""
+        Add-Content -Path $plainOverviewFile -Value "To ensure easy navigation, the runbooks are categorized into different sections based on their area of application. The following categories are currently available:"
+        Add-Content -Path $plainOverviewFile -Value ""
+        foreach ($scope in $includedScope) {
+            $scopeDisplayName = if ($scope -eq 'org') { 'Organization' } else { (Get-Culture).TextInfo.ToTitleCase($scope) }
+            Add-Content -Path $plainOverviewFile -Value "- $scopeDisplayName"
+        }
+        Add-Content -Path $plainOverviewFile -Value ""
+        Add-Content -Path $plainOverviewFile -Value "Each category contains multiple runbooks that are further divided into subcategories based on their functionality. The runbooks are listed in alphabetical order within each subcategory."
+        Add-Content -Path $plainOverviewFile -Value ""
+    }
 
     # First, collect all unique primary folders in alphabetical order
     $uniquePrimaryFolders = @()
@@ -678,6 +853,13 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
         Add-Content -Path $primaryFolderOverviewFile -Value "Here you can find all $primaryFolderDisplayName Runbooks along with the available subcategories."
         Add-Content -Path $primaryFolderOverviewFile -Value ""
 
+        Add-Content -Path $overviewFile -Value "<a name='$primaryFolderLink'></a>"
+        Add-Content -Path $overviewFile -Value "## $primaryFolderDisplayName"
+        if ($writePlainOverview) {
+            Add-Content -Path $plainOverviewFile -Value "<a name='$primaryFolderLink'></a>"
+            Add-Content -Path $plainOverviewFile -Value "## $primaryFolderDisplayName"
+        }
+
         # Get all subfolders for this primary folder and sort them
         $subFolders = $groupedRunbooks |
         Where-Object { $_.Group[0].PrimaryFolder -eq $primaryFolder } |
@@ -713,6 +895,17 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
             Add-Content -Path $primaryFolderOverviewFile -Value "<a name='$subFolderLink'></a>"
             Add-Content -Path $primaryFolderOverviewFile -Value "## $subFolder"
 
+            Add-Content -Path $overviewFile -Value "<a name='$subFolderLink'></a>"
+            Add-Content -Path $overviewFile -Value "### $subFolder"
+            Add-Content -Path $overviewFile -Value "| Runbook Name | Synopsis |"
+            Add-Content -Path $overviewFile -Value "| --- | --- |"
+            if ($writePlainOverview) {
+                Add-Content -Path $plainOverviewFile -Value "<a name='$subFolderLink'></a>"
+                Add-Content -Path $plainOverviewFile -Value "### $subFolder"
+                Add-Content -Path $plainOverviewFile -Value "| Runbook Name | Synopsis |"
+                Add-Content -Path $plainOverviewFile -Value "| --- | --- |"
+            }
+
             # Get and sort runbooks for this primary folder and subfolder
             $runbooks = $groupedRunbooks |
             Where-Object { $_.Name -eq "$primaryFolder, $subFolder" } |
@@ -739,6 +932,12 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
                 Add-Content -Path $primaryFolderOverviewFile -Value "  - [$runbookLinkText]($subFolderSlug/$runbookFileName)"
                 Add-Content -Path $subFolderOverviewFile -Value "- [$runbookLinkText]($runbookFileName)"
 
+                $overviewSynopsis = if ($runbook.Synopsis) { (([string]$runbook.Synopsis) -replace "\r?\n", ' ') -replace '\|', '\|' } else { "" }
+                Add-Content -Path $overviewFile -Value "| [$runbookLinkText]($primaryFolderLink/$subFolderSlug/$runbookFileName) | $overviewSynopsis |"
+                if ($writePlainOverview) {
+                    Add-Content -Path $plainOverviewFile -Value "| $runbookLinkText | $overviewSynopsis |"
+                }
+
                 # Create individual file for each runbook
                 Remove-Item -Path $runbookFilePath -Force -ErrorAction SilentlyContinue
 
@@ -756,6 +955,13 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
                 }
                 Add-Content -Path $runbookFilePath -Value "---"
                 Add-Content -Path $runbookFilePath -Value ""
+
+                if ($runbook.IsScheduled) {
+                    Add-Content -Path $runbookFilePath -Value '{% hint style="info" %}'
+                    Add-Content -Path $runbookFilePath -Value 'This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.'
+                    Add-Content -Path $runbookFilePath -Value '{% endhint %}'
+                    Add-Content -Path $runbookFilePath -Value ""
+                }
 
                 if ($runbook.Description) {
                     Add-Content -Path $runbookFilePath -Value "## Description"
@@ -791,6 +997,21 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
                     Add-Content -Path $runbookFilePath -Value $fullRunbookName
                     Add-Content -Path $runbookFilePath -Value ""
                 }
+
+                # Details block: version, required modules and schedulability of the runbook
+                Add-Content -Path $runbookFilePath -Value "## Details"
+                Add-Content -Path $runbookFilePath -Value ""
+                Add-Content -Path $runbookFilePath -Value "| Property | Value |"
+                Add-Content -Path $runbookFilePath -Value "| --- | --- |"
+                if ($runbook.Version) {
+                    Add-Content -Path $runbookFilePath -Value "| Version | $($runbook.Version) |"
+                }
+                if ($runbook.RequiredModulesMarkdown) {
+                    Add-Content -Path $runbookFilePath -Value "| Required modules | $($runbook.RequiredModulesMarkdown) |"
+                }
+                Add-Content -Path $runbookFilePath -Value "| Schedulable | $(if ($runbook.IsScheduled) { 'yes' } else { 'no' }) |"
+                Add-Content -Path $runbookFilePath -Value ""
+
                 if ($includeNotes) {
                     if ($runbook.Notes) {
                         Add-Content -Path $runbookFilePath -Value "## Notes"
@@ -800,7 +1021,7 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
                 }
                 if ($includePermissions) {
                     if ($runbook.PermissionsContent) {
-                        $RunbookPermissions = Convert-PermissionJsonToMarkdown -JsonContent $runbook.PermissionsContent
+                        $RunbookPermissions = Convert-PermissionJsonToMarkdown -JsonContent $runbook.PermissionsContent -RunbookPathForWarnings $runbook.RelativeRunbookPath
                         if (($RunbookPermissions.Permissions) -or ($RunbookPermissions.RBACRoles) -or ($RunbookPermissions.ManualPermissions)) {
                             Add-Content -Path $runbookFilePath -Value "## Permissions"
                             Add-Content -Path $runbookFilePath -Value ""
@@ -823,9 +1044,26 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
 
                 if ($includeParameters) {
                     if ($runbook.Parameters) {
+                        # Portal information from the RunbookCustomization (.INPUTS) is strictly additive:
+                        # only parameters that exist in the script's param() block are enriched;
+                        # customization entries without a matching script parameter are ignored.
+                        $customizationParameters = $null
+                        if ($runbook.Customization -and $runbook.Customization -isnot [string] -and $runbook.Customization.PSObject.Properties['Parameters']) {
+                            $customizationParameters = $runbook.Customization.Parameters
+                        }
+
                         Add-Content -Path $runbookFilePath -Value "## Parameters"
                         foreach ($parameter in $runbook.Parameters) {
                             if ($parameter.Name -notlike "CallerName") {
+                                $parameterCustomization = $null
+                                if ($null -ne $customizationParameters -and $customizationParameters -isnot [string]) {
+                                    # PSObject.Properties lookup is case-insensitive, matching the portal's behavior
+                                    $parameterCustomizationProperty = $customizationParameters.PSObject.Properties[$parameter.Name]
+                                    if ($parameterCustomizationProperty) {
+                                        $parameterCustomization = $parameterCustomizationProperty.Value
+                                    }
+                                }
+
                                 Add-Content -Path $runbookFilePath -Value "### $($parameter.Name)"
                                 Add-Content -Path $runbookFilePath -Value ""
                                 Add-Content -Path $runbookFilePath -Value "$($parameter.Description.Text)"
@@ -835,7 +1073,31 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
                                 Add-Content -Path $runbookFilePath -Value "| Required | $($parameter.Required) |"
                                 Add-Content -Path $runbookFilePath -Value "| Default Value | $($parameter.DefaultValue) |"
                                 Add-Content -Path $runbookFilePath -Value "| Type | $($parameter.Type.Name) |"
+
+                                if ($null -ne $parameterCustomization -and $parameterCustomization -isnot [string]) {
+                                    if ($parameterCustomization.PSObject.Properties['DisplayName'] -and -not [string]::IsNullOrWhiteSpace([string]$parameterCustomization.DisplayName)) {
+                                        $portalDisplayName = ([string]$parameterCustomization.DisplayName) -replace '\|', '\|'
+                                        Add-Content -Path $runbookFilePath -Value "| Portal display name | $portalDisplayName |"
+                                    }
+                                    if ($parameterCustomization.PSObject.Properties['Hide'] -and $parameterCustomization.Hide) {
+                                        Add-Content -Path $runbookFilePath -Value "| Hidden in portal | yes (preset via runbook customization) |"
+                                    }
+                                }
                                 Add-Content -Path $runbookFilePath -Value ""
+
+                                $portalOptionRows = @(Get-PortalOptionRows -ParameterCustomization $parameterCustomization)
+                                if ($portalOptionRows.Count -gt 0) {
+                                    Add-Content -Path $runbookFilePath -Value "**Portal options**"
+                                    Add-Content -Path $runbookFilePath -Value ""
+                                    Add-Content -Path $runbookFilePath -Value "| Portal option | Value |"
+                                    Add-Content -Path $runbookFilePath -Value "| --- | --- |"
+                                    foreach ($portalOptionRow in $portalOptionRows) {
+                                        $optionDisplay = ([string]$portalOptionRow.Display) -replace '\|', '\|'
+                                        $optionValue = Format-CustomizationValue -Value $portalOptionRow.Value
+                                        Add-Content -Path $runbookFilePath -Value "| $optionDisplay | $optionValue |"
+                                    }
+                                    Add-Content -Path $runbookFilePath -Value ""
+                                }
                             }
                         }
                     }
@@ -851,6 +1113,11 @@ elseif ($outputMode -eq "SeperateFileSeperateFolder") {
             Add-Content -Path $subFolderOverviewFile -Value ""
             Add-Content -Path $subFolderOverviewFile -Value "[Back to Runbook Reference overview](../../README.md)"
             Add-Content -Path $subFolderOverviewFile -Value ""
+
+            Add-Content -Path $overviewFile -Value ""
+            if ($writePlainOverview) {
+                Add-Content -Path $plainOverviewFile -Value ""
+            }
         }
     }
 
