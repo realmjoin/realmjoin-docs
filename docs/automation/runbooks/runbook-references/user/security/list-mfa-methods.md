@@ -71,6 +71,29 @@ User → Security → List MFA Methods
 
 rjgit-user_security_list-MFA-methods
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.3 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Schedulable | no |
+
+## Notes
+Permissions (managed identity, application):
+- UserAuthenticationMethod.Read.All - list authentication methods
+- User.Read.All                      - resolve target user
+- Organization.Read.All              - read tenant display name for the email body
+- Mail.Send                          - only required when NotifyUser is enabled
+
+Privacy / audit:
+- This runbook reads sensitive identity data (registered MFA methods, including phone numbers).
+  Phone numbers are masked by default. Set MaskPhoneNumbers to false only when full numbers are
+  required for legitimate support purposes; the action is logged with CallerName.
+- When NotifyUser is enabled, the target user is notified by email that an administrator has
+  retrieved their MFA methods. This requires the tenant setting RJReport.EmailSender to be
+  configured.
+
 ## Permissions
 
 ### Application permissions
@@ -91,6 +114,7 @@ User Principal Name of the target user. Auto-filled by the RealmJoin portal in t
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### NotifyUser
 
@@ -101,6 +125,8 @@ When enabled, sends a notification email to the target user informing them that 
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Notify user via email |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### MaskPhoneNumbers
 
@@ -111,6 +137,8 @@ When enabled, all phone numbers are masked except for the last four digits (for 
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Mask phone numbers (show last 4 digits only) |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailFrom
 
@@ -121,6 +149,7 @@ Sender email address for the optional notification mail. Sourced from the RealmJ
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskDisplayName
 
@@ -131,6 +160,7 @@ Service Desk display name for user contact information (optional). Sourced from 
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskEmail
 
@@ -141,6 +171,7 @@ Service Desk email address for user contact information (optional). Sourced from
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskPhone
 
@@ -151,6 +182,7 @@ Service Desk phone number for user contact information (optional). Sourced from 
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskPortalUrl
 
@@ -161,6 +193,7 @@ Service Desk portal URL for user contact information, rendered as a clickable li
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskTicketUrl
 
@@ -171,6 +204,7 @@ Direct link to the Service Desk ticket related to this request, rendered as a cl
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### LanguageOverride
 
@@ -181,6 +215,7 @@ Overrides the language used for the notification email. Accepted values are 'DE'
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

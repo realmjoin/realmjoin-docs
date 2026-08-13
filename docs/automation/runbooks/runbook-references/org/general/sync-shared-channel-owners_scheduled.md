@@ -3,6 +3,10 @@ title: Sync Shared Channel Owners (Scheduled)
 description: Ensure a security group's members are owners of mapped Teams and their shared channels.
 ---
 
+{% hint style="info" %}
+This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.
+{% endhint %}
+
 ## Description
 Teams Shared Channels do not inherit ownership from their parent team. This scheduled runbook closes
 that gap: for each team named in a mapping, it ensures the members of a mapped security group are owners
@@ -68,6 +72,29 @@ Organization → General → Sync Shared Channel Owners (Scheduled)
 **Full Runbook name**
 
 rjgit-org_general_sync-shared-channel-owners_scheduled
+
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.1.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.5.0) |
+| Schedulable | yes |
+
+## Notes
+Configure the mapping once centrally (Runbook Customization -> Settings) as a structured sub-setting under
+"SharedChannelOwners.Mapping". Each entry names a team by its exact display name. The hidden
+TeamOwnerGroupMapping parameter is injected from it at runtime.
+{
+    "Settings": {
+        "SharedChannelOwners": {
+            "Mapping": [
+                { "TeamName": "EXT Service A", "OwnerGroupId": "11111111-1111-1111-1111-111111111111" },
+                { "TeamName": "EXT Service B", "OwnerGroupId": "22222222-2222-2222-2222-222222222222" }
+            ]
+        }
+    }
+}
 
 ## Permissions
 

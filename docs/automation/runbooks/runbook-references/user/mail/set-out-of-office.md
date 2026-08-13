@@ -13,6 +13,14 @@ User → Mail → Set Out Of Office
 
 rjgit-user_mail_set-out-of-office
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.1.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -33,6 +41,7 @@ User principal name of the mailbox. This value is auto-filled by the portal.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### Disable
 
@@ -43,6 +52,14 @@ Select whether to enable out-of-office notifications or disable existing out-of-
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Enable or Disable Out-of-Office |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Enable Out-of-Office |  |
+| Disable Out-of-Office |  |
 
 ### Start
 
@@ -53,6 +70,7 @@ Start time for scheduled out-of-office replies.
 | Required | false |
 | Default Value | (Get-Date) |
 | Type | DateTime |
+| Portal display name | Start Date |
 
 ### End
 
@@ -63,6 +81,7 @@ End time for scheduled out-of-office replies. If not specified, it defaults to 1
 | Required | false |
 | Default Value | ((Get-Date) + (New-TimeSpan -Days 3650)) |
 | Type | DateTime |
+| Portal display name | End Date |
 
 ### MessageInternal
 

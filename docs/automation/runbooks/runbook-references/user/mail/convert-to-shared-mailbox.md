@@ -13,6 +13,14 @@ User → Mail → Convert To Shared Mailbox
 
 rjgit-user_mail_convert-to-shared-mailbox
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -33,6 +41,7 @@ User principal name of the mailbox.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### delegateTo
 
@@ -53,6 +62,7 @@ If set to true, converts a shared mailbox back to a regular mailbox.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### AutoMapping
 

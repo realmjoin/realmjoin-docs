@@ -13,6 +13,14 @@ User → Security → Enable Or Disable Password Expiration
 
 rjgit-user_security_enable-or-disable-password-expiration
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -30,6 +38,7 @@ User principal name of the target user.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### DisablePasswordExpiration
 
@@ -40,6 +49,7 @@ If set to true, disables password expiration for the user.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Disable Password Expiration? |
 
 
 

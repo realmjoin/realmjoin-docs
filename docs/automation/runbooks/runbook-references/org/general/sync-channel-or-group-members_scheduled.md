@@ -3,6 +3,10 @@ title: Sync Channel Or Group Members (Scheduled)
 description: Sync members between a Teams Shared Channel or a group and an Entra security group
 ---
 
+{% hint style="info" %}
+This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.
+{% endhint %}
+
 ## Description
 This scheduled runbook mirrors the membership of a source object into a target object in one
 direction per run. It supports syncing Teams Shared Channel members into a security group, syncing
@@ -89,6 +93,14 @@ Organization → General → Sync Channel Or Group Members (Scheduled)
 
 rjgit-org_general_sync-channel-or-group-members_scheduled
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.1.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.5.0) |
+| Schedulable | yes |
+
 ## Permissions
 
 ### Application permissions
@@ -115,6 +127,15 @@ copies the source group members into the shared channel.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | What should be synced |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Shared Channel members -> security group |  |
+| Group members -> group |  |
+| Group members -> Shared Channel |  |
 
 ### TeamId
 
@@ -125,6 +146,7 @@ Object id of the team that hosts the shared channel. Only used for the shared ch
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Team hosting the shared channel |
 
 ### ChannelName
 
@@ -136,6 +158,7 @@ directions.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Shared channel display name |
 
 ### SourceGroupId
 
@@ -146,6 +169,8 @@ Object id of the source group whose members are copied. Used for the group sourc
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Source group |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### TargetGroupId
 
@@ -156,6 +181,7 @@ Object id of the target security group that receives the members. Used for the g
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Target security group |
 
 ### RemoveExtraMembers
 
@@ -167,6 +193,7 @@ mirrors the source. When disabled (default), the runbook only adds missing membe
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Remove members that only exist in the target (mirror source) |
 
 ### IncludeGuests
 
@@ -178,6 +205,7 @@ guests are skipped and are never added or removed.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Include guest users |
 
 ### RemoveFromTeam
 
@@ -190,6 +218,8 @@ is removed.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | On channel removal, also remove the user from the host team |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### WhatIfMode
 
@@ -200,6 +230,7 @@ When enabled, the runbook only logs the changes it would make without writing an
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Dry run (log only, no changes) |
 
 ### SendEmailReport
 
@@ -211,6 +242,14 @@ this on reveals the recipient address and report file format fields.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Send email report |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Yes - send the report via email |  |
+| No - do not send an email |  |
 
 ### EmailTo
 
@@ -221,6 +260,8 @@ Recipient email address(es) for the report (comma-separated). Only used when Sen
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Send report to (email address(es)) |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailFrom
 
@@ -231,6 +272,7 @@ Sender mailbox for the report. Bound to the org Setting RJReport.EmailSender.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ReportFileFormat
 
@@ -241,6 +283,16 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 | Required | false |
 | Default Value | CSV & XLSX |
 | Type | String |
+| Portal display name | Report file format |
+| Hidden in portal | yes (preset via runbook customization) |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| CSV & XLSX |  |
+| CSV only |  |
+| XLSX only |  |
 
 ### CreateDownloadLink
 
@@ -252,6 +304,14 @@ returned (and included in the email report if that is also enabled).
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Create a report download link (upload report to storage) |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Yes - upload report and return a download link |  |
+| No - do not create a download link |  |
 
 ### ContainerName
 
@@ -262,6 +322,7 @@ Storage container used for the upload. Configured per runbook.
 | Required | false |
 | Default Value | channel-group-member-sync |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
@@ -272,6 +333,7 @@ Resource group that contains the storage account. Bound to RJReport.StorageAccou
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
@@ -282,6 +344,7 @@ Storage account used for the upload. Bound to RJReport.StorageAccount.StorageAcc
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### LinkExpiryDays
 
@@ -292,6 +355,7 @@ Days until the generated download link expires. Bound to RJReport.StorageAccount
 | Required | false |
 | Default Value | 6 |
 | Type | Int32 |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

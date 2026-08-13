@@ -24,6 +24,14 @@ Organization → Phone → Get Teams Phone Number Assignment
 
 rjgit-org_phone_get-teams-phone-number-assignment
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>MicrosoftTeams (>= 7.6.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -44,6 +52,7 @@ The phone number must be in E.164 format. Example: +49321987654 or +49321987654;
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Phone number to check |
 
 
 

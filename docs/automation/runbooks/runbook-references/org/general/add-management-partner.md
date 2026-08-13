@@ -14,6 +14,14 @@ Organization → General → Add Management Partner
 
 rjgit-org_general_add-management-partner
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Az.ManagementPartner (>= 0.7.5) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Permission notes
@@ -30,6 +38,13 @@ Choice of action to perform: list existing PALs or add a new PAL.
 | Required | true |
 | Default Value | 0 |
 | Type | Int32 |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| List current PALs |  |
+| Add a PAL |  |
 
 ### PartnerId
 

@@ -13,6 +13,14 @@ Organization → General → Export All Autopilot Devices
 
 rjgit-org_general_export-all-autopilot-devices
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -32,6 +40,13 @@ rjgit-org_general_export-all-autopilot-devices
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Export to a CSV file |  |
+| List in Console |  |
 
 ### ContainerName
 

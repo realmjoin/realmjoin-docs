@@ -13,6 +13,14 @@ User → General → Assign Or Unassign License
 
 rjgit-user_general_assign-or-unassign-license
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -32,6 +40,7 @@ User principal name of the target user.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### GroupID_License
 
@@ -52,6 +61,14 @@ Object ID of the license assignment group.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Assign or Remove License |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Assign License to User | false |
+| Remove License from User | true |
 
 
 

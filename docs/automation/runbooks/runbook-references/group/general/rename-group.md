@@ -15,6 +15,14 @@ Group → General → Rename Group
 
 rjgit-group_general_rename-group
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -32,6 +40,7 @@ Object ID of the group to update.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### DisplayName
 
@@ -42,6 +51,7 @@ New display name for the group.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | New DisplayName / Team Name |
 
 ### MailNickname
 
@@ -52,6 +62,7 @@ New mail nickname (alias) for the group.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | New MailNickname |
 
 ### Description
 
@@ -62,6 +73,7 @@ New description for the group.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | New Description |
 
 
 

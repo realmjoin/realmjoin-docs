@@ -13,6 +13,14 @@ User → General → Reprovision Windows365
 
 rjgit-user_general_reprovision-windows365
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -35,6 +43,7 @@ User principal name of the target user.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### licWin365GroupName
 
@@ -45,6 +54,14 @@ Display name of the Windows 365 license group used to identify the Cloud PC.
 | Required | true |
 | Default Value | lic - Windows 365 Enterprise - 2 vCPU 4 GB 128 GB |
 | Type | String |
+| Portal display name | Select the Windows 365 license to be used for reprovisioning |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| lic - Windows 365 Enterprise - 2 vCPU 4 GB 128 GB | lic - Windows 365 Enterprise - 2 vCPU 4 GB 128 GB |
+| lic - Windows 365 Enterprise - 2 vCPU 4 GB 256 GB | lic - Windows 365 Enterprise - 2 vCPU 4 GB 256 GB |
 
 ### sendMailWhenReprovisioning
 
@@ -55,6 +72,14 @@ Display name of the Windows 365 license group used to identify the Cloud PC.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Notify user when CloudPC reprovisioning has begun? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Do not send an Email. |  |
+| Send an Email. |  |
 
 ### fromMailAddress
 
@@ -65,6 +90,7 @@ Mailbox used to send the notification email.
 | Required | false |
 | Default Value | reports@contoso.com |
 | Type | String |
+| Portal display name | (Shared) Mailbox to send mail from:  |
 
 ### customizeMail
 
@@ -75,6 +101,7 @@ If set to true, uses a custom email body.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Would you like to customize the mail sent to the user? |
 
 ### customMailMessage
 
@@ -85,6 +112,7 @@ Custom message body used for the notification email.
 | Required | false |
 | Default Value | Insert Custom Message here. (Capped at 3000 characters) |
 | Type | String |
+| Portal display name | Custom message to be sent to the user. |
 
 
 

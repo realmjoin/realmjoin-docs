@@ -14,6 +14,14 @@ Organization → General → Export Policy Report
 
 rjgit-org_general_export-policy-report
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.3 |
+| Required modules | Microsoft.Graph.Authentication (>= 2.39.0)<br>RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions

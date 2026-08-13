@@ -68,6 +68,14 @@ User → Security → Reset MFA
 
 rjgit-user_security_reset-MFA
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.1.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -86,6 +94,7 @@ User principal name of the target user.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### NotifyUser
 
@@ -96,6 +105,8 @@ When enabled, sends a notification email to the target user informing them that 
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Notify user via email |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailFrom
 
@@ -106,6 +117,7 @@ Sender email address for the optional notification mail. Sourced from the RealmJ
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskDisplayName
 
@@ -116,6 +128,7 @@ Service Desk display name for user contact information (optional). Sourced from 
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskEmail
 
@@ -126,6 +139,7 @@ Service Desk email address for user contact information (optional). Sourced from
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskPhone
 
@@ -136,6 +150,7 @@ Service Desk phone number for user contact information (optional). Sourced from 
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskPortalUrl
 
@@ -146,6 +161,7 @@ Service Desk portal URL for user contact information, rendered as a clickable li
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskTicketUrl
 
@@ -156,6 +172,7 @@ Direct link to the Service Desk ticket related to this request, rendered as a cl
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### LanguageOverride
 
@@ -166,6 +183,7 @@ Overrides the language used for the notification email. Accepted values are 'DE'
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

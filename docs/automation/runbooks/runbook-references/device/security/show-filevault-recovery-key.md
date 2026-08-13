@@ -13,6 +13,14 @@ Device → Security → Show Filevault Recovery Key
 
 rjgit-device_security_show-filevault-recovery-key
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -31,6 +39,7 @@ The Azure AD Device ID of the macOS device
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

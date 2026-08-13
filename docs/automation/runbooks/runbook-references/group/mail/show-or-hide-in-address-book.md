@@ -14,6 +14,14 @@ Group → Mail → Show Or Hide In Address Book
 
 rjgit-group_mail_show-or-hide-in-address-book
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | ExchangeOnlineManagement (>= 3.9.2)<br>RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -34,6 +42,7 @@ The identity of the target group (name, alias, or other Exchange identity value)
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### Action
 
@@ -44,6 +53,15 @@ The identity of the target group (name, alias, or other Exchange identity value)
 | Required | false |
 | Default Value | 1 |
 | Type | Int32 |
+| Portal display name | Action |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Show Group in Address Book | 0 |
+| Hide Group from Address Book | 1 |
+| Query current state only | 2 |
 
 
 

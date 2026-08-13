@@ -13,6 +13,14 @@ Device → General → Set Primary User
 
 rjgit-device_general_set-primary-user
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -31,6 +39,7 @@ The Entra Object ID of the device. Pre-filled from the RealmJoin Portal and hidd
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### NewPrimaryUserId
 
@@ -41,6 +50,7 @@ The user to assign as the new primary user of the device.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | New Primary User |
 
 
 

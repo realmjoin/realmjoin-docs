@@ -15,6 +15,14 @@ Group → General → List User Devices
 
 rjgit-group_general_list-user-devices
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions

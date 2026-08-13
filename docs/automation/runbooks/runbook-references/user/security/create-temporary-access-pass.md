@@ -65,6 +65,14 @@ User → Security → Create Temporary Access Pass
 
 rjgit-user_security_create-temporary-access-pass
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.2.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -82,6 +90,7 @@ User principal name of the target user.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### LifetimeInMinutes
 
@@ -112,6 +121,7 @@ If enabled, sends a notification email to the user's primary email address about
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailFrom
 
@@ -122,6 +132,7 @@ The sender email address. This needs to be configured in the runbook customizati
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskDisplayName
 
@@ -132,6 +143,7 @@ Service Desk display name for user contact information (optional).
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskEmail
 
@@ -142,6 +154,7 @@ Service Desk email address for user contact information (optional).
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskPhone
 
@@ -152,6 +165,7 @@ Service Desk phone number for user contact information (optional).
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskPortalUrl
 
@@ -162,6 +176,7 @@ Service Desk portal URL for user contact information, rendered as a clickable li
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskTicketUrl
 
@@ -172,6 +187,7 @@ Direct link to the Service Desk ticket related to this request, rendered as a cl
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

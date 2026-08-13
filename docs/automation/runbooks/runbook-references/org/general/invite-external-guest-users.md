@@ -15,6 +15,23 @@ Organization → General → Invite External Guest Users
 
 rjgit-org_general_Invite-external-guest-users
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 2.0.3 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Schedulable | no |
+
+## Notes
+Common Use Cases:
+- Basic guest invite: provide only the email address and display name; all profile and group parameters can be left blank
+- Full onboarding: supply all optional fields to set profile properties, assign a manager/sponsor, and add to a group in a single run
+
+Parameter Interactions:
+- Profile properties (givenName, surname, companyName, usageLocation) are applied only when non-empty; omitting them skips the PATCH call entirely
+- Manager and sponsor assignment and group membership each require their respective parameters; all are silently skipped when not provided
+
 ## Permissions
 
 ### Application permissions

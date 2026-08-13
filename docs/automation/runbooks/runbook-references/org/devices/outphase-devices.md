@@ -35,6 +35,14 @@ Organization → Devices → Outphase Devices
 
 rjgit-org_devices_outphase-devices
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.2.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -61,6 +69,14 @@ Determines whether the list contains device IDs or serial numbers.
 | Required | true |
 | Default Value | 0 |
 | Type | Int32 |
+| Portal display name | Select list type |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Comma separated list by Device IDs | 0 |
+| Comma separated list by Serial Numbers | 1 |
 
 ### DeviceList
 
@@ -71,6 +87,7 @@ Comma-separated list of device IDs or serial numbers.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Comma separated list |
 
 ### intuneAction
 
@@ -81,6 +98,15 @@ Determines whether to wipe the device, delete it from Intune, or skip Intune act
 | Required | false |
 | Default Value | 2 |
 | Type | Int32 |
+| Portal display name | Wipe this device? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Completely wipe device (not keeping user or enrollment data) | 2 |
+| Delete device from Intune | 1 |
+| Do not wipe or remove device from Intune | 0 |
 
 ### aadAction
 
@@ -91,6 +117,15 @@ Determines whether to delete the Entra ID device, disable it, or skip Entra ID a
 | Required | false |
 | Default Value | 2 |
 | Type | Int32 |
+| Portal display name | Delete device from Entra ID? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Delete device in Entra ID | 2 |
+| Disable device in Entra ID | 1 |
+| Do not delete or disable Entra ID device | 0 |
 
 ### wipeDevice
 
@@ -101,6 +136,7 @@ Internal flag derived from intuneAction.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### removeIntuneDevice
 
@@ -111,6 +147,7 @@ Internal flag derived from intuneAction.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### removeAutopilotDevice
 
@@ -121,6 +158,14 @@ Internal flag derived from intuneAction.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Delete device from Autopilot database |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Remove the device from Autopilot | true |
+| Keep device | false |
 
 ### removeAADDevice
 
@@ -131,6 +176,7 @@ Internal flag derived from aadAction.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### disableAADDevice
 
@@ -141,6 +187,7 @@ Internal flag derived from aadAction.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### excludeFromDefender
 
@@ -151,6 +198,14 @@ If set to true, each device will be tagged in Microsoft Defender for Endpoint wi
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Exclude devices from Defender for Endpoint? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Tag devices as excluded in Defender for Endpoint | true |
+| Skip Defender operations | false |
 
 ### defenderExclusionTag
 
@@ -161,6 +216,7 @@ The tag that will be added to the device in Microsoft Defender for Endpoint to m
 | Required | false |
 | Default Value | ExcludeFromRemediation |
 | Type | String |
+| Portal display name | Defender Exclusion Tag |
 
 
 

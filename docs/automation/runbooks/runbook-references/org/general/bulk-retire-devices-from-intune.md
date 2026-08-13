@@ -13,6 +13,14 @@ Organization → General → Bulk Retire Devices From Intune
 
 rjgit-org_general_bulk-retire-devices-from-intune
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -31,6 +39,7 @@ Comma-separated list of device serial numbers to retire.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | List of Serial Numbers (comma-separated) |
 
 
 

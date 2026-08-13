@@ -14,6 +14,14 @@ Organization → General → Add Office365 Group
 
 rjgit-org_general_add-office365-group
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -42,6 +50,7 @@ Optional display name. If empty, MailNickname is used.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | DisplayName - will use MailNickname if left empty |
 
 ### CreateTeam
 
@@ -52,6 +61,14 @@ Choose to "Only create a SharePoint Site" (final value: $false) or "Create a Tea
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Create a Teams Team |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Only create a SharePoint Site | false |
+| Create a Team (and SharePoint Site) | true |
 
 ### Private
 
@@ -62,6 +79,14 @@ Choose the group visibility: "Public" (final value: $false) or "Private" (final 
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Visibility |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Public | false |
+| Private | true |
 
 ### MailEnabled
 

@@ -13,6 +13,14 @@ Organization → Security → List Admin Users
 
 rjgit-org_security_list-admin-users
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.2.4 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -53,6 +61,7 @@ Name of the Azure Storage container to upload the CSV report to.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
@@ -63,6 +72,7 @@ Name of the Azure Resource Group containing the Storage Account.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
@@ -73,6 +83,7 @@ Name of the Azure Storage Account used for upload.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountLocation
 
@@ -83,6 +94,7 @@ Azure region for the Storage Account if it needs to be created.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountSku
 
@@ -93,6 +105,7 @@ SKU name for the Storage Account if it needs to be created.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### QueryMfaState
 
@@ -103,6 +116,13 @@ SKU name for the Storage Account if it needs to be created.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Check and report every admin's MFA state | true |
+| Do not check admin MFA states | false |
 
 ### TrustEmailMfa
 

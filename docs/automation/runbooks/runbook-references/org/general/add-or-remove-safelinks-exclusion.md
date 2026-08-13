@@ -13,6 +13,14 @@ Organization → General → Add Or Remove Safelinks Exclusion
 
 rjgit-org_general_add-or-remove-safeLinks-exclusion
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | ExchangeOnlineManagement (>= 3.7.2)<br>RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -33,6 +41,15 @@ rjgit-org_general_add-or-remove-safeLinks-exclusion
 | Required | false |
 | Default Value | 2 |
 | Type | Int32 |
+| Portal display name | Add or Remove URL Pattern to/from Policy |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Add URL Pattern to Policy |  |
+| Remove URL Pattern from Policy |  |
+| List all existing policies and settings |  |
 
 ### LinkPattern
 
@@ -53,6 +70,7 @@ Default SafeLinks policy name used when no explicit policy name is provided.
 | Required | true |
 | Default Value | Default SafeLinks Policy |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### PolicyName
 

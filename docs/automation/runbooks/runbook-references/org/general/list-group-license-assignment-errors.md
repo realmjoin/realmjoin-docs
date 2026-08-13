@@ -14,6 +14,14 @@ Organization → General → List Group License Assignment Errors
 
 rjgit-org_general_list-group-license-assignment-errors
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions

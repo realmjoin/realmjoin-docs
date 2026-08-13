@@ -17,6 +17,14 @@ Organization → Applications → Export Enterprise Application Users
 
 rjgit-org_applications_export-enterprise-application-users
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.2.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Az.Accounts (>= 5.3.4) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -38,6 +46,14 @@ Determines whether to export only enterprise applications (final value: true) or
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Scope |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| List only Enterprise Apps | true |
+| List all Service Principals / Apps | false |
 
 ### ReportFileFormat
 
@@ -48,6 +64,15 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 | Required | false |
 | Default Value | CSV & XLSX |
 | Type | String |
+| Portal display name | Report file format |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| CSV & XLSX |  |
+| CSV only |  |
+| XLSX only |  |
 
 ### CreateDownloadLink
 
@@ -58,6 +83,14 @@ If enabled, the report files are uploaded to an Azure Storage Account and time-l
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Create a file download link (upload report to storage)? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Yes - upload report and return a download link | true |
+| No - do not create a download link | false |
 
 ### ContainerName
 
@@ -108,6 +141,7 @@ The sender email address. This needs to be configured in the runbook customizati
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailTo
 
@@ -120,6 +154,7 @@ The function sends individual emails to each recipient for privacy reasons.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Recipient Email Address(es) |
 
 
 

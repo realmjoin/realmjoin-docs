@@ -13,6 +13,14 @@ Device → Security → Check Defender Status
 
 rjgit-device_security_check-defender-status
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -32,6 +40,7 @@ The Entra device ID of the target device.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

@@ -13,6 +13,14 @@ User → Mail → Add Or Remove Email Address
 
 rjgit-user_mail_add-or-remove-email-address
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -33,6 +41,7 @@ User principal name of the mailbox.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailAddress
 
@@ -53,6 +62,8 @@ If set to true, removes the address instead of adding it.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Remove this address |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### asPrimary
 
@@ -63,6 +74,7 @@ If set to true, sets the specified address as the primary SMTP address.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Set as primary address |
 
 
 

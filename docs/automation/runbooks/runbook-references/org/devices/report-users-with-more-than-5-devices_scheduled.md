@@ -3,6 +3,10 @@ title: Report Users With More Than 5-Devices (Scheduled)
 description: Report users with more than five registered devices
 ---
 
+{% hint style="info" %}
+This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.
+{% endhint %}
+
 ## Description
 This runbook queries Entra ID devices and their registered users to identify users with more than five devices.
 It outputs a summary table and can optionally send an email with the report attached as CSV files and/or as an Excel workbook (one worksheet for the summary, one for the details).
@@ -27,6 +31,14 @@ Organization → Devices → Report Users With More Than 5-Devices (Scheduled)
 
 rjgit-org_devices_report-users-with-more-than-5-devices_scheduled
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.9.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.3.4) |
+| Schedulable | yes |
+
 ## Permissions
 
 ### Application permissions
@@ -47,6 +59,7 @@ Disabled by default.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Only include devices present in Intune |
 
 ### ReportFileFormat
 
@@ -57,6 +70,15 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 | Required | false |
 | Default Value | CSV & XLSX |
 | Type | String |
+| Portal display name | Report file format |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| CSV & XLSX |  |
+| CSV only |  |
+| XLSX only |  |
 
 ### CreateDownloadLink
 
@@ -67,6 +89,14 @@ If enabled, the report files are uploaded to an Azure Storage Account and time-l
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Create a file download link (upload report to storage)? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Yes - upload report and return a download link | true |
+| No - do not create a download link | false |
 
 ### ContainerName
 
@@ -77,6 +107,7 @@ Storage container name used for the upload. Configured per runbook (not a global
 | Required | false |
 | Default Value | users-with-more-than-5-devices |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
@@ -87,6 +118,7 @@ Resource group that contains the storage account. Sourced from the RJReport tena
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
@@ -97,6 +129,7 @@ Storage account name used for the upload. Sourced from the RJReport tenant setti
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### LinkExpiryDays
 
@@ -107,6 +140,7 @@ Number of days until the generated download link expires. Sourced from the RJRep
 | Required | false |
 | Default Value | 6 |
 | Type | Int32 |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailFrom
 
@@ -117,6 +151,7 @@ The sender email address. This needs to be configured in the runbook customizati
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailTo
 
@@ -129,6 +164,7 @@ The function sends individual emails to each recipient for privacy reasons.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Recipient Email Address(es) |
 
 
 

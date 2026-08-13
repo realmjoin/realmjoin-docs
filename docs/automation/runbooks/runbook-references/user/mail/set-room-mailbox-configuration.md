@@ -13,6 +13,14 @@ User → Mail → Set Room Mailbox Configuration
 
 rjgit-user_mail_set-room-mailbox-configuration
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -33,6 +41,7 @@ User principal name of the room mailbox.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### AllBookInPolicy
 
@@ -43,6 +52,13 @@ User principal name of the room mailbox.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Allow BookIn for everyone | true |
+| Custom BookIn Policy | false |
 
 ### BookInPolicyGroup
 
@@ -73,6 +89,14 @@ Calendar processing mode for the room mailbox.
 | Required | false |
 | Default Value | AutoAccept |
 | Type | String |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Auto Accept | AutoAccept |
+| Auto Update | AutoUpdate |
+| None | None |
 
 ### BookingWindowInDays
 

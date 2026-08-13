@@ -27,6 +27,14 @@ Organization → Applications → Delete GSA Application Registration
 
 rjgit-org_applications_delete-GSA-application-registration
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.2.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -45,6 +53,7 @@ The full display name of the GSA application to delete, e.g. "GSA-MyApp".
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Application Name (full display name, e.g. GSA-MyApp) |
 
 ### groupPrefix
 
@@ -57,6 +66,7 @@ Default: "App - Entra - GSA - ".
 | Required | false |
 | Default Value | App - Entra - GSA - |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### groupSuffix
 
@@ -67,6 +77,7 @@ Optional suffix of the security group naming scheme. Default: empty.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### deleteAllAssignedGroups
 
@@ -78,6 +89,7 @@ Use with care - assigned groups may be shared with other applications. Default: 
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Also delete ALL other groups assigned to the application (careful - groups may be shared) |
 
 
 

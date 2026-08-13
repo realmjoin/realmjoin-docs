@@ -15,6 +15,14 @@ Organization → Applications → Update Application Registration
 
 rjgit-org_applications_update-application-registration
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.1.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -47,6 +55,17 @@ Used for UI selection only. Determines which redirect URI type to configure.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Redirect URI (Optional) |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| None |  |
+| Web |  |
+| SAML |  |
+| Public client/native (mobile & desktop) |  |
+| Single-page application (SPA) |  |
 
 ### webRedirectURI
 
@@ -57,6 +76,7 @@ Redirect URI or URIs for web applications. Multiple values can be separated by s
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Web Redirect URI e.g. https://myapp.com/auth (semicolon-separated for multiple) |
 
 ### publicClientRedirectURI
 
@@ -67,6 +87,7 @@ Redirect URI or URIs for public client/native applications. Multiple values can 
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Public client/native Redirect URI e.g. myapp://auth (semicolon-separated for multiple) |
 
 ### spaRedirectURI
 
@@ -77,6 +98,7 @@ Redirect URI or URIs for single-page applications. Multiple values can be separa
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Single-page application (SPA) Redirect URI e.g. https://myapp.com (semicolon-separated for multiple) |
 
 ### EnableSAML
 
@@ -157,6 +179,7 @@ Determines whether the application is visible in the My Apps portal.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Application visible in My Apps portal |
 
 ### UserAssignmentRequired
 
@@ -167,6 +190,7 @@ Determines whether user assignment is required for the application.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | User assignment required |
 
 ### groupAssignmentPrefix
 
@@ -177,6 +201,7 @@ Prefix for the automatically created assignment group.
 | Required | false |
 | Default Value | col - Entra - users - |
 | Type | String |
+| Portal display name | Group assignment prefix (Only necessary when User assignment required) |
 
 ### implicitGrantAccessTokens
 
@@ -187,6 +212,7 @@ Enable implicit grant flow for access tokens.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Enable implicit grant for access tokens |
 
 ### implicitGrantIDTokens
 
@@ -197,6 +223,7 @@ Enable implicit grant flow for ID tokens.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Enable implicit grant for ID tokens |
 
 ### disableImplicitGrant
 

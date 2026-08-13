@@ -3,6 +3,10 @@ title: Cleanup Autopilot Devices (Scheduled)
 description: Clean up orphaned and stale Windows Autopilot device registrations
 ---
 
+{% hint style="info" %}
+This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.
+{% endhint %}
+
 ## Description
 This scheduled runbook performs regular maintenance of Windows Autopilot device registrations by identifying and removing orphaned devices whose serial numbers no longer match any Intune managed device, and optionally removing never-enrolled Autopilot devices that exceed a configurable age threshold. The runbook operates in WhatIf mode by default for safe reporting, and can optionally send an email summary with CSV and/or Excel (xlsx) attachments listing the devices that would be or were deleted.
 The report files can also be uploaded to an Azure Storage Account, returning time-limited download links.
@@ -25,6 +29,51 @@ Organization → Devices → Cleanup Autopilot Devices (Scheduled)
 
 rjgit-org_devices_cleanup-autopilot-devices_scheduled
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.1.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.3.4) |
+| Schedulable | yes |
+
+## Notes
+Prerequisites:
+- The Azure Automation managed identity must hold these Microsoft Graph application
+  permissions: DeviceManagementManagedDevices.Read.All,
+  DeviceManagementServiceConfig.ReadWrite.All, Organization.Read.All, Device.ReadWrite.All
+  (Device.ReadWrite.All only when the "Delete Autopilot and Entra device" mode is used), and
+  Mail.Send (Mail.Send only when email reporting is enabled).
+- Grant the permissions before the first scheduled run.
+
+Warning - deletion is irreversible:
+- Removing an Autopilot device identity permanently deletes it from Windows Autopilot.
+- The physical device cannot re-enter Autopilot until its hardware hash is re-uploaded.
+- There is no soft-delete or recycle bin for Autopilot records.
+- Deleting the Entra (Azure AD) device object is likewise permanent; only do so for records
+  that are genuinely dead (the device will never enroll again).
+
+Recommended first-run procedure:
+- Run with Delete mode = "WhatIf (report only)" (the default) and review the output or emailed CSV.
+- Confirm the identified devices are genuinely orphaned or never-enrolled.
+- Switch to a deletion mode only after the candidate list has been reviewed.
+
+Parameter interactions:
+- DeleteMode defaults to "WhatIf (report only)"; no deletions occur in that mode.
+- "Delete Autopilot device" removes only the Autopilot identity. "Delete Autopilot and Entra
+  device" additionally removes the matching Entra (Azure AD) device object, which would
+  otherwise be left behind as a stale/dead record once the Autopilot identity is gone.
+- CleanupOrphanedDevices and CleanupNeverEnrolledDevices are independent; either or both
+  can be enabled. NeverEnrolledAgeDays applies only to the never-enrolled check.
+- GroupTagFilter, ManufacturerFilter and ModelFilter are all optional; leave a filter empty to
+  evaluate all values for that dimension. When more than one filter is set they are combined with
+  AND - a device must match every populated filter to remain in scope. GroupTagFilter matches the
+  group tag exactly (case-insensitive); ManufacturerFilter and ModelFilter match as case-insensitive
+  substrings, so "Dell" matches "Dell Inc." and "Surface" matches "Surface Laptop 3".
+- ExcludeSerialNumbers is applied after the AND filters as an exclusion: any device whose serial
+  number is in the list (exact, case-insensitive) is removed from scope regardless of the other
+  filters. Leave empty to exclude nothing.
+
 ## Permissions
 
 ### Application permissions
@@ -46,6 +95,7 @@ Controls what the runbook does with the identified cleanup candidates. "WhatIf (
 | Required | false |
 | Default Value | WhatIf (report only) |
 | Type | String |
+| Portal display name | Deletion mode |
 
 ### GroupTagFilter
 
@@ -56,6 +106,7 @@ Comma-separated Autopilot group tags to limit the cleanup scope. Matched exactly
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Autopilot Group Tag Filter (comma-separated exact match, leave empty for all) |
 
 ### ManufacturerFilter
 
@@ -66,6 +117,7 @@ Comma-separated device manufacturers to limit the cleanup scope. Matched as case
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Manufacturer Filter (comma-separated, substring match, leave empty for all) |
 
 ### ModelFilter
 
@@ -76,6 +128,7 @@ Comma-separated device models to limit the cleanup scope. Matched as case-insens
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Model Filter (comma-separated, substring match, leave empty for all) |
 
 ### ExcludeSerialNumbers
 
@@ -86,6 +139,7 @@ Comma-separated serial numbers to exclude from the cleanup. Matched exactly (cas
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Exclude Serial Numbers (comma-separated exact match, leave empty for none) |
 
 ### CleanupOrphanedDevices
 
@@ -96,6 +150,7 @@ When enabled, removes Autopilot devices that have contacted Intune in the past b
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Clean up orphaned Autopilot devices |
 
 ### OrphanedLastContactedDays
 
@@ -106,6 +161,7 @@ Age threshold in days for orphaned devices. An Autopilot device is only treated 
 | Required | false |
 | Default Value | 90 |
 | Type | Int32 |
+| Portal display name | Orphaned device last-contacted threshold (days) |
 
 ### CleanupNeverEnrolledDevices
 
@@ -116,6 +172,14 @@ When enabled, removes never-enrolled Autopilot devices (devices that never conta
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Clean up never-enrolled Autopilot devices |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Yes - remove aged never-enrolled devices |  |
+| No |  |
 
 ### NeverEnrolledAgeDays
 
@@ -126,6 +190,8 @@ Age threshold in days for never-enrolled devices. Measured on the Device creatio
 | Required | false |
 | Default Value | 90 |
 | Type | Int32 |
+| Portal display name | Never-enrolled device age threshold (days) |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailTo
 
@@ -136,6 +202,7 @@ Optional email recipient address for the cleanup summary report. Leave empty to 
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Email recipient for cleanup summary (optional) |
 
 ### EmailFrom
 
@@ -146,6 +213,7 @@ The sender email address for the summary report. This is configured via Runbook 
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ReportFileFormat
 
@@ -156,6 +224,15 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 | Required | false |
 | Default Value | CSV & XLSX |
 | Type | String |
+| Portal display name | Report file format |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| CSV & XLSX |  |
+| CSV only |  |
+| XLSX only |  |
 
 ### CreateDownloadLink
 
@@ -166,6 +243,14 @@ If enabled, the report files are uploaded to an Azure Storage Account and time-l
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Create a file download link (upload report to storage)? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Yes - upload report and return a download link | true |
+| No - do not create a download link | false |
 
 ### ContainerName
 
@@ -176,6 +261,7 @@ Storage container name used for the upload. Configured per runbook (not a global
 | Required | false |
 | Default Value | cleanup-autopilot-devices |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
@@ -186,6 +272,7 @@ Resource group that contains the storage account. Sourced from the RJReport tena
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
@@ -196,6 +283,7 @@ Storage account name used for the upload. Sourced from the RJReport tenant setti
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### LinkExpiryDays
 
@@ -206,6 +294,7 @@ Number of days until the generated download link expires. Sourced from the RJRep
 | Required | false |
 | Default Value | 6 |
 | Type | Int32 |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

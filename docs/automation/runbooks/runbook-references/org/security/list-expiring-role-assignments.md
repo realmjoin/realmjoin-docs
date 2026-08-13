@@ -13,6 +13,14 @@ Organization → Security → List Expiring Role Assignments
 
 rjgit-org_security_list-expiring-role-assignments
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -31,6 +39,7 @@ Maximum number of days until expiry.
 | Required | false |
 | Default Value | 30 |
 | Type | Int32 |
+| Portal display name | Maximum days before expiry |
 
 
 

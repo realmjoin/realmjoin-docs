@@ -13,6 +13,14 @@ Device → General → Rename Device
 
 rjgit-device_general_rename-device
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -33,6 +41,7 @@ The device ID of the target device.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### NewDeviceName
 

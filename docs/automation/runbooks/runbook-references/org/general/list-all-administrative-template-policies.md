@@ -14,6 +14,14 @@ Organization → General → List All Administrative Template Policies
 
 rjgit-org_general_list-all-administrative-template-policies
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions

@@ -14,6 +14,14 @@ Organization → Mail → Add Shared Mailbox
 
 rjgit-org_mail_add-shared-mailbox
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -65,6 +73,14 @@ The language/locale for the shared mailbox. This setting affects folder names li
 | Default Value | en-US |
 | Type | String |
 
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| en-US | en-US |
+| de-DE | de-DE |
+| fr-FR | fr-FR |
+
 ### TimeZone
 
 The time zone for the shared mailbox. Default is "W. Europe Standard Time".
@@ -74,6 +90,45 @@ The time zone for the shared mailbox. Default is "W. Europe Standard Time".
 | Required | false |
 | Default Value | W. Europe Standard Time |
 | Type | String |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| W. Europe Standard Time | W. Europe Standard Time |
+| Central Europe Standard Time | Central Europe Standard Time |
+| E. Europe Standard Time | E. Europe Standard Time |
+| GMT Standard Time | GMT Standard Time |
+| UTC | UTC |
+| Eastern Standard Time | Eastern Standard Time |
+| Central Standard Time | Central Standard Time |
+| Mountain Standard Time | Mountain Standard Time |
+| Pacific Standard Time | Pacific Standard Time |
+| Alaska Standard Time | Alaska Standard Time |
+| Hawaiian Standard Time | Hawaiian Standard Time |
+| China Standard Time | China Standard Time |
+| Tokyo Standard Time | Tokyo Standard Time |
+| Korea Standard Time | Korea Standard Time |
+| India Standard Time | India Standard Time |
+| Arabian Standard Time | Arabian Standard Time |
+| AUS Eastern Standard Time | AUS Eastern Standard Time |
+| New Zealand Standard Time | New Zealand Standard Time |
+| Romance Standard Time | Romance Standard Time |
+| Russian Standard Time | Russian Standard Time |
+| SA Pacific Standard Time | SA Pacific Standard Time |
+| SE Asia Standard Time | SE Asia Standard Time |
+| Singapore Standard Time | Singapore Standard Time |
+| South Africa Standard Time | South Africa Standard Time |
+| Turkey Standard Time | Turkey Standard Time |
+| Argentina Standard Time | Argentina Standard Time |
+| Atlantic Standard Time | Atlantic Standard Time |
+| Canada Central Standard Time | Canada Central Standard Time |
+| E. South America Standard Time | E. South America Standard Time |
+| FLE Standard Time | FLE Standard Time |
+| Israel Standard Time | Israel Standard Time |
+| Middle East Standard Time | Middle East Standard Time |
+| Nepal Standard Time | Nepal Standard Time |
+| West Pacific Standard Time | West Pacific Standard Time |
 
 ### DelegateTo
 

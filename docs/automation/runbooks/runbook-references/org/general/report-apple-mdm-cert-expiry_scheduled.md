@@ -3,6 +3,10 @@ title: Report Apple MDM Cert Expiry (Scheduled)
 description: Monitor/Report expiry of Apple device management certificates
 ---
 
+{% hint style="info" %}
+This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.
+{% endhint %}
+
 ## Description
 Monitors expiration dates of Apple Push certificates, VPP tokens, and DEP tokens in Microsoft Intune.
 Sends an email report with alerts for certificates/tokens expiring within the specified threshold.
@@ -22,6 +26,14 @@ Organization → General → Report Apple MDM Cert Expiry (Scheduled)
 **Full Runbook name**
 
 rjgit-org_general_report-apple-mdm-cert-expiry_scheduled
+
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.6 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Schedulable | yes |
 
 ## Permissions
 
@@ -44,6 +56,7 @@ flagged as alerts in the report. Default is 30 days.
 | Required | false |
 | Default Value | 30 |
 | Type | Int32 |
+| Portal display name | Days Until Expiration Warning |
 
 ### EmailTo
 
@@ -55,6 +68,7 @@ The function sends individual emails to each recipient for privacy reasons.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Recipient Email Address(es) |
 
 ### EmailFrom
 
@@ -65,6 +79,7 @@ The sender email address. This needs to be configured in the runbook customizati
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

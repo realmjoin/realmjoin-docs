@@ -13,6 +13,14 @@ Organization → Mail → Add Or Remove Tenant Allow Block List
 
 rjgit-org_mail_add-or-remove-tenant-allow-block-list
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions

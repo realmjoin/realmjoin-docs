@@ -13,6 +13,14 @@ User → Mail → Hide Or Unhide In Addressbook
 
 rjgit-user_mail_hide-or-unhide-in-addressbook
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -33,6 +41,7 @@ User principal name of the mailbox.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### HideMailbox
 
@@ -43,6 +52,8 @@ If set to true, hides the mailbox from address lists.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Hide the Mailbox |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

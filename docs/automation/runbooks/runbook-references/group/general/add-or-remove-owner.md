@@ -15,6 +15,14 @@ Group → General → Add Or Remove Owner
 
 rjgit-group_general_add-or-remove-owner
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -39,6 +47,7 @@ Object ID of the target group.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### UserId
 
@@ -59,6 +68,14 @@ Object ID of the user to add or remove.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Add or Remove Owner |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Add User as Owner | false |
+| Remove User as Owner | true |
 
 
 

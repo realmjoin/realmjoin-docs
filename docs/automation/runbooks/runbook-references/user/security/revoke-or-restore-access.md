@@ -13,6 +13,14 @@ User → Security → Revoke Or Restore Access
 
 rjgit-user_security_revoke-or-restore-access
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -33,6 +41,7 @@ User principal name of the target user.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### Revoke
 
@@ -43,6 +52,14 @@ User principal name of the target user.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Action |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| (Re-)Enable User | false |
+| Revoke Access | true |
 
 
 

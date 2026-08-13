@@ -15,6 +15,14 @@ Organization → Applications → Add Application Registration
 
 rjgit-org_applications_add-application-registration
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -37,6 +45,7 @@ The display name of the application registration to create.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Application Name |
 
 ### RedirectURI
 
@@ -47,6 +56,17 @@ Used for UI selection only. Determines which redirect URI type to configure - No
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Redirect URI (Optional) |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| None |  |
+| Web |  |
+| SAML |  |
+| Public client/native (mobile & desktop) |  |
+| Single-page application (SPA) |  |
 
 ### signInAudience
 
@@ -57,6 +77,7 @@ Specifies who can use the application. Defaults to "AzureADMyOrg" (single tenant
 | Required | false |
 | Default Value | AzureADMyOrg |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### webRedirectURI
 
@@ -67,6 +88,7 @@ Redirect URI or URIs for web applications. Multiple values can be separated by s
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Web Redirect URI e.g. https://myapp.com/auth (semicolon-separated for multiple) |
 
 ### spaRedirectURI
 
@@ -77,6 +99,7 @@ Redirect URI or URIs for single-page applications. Multiple values can be separa
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Single-page application (SPA) Redirect URI e.g. https://myapp.com (semicolon-separated for multiple) |
 
 ### publicClientRedirectURI
 
@@ -87,6 +110,7 @@ Redirect URI or URIs for public client/native applications. Multiple values can 
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Public client/native Redirect URI e.g. myapp://auth (semicolon-separated for multiple) |
 
 ### EnableSAML
 
@@ -177,6 +201,7 @@ Determines whether the application is visible in the My Apps portal. Default is 
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Application visible in My Apps portal |
 
 ### UserAssignmentRequired
 
@@ -187,6 +212,7 @@ Determines whether users must be assigned to the application before accessing it
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | User assignment required |
 
 ### groupAssignmentPrefix
 
@@ -197,6 +223,7 @@ Prefix for the automatically created EntraID group when UserAssignmentRequired i
 | Required | false |
 | Default Value | col - Entra - users - |
 | Type | String |
+| Portal display name | Group assignment prefix (Only necessary when User assignment required) |
 
 ### implicitGrantAccessTokens
 
@@ -207,6 +234,7 @@ Enable implicit grant flow for access tokens. Default is false.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Enable implicit grant for access tokens |
 
 ### implicitGrantIDTokens
 
@@ -217,6 +245,7 @@ Enable implicit grant flow for ID tokens. Default is false.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Enable implicit grant for ID tokens |
 
 
 

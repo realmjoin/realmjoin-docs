@@ -13,6 +13,14 @@ Organization → Security → Notify Changed CA Policies
 
 rjgit-org_security_notify-changed-CA-Policies
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -31,6 +39,7 @@ Sender email address used to send the notification.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Sender Mail Address |
 
 ### To
 
@@ -41,6 +50,7 @@ Recipient email address for the notification.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Recipient Mail Address |
 
 
 

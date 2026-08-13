@@ -13,6 +13,14 @@ Organization → Devices → Create Endpoint Analytics Baseline
 
 rjgit-org_devices_create-endpoint-analytics-baseline
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.3 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -30,6 +38,7 @@ The naming schema to use for the Endpoint Analytics baseline. Can include placeh
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Baseline Naming Schema |
 
 ### RemoveOldestBaseline
 
@@ -40,6 +49,7 @@ When enabled (default), automatically removes the oldest baseline if the maximum
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Remove Oldest Baseline When Limit Reached |
 
 
 

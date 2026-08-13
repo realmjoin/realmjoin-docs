@@ -3,6 +3,10 @@ title: Sync MFA Secure Users To Group (Scheduled)
 description: Sync users with secure MFA methods registered into an Entra ID group
 ---
 
+{% hint style="info" %}
+This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.
+{% endhint %}
+
 ## Description
 This runbook synchronizes an Entra ID group with all member users that have at least one "secure" authentication method registered, based on the Entra ID authentication methods registration report. Which method groups count as secure is configurable via toggles (Passkeys/FIDO2, platform credentials, Microsoft Authenticator app, software OTP, hardware OTP, certificate-based authentication). Users that no longer have a secure method registered are removed from the group. An optional strict mode ("SecureOnly") additionally disqualifies users that have any unsecure method (phone, email, security questions) registered alongside their secure method. Admin users (holders of an Entra ID directory role, active or PIM-eligible, including members of role-assignable groups) are excluded by default ("ExcludeAdmins") - useful when the target group drives SSPR, where admins would otherwise be forced to register a second factor. An optional exclusion group keeps accounts like break glass or service accounts permanently out of the target group; individual users can additionally be excluded directly via a multi-user picker ("ExcludeUserIds"). Excluded users are never added and are removed if they are already members. Guest users and non-user group members are never touched.
 
@@ -164,6 +168,14 @@ Organization → Security → Sync MFA Secure Users To Group (Scheduled)
 
 rjgit-org_security_sync-MFA-secure-users-to-group_scheduled
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.3.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.5.0) |
+| Schedulable | yes |
+
 ## Permissions
 
 ### Application permissions
@@ -187,6 +199,7 @@ The Entra ID group to synchronize into. Members of this group will be managed ex
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Target Group (sync users with secure MFA methods into) |
 
 ### IncludePasskeys
 
@@ -197,6 +210,7 @@ Count passkeys and FIDO2 security keys as secure (fido2SecurityKey, passKeyDevic
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Passkeys / FIDO2 security keys count as secure |
 
 ### IncludePlatformCredentials
 
@@ -207,6 +221,7 @@ Count platform credentials as secure (windowsHelloForBusiness, passKeyDeviceBoun
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Platform credentials (Windows Hello for Business / macOS Secure Enclave) count as secure |
 
 ### IncludeMicrosoftAuthenticator
 
@@ -217,6 +232,7 @@ Count the Microsoft Authenticator app as secure (microsoftAuthenticatorPush, mic
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Microsoft Authenticator app (push / passwordless sign-in) counts as secure |
 
 ### IncludeSoftwareOtp
 
@@ -227,6 +243,7 @@ Count software OTP / authenticator TOTP apps as secure (softwareOneTimePasscode)
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Software OTP (authenticator TOTP apps) counts as secure |
 
 ### IncludeHardwareOtp
 
@@ -237,6 +254,7 @@ Count hardware OTP tokens as secure (hardwareOneTimePasscode).
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Hardware OTP tokens count as secure |
 
 ### IncludeCertificateBasedAuth
 
@@ -247,6 +265,7 @@ Count certificate-based authentication as secure (certificateBasedAuthentication
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Certificate-based authentication counts as secure |
 
 ### SecureOnly
 
@@ -257,6 +276,7 @@ Strict mode: users that have any unsecure method registered (mobilePhone, altern
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Strict mode: users with any unsecure method (phone, email, security questions) never qualify |
 
 ### SecureMethodsOverride
 
@@ -267,6 +287,8 @@ Optional. Comma-separated list of methodsRegistered values that define the secur
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Expert: custom secure methods list (comma-separated, replaces ALL toggles above) |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### UnsecureMethodsOverride
 
@@ -277,6 +299,8 @@ Optional. Comma-separated list of methodsRegistered values that replace the buil
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Expert: custom unsecure methods list (comma-separated, replaces built-in list) |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ExcludeAdmins
 
@@ -287,6 +311,7 @@ Exclude admin users: users holding an Entra ID directory role (active or PIM-eli
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Exclude admin users (directory role holders, incl. PIM-eligible) |
 
 ### ExcludeGroupId
 
@@ -297,6 +322,7 @@ Optional exclusion group: transitive user members of this group (e.g. break glas
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Exclusion group (members are never synced into the target group) |
 
 ### ExcludeUserIds
 
@@ -307,6 +333,7 @@ Optional list of individually excluded users: these users never qualify and are 
 | Required | false |
 | Default Value | @() |
 | Type | String[] |
+| Portal display name | Excluded users (never synced into the target group) |
 
 ### WhatIfMode
 
@@ -317,6 +344,7 @@ Dry run: log which users would be added or removed without changing the group.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Dry run (log only, no changes) |
 
 ### SendEmail
 
@@ -327,6 +355,14 @@ If enabled, the report is sent via email with CSV and Excel (xlsx) attachments. 
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Send report via email? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Yes - send the report via email |  |
+| No - do not send an email |  |
 
 ### EmailTo
 
@@ -337,6 +373,7 @@ Recipient email address(es) for the report. Can be a single address or multiple 
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Recipient Email Address(es) |
 
 ### EmailFrom
 
@@ -347,6 +384,7 @@ The sender email address. Sourced from the RJReport tenant settings.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ReportFileFormat
 
@@ -357,6 +395,16 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 | Required | false |
 | Default Value | CSV & XLSX |
 | Type | String |
+| Portal display name | Report file format |
+| Hidden in portal | yes (preset via runbook customization) |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| CSV & XLSX |  |
+| CSV only |  |
+| XLSX only |  |
 
 ### CreateDownloadLink
 
@@ -367,6 +415,14 @@ If enabled, the report files are uploaded to an Azure Storage Account and time-l
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Create file download links (upload report to storage)? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Yes - upload the report and return download links |  |
+| No - do not create download links |  |
 
 ### ContainerName
 
@@ -377,6 +433,7 @@ Storage container name used for the upload. Configured per runbook (not a global
 | Required | false |
 | Default Value | sync-mfa-secure-users-to-group |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
@@ -387,6 +444,7 @@ Resource group that contains the storage account. Sourced from the RJReport tena
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
@@ -397,6 +455,7 @@ Storage account name used for the upload. Sourced from the RJReport tenant setti
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### LinkExpiryDays
 
@@ -407,6 +466,7 @@ Number of days until the generated download link expires. Sourced from the RJRep
 | Required | false |
 | Default Value | 6 |
 | Type | Int32 |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

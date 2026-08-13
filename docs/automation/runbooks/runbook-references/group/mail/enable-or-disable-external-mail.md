@@ -15,6 +15,19 @@ Group → Mail → Enable Or Disable External Mail
 
 rjgit-group_mail_enable-or-disable-external-mail
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | ExchangeOnlineManagement (>= 3.7.2)<br>RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
+## Notes
+Setting this via Microsoft Graph is broken as of 2021-06-28.
+Attribute: allowExternalSenders.
+See https://docs.microsoft.com/en-us/graph/known-issues#setting-the-allowexternalsenders-property.
+
 ## Permissions
 
 ### Application permissions
@@ -35,6 +48,7 @@ Object ID of the Microsoft 365 group.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### Action
 
@@ -45,6 +59,15 @@ Object ID of the Microsoft 365 group.
 | Required | false |
 | Default Value | 0 |
 | Type | Int32 |
+| Portal display name | Choose action |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Enable External Mail | 0 |
+| Disable External Mail | 1 |
+| Query current state only | 2 |
 
 
 

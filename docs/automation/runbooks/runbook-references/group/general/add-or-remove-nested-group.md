@@ -15,6 +15,14 @@ Group → General → Add Or Remove Nested Group
 
 rjgit-group_general_add-or-remove-nested-group
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -34,6 +42,7 @@ Object ID of the target group.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### NestedGroupID
 
@@ -54,6 +63,7 @@ Set to true to remove the nested group membership, or false to add it.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Remove this group |
 
 
 

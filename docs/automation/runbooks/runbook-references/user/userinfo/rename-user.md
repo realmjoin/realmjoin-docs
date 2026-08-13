@@ -13,6 +13,14 @@ User → Userinfo → Rename User
 
 rjgit-user_userinfo_rename-user
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -46,6 +54,7 @@ New user principal name to set.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | New UserPrincipalName |
 
 ### ChangeMailnickname
 
@@ -56,6 +65,7 @@ If set to true, updates the mailbox alias and name based on the new UPN.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Change MailNickname based on new UPN |
 
 ### UpdatePrimaryAddress
 
@@ -66,6 +76,7 @@ If set to true, updates the primary SMTP address and rewrites email addresses ac
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Update primary eMail address |
 
 
 

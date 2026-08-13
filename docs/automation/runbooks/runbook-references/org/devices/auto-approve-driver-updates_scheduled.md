@@ -3,6 +3,10 @@ title: Auto Approve Driver Updates (Scheduled)
 description: Auto-approve new driver updates in Intune driver update policies
 ---
 
+{% hint style="info" %}
+This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.
+{% endhint %}
+
 ## Description
 This scheduled runbook automatically approves pending driver updates in one or more Intune driver update policies. It can filter driver updates by display name pattern, driver class, or manufacturer. Optional email notifications can be sent after approval operations complete.
 The notification email includes CSV and/or Excel (xlsx) report files listing every driver approval action (policy, driver, version, manufacturer, driver class, release date and outcome).
@@ -26,6 +30,33 @@ Organization → Devices → Auto Approve Driver Updates (Scheduled)
 
 rjgit-org_devices_auto-approve-driver-updates_scheduled
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.1.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.3.4) |
+| Schedulable | yes |
+
+## Notes
+Prerequisites:
+- Microsoft Graph BETA API access (driver update endpoints are in beta)
+- RJReport.EmailSender setting configured (if email notifications are used)
+
+Common Use Cases:
+- Test filters first: Use WhatIf parameter to preview which drivers would be approved
+- Auto-approve all drivers: Run without any filter parameters
+- Approve specific manufacturers: Use DriverManufacturer to target vendors like "Intel" or "AMD"
+- Target specific policies: Use PolicyNames or PolicyIds to scope to test policies first
+- Monitor approvals: Configure EmailTo to receive detailed reports after each run
+
+Parameter Interactions:
+- If no policy filter is specified, ALL driver update policies are processed
+- If no driver filter is specified, ALL pending drivers in selected policies are approved
+- PolicyNames and PolicyIds can be combined - both filters apply independently
+- Email notifications require RJReport.EmailSender setting and Connect-RjRbGraph
+- WhatIf mode simulates approvals without making changes - useful for testing filters
+
 ## Permissions
 
 ### Application permissions
@@ -45,6 +76,7 @@ rjgit-org_devices_auto-approve-driver-updates_scheduled
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Driver Update Policy Names |
 
 ### PolicyIds
 
@@ -55,6 +87,7 @@ rjgit-org_devices_auto-approve-driver-updates_scheduled
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Driver Update Policy IDs |
 
 ### DriverDisplayNamePattern
 
@@ -65,6 +98,7 @@ rjgit-org_devices_auto-approve-driver-updates_scheduled
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Driver Name Filter |
 
 ### DriverClass
 
@@ -75,6 +109,7 @@ rjgit-org_devices_auto-approve-driver-updates_scheduled
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Driver Class Filter |
 
 ### DriverManufacturer
 
@@ -85,6 +120,7 @@ rjgit-org_devices_auto-approve-driver-updates_scheduled
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Manufacturer Filter |
 
 ### MaximumDriverAge
 
@@ -95,6 +131,7 @@ rjgit-org_devices_auto-approve-driver-updates_scheduled
 | Required | false |
 | Default Value | 0 |
 | Type | Int32 |
+| Portal display name | Maximum Driver Age (Days) |
 
 ### OnlyNeedsReview
 
@@ -105,6 +142,7 @@ When enabled (default), only drivers with status "needsReview" are approved. Dri
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Only approve 'Needs Review' drivers |
 
 ### WhatIf
 
@@ -115,6 +153,7 @@ When enabled (default), only drivers with status "needsReview" are approved. Dri
 | Required | false |
 | Default Value | False |
 | Type | SwitchParameter |
+| Portal display name | What-If Mode (Dry Run) |
 
 ### ReportFileFormat
 
@@ -125,6 +164,15 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 | Required | false |
 | Default Value | CSV & XLSX |
 | Type | String |
+| Portal display name | Report file format |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| CSV & XLSX |  |
+| CSV only |  |
+| XLSX only |  |
 
 ### CreateDownloadLink
 
@@ -135,6 +183,14 @@ If enabled, the report files are uploaded to an Azure Storage Account and time-l
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Create a file download link (upload report to storage)? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Yes - upload report and return a download link | true |
+| No - do not create a download link | false |
 
 ### ContainerName
 
@@ -145,6 +201,7 @@ Storage container name used for the upload. Configured per runbook (not a global
 | Required | false |
 | Default Value | auto-approve-driver-updates |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
@@ -155,6 +212,7 @@ Resource group that contains the storage account. Sourced from the RJReport tena
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
@@ -165,6 +223,7 @@ Storage account name used for the upload. Sourced from the RJReport tenant setti
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### LinkExpiryDays
 
@@ -175,6 +234,7 @@ Number of days until the generated download link expires. Sourced from the RJRep
 | Required | false |
 | Default Value | 6 |
 | Type | Int32 |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailFrom
 
@@ -185,6 +245,7 @@ Sender email address for notifications. This parameter is backed by a setting an
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailTo
 
@@ -195,6 +256,7 @@ Sender email address for notifications. This parameter is backed by a setting an
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Notification Recipient |
 
 
 

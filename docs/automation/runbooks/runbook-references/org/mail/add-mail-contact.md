@@ -13,6 +13,14 @@ Organization → Mail → Add Mail Contact
 
 rjgit-org_mail_add-mail-contact
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.5)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -33,6 +41,7 @@ The external SMTP email address for the mail contact. This is the primary email 
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | External Email Address |
 
 ### DisplayName
 
@@ -43,6 +52,7 @@ The display name shown for the mail contact in Exchange Online and the Global Ad
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Display Name |
 
 ### Name
 
@@ -53,6 +63,7 @@ The unique contact name used for management and identification. If left empty, d
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Contact Name (optional - defaults to Display Name) |
 
 ### FirstName
 
@@ -63,6 +74,7 @@ The first name of the contact. If not specified, the field is left empty.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | First Name (optional) |
 
 ### LastName
 
@@ -73,6 +85,7 @@ The last name of the contact. If not specified, the field is left empty.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Last Name (optional) |
 
 ### Alias
 
@@ -83,6 +96,7 @@ The mail nickname (alias) for the mail contact. If not specified, the system gen
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Mail Alias (optional) |
 
 ### HideFromAddressLists
 
@@ -93,6 +107,7 @@ If set to true, the mail contact will be hidden from the Global Address List and
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Hide from Global Address List |
 
 
 

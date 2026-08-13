@@ -14,6 +14,14 @@ Organization → General → Add Security Group
 
 rjgit-org_general_add-security-group
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.2 |
+| Required modules | Microsoft.Graph.Authentication (>= 2.39.0)<br>RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -31,6 +39,7 @@ Display name of the security group to create.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Name of the security group |
 
 ### GroupDescription
 
@@ -41,6 +50,7 @@ Optional description for the security group.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Description of this security group |
 
 ### Owner
 
@@ -51,6 +61,7 @@ Optional owner to assign to the group.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Owner (optional) |
 
 
 

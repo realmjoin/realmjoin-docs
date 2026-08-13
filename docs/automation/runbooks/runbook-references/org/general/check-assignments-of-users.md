@@ -14,6 +14,14 @@ Organization → General → Check Assignments Of Users
 
 rjgit-org_general_check-assignments-of-users
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -36,6 +44,7 @@ User Principal Names of the users to check assignments for.
 | Required | true |
 | Default Value |  |
 | Type | String[] |
+| Portal display name | One or more users to check assignments for |
 
 ### IncludeApps
 
@@ -46,6 +55,7 @@ If set to true, also evaluates application assignments.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Include app assignments |
 
 
 

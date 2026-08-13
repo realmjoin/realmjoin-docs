@@ -14,6 +14,14 @@ Organization → General → Add User
 
 rjgit-org_general_add-user
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -55,6 +63,7 @@ User principal name (UPN). If empty, the runbook generates a UPN from the provid
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### MailNickname
 
@@ -65,6 +74,7 @@ Mail nickname (alias) used for the user. If empty, the runbook derives it from t
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### DisplayName
 
@@ -75,6 +85,7 @@ Display name of the user. If empty, the runbook derives it from the provided nam
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### CompanyName
 
@@ -215,6 +226,7 @@ Optional license group to assign to the user.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | License group to assign |
 
 ### DefaultGroups
 
@@ -245,6 +257,7 @@ If set to true, creates an Exchange Online archive mailbox for the user.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Create Exchange Online Archive Mailbox |
 
 
 

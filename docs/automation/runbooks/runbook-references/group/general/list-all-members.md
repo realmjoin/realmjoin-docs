@@ -15,6 +15,14 @@ Group → General → List All Members
 
 rjgit-group_general_list-all-members
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.3 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -33,6 +41,7 @@ The Object ID of the Microsoft Entra ID group whose membership will be retrieved
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

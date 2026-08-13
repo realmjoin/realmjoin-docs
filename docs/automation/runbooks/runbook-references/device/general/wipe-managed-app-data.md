@@ -41,6 +41,14 @@ Device → General → Wipe Managed App Data
 
 rjgit-device_general_wipe-managed-app-data
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -63,6 +71,7 @@ The device ID of the target device.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

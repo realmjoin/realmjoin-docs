@@ -13,6 +13,14 @@ User → Security → Confirm Or Dismiss Risky User
 
 rjgit-user_security_confirm-or-dismiss-risky-user
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -30,6 +38,7 @@ User principal name of the target user.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### Dismiss
 
@@ -40,6 +49,14 @@ User principal name of the target user.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Action |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Confirm compromise | false |
+| Dismiss risk | true |
 
 
 

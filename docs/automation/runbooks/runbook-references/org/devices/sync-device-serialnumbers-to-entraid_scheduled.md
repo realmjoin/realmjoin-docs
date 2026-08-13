@@ -3,6 +3,10 @@ title: Sync Device Serialnumbers To Entraid (Scheduled)
 description: Sync Intune serial numbers to Entra ID extension attributes
 ---
 
+{% hint style="info" %}
+This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.
+{% endhint %}
+
 ## Description
 This runbook retrieves Intune managed devices and syncs their serial numbers into an Entra ID device extension attribute.
 It can process all devices or only devices with missing or mismatched values and can optionally send an email report.
@@ -13,6 +17,14 @@ Organization → Devices → Sync Device Serialnumbers To Entraid (Scheduled)
 **Full Runbook name**
 
 rjgit-org_devices_sync-device-serialnumbers-to-entraid_scheduled
+
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | yes |
 
 ## Permissions
 

@@ -13,6 +13,14 @@ Organization → Security → Backup Conditional Access Policies
 
 rjgit-org_security_backup-conditional-access-policies
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Az.Storage (>= 9.6.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions

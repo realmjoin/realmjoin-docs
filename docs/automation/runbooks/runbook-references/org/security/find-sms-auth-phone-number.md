@@ -13,6 +13,14 @@ Organization → Security → Find SMS Auth Phone Number
 
 rjgit-org_security_find-SMS-auth-phone-number
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.2.3 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -32,6 +40,7 @@ Phone number to search for in E.164 format (e.g., +492349876543). The number mus
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Phone Number (E.164 format) |
 
 
 

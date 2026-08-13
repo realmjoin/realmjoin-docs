@@ -13,6 +13,14 @@ Device → General → Unenroll Updatable Assets
 
 rjgit-device_general_unenroll-updatable-assets
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -30,6 +38,7 @@ DeviceId of the device to unenroll.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### UpdateCategory
 

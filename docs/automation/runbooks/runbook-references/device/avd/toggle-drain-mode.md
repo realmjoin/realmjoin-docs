@@ -14,6 +14,14 @@ Device → AVD → Toggle Drain Mode
 
 rjgit-device_AVD_toggle-drain-mode
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Az.DesktopVirtualization (>= 5.4.1)<br>Az.Accounts (>= 5.1.1) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Permission notes
@@ -30,6 +38,7 @@ The name of the AVD Session Host device for which to toggle drain mode. Hidden i
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### DrainMode
 
@@ -40,6 +49,7 @@ Boolean value to enable or disable Drain Mode. Set to true to enable Drain Mode 
 | Required | true |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Drain Mode |
 
 ### SubscriptionIds
 
@@ -50,6 +60,7 @@ Array of Azure subscription IDs where the AVD Session Host resources are located
 | Required | true |
 | Default Value |  |
 | Type | String[] |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

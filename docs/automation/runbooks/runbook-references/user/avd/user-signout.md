@@ -14,6 +14,14 @@ User → AVD → User Signout
 
 rjgit-user_AVD_user-signout
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Az.DesktopVirtualization (>= 5.4.1)<br>Az.Accounts (>= 5.1.1) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Permission notes
@@ -30,6 +38,7 @@ The username (UPN) of the user to sign out from their AVD session. Hidden in UI.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### SubscriptionIds
 
@@ -40,6 +49,7 @@ Array of Azure subscription IDs where the AVD resources are located. Retrieved f
 | Required | true |
 | Default Value |  |
 | Type | String[] |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

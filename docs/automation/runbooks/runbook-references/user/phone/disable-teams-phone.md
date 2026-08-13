@@ -13,6 +13,14 @@ User → Phone → Disable Teams Phone
 
 rjgit-user_phone_disable-teams-phone
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>MicrosoftTeams (>= 7.6.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -33,6 +41,7 @@ User which should be cleared. Could be filled with the user picker in the UI.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

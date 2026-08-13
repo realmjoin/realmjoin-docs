@@ -13,6 +13,14 @@ Device → General → Assign Groups By Template
 
 rjgit-device_general_assign-groups-by-template
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.3 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -32,6 +40,7 @@ ID of the target device in Microsoft Graph.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### GroupsTemplate
 
@@ -62,6 +71,7 @@ If set to true, treats values in GroupsString as group display names instead of 
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

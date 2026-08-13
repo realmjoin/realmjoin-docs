@@ -13,6 +13,14 @@ Organization → Security → Add Defender Indicator
 
 rjgit-org_security_add-defender-indicator
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -40,6 +48,19 @@ Type of the indicator value.
 | Required | true |
 | Default Value | FileSha256 |
 | Type | String |
+| Portal display name | IndicatorType |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| File Sha256 | FileSha256 |
+| File Sha1 | FileSha1 |
+| File Md5 | FileMd5 |
+| Certificate Thumbprint | CertificateThumbprint |
+| Ip Address | IpAddress |
+| Domain Name | DomainName |
+| Url | Url |
 
 ### Title
 
@@ -70,6 +91,19 @@ Action applied to the indicator.
 | Required | true |
 | Default Value | Allowed |
 | Type | String |
+| Portal display name | Action |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Alert | Alert |
+| Warn | Warn |
+| Block | Block |
+| Audit | Audit |
+| Block And Remediate | BlockAndRemediate |
+| Alert And Block | AlertAndBlock |
+| Allowed | Allowed |
 
 ### Severity
 
@@ -80,6 +114,16 @@ Severity used for the indicator.
 | Required | true |
 | Default Value | Informational |
 | Type | String |
+| Portal display name | Severity |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Informational | Informational |
+| Low | Low |
+| Medium | Medium |
+| High | High |
 
 ### GenerateAlert
 

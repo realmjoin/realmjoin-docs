@@ -32,6 +32,14 @@ Device → General → Outphase Device
 
 rjgit-device_general_outphase-device
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -58,6 +66,7 @@ The device ID of the target device.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### intuneAction
 
@@ -68,6 +77,15 @@ Determines the Intune action to perform (wipe, delete, or none).
 | Required | false |
 | Default Value | 2 |
 | Type | Int32 |
+| Portal display name | Wipe this device? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Completely wipe device (not keeping user or enrollment data) | 2 |
+| Delete device from Intune (only if device is already wiped or destroyed) | 1 |
+| Do not wipe or remove device from Intune | 0 |
 
 ### aadAction
 
@@ -78,6 +96,15 @@ Determines the Entra ID (Azure AD) action to perform (delete, disable, or none).
 | Required | false |
 | Default Value | 2 |
 | Type | Int32 |
+| Portal display name | Delete device from EntraID? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Delete device in EntraID | 2 |
+| Disable device in EntraID | 1 |
+| Do not delete EntraID device / do not care | 0 |
 
 ### wipeDevice
 
@@ -88,6 +115,7 @@ If set to true, triggers a wipe action in Intune.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### removeIntuneDevice
 
@@ -98,6 +126,7 @@ If set to true, deletes the Intune device object.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### removeAutopilotDevice
 
@@ -108,6 +137,14 @@ If set to true, deletes the Intune device object.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Delete device from AutoPilot database? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Remove the device from AutoPilot (the device can leave the tenant) | true |
+| Keep device / do not care | false |
 
 ### removeAADDevice
 
@@ -118,6 +155,7 @@ If set to true, deletes the Intune device object.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### disableAADDevice
 
@@ -128,6 +166,7 @@ If set to true, deletes the Intune device object.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### excludeFromDefender
 
@@ -138,6 +177,14 @@ If set to true, the device will be tagged in Microsoft Defender for Endpoint wit
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Exclude device from Defender for Endpoint? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Tag device as excluded in Defender for Endpoint | true |
+| Skip Defender operations | false |
 
 ### defenderExclusionTag
 
@@ -148,6 +195,7 @@ The tag that will be added to the device in Microsoft Defender for Endpoint to m
 | Required | false |
 | Default Value | ExcludeFromRemediation |
 | Type | String |
+| Portal display name | Defender Exclusion Tag |
 
 
 

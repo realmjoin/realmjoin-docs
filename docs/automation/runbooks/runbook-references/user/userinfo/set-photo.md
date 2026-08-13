@@ -13,6 +13,14 @@ User → Userinfo → Set Photo
 
 rjgit-user_userinfo_set-photo
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -30,6 +38,7 @@ User principal name of the target user.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### PhotoURI
 
@@ -40,6 +49,7 @@ URL to a JPEG image that will be used as the profile photo.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Photo Source URL: |
 
 
 

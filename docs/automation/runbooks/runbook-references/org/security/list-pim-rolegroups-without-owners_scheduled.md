@@ -3,6 +3,10 @@ title: List Pim Rolegroups Without Owners (Scheduled)
 description: List role-assignable groups with eligible role assignments but without owners
 ---
 
+{% hint style="info" %}
+This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.
+{% endhint %}
+
 ## Description
 Finds role-assignable groups that have PIM eligible role assignments but no owners assigned. Optionally sends an email alert containing the group names.
 
@@ -12,6 +16,14 @@ Organization → Security → List Pim Rolegroups Without Owners (Scheduled)
 **Full Runbook name**
 
 rjgit-org_security_list-pim-rolegroups-without-owners_scheduled
+
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | yes |
 
 ## Permissions
 
@@ -42,6 +54,7 @@ Sender email address used to send the alert.
 | Required | false |
 | Default Value | reports@contoso.com |
 | Type | String |
+| Portal display name | Sender mail address |
 
 ### To
 
@@ -52,6 +65,7 @@ Recipient email address for the alert.
 | Required | false |
 | Default Value | support@glueckkanja-gab.com |
 | Type | String |
+| Portal display name | Send mail to |
 
 
 

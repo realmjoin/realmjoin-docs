@@ -14,6 +14,14 @@ Organization → General → Check Assignments Of Devices
 
 rjgit-org_general_check-assignments-of-devices
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -35,6 +43,7 @@ Comma-separated list of device names to check.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Device names (comma-separated) |
 
 ### IncludeApps
 
@@ -45,6 +54,7 @@ If set to true, also evaluates application assignments.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Include app assignments |
 
 
 

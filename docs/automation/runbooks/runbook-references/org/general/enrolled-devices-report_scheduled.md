@@ -3,6 +3,10 @@ title: Enrolled Devices Report (Scheduled)
 description: Show recent first-time device enrollments
 ---
 
+{% hint style="info" %}
+This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.
+{% endhint %}
+
 ## Description
 This runbook reports recent device enrollments based on a configurable time range.
 It can group results by a selected attribute and can optionally export the report as a CSV file.
@@ -13,6 +17,14 @@ Organization → General → Enrolled Devices Report (Scheduled)
 **Full Runbook name**
 
 rjgit-org_general_enrolled-devices-report_scheduled
+
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | yes |
 
 ## Permissions
 

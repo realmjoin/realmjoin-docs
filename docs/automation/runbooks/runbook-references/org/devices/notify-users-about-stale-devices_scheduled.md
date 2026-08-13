@@ -3,6 +3,10 @@ title: Notify Users About Stale Devices (Scheduled)
 description: Notify primary users about their stale devices via email
 ---
 
+{% hint style="info" %}
+This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.
+{% endhint %}
+
 ## Description
 Identifies devices that haven't been active for a specified number of days and sends personalized email notifications to the primary users of those devices. The email contains device information and action steps for the user. Optionally filter users by including or excluding specific groups. Devices without a primary user (and devices whose primary user matches a configurable name pattern, e.g. Device Enrollment Manager accounts) can optionally be routed to the override email recipient while all other notifications are sent directly to the end users.
 
@@ -86,6 +90,35 @@ Organization → Devices → Notify Users About Stale Devices (Scheduled)
 
 rjgit-org_devices_notify-users-about-stale-devices_scheduled
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.4.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Schedulable | yes |
+
+## Notes
+This runbook automatically sends personalized email notifications to users who have devices that haven't synced for a specified number of days.
+The email is sent directly to the primary user's email address and includes detailed information about each inactive device.
+
+Prerequisites:
+- EmailFrom parameter must be configured in runbook customization (RJReport.EmailSender setting)
+- Optional: Service Desk contact information can be configured (ServiceDesk_DisplayName, ServiceDesk_EMail, ServiceDesk_Phone, ServiceDesk_PortalUrl)
+
+Common Use Cases:
+- Automated user reminders about inactive devices to encourage regular device check-ins
+- Proactive device lifecycle management by alerting users before devices are retired
+- Security and compliance by ensuring users are aware of all devices registered to them
+- Using MaxDays parameter for staged notifications (e.g., first reminder at 30 days, final notice at 60 days)
+- User scope filtering to target specific departments or exclude service accounts
+- Centrally handling devices without a primary user or owned by Device Enrollment Manager (e.g. DEM-*) accounts via the override recipient
+
+Pilot and Testing Options:
+- Use OverrideEmailRecipient parameter to send all notifications to a test mailbox instead of end users
+- Perfect for validating email content and testing filters before rolling out to production
+- Send notifications to ticket systems or shared mailboxes for centralized handling
+
 ## Permissions
 
 ### Application permissions
@@ -107,6 +140,7 @@ Number of days without activity to be considered stale (minimum threshold).
 | Required | false |
 | Default Value | 30 |
 | Type | Int32 |
+| Portal display name | Minimum Days Without Activity |
 
 ### MaxDays
 
@@ -117,6 +151,7 @@ Optional maximum number of days without activity. If set, only devices inactive 
 | Required | false |
 | Default Value |  |
 | Type | Int32 |
+| Portal display name | (Optional) Maximum Days Without Activity |
 
 ### Windows
 
@@ -127,6 +162,7 @@ Include Windows devices in the results.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Include Windows Devices |
 
 ### MacOS
 
@@ -137,6 +173,7 @@ Include macOS devices in the results.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Include macOS Devices |
 
 ### iOS
 
@@ -147,6 +184,7 @@ Include iOS devices in the results.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Include iOS Devices |
 
 ### Android
 
@@ -157,6 +195,7 @@ Include Android devices in the results.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Include Android Devices |
 
 ### EmailFrom
 
@@ -167,6 +206,7 @@ The sender email address. This needs to be configured in the runbook customizati
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskDisplayName
 
@@ -177,6 +217,7 @@ Service Desk display name for user contact information (optional).
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskEmail
 
@@ -187,6 +228,7 @@ Service Desk email address for user contact information (optional).
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskPhone
 
@@ -197,6 +239,7 @@ Service Desk phone number for user contact information (optional).
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskPortalUrl
 
@@ -207,6 +250,7 @@ Service Desk portal URL for user contact information, rendered as a clickable li
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ServiceDeskTicketUrl
 
@@ -217,6 +261,7 @@ Direct link to a Service Desk ticket, rendered as a clickable link (optional). E
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### UseUserScope
 
@@ -227,6 +272,8 @@ Enable user scope filtering to include or exclude users based on group membershi
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Use User Scope Filtering |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### IncludeUserGroup
 
@@ -237,6 +284,8 @@ Only send emails to users who are members of this group. Requires UseUserScope t
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Users to include (Group) |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ExcludeUserGroup
 
@@ -247,6 +296,8 @@ Do not send emails to users who are members of this group. Requires UseUserScope
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Users to exclude (Group) |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### OverrideEmailRecipient
 
@@ -257,6 +308,7 @@ Optional: Email address(es) to send all notifications to instead of end users. C
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | (Optional) Override Email Recipient(s) |
 
 ### SendNoPrimaryUserDevicesToOverride
 
@@ -267,6 +319,8 @@ If enabled, stale devices without a primary user (and devices whose primary user
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Send Devices without Primary User to Override Recipient |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### OverrideUserNamePattern
 
@@ -277,6 +331,8 @@ Optional wildcard pattern(s) matched against the primary user UPN (comma-separat
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | (Optional) Primary User Name Pattern for Override Routing (e.g. 'DEM-*') |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### MailTemplateLanguage
 
@@ -287,6 +343,8 @@ Select which email template to use: EN (English, default), DE (German), or Custo
 | Required | false |
 | Default Value | EN |
 | Type | String |
+| Portal display name | Mail Template |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### CustomMailTemplateSubject
 
@@ -297,6 +355,8 @@ Custom email subject line (only used when MailTemplateLanguage is set to 'Custom
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Custom: Email Subject |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### CustomMailTemplateBeforeDeviceDetails
 
@@ -307,6 +367,8 @@ Custom text to display before the device list (only used when MailTemplateLangua
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Custom: Text Before Device List |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### CustomMailTemplateAfterDeviceDetails
 
@@ -317,6 +379,8 @@ Custom text to display after the device list (only used when MailTemplateLanguag
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Custom: Text After Device List |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

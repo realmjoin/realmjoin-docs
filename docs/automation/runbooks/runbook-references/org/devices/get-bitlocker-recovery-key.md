@@ -14,6 +14,14 @@ Organization → Devices → Get Bitlocker Recovery Key
 
 rjgit-org_devices_get-bitlocker-recovery-key
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -32,6 +40,7 @@ Recovery key ID of the desired key.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | BitLocker recovery key ID |
 
 
 

@@ -14,6 +14,14 @@ User → Phone → Set Teams Phone
 
 rjgit-user_phone_set-teams-phone
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>MicrosoftTeams (>= 7.6.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -34,6 +42,7 @@ User principal name of the target user.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### PhoneNumber
 
@@ -44,6 +53,7 @@ Phone number which should be assigned to the user. The number must be in E.164 f
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Phone number to assign (E.164 Format - Example:+49123987654 |
 
 ### OnlineVoiceRoutingPolicy
 
@@ -54,6 +64,7 @@ Name of the Online Voice Routing Policy to assign. If the policy name is left bl
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Microsoft Teams Online Voice Routing Policy Name |
 
 ### TenantDialPlan
 
@@ -64,6 +75,7 @@ Name of the Tenant Dial Plan to assign. If the policy name is left blank, the co
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Microsoft Teams DialPlan Name |
 
 ### TeamsCallingPolicy
 
@@ -74,6 +86,7 @@ Name of the Teams Calling Policy to assign. If the policy name is left blank, th
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Microsoft Teams Calling Policy Name |
 
 ### TeamsIPPhonePolicy
 
@@ -84,6 +97,7 @@ Name of the Teams IP Phone Policy to assign. If the policy name is left blank, t
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Microsoft Teams IP Phone Policy Name (a.o. for Common Area Phone Users) |
 
 
 

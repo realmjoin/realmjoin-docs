@@ -13,6 +13,14 @@ Organization → Mail → Add Equipment Mailbox
 
 rjgit-org_mail_add-equipment-mailbox
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -63,6 +71,7 @@ If set to true, meeting requests are automatically accepted.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Automatically accept meeting requests |
 
 ### AutoMapping
 
@@ -73,6 +82,7 @@ If set to true, the mailbox is automatically mapped in Outlook for the delegate.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Automatically map mailbox in Outlook |
 
 ### DisableUser
 
@@ -83,6 +93,7 @@ If set to true, the associated Entra ID user account is disabled.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Disable AAD User |
 
 
 

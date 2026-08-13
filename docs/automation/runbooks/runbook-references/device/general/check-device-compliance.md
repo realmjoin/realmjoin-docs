@@ -15,6 +15,14 @@ Device → General → Check Device Compliance
 
 rjgit-device_general_check-device-compliance
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -34,6 +42,7 @@ The Entra ID device ID of the target device. Passed automatically by the RealmJo
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### DetailedOutput
 
@@ -45,6 +54,14 @@ Select "Detailed" (final value: $true) to additionally show which specific setti
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Output Mode |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Simple - show overall compliance state and non-compliant policies | false |
+| Detailed - show failing settings and reasons per policy | true |
 
 ### EmailTo
 
@@ -56,6 +73,7 @@ Can be a single address or multiple comma-separated addresses.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Recipient Email Address(es) (optional) |
 
 ### EmailFrom
 
@@ -66,6 +84,7 @@ The sender email address. This needs to be configured in the runbook customizati
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

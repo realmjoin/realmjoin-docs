@@ -3,6 +3,10 @@ title: Report Primary User Mismatch (Scheduled)
 description: Compare primary user assignments in Intune against RealmJoin for Windows managed devices
 ---
 
+{% hint style="info" %}
+This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.
+{% endhint %}
+
 ## Description
 For Windows managed devices, this scheduled report compares the primary user recorded in Intune against the primary user recorded in the RealmJoin customer API. It correlates the two datasets per device, flags any device where the primary user differs, and emails the differences with CSV and/or Excel (xlsx) attachments.
 The report files can also be uploaded to an Azure Storage Account, returning time-limited download links.
@@ -37,6 +41,24 @@ Organization → Devices → Report Primary User Mismatch (Scheduled)
 
 rjgit-org_devices_report-primary-user-mismatch_scheduled
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.5.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.3.4) |
+| Schedulable | yes |
+
+## Notes
+Prerequisites:
+- An Azure Automation Account shared credential named exactly "RJAPI" must be created manually
+  before scheduling. Set the username and password to match a RealmJoin customer API account
+  (see https://docs.realmjoin.com/dev-reference/realmjoin-api/authentication).
+- The Automation Account managed identity must have the following Graph application permissions
+  assigned: DeviceManagementManagedDevices.Read.All, Mail.Send, Organization.Read.All.
+- The RJReport.EmailSender setting must be configured with a valid sender address before the first run.
+- No email is sent when the two datasets are in sync; an empty run is not an error.
+
 ## Permissions
 
 ### Application permissions
@@ -57,6 +79,7 @@ Number of days to look back for the Intune last-sync filter. Only Windows device
 | Required | false |
 | Default Value | 30 |
 | Type | Int32 |
+| Portal display name | Intune Last Sync (days) |
 
 ### DeviceNamePrefix
 
@@ -67,6 +90,7 @@ Optional device name prefix to filter the report to a specific subset of devices
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Device Name Prefix (optional) |
 
 ### IncludeMismatches
 
@@ -77,6 +101,8 @@ Include devices whose primary user differs between Intune and RealmJoin in the r
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Include Mismatches |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### IncludeMissingInRealmJoin
 
@@ -87,6 +113,8 @@ Include devices that exist in Intune but have no matching device in RealmJoin in
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Include Missing in RealmJoin |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### IncludeMissingInIntune
 
@@ -97,6 +125,8 @@ Include devices that exist in RealmJoin but have no matching Intune device in th
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Include Missing in Intune |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### IncludePrimaryUserDeleted
 
@@ -107,6 +137,8 @@ Include devices whose Intune primary user has been deleted from Entra ID in the 
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Include Deleted Primary Users |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### UseDeviceScope
 
@@ -117,6 +149,8 @@ Enable device scope filtering to include or exclude devices based on Entra devic
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Use Device Scope Filtering |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### IncludeDeviceGroup
 
@@ -127,6 +161,8 @@ Only include devices that are members of this Entra device group in the report. 
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Devices to include (Group) |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ExcludeDeviceGroup
 
@@ -137,6 +173,8 @@ Exclude devices that are members of this Entra device group from the report. Req
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Devices to exclude (Group) |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailTo
 
@@ -147,6 +185,7 @@ If specified, an email with the report will be sent to the provided address(es).
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Send Report To |
 
 ### EmailFrom
 
@@ -157,6 +196,7 @@ The sender email address. This is configured via the runbook customization setti
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ReportFileFormat
 
@@ -167,6 +207,15 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 | Required | false |
 | Default Value | CSV & XLSX |
 | Type | String |
+| Portal display name | Report file format |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| CSV & XLSX |  |
+| CSV only |  |
+| XLSX only |  |
 
 ### CreateDownloadLink
 
@@ -177,6 +226,14 @@ If enabled, the report files are uploaded to an Azure Storage Account and time-l
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Create a file download link (upload report to storage)? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Yes - upload report and return a download link | true |
+| No - do not create a download link | false |
 
 ### ContainerName
 
@@ -187,6 +244,7 @@ Storage container name used for the upload. Configured per runbook (not a global
 | Required | false |
 | Default Value | report-primary-user-mismatch |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
@@ -197,6 +255,7 @@ Resource group that contains the storage account. Sourced from the RJReport tena
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
@@ -207,6 +266,7 @@ Storage account name used for the upload. Sourced from the RJReport tenant setti
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### LinkExpiryDays
 
@@ -217,6 +277,7 @@ Number of days until the generated download link expires. Sourced from the RJRep
 | Required | false |
 | Default Value | 6 |
 | Type | Int32 |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

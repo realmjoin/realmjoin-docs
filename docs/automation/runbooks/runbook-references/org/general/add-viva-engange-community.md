@@ -14,6 +14,14 @@ Organization → General → Add Viva Engange Community
 
 rjgit-org_general_add-viva-engange-community
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -73,6 +81,7 @@ If set to true, removes the initial API user from the group when at least one ot
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Remove initial API user/owner from group |
 
 
 

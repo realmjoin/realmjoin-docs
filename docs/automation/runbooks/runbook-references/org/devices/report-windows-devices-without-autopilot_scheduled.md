@@ -3,6 +3,10 @@ title: Report Windows Devices Without Autopilot (Scheduled)
 description: Reports all Windows Entra devices that have no associated Windows Autopilot object.
 ---
 
+{% hint style="info" %}
+This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.
+{% endhint %}
+
 ## Description
 This runbook lists every Windows device object in Entra ID (Microsoft Entra) and matches it against
 the Windows Autopilot device identities in Intune. Entra devices whose device ID is not referenced by
@@ -58,6 +62,14 @@ Organization → Devices → Report Windows Devices Without Autopilot (Scheduled
 
 rjgit-org_devices_report-windows-devices-without-autopilot_scheduled
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.1.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.3.4) |
+| Schedulable | yes |
+
 ## Permissions
 
 ### Application permissions
@@ -81,6 +93,14 @@ If enabled, the report is sent via email with the selected report file format(s)
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Send the report via email? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Yes - send the report via email |  |
+| No - do not send an email |  |
 
 ### EmailTo
 
@@ -92,6 +112,8 @@ Can be a single address or multiple comma-separated addresses (string).
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Recipient Email Address(es) |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailFrom
 
@@ -102,6 +124,7 @@ The sender email address. Sourced from the RJReport tenant settings (RJReport.Em
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ReportFileFormat
 
@@ -112,6 +135,16 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 | Required | false |
 | Default Value | CSV & XLSX |
 | Type | String |
+| Portal display name | Report file format |
+| Hidden in portal | yes (preset via runbook customization) |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| CSV & XLSX |  |
+| CSV only |  |
+| XLSX only |  |
 
 ### CreateDownloadLink
 
@@ -122,6 +155,14 @@ If enabled, the report files are uploaded to an Azure Storage Account and time-l
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Create a file download link (upload report to storage)? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Yes - upload report and return a download link |  |
+| No - do not create a download link |  |
 
 ### ContainerName
 
@@ -132,6 +173,7 @@ Storage container name used for the upload. Configured per runbook (not a global
 | Required | false |
 | Default Value | windows-devices-without-autopilot |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
@@ -142,6 +184,7 @@ Resource group that contains the storage account. Sourced from the RJReport tena
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
@@ -152,6 +195,7 @@ Storage account name used for the upload. Sourced from the RJReport tenant setti
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### LinkExpiryDays
 
@@ -162,6 +206,7 @@ Number of days until the generated download link expires. Sourced from the RJRep
 | Required | false |
 | Default Value | 6 |
 | Type | Int32 |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

@@ -14,6 +14,14 @@ Organization → General → Office365 License Report
 
 rjgit-org_general_office365-license-report
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.1.3 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Az.Accounts (>= 5.3.4)<br>ExchangeOnlineManagement (>= 3.9.2) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions

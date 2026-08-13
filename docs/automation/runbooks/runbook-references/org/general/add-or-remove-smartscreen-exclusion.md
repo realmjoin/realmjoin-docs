@@ -14,6 +14,14 @@ Organization → General → Add Or Remove Smartscreen Exclusion
 
 rjgit-org_general_add-or-remove-smartscreen-exclusion
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -31,6 +39,15 @@ rjgit-org_general_add-or-remove-smartscreen-exclusion
 | Required | false |
 | Default Value | 0 |
 | Type | Int32 |
+| Portal display name | Action |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| List all URL indicators | 0 |
+| Add an URL indicator | 1 |
+| Remove all indicator for this URL | 2 |
 
 ### Url
 
@@ -51,6 +68,16 @@ Indicator mode to apply.
 | Required | false |
 | Default Value | 0 |
 | Type | Int32 |
+| Portal display name | Allow, Audit, Warn or Block this URL? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Allow | 0 |
+| Audit | 1 |
+| Warn | 2 |
+| Block | 3 |
 
 ### explanationTitle
 

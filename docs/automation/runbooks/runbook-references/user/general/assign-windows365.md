@@ -13,6 +13,14 @@ User → General → Assign Windows365
 
 rjgit-user_general_assign-windows365
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -33,6 +41,7 @@ User principal name of the target user.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### cfgProvisioningGroupName
 
@@ -43,6 +52,7 @@ Display name of the provisioning policy group or Frontline assignment to use.
 | Required | false |
 | Default Value | cfg - Windows 365 - Provisioning - Win11 |
 | Type | String |
+| Portal display name | Provisioning Policy / FrontLine Assignment to use |
 
 ### cfgUserSettingsGroupName
 
@@ -53,6 +63,7 @@ Display name of the user settings policy group to use.
 | Required | false |
 | Default Value | cfg - Windows 365 - User Settings - restore allowed |
 | Type | String |
+| Portal display name | User Settings Policy to use |
 
 ### licWin365GroupName
 
@@ -63,6 +74,7 @@ Display name of the Windows 365 license group to assign when using dedicated Clo
 | Required | false |
 | Default Value | lic - Windows 365 Enterprise - 2 vCPU 4 GB 128 GB |
 | Type | String |
+| Portal display name | Windows 365 license to assign (if not FrontLine) |
 
 ### cfgProvisioningGroupPrefix
 
@@ -73,6 +85,7 @@ Prefix used to detect provisioning-related configuration groups.
 | Required | false |
 | Default Value | cfg - Windows 365 - Provisioning - |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### cfgUserSettingsGroupPrefix
 
@@ -83,6 +96,7 @@ Prefix used to detect user-settings-related configuration groups.
 | Required | false |
 | Default Value | cfg - Windows 365 - User Settings - |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### sendMailWhenProvisioned
 
@@ -93,6 +107,7 @@ If set to true, sends an email to the user after provisioning completes.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Notify user once the CloudPC is done provisioning? |
 
 ### customizeMail
 
@@ -103,6 +118,7 @@ If set to true, uses a custom email body.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Would you like to customize the mail sent to the user? |
 
 ### customMailMessage
 
@@ -113,6 +129,7 @@ Custom message body used for the notification email.
 | Required | false |
 | Default Value | Insert Custom Message here. (Capped at 3000 characters) |
 | Type | String |
+| Portal display name | Custom message to be sent to the user. |
 
 ### createTicketOutOfLicenses
 
@@ -123,6 +140,7 @@ If set to true, creates a service ticket email when no licenses or Frontline sea
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Create a service ticket (email) if not enough licenses/FrontLine seats are available? |
 
 ### ticketQueueAddress
 
@@ -133,6 +151,7 @@ Email address used as ticket queue recipient.
 | Required | false |
 | Default Value | support@glueckkanja-gab.com |
 | Type | String |
+| Portal display name | Where to open a service ticket (via email) |
 
 ### fromMailAddress
 
@@ -143,6 +162,7 @@ Mailbox used to send the ticket and user notification emails.
 | Required | false |
 | Default Value | runbooks@contoso.com |
 | Type | String |
+| Portal display name | (Shared) Mailbox to send mail from |
 
 ### ticketCustomerId
 
@@ -153,6 +173,7 @@ Customer identifier used in ticket subject lines.
 | Required | false |
 | Default Value | Contoso |
 | Type | String |
+| Portal display name | Customer ID string for service tickets |
 
 
 

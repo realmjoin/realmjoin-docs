@@ -13,6 +13,14 @@ User → General → Assign Groups By Template
 
 rjgit-user_general_assign-groups-by-template
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -30,6 +38,7 @@ ID of the target user in Microsoft Graph.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### GroupsTemplate
 
@@ -60,6 +69,7 @@ If set to true, treats values in GroupsString as group display names instead of 
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

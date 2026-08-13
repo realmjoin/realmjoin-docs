@@ -67,6 +67,14 @@ Device → General → Wipe Device
 
 rjgit-device_general_wipe-device
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.1.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -93,6 +101,7 @@ The device ID of the target device.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### wipeDevice
 
@@ -103,6 +112,14 @@ The device ID of the target device.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Wipe this device? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Completely wipe device (Windows: not keeping user or enrollment data) | true |
+| Do not wipe device | false |
 
 ### useProtectedWipe
 
@@ -113,6 +130,7 @@ Windows-only. If set to true, uses protected wipe.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Windows: Use protected wipe? |
 
 ### removeIntuneDevice
 
@@ -123,6 +141,14 @@ If set to true, deletes the Intune device object.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Delete device from Intune? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Delete device from Intune (only if device is already wiped or destroyed) | true |
+| Do not modify the Intune object / do not care | false |
 
 ### removeAutopilotDevice
 
@@ -133,6 +159,14 @@ Windows-only. "Delete device from AutoPilot database?" (final value: true) or "K
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Windows: Delete device from AutoPilot database? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Remove the device from AutoPilot (the device can leave the tenant) | true |
+| Keep device / do not care | false |
 
 ### removeAADDevice
 
@@ -143,6 +177,7 @@ Windows-only. "Delete device from AutoPilot database?" (final value: true) or "K
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### disableAADDevice
 
@@ -153,6 +188,14 @@ Windows-only. "Delete device from AutoPilot database?" (final value: true) or "K
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Disable AzureAD device object? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Disable device in AzureAD | true |
+| Do not modify AzureAD device / do not care | false |
 
 ### skipWipeIfAtRisk
 
@@ -163,6 +206,14 @@ If set to true, the wipe is only performed when the device's Microsoft Defender 
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Only wipe if device is not at risk (Defender Medium/High)? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Only wipe if Defender risk score is not Medium/High | true |
+| Wipe regardless of Defender risk score | false |
 
 ### addToExclusionGroup
 
@@ -173,6 +224,14 @@ Windows-only. If set to true, the device is added to the compliance exclusion gr
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Windows: Add device to compliance exclusion group (longer grace period)? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Add device to the compliance exclusion group | true |
+| Do not add to exclusion group / do not care | false |
 
 ### exclusionGroupName
 
@@ -183,6 +242,7 @@ Display name of the compliance exclusion group the device should be added to whe
 | Required | false |
 | Default Value | cfg - Intune - Windows - Compliance for unenrolled Autopilot devices (devices) |
 | Type | String |
+| Portal display name | Compliance exclusion group name |
 
 ### exclusionGroupId
 
@@ -193,6 +253,8 @@ Object ID of the compliance exclusion group. If provided, it always overrides 'e
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Compliance exclusion group Object ID (overrides name) |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### macOsRecoveryCode
 
@@ -203,6 +265,8 @@ MacOS-only. Recovery code for older devices; newer devices may not require this.
 | Required | false |
 | Default Value | 123456 |
 | Type | String |
+| Portal display name | MacOS: Recovery Code - not needed for newer devices |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### macOsObliterationBehavior
 
@@ -213,6 +277,16 @@ MacOS-only. Controls the OS obliteration behavior during wipe.
 | Required | false |
 | Default Value | default |
 | Type | String |
+| Portal display name | MacOS: OS Obliteration Behavior |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Default: Try to erase user date (EACS), obliterate OS if this fails | default |
+| Try to erase user data (EACS), do not obliterate the OS | doNotObliterate |
+| Try to erase user data (EACS), else warn and obliterate the OS | obliterateWithWarning |
+| Always obliterate OS | always |
 
 
 

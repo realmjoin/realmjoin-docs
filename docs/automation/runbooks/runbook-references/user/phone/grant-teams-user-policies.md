@@ -14,6 +14,14 @@ User → Phone → Grant Teams User Policies
 
 rjgit-user_phone_grant-teams-user-policies
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>MicrosoftTeams (>= 7.6.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -34,6 +42,7 @@ User principal name of the target user.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### OnlineVoiceRoutingPolicy
 
@@ -44,6 +53,7 @@ Microsoft Teams Online Voice Routing Policy Name. If the policy name is left bla
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Microsoft Teams Online Voice Routing Policy Name |
 
 ### TenantDialPlan
 
@@ -54,6 +64,7 @@ Microsoft Teams Tenant Dial Plan Name. If the policy name is left blank, the cor
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Microsoft Teams DialPlan Name |
 
 ### TeamsCallingPolicy
 
@@ -64,6 +75,7 @@ Microsoft Teams Calling Policy Name. If the policy name is left blank, the corre
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Microsoft Teams Calling Policy Name |
 
 ### TeamsIPPhonePolicy
 
@@ -74,6 +86,7 @@ Microsoft Teams IP Phone Policy Name. If the policy name is left blank, the corr
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Microsoft Teams IP-Phone Policy Name (a.o. for Common Area Phone Users) |
 
 ### OnlineVoicemailPolicy
 
@@ -84,6 +97,7 @@ Microsoft Teams Online Voicemail Policy Name. If the policy name is left blank, 
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Microsoft Teams Online Voicemail Policy Name |
 
 ### TeamsMeetingPolicy
 
@@ -94,6 +108,7 @@ Microsoft Teams Meeting Policy Name. If the policy name is left blank, the corre
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Microsoft Teams Meeting Policy Name |
 
 ### TeamsMeetingBroadcastPolicy
 
@@ -104,6 +119,7 @@ Microsoft Teams Meeting Broadcast Policy Name. If the policy name is left blank,
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Microsoft Teams Meeting Broadcast Policy Name (Live Event Policy) |
 
 
 

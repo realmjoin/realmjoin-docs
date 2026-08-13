@@ -15,6 +15,14 @@ Group → Devices → Check Updatable Assets
 
 rjgit-group_devices_check-updatable-assets
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -37,6 +45,7 @@ Object ID of the group whose device members will be checked.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

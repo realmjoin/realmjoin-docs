@@ -21,6 +21,14 @@ Organization → Applications → Add GSA Application Registration
 
 rjgit-org_applications_add-GSA-application-registration
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.3.3 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -41,6 +49,7 @@ The base name of the Global Secure Access application to create. The final appli
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Application Name (Must be unique) |
 
 ### prefix
 
@@ -52,6 +61,7 @@ with "-", "_" or a space. Example: prefix "GSA-" + name "MyApp" results in appli
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Application Name Prefix |
 
 ### groupPrefix
 
@@ -64,6 +74,7 @@ results in group "App - Entra - GSA - MyApp". Default: "App - Entra - GSA - ".
 | Required | false |
 | Default Value | App - Entra - GSA - |
 | Type | String |
+| Portal display name | Group name prefix (admin-defined, change via Runbook Customization) |
 
 ### groupSuffix
 
@@ -74,6 +85,7 @@ Optional suffix for the security group name, e.g. " (users)". Default: empty.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### applicationType
 
@@ -84,6 +96,14 @@ The type of GSA application to create. Options: "nonwebapp" (Enterprise App) or 
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Application Type (Unique) |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Enterprise App |  |
+| Quick Access App |  |
 
 ### connectorGroup
 
@@ -94,6 +114,7 @@ The connectorGroup to be used for the application. Must be defined in the Runboo
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Connector Group (Please define your connector groups in the Runbook Customization) |
 
 ### destinationHost
 
@@ -104,6 +125,7 @@ The destination host or IP range for the application. Supports formats: FQDN (ex
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Destination Host or Range: example.com / 192.168.0.1 / 192.168.0.1/24 / 192.168.0.1..192.168.0.20 |
 
 ### destinationType
 
@@ -114,6 +136,7 @@ The type of destination specified. Options: "fqdn", "ip", "ipRangeCidr", or "ipR
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ports
 
@@ -124,6 +147,7 @@ The port(s) to configure for the application. Supports single port (443), multip
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Ports (e.g., 443 or 80,443 or 8000-8080) |
 
 ### protocol
 
@@ -134,6 +158,15 @@ The network protocol to use. Options: "tcp", "udp", or "tcp,udp". Default is "tc
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Protocol |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| TCP |  |
+| UDP |  |
+| TCP,UDP |  |
 
 
 

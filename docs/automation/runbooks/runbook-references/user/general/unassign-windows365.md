@@ -13,6 +13,14 @@ User → General → Unassign Windows365
 
 rjgit-user_general_unassign-windows365
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -33,6 +41,7 @@ User principal name of the target user.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### licWin365GroupName
 
@@ -43,6 +52,7 @@ Display name of the Windows 365 license group or Frontline provisioning policy t
 | Required | false |
 | Default Value | lic - Windows 365 Enterprise - 2 vCPU 4 GB 128 GB |
 | Type | String |
+| Portal display name | Windows 365 license/Frontline prov. policy to remove from |
 
 ### cfgProvisioningGroupPrefix
 
@@ -53,6 +63,7 @@ Prefix used to detect provisioning-related configuration groups.
 | Required | false |
 | Default Value | cfg - Windows 365 - Provisioning - |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### cfgUserSettingsGroupPrefix
 
@@ -63,6 +74,7 @@ Prefix used to detect user-settings-related configuration groups.
 | Required | false |
 | Default Value | cfg - Windows 365 - User Settings - |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### licWin365GroupPrefix
 
@@ -73,6 +85,7 @@ Prefix used to detect Windows 365 license groups.
 | Required | false |
 | Default Value | lic - Windows 365 Enterprise - |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### skipGracePeriod
 
@@ -83,6 +96,7 @@ If set to true, ends the Cloud PC grace period immediately.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Remove Cloud PC immediately |
 
 ### KeepUserSettingsAndProvisioningGroups
 

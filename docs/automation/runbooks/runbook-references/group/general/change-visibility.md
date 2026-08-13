@@ -15,6 +15,14 @@ Group → General → Change Visibility
 
 rjgit-group_general_change-visibility
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -32,6 +40,7 @@ Object ID of the target group.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### Public
 
@@ -42,6 +51,14 @@ Object ID of the target group.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Set Group visibility |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Make group private | false |
+| Make group public | true |
 
 
 

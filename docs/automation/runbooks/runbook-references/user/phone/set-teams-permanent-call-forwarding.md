@@ -13,6 +13,14 @@ User → Phone → Set Teams Permanent Call Forwarding
 
 rjgit-user_phone_set-teams-permanent-call-forwarding
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.3 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>MicrosoftTeams (>= 7.6.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions

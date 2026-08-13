@@ -3,6 +3,10 @@ title: Export Cloudpc Usage (Scheduled)
 description: Write daily Windows 365 utilization data to Azure Table Storage
 ---
 
+{% hint style="info" %}
+This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.
+{% endhint %}
+
 ## Description
 Collects Windows 365 Cloud PC remote connection usage for the last full day and writes it to an Azure Table. The runbook creates the table if needed and merges records per tenant and timestamp.
 
@@ -12,6 +16,14 @@ Organization → General → Export Cloudpc Usage (Scheduled)
 **Full Runbook name**
 
 rjgit-org_general_export-cloudpc-usage_scheduled
+
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Az.Storage (>= 9.6.0)<br>Az.Resources (>= 9.0.1) |
+| Schedulable | yes |
 
 ## Permissions
 

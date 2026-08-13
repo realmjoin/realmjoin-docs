@@ -13,6 +13,14 @@ User → Security → Reset Password
 
 rjgit-user_security_reset-password
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### RBAC roles
@@ -29,6 +37,7 @@ User principal name of the target user.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EnableUserIfNeeded
 

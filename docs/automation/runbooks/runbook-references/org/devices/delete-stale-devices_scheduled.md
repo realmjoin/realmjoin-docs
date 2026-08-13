@@ -3,6 +3,10 @@ title: Delete Stale Devices (Scheduled)
 description: Scheduled deletion of stale devices based on last activity date and platform
 ---
 
+{% hint style="info" %}
+This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.
+{% endhint %}
+
 ## Description
 Identifies Intune managed devices that have not been active for a specified number of days.
 By default the runbook runs in report-only mode (simulation) and lists the devices that would be deleted.
@@ -15,6 +19,28 @@ Organization → Devices → Delete Stale Devices (Scheduled)
 **Full Runbook name**
 
 rjgit-org_devices_delete-stale-devices_scheduled
+
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 2.0.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.3.4) |
+| Schedulable | yes |
+
+## Notes
+This runbook deletes managed devices from Intune based on inactivity. Use with care!
+
+Prerequisites:
+- EmailFrom parameter must be configured in runbook customization (RJReport.EmailSender setting) when email reporting is used
+
+Common Use Cases:
+- Regular cleanup of stale device records in Intune
+- Simulation runs (report-only mode) before enabling actual deletion
+- Scheduled lifecycle management with an audit trail via email report
+
+The runbook supports optional user scope filtering to include or exclude devices based on primary user group membership.
+This acts as an additional safety net when deletion is enabled.
 
 ## Permissions
 
@@ -36,6 +62,7 @@ Number of days without activity to be considered stale.
 | Required | false |
 | Default Value | 30 |
 | Type | Int32 |
+| Portal display name | Minimum Days Without Activity |
 
 ### Windows
 
@@ -46,6 +73,7 @@ Include Windows devices in the results.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Include Windows Devices |
 
 ### MacOS
 
@@ -56,6 +84,7 @@ Include macOS devices in the results.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Include macOS Devices |
 
 ### iOS
 
@@ -66,6 +95,7 @@ Include iOS devices in the results.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Include iOS Devices |
 
 ### Android
 
@@ -76,6 +106,7 @@ Include Android devices in the results.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Include Android Devices |
 
 ### DeleteDevices
 
@@ -87,6 +118,14 @@ If false (default), the runbook only reports which devices would be deleted (sim
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Deletion Mode |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Report only - show what would be deleted (simulation) | false |
+| Delete stale devices from Intune | true |
 
 ### EmailFrom
 
@@ -97,6 +136,7 @@ The sender email address. This needs to be configured in the runbook customizati
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ReportFileFormat
 
@@ -107,6 +147,15 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 | Required | false |
 | Default Value | CSV & XLSX |
 | Type | String |
+| Portal display name | Report file format |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| CSV & XLSX |  |
+| CSV only |  |
+| XLSX only |  |
 
 ### CreateDownloadLink
 
@@ -117,6 +166,14 @@ If enabled, the report files are uploaded to an Azure Storage Account and time-l
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Create a file download link (upload report to storage)? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Yes - upload report and return a download link | true |
+| No - do not create a download link | false |
 
 ### ContainerName
 
@@ -127,6 +184,7 @@ Storage container name used for the upload. Configured per runbook (not a global
 | Required | false |
 | Default Value | delete-stale-devices |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
@@ -137,6 +195,7 @@ Resource group that contains the storage account. Sourced from the RJReport tena
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
@@ -147,6 +206,7 @@ Storage account name used for the upload. Sourced from the RJReport tenant setti
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### LinkExpiryDays
 
@@ -157,6 +217,7 @@ Number of days until the generated download link expires. Sourced from the RJRep
 | Required | false |
 | Default Value | 6 |
 | Type | Int32 |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### UseUserScope
 
@@ -167,6 +228,8 @@ Enable user scope filtering to include or exclude devices based on primary user 
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Use User Scope Filtering |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### IncludeUserGroup
 
@@ -177,6 +240,8 @@ Only include devices whose primary users are members of this group. Requires Use
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Users to include (Group) |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ExcludeUserGroup
 
@@ -187,6 +252,8 @@ Exclude devices whose primary users are members of this group. Requires UseUserS
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Users to exclude (Group) |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailTo
 
@@ -199,6 +266,7 @@ The function sends individual emails to each recipient for privacy reasons.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Recipient Email Address(es) |
 
 
 

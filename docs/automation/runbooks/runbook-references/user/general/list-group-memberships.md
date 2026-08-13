@@ -13,6 +13,14 @@ User → General → List Group Memberships
 
 rjgit-user_general_list-group-memberships
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.5.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Az.Accounts (>= 5.3.4) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -33,6 +41,7 @@ User principal name of the target user.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### GroupType
 
@@ -103,6 +112,14 @@ If enabled, the report is sent via email with the selected report file format(s)
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Send the report via email? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Yes - send the report via email |  |
+| No - do not send an email |  |
 
 ### EmailTo
 
@@ -113,6 +130,8 @@ Recipient address or multiple comma-separated addresses for the email report. On
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Recipient Email Address(es) |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailFrom
 
@@ -123,6 +142,7 @@ The sender email address. This needs to be configured in the runbook customizati
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ReportFileFormat
 
@@ -133,6 +153,16 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 | Required | false |
 | Default Value | CSV & XLSX |
 | Type | String |
+| Portal display name | Report file format |
+| Hidden in portal | yes (preset via runbook customization) |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| CSV & XLSX |  |
+| CSV only |  |
+| XLSX only |  |
 
 ### CreateDownloadLink
 
@@ -143,6 +173,14 @@ If enabled, the report files (CSV and Excel) are uploaded to an Azure Storage Ac
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Create a file download link (upload report to storage)? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Yes - upload report and return a download link |  |
+| No - do not create a download link |  |
 
 ### ContainerName
 
@@ -153,6 +191,7 @@ Storage container name used for the upload.
 | Required | false |
 | Default Value | user-group-memberships |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
@@ -163,6 +202,7 @@ Resource group that contains the storage account.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
@@ -173,6 +213,7 @@ Storage account name used for the upload.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### LinkExpiryDays
 
@@ -183,6 +224,7 @@ Number of days until the generated download link expires.
 | Required | false |
 | Default Value | 6 |
 | Type | Int32 |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

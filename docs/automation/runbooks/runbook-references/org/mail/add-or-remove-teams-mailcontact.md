@@ -13,6 +13,14 @@ Organization → Mail → Add Or Remove Teams Mailcontact
 
 rjgit-org_mail_add-or-remove-teams-mailContact
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -53,6 +61,7 @@ Optional display name for the contact in the address book.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Name in Address Book |
 
 ### Remove
 
@@ -63,6 +72,14 @@ Optional display name for the contact in the address book.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Action |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Relay the desired address to the real address | false |
+| Stop the relay and remove desired address | true |
 
 
 

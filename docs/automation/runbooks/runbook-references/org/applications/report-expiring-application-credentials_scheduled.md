@@ -3,6 +3,10 @@ title: Report Expiring Application Credentials (Scheduled)
 description: List expiry date of all Application Registration credentials
 ---
 
+{% hint style="info" %}
+This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.
+{% endhint %}
+
 ## Description
 This runbook lists the expiry dates of application registration credentials, including client secrets and certificates.
 It can optionally filter by application IDs and can limit output to credentials that are about to expire.
@@ -28,6 +32,14 @@ Organization → Applications → Report Expiring Application Credentials (Sched
 
 rjgit-org_applications_report-expiring-application-credentials_scheduled
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.1.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.3.4) |
+| Schedulable | yes |
+
 ## Permissions
 
 ### Application permissions
@@ -48,6 +60,13 @@ If you want to list all credentials regardless of their expiry date, select "Lis
 | Default Value | True |
 | Type | Boolean |
 
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| List only credentials about to expire | true |
+| List all credentials | false |
+
 ### Days
 
 The number of days before a credential expires to consider it "about to expire".
@@ -57,6 +76,7 @@ The number of days before a credential expires to consider it "about to expire".
 | Required | false |
 | Default Value | 30 |
 | Type | Int32 |
+| Portal display name | Days before credential expiry |
 
 ### CredentialType
 
@@ -67,6 +87,15 @@ Filter by credential type: "Both" (default), "ClientSecrets", or "Certificates".
 | Required | false |
 | Default Value | Both |
 | Type | String |
+| Portal display name | Credential Type Filter |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Client Secrets and Certificates | Both |
+| Only Client Secrets | ClientSecrets |
+| Only Certificates | Certificates |
 
 ### ApplicationIds
 
@@ -77,6 +106,7 @@ Optional - comma-separated list of Application IDs to filter the credentials.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Application IDs |
 
 ### ReportFileFormat
 
@@ -87,6 +117,15 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 | Required | false |
 | Default Value | CSV & XLSX |
 | Type | String |
+| Portal display name | Report file format |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| CSV & XLSX |  |
+| CSV only |  |
+| XLSX only |  |
 
 ### CreateDownloadLink
 
@@ -97,6 +136,14 @@ If enabled, the report files are uploaded to an Azure Storage Account and time-l
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Create a file download link (upload report to storage)? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Yes - upload report and return a download link | true |
+| No - do not create a download link | false |
 
 ### ContainerName
 
@@ -107,6 +154,7 @@ Storage container name used for the upload. Configured per runbook (not a global
 | Required | false |
 | Default Value | report-expiring-app-credentials |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
@@ -117,6 +165,7 @@ Resource group that contains the storage account. Sourced from the RJReport tena
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
@@ -127,6 +176,7 @@ Storage account name used for the upload. Sourced from the RJReport tenant setti
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### LinkExpiryDays
 
@@ -137,6 +187,7 @@ Number of days until the generated download link expires. Sourced from the RJRep
 | Required | false |
 | Default Value | 6 |
 | Type | Int32 |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailTo
 
@@ -149,6 +200,7 @@ The function sends individual emails to each recipient for privacy reasons.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Recipient Email Address(es) |
 
 ### EmailFrom
 
@@ -159,6 +211,7 @@ The sender email address. This needs to be configured in the runbook customizati
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

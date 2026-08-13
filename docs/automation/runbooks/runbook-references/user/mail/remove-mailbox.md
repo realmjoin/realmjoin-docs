@@ -13,6 +13,14 @@ User → Mail → Remove Mailbox
 
 rjgit-user_mail_remove-mailbox
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### RBAC roles
@@ -29,6 +37,7 @@ User principal name of the mailbox.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

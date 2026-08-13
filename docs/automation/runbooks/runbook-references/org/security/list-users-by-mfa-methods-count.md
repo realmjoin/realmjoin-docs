@@ -15,6 +15,14 @@ Organization → Security → List Users By MFA Methods Count
 
 rjgit-org_security_list-users-by-MFA-methods-count
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -33,6 +41,16 @@ Range for filtering users based on the count of their registered MFA methods.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Select MFA Methods Count Range |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Users with 0 methods (no MFA) | 0 |
+| Users with 1-3 methods | 1-3 |
+| Users with 4-5 methods | 4-5 |
+| Users with 6+ methods | 6+ |
 
 
 

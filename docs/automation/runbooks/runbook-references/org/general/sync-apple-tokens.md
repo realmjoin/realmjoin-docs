@@ -13,6 +13,14 @@ Organization → General → Sync Apple Tokens
 
 rjgit-org_general_sync-apple-tokens
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -31,6 +39,15 @@ Select which token type(s) to synchronize with Apple Business Manager.
 | Required | true |
 | Default Value | Both |
 | Type | String |
+| Portal display name | Sync Type |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Sync both Enrollment and VPP tokens | Both |
+| Sync Enrollment Program tokens only | EnrollmentTokens |
+| Sync VPP tokens only | VPPTokens |
 
 
 

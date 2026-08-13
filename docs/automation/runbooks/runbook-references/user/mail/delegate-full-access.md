@@ -77,6 +77,14 @@ User → Mail → Delegate Full Access
 
 rjgit-user_mail_delegate-full-access
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.1.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -97,6 +105,7 @@ User principal name of the mailbox owner.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### delegateTo
 
@@ -107,6 +116,7 @@ One or more users to whom you want to grant or revoke full mailbox access. You c
 | Required | true |
 | Default Value |  |
 | Type | String[] |
+| Portal display name | Delegate access to |
 
 ### Remove
 
@@ -117,6 +127,14 @@ If set to true, the script will remove the FullAccess permission. If false, it w
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Action |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Grant access |  |
+| Remove access |  |
 
 ### AutoMapping
 

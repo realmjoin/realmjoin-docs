@@ -14,6 +14,14 @@ Organization → Devices → Add Device Via Corporate Identifier
 
 rjgit-org_devices_add-device-via-corporate-identifier
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -32,6 +40,13 @@ Identifier type to use for import.
 | Default Value | serialNumber |
 | Type | String |
 
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Serial Number | serialNumber |
+| IMEI | imei |
+
 ### CorpIdentifier
 
 Identifier value to import.
@@ -41,6 +56,7 @@ Identifier value to import.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Corporate Identifier Value |
 
 ### DeviceDescripton
 

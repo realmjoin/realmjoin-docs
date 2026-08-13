@@ -3,6 +3,10 @@ title: Unenroll Updatable Assets (Scheduled)
 description: Unenroll devices from Windows Update for Business.
 ---
 
+{% hint style="info" %}
+This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.
+{% endhint %}
+
 ## Description
 This runbook unenrolls all device members of a Microsoft Entra ID group from Windows Update for Business updatable assets.
 You can remove a specific update category enrollment or delete the updatable asset registration entirely.
@@ -14,6 +18,14 @@ Group → Devices → Unenroll Updatable Assets (Scheduled)
 **Full Runbook name**
 
 rjgit-group_devices_unenroll-updatable-assets_scheduled
+
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.1.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | yes |
 
 ## Permissions
 
@@ -33,6 +45,7 @@ Object ID of the group whose device members will be unenrolled.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### UpdateCategory
 

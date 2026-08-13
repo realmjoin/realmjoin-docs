@@ -3,6 +3,10 @@ title: Report EPM Elevation Requests (Scheduled)
 description: Generate report for Endpoint Privilege Management (EPM) elevation requests
 ---
 
+{% hint style="info" %}
+This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.
+{% endhint %}
+
 ## Description
 Queries Microsoft Intune for EPM elevation requests with flexible filtering options.
 Supports filtering by multiple status types and time range.
@@ -27,6 +31,42 @@ Organization → Security → Report EPM Elevation Requests (Scheduled)
 
 rjgit-org_security_report-EPM-elevation-requests_scheduled
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.1.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.3.4) |
+| Schedulable | yes |
+
+## Notes
+Runbook Type: Scheduled (recommended: monthly)
+
+Purpose & Use Cases:
+- Regular reporting of EPM activities
+- Audit trail for approved/denied elevation requests
+- Analysis of expired requests to identify process bottlenecks
+- Identification of frequently requested applications for automatic elevation rules
+
+Status Types Explained:
+- Pending: Awaits admin decision (use monitor-pending-EPM-requests for time-critical alerting)
+- Approved: Admin approved the request, user can proceed with elevation
+- Denied: Admin rejected the request due to security/policy concerns
+- Expired: Request expired before admin review (may indicate slow response times)
+- Revoked: Previously approved elevation was later revoked by admin
+- Completed: User successfully executed the elevated application after approval
+
+Data Retention & Time Ranges:
+- Intune retains EPM request details for 30 days after creation
+- For long-term analysis, archive CSV exports outside of Intune
+- Default filter (Approved/Denied/Expired/Revoked, 30 days)
+
+Email & Export Details:
+- Generates CSV and/or Excel (xlsx) report files with complete request details (see ReportFileFormat)
+- Emails sent individually to each recipient for privacy
+- No email sent when zero requests match the filter criteria
+- Report files include: timestamps, users, devices, applications, justifications, file hashes
+
 ## Permissions
 
 ### Application permissions
@@ -45,6 +85,7 @@ Include requests with status "Approved" - Request has been approved by an admini
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Approved Requests (approved by admin) |
 
 ### IncludeDenied
 
@@ -55,6 +96,7 @@ Include requests with status "Denied" - Request was rejected by an administrator
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Denied Requests (rejected by admin) |
 
 ### IncludeExpired
 
@@ -65,6 +107,7 @@ Include requests with status "Expired" - Request expired before approval/denial.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Expired Requests (expired before decision) |
 
 ### IncludeRevoked
 
@@ -75,6 +118,7 @@ Include requests with status "Revoked" - Previously approved request was revoked
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Revoked Requests (approval revoked) |
 
 ### IncludePending
 
@@ -85,6 +129,7 @@ Include requests with status "Pending" - Awaiting approval decision.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Pending Requests (awaiting approval) |
 
 ### IncludeCompleted
 
@@ -95,6 +140,7 @@ Include requests with status "Completed" - Request was approved and executed suc
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Completed Requests (approved and executed) |
 
 ### MaxAgeInDays
 
@@ -106,6 +152,7 @@ Note: Request details are retained in Intune for 30 days after creation.
 | Required | false |
 | Default Value | 30 |
 | Type | Int32 |
+| Portal display name | Filter requests created within last X days (retention: 30 days) |
 
 ### EmailTo
 
@@ -117,6 +164,7 @@ The function sends individual emails to each recipient for privacy reasons.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Recipient Email Address(es) |
 
 ### EmailFrom
 
@@ -127,6 +175,7 @@ The sender email address. This needs to be configured in the runbook customizati
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ReportFileFormat
 
@@ -137,6 +186,15 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 | Required | false |
 | Default Value | CSV & XLSX |
 | Type | String |
+| Portal display name | Report file format |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| CSV & XLSX |  |
+| CSV only |  |
+| XLSX only |  |
 
 ### CreateDownloadLink
 
@@ -147,6 +205,14 @@ If enabled, the report files are uploaded to an Azure Storage Account and time-l
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Create a file download link (upload report to storage)? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Yes - upload report and return a download link | true |
+| No - do not create a download link | false |
 
 ### ContainerName
 
@@ -157,6 +223,7 @@ Storage container name used for the upload. Configured per runbook (not a global
 | Required | false |
 | Default Value | report-epm-elevation-requests |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
@@ -167,6 +234,7 @@ Resource group that contains the storage account. Sourced from the RJReport tena
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
@@ -177,6 +245,7 @@ Storage account name used for the upload. Sourced from the RJReport tenant setti
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### LinkExpiryDays
 
@@ -187,6 +256,7 @@ Number of days until the generated download link expires. Sourced from the RJRep
 | Required | false |
 | Default Value | 6 |
 | Type | Int32 |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

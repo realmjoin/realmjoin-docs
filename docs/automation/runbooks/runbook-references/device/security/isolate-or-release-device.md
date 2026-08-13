@@ -15,6 +15,14 @@ Device → Security → Isolate Or Release Device
 
 rjgit-device_security_isolate-or-release-device
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -33,6 +41,7 @@ The device ID of the target device.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### Release
 
@@ -43,6 +52,14 @@ The device ID of the target device.
 | Required | true |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Action |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Isolate Device | false |
+| Release Device from Isolation | true |
 
 ### IsolationType
 
@@ -53,6 +70,7 @@ The isolation type to use when isolating the device.
 | Required | false |
 | Default Value | Full |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### Comment
 
@@ -63,6 +81,7 @@ A short reason for the (un)isolation action.
 | Required | true |
 | Default Value | Possible security risk. |
 | Type | String |
+| Portal display name | Reason for (Un)Isolation |
 
 
 

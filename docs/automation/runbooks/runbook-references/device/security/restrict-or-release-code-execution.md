@@ -15,6 +15,14 @@ Device → Security → Restrict Or Release Code Execution
 
 rjgit-device_security_restrict-or-release-code-execution
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -33,6 +41,7 @@ The device ID of the target device.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### Release
 
@@ -43,6 +52,14 @@ The device ID of the target device.
 | Required | true |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Action |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Restrict Code Execution | false |
+| Remove Code Restriction | true |
 
 ### Comment
 
@@ -53,6 +70,7 @@ A short reason for the (un)restriction action.
 | Required | true |
 | Default Value | Possible security risk. |
 | Type | String |
+| Portal display name | Reason for (Un)Restriction |
 
 
 

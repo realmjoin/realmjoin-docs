@@ -3,6 +3,10 @@ title: Report Devices Without Primary User (Scheduled)
 description: Reports all managed devices in Intune that do not have a primary user assigned.
 ---
 
+{% hint style="info" %}
+This is a scheduled runbook. It is designed to run on a recurring schedule rather than being triggered for a single object. See [Scheduling](../../../scheduling.md) for details on how to configure runbook schedules.
+{% endhint %}
+
 ## Description
 This script retrieves all managed devices from Intune, and filters out those without a primary user (userId).
 The output is a formatted table showing Object ID, Device ID, Display Name, Operating System, and Last Sync Date/Time for each device without a primary user.
@@ -29,6 +33,14 @@ Organization → Devices → Report Devices Without Primary User (Scheduled)
 
 rjgit-org_devices_report-devices-without-primary-user_scheduled
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.7.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.3.4) |
+| Schedulable | yes |
+
 ## Permissions
 
 ### Application permissions
@@ -47,6 +59,7 @@ Include Windows devices in the report. Enabled by default.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Include Windows Devices |
 
 ### IncludeMacOS
 
@@ -57,6 +70,7 @@ Include macOS devices in the report. Enabled by default.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Include macOS Devices |
 
 ### IncludeIOS
 
@@ -67,6 +81,7 @@ Include iOS and iPadOS devices in the report. Enabled by default.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Include iOS/iPadOS Devices |
 
 ### IncludeAndroid
 
@@ -77,6 +92,7 @@ Include Android devices in the report. Enabled by default.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Include Android Devices |
 
 ### IncludeOther
 
@@ -87,6 +103,7 @@ Include devices with any other operating system (e.g. Linux, ChromeOS) in the re
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Include Other Devices (e.g. Linux, ChromeOS) |
 
 ### ReportFileFormat
 
@@ -97,6 +114,15 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 | Required | false |
 | Default Value | CSV & XLSX |
 | Type | String |
+| Portal display name | Report file format |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| CSV & XLSX |  |
+| CSV only |  |
+| XLSX only |  |
 
 ### CreateDownloadLink
 
@@ -107,6 +133,14 @@ If enabled, the report files are uploaded to an Azure Storage Account and time-l
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Create a file download link (upload report to storage)? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Yes - upload report and return a download link | true |
+| No - do not create a download link | false |
 
 ### ContainerName
 
@@ -117,6 +151,7 @@ Storage container name used for the upload. Configured per runbook (not a global
 | Required | false |
 | Default Value | devices-without-primary-user |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
@@ -127,6 +162,7 @@ Resource group that contains the storage account. Sourced from the RJReport tena
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
@@ -137,6 +173,7 @@ Storage account name used for the upload. Sourced from the RJReport tenant setti
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### LinkExpiryDays
 
@@ -147,6 +184,7 @@ Number of days until the generated download link expires. Sourced from the RJRep
 | Required | false |
 | Default Value | 6 |
 | Type | Int32 |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailFrom
 
@@ -157,6 +195,7 @@ The sender email address. This needs to be configured in the runbook customizati
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailTo
 
@@ -169,6 +208,7 @@ The function sends individual emails to each recipient for privacy reasons.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Recipient Email Address(es) |
 
 
 

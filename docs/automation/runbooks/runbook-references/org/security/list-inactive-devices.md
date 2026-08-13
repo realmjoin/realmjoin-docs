@@ -13,6 +13,14 @@ Organization → Security → List Inactive Devices
 
 rjgit-org_security_list-inactive-devices
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Az.Storage (>= 9.6.0)<br>Az.Resources (>= 9.0.1) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -42,6 +50,14 @@ If set to true, inactivity is based on last Intune sync; otherwise it is based o
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Last Login or Last Intune Sync |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Show by Last Intune Sync |  |
+| Show by Last Login |  |
 
 ### ExportToFile
 
@@ -52,6 +68,13 @@ If set to true, exports the results to a CSV file in Azure Storage.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Export to a CSV file |  |
+| List in Console |  |
 
 ### ContainerName
 

@@ -14,6 +14,14 @@ Organization → General → Bulk Delete Devices From Autopilot
 
 rjgit-org_general_bulk-delete-devices-from-autopilot
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -31,6 +39,7 @@ Comma-separated list of serial numbers to delete from Autopilot.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Comma separated serial numbers |
 
 
 

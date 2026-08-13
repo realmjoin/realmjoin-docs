@@ -14,6 +14,14 @@ Organization → General → Add Microsoft Store App Logos
 
 rjgit-org_general_add-microsoft-store-app-logos
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions

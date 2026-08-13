@@ -13,6 +13,14 @@ User → General → Offboard User Temporarily
 
 rjgit-user_general_offboard-user-temporarily
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Az.Storage (>= 9.6.0)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -38,6 +46,7 @@ User principal name of the target user.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### RevokeAccess
 
@@ -68,6 +77,7 @@ Azure Resource Group name for exporting data to storage.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### exportStorAccountName
 
@@ -78,6 +88,7 @@ Azure Storage Account name for exporting data to storage.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### exportStorAccountLocation
 
@@ -88,6 +99,7 @@ Azure region used when creating the Storage Account.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### exportStorAccountSKU
 
@@ -98,6 +110,7 @@ SKU name used when creating the Storage Account.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### exportStorContainerGroupMembershipExports
 
@@ -108,6 +121,7 @@ Container name used for group membership exports.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### exportGroupMemberships
 
@@ -118,6 +132,7 @@ If set to true, exports the user's current group memberships to Azure Storage.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ChangeLicensesSelector
 
@@ -128,6 +143,14 @@ Controls how directly assigned licenses should be handled.
 | Required | false |
 | Default Value | 0 |
 | Type | Int32 |
+| Portal display name | Change directly assigned licenses |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Do not change assigned licenses | 0 |
+| Remove all directly assigned licenses | 2 |
 
 ### ChangeGroupsSelector
 
@@ -138,6 +161,15 @@ Controls how assigned groups should be handled. "Change" and "Remove all" will b
 | Required | false |
 | Default Value | 0 |
 | Type | Int32 |
+| Portal display name | Change assigned groups |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Do not change assigned groups | 0 |
+| Change the user's groups | 1 |
+| Remove all groups | 2 |
 
 ### GroupToAdd
 
@@ -168,6 +200,14 @@ If set to true, removes or replaces the user's group ownerships.
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Handle group ownerships |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| User will remain owner / Do not change | false |
+| Remove/Replace this user's group ownerships | true |
 
 ### ReplacementOwnerName
 

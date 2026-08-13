@@ -14,6 +14,14 @@ Organization → Applications → Delete Application Registration
 
 rjgit-org_applications_delete-application-registration
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.1 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions

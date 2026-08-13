@@ -14,6 +14,14 @@ Organization → Devices → Add Autopilot Device
 
 rjgit-org_devices_add-autopilot-device
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -31,6 +39,7 @@ Device serial number as returned by Get-WindowsAutopilotInfo.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | 'Device Serial Number' from Get-WindowsAutopilotInfo |
 
 ### HardwareIdentifier
 
@@ -41,6 +50,7 @@ Device hardware hash as returned by Get-WindowsAutopilotInfo.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | 'Hardware Hash' from Get-WindowsAutopilotInfo |
 
 ### AssignedUser
 
@@ -51,6 +61,8 @@ Optional user to assign to the Autopilot device.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Assign device to this user (optional) |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### Wait
 
@@ -61,6 +73,7 @@ If set to true, the runbook waits until the import job completes.
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Wait for job to finish |
 
 ### GroupTag
 
@@ -71,6 +84,7 @@ Optional group tag to apply to the imported device.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Group tag (optional) |
 
 
 

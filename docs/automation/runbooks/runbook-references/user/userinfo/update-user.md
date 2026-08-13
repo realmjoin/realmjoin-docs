@@ -13,6 +13,14 @@ User → Userinfo → Update User
 
 rjgit-user_userinfo_update-user
 
+## Details
+
+| Property | Value |
+| --- | --- |
+| Version | 1.0.2 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Schedulable | no |
+
 ## Permissions
 
 ### Application permissions
@@ -34,6 +42,7 @@ User principal name of the target user.
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### GivenName
 
@@ -64,6 +73,7 @@ Display name to set for the user.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | DisplayName |
 
 ### CompanyName
 
@@ -184,6 +194,7 @@ Optional manager user ID to set for the user.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Manager |
 
 ### DefaultLicense
 
@@ -194,6 +205,7 @@ Display name of a license group to assign.
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | License group to assign |
 
 ### DefaultGroups
 
