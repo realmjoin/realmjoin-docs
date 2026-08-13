@@ -342,8 +342,10 @@ try {
         $req = Get-PermissionRequirementsFromJsonFile -Path $file.FullName
 
         foreach ($role in @($req.Roles)) {
-            if (-not [string]::IsNullOrWhiteSpace($role)) {
-                [void]$roleSet.Add($role.Trim())
+            # Schema v1: plain role name string. Schema v2: object with Name/TemplateId/Reason.
+            $roleName = if ($role -is [string]) { $role } else { [string]$role.Name }
+            if (-not [string]::IsNullOrWhiteSpace($roleName)) {
+                [void]$roleSet.Add($roleName.Trim())
             }
         }
 
@@ -376,8 +378,10 @@ try {
             }
 
             foreach ($appRole in @($permObj.AppRoleAssignments)) {
-                if (-not [string]::IsNullOrWhiteSpace($appRole)) {
-                    [void]$graphPermissionSet.Add($appRole.Trim())
+                # Schema v1: plain permission string. Schema v2: object with Value/Reason.
+                $appRoleValue = if ($appRole -is [string]) { $appRole } else { [string]$appRole.Value }
+                if (-not [string]::IsNullOrWhiteSpace($appRoleValue)) {
+                    [void]$graphPermissionSet.Add($appRoleValue.Trim())
                 }
             }
         }
