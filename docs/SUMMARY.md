@@ -347,6 +347,7 @@
 
 * [Licensing](legal/licensing/README.md)
   * [Microsoft Marketplace](legal/licensing/microsoft-marketplace.md)
+  * [Cleverbridge](legal/licensing/cleverbridge.md)
 * [Support & Service Level](legal/support.md)
 
 ***
