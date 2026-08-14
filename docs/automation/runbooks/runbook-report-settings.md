@@ -73,6 +73,45 @@ All parameters are optional. If configured, they will appear in the email footer
 
 > **Note:** Some runbooks additionally accept a per-run ticket link (e.g. `ServiceDeskTicketUrl`) to reference the specific ticket that triggered the request. This is a runbook parameter, not part of this central configuration.
 
+### Email Branding (optional)
+
+Report emails can carry tenant-specific branding: the default RealmJoin header and footer graphics can be replaced with your own images, and the footer image can link to a custom target — for example your intranet or IT portal.
+
+To configure branding, add a `Branding` sub-section to the `RJReport` block (nested like `StorageAccount`):
+
+```json
+{
+    "Settings": {
+        "RJReport": {
+            "Branding": {
+                "HeaderImageUrl": "https://cdn.contoso.com/branding/email-header.png",
+                "FooterImageUrl": "https://cdn.contoso.com/branding/email-footer.png",
+                "FooterLink": "https://intranet.contoso.com"
+            }
+        }
+    }
+}
+```
+
+**Parameters:**
+
+| Setting | Required | Default | Description |
+| --- | --- | --- | --- |
+| `HeaderImageUrl` | no | RealmJoin header graphic | Public HTTPS URL of a custom header image that replaces the default RealmJoin header graphic |
+| `FooterImageUrl` | no | RealmJoin footer graphic | Public HTTPS URL of a custom footer image that replaces the default RealmJoin footer graphic |
+| `FooterLink` | no | `https://www.realmjoin.com` | URL the footer image links to |
+
+**Image requirements:**
+
+- The image must be reachable via a **public HTTPS URL** — for example an Azure Blob Storage container with anonymous read access, a CDN, or the company website.
+- Supported formats: **PNG, JPEG or GIF**.
+- Images are rendered at **750 px width**. Recommended dimensions are **750×200 px** (matching the default banners) or **1500×400 px** for high-DPI displays.
+- Maximum **200 KB** per image; **100 KB or less** is recommended. The branding images share the ~4 MB total email size limit with the report attachments (for comparison, the default RealmJoin graphics are 52 KB and 15 KB).
+
+The images are downloaded and validated by the runbook on each run. If a setting is left empty, the default RealmJoin graphic (and the default footer link) is used. If a download or validation fails, a warning is logged and the default graphic is used instead — a broken branding configuration never prevents a report email from being sent.
+
+All settings are optional and take effect for all runbooks that send report emails.
+
 ## Storage Account Delivery
 
 Reporting runbooks that support this delivery channel can upload their output to an Azure Blob Storage container. After a successful upload, the runbook returns a time-limited SAS link that can be used to download the file directly. This channel can be used independently of or in addition to email delivery.
@@ -92,9 +131,7 @@ Navigate to [RealmJoin Runbook Customization](https://portal.realmjoin.com/setti
             "StorageAccount": {
                 "ResourceGroup": "rg-reports",
                 "StorageAccountName": "stcontosoreports",
-                "LinkExpiryDays": 6,
-                "AddBlobNamePrefix": true,
-                "UseRandomPrefix": false
+                "LinkExpiryDays": 6
             }
         }
     }
@@ -108,10 +145,8 @@ Navigate to [RealmJoin Runbook Customization](https://portal.realmjoin.com/setti
 | `ResourceGroup` | yes | — | Resource group that contains the Storage Account |
 | `StorageAccountName` | yes | — | Name of the Azure Storage Account |
 | `LinkExpiryDays` | no | `6` | Number of days until the generated SAS download link expires |
-| `AddBlobNamePrefix` | no | `true` | Prepends a timestamp (`yyyyMMdd-HHmmss`) to the blob name to prevent overwrites |
-| `UseRandomPrefix` | no | `false` | Uses a 6-character alphanumeric random string as prefix instead of a timestamp; only applies when `AddBlobNamePrefix` is `true` |
 
-> **Note:** Settings that are specific to an individual runbook — such as the target container name or a custom blob name — are configured directly on that runbook and are intentionally not part of this central configuration.
+> **Note:** Settings that are specific to an individual runbook — such as the target container name or a custom blob name — are configured directly on that runbook and are intentionally not part of this central configuration. The same applies to blob-name prefixing: whether a timestamp prefix (`yyyyMMdd-HHmmss`) is prepended to the blob name to prevent overwrites is controlled by the `AddBlobNamePrefix` parameter of [`Publish-RjRbFilesToStorageContainer`](../../dev-reference/report-functions/publish-rjrbfilestostoragecontainer.md) (default `$false`), which each runbook passes explicitly.
 
 ## Combined Example
 
@@ -126,12 +161,15 @@ The following snippet shows a complete `RJReport` configuration with all feature
             "ServiceDesk_EMail": "servicedesk@domain.com",
             "ServiceDesk_Phone": "+49123456789",
             "ServiceDesk_PortalUrl": "https://servicedesk.domain.com",
+            "Branding": {
+                "HeaderImageUrl": "https://cdn.contoso.com/branding/email-header.png",
+                "FooterImageUrl": "https://cdn.contoso.com/branding/email-footer.png",
+                "FooterLink": "https://intranet.contoso.com"
+            },
             "StorageAccount": {
                 "ResourceGroup": "rg-reports",
                 "StorageAccountName": "stcontosoreports",
-                "LinkExpiryDays": 6,
-                "AddBlobNamePrefix": true,
-                "UseRandomPrefix": false
+                "LinkExpiryDays": 6
             }
         }
     }
