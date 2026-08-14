@@ -84,15 +84,15 @@ This uploads `devices.csv` to the `reports` container in `stcontosoreports` and 
 | --- | --- | --- |
 | `FilePaths` | `string[]` | One or more local file paths to upload. Each path must point to an existing file (`Test-Path -PathType Leaf`); the function throws upfront if any entry is missing. |
 | `ContainerName` | `string` | Target blob container. Created automatically if it does not exist. Must comply with Azure container naming rules (lowercase, 3–63 chars, alphanumeric + hyphen). Container name is a *per-runbook* decision and is set in the runbook, not in central settings. |
-| `ResourceGroupName` | `string` | Resource group that contains the storage account. Usually wired to the central setting `RJReport.AzureStorage.ResourceGroup`. |
-| `StorageAccountName` | `string` | Name of the Azure Storage Account. Usually wired to the central setting `RJReport.AzureStorage.StorageAccountName`. |
+| `ResourceGroupName` | `string` | Resource group that contains the storage account. Usually wired to the central setting `RJReport.StorageAccount.ResourceGroup`. |
+| `StorageAccountName` | `string` | Name of the Azure Storage Account. Usually wired to the central setting `RJReport.StorageAccount.StorageAccountName`. |
 
 ### Optional
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
 | `SubscriptionId` | `string` | current context | Azure subscription that hosts the storage account. If supplied, `Set-AzContext -Subscription` is called before any storage operation. Omit to use the current `Az` context. |
-| `LinkExpiryDays` | `int` | `6` | SAS link validity in days. Validated to `[1, 3650]`. The same expiry timestamp is applied to all blobs in a single call. Usually wired to the central setting `RJReport.AzureStorage.LinkExpiryDays`. |
+| `LinkExpiryDays` | `int` | `6` | SAS link validity in days. Validated to `[1, 3650]`. The same expiry timestamp is applied to all blobs in a single call. Usually wired to the central setting `RJReport.StorageAccount.LinkExpiryDays`. |
 | `AddBlobNamePrefix` | `bool` | `$false` | When `$true`, blob names are prefixed with `yyyyMMdd-HHmmss-` (timestamp from `Get-Date` at upload time) to prevent overwrites in repeated runs. The original file name is kept as the suffix. |
 
 > **Note:** The mapping between these parameters and the central RealmJoin customization JSON (including the recommended defaults) is documented in [Runbook Report Settings — Storage Account Delivery](../../automation/runbooks/runbook-report-settings.md#storage-account-delivery).
@@ -110,13 +110,13 @@ This is the canonical pattern used by reporting runbooks. Storage configuration 
 param(
     [string] $ContainerName = "my-runbook-output",
 
-    [ValidateScript( { Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process; Use-RJInterface -Type Setting -Attribute "RJReport.AzureStorage.ResourceGroup" } )]
+    [ValidateScript( { Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process; Use-RJInterface -Type Setting -Attribute "RJReport.StorageAccount.ResourceGroup" } )]
     [string] $ResourceGroupName,
 
-    [ValidateScript( { Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process; Use-RJInterface -Type Setting -Attribute "RJReport.AzureStorage.StorageAccountName" } )]
+    [ValidateScript( { Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process; Use-RJInterface -Type Setting -Attribute "RJReport.StorageAccount.StorageAccountName" } )]
     [string] $StorageAccountName,
 
-    [ValidateScript( { Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process; Use-RJInterface -Type Setting -Attribute "RJReport.AzureStorage.LinkExpiryDays" } )]
+    [ValidateScript( { Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process; Use-RJInterface -Type Setting -Attribute "RJReport.StorageAccount.LinkExpiryDays" } )]
     [ValidateRange(1, 3650)]
     [int] $LinkExpiryDays = 6
 )
@@ -126,8 +126,8 @@ Connect-RjRbAzAccount
 if ((-not $ResourceGroupName) -or (-not $StorageAccountName)) {
     "## To export to a storage account, please use RJ Runbooks Customization"
     "## ( https://portal.realmjoin.com/settings/runbooks-customizations ) to configure:"
-    "##   - RJReport.AzureStorage.ResourceGroup"
-    "##   - RJReport.AzureStorage.StorageAccountName"
+    "##   - RJReport.StorageAccount.ResourceGroup"
+    "##   - RJReport.StorageAccount.StorageAccountName"
     throw "Missing Storage Account Configuration."
 }
 
@@ -246,7 +246,7 @@ Each file is uploaded via `HttpClient.SendAsync`. A non-success status terminate
 - Missing `Microsoft.Storage/storageAccounts/listKeys/action` on the managed identity.
 - Wrong subscription context (combine with `-SubscriptionId`).
 - Typo in `StorageAccountName` or `ResourceGroupName`.
-- The central settings `RJReport.AzureStorage.ResourceGroup` / `RJReport.AzureStorage.StorageAccountName` not configured — see [Runbook Report Settings](../../automation/runbooks/runbook-report-settings.md#storage-account-delivery).
+- The central settings `RJReport.StorageAccount.ResourceGroup` / `RJReport.StorageAccount.StorageAccountName` not configured — see [Runbook Report Settings](../../automation/runbooks/runbook-report-settings.md#storage-account-delivery).
 
 ### SAS token characteristics
 
