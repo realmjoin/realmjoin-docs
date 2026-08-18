@@ -1,8 +1,8 @@
 ---
 type: Deployment Guide
 description: >-
-  RealmJoin infrastructure and network requirements: connection endpoints,
-  Azure Front Door, proxy guidance, and BranchCache-based peer-to-peer content
+  RealmJoin infrastructure and network requirements: connection endpoints, Azure
+  Front Door, proxy guidance, and BranchCache-based peer-to-peer content
   delivery.
 ---
 
@@ -20,21 +20,10 @@ RealmJoin is a cloud-native service and is designed for **direct, unrestricted o
 
 The RealmJoin client requires outbound HTTPS (TCP 443) and must be able to reach all of the following endpoints:
 
-| Host                                | Purpose                                          |
-| ----------------------------------- | ------------------------------------------------ |
-| `client-api.realmjoin.com`          | RealmJoin client backend API                     |
-| `client-api-staging.realmjoin.com`  | RealmJoin client backend API (staging)           |
-| `cdn.realmjoin.com`                 | Software package content delivery                |
-| `nuget.realmjoin.com`               | RealmJoin package feed (NuGet)                   |
-| `gkrealmjoin.s3.amazonaws.com`      | RealmJoin client download                        |
-| `realmjoinstaticcdn.azureedge.net`  | RealmJoin Notifier                               |
-| `login.microsoftonline.com`         | Microsoft Entra ID authentication                |
-| `graph.microsoft.com`               | Microsoft Graph API                              |
-| `enterpriseregistration.windows.net`| Microsoft Entra device registration              |
-| `x1.c.lencr.org`                    | Certificate validation (Let's Encrypt)           |
+<table data-search="false"><thead><tr><th>Host</th><th>Purpose</th></tr></thead><tbody><tr><td><code>client-api.realmjoin.com</code></td><td>RealmJoin client backend API</td></tr><tr><td><code>client-api-staging.realmjoin.com</code></td><td>RealmJoin client backend API (staging)</td></tr><tr><td><code>cdn.realmjoin.com</code></td><td>Software package content delivery</td></tr><tr><td><code>nuget.realmjoin.com</code></td><td>RealmJoin package feed (NuGet)</td></tr><tr><td><code>gkrealmjoin.s3.amazonaws.com</code></td><td>RealmJoin client download</td></tr><tr><td><code>realmjoinstaticcdn.azureedge.net</code></td><td>RealmJoin Notifier</td></tr><tr><td><code>login.microsoftonline.com</code></td><td>Microsoft Entra ID authentication</td></tr><tr><td><code>graph.microsoft.com</code></td><td>Microsoft Graph API</td></tr><tr><td><code>enterpriseregistration.windows.net</code></td><td>Microsoft Entra device registration</td></tr><tr><td><code>x1.c.lencr.org</code></td><td>Certificate validation (Let's Encrypt)</td></tr></tbody></table>
 
 {% hint style="warning" %}
-Reference these endpoints **by hostname (FQDN), never by IP address**. **We cannot provide IP addresses or IP ranges for RealmJoin, and IP-based filtering is not supported.** The package CDN (`cdn.realmjoin.com`) is delivered via Azure Front Door, which has no fixed IP ranges — see [Azure Front Door](#azure-front-door) below.
+Reference these endpoints **by hostname (FQDN), never by IP address**. **We cannot provide IP addresses or IP ranges for RealmJoin, and IP-based filtering is not supported.** The package CDN (`cdn.realmjoin.com`) is delivered via Azure Front Door, which has no fixed IP ranges — see [Azure Front Door](./#azure-front-door) below.
 {% endhint %}
 
 ### Azure Front Door
@@ -49,7 +38,7 @@ Reference these endpoints **by hostname (FQDN), never by IP address**. **We cann
 
 * Initial deployment requires **direct internet access**.
 * **No proxy** is ideal; a **transparent proxy** works fine (if truly transparent).
-* If a proxy is unavoidable, the [RealmJoin connection endpoints](#realmjoin-connection-endpoints) must be directly accessible as a minimum requirement.
+* If a proxy is unavoidable, the [RealmJoin connection endpoints](./#realmjoin-connection-endpoints) must be directly accessible as a minimum requirement.
 
 In addition, the Microsoft services RealmJoin depends on must be reachable. Microsoft publishes the corresponding address ranges:
 
