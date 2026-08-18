@@ -98,6 +98,30 @@ description: >-
 
 ***
 
+**Get all devices with a specific MAC address (any adapter):**
+
+[`mac:E8-62-BE`](https://portal.realmjoin.com/devices?search=mac%3AE8-62-BE)
+
+***
+
+**Get all devices by their Ethernet MAC address:**
+
+[`ethMac:E862BE`](https://portal.realmjoin.com/devices?search=ethMac%3AE862BE)
+
+***
+
+**Get all devices by their Wi-Fi MAC address:**
+
+[`wifiMac:D4-BE`](https://portal.realmjoin.com/devices?search=wifiMac%3AD4-BE)
+
+{% hint style="info" %}
+`mac:` (alias `macAddress:`) searches across **all** MAC addresses known for a device — the Intune Ethernet MAC, the Intune Wi-Fi MAC, and every network adapter reported by the RealmJoin agent. Use `ethMac:` (alias `ethernetMac:`) or `wifiMac:` (alias `wlanMac:`) to target the Intune Ethernet or Wi-Fi MAC specifically.
+
+You can enter MAC addresses with or without separators (`:`, `-`, or `.`) and search on a partial value, for example `mac:E862`. As with other fields, use `=` for an exact match (`mac=E862BE...`) and `!:`/`!=` to exclude a value.
+{% endhint %}
+
+***
+
 ## Packages
 
 **Get all RealmJoin (basic) packages:**
