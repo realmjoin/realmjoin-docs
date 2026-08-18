@@ -18,7 +18,7 @@ RealmJoin is a cloud-native service and is designed for **direct, unrestricted o
 
 ### RealmJoin Connection Endpoints
 
-Allow outbound HTTPS (TCP 443) to the following hosts in your firewall and proxy configuration:
+The RealmJoin client requires outbound HTTPS (TCP 443) and must be able to reach all of the following endpoints:
 
 | Host                                | Purpose                                          |
 | ----------------------------------- | ------------------------------------------------ |
@@ -34,16 +34,16 @@ Allow outbound HTTPS (TCP 443) to the following hosts in your firewall and proxy
 | `x1.c.lencr.org`                    | Certificate validation (Let's Encrypt)           |
 
 {% hint style="warning" %}
-Always allow these endpoints **by hostname (FQDN), never by IP address**. RealmJoin services are published via Azure Front Door, which has no fixed IP ranges — see [Azure Front Door](#azure-front-door) below. **We cannot provide IP addresses or IP ranges for RealmJoin, and IP-based filtering is not supported.**
+Reference these endpoints **by hostname (FQDN), never by IP address**. **We cannot provide IP addresses or IP ranges for RealmJoin, and IP-based filtering is not supported.** The package CDN (`cdn.realmjoin.com`) is delivered via Azure Front Door, which has no fixed IP ranges — see [Azure Front Door](#azure-front-door) below.
 {% endhint %}
 
 ### Azure Front Door
 
-RealmJoin services — including the package CDN — are delivered through [Azure Front Door](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-overview), Microsoft's global edge and CDN platform. This has direct consequences for network filtering:
+`cdn.realmjoin.com` — the endpoint that delivers all software package content — is served through [Azure Front Door](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-overview), Microsoft's global edge and CDN platform. This has direct consequences for network filtering:
 
-* **There are no fixed IP ranges.** Azure Front Door uses a Microsoft-managed, global anycast IP pool. Microsoft can add, remove, or reassign these IP addresses at any time without notice. For this reason, no IP list for RealmJoin exists or can be provided — any such list would be immediately outdated.
-* **IP-based allowlisting is not supported** and will break without warning when Microsoft changes the Front Door infrastructure. The same applies to DNS-level interception or rewriting of these hostnames.
-* **FQDN-based filtering** of the hostnames listed above is the only supported way to restrict RealmJoin traffic.
+* **There are no fixed IP ranges.** Azure Front Door uses a Microsoft-managed, global anycast IP pool. Microsoft can add, remove, or reassign these IP addresses at any time without notice. For this reason, no IP list exists or can be provided — any such list would be immediately outdated.
+* **IP-based allowlisting will break without warning** and is not supported. The same applies to DNS-level interception or rewriting of these hostnames.
+* If your policy requires restricting outbound traffic regardless, **hostname (FQDN) based rules** are the only approach that works with RealmJoin.
 
 ### Avoid Proxies
 
