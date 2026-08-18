@@ -92,6 +92,28 @@ Please handle the token with care. If you think the token might have been leaked
 
 <figure><img src="../../.gitbook/assets/image-6.png" alt=""><figcaption><p>Create a token</p></figcaption></figure>
 
+## Best practices
+
+Follow these recommendations to keep your AVD templates stable and avoid packages being unexpectedly removed from a template.
+
+### Use a dedicated package subscription per app
+
+Always create a **separate package subscription** for each application you add to a template and rename it to `AVD - [PACKAGENAME]`.
+
+{% hint style="warning" %}
+Never reuse an existing (non-AVD) app subscription in a template. Packages used in AVD templates are handled differently from regular deployments, so sharing a subscription between both can lead to unexpected behavior.
+{% endhint %}
+
+### Only enable automation on the main channel
+
+Enable automation on the **main** channel only — never on the **preview** channel.
+
+{% hint style="danger" %}
+There are no preview options for AVD, and switching a subscription from **preview** to **main** creates a **new** subscription. This deletes the existing package and rebuilds it, which removes the package from any template it was part of.
+
+Updating from **main** to **main** does not create a new subscription, so the package stays in the template.
+{% endhint %}
+
 ## Using a Template
 
 ### AVD / Headless Provisioning
