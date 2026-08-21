@@ -16,8 +16,10 @@ Key characteristics:
 - **Markdown in, HTML out** — runbooks compose the report body in Markdown; the function renders it to themed HTML that works across Outlook Classic, New Outlook, Outlook Web, mobile clients and dark mode.
 - **One email per recipient** — when multiple recipients are supplied, the function sends an individual message to each address rather than a single multi-recipient mail. This is a privacy/BCC-by-default design.
 - **Inline branded header & footer** — bundled PNG assets are sent as CID attachments and referenced by the embedded HTML. Both can be overridden or suppressed entirely.
+- **Customizable template colors** — the accent and text color of the template can be overridden per call, so report emails can follow a customer's corporate design.
+- **Built-in attachment size guard** — an optional smaller fallback attachment set is sent automatically when the regular set exceeds the size budget or its send attempt fails.
 - **Self-connecting** — if no Graph session is active, the function transparently calls `Connect-RjRbGraph` (or `Connect-MgGraph -Identity` when `-UseNativeGraphRequest` is set).
-- **Resilient** — failed attachment reads, missing image overrides, or per-recipient sendMail failures are reported but do not abort the entire batch unless *all* recipients fail.
+- **Resilient** — failed attachment reads, invalid image overrides, invalid colors, or per-recipient sendMail failures are reported but do not abort the entire batch unless *all* recipients fail.
 
 Centralized email settings (sender address, service desk info) are documented in [Runbook Report Settings](../../automation/runbooks/runbook-report-settings.md) — this document focuses on calling the function from a runbook.
 
@@ -90,8 +92,27 @@ This produces a fully branded RealmJoin email with the default header and footer
 | `FooterLink` | `string` | `https://www.realmjoin.com` | URL used as the `href` and `title` of the anchor wrapping the footer image. |
 | `NoHeader` | `switch` | off | Suppresses the header graphic entirely. If combined with `HeaderImage`, a warning is emitted and the override is ignored. |
 | `NoFooter` | `switch` | off | Suppresses the footer graphic and its link entirely. If combined with `FooterImage` or a custom `FooterLink`, a warning is emitted and those values are ignored. |
+| `AccentColor` | `string` | `#f8842c` | *New in 0.8.9.* 6-digit hex color for table header rows, action buttons and the accent borders of the info boxes. An empty or malformed value emits a warning and falls back to the default. |
+| `TextColor` | `string` | `#011e33` | *New in 0.8.9.* 6-digit hex color for body text, headings, list items and code. Same fallback behavior as `AccentColor`. |
 
 **Recommended image dimensions:** 750 × 200 px PNG. This matches the email container width and the bundled defaults. Significantly different aspect ratios may look distorted on narrow viewports. Each graphic should stay well below 3 MB — Graph caps the total `sendMail` request at 4 MB and a warning is emitted if either image exceeds 3 MB.
+
+**Colors:** without `AccentColor`/`TextColor` the generated HTML is byte-for-byte identical to previous module versions — the defaults are the RealmJoin orange and navy. Status colors (green/red/amber) and neutral grays are intentionally not parameterized because they convey meaning. Verify custom colors in both light and dark mode: the content card stays white in dark mode, so a very light text color becomes unreadable.
+
+### Optional — Attachment size guard
+
+*New in 0.8.9.* Graph rejects the whole `sendMail` request once the message exceeds ~4 MB. Instead of failing the report, the function can fall back to a smaller attachment set. This logic was previously duplicated as the inline runbook helper `Send-RjRbGuardedReportEmail` and is now part of the function itself.
+
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `FallbackAttachments` | `string[]` | — | Smaller attachment set used when the regular set exceeds `MaxAttachmentBytes`, or when the send with the regular set fails for every recipient. Without this parameter there is no fallback and a failed send throws immediately. |
+| `FallbackMarkdownContent` | `string` | value of `MarkdownContent` | Body used when the fallback set is sent — use it to explain which files were left out and how to obtain them. |
+| `MaxAttachmentBytes` | `long` | `2.5MB` | Raw size budget for the regular attachment set. Stays safely below the ~4 MB Graph limit after base64 encoding (+33 %), HTML body and inline branding images. Only evaluated when `FallbackAttachments` is supplied. |
+
+The guard runs in two stages:
+
+1. **Before sending** — if the regular set exceeds the budget, the fallback set is sent directly and a message names both sizes.
+2. **After a failed send** — if the send with the regular set fails for *all* recipients, one retry with the fallback set is attempted before the function throws.
 
 ### Optional — Transport
 
@@ -154,6 +175,41 @@ Send-RjRbReportEmail `
 ```
 
 If `$headerPath` is missing or unreadable, the call still succeeds — the bundled RealmJoin default is used and a warning is logged.
+
+### Custom template colors
+
+Match the email to a customer's corporate design. Both parameters are independent — overriding only the accent color keeps the default text color:
+
+```powershell
+Send-RjRbReportEmail `
+    -EmailFrom       "realmjoin-report@contoso.com" `
+    -EmailTo         "alice@contoso.com" `
+    -Subject         "Branded Report" `
+    -MarkdownContent $reportMd `
+    -AccentColor     "#0052cc" `
+    -TextColor       "#1a1a2e"
+```
+
+An invalid value (for example `blue` or `#05c`) does not fail the send: a warning names the parameter and the default color is used.
+
+### Large reports with a fallback attachment set
+
+Generate a CSV and an Excel workbook, but fall back to the workbook alone when the pair exceeds the size budget:
+
+```powershell
+$sizeHint = "The CSV export was omitted because the attachments exceeded the email size limit. The Excel workbook contains the complete data."
+
+Send-RjRbReportEmail `
+    -EmailFrom                "realmjoin-report@contoso.com" `
+    -EmailTo                  "it-reports@contoso.com" `
+    -Subject                  "Device Inventory" `
+    -MarkdownContent          $reportMd `
+    -Attachments              @($csvPath, $xlsxPath) `
+    -FallbackAttachments      @($xlsxPath) `
+    -FallbackMarkdownContent  ($reportMd + "`n`n> **Note:** $sizeHint")
+```
+
+Runbooks migrating from the inline helper `Send-RjRbGuardedReportEmail` can drop that function and rename the call to `Send-RjRbReportEmail` — the parameter names (`Attachments`, `FallbackAttachments`, `FallbackMarkdownContent`, `MaxAttachmentBytes`) are unchanged.
 
 ### Plain content (no header/footer)
 
@@ -265,36 +321,76 @@ Each recipient is sent independently. The function tracks successes and failures
 
 ### Image override failures
 
-Both `HeaderImage` and `FooterImage` fall back to the bundled defaults on any error (missing file, unsupported extension, IO error). A warning describes the failure and identifies which default was used.
+Both `HeaderImage` and `FooterImage` fall back to the bundled defaults on any error (missing file, IO error, or a file that is not a valid image). A warning describes the failure and identifies which default was used.
+
+Since 0.8.9 the image format is determined from the **file signature** (magic bytes) rather than the file extension. A file that is named `.png` but actually contains an HTML error page — a common outcome when a download silently returns an error document — is now rejected with a warning instead of producing a broken inline attachment. Conversely, a valid PNG saved under a misleading extension is accepted and typed correctly.
+
+### Invalid colors
+
+`AccentColor` and `TextColor` are validated against `^#[0-9A-Fa-f]{6}$`. A value that does not match emits a warning naming the parameter and the send proceeds with the default color. Colors are never a reason for a report to fail.
 
 ### Total size limit
 
-Graph caps `sendMail` requests at ~4 MB combined (HTML body + all attachments, base64-encoded). The function emits a warning when either branding image exceeds 3 MB. If the total payload still exceeds 4 MB the Graph call itself will fail; consider:
+Graph caps `sendMail` requests at ~4 MB combined (HTML body + all attachments, base64-encoded). The function emits a warning when either branding image exceeds 3 MB.
 
+When `FallbackAttachments` is supplied, the attachment size guard described in the parameter section above handles oversized payloads automatically. Without a fallback set, an oversized request fails in the Graph call; consider:
+
+- Supplying a `FallbackAttachments` set (for example the Excel workbook without the raw CSV files).
 - Uploading large data to the Storage Account channel instead — see [Runbook Report Settings](../../automation/runbooks/runbook-report-settings.md#storage-account-delivery).
 - Linking to externally hosted attachments rather than embedding them.
 - Compressing tabular data (`Compress-Archive`) before attaching.
 
 ## Integration with Runbook Report Settings
 
-Reporting runbooks typically resolve the sender address from the central RealmJoin customization JSON rather than hard-coding it. The relevant settings are documented in [Runbook Report Settings](../../automation/runbooks/runbook-report-settings.md). A typical resolution pattern in a runbook looks like:
+Reporting runbooks do not hard-code the sender address or branding: they declare hidden parameters that the RealmJoin portal prefills from the central customization JSON. The available settings are documented in [Runbook Report Settings](../../automation/runbooks/runbook-report-settings.md).
+
+The binding happens in the runbook's `param()` block via `Use-RJInterface -Type Setting`, and the parameters are marked `"Hide": true` in the `.INPUTS RunbookCustomization` block so they do not clutter the portal form:
 
 ```powershell
-# Read centralized settings (resolved by the runbook framework)
-$emailFrom = (Get-RjRbDefaultValue -Name 'EmailSender' -Section 'RJReport')
+param(
+    [ValidateScript( { Use-RJInterface -Type Setting -Attribute "RJReport.EmailSender" -Value $_ } )]
+    [string]$EmailFrom,
 
-if (-not $emailFrom) {
-    throw "No EmailSender configured. See https://docs.realmjoin.com/ for setup instructions."
+    [ValidateScript( { Use-RJInterface -Type Setting -Attribute "RJReport.Branding.HeaderImageUrl" -Value $_ } )]
+    [string]$BrandingHeaderImageUrl,
+
+    [ValidateScript( { Use-RJInterface -Type Setting -Attribute "RJReport.Branding.FooterImageUrl" -Value $_ } )]
+    [string]$BrandingFooterImageUrl,
+
+    [ValidateScript( { Use-RJInterface -Type Setting -Attribute "RJReport.Branding.FooterLink" -Value $_ } )]
+    [string]$BrandingFooterLink,
+
+    [ValidateScript( { Use-RJInterface -Type Setting -Attribute "RJReport.Branding.AccentColor" -Value $_ } )]
+    [string]$BrandingAccentColor,
+
+    [ValidateScript( { Use-RJInterface -Type Setting -Attribute "RJReport.Branding.TextColor" -Value $_ } )]
+    [string]$BrandingTextColor
+)
+
+if (-not $EmailFrom) {
+    throw "No EmailSender configured. See https://docs.realmjoin.com/automation/runbooks/runbook-report-settings for setup instructions."
 }
 
+# Download and validate the branding images once per run; returns only the keys
+# that resolved successfully, so unset settings fall through to the defaults.
+$brandingMailParams = Get-RjRbBrandingMailParams `
+    -HeaderImageUrl $BrandingHeaderImageUrl `
+    -FooterImageUrl $BrandingFooterImageUrl `
+    -FooterLink     $BrandingFooterLink `
+    -AccentColor    $BrandingAccentColor `
+    -TextColor      $BrandingTextColor
+
 Send-RjRbReportEmail `
-    -EmailFrom       $emailFrom `
-    -EmailTo         $RecipientParameter `
-    -Subject         $Subject `
-    -MarkdownContent $reportMd `
+    -EmailFrom         $EmailFrom `
+    -EmailTo           $RecipientParameter `
+    -Subject           $Subject `
+    -MarkdownContent   $reportMd `
     -TenantDisplayName $TenantDisplayName `
-    -ReportVersion     "MyReport v1.0"
+    -ReportVersion     "MyReport v1.0" `
+    @brandingMailParams
 ```
+
+See [Get-RjRbBrandingMailParams](get-rjrbbrandingmailparams.md) for the download, validation and cleanup rules.
 
 ## Outputs
 
@@ -306,13 +402,15 @@ The building blocks behind `Send-RjRbReportEmail` are now exported from the modu
 
 | Function | Purpose |
 | --- | --- |
-| `ConvertFrom-RjRbMarkdownToHtml` | Standalone Markdown → HTML converter (the same lightweight engine used internally, including the `{button}` syntax). |
-| `Get-RjRbReportEmailBody` | Assembles the full branded HTML body (header/footer, tenant-info box, attachment list) from HTML or Markdown — useful to render and inspect the email before sending. |
-| `Resolve-RjRbImageSource` | Resolves a header/footer image path to its inline CID source, falling back to the bundled default on error. |
+| [`Get-RjRbBrandingMailParams`](get-rjrbbrandingmailparams.md) | Turns the `RJReport.Branding.*` tenant settings into ready-to-splat parameters: downloads and validates the images, passes colors and footer link through. |
+| `ConvertFrom-RjRbMarkdownToHtml` | Standalone Markdown → HTML converter (the same lightweight engine used internally, including the `{button}` syntax). Accepts `-AccentColor`/`-TextColor`. |
+| `Get-RjRbReportEmailBody` | Assembles the full branded HTML body (header/footer, tenant-info box, attachment list) from HTML or Markdown — useful to render and inspect the email before sending. Accepts `-AccentColor`/`-TextColor`. |
+| `Resolve-RjRbImageSource` | Resolves a header/footer image path to its inline CID source. Validates by file signature and throws on anything that is not a PNG, JPEG or GIF. |
 
-These are primarily intended for advanced/testing scenarios; the normal path is to call `Send-RjRbReportEmail` directly.
+Except for `Get-RjRbBrandingMailParams`, these are primarily intended for advanced/testing scenarios; the normal path is to call `Send-RjRbReportEmail` directly.
 
 ## See Also
 
-- [Runbook Report Settings](../../automation/runbooks/runbook-report-settings.md) — central configuration of the sender mailbox, service desk info, and Storage Account delivery channel.
+- [Get-RjRbBrandingMailParams](get-rjrbbrandingmailparams.md) — resolving the tenant branding settings inside a runbook.
+- [Runbook Report Settings](../../automation/runbooks/runbook-report-settings.md) — central configuration of the sender mailbox, service desk info, branding, and Storage Account delivery channel.
 - Microsoft Graph: [Send mail](https://learn.microsoft.com/en-us/graph/api/user-sendmail) — underlying API.

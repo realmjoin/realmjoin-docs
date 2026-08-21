@@ -73,6 +73,57 @@ All parameters are optional. If configured, they will appear in the email footer
 
 > **Note:** Some runbooks additionally accept a per-run ticket link (e.g. `ServiceDeskTicketUrl`) to reference the specific ticket that triggered the request. This is a runbook parameter, not part of this central configuration.
 
+### Email Branding (optional)
+
+Report emails can carry tenant-specific branding: the default RealmJoin header and footer graphics can be replaced with your own images, the footer image can link to a custom target — for example your intranet or IT portal — and the template colors can be adjusted to your corporate design.
+
+To configure branding, add a `Branding` sub-section to the `RJReport` block (nested like `StorageAccount`):
+
+```json
+{
+    "Settings": {
+        "RJReport": {
+            "Branding": {
+                "HeaderImageUrl": "https://cdn.contoso.com/branding/email-header.png",
+                "FooterImageUrl": "https://cdn.contoso.com/branding/email-footer.png",
+                "FooterLink": "https://intranet.contoso.com",
+                "AccentColor": "#0052cc",
+                "TextColor": "#1a1a2e"
+            }
+        }
+    }
+}
+```
+
+**Parameters:**
+
+| Setting | Required | Default | Description |
+| --- | --- | --- | --- |
+| `HeaderImageUrl` | no | RealmJoin header graphic | Public HTTPS URL of a custom header image that replaces the default RealmJoin header graphic |
+| `FooterImageUrl` | no | RealmJoin footer graphic | Public HTTPS URL of a custom footer image that replaces the default RealmJoin footer graphic |
+| `FooterLink` | no | `https://www.realmjoin.com` | URL the footer image links to |
+| `AccentColor` | no | `#f8842c` (RealmJoin orange) | Accent color of the email template: table header rows, action buttons, accent borders of the info boxes |
+| `TextColor` | no | `#011e33` (RealmJoin navy) | Primary text color of the email template: body text, headings, list items, code |
+
+**Image requirements:**
+
+- The image must be reachable via a **public HTTPS URL** — for example an Azure Blob Storage container with anonymous read access, a CDN, or the company website. A URL containing a SAS token also works and keeps the container private.
+- Supported formats: **PNG, JPEG or GIF**. The format is detected from the file signature, not from the file extension.
+- Images are rendered at **750 px width**. Recommended dimensions are **750×200 px** (matching the default banners) or **1500×400 px** for high-DPI displays.
+- Maximum **200 KB** per image; **100 KB or less** is recommended. The branding images share the ~4 MB total email size limit with the report attachments (for comparison, the default RealmJoin graphics are 52 KB and 15 KB).
+
+**Color requirements:**
+
+- Values must be 6-digit hexadecimal colors including the leading `#` — for example `#0052cc`. Short forms (`#05c`) and color names (`red`) are not supported.
+- Both emails and their attachments are read in light **and** dark mode: pick a text color that stays legible on a white content card, and an accent color with enough contrast against white button text.
+- Status colors (green/red/amber for success, error and warning states) and the neutral grays are deliberately not configurable — they carry meaning that should not change per tenant.
+
+The images are downloaded and validated by the runbook on each run. If a setting is left empty, the default RealmJoin graphic, color and footer link are used. If a download fails, an image is invalid, or a color is not a valid hex value, a warning is logged and the corresponding default is used instead — a broken branding configuration never prevents a report email from being sent.
+
+All settings are optional and take effect for all runbooks that send report emails.
+
+> **Note:** The color settings require **RealmJoin.RunbookHelper 0.8.9** or later in the Automation Account. With older module versions the image settings still apply and the colors are ignored.
+
 ## Storage Account Delivery
 
 Reporting runbooks that support this delivery channel can upload their output to an Azure Blob Storage container. After a successful upload, the runbook returns a time-limited SAS link that can be used to download the file directly. This channel can be used independently of or in addition to email delivery.
@@ -92,9 +143,7 @@ Navigate to [RealmJoin Runbook Customization](https://portal.realmjoin.com/setti
             "StorageAccount": {
                 "ResourceGroup": "rg-reports",
                 "StorageAccountName": "stcontosoreports",
-                "LinkExpiryDays": 6,
-                "AddBlobNamePrefix": true,
-                "UseRandomPrefix": false
+                "LinkExpiryDays": 6
             }
         }
     }
@@ -108,10 +157,8 @@ Navigate to [RealmJoin Runbook Customization](https://portal.realmjoin.com/setti
 | `ResourceGroup` | yes | — | Resource group that contains the Storage Account |
 | `StorageAccountName` | yes | — | Name of the Azure Storage Account |
 | `LinkExpiryDays` | no | `6` | Number of days until the generated SAS download link expires |
-| `AddBlobNamePrefix` | no | `true` | Prepends a timestamp (`yyyyMMdd-HHmmss`) to the blob name to prevent overwrites |
-| `UseRandomPrefix` | no | `false` | Uses a 6-character alphanumeric random string as prefix instead of a timestamp; only applies when `AddBlobNamePrefix` is `true` |
 
-> **Note:** Settings that are specific to an individual runbook — such as the target container name or a custom blob name — are configured directly on that runbook and are intentionally not part of this central configuration.
+> **Note:** Settings that are specific to an individual runbook — such as the target container name or a custom blob name — are configured directly on that runbook and are intentionally not part of this central configuration. The same applies to blob-name prefixing: whether a timestamp prefix (`yyyyMMdd-HHmmss`) is prepended to the blob name to prevent overwrites is controlled by the `AddBlobNamePrefix` parameter of [`Publish-RjRbFilesToStorageContainer`](../../dev-reference/report-functions/publish-rjrbfilestostoragecontainer.md) (default `$false`), which each runbook passes explicitly.
 
 ## Combined Example
 
@@ -126,12 +173,17 @@ The following snippet shows a complete `RJReport` configuration with all feature
             "ServiceDesk_EMail": "servicedesk@domain.com",
             "ServiceDesk_Phone": "+49123456789",
             "ServiceDesk_PortalUrl": "https://servicedesk.domain.com",
+            "Branding": {
+                "HeaderImageUrl": "https://cdn.contoso.com/branding/email-header.png",
+                "FooterImageUrl": "https://cdn.contoso.com/branding/email-footer.png",
+                "FooterLink": "https://intranet.contoso.com",
+                "AccentColor": "#0052cc",
+                "TextColor": "#1a1a2e"
+            },
             "StorageAccount": {
                 "ResourceGroup": "rg-reports",
                 "StorageAccountName": "stcontosoreports",
-                "LinkExpiryDays": 6,
-                "AddBlobNamePrefix": true,
-                "UseRandomPrefix": false
+                "LinkExpiryDays": 6
             }
         }
     }
