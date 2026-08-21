@@ -20,7 +20,7 @@ rjgit-group_general_change-visibility
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -28,6 +28,7 @@ rjgit-group_general_change-visibility
 ### Application permissions
 - **Type**: Microsoft Graph
   - Group.ReadWrite.All
+    - *Reads the group and patches its visibility to Public or Private*
 
 
 ## Parameters

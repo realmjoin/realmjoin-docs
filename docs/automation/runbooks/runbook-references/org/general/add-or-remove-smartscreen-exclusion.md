@@ -19,7 +19,7 @@ rjgit-org_general_add-or-remove-smartscreen-exclusion
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,6 +27,7 @@ rjgit-org_general_add-or-remove-smartscreen-exclusion
 ### Application permissions
 - **Type**: WindowsDefenderATP
   - Ti.ReadWrite.All
+    - *Lists, creates and deletes domain threat indicators in Defender for Endpoint*
 
 
 ## Parameters

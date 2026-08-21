@@ -19,7 +19,7 @@ rjgit-org_general_bulk-delete-devices-from-autopilot
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,6 +27,7 @@ rjgit-org_general_bulk-delete-devices-from-autopilot
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementServiceConfig.ReadWrite.All
+    - *Searches Autopilot identities by serial number and deletes them*
 
 
 ## Parameters

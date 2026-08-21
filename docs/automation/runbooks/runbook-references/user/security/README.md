@@ -12,6 +12,7 @@ On this overview page you can find all User Runbooks in the Security subcategory
 - [Create Temporary Access Pass](create-temporary-access-pass.md)
 - [Enable Or Disable Password Expiration](enable-or-disable-password-expiration.md)
 - [List MFA Methods](list-mfa-methods.md)
+- [List Signin Events](list-signin-events.md)
 - [Reset MFA](reset-mfa.md)
 - [Reset Password](reset-password.md)
 - [Revoke Or Restore Access](revoke-or-restore-access.md)

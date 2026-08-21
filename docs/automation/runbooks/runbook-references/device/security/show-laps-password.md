@@ -19,7 +19,7 @@ rjgit-device_security_show-laps-password
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,6 +27,7 @@ rjgit-device_security_show-laps-password
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceLocalCredential.Read.All
+    - *Reads /directory/deviceLocalCredentials/{id} to decode and display the LAPS password*
 
 
 ## Parameters

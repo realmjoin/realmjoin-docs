@@ -23,7 +23,7 @@ rjgit-org_devices_sync-device-serialnumbers-to-entraid_scheduled
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | yes |
 
 ## Permissions
@@ -31,9 +31,13 @@ rjgit-org_devices_sync-device-serialnumbers-to-entraid_scheduled
 ### Application permissions
 - **Type**: Microsoft Graph
   - Organization.Read.All
+    - *Reads /organization for the tenant display name in the email report*
   - Device.ReadWrite.All
+    - *Lists Entra devices and patches their extensionAttributes with the Intune serial number*
   - DeviceManagementManagedDevices.Read.All
-  - Mail.Send
+    - *Reads Intune managed devices to obtain serialNumber and azureADDeviceId*
+  - Mail.Send *(optional — feature: Email report)*
+    - *Sends the HTML sync report via /users/{sendReportFrom}/sendMail when sendReportTo is configured*
 
 
 ## Parameters

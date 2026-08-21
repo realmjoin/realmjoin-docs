@@ -20,7 +20,7 @@ rjgit-group_general_add-or-remove-user
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -28,8 +28,18 @@ rjgit-group_general_add-or-remove-user
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All
+    - *Resolves the target user before adding or removing the membership*
   - Group.ReadWrite.All
+    - *Reads the target group and backs the member changes*
   - GroupMember.ReadWrite.All
+    - *Checks membership and adds or removes the user via /groups/{id}/members/$ref*
+- **Type**: Office 365 Exchange Online
+  - Exchange.ManageAsApp *(optional — feature: Mail-enabled groups)*
+    - *Manages members via the Exchange Online distribution group cmdlets*
+
+### RBAC roles
+- Exchange Administrator
+  - *Required for the app-only Exchange Online session managing distribution group members*
 
 
 ## Parameters

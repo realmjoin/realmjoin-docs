@@ -29,7 +29,7 @@ rjgit-org_phone_get-teams-phone-number-assignment
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>MicrosoftTeams (>= 7.6.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>MicrosoftTeams (>= 7.9.0) |
 | Schedulable | no |
 
 ## Permissions
@@ -37,9 +37,11 @@ rjgit-org_phone_get-teams-phone-number-assignment
 ### Application permissions
 - **Type**: Microsoft Graph
   - Organization.Read.All
+    - *Required by the app-based Teams PowerShell sign-in (Connect-MicrosoftTeams -Identity) to read tenant info*
 
 ### RBAC roles
 - Teams Administrator
+  - *Required to run Get-CsPhoneNumberAssignment and Get-CsOnlineUser via app-based Teams PowerShell*
 
 
 ## Parameters

@@ -85,6 +85,12 @@ assignment, not a Graph application permission).
 Designed to run unattended on a schedule. Because the runbook is idempotent, a single recurring schedule
 keeps the target in sync with the source as members come and go.
 
+## Email branding
+
+The report email honors the optional `RJReport.Branding.*` tenant settings: a custom header image, a custom footer image (public HTTPS URLs, PNG/JPEG/GIF, max. 200 KB each), a custom footer link, and custom accent and text colors (6-digit hex values, e.g. `#0052cc`). When these settings are not configured, the default RealmJoin graphics and colors are used. A branding image that cannot be downloaded or validated, or a color value that is not a valid hex color, never prevents the report email - the corresponding default is used instead.
+
+See the [RealmJoin Report Settings documentation](https://docs.realmjoin.com/automation/runbooks/runbook-report-settings) for setup details.
+
 
 ## Location
 Organization → General → Sync Channel Or Group Members (Scheduled)
@@ -97,8 +103,8 @@ rjgit-org_general_sync-channel-or-group-members_scheduled
 
 | Property | Value |
 | --- | --- |
-| Version | 1.1.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.5.0) |
+| Version | 1.3.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.5.2) |
 | Schedulable | yes |
 
 ## Permissions
@@ -106,13 +112,21 @@ rjgit-org_general_sync-channel-or-group-members_scheduled
 ### Application permissions
 - **Type**: Microsoft Graph
   - Group.ReadWrite.All
+    - *Resolves source/target groups and the host team and writes direct membership via /groups/{id}/members/$ref*
   - GroupMember.ReadWrite.All
+    - *Adds and removes direct target-group members during the sync*
   - Channel.ReadBasic.All
+    - *Lists /teams/{id}/channels to resolve the shared channel and verify it is a shared channel*
   - ChannelMember.ReadWrite.All
+    - *Reads, adds and removes shared channel members via /teams/{id}/channels/{id}/members*
   - TeamMember.ReadWrite.All
+    - *Adds/removes host-team membership as prerequisite or cleanup for shared channel members*
   - User.Read.All
+    - *Reads member user objects (id, UPN, userType) to detect guests and compute the membership delta*
   - Organization.Read.All
-  - Mail.Send
+    - *Reads /organization to include the tenant name in the report email*
+  - Mail.Send *(optional — feature: Email report)*
+    - *Sends the sync report via Send-RjReportEmail when email reporting is enabled*
 
 
 ## Parameters
@@ -266,6 +280,66 @@ Recipient email address(es) for the report (comma-separated). Only used when Sen
 ### EmailFrom
 
 Sender mailbox for the report. Bound to the org Setting RJReport.EmailSender.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingHeaderImageUrl
+
+Optional public HTTPS URL of a custom header image (PNG/JPEG/GIF, max. 200 KB) for the report email.
+Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, the default RealmJoin header graphic is used.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingFooterImageUrl
+
+Optional public HTTPS URL of a custom footer image (PNG/JPEG/GIF, max. 200 KB) for the report email.
+Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, the default RealmJoin footer graphic is used.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingFooterLink
+
+Optional URL the footer image links to. Sourced from the RJReport.Branding.FooterLink tenant setting.
+When empty, the default link (https://www.realmjoin.com) is used.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingAccentColor
+
+Optional accent color override (6-digit hex, e.g. '#0052cc') for the report email template.
+Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or invalid, the default RealmJoin accent color is used.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingTextColor
+
+Optional text color override (6-digit hex) for the report email template.
+Sourced from the RJReport.Branding.TextColor tenant setting. When empty or invalid, the default RealmJoin text color is used.
 
 | Property | Value |
 | --- | --- |

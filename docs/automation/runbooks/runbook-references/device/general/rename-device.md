@@ -18,7 +18,7 @@ rjgit-device_general_rename-device
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,9 +26,13 @@ rjgit-device_general_rename-device
 ### Application permissions
 - **Type**: Microsoft Graph
   - Device.Read.All
+    - *Resolves the Entra device object via /devices before renaming*
   - DeviceManagementManagedDevices.Read.All
+    - *Finds the Intune device by azureADDeviceId to get its Intune object id*
   - DeviceManagementServiceConfig.ReadWrite.All
+    - *Reads the Autopilot identity and renames it via updateDeviceProperties*
   - DeviceManagementManagedDevices.PrivilegedOperations.All
+    - *Triggers the privileged setDeviceName action on the Intune device*
 
 
 ## Parameters

@@ -20,7 +20,7 @@ rjgit-group_general_list-owners
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -28,6 +28,9 @@ rjgit-group_general_list-owners
 ### Application permissions
 - **Type**: Microsoft Graph
   - Group.Read.All
+    - *Reads the group and lists its owners via /groups/{id}/owners*
+  - User.Read.All
+    - *Reads the owners' user properties (display name, UPN) returned by /groups/{id}/owners*
 
 
 ## Parameters

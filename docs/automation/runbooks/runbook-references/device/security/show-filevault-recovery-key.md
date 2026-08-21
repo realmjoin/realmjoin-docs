@@ -18,7 +18,7 @@ rjgit-device_security_show-filevault-recovery-key
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,7 +26,9 @@ rjgit-device_security_show-filevault-recovery-key
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.PrivilegedOperations.All
+    - *Retrieves the escrowed FileVault key via getFileVaultKey, a privileged Intune operation*
   - DeviceManagementManagedDevices.Read.All
+    - *Resolves the Intune device by azureADDeviceId and verifies it runs macOS*
 
 
 ## Parameters

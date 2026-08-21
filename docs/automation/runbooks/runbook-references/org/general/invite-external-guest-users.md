@@ -20,7 +20,7 @@ rjgit-org_general_Invite-external-guest-users
 | Property | Value |
 | --- | --- |
 | Version | 2.0.3 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | no |
 
 ## Notes
@@ -37,7 +37,11 @@ Parameter Interactions:
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.ReadWrite.All
+    - *Creates the invitation, patches guest profile properties and sets manager and sponsor*
   - Group.ReadWrite.All
+    - *Verifies the target group and adds the guest via /groups/{id}/members/$ref*
+  - Organization.Read.All
+    - *Reads the tenant id to build the default invite redirect URL*
 
 
 ## Parameters

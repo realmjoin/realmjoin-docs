@@ -18,14 +18,15 @@ rjgit-org_devices_create-endpoint-analytics-baseline
 | Property | Value |
 | --- | --- |
 | Version | 1.0.3 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | no |
 
 ## Permissions
 
 ### Application permissions
 - **Type**: Microsoft Graph
-  - DeviceManagementConfiguration.ReadWrite.All
+  - DeviceManagementManagedDevices.ReadWrite.All
+    - *Lists, creates and deletes Endpoint Analytics baselines (userExperienceAnalyticsBaselines)*
 
 
 ## Parameters

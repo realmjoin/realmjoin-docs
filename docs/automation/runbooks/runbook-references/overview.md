@@ -271,6 +271,7 @@ Each category contains multiple runbooks that are further divided into subcatego
 | [Create Temporary Access Pass](user/security/create-temporary-access-pass.md) | Create a temporary access pass for a user |
 | [Enable Or Disable Password Expiration](user/security/enable-or-disable-password-expiration.md) | Enable or disable password expiration for a user |
 | [List MFA Methods](user/security/list-mfa-methods.md) | List all MFA / authentication methods of a user |
+| [List Signin Events](user/security/list-signin-events.md) | Retrieve and analyze sign-in events for a target user |
 | [Reset MFA](user/security/reset-mfa.md) | Remove all App- and Mobilephone auth methods for a user |
 | [Reset Password](user/security/reset-password.md) | Reset a user's password |
 | [Revoke Or Restore Access](user/security/revoke-or-restore-access.md) | Revoke or restore user access |

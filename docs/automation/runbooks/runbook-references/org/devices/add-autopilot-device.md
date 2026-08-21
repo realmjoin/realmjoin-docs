@@ -19,7 +19,7 @@ rjgit-org_devices_add-autopilot-device
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,6 +27,9 @@ rjgit-org_devices_add-autopilot-device
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementServiceConfig.ReadWrite.All
+    - *Imports the serial number and hardware hash as Autopilot device and polls the import job*
+  - User.Read.All *(optional — feature: User assignment)*
+    - *Resolves the assigned user's UPN when AssignedUser is provided*
 
 
 ## Parameters

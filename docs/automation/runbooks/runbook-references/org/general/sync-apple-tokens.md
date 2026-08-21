@@ -18,7 +18,7 @@ rjgit-org_general_sync-apple-tokens
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,7 +26,9 @@ rjgit-org_general_sync-apple-tokens
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementApps.ReadWrite.All
+    - *Reads Apple VPP tokens and triggers syncLicenses for each of them*
   - DeviceManagementServiceConfig.ReadWrite.All
+    - *Reads DEP onboarding settings and triggers syncWithAppleDeviceEnrollmentProgram for ADE tokens*
 
 
 ## Parameters

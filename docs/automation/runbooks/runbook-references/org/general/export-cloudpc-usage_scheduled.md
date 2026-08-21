@@ -22,7 +22,7 @@ rjgit-org_general_export-cloudpc-usage_scheduled
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Az.Storage (>= 9.6.0)<br>Az.Resources (>= 9.0.1) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Az.Storage (>= 9.7.2) |
 | Schedulable | yes |
 
 ## Permissions
@@ -30,6 +30,9 @@ rjgit-org_general_export-cloudpc-usage_scheduled
 ### Application permissions
 - **Type**: Microsoft Graph
   - CloudPC.Read.All
+    - *Lists all Cloud PCs and pulls their remote connection historical reports*
+  - Organization.Read.All
+    - *Reads /organization to use the tenant id as storage table partition key*
 
 ### Permission notes
 Azure IaaS: `Contributor` role on the Azure Storage Account used for storing CloudPC usage data

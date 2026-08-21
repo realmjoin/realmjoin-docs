@@ -23,7 +23,7 @@ rjgit-org_general_report-pim-activations_scheduled
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | yes |
 
 ## Permissions
@@ -31,7 +31,9 @@ rjgit-org_general_report-pim-activations_scheduled
 ### Application permissions
 - **Type**: Microsoft Graph
   - AuditLog.Read.All
+    - *Queries /auditLogs/directoryAudits for PIM role activation events of the last month*
   - Mail.Send
+    - *Sends the PIM activation report via /users/{sendAlertFrom}/sendMail when activations were found*
 
 
 ## Parameters

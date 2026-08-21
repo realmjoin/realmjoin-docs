@@ -18,7 +18,7 @@ rjgit-user_security_confirm-or-dismiss-risky-user
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,6 +26,7 @@ rjgit-user_security_confirm-or-dismiss-risky-user
 ### Application permissions
 - **Type**: Microsoft Graph
   - IdentityRiskyUser.ReadWrite.All
+    - *Reads the risky user and posts dismiss or confirmCompromised to change the risk state*
 
 
 ## Parameters

@@ -32,7 +32,7 @@ rjgit-org_applications_delete-GSA-application-registration
 | Property | Value |
 | --- | --- |
 | Version | 1.2.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | no |
 
 ## Permissions
@@ -40,7 +40,9 @@ rjgit-org_applications_delete-GSA-application-registration
 ### Application permissions
 - **Type**: Microsoft Graph
   - Application.ReadWrite.All
+    - *Finds the Global Secure Access app, verifies onPremisesPublishing and deletes it via DELETE /applications/{id}*
   - Group.ReadWrite.All
+    - *Finds the app's naming-scheme access groups and deletes assigned or orphaned groups*
 
 
 ## Parameters

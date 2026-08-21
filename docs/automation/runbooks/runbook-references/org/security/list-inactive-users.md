@@ -18,7 +18,7 @@ rjgit-org_security_list-inactive-users
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,8 +26,11 @@ rjgit-org_security_list-inactive-users
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All
+    - *Lists all users with UPN, mail, account state and user type*
   - AuditLog.Read.All
+    - *Required to read the signInActivity property on /users*
   - Organization.Read.All
+    - *Required by Graph alongside AuditLog.Read.All to expose signInActivity*
 
 
 ## Parameters

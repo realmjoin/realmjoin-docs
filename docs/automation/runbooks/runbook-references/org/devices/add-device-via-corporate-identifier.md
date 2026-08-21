@@ -19,7 +19,7 @@ rjgit-org_devices_add-device-via-corporate-identifier
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,6 +27,7 @@ rjgit-org_devices_add-device-via-corporate-identifier
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementServiceConfig.ReadWrite.All
+    - *Imports the serial or IMEI as Intune corporate identifier via importDeviceIdentityList*
 
 
 ## Parameters

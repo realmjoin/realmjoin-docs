@@ -19,7 +19,7 @@ rjgit-device_security_enable-or-disable-device
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,9 +27,11 @@ rjgit-device_security_enable-or-disable-device
 ### Application permissions
 - **Type**: Microsoft Graph
   - Device.Read.All
+    - *Looks up the device via /devices to check its OS and current enabled state*
 
 ### RBAC roles
-- Cloud device administrator
+- Cloud Device Administrator
+  - *Required for the PATCH on /devices/{id} that enables or disables the device*
 
 
 ## Parameters

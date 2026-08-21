@@ -19,7 +19,7 @@ rjgit-org_general_list-group-license-assignment-errors
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,7 +27,9 @@ rjgit-org_general_list-group-license-assignment-errors
 ### Application permissions
 - **Type**: Microsoft Graph
   - GroupMember.Read.All
+    - *Least-privileged option for listing groups with license errors*
   - Group.Read.All
+    - *Reads the groups filtered on hasMembersWithLicenseErrors for the report*
 
 
 ## Parameters

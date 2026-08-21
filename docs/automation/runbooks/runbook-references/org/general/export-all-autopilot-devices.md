@@ -18,7 +18,7 @@ rjgit-org_general_export-all-autopilot-devices
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,8 +26,9 @@ rjgit-org_general_export-all-autopilot-devices
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.Read.All
-  - Directory.Read.All
-  - Device.Read.All
+    - *Enriches each Autopilot device with Intune data via /deviceManagement/managedDevices*
+  - DeviceManagementServiceConfig.Read.All
+    - *Lists windowsAutopilotDeviceIdentities as the base data of the export*
 
 
 ## Parameters

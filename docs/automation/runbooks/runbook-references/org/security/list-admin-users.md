@@ -18,7 +18,7 @@ rjgit-org_security_list-admin-users
 | Property | Value |
 | --- | --- |
 | Version | 1.2.4 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,9 +26,15 @@ rjgit-org_security_list-admin-users
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All
+    - *Reads role holders' user details when resolving principals*
   - Directory.Read.All
+    - *Resolves role-holder principal ids to users, groups or service principals via /directoryObjects*
   - RoleManagement.Read.All
+    - *Lists role definitions, role assignments and PIM eligibility schedules*
   - RoleAssignmentSchedule.Read.Directory
+    - *Reads roleAssignmentScheduleInstances to report PIM assignment end dates*
+  - UserAuthenticationMethod.Read.All *(optional — feature: MFA state)*
+    - *Reads each admin's authentication methods when QueryMfaState is enabled (default on)*
 
 
 ## Parameters

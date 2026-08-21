@@ -137,7 +137,7 @@ Unknown values produce a warning but are still evaluated, so future Graph values
 
 Optionally, a detailed report can be delivered - especially useful for reviewing the very first run (ideally combined with the dry run mode):
 
-- **Send report via email** (`SendEmail`, off by default): sends the report to the configured recipient(s). The recipient field only appears when email is enabled. Requires the `RJReport.EmailSender` tenant setting (see the [email reporting setup](https://github.com/realmjoin/realmjoin-runbooks/tree/master/docs/general/setup-email-reporting.md)).
+- **Send report via email** (`SendEmail`, off by default): sends the report to the configured recipient(s). The recipient field only appears when email is enabled. Requires the `RJReport.EmailSender` tenant setting (see the [RealmJoin Report Settings documentation](https://docs.realmjoin.com/automation/runbooks/runbook-report-settings)).
 - **Create file download links** (`CreateDownloadLink`, off by default): uploads the report files to an Azure Storage Account and returns time-limited download links (uses the `RJReport.StorageAccount.*` tenant settings).
 
 Report files are only generated when at least one of the two options is enabled. The report consists of:
@@ -147,6 +147,12 @@ Report files are only generated when at least one of the two options is enabled.
 - **mfa-secure-users-group-sync-report.xlsx** - the same data as a formatted Excel workbook: an "Info" cover sheet with the chosen parameters and result counts, a "Changes" worksheet (added users highlighted in green, removed in red) and an "All Users" worksheet
 
 In large tenants the raw CSV files can exceed the email attachment size limit (Graph rejects mails at roughly 4 MB total). When the CSV files exceed a 2.5 MB budget, the email is sent with only the Excel workbook attached (which contains the complete data in compressed form) and a note explaining the omission; a failed full-size send is also retried automatically with the workbook only. The download link upload always includes all files regardless of size.
+
+### Email branding
+
+The report email honors the optional `RJReport.Branding.*` tenant settings: a custom header image, a custom footer image (public HTTPS URLs, PNG/JPEG/GIF, max. 200 KB each), a custom footer link, and custom accent and text colors (6-digit hex values, e.g. `#0052cc`). When these settings are not configured, the default RealmJoin graphics and colors are used. A branding image that cannot be downloaded or validated, or a color value that is not a valid hex color, never prevents the report email - the corresponding default is used instead.
+
+See the [RealmJoin Report Settings documentation](https://docs.realmjoin.com/automation/runbooks/runbook-report-settings) for setup details.
 
 ## Notes and limitations
 
@@ -172,8 +178,8 @@ rjgit-org_security_sync-MFA-secure-users-to-group_scheduled
 
 | Property | Value |
 | --- | --- |
-| Version | 1.3.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.5.0) |
+| Version | 1.5.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.5.2) |
 | Schedulable | yes |
 
 ## Permissions
@@ -181,12 +187,19 @@ rjgit-org_security_sync-MFA-secure-users-to-group_scheduled
 ### Application permissions
 - **Type**: Microsoft Graph
   - AuditLog.Read.All
+    - *Reads userRegistrationDetails to evaluate each user's registered MFA methods*
   - Group.Read.All
+    - *Reads the target and exclusion groups and their transitive user members*
   - RoleManagement.Read.Directory
+    - *Reads role assignments and eligibility schedules to exclude admin users when ExcludeAdmins is enabled*
   - GroupMember.ReadWrite.All
+    - *Adds and removes users in the target group via batched /groups/{id}/members/$ref calls*
   - User.Read.All
+    - *Resolves admin-role principals and ExcludeUserIds entries to user objects*
   - Organization.Read.All
-  - Mail.Send
+    - *Reads /organization for the tenant name on the report cover sheet and in the email*
+  - Mail.Send *(optional — feature: Email report)*
+    - *Sends the report email via Send-RjReportEmail when email reporting is enabled*
 
 
 ## Parameters
@@ -378,6 +391,66 @@ Recipient email address(es) for the report. Can be a single address or multiple 
 ### EmailFrom
 
 The sender email address. Sourced from the RJReport tenant settings.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingHeaderImageUrl
+
+Optional public HTTPS URL of a custom header image (PNG/JPEG/GIF, max. 200 KB) for the report email.
+Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, the default RealmJoin header graphic is used.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingFooterImageUrl
+
+Optional public HTTPS URL of a custom footer image (PNG/JPEG/GIF, max. 200 KB) for the report email.
+Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, the default RealmJoin footer graphic is used.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingFooterLink
+
+Optional URL the footer image links to. Sourced from the RJReport.Branding.FooterLink tenant setting.
+When empty, the default link (https://www.realmjoin.com) is used.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingAccentColor
+
+Optional accent color override (6-digit hex, e.g. '#0052cc') for the report email template.
+Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or invalid, the default RealmJoin accent color is used.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingTextColor
+
+Optional text color override (6-digit hex) for the report email template.
+Sourced from the RJReport.Branding.TextColor tenant setting. When empty or invalid, the default RealmJoin text color is used.
 
 | Property | Value |
 | --- | --- |

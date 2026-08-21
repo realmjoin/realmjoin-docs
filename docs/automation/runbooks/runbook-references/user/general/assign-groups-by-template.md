@@ -18,7 +18,7 @@ rjgit-user_general_assign-groups-by-template
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,6 +26,7 @@ rjgit-user_general_assign-groups-by-template
 ### Application permissions
 - **Type**: Microsoft Graph
   - Group.ReadWrite.All
+    - *Resolves the template's groups, reads their members and adds the user via members@odata.bind*
 
 
 ## Parameters

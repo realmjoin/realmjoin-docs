@@ -18,7 +18,7 @@ rjgit-org_security_add-defender-indicator
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,6 +26,7 @@ rjgit-org_security_add-defender-indicator
 ### Application permissions
 - **Type**: WindowsDefenderATP
   - Ti.ReadWrite.All
+    - *Creates the threat indicator (hash, IP, domain or URL) via POST /indicators in Defender for Endpoint*
 
 
 ## Parameters

@@ -26,7 +26,7 @@ rjgit-org_applications_add-GSA-application-registration
 | Property | Value |
 | --- | --- |
 | Version | 1.3.3 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | no |
 
 ## Permissions
@@ -34,9 +34,13 @@ rjgit-org_applications_add-GSA-application-registration
 ### Application permissions
 - **Type**: Microsoft Graph
   - Application.ReadWrite.All
+    - *Instantiates the app from the application template, patches onPremisesPublishing and adds app segments*
   - Directory.ReadWrite.All
+    - *Required by the App Proxy endpoints: reads connector groups and assigns the app's connectorGroup*
   - Group.ReadWrite.All
+    - *Creates the access security group for the app and deletes it on rollback*
   - AppRoleAssignment.ReadWrite.All
+    - *Assigns the access group to the app via /servicePrincipals/{id}/appRoleAssignedTo*
 
 
 ## Parameters

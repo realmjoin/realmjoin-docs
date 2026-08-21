@@ -23,7 +23,7 @@ rjgit-org_general_assign-groups-by-template_scheduled
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | yes |
 
 ## Permissions
@@ -31,7 +31,9 @@ rjgit-org_general_assign-groups-by-template_scheduled
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All
+    - *Reads member users of source, exclusion and target groups to compute who to add*
   - Group.ReadWrite.All
+    - *Resolves groups and adds users to target groups via members@odata.bind batches*
 
 
 ## Parameters

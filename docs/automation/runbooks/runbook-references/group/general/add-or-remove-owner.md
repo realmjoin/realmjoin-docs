@@ -20,7 +20,7 @@ rjgit-group_general_add-or-remove-owner
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -28,13 +28,18 @@ rjgit-group_general_add-or-remove-owner
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All
+    - *Resolves the target user to verify existence and report the UPN*
   - Group.ReadWrite.All
+    - *Reads the group and adds or removes owners via /groups/{id}/owners/$ref*
   - GroupMember.ReadWrite.All
+    - *Adds a newly appointed owner as group member*
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp
+    - *Runs the distribution group owner cmdlets in the app-only Exchange Online session*
 
 ### RBAC roles
-- Exchange administrator
+- Exchange Administrator
+  - *Required for the app-only Exchange Online session changing distribution group owners*
 
 
 ## Parameters

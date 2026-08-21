@@ -17,8 +17,8 @@ rjgit-org_general_add-or-remove-safeLinks-exclusion
 
 | Property | Value |
 | --- | --- |
-| Version | 1.0.1 |
-| Required modules | ExchangeOnlineManagement (>= 3.7.2)<br>RealmJoin.RunbookHelper (>= 0.8.7) |
+| Version | 1.0.2 |
+| Required modules | ExchangeOnlineManagement (>= 3.9.2)<br>RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,9 +26,11 @@ rjgit-org_general_add-or-remove-safeLinks-exclusion
 ### Application permissions
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp
+    - *Manages Safe Links policies, rules and the assignment group in the app-only Exchange Online session*
 
 ### RBAC roles
-- Exchange administrator
+- Exchange Administrator
+  - *Required for the app-only Exchange Online session updating DoNotRewriteUrls*
 
 
 ## Parameters

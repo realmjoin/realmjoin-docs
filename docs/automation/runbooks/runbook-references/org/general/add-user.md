@@ -19,18 +19,21 @@ rjgit-org_general_add-user
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
 ## Permissions
 
 ### Application permissions
-- **Type**: Microsoft Graph
-  - DeviceManagementManagedDevices.Read.All
-  - DeviceManagementManagedDevices.PrivilegedOperations.All
+- **Type**: Office 365 Exchange Online
+  - Exchange.ManageAsApp
+    - *Opens the app-only Exchange Online session used for distribution groups and enabling the online archive*
 
 ### RBAC roles
 - User Administrator
+  - *Backs creating the user, assigning manager, sponsors and groups and reading license data*
+- Exchange Administrator
+  - *Required for the app-only Exchange Online session managing distribution groups and the online archive*
 
 
 ## Parameters

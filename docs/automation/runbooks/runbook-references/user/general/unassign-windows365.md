@@ -18,7 +18,7 @@ rjgit-user_general_unassign-windows365
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,9 +26,15 @@ rjgit-user_general_unassign-windows365
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All
+    - *Resolves the target user by UPN for the group member removals*
   - GroupMember.ReadWrite.All
+    - *Reads group members and removes the user from the Windows 365 groups*
   - Group.ReadWrite.All
+    - *Finds license and config groups and reads their assigned licenses*
   - CloudPC.ReadWrite.All
+    - *Reads provisioning policies and Cloud PCs and ends the grace period to remove the Cloud PC*
+  - Organization.Read.All
+    - *Reads /subscribedSkus to map the license group's SKU in the dedicated plan path*
 
 
 ## Parameters

@@ -20,7 +20,7 @@ rjgit-org_applications_update-application-registration
 | Property | Value |
 | --- | --- |
 | Version | 1.1.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -28,11 +28,13 @@ rjgit-org_applications_update-application-registration
 ### Application permissions
 - **Type**: Microsoft Graph
   - Application.ReadWrite.OwnedBy
-  - Organization.Read.All
+    - *Reads and patches /applications/{id} and /servicePrincipals/{id} to update redirect URIs, tags and SAML settings*
   - Group.ReadWrite.All
+    - *Creates the assignment group and assigns it to the app when UserAssignmentRequired is set*
 
 ### RBAC roles
 - Application Developer
+  - *Allows updating app registrations the runbook's identity does not own*
 
 
 ## Parameters

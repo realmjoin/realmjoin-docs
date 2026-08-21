@@ -23,7 +23,7 @@ rjgit-org_general_add-devices-of-users-to-group_scheduled
 | Property | Value |
 | --- | --- |
 | Version | 1.1.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | yes |
 
 ## Permissions
@@ -31,8 +31,11 @@ rjgit-org_general_add-devices-of-users-to-group_scheduled
 ### Application permissions
 - **Type**: Microsoft Graph
   - Group.ReadWrite.All
+    - *Resolves the groups by display name and backs adding devices to the device group*
   - User.Read.All
+    - *Lists the user group's transitive user members and reads each user's owned devices*
   - GroupMember.ReadWrite.All
+    - *Reads current device-group members and adds missing devices via /groups/{id}/members/$ref*
 
 
 ## Parameters

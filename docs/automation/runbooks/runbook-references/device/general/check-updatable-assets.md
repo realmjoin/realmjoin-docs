@@ -18,7 +18,7 @@ rjgit-device_general_check-updatable-assets
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,6 +26,9 @@ rjgit-device_general_check-updatable-assets
 ### Application permissions
 - **Type**: Microsoft Graph
   - WindowsUpdates.ReadWrite.All
+    - *Reads the device's Windows Update for Business enrollment state and errors via updatableAssets*
+  - Device.Read.All
+    - *Resolves the device's display name via /devices for the status output*
 
 
 ## Parameters

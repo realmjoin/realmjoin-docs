@@ -18,7 +18,7 @@ rjgit-user_general_assign-windows365
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,9 +26,17 @@ rjgit-user_general_assign-windows365
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All
+    - *Resolves the target user by UPN and checks mailbox existence before mailing*
   - GroupMember.ReadWrite.All
+    - *Adds the user to the provisioning, user-settings and license groups*
   - Group.ReadWrite.All
-  - Mail.Send
+    - *Looks up config and license groups and reads their assigned licenses*
+  - Mail.Send *(optional — feature: Email report)*
+    - *Sends the out-of-licenses ticket and the user notification when the mail options are enabled*
+  - CloudPC.Read.All
+    - *Reads the provisioning policies, shared-use service plans and the user's Cloud PCs*
+  - Organization.Read.All
+    - *Reads /subscribedSkus to verify a free Windows 365 license in the dedicated plan path*
 
 
 ## Parameters

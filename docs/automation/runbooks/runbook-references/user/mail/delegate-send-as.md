@@ -19,7 +19,7 @@ rjgit-user_mail_delegate-send-as
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,9 +27,11 @@ rjgit-user_mail_delegate-send-as
 ### Application permissions
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp
+    - *Grants, revokes and lists SendAs permissions in the app-only Exchange Online session*
 
 ### RBAC roles
-- Exchange administrator
+- Exchange Administrator
+  - *Required for the app-only Exchange Online session managing SendAs permissions*
 
 
 ## Parameters

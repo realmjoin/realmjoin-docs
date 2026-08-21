@@ -19,19 +19,19 @@ rjgit-org_general_check-assignments-of-groups
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
 
 ### Application permissions
 - **Type**: Microsoft Graph
-  - User.Read.All
   - Group.Read.All
+    - *Reads each target group via /groups('{id}') to resolve its display name*
   - DeviceManagementConfiguration.Read.All
-  - DeviceManagementManagedDevices.Read.All
+    - *Lists Intune configuration, group policy and compliance policies and their assignments*
   - DeviceManagementApps.Read.All
-  - Device.Read.All
+    - *Lists mobile apps and their assignments when IncludeApps is enabled*
 
 
 ## Parameters

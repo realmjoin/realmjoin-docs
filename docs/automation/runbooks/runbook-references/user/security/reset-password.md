@@ -18,13 +18,14 @@ rjgit-user_security_reset-password
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
 
 ### RBAC roles
-- User administrator
+- User Administrator
+  - *Required for the app-only password reset via PATCH /users/{id} passwordProfile*
 
 
 ## Parameters

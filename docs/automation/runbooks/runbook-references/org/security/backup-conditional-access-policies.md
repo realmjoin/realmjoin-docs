@@ -18,7 +18,7 @@ rjgit-org_security_backup-conditional-access-policies
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Az.Storage (>= 9.6.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Az.Storage (>= 9.7.2) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,6 +26,7 @@ rjgit-org_security_backup-conditional-access-policies
 ### Application permissions
 - **Type**: Microsoft Graph
   - Policy.Read.All
+    - *Fetches all Conditional Access policies to export them as JSON files*
 
 ### Permission notes
 Azure IaaS: Access to the given Azure Storage Account / Resource Group

@@ -18,7 +18,7 @@ rjgit-device_security_check-defender-status
 | Property | Value |
 | --- | --- |
 | Version | 1.0.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,8 +26,10 @@ rjgit-device_security_check-defender-status
 ### Application permissions
 - **Type**: Microsoft Graph
   - Device.Read.All
+    - *Reads the Entra device object to report display name, enabled state, trust type, OS and last sign-in*
 - **Type**: WindowsDefenderATP
   - Machine.Read.All
+    - *Queries the Defender for Endpoint /machines API to read onboarding status, health state, last seen and risk score*
 
 
 ## Parameters

@@ -23,7 +23,7 @@ rjgit-org_general_check-aad-sync-status_scheduled
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | yes |
 
 ## Permissions
@@ -31,6 +31,9 @@ rjgit-org_general_check-aad-sync-status_scheduled
 ### Application permissions
 - **Type**: Microsoft Graph
   - Directory.Read.All
+    - *Reads /organization to evaluate onPremisesSyncEnabled and the last sync timestamp*
+  - Mail.Send
+    - *Sends the alert email via /users/{sendAlertFrom}/sendMail when the Entra Connect sync is stale*
 
 
 ## Parameters

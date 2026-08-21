@@ -20,7 +20,7 @@ rjgit-group_mail_enable-or-disable-external-mail
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | ExchangeOnlineManagement (>= 3.7.2)<br>RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | ExchangeOnlineManagement (>= 3.9.2)<br>RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Notes
@@ -33,9 +33,11 @@ See https://docs.microsoft.com/en-us/graph/known-issues#setting-the-allowexterna
 ### Application permissions
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp
+    - *Runs Get-/Set-UnifiedGroup to toggle RequireSenderAuthenticationEnabled in the app-only session*
 
 ### RBAC roles
-- Exchange administrator
+- Exchange Administrator
+  - *Required for the app-only Exchange Online session changing the external mail setting*
 
 
 ## Parameters

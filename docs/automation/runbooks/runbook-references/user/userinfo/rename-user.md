@@ -18,20 +18,22 @@ rjgit-user_userinfo_rename-user
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
 ## Permissions
 
 ### Application permissions
 - **Type**: Microsoft Graph
-  - Directory.Read.All
   - User.ReadWrite.All
+    - *Patches /users/{UPN} to set the new user principal name*
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp
+    - *Runs Get-EXOMailbox and Set-Mailbox to update alias and SMTP addresses after the rename*
 
 ### RBAC roles
-- Exchange administrator
+- Exchange Administrator
+  - *Required for the app-only Exchange Online session rewriting the mailbox addresses*
 
 
 ## Parameters

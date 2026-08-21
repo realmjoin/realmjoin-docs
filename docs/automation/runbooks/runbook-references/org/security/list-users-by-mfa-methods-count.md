@@ -20,7 +20,7 @@ rjgit-org_security_list-users-by-MFA-methods-count
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | no |
 
 ## Permissions
@@ -28,7 +28,9 @@ rjgit-org_security_list-users-by-MFA-methods-count
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All
+    - *Lists all enabled users to build the set of accounts to check*
   - UserAuthenticationMethod.Read.All
+    - *Counts each user's registered MFA methods via /users/{id}/authentication/methods*
 
 
 ## Parameters

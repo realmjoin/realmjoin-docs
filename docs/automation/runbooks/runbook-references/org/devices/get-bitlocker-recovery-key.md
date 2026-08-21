@@ -19,7 +19,7 @@ rjgit-org_devices_get-bitlocker-recovery-key
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,7 +27,9 @@ rjgit-org_devices_get-bitlocker-recovery-key
 ### Application permissions
 - **Type**: Microsoft Graph
   - Device.Read.All
+    - *Reads the key's device details (display name, trust type, compliance) via /devices*
   - BitlockerKey.Read.All
+    - *Retrieves the recovery key value via /informationProtection/bitlocker/recoveryKeys/{id}*
 
 
 ## Parameters

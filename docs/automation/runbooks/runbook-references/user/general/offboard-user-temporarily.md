@@ -18,7 +18,7 @@ rjgit-user_general_offboard-user-temporarily
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Az.Storage (>= 9.6.0)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Az.Storage (>= 9.7.2)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,14 +26,23 @@ rjgit-user_general_offboard-user-temporarily
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.ReadWrite.All
+    - *Disables sign-in, revokes sessions and removes direct license assignments*
   - Group.ReadWrite.All
+    - *Reads groups and owned objects and transfers group ownerships*
   - GroupMember.ReadWrite.All
+    - *Adds and removes group memberships when changing or clearing groups*
+- **Type**: Office 365 Exchange Online
+  - Exchange.ManageAsApp
+    - *Opens the app-only Exchange Online session used to remove the user from distribution groups*
 
 ### Permission notes
 Azure IaaS: Contributor access on subscription or resource group used for the export
 
 ### RBAC roles
-- User administrator
+- User Administrator
+  - *Required so the user writes also succeed against role-holding users*
+- Exchange Administrator
+  - *Required for the app-only Exchange Online session removing distribution group memberships*
 
 
 ## Parameters

@@ -18,7 +18,7 @@ rjgit-user_general_reprovision-windows365
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,11 +26,17 @@ rjgit-user_general_reprovision-windows365
 ### Application permissions
 - **Type**: Microsoft Graph
   - GroupMember.ReadWrite.All
+    - *Reads the license group members to confirm the user holds the Windows 365 license*
   - Group.ReadWrite.All
+    - *Finds the license group by display name and reads its assigned licenses*
   - Directory.Read.All
+    - *Reads /subscribedSkus to map the group's SKU to service plans and match the Cloud PC*
   - CloudPC.ReadWrite.All
+    - *Lists the user's Cloud PCs and triggers the reprovision action*
   - User.Read.All
-  - Mail.Send
+    - *Resolves the user by UPN and checks mailbox presence before mailing*
+  - Mail.Send *(optional — feature: Email report)*
+    - *Notifies the user via /users/{from}/sendMail when sendMailWhenReprovisioning is enabled*
 
 
 ## Parameters

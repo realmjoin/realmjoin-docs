@@ -20,7 +20,7 @@ rjgit-group_general_list-user-devices
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -28,6 +28,11 @@ rjgit-group_general_list-user-devices
 ### Application permissions
 - **Type**: Microsoft Graph
   - Group.Read.All
+    - *Enumerates the group's user members to know whose devices to list*
+  - Device.Read.All
+    - *Reads each member's registered devices via /users/{id}/registeredDevices*
+  - GroupMember.ReadWrite.All *(optional — feature: Move devices to group)*
+    - *Adds the found devices to the target group*
 
 
 ## Parameters

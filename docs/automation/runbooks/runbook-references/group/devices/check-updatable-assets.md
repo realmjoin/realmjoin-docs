@@ -20,7 +20,7 @@ rjgit-group_devices_check-updatable-assets
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -28,8 +28,11 @@ rjgit-group_devices_check-updatable-assets
 ### Application permissions
 - **Type**: Microsoft Graph
   - Device.Read.All
+    - *Reads the device members' properties (deviceId, displayName) to identify devices to check*
   - Group.Read.All
+    - *Enumerates the group members via /groups/{id}/members to find device members*
   - WindowsUpdates.ReadWrite.All
+    - *Queries the Windows Update for Business enrollment state per device via updatableAssets*
 
 ### Permission notes
 Azure: Contributor on Storage Account

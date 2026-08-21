@@ -18,7 +18,7 @@ rjgit-device_general_change-groupTag
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,7 +26,9 @@ rjgit-device_general_change-groupTag
 ### Application permissions
 - **Type**: Microsoft Graph
   - Device.Read.All
+    - *Resolves the Entra device via /devices to get its display name*
   - DeviceManagementServiceConfig.ReadWrite.All
+    - *Reads the Autopilot identity and sets the new group tag via updateDeviceProperties*
 
 
 ## Parameters

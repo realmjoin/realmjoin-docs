@@ -20,7 +20,7 @@ rjgit-device_security_isolate-or-release-device
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -28,7 +28,9 @@ rjgit-device_security_isolate-or-release-device
 ### Application permissions
 - **Type**: WindowsDefenderATP
   - Machine.Read.All
+    - *Looks up the Defender for Endpoint machine via /machines filtered by aadDeviceId*
   - Machine.Isolate
+    - *Triggers the isolate or unisolate action on the machine*
 
 
 ## Parameters

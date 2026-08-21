@@ -19,7 +19,7 @@ rjgit-org_applications_delete-application-registration
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,10 +27,13 @@ rjgit-org_applications_delete-application-registration
 ### Application permissions
 - **Type**: Microsoft Graph
   - Application.ReadWrite.OwnedBy
+    - *Looks up the app and service principal by appId and deletes the registration*
   - Group.ReadWrite.All
+    - *Deletes the groups that were assigned to the app during provisioning*
 
 ### RBAC roles
 - Application Developer
+  - *Allows deleting app registrations the runbook's identity does not own*
 
 
 ## Parameters

@@ -22,8 +22,8 @@ rjgit-org_general_check-device-onboarding-exclusion_scheduled
 
 | Property | Value |
 | --- | --- |
-| Version | 1.1.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Version | 1.2.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | yes |
 
 ## Permissions
@@ -31,8 +31,13 @@ rjgit-org_general_check-device-onboarding-exclusion_scheduled
 ### Application permissions
 - **Type**: Microsoft Graph
   - Group.ReadWrite.All
+    - *Finds or creates the exclusion group and adds/removes device members*
   - Device.Read.All
+    - *Resolves Autopilot and Intune azureADDeviceIds to Entra device objects via /devices*
   - DeviceManagementManagedDevices.Read.All
+    - *Lists recently enrolled Windows devices via /deviceManagement/managedDevices*
+  - DeviceManagementServiceConfig.Read.All
+    - *Lists windowsAutopilotDeviceIdentities to match Autopilot devices for the exclusion group*
 
 
 ## Parameters

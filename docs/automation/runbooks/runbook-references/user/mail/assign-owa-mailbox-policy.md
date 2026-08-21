@@ -19,13 +19,19 @@ rjgit-user_mail_assign-owa-mailbox-policy
 | Property | Value |
 | --- | --- |
 | Version | 1.1.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
 ## Permissions
 
+### Application permissions
+- **Type**: Office 365 Exchange Online
+  - Exchange.ManageAsApp
+    - *Runs Get-/Set-CasMailbox in the app-only Exchange Online session*
+
 ### RBAC roles
-- Exchange administrator
+- Exchange Administrator
+  - *Runs Get-/Set-CasMailbox to assign the OWA mailbox policy to the mailbox*
 
 
 ## Parameters

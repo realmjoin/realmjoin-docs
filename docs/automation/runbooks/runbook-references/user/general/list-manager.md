@@ -18,7 +18,7 @@ rjgit-user_general_list-manager
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,6 +26,7 @@ rjgit-user_general_list-manager
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All
+    - *Reads the user and /users/{id}/manager to output the manager's contact details*
 
 
 ## Parameters

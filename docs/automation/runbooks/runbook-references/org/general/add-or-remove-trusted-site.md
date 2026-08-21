@@ -18,7 +18,7 @@ rjgit-org_general_add-or-remove-trusted-site
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Notes
@@ -29,6 +29,7 @@ This runbook uses calls as described in https://call4cloud.nl/2021/09/the-isencr
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementConfiguration.ReadWrite.All
+    - *Reads and updates the Site-to-Zone assignment policy including secret OMA settings*
 
 
 ## Parameters

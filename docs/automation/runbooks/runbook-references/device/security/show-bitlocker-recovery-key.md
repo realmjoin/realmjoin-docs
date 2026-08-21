@@ -19,7 +19,7 @@ rjgit-device_security_show-bitlocker-recovery-key
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,6 +27,7 @@ rjgit-device_security_show-bitlocker-recovery-key
 ### Application permissions
 - **Type**: Microsoft Graph
   - BitlockerKey.Read.All
+    - *Lists the device's BitLocker recovery keys and reads the key value for display*
 
 
 ## Parameters

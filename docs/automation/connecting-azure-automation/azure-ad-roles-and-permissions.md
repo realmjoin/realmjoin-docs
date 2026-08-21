@@ -15,16 +15,15 @@ The shared runbooks available on [GitHub](https://github.com/realmjoin/realmjoin
 
 | Module | Minimum version in runbooks |
 |---|---|
-| `Az.Accounts` | 5.5.0 |
-| `Az.Compute` | 5.1.1 |
-| `Az.DesktopVirtualization` | 5.4.1 |
-| `Az.ManagementPartner` | 0.7.5 |
-| `Az.Resources` | 9.0.1 |
-| `Az.Storage` | 9.6.0 |
+| `Az.Accounts` | 5.5.2 |
+| `Az.Compute` | 11.8.0 |
+| `Az.DesktopVirtualization` | 6.0.0 |
+| `Az.ManagementPartner` | 0.8.0 |
+| `Az.Storage` | 9.7.2 |
 | `ExchangeOnlineManagement` | 3.9.2 |
 | `Microsoft.Graph.Authentication` | 2.39.0 |
-| `MicrosoftTeams` | 7.6.0 |
-| `RealmJoin.RunbookHelper` | 0.8.7 |
+| `MicrosoftTeams` | 7.9.0 |
+| `RealmJoin.RunbookHelper` | 0.8.9 |
 
 RealmJoin Portal will automatically import and install these modules if referenced from inside a runbook. This import will also honor specified minimum versions for modules.
 

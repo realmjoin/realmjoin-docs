@@ -18,7 +18,7 @@ rjgit-user_phone_set-teams-permanent-call-forwarding
 | Property | Value |
 | --- | --- |
 | Version | 1.0.3 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>MicrosoftTeams (>= 7.6.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>MicrosoftTeams (>= 7.9.0) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,9 +26,11 @@ rjgit-user_phone_set-teams-permanent-call-forwarding
 ### Application permissions
 - **Type**: Microsoft Graph
   - Organization.Read.All
+    - *Required by the app-based Teams PowerShell sign-in to read tenant information*
 
 ### RBAC roles
 - Teams Administrator
+  - *Required to read and set immediate call forwarding via Get-/Set-CsUserCallingSettings*
 
 
 ## Parameters

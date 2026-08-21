@@ -22,7 +22,7 @@ rjgit-org_security_list-pim-rolegroups-without-owners_scheduled
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | yes |
 
 ## Permissions
@@ -30,8 +30,13 @@ rjgit-org_security_list-pim-rolegroups-without-owners_scheduled
 ### Application permissions
 - **Type**: Microsoft Graph
   - Group.Read.All
+    - *Lists role-assignable groups and reads their owners to find ownerless ones*
   - RoleManagement.Read.Directory
-  - Mail.Send
+    - *Queries roleEligibilitySchedules per group to detect PIM-eligible role assignments*
+  - Mail.Send *(optional — feature: Email report)*
+    - *Sends the alert email via /users/{From}/sendMail when ownerless PIM groups were found*
+  - Organization.Read.All *(optional — feature: Email report)*
+    - *Reads the tenant's verified domain for the alert email body*
 
 
 ## Parameters

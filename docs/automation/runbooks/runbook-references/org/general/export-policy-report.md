@@ -19,7 +19,7 @@ rjgit-org_general_export-policy-report
 | Property | Value |
 | --- | --- |
 | Version | 1.0.3 |
-| Required modules | Microsoft.Graph.Authentication (>= 2.39.0)<br>RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | Microsoft.Graph.Authentication (>= 2.39.0)<br>RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,7 +27,11 @@ rjgit-org_general_export-policy-report
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementConfiguration.Read.All
+    - *Reads Intune configuration, compliance and group policy objects incl. assignments and filters*
   - Policy.Read.All
+    - *Reads the Conditional Access policies rendered in the report*
+  - Directory.Read.All *(optional — feature: Name resolution)*
+    - *Resolves group, user, role and application names referenced by policies*
 
 ### Permission notes
 Azure Storage Account: Contributor role on the Storage Account used for exporting reports

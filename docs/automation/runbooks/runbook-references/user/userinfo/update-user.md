@@ -18,7 +18,7 @@ rjgit-user_userinfo_update-user
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,10 +26,16 @@ rjgit-user_userinfo_update-user
 ### Application permissions
 - **Type**: Microsoft Graph
   - UserAuthenticationMethod.Read.All
+    - *Reads the user's registered MFA methods to skip the password reset if MFA exists*
+- **Type**: Office 365 Exchange Online
+  - Exchange.ManageAsApp
+    - *Opens the app-only Exchange Online session used for distribution groups and enabling the online archive*
 
 ### RBAC roles
-- User administrator
+- User Administrator
+  - *Backs the profile updates, password reset, manager assignment and group adds*
 - Exchange Administrator
+  - *Required for the app-only Exchange Online session managing distribution groups and the online archive*
 
 
 ## Parameters

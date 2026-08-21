@@ -18,7 +18,7 @@ rjgit-org_mail_add-equipment-mailbox
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,9 +26,14 @@ rjgit-org_mail_add-equipment-mailbox
 ### Application permissions
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp
+    - *Creates the equipment mailbox and configures delegation and calendar processing in the app-only Exchange Online session*
+- **Type**: Microsoft Graph
+  - User.ReadWrite.All *(optional — feature: Disable user account)*
+    - *Disables the mailbox's user account via PATCH /users/{id} when DisableUser is enabled (default on)*
 
 ### RBAC roles
-- Exchange administrator
+- Exchange Administrator
+  - *Required for the app-only Exchange Online session creating the equipment mailbox*
 
 
 ## Parameters

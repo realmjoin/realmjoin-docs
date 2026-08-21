@@ -18,13 +18,19 @@ rjgit-user_mail_remove-mailbox
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
 ## Permissions
 
+### Application permissions
+- **Type**: Office 365 Exchange Online
+  - Exchange.ManageAsApp
+    - *Runs Get-Mailbox and Remove-Mailbox in the app-only Exchange Online session*
+
 ### RBAC roles
-- Exchange administrator
+- Exchange Administrator
+  - *Runs Get-Mailbox and Remove-Mailbox to hard delete shared, room or scheduling mailboxes*
 
 
 ## Parameters

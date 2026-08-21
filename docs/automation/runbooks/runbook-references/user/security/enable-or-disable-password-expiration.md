@@ -18,7 +18,7 @@ rjgit-user_security_enable-or-disable-password-expiration
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,6 +26,7 @@ rjgit-user_security_enable-or-disable-password-expiration
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.ReadWrite.All
+    - *Patches /users/{UPN} to set or clear the passwordPolicies attribute*
 
 
 ## Parameters

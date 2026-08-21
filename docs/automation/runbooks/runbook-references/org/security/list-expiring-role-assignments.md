@@ -18,15 +18,17 @@ rjgit-org_security_list-expiring-role-assignments
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
 
 ### Application permissions
 - **Type**: Microsoft Graph
-  - Organization.Read.All
   - RoleManagement.Read.All
+    - *Reads role assignment schedules, eligibility schedules and role definitions*
+  - User.Read.All
+    - *Resolves each assignment's principal to a UPN via /users/{principalId}*
 
 
 ## Parameters

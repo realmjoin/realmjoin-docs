@@ -18,7 +18,7 @@ rjgit-org_general_bulk-retire-devices-from-intune
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,7 +26,7 @@ rjgit-org_general_bulk-retire-devices-from-intune
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.ReadWrite.All
-  - Device.Read.All
+    - *Finds Intune devices by serial number and retires them via managedDevices/{id}/retire*
 
 
 ## Parameters

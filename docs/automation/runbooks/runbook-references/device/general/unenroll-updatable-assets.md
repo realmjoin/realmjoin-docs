@@ -18,7 +18,7 @@ rjgit-device_general_unenroll-updatable-assets
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,6 +26,7 @@ rjgit-device_general_unenroll-updatable-assets
 ### Application permissions
 - **Type**: Microsoft Graph
   - WindowsUpdates.ReadWrite.All
+    - *Unenrolls the device via updatableAssets DELETE or unenrollAssets*
 
 
 ## Parameters

@@ -18,7 +18,7 @@ rjgit-org_security_notify-changed-CA-Policies
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,7 +26,11 @@ rjgit-org_security_notify-changed-CA-Policies
 ### Application permissions
 - **Type**: Microsoft Graph
   - Policy.Read.All
+    - *Reads the Conditional Access policies to find changes of the last 24 hours*
   - Mail.Send
+    - *Sends the changed-policy alert via /users/{sender}/sendMail when changes are found*
+  - User.Read.All
+    - *Resolves the sender mailbox via /users/{From} before sending the alert*
 
 
 ## Parameters

@@ -17,8 +17,8 @@ rjgit-org_security_find-SMS-auth-phone-number
 
 | Property | Value |
 | --- | --- |
-| Version | 1.2.3 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Version | 1.3.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,8 +26,11 @@ rjgit-org_security_find-SMS-auth-phone-number
 ### Application permissions
 - **Type**: Microsoft Graph
   - AuditLog.Read.All
+    - *Queries userRegistrationDetails to pre-filter users with a registered mobile phone method*
   - User.Read.All
+    - *Reads the matched user's accountEnabled state for the report*
   - UserAuthenticationMethod.Read.All
+    - *Batch-reads the users' phoneMethods to compare numbers and check the SMS sign-in state*
 
 
 ## Parameters

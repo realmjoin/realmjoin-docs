@@ -20,7 +20,7 @@ rjgit-org_applications_add-application-registration
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -28,11 +28,15 @@ rjgit-org_applications_add-application-registration
 ### Application permissions
 - **Type**: Microsoft Graph
   - Application.ReadWrite.OwnedBy
+    - *Creates the app and service principal, patches SAML settings and adds a token signing certificate*
   - Organization.Read.All
+    - *Reads /organization to determine the tenant id reported alongside the new AppId*
   - Group.ReadWrite.All
+    - *Creates the user-assignment group and assigns it to the app when UserAssignmentRequired is set*
 
 ### RBAC roles
 - Application Developer
+  - *Backs creating and configuring the new app registration and service principal*
 
 
 ## Parameters

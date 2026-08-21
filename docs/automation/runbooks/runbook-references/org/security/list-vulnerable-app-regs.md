@@ -18,14 +18,15 @@ rjgit-org_security_list-vulnerable-app-regs
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Az.Storage (>= 9.6.0)<br>Az.Resources (>= 9.0.1) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Az.Storage (>= 9.7.2) |
 | Schedulable | no |
 
 ## Permissions
 
 ### Application permissions
 - **Type**: Microsoft Graph
-  - DeviceManagementManagedDevices.Read.All
+  - Application.Read.All
+    - *Enumerates app registrations and their key credentials via /applications*
 
 
 ## Parameters

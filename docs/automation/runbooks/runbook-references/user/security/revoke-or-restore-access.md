@@ -18,7 +18,7 @@ rjgit-user_security_revoke-or-restore-access
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,9 +26,11 @@ rjgit-user_security_revoke-or-restore-access
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.ReadWrite.All
+    - *Sets accountEnabled and revokes sign-in sessions on the user*
 
 ### RBAC roles
 - User Administrator
+  - *Required so blocking sign-in and revoking sessions also succeed for role-assigned users*
 
 
 ## Parameters

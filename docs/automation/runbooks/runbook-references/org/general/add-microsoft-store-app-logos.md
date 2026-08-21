@@ -19,7 +19,7 @@ rjgit-org_general_add-microsoft-store-app-logos
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,6 +27,7 @@ rjgit-org_general_add-microsoft-store-app-logos
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementApps.ReadWrite.All
+    - *Lists winGetApp apps and patches each app's largeIcon with the Store logo*
 
 
 ## Parameters

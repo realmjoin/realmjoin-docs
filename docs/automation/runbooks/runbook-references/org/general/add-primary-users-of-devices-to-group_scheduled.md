@@ -21,8 +21,8 @@ rjgit-org_general_add-primary-users-of-devices-to-group_scheduled
 
 | Property | Value |
 | --- | --- |
-| Version | 1.0.3 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Version | 1.1.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | yes |
 
 ## Permissions
@@ -30,9 +30,13 @@ rjgit-org_general_add-primary-users-of-devices-to-group_scheduled
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.Read.All
+    - *Reads Intune managed devices filtered by OS to collect each device's primary user*
   - Group.Read.All
+    - *Validates the target/include/exclude groups and reads their member lists*
   - GroupMember.ReadWrite.All
+    - *Adds and removes users in the target group via batched /groups/{id}/members/$ref calls*
   - User.Read.All
+    - *Reads member id and UPN to identify user members and log removals*
 
 
 ## Parameters

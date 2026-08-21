@@ -18,7 +18,7 @@ rjgit-org_mail_add-or-remove-public-folder
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,9 +26,11 @@ rjgit-org_mail_add-or-remove-public-folder
 ### Application permissions
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp
+    - *Runs New-/Get-/Remove-PublicFolder in the app-only Exchange Online session*
 
 ### RBAC roles
-- Exchange administrator
+- Exchange Administrator
+  - *Required for the app-only Exchange Online session to manage public folders*
 
 
 ## Parameters

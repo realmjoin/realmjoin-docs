@@ -23,7 +23,7 @@ rjgit-org_general_enrolled-devices-report_scheduled
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | yes |
 
 ## Permissions
@@ -31,9 +31,13 @@ rjgit-org_general_enrolled-devices-report_scheduled
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementServiceConfig.Read.All
+    - *Lists all Autopilot devices as the report's base data set*
   - DeviceManagementManagedDevices.Read.All
+    - *Reads each Intune device for enrollment date and user info*
   - User.Read.All
+    - *Reads the grouping attribute from each device's user when grouping by user properties*
   - Device.ReadWrite.All
+    - *Reads Entra device objects for device-property grouping*
 
 ### Permission notes
 Azure: Contributor on Storage Account

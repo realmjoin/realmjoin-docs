@@ -19,7 +19,7 @@ rjgit-org_general_check-assignments-of-users
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,11 +27,13 @@ rjgit-org_general_check-assignments-of-users
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All
+    - *Resolves each UPN to a user id and lists /users/{id}/transitiveMemberOf*
   - Group.Read.All
+    - *Reads the group objects returned by transitiveMemberOf to match assignment targets*
   - DeviceManagementConfiguration.Read.All
-  - DeviceManagementManagedDevices.Read.All
+    - *Lists Intune configuration, group policy and compliance policies and their assignments*
   - DeviceManagementApps.Read.All
-  - Device.Read.All
+    - *Lists mobile apps and their assignments when IncludeApps is enabled*
 
 
 ## Parameters

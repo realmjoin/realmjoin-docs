@@ -18,7 +18,7 @@ rjgit-user_userinfo_set-photo
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,6 +26,7 @@ rjgit-user_userinfo_set-photo
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.ReadWrite.All
+    - *Reads the user and uploads the photo via PUT /users/{id}/photo/$value*
 
 
 ## Parameters

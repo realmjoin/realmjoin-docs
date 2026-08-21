@@ -19,7 +19,7 @@ rjgit-user_phone_grant-teams-user-policies
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>MicrosoftTeams (>= 7.6.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>MicrosoftTeams (>= 7.9.0) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,9 +27,11 @@ rjgit-user_phone_grant-teams-user-policies
 ### Application permissions
 - **Type**: Microsoft Graph
   - Organization.Read.All
+    - *Required by the app-based Teams PowerShell sign-in to read tenant information*
 
 ### RBAC roles
 - Teams Administrator
+  - *Required to assign Teams policies to the user via the Grant-Cs policy cmdlets*
 
 
 ## Parameters

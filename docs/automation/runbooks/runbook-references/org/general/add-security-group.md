@@ -19,7 +19,7 @@ rjgit-org_general_add-security-group
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | Microsoft.Graph.Authentication (>= 2.39.0)<br>RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | Microsoft.Graph.Authentication (>= 2.39.0)<br>RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,6 +27,9 @@ rjgit-org_general_add-security-group
 ### Application permissions
 - **Type**: Microsoft Graph
   - Group.Create
+    - *Creates the security group via POST /groups after a duplicate-name check*
+  - Group.Read.All
+    - *Checks for an existing group with the same display name before creating*
 
 
 ## Parameters

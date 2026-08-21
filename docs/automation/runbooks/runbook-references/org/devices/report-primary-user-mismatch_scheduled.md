@@ -17,7 +17,13 @@ When the CSV attachment exceeds the email size limit and "CSV & XLSX" is selecte
 
 This runbook sends emails using the Microsoft Graph API. To send emails via Graph API, you need to configure an existing email address in the runbook customization.
 
-This process is described in detail in the [Setup Email Reporting](https://github.com/realmjoin/realmjoin-runbooks/tree/master/docs/general/setup-email-reporting.md) documentation.
+This process is described in detail in the [RealmJoin Report Settings documentation](https://docs.realmjoin.com/automation/runbooks/runbook-report-settings).
+
+### Email branding
+
+The report email honors the optional `RJReport.Branding.*` tenant settings: a custom header image, a custom footer image (public HTTPS URLs, PNG/JPEG/GIF, max. 200 KB each), a custom footer link, and custom accent and text colors (6-digit hex values, e.g. `#0052cc`). When these settings are not configured, the default RealmJoin graphics and colors are used. A branding image that cannot be downloaded or validated, or a color value that is not a valid hex color, never prevents the report email - the corresponding default is used instead.
+
+See the [RealmJoin Report Settings documentation](https://docs.realmjoin.com/automation/runbooks/runbook-report-settings) for setup details.
 
 ## Setup regarding RealmJoin API credentials
 
@@ -45,8 +51,8 @@ rjgit-org_devices_report-primary-user-mismatch_scheduled
 
 | Property | Value |
 | --- | --- |
-| Version | 1.5.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.3.4) |
+| Version | 1.7.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.5.2) |
 | Schedulable | yes |
 
 ## Notes
@@ -64,9 +70,13 @@ Prerequisites:
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.Read.All
+    - *Reads Intune managed devices to get each Windows device's primary user for comparison*
   - Directory.Read.All
-  - Mail.Send
+    - *Reads group members to resolve the optional include/exclude device group scope filters*
+  - Mail.Send *(optional — feature: Email report)*
+    - *Delivers the mismatch report via Send-RjReportEmail to the configured EmailTo recipient*
   - Organization.Read.All
+    - *Reads /organization for the tenant name shown in the report*
 
 
 ## Parameters
@@ -190,6 +200,61 @@ If specified, an email with the report will be sent to the provided address(es).
 ### EmailFrom
 
 The sender email address. This is configured via the runbook customization setting and hidden in the portal.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingHeaderImageUrl
+
+
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingFooterImageUrl
+
+
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingFooterLink
+
+
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingAccentColor
+
+
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingTextColor
+
+
 
 | Property | Value |
 | --- | --- |

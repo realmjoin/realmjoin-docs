@@ -19,7 +19,7 @@ rjgit-group_mail_show-or-hide-in-address-book
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | ExchangeOnlineManagement (>= 3.9.2)<br>RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | ExchangeOnlineManagement (>= 3.9.2)<br>RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,9 +27,11 @@ rjgit-group_mail_show-or-hide-in-address-book
 ### Application permissions
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp
+    - *Runs Set-UnifiedGroup or Set-DistributionGroup with -HiddenFromAddressListsEnabled in the app-only session*
 
 ### RBAC roles
-- Exchange administrator
+- Exchange Administrator
+  - *Required for the app-only Exchange Online session hiding or showing the group*
 
 
 ## Parameters

@@ -19,7 +19,7 @@ rjgit-device_general_remove-primary-user
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,6 +27,7 @@ rjgit-device_general_remove-primary-user
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.ReadWrite.All
+    - *Removes the device's primary user via DELETE managedDevices('{id}')/users/$ref*
 
 
 ## Parameters

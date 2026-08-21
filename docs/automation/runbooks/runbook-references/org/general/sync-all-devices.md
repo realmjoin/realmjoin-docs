@@ -19,7 +19,7 @@ rjgit-org_general_sync-all-devices
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,6 +27,9 @@ rjgit-org_general_sync-all-devices
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.ReadWrite.All
+    - *Lists all Windows devices via /deviceManagement/managedDevices to trigger the sync*
+  - DeviceManagementManagedDevices.PrivilegedOperations.All
+    - *Required for the syncDevice action triggered on every device*
 
 
 ## Parameters

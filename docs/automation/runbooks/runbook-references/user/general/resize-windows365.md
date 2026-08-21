@@ -19,7 +19,7 @@ rjgit-user_general_resize-windows365
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,11 +27,17 @@ rjgit-user_general_resize-windows365
 ### Application permissions
 - **Type**: Microsoft Graph
   - GroupMember.ReadWrite.All
+    - *Reads license/config group members; the started unassign/assign child runbooks modify membership*
   - Group.ReadWrite.All
+    - *Finds license and config groups; group writes happen in the started child runbooks*
   - Directory.Read.All
+    - *Reads /subscribedSkus and group license assignments to verify a free Windows 365 license*
   - CloudPC.ReadWrite.All
+    - *Backs the started child runbooks reading Cloud PCs and ending the grace period*
   - User.Read.All
-  - Mail.Send
+    - *Resolves the target user by UPN before resizing*
+  - Mail.Send *(optional — feature: Email report)*
+    - *The started assign child runbook notifies the user when sendMailWhenDoneResizing is enabled*
 
 
 ## Parameters

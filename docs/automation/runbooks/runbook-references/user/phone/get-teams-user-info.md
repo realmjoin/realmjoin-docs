@@ -18,7 +18,7 @@ rjgit-user_phone_get-teams-user-info
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>MicrosoftTeams (>= 7.6.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>MicrosoftTeams (>= 7.9.0) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,9 +26,11 @@ rjgit-user_phone_get-teams-user-info
 ### Application permissions
 - **Type**: Microsoft Graph
   - Organization.Read.All
+    - *Required by the app-based Teams PowerShell sign-in to read tenant information*
 
 ### RBAC roles
 - Teams Administrator
+  - *Required to read user, calling, voicemail and call queue settings via the Cs cmdlets*
 
 
 ## Parameters

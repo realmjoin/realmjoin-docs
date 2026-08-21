@@ -18,7 +18,7 @@ rjgit-org_security_list-information-protection-labels
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,6 +26,7 @@ rjgit-org_security_list-information-protection-labels
 ### Application permissions
 - **Type**: Microsoft Graph
   - InformationProtectionPolicy.Read.All
+    - *Reads all tenant sensitivity labels to list their ids for other runbooks*
 
 
 ## Parameters

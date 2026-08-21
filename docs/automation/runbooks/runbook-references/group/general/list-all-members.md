@@ -20,7 +20,7 @@ rjgit-group_general_list-all-members
 | Property | Value |
 | --- | --- |
 | Version | 1.0.3 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | no |
 
 ## Permissions
@@ -28,7 +28,9 @@ rjgit-group_general_list-all-members
 ### Application permissions
 - **Type**: Microsoft Graph
   - Group.Read.All
+    - *Reads the group and pages through its members to resolve nested group membership*
   - User.Read.All
+    - *Reads the user members' UPNs to build the membership report*
 
 
 ## Parameters

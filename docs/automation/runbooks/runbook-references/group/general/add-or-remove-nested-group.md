@@ -20,16 +20,24 @@ rjgit-group_general_add-or-remove-nested-group
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
 
 ### Application permissions
 - **Type**: Microsoft Graph
-  - User.Read.All
   - Group.ReadWrite.All
+    - *Reads target and nested group and backs the nesting changes*
   - GroupMember.ReadWrite.All
+    - *Checks nesting and adds or removes the nested group via /groups/{id}/members/$ref*
+- **Type**: Office 365 Exchange Online
+  - Exchange.ManageAsApp *(optional — feature: Mail-enabled groups)*
+    - *Manages nesting via the Exchange Online distribution group cmdlets*
+
+### RBAC roles
+- Exchange Administrator
+  - *Required for the app-only Exchange Online session managing distribution group nesting*
 
 
 ## Parameters

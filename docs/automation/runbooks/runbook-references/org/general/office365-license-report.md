@@ -19,7 +19,7 @@ rjgit-org_general_office365-license-report
 | Property | Value |
 | --- | --- |
 | Version | 1.1.3 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Az.Accounts (>= 5.3.4)<br>ExchangeOnlineManagement (>= 3.9.2) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Az.Accounts (>= 5.5.2)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,9 +27,22 @@ rjgit-org_general_office365-license-report
 ### Application permissions
 - **Type**: Microsoft Graph
   - Reports.Read.All
+    - *Pulls the Office 365 usage and activity report CSVs from /reports*
   - Directory.Read.All
+    - *Reads /subscribedSkus and group license assignments for the SKU overview*
   - User.Read.All
+    - *Lists users and reads their license details for the per-user reports*
   - ReportSettings.ReadWrite.All
+    - *Temporarily disables concealed report names when includeUserData is enabled, then restores the setting*
+  - AuditLog.Read.All *(optional — feature: Sign-in export)*
+    - *Reads /auditLogs/signIns for the per-application sign-in export when exportToFile is enabled (default on)*
+- **Type**: Office 365 Exchange Online
+  - Exchange.ManageAsApp *(optional — feature: Exchange licensing report)*
+    - *Runs Get-EXOMailbox for the shared mailbox licensing report when includeExchange is enabled*
+
+### RBAC roles
+- Exchange Administrator
+  - *Required for the app-only Exchange Online session when includeExchange is enabled*
 
 
 ## Parameters

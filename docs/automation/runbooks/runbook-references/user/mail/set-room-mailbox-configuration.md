@@ -18,7 +18,7 @@ rjgit-user_mail_set-room-mailbox-configuration
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,9 +26,14 @@ rjgit-user_mail_set-room-mailbox-configuration
 ### Application permissions
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp
+    - *Runs Get-EXOMailbox, Set-CalendarProcessing and Set-Place in the app-only Exchange Online session*
+- **Type**: Microsoft Graph
+  - Group.Read.All *(optional — feature: Book-in policy group)*
+    - *Validates the BookInPolicyGroup via /groups/{id}*
 
 ### RBAC roles
-- Exchange administrator
+- Exchange Administrator
+  - *Required for the app-only Exchange Online session to change the room mailbox settings*
 
 
 ## Parameters

@@ -25,6 +25,12 @@ This runbook sends emails using the Microsoft Graph API. To send emails via Grap
 
 See the [RealmJoin Report Settings documentation](https://docs.realmjoin.com/automation/runbooks/runbook-report-settings) for details.
 
+### Email branding
+
+The report email honors the optional `RJReport.Branding.*` tenant settings: a custom header image, a custom footer image (public HTTPS URLs, PNG/JPEG/GIF, max. 200 KB each), a custom footer link, and custom accent and text colors (6-digit hex values, e.g. `#0052cc`). When these settings are not configured, the default RealmJoin graphics and colors are used. A branding image that cannot be downloaded or validated, or a color value that is not a valid hex color, never prevents the report email - the corresponding default is used instead.
+
+See the [RealmJoin Report Settings documentation](https://docs.realmjoin.com/automation/runbooks/runbook-report-settings) for setup details.
+
 
 ## Location
 Organization → Devices → Report Devices Without Primary User (Scheduled)
@@ -37,8 +43,8 @@ rjgit-org_devices_report-devices-without-primary-user_scheduled
 
 | Property | Value |
 | --- | --- |
-| Version | 1.7.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.3.4) |
+| Version | 1.9.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.5.2) |
 | Schedulable | yes |
 
 ## Permissions
@@ -46,7 +52,9 @@ rjgit-org_devices_report-devices-without-primary-user_scheduled
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.Read.All
-  - Mail.Send
+    - *Reads Intune managed devices to find devices without a primary user*
+  - Mail.Send *(optional — feature: Email report)*
+    - *Sends the report email via Send-RjReportEmail when EmailTo is configured*
 
 
 ## Parameters
@@ -189,6 +197,66 @@ Number of days until the generated download link expires. Sourced from the RJRep
 ### EmailFrom
 
 The sender email address. This needs to be configured in the runbook customization.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingHeaderImageUrl
+
+Optional public HTTPS URL of a custom header image (PNG/JPEG/GIF, max. 200 KB) for the report email.
+Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, the default RealmJoin header graphic is used.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingFooterImageUrl
+
+Optional public HTTPS URL of a custom footer image (PNG/JPEG/GIF, max. 200 KB) for the report email.
+Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, the default RealmJoin footer graphic is used.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingFooterLink
+
+Optional URL the footer image links to. Sourced from the RJReport.Branding.FooterLink tenant setting.
+When empty, the default link (https://www.realmjoin.com) is used.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingAccentColor
+
+Optional accent color override (6-digit hex, e.g. '#0052cc') for the report email template.
+Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or invalid, the default RealmJoin accent color is used.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### BrandingTextColor
+
+Optional text color override (6-digit hex) for the report email template.
+Sourced from the RJReport.Branding.TextColor tenant setting. When empty or invalid, the default RealmJoin text color is used.
 
 | Property | Value |
 | --- | --- |

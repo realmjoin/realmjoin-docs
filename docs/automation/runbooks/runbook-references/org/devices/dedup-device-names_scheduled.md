@@ -24,7 +24,7 @@ rjgit-org_devices_dedup-device-names_scheduled
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | yes |
 
 ## Notes
@@ -45,7 +45,11 @@ Common Use Cases:
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.ReadWrite.All
+    - *Lists all Intune managed devices and renames duplicates via setDeviceName*
   - DeviceManagementServiceConfig.ReadWrite.All
+    - *Reads windowsAutopilotDeviceIdentities and syncs new names via updateDeviceProperties*
+  - DeviceManagementManagedDevices.PrivilegedOperations.All
+    - *Required for the privileged setDeviceName action when renaming duplicates*
 
 
 ## Parameters

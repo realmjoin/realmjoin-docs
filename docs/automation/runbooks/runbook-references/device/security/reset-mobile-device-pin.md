@@ -19,7 +19,7 @@ rjgit-device_security_reset-mobile-device-pin
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,7 +27,9 @@ rjgit-device_security_reset-mobile-device-pin
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.Read.All
+    - *Looks up the Intune device to check its ownership type before the reset*
   - DeviceManagementManagedDevices.PrivilegedOperations.All
+    - *Executes the privileged resetPasscode action on the device*
 
 
 ## Parameters

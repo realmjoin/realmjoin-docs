@@ -20,7 +20,7 @@ rjgit-group_teams_archive-team
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -28,6 +28,9 @@ rjgit-group_teams_archive-team
 ### Application permissions
 - **Type**: Microsoft Graph
   - TeamSettings.ReadWrite.All
+    - *Reads the team's archive state and calls /teams/{id}/archive*
+  - Group.Read.All
+    - *Reads the group via /groups/{id} to verify it is a Teams-provisioned group*
 
 
 ## Parameters

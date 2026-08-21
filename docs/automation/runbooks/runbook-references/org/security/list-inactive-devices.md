@@ -18,7 +18,7 @@ rjgit-org_security_list-inactive-devices
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Az.Storage (>= 9.6.0)<br>Az.Resources (>= 9.0.1) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Az.Storage (>= 9.7.2) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,8 +26,11 @@ rjgit-org_security_list-inactive-devices
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.Read.All
+    - *Lists devices without recent Intune sync when checking by sync date*
   - Directory.Read.All
+    - *Reads owner user details to enrich each stale device*
   - Device.Read.All
+    - *Lists Entra devices by last sign-in date and reads their registered owners*
 
 
 ## Parameters

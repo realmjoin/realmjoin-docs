@@ -82,7 +82,7 @@ rjgit-user_mail_delegate-full-access
 | Property | Value |
 | --- | --- |
 | Version | 1.1.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
 ## Permissions
@@ -90,9 +90,11 @@ rjgit-user_mail_delegate-full-access
 ### Application permissions
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp
+    - *Manages FullAccess mailbox delegations in the app-only Exchange Online session*
 
 ### RBAC roles
 - Exchange Administrator
+  - *Required for the app-only Exchange Online session managing FullAccess permissions*
 
 
 ## Parameters

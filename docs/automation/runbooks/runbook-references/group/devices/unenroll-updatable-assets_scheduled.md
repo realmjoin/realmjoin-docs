@@ -24,7 +24,7 @@ rjgit-group_devices_unenroll-updatable-assets_scheduled
 | Property | Value |
 | --- | --- |
 | Version | 1.1.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | yes |
 
 ## Permissions
@@ -32,7 +32,11 @@ rjgit-group_devices_unenroll-updatable-assets_scheduled
 ### Application permissions
 - **Type**: Microsoft Graph
   - Group.Read.All
+    - *Reads the group's transitive device and user members to find devices to unenroll*
   - WindowsUpdates.ReadWrite.All
+    - *Unenrolls each device via updatableAssets DELETE or unenrollAssets*
+  - User.Read.All *(optional — feature: User-owned devices)*
+    - *Reads each user member's owned devices via /users/{id}/ownedDevices when IncludeUserOwnedDevices is enabled*
 
 
 ## Parameters

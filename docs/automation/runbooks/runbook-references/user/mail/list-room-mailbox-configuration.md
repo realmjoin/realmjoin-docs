@@ -18,7 +18,7 @@ rjgit-user_mail_list-room-mailbox-configuration
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,6 +26,16 @@ rjgit-user_mail_list-room-mailbox-configuration
 ### Application permissions
 - **Type**: Microsoft Graph
   - Place.Read.All
+    - *Reads the room's place metadata via /places/{mail}/microsoft.graph.room*
+  - User.Read.All
+    - *Resolves the room mailbox's address and nickname via /users/{UserName}*
+- **Type**: Office 365 Exchange Online
+  - Exchange.ManageAsApp
+    - *Runs Get-CalendarProcessing in the app-only Exchange Online session*
+
+### RBAC roles
+- Exchange Administrator
+  - *Required for the app-only Exchange Online session to read the calendar processing settings*
 
 
 ## Parameters

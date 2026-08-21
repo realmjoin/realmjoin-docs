@@ -18,7 +18,7 @@ rjgit-device_general_enroll-updatable-assets
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,6 +26,7 @@ rjgit-device_general_enroll-updatable-assets
 ### Application permissions
 - **Type**: Microsoft Graph
   - WindowsUpdates.ReadWrite.All
+    - *Enrolls the device per update category via updatableAssets/enrollAssets*
 
 
 ## Parameters

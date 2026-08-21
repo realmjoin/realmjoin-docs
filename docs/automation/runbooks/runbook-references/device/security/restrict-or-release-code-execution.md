@@ -20,7 +20,7 @@ rjgit-device_security_restrict-or-release-code-execution
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -28,7 +28,9 @@ rjgit-device_security_restrict-or-release-code-execution
 ### Application permissions
 - **Type**: WindowsDefenderATP
   - Machine.Read.All
+    - *Finds the Defender for Endpoint machine via /machines filtered by aadDeviceId*
   - Machine.RestrictExecution
+    - *Triggers restrictCodeExecution or unrestrictCodeExecution on the machine*
 
 
 ## Parameters

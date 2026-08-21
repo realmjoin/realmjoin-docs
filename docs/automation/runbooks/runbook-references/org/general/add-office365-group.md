@@ -19,7 +19,7 @@ rjgit-org_general_add-office365-group
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,7 +27,13 @@ rjgit-org_general_add-office365-group
 ### Application permissions
 - **Type**: Microsoft Graph
   - Group.Create
+    - *Creates the new Microsoft 365 group with visibility, mail settings and owner/member bindings*
   - Team.Create
+    - *Promotes the group to a Teams team when CreateTeam is enabled*
+  - Group.Read.All
+    - *Checks for an existing group with the same mail nickname before creating*
+  - User.Read.All *(optional — feature: Owner assignment)*
+    - *Resolves the owner users via /users/{upn} when owners are provided*
 
 
 ## Parameters

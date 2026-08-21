@@ -19,7 +19,7 @@ rjgit-org_general_list-all-administrative-template-policies
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,7 +27,9 @@ rjgit-org_general_list-all-administrative-template-policies
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementConfiguration.Read.All
+    - *Reads groupPolicyConfigurations and their assignments to list Administrative Template policies*
   - Group.Read.All
+    - *Resolves assignment target group names via /groups/{id}*
 
 
 ## Parameters

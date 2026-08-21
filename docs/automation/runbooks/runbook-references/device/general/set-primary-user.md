@@ -18,7 +18,7 @@ rjgit-device_general_set-primary-user
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,7 +26,9 @@ rjgit-device_general_set-primary-user
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.ReadWrite.All
+    - *Resolves the Intune device and replaces its primary user via managedDevices('{id}')/users/$ref*
   - User.Read.All
+    - *Resolves the new primary user's UPN and display name before assignment*
 
 
 ## Parameters

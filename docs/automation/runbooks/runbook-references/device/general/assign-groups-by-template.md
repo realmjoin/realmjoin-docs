@@ -18,7 +18,7 @@ rjgit-device_general_assign-groups-by-template
 | Property | Value |
 | --- | --- |
 | Version | 1.0.3 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,8 +26,11 @@ rjgit-device_general_assign-groups-by-template
 ### Application permissions
 - **Type**: Microsoft Graph
   - Device.Read.All
+    - *Resolves the Entra device and reads its current group memberships*
   - Group.Read.All
+    - *Looks up the template's target groups by display name or id and checks existing membership*
   - GroupMember.ReadWrite.All
+    - *Adds the device to each template group via members@odata.bind*
 
 
 ## Parameters

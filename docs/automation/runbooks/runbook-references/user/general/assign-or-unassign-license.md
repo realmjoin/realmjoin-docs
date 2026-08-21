@@ -18,7 +18,7 @@ rjgit-user_general_assign-or-unassign-license
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,8 +26,11 @@ rjgit-user_general_assign-or-unassign-license
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All
+    - *Resolves the target user's object id by UPN*
   - GroupMember.ReadWrite.All
+    - *Checks membership and adds or removes the user in the license group*
   - Group.ReadWrite.All
+    - *Reads the group object to validate the LIC_ naming prefix*
 
 
 ## Parameters

@@ -18,7 +18,7 @@ rjgit-user_mail_convert-to-shared-mailbox
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>ExchangeOnlineManagement (>= 3.9.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,9 +26,18 @@ rjgit-user_mail_convert-to-shared-mailbox
 ### Application permissions
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp
+    - *Converts the mailbox type and manages permissions and distribution groups in the app-only Exchange Online session*
+- **Type**: Microsoft Graph
+  - User.ReadWrite.All
+    - *Reads the user and toggles accountEnabled when converting to or from a shared mailbox*
+  - Group.Read.All *(optional — feature: Group and license handling)*
+    - *Finds the regular or archival license group by display name*
+  - GroupMember.ReadWrite.All *(optional — feature: Group and license handling)*
+    - *Removes group memberships and manages license group membership during conversion*
 
 ### RBAC roles
-- Exchange administrator
+- Exchange Administrator
+  - *Required for the app-only Exchange Online session converting the mailbox*
 
 
 ## Parameters

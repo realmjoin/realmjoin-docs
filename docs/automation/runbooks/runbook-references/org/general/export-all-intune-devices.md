@@ -18,7 +18,7 @@ rjgit-org_general_export-all-intune-devices
 | Property | Value |
 | --- | --- |
 | Version | 1.1.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Az.Accounts (>= 5.3.2) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Az.Accounts (>= 5.5.2) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,8 +26,11 @@ rjgit-org_general_export-all-intune-devices
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.Read.All
+    - *Reads all Intune devices for the CSV export*
   - GroupMember.Read.All
+    - *Reads the filter group's transitive user members to limit the export*
   - Group.Read.All
+    - *Covers the same transitive member read for the optional group filter*
 
 
 ## Parameters

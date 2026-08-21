@@ -19,7 +19,7 @@ rjgit-org_general_add-management-partner
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Az.ManagementPartner (>= 0.7.5) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Az.ManagementPartner (>= 0.8.0) |
 | Schedulable | no |
 
 ## Permissions

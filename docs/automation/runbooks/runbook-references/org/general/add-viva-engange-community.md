@@ -19,7 +19,7 @@ rjgit-org_general_add-viva-engange-community
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -27,8 +27,11 @@ rjgit-org_general_add-viva-engange-community
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.Read.All
+    - *Resolves each owner UPN to a user object when CommunityOwners is provided*
   - Group.ReadWrite.All
+    - *Finds the new community's M365 group, reads its owners and adds new owners*
   - GroupMember.ReadWrite.All
+    - *Adds each new owner as group member via /groups/{id}/members/$ref*
 
 
 ## Parameters

@@ -46,7 +46,7 @@ rjgit-device_general_wipe-managed-app-data
 | Property | Value |
 | --- | --- |
 | Version | 1.0.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | no |
 
 ## Permissions
@@ -54,11 +54,15 @@ rjgit-device_general_wipe-managed-app-data
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementApps.ReadWrite.All
+    - *Reads the user's managedAppRegistrations and creates MAM wipes via wipeManagedAppRegistrationsByDeviceTag*
   - Device.Read.All
+    - *Resolves the target device via /devices and lists its registered users and owners*
   - User.Read.All
+    - *Reads the registered users' id and UPN to build the per-user MAM registration queries*
 
 ### RBAC roles
 - Intune Administrator
+  - *Grants Intune RBAC for reading managedAppRegistrations and posting the app-only MAM wipe*
 
 
 ## Parameters

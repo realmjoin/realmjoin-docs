@@ -254,6 +254,7 @@
         * [Create Temporary Access Pass](automation/runbooks/runbook-references/user/security/create-temporary-access-pass.md)
         * [Enable Or Disable Password Expiration](automation/runbooks/runbook-references/user/security/enable-or-disable-password-expiration.md)
         * [List Mfa Methods](automation/runbooks/runbook-references/user/security/list-mfa-methods.md)
+        * [List Signin Events](automation/runbooks/runbook-references/user/security/list-signin-events.md)
         * [Reset Mfa](automation/runbooks/runbook-references/user/security/reset-mfa.md)
         * [Reset Password](automation/runbooks/runbook-references/user/security/reset-password.md)
         * [Revoke Or Restore Access](automation/runbooks/runbook-references/user/security/revoke-or-restore-access.md)

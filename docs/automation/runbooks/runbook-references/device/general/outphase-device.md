@@ -37,7 +37,7 @@ rjgit-device_general_outphase-device
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.7) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
 ## Permissions
@@ -45,15 +45,22 @@ rjgit-device_general_outphase-device
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.PrivilegedOperations.All
+    - *Triggers the Intune wipe action when the wipe option is selected*
   - DeviceManagementManagedDevices.ReadWrite.All
+    - *Finds the Intune device by azureADDeviceId and deletes it when removeIntuneDevice is set*
   - DeviceManagementServiceConfig.ReadWrite.All
+    - *Finds and deletes the Autopilot identity when removeAutopilotDevice is set*
   - Device.Read.All
+    - *Resolves the Entra device and reads its registered owners for the status output*
 - **Type**: WindowsDefenderATP
   - Machine.Read.All
+    - *Looks up the device in Defender for Endpoint when excludeFromDefender is enabled*
   - Machine.ReadWrite.All
+    - *Adds the exclusion tag via /machines/{id}/tags when excludeFromDefender is enabled*
 
 ### RBAC roles
-- Cloud device administrator
+- Cloud Device Administrator
+  - *Required to disable and delete the Entra device object via /devices/{id}*
 
 
 ## Parameters
