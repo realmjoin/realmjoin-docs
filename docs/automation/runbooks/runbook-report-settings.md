@@ -75,7 +75,7 @@ All parameters are optional. If configured, they will appear in the email footer
 
 ### Email Branding (optional)
 
-Report emails can carry tenant-specific branding: the default RealmJoin header and footer graphics can be replaced with your own images, and the footer image can link to a custom target — for example your intranet or IT portal.
+Report emails can carry tenant-specific branding: the default RealmJoin header and footer graphics can be replaced with your own images, the footer image can link to a custom target — for example your intranet or IT portal — and the template colors can be adjusted to your corporate design.
 
 To configure branding, add a `Branding` sub-section to the `RJReport` block (nested like `StorageAccount`):
 
@@ -86,7 +86,9 @@ To configure branding, add a `Branding` sub-section to the `RJReport` block (nes
             "Branding": {
                 "HeaderImageUrl": "https://cdn.contoso.com/branding/email-header.png",
                 "FooterImageUrl": "https://cdn.contoso.com/branding/email-footer.png",
-                "FooterLink": "https://intranet.contoso.com"
+                "FooterLink": "https://intranet.contoso.com",
+                "AccentColor": "#0052cc",
+                "TextColor": "#1a1a2e"
             }
         }
     }
@@ -100,17 +102,27 @@ To configure branding, add a `Branding` sub-section to the `RJReport` block (nes
 | `HeaderImageUrl` | no | RealmJoin header graphic | Public HTTPS URL of a custom header image that replaces the default RealmJoin header graphic |
 | `FooterImageUrl` | no | RealmJoin footer graphic | Public HTTPS URL of a custom footer image that replaces the default RealmJoin footer graphic |
 | `FooterLink` | no | `https://www.realmjoin.com` | URL the footer image links to |
+| `AccentColor` | no | `#f8842c` (RealmJoin orange) | Accent color of the email template: table header rows, action buttons, accent borders of the info boxes |
+| `TextColor` | no | `#011e33` (RealmJoin navy) | Primary text color of the email template: body text, headings, list items, code |
 
 **Image requirements:**
 
-- The image must be reachable via a **public HTTPS URL** — for example an Azure Blob Storage container with anonymous read access, a CDN, or the company website.
-- Supported formats: **PNG, JPEG or GIF**.
+- The image must be reachable via a **public HTTPS URL** — for example an Azure Blob Storage container with anonymous read access, a CDN, or the company website. A URL containing a SAS token also works and keeps the container private.
+- Supported formats: **PNG, JPEG or GIF**. The format is detected from the file signature, not from the file extension.
 - Images are rendered at **750 px width**. Recommended dimensions are **750×200 px** (matching the default banners) or **1500×400 px** for high-DPI displays.
 - Maximum **200 KB** per image; **100 KB or less** is recommended. The branding images share the ~4 MB total email size limit with the report attachments (for comparison, the default RealmJoin graphics are 52 KB and 15 KB).
 
-The images are downloaded and validated by the runbook on each run. If a setting is left empty, the default RealmJoin graphic (and the default footer link) is used. If a download or validation fails, a warning is logged and the default graphic is used instead — a broken branding configuration never prevents a report email from being sent.
+**Color requirements:**
+
+- Values must be 6-digit hexadecimal colors including the leading `#` — for example `#0052cc`. Short forms (`#05c`) and color names (`red`) are not supported.
+- Both emails and their attachments are read in light **and** dark mode: pick a text color that stays legible on a white content card, and an accent color with enough contrast against white button text.
+- Status colors (green/red/amber for success, error and warning states) and the neutral grays are deliberately not configurable — they carry meaning that should not change per tenant.
+
+The images are downloaded and validated by the runbook on each run. If a setting is left empty, the default RealmJoin graphic, color and footer link are used. If a download fails, an image is invalid, or a color is not a valid hex value, a warning is logged and the corresponding default is used instead — a broken branding configuration never prevents a report email from being sent.
 
 All settings are optional and take effect for all runbooks that send report emails.
+
+> **Note:** The color settings require **RealmJoin.RunbookHelper 0.8.9** or later in the Automation Account. With older module versions the image settings still apply and the colors are ignored.
 
 ## Storage Account Delivery
 
@@ -164,7 +176,9 @@ The following snippet shows a complete `RJReport` configuration with all feature
             "Branding": {
                 "HeaderImageUrl": "https://cdn.contoso.com/branding/email-header.png",
                 "FooterImageUrl": "https://cdn.contoso.com/branding/email-footer.png",
-                "FooterLink": "https://intranet.contoso.com"
+                "FooterLink": "https://intranet.contoso.com",
+                "AccentColor": "#0052cc",
+                "TextColor": "#1a1a2e"
             },
             "StorageAccount": {
                 "ResourceGroup": "rg-reports",

@@ -9,8 +9,12 @@ description: Export objects from Azure Automation runbooks to styled native Exce
 
 `Export-RjRbXlsx` is the standard helper for producing Excel report files (`.xlsx`) from RealmJoin reporting runbooks. It writes one or more tables of `PSCustomObject`s as a **native Excel workbook** using only .NET (`System.IO.Compression`) — no `ImportExcel`, no COM automation, no other external module is required in the Automation environment.
 
-{% hint style="warning" %}
-**Not yet part of RealmJoin.RunbookHelper.** `Export-RjRbXlsx` is not yet shipped with the **RealmJoin.RunbookHelper** module — it will be included with the **next module release**. Until then, the function is duplicated inline in the runbooks that use it and can be copied from there, for example from [sync-MFA-secure-users-to-group_scheduled.ps1](https://github.com/realmjoin/realmjoin-runbooks/blob/master/org/security/sync-MFA-secure-users-to-group_scheduled.ps1) (region *Function Definitions*).
+{% hint style="info" %}
+**Available from RealmJoin.RunbookHelper 0.8.8.** The function is exported by the module; the inline copies that earlier runbook versions carried have been removed. Runbooks using it declare the module version accordingly:
+
+```powershell
+#Requires -Modules @{ModuleName = "RealmJoin.RunbookHelper"; ModuleVersion = "0.8.8" }
+```
 {% endhint %}
 
 Key characteristics:
@@ -206,4 +210,4 @@ The function returns nothing. It writes the workbook to `Path` and emits a verbo
 - [Send-RjRbReportEmail](send-rjrbreportemail.md) — deliver the generated workbook as a report email attachment.
 - [Publish-RjRbFilesToStorageContainer](publish-rjrbfilestostoragecontainer.md) — upload the workbook to Azure Blob Storage and return a time-limited download link.
 - [Runbook Report Settings](../../automation/runbooks/runbook-report-settings.md) — central configuration of the report delivery channels.
-- Example inline usage: [sync-MFA-secure-users-to-group_scheduled.ps1](https://github.com/realmjoin/realmjoin-runbooks/blob/master/org/security/sync-MFA-secure-users-to-group_scheduled.ps1) — the runbook currently carrying the function until it ships with the module.
+- Example usage in a production runbook: [sync-MFA-secure-users-to-group_scheduled.ps1](https://github.com/realmjoin/realmjoin-runbooks/blob/master/org/security/sync-MFA-secure-users-to-group_scheduled.ps1) — builds a multi-worksheet workbook with an "Info" cover sheet.
