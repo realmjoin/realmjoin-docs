@@ -1,8 +1,8 @@
 ---
 type: Deployment Guide
 description: >-
-  Microsoft Graph and Azure permissions required by the RealmJoin Portal apps for
-  self-service and administrative functionality.
+  Microsoft Graph and Azure permissions required by the RealmJoin Portal apps
+  for self-service and administrative functionality.
 ---
 
 # Required Permissions
@@ -32,10 +32,10 @@ The following permissions are from type "Delegated" and are mainly used for logi
 | offline\_access | Maintain access to data you have given it access to |
 
 {% hint style="info" %}
-Depending on the way you onboarded your tenant, you may find the "RealmJoin Portal - Core Features" permissions from below inside the "RealmJoin Portal" Application or in the separate one described below.&#x20;
+Depending on the way you onboarded your tenant, you may find the "RealmJoin Portal - Core Features" permissions from below inside the "RealmJoin Portal" Application or in the separate one described below.
 {% endhint %}
 
-The following table reflects the permissions (type Application permissions) if Administrative Units (AU) **are not used**.&#x20;
+The following table reflects the permissions (type Application permissions) if Administrative Units (AU) **are not used**.
 
 Some of the permissions are needed for optional features, please refer to your onboarding agent to adopt the consent to your needs.
 
@@ -69,7 +69,7 @@ All the following permissions are of the permission type “**Application**” (
 
 ### API Permissions
 
-The following table reflects the permissions (type Application permissions) if Administrative Units (AU) **are not used**.&#x20;
+The following table reflects the permissions (type Application permissions) if Administrative Units (AU) **are not used**.
 
 Some of the permissions are needed for optional features, please refer to your onboarding agent to adopt the consent to your needs.
 
@@ -91,7 +91,7 @@ Some of the permissions are needed for optional features, please refer to your o
 | WindowsUpdates.ReadWrite.All                            | Read and write all Windows update deployment settings             |
 | AdministrativeUnit.Read.All (optional)                  | Read all administrative units                                     |
 
-## RealmJoin Portal - Security Features&#x20;
+## RealmJoin Portal - Security Features
 
 Application ID: `e5713826-15ee-4f6c-91ee-56cb1844e275`
 
@@ -117,11 +117,11 @@ All of the following permissions use the `WindowsDefenderATP` API.
 | User.Read.All                   | Read user profiles                                                 |
 | Vulnerability.Read.All          | Read Threat and Vulnerability Management vulnerability information |
 
-## RealmJoin Agent
+## RealmJoin
 
 Application ID: `008c704d-20fe-4c15-bab0-c2e6f66a992c`
 
-This app is responsible for the client application (RealmJoin Agent).&#x20;
+This app is responsible for the client application (RealmJoin **Agent**).
 
 Please refer to your onboarding agent to adopt the consent to your needs.
 
