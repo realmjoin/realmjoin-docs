@@ -5,21 +5,21 @@ description: >-
   repository runbook names into Azure Automation and the portal.
 ---
 
-# Naming Conventions
+# Runbook Naming Conventions
 
 ## Filenames in Github
 
 We expect a certain file and naming structure in the [shared runbook repository](https://github.com/realmjoin/realmjoin-runbooks). RealmJoin will import these folders and files from GitHub into the customers Azure Automation Account.
 
-Dashes ("-") will be converted into spaces. Folders are used to separate runbooks into "context" and "category", e.g. `user\general`. File names should be describing the purpose of the script.&#x20;
+Dashes ("-") will be converted into spaces. Folders are used to separate runbooks into "context" and "category", e.g. `user\general`. File names should be describing the purpose of the script.
 
-All imported runbooks have a prefix of `rjgit-`, followed by the context, either `org`, `group`, `user` then category, for example `_general_`, `_security_`, `_mail_` and the name of the script itself like `add-additional-alias`.
+All imported runbooks have a prefix of `rjgit-`, followed by the context, either `org`, `group`, `user` or `device` then category, for example `_general_`, `_security_`, `_mail_` and the name of the script itself like `add-additional-alias`.
 
 ### Example:
 
 A runbook in Github in `user\general` named `add-additional-alias.ps1` will be shown as:
 
-* `rjgit-user_general_add-additional-alias` in the Azure Automation Account&#x20;
+* `rjgit-user_general_add-additional-alias` in the Azure Automation Account
 * "Add Additional Alias" in the RealmJoin Portal on a User object in the runbook category "General".
 
 Common categories
