@@ -17,7 +17,7 @@ Currently the following types are supported:
 * Backgrounds and other files
 * Outlook signatures
 
-This native integration in RealmJoin makes the separate app (Azure Web App) from GitHub or Azure Marketplace obsolete: [M365 Workplace Cloud Storage](https://github.com/glueckkanja/gk-m365-workplacecloudstorage)
+This native integration in RealmJoin makes the separate app (Azure Web App) from GitHub or Microsoft Marketplace obsolete: [M365 Workplace Cloud Storage](https://github.com/glueckkanja/gk-m365-workplacecloudstorage)
 
 The feature of managing Enterprise Mode Site Lists is covered by Microsoft 365 admin center. So, existing or new site lists need to be added as described here: [Publish enterprise site list to the cloud](https://learn.microsoft.com/en-us/deployedge/edge-ie-mode-cloud-site-list-mgmt#publish-enterprise-site-list-to-the-cloud-1). The resulting site list ID is then published via an Intune policy to Microsoft Edge.
 
@@ -59,7 +59,7 @@ If so, please move to "Settings" of your storage account and set "Allow Blob ano
 
 ### Migration from Azure Web App
 
-If you are currently using the separate web app from [GitHub](https://github.com/glueckkanja/gk-m365-workplacecloudstorage) or Azure Marketplace, you can easily migrate to native RealmJoin integration.
+If you are currently using the separate web app from [GitHub](https://github.com/glueckkanja/gk-m365-workplacecloudstorage) or Microsoft Marketplace, you can easily migrate to native RealmJoin integration.
 
 {% hint style="warning" %}
 Please note that **managing Enterprise Mode Site Lists** is **not possible** via RealmJoin. Please **migrate** your lists to Microsoft 365 admin center **before the following steps** as describe in [Overview](workplace-cloud-storage.md#overview).
