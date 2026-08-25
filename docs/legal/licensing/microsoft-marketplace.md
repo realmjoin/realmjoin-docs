@@ -1,7 +1,7 @@
 ---
 type: Legal
 description: >-
-  Purchase RealmJoin via Azure Marketplace: prerequisites, the user-segment
+  Purchase RealmJoin via Microsoft Marketplace: prerequisites, the user-segment
   pricing model, base fees, and invoicing.
 ---
 
@@ -18,7 +18,7 @@ In order to purchase solutions from independent software vendors (ISV) such as R
 ## How to purchase RealmJoin?
 
 {% hint style="info" %}
-Deploying a RealmJoin subscription via Azure Marketplace **will not result** **in a re-configuration of your RealmJoin tenant if you already have an active trial or production tenant**. Instead, we will assign the license obtained as part of this subscription to your existing tenant.
+Deploying a RealmJoin subscription via Microsoft Marketplace **will not result** **in a re-configuration of your RealmJoin tenant if you already have an active trial or production tenant**. Instead, we will assign the license obtained as part of this subscription to your existing tenant.
 
 For **new customers**, we will provision a new RealmJoin tenant once below steps are completed. **We will require our \*.onmicrosoft.com domain for this**. Please allow up to 1 business day for us to complete the provisioning.
 {% endhint %}
@@ -56,7 +56,7 @@ In case we have extended a **Private Offer** to you or your MSP/distribution has
 <figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-The random order of **Base Fees** und **Additional Users** under the **Price** information is attributed to limitations of the Azure Marketplace. Later during the the enrolment process, we will provide you with transparent information on the expected licensing fees.
+The random order of **Base Fees** und **Additional Users** under the **Price** information is attributed to limitations of the Microsoft Marketplace. Later during the the enrolment process, we will provide you with transparent information on the expected licensing fees.
 {% endhint %}
 {% endstep %}
 
@@ -121,10 +121,10 @@ For a more detailed cost breakdown of your base and additional user fees, please
 
 ## Plan Overview
 
-RealmJoin is available in two [editions](./#realmjoin-plans) via separate offers on Azure Marketplace.
+RealmJoin is available in two [editions](./#realmjoin-plans) via separate offers on Microsoft Marketplace.
 
-* [RealmJoin Apps](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.realmjoin-apps-transactable-prod?tab=Overview)
-* [RealmJoin Enterprise](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.realmjoin-enterprise-transactable-prod?tab=Overview)
+* [RealmJoin Apps](https://marketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.realmjoin-apps-transactable-prod?tab=Overview)
+* [RealmJoin Enterprise](https://marketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.realmjoin-enterprise-transactable-prod?tab=Overview)
 
 Subscriptions for both editions of RealmJoin are available based on a **monthly** or **annual** renewal interval.
 
@@ -191,12 +191,12 @@ In case you would like to test RealmJoin, simply [self-enrol your tenant via our
 
 ## FAQs
 
-### Why is my Azure Marketplace purchase not working?
+### Why is my Microsoft Marketplace purchase not working?
 
-You may encounter problems when purchasing through Azure Marketplace. Here is a list of reasons, why buying through Azure Marketplace may fail:
+You may encounter problems when purchasing through Microsoft Marketplace. Here is a list of reasons, why buying through Microsoft Marketplace may fail:
 
-1. You do not have permissions in your Azure tenant to purchase through Azure Marketplace. You must be assigned the role of Owner or Contributor in the Azure subscription you want to pay with.
-2. The subscription belongs to an Enterprise Agreement (EA) and the EA admin disabled Azure Marketplace purchases. Or the EA admin has enabled purchases only for free offers and the offer is a paid offer. Please see [here](https://learn.microsoft.com/en-us/marketplace/purchase-control-options) for details.
+1. You do not have permissions in your Azure tenant to purchase through Microsoft Marketplace. You must be assigned the role of Owner or Contributor in the Azure subscription you want to pay with.
+2. The subscription belongs to an Enterprise Agreement (EA) and the EA admin disabled Microsoft Marketplace purchases. Or the EA admin has enabled purchases only for free offers and the offer is a paid offer. Please see [here](https://learn.microsoft.com/en-us/marketplace/purchase-control-options) for details.
 3.  The subscription you're using belongs to a billing account in a region where the offer isn't available.\
     Our Marketplace offers are available in the following countries/regions:
 
