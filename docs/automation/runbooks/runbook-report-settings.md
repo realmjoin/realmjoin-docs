@@ -24,6 +24,8 @@ The functions that consume these settings — [`Send-RjRbReportEmail`](../../dev
 
 We recommend using a dedicated shared mailbox, such as `realmjoin-report@contoso.com`. This mailbox will be used as the sender address for all reports. You can use a no-reply address, as recipients are not expected to respond to automated reports.
 
+> **Note:** The sender address must be a user or shared mailbox — a Microsoft 365 group cannot send mail via the Graph API. Group addresses as report **recipients** work technically, but are not recommended: whether members actually receive the email depends on the group's follow/subscription settings, and delivery failures are only visible as non-delivery reports in the sender mailbox.
+
 ### Configuration
 
 As described in detail in the [JSON Based Customizing](https://docs.realmjoin.com/automation/runbooks/runbook-customization#json-based-customizing) documentation, navigate to [RealmJoin Runbook Customization](https://portal.realmjoin.com/settings/runbooks-customizations) in the RealmJoin Portal (Settings > Runbook Customizations).
