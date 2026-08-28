@@ -29,6 +29,10 @@ Centralized email settings (sender address, service desk info) are documented in
 
 A licensed Microsoft 365 mailbox (typically a dedicated shared mailbox such as `realmjoin-report@contoso.com`) is required as the `From` address. The Automation Account's managed identity must be allowed to send on behalf of that mailbox via the Graph `Mail.Send` application permission (scoped via RBAC for Applications if you want to restrict the identity to a single mailbox).
 
+> **The sender must not be a Microsoft 365 group.** The function sends via the Graph endpoint `/users/{EmailFrom}/sendMail` — a Microsoft 365 group is not a user object, so the call fails. Use a user or shared mailbox.
+>
+> Microsoft 365 group addresses as **recipients** are technically accepted, but **not recommended**: the message may only reach the group mailbox (members get a personal copy only if they follow the group), the group's delivery management may reject the sender, and delivery failures surface only as an NDR in the sender mailbox — the runbook itself still reports success. Prefer individual mailbox addresses.
+
 ### Graph permissions
 
 | Scenario | Required permission |
@@ -69,8 +73,8 @@ This produces a fully branded RealmJoin email with the default header and footer
 
 | Parameter | Type | Description |
 |---|---|---|
-| `EmailFrom` | `string` | User principal name or object id of the sender mailbox. Used as `/users/{id}/sendMail`. |
-| `EmailTo` | `string` | Recipient address. **Single string** — multiple addresses are passed as a comma-separated list, see below. |
+| `EmailFrom` | `string` | User principal name or object id of the sender mailbox. Used as `/users/{id}/sendMail`. Must be a user or shared mailbox — a Microsoft 365 group is not a user object and the send fails. |
+| `EmailTo` | `string` | Recipient address. **Single string** — multiple addresses are passed as a comma-separated list, see below. Microsoft 365 group addresses are accepted but not recommended — delivery to members is not guaranteed and failures are not visible to the runbook. |
 | `Subject` | `string` | Subject line. Also injected into the HTML `<title>` element. |
 | `MarkdownContent` | `string` | Report body in Markdown. See [Markdown Support](#markdown-support) for the supported syntax. |
 
