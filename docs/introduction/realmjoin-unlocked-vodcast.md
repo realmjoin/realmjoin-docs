@@ -27,7 +27,7 @@ The vodcast is hosted by Dr. Moritz Pohl of our product team, featuring rotating
 
 ***
 
-#### Episode 1: Wrap-up & What's New ![Views](https://img.shields.io/youtube/views/pm-VfgOB1kc?style=flat-square\&label=Views\&color=red)
+#### Episode 1: Wrap-up & What's New [![Watch on YouTube](https://img.shields.io/badge/YouTube-Watch-red?style=flat-square\&logo=youtube)](https://www.youtube.com/watch?v=pm-VfgOB1kc)
 
 In this kick-off episode, we take a deep dive into the evolution of RealmJoin over the last 12 to 18 months. We discuss how the product has transitioned from a specialized patch management tool to a comprehensive "Companion to Intune."
 
@@ -47,7 +47,7 @@ In this kick-off episode, we take a deep dive into the evolution of RealmJoin ov
 
 ***
 
-#### Episode 2: RealmJoin Self-Service update ![Views](https://img.shields.io/youtube/views/y2NJ8AuRBkA?style=flat-square\&label=Views\&color=red)
+#### Episode 2: RealmJoin Self-Service update [![Watch on YouTube](https://img.shields.io/badge/YouTube-Watch-red?style=flat-square\&logo=youtube)](https://www.youtube.com/watch?v=y2NJ8AuRBkA)
 
 In our second episode, Moritz  is joined by **Jonas Heckmann (Cloud Engineer & RealmJoin Core Team)** to shift the focus to user empowerment, data accessibility, and platform compatibility. They dive into key updates including the brand-new user self-service app catalog, extended reporting downloads for better analytics, and a detailed look at native ARM support.
 
