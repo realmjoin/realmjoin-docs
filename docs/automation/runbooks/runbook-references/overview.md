@@ -106,6 +106,14 @@ Each category contains multiple runbooks that are further divided into subcatego
 | [Report Expiring Application Credentials (Scheduled)](org/applications/report-expiring-application-credentials_scheduled.md) | List expiry date of all Application Registration credentials |
 | [Update Application Registration](org/applications/update-application-registration.md) | Update an application registration in Azure AD |
 
+<a name='org-collab'></a>
+### Collab
+| Runbook Name | Synopsis |
+| --- | --- |
+| [Check Onedrive Status](org/collab/check-onedrive-status.md) | Check the status of a user's OneDrive |
+| [List Sharepoint Sitecollection Permission](org/collab/list-sharepoint-sitecollection-permission.md) | List all members and administrators of a SharePoint Online site collection |
+| [Report Sharepoint Tenant Storage (Scheduled)](org/collab/report-sharepoint-tenant-storage_scheduled.md) | Monitor SharePoint Online tenant storage and alert when thresholds are exceeded |
+
 <a name='org-devices'></a>
 ### Devices
 | Runbook Name | Synopsis |
@@ -118,8 +126,11 @@ Each category contains multiple runbooks that are further divided into subcatego
 | [Dedup Device Names (Scheduled)](org/devices/dedup-device-names_scheduled.md) | Detect and rename duplicate Intune device display names using a prefix and random suffix |
 | [Delete Stale Devices (Scheduled)](org/devices/delete-stale-devices_scheduled.md) | Scheduled deletion of stale devices based on last activity date and platform |
 | [Get Bitlocker Recovery Key](org/devices/get-bitlocker-recovery-key.md) | Get the BitLocker recovery key |
+| [List Mobile Devices](org/devices/list-mobile-devices.md) | Lists all managed mobile devices (Android, iOS/iPadOS) with mobile-specific inventory, security and network details. |
+| [Notify Users About Low Diskspace (Scheduled)](org/devices/notify-users-about-low-diskspace_scheduled.md) | Notify primary users about low disk space on their devices via email |
 | [Notify Users About Stale Devices (Scheduled)](org/devices/notify-users-about-stale-devices_scheduled.md) | Notify primary users about their stale devices via email |
 | [Outphase Devices](org/devices/outphase-devices.md) | Remove or outphase multiple devices |
+| [Report Devices Low Diskspace (Scheduled)](org/devices/report-devices-low-diskspace_scheduled.md) | Scheduled report of managed devices running low on free disk space. |
 | [Report Devices Without Primary User (Scheduled)](org/devices/report-devices-without-primary-user_scheduled.md) | Reports all managed devices in Intune that do not have a primary user assigned. |
 | [Report Primary User Mismatch (Scheduled)](org/devices/report-primary-user-mismatch_scheduled.md) | Compare primary user assignments in Intune against RealmJoin for Windows managed devices |
 | [Report Stale Devices (Scheduled)](org/devices/report-stale-devices_scheduled.md) | Scheduled report of stale devices based on last activity date and platform. |
@@ -163,6 +174,7 @@ Each category contains multiple runbooks that are further divided into subcatego
 | [Monitor Service Health (Scheduled)](org/general/monitor-service-health_scheduled.md) | Alert by email on newly announced Microsoft 365 Service Health issues |
 | [Office365 License Report](org/general/office365-license-report.md) | Generate an Office 365 licensing report |
 | [Report Apple MDM Cert Expiry (Scheduled)](org/general/report-apple-mdm-cert-expiry_scheduled.md) | Monitor/Report expiry of Apple device management certificates |
+| [Report Intune Enrollment Readiness](org/general/report-intune-enrollment-readiness.md) | Report Intune enrollment readiness for a set of users |
 | [Report License Assignment (Scheduled)](org/general/report-license-assignment_scheduled.md) | Generate and email a license availability report based on thresholds |
 | [Report Pim Activations (Scheduled)](org/general/report-pim-activations_scheduled.md) | Scheduled report on PIM activations |
 | [Sync All Devices](org/general/sync-all-devices.md) | Sync all Intune Windows devices |
@@ -226,6 +238,7 @@ Each category contains multiple runbooks that are further divided into subcatego
 | [Assign Groups By Template](user/general/assign-groups-by-template.md) | Assign cloud-only groups to a user based on a template |
 | [Assign Or Unassign License](user/general/assign-or-unassign-license.md) | Assign or remove a license for a user via group membership |
 | [Assign Windows365](user/general/assign-windows365.md) | Assign and provision a Windows 365 Cloud PC for a user |
+| [Check Intune Enrollment Readiness](user/general/check-intune-enrollment-readiness.md) | Check whether a user is ready to enrol devices in Microsoft Intune |
 | [List Group Memberships](user/general/list-group-memberships.md) | List group memberships for this user |
 | [List Group Ownerships](user/general/list-group-ownerships.md) | List group ownerships for this user. |
 | [List Manager](user/general/list-manager.md) | List manager information for this user |

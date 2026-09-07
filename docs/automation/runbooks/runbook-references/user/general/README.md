@@ -11,6 +11,7 @@ On this overview page you can find all User Runbooks in the General subcategory.
 - [Assign Groups By Template](assign-groups-by-template.md)
 - [Assign Or Unassign License](assign-or-unassign-license.md)
 - [Assign Windows365](assign-windows365.md)
+- [Check Intune Enrollment Readiness](check-intune-enrollment-readiness.md)
 - [List Group Memberships](list-group-memberships.md)
 - [List Group Ownerships](list-group-ownerships.md)
 - [List Manager](list-manager.md)

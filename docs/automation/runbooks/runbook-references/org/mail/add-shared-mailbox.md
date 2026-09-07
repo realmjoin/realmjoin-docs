@@ -18,7 +18,7 @@ rjgit-org_mail_add-shared-mailbox
 
 | Property | Value |
 | --- | --- |
-| Version | 1.0.1 |
+| Version | 1.0.2 |
 | Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 

@@ -4,7 +4,7 @@ description: Permanently offboard a user
 ---
 
 ## Description
-Permanently offboards a user by revoking access, disabling or deleting the account, adjusting group and license assignments, and optionally exporting memberships. Optionally removes or replaces group ownerships when required.
+Permanently offboards a user by revoking access, disabling or deleting the account, adjusting group and license assignments, and optionally exporting memberships. Optionally removes or replaces group ownerships when required and replaces the user as manager of direct reports and as sponsor of (guest) users.
 
 ## Location
 User → General → Offboard User Permanently
@@ -17,8 +17,8 @@ rjgit-user_general_offboard-user-permanently
 
 | Property | Value |
 | --- | --- |
-| Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Az.Storage (>= 9.7.2)<br>ExchangeOnlineManagement (>= 3.9.2) |
+| Version | 1.2.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.5.2)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,7 +26,7 @@ rjgit-user_general_offboard-user-permanently
 ### Application permissions
 - **Type**: Microsoft Graph
   - User.ReadWrite.All
-    - *Disables sign-in, revokes sessions, removes licenses and deletes the user object*
+    - *Disables sign-in, revokes sessions, removes licenses, replaces manager and sponsor references and deletes the user object*
   - Group.ReadWrite.All
     - *Reads groups and transfers or removes the user's group ownerships*
   - GroupMember.ReadWrite.All
@@ -36,7 +36,7 @@ rjgit-user_general_offboard-user-permanently
     - *Opens the app-only Exchange Online session used to remove the user from distribution groups*
 
 ### Permission notes
-Azure IaaS: Contributor access on subscription or resource group used for the export
+Azure Storage Account: 'Storage Account Contributor' role for the Automation Account's managed identity on the target storage account - the upload retrieves the account keys via listKeys (only required when exportGroupMemberships is used)
 
 ### RBAC roles
 - User Administrator
@@ -56,6 +56,25 @@ User principal name of the target user.
 | Default Value |  |
 | Type | String |
 | Hidden in portal | yes (preset via runbook customization) |
+
+### UserTypeSelector
+
+Controls which user types this runbook may be run against: all users, member users only or guest users only. The run aborts before any change if the selected user does not match. To enforce the restriction, configure it as a tenant setting and hide the parameter via RunbookCustomization - otherwise operators can change it in the runbook form.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | 0 |
+| Type | Int32 |
+| Portal display name | Restrict to a user type |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Allow all user types (Members and Guests) | 0 |
+| Members only | 1 |
+| Guests only | 2 |
 
 ### DeleteUser
 
@@ -94,70 +113,59 @@ If set to true, revokes the user's refresh tokens and active sessions.
 | Default Value | True |
 | Type | Boolean |
 
-### exportResourceGroupName
-
-Azure Resource Group name for exporting data to storage.
-
-| Property | Value |
-| --- | --- |
-| Required | false |
-| Default Value |  |
-| Type | String |
-| Hidden in portal | yes (preset via runbook customization) |
-
-### exportStorAccountName
-
-Azure Storage Account name for exporting data to storage.
-
-| Property | Value |
-| --- | --- |
-| Required | false |
-| Default Value |  |
-| Type | String |
-| Hidden in portal | yes (preset via runbook customization) |
-
-### exportStorAccountLocation
-
-Azure region used when creating the Storage Account.
-
-| Property | Value |
-| --- | --- |
-| Required | false |
-| Default Value |  |
-| Type | String |
-| Hidden in portal | yes (preset via runbook customization) |
-
-### exportStorAccountSKU
-
-SKU name used when creating the Storage Account.
-
-| Property | Value |
-| --- | --- |
-| Required | false |
-| Default Value |  |
-| Type | String |
-| Hidden in portal | yes (preset via runbook customization) |
-
-### exportStorContainerGroupMembershipExports
-
-Container name used for group membership exports.
-
-| Property | Value |
-| --- | --- |
-| Required | false |
-| Default Value |  |
-| Type | String |
-| Hidden in portal | yes (preset via runbook customization) |
-
 ### exportGroupMemberships
 
-If set to true, exports the user's current group memberships to Azure Storage.
+If set to true, exports the user's current group memberships to an Azure Storage Account and returns a time-limited download link.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### ContainerName
+
+Storage container name used for the group membership export.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | user-leaver-groupmemberships |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### ResourceGroupName
+
+Resource group that contains the storage account.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### StorageAccountName
+
+Storage account name used for the upload.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
+
+### LinkExpiryDays
+
+Number of days until the generated download link expires.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | 6 |
+| Type | Int32 |
 | Hidden in portal | yes (preset via runbook customization) |
 
 ### ChangeLicensesSelector
@@ -254,6 +262,42 @@ User who will take over group or resource ownership if required.
 | Required | false |
 | Default Value |  |
 | Type | String |
+
+### ReplaceManagerReferences
+
+If set to true, all direct reports of the offboarded user get the replacement person assigned as their new manager. Without a resolvable replacement, affected users are only listed for manual follow-up.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | False |
+| Type | Boolean |
+| Portal display name | Handle manager references |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Keep this user as manager of their direct reports | false |
+| Set the replacement as manager of the direct reports | true |
+
+### ReplaceSponsorReferences
+
+If set to true, the offboarded user is replaced by the replacement person wherever they are set as sponsor (typically on guest users). Without a resolvable replacement, affected users are only listed for manual follow-up. Sponsorships that the user only holds through a group membership are left untouched, as they remain valid after the offboarding. As Graph offers no reverse lookup for sponsors, this option scans all users of the tenant.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | False |
+| Type | Boolean |
+| Portal display name | Handle sponsor references |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Keep this user as sponsor | false |
+| Replace this user as sponsor of (guest) users | true |
 
 
 

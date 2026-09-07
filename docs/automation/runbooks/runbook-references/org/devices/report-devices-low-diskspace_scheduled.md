@@ -1,6 +1,6 @@
 ---
-title: Report Stale Devices (Scheduled)
-description: Scheduled report of stale devices based on last activity date and platform.
+title: Report Devices Low Diskspace (Scheduled)
+description: Scheduled report of managed devices running low on free disk space.
 ---
 
 {% hint style="info" %}
@@ -8,11 +8,32 @@ This is a scheduled runbook. It is designed to run on a recurring schedule rathe
 {% endhint %}
 
 ## Description
-Identifies and lists devices that haven't been active for a specified number of days.
+Identifies and lists Intune managed devices whose free disk space is below a configurable threshold, either a fixed amount of free space in gigabytes or a percentage of the total disk size.
+The result can be narrowed down by platform and by manufacturer and model filters, and each reported device is rated as Critical or Warning depending on how far below the threshold it is.
 Automatically sends a report via email with CSV and/or Excel (xlsx) attachments.
 The report files can also be uploaded to an Azure Storage Account, returning time-limited download links.
 The ReportFileFormat parameter controls which file formats are generated and delivered (CSV only, CSV & XLSX, or XLSX only).
 When the CSV attachment exceeds the email size limit and "CSV & XLSX" is selected, the email falls back to the Excel workbook alone.
+
+## Data freshness and limitations
+
+The free and total disk space values are read from the Intune hardware inventory of each managed device. This inventory is refreshed with the regular device check-in, so the report describes the state of the last successful inventory rather than the current state of the device. Use the **Last Sync** column of the report to judge how up to date an individual row is.
+
+Devices that report a total disk size of zero bytes have no usable storage inventory. This is common for Android Enterprise work profiles and also happens on devices that have not completed an inventory yet. Such devices are excluded from the evaluation instead of being reported as "0 GB free", and their number is shown in the console output and in the email summary.
+
+Windows and macOS are included by default, iOS/iPadOS and Android are not. The default threshold of 20 GB is dimensioned for desktop disks and would report a large number of perfectly healthy mobile devices. When you enable the mobile platforms, the percentage based threshold (`ThresholdType` = *Free space below a percentage of the disk size*) usually gives more meaningful results.
+
+## Threshold and severity
+
+`ThresholdType` selects whether a device is reported based on a fixed amount of free space (`FreeSpaceThresholdGB`) or based on the share of free space relative to its disk size (`FreeSpacePercentThreshold`). Only the field belonging to the selected type is shown in the portal.
+
+Every reported device is rated: devices below half of the configured threshold are marked as **Critical**, all other reported devices as **Warning**. In the Excel workbook these ratings are highlighted in red and yellow.
+
+## Report delivery
+
+Report files are only generated when a delivery method is used, that is when a recipient (`EmailTo`) is provided and/or `CreateDownloadLink` is enabled. Without either, the result is read directly in the RealmJoin portal output. Email delivery and download link generation are independent and can be combined.
+
+For the download link, the report files are uploaded to the Azure storage account configured in the `RJReport.StorageAccount.*` tenant settings, and time-limited SAS download links are returned. The storage upload authenticates with the Automation account's managed identity; that identity needs the **Storage Account Contributor** RBAC role on the target storage account (this is an Azure RBAC assignment, not a Graph application permission).
 
 ## Setup regarding email sending
 
@@ -36,71 +57,98 @@ Setup instructions and image requirements: [Email branding](https://docs.realmjo
 
 
 ## Location
-Organization → Devices → Report Stale Devices (Scheduled)
+Organization → Devices → Report Devices Low Diskspace (Scheduled)
 
 **Full Runbook name**
 
-rjgit-org_devices_report-stale-devices_scheduled
+rjgit-org_devices_report-devices-low-diskspace_scheduled
 
 ## Details
 
 | Property | Value |
 | --- | --- |
-| Version | 1.5.0 |
+| Version | 1.0.0 |
 | Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.5.2) |
 | Schedulable | yes |
 
 ## Notes
-This runbook generates a comprehensive report of stale devices and delivers it via email.
-The report includes device details, platform breakdowns, and exports report files (CSV/xlsx) for further analysis.
+This runbook complements the reporting foundation and delivers a recurring overview of devices that are about to run out of disk space,
+so that affected users can be contacted before the lack of free space starts to block updates, app installations or profile synchronization.
 
 Prerequisites:
 - EmailFrom parameter must be configured in runbook customization (RJReport.EmailSender setting)
 
-Common Use Cases:
-- Regular device inventory audits and compliance reporting
-- Identifying devices for retirement or decommissioning
-- Security reviews to find potentially lost devices
-- Monitoring device health across the organization
-- Using MaxDays parameter for staged reporting (e.g., 30-60 days, 60-90 days)
-- User scope filtering to focus on specific departments or exclude service accounts
+Data source and freshness:
+The free and total disk space values are taken from the Intune hardware inventory of each device, which is refreshed with the regular device check-in.
+They therefore describe the state of the last successful inventory and not necessarily the current state, so the Last Sync column of the report should be used to judge how up to date a row is.
+Devices that report a total disk size of zero bytes have no usable storage inventory (this is common for Android Enterprise work profiles) and are excluded from the evaluation, but their number is reported.
 
-The runbook supports optional user scope filtering to include or exclude devices based on primary user group membership.
+Platform defaults:
+Windows and macOS are included by default, iOS/iPadOS and Android are not, because the default threshold in gigabytes is dimensioned for desktop disks
+and would report a large number of perfectly healthy mobile devices. When mobile platforms are enabled, the percentage based threshold usually gives more meaningful results.
+
+Common Use Cases:
+- Recurring disk space monitoring across the managed device fleet
+- Finding devices that are likely to fail feature updates or app deployments because of insufficient free space
+- Preparing targeted user communication or cleanup campaigns
+- Checking a specific hardware generation via the manufacturer and model filters
 
 ## Permissions
 
 ### Application permissions
 - **Type**: Microsoft Graph
   - DeviceManagementManagedDevices.Read.All
-    - *Lists Intune devices filtered by lastSyncDateTime to find stale devices*
-  - Directory.Read.All
-    - *Reads include/exclude group members, primary user details and the tenant name*
+    - *Reads Intune managed devices including freeStorageSpaceInBytes and totalStorageSpaceInBytes to find devices below the low disk space threshold*
+  - Organization.Read.All *(optional — feature: Email report)*
+    - *Reads /organization for the tenant name used in the report file names, the email subject and the email footer; without it the runbook falls back to 'Unknown Tenant'*
   - Mail.Send *(optional — feature: Email report)*
     - *Sends the report email via Send-RjReportEmail when EmailTo is configured*
 
+### Permission notes
+Azure Storage Account: 'Storage Account Contributor' role for the Automation Account's managed identity on the target storage account - the upload retrieves the account keys via listKeys (only required when CreateDownloadLink is used)
+
 
 ## Parameters
-### Days
+### ThresholdType
 
-Number of days without activity to be considered stale.
-
-| Property | Value |
-| --- | --- |
-| Required | false |
-| Default Value | 30 |
-| Type | Int32 |
-| Portal display name | Minimum Days Without Activity |
-
-### MaxDays
-
-Optional maximum number of days without activity. If set, only devices inactive between Days and MaxDays will be included.
+Determines how low disk space is detected, either by a fixed amount of free space in gigabytes or by the percentage of free space relative to the disk size.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
-| Default Value |  |
+| Default Value | Free space in GB |
+| Type | String |
+| Portal display name | How should low disk space be determined? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Free space below a fixed size (GB) |  |
+| Free space below a percentage of the disk size (%) |  |
+
+### FreeSpaceThresholdGB
+
+Devices with less free disk space than this value in gigabytes are reported. Only used when the threshold type is set to free space in gigabytes.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | 20 |
 | Type | Int32 |
-| Portal display name | (Optional) Maximum Days Without Activity |
+| Portal display name | Low Disk Space Threshold (free GB) |
+
+### FreeSpacePercentThreshold
+
+Devices with a lower percentage of free disk space than this value are reported. Only used when the threshold type is set to free space in percent.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | 10 |
+| Type | Int32 |
+| Portal display name | Low Disk Space Threshold (free %) |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### Windows
 
@@ -126,14 +174,14 @@ Include macOS devices in the results.
 
 ### iOS
 
-Include iOS devices in the results.
+Include iOS and iPadOS devices in the results.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
-| Default Value | True |
+| Default Value | False |
 | Type | Boolean |
-| Portal display name | Include iOS Devices |
+| Portal display name | Include iOS/iPadOS Devices |
 
 ### Android
 
@@ -142,9 +190,31 @@ Include Android devices in the results.
 | Property | Value |
 | --- | --- |
 | Required | false |
-| Default Value | True |
+| Default Value | False |
 | Type | Boolean |
 | Portal display name | Include Android Devices |
+
+### ManufacturerFilter
+
+Optional comma-separated list of manufacturer names. A device is included when its manufacturer contains one of the entries. Leave empty to include all manufacturers.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Portal display name | Manufacturer Filter (comma-separated, substring match, leave empty for all) |
+
+### ModelFilter
+
+Optional comma-separated list of model names. A device is included when its model contains one of the entries. Leave empty to include all models.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value |  |
+| Type | String |
+| Portal display name | Model Filter (comma-separated, substring match, leave empty for all) |
 
 ### EmailFrom
 
@@ -224,7 +294,7 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 | Property | Value |
 | --- | --- |
 | Required | false |
-| Default Value | CSV & XLSX |
+| Default Value | XLSX only |
 | Type | String |
 | Portal display name | Report file format |
 
@@ -261,7 +331,7 @@ Storage container name used for the upload. Configured per runbook (not a global
 | Property | Value |
 | --- | --- |
 | Required | false |
-| Default Value | report-stale-devices |
+| Default Value | report-devices-low-diskspace |
 | Type | String |
 | Hidden in portal | yes (preset via runbook customization) |
 
@@ -296,42 +366,6 @@ Number of days until the generated download link expires. Sourced from the RJRep
 | Required | false |
 | Default Value | 6 |
 | Type | Int32 |
-| Hidden in portal | yes (preset via runbook customization) |
-
-### UseUserScope
-
-Enable user scope filtering to include or exclude devices based on primary user group membership.
-
-| Property | Value |
-| --- | --- |
-| Required | false |
-| Default Value | False |
-| Type | Boolean |
-| Portal display name | Use User Scope Filtering |
-| Hidden in portal | yes (preset via runbook customization) |
-
-### IncludeUserGroup
-
-Only include devices whose primary users are members of this group. Requires UseUserScope to be enabled.
-
-| Property | Value |
-| --- | --- |
-| Required | false |
-| Default Value |  |
-| Type | String |
-| Portal display name | Users to include (Group) |
-| Hidden in portal | yes (preset via runbook customization) |
-
-### ExcludeUserGroup
-
-Exclude devices whose primary users are members of this group. Requires UseUserScope to be enabled.
-
-| Property | Value |
-| --- | --- |
-| Required | false |
-| Default Value |  |
-| Type | String |
-| Portal display name | Users to exclude (Group) |
 | Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailTo

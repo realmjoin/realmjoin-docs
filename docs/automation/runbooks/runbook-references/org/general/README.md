@@ -40,6 +40,7 @@ On this overview page you can find all Organization Runbooks in the General subc
 - [Monitor Service Health (Scheduled)](monitor-service-health_scheduled.md)
 - [Office365 License Report](office365-license-report.md)
 - [Report Apple MDM Cert Expiry (Scheduled)](report-apple-mdm-cert-expiry_scheduled.md)
+- [Report Intune Enrollment Readiness](report-intune-enrollment-readiness.md)
 - [Report License Assignment (Scheduled)](report-license-assignment_scheduled.md)
 - [Report Pim Activations (Scheduled)](report-pim-activations_scheduled.md)
 - [Sync All Devices](sync-all-devices.md)
