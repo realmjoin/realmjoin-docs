@@ -21,7 +21,7 @@ rjgit-org_collab_report-sharepoint-tenant-storage_scheduled
 
 | Property | Value |
 | --- | --- |
-| Version | 1.2.0 |
+| Version | 1.3.2 |
 | Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>PnP.PowerShell (>= 3.4.1) |
 | Schedulable | yes |
 
@@ -75,9 +75,9 @@ SharePoint Online: grant Sites.FullControl.All on the 'Office 365 SharePoint Onl
 
 
 ## Parameters
-### AlertLowStorageLimitInMB
+### AlertLowStorageLimitInGB
 
-Low-storage alert threshold in megabytes. An alert email is sent when free tenant storage falls below this limit.
+
 
 | Property | Value |
 | --- | --- |
@@ -85,9 +85,9 @@ Low-storage alert threshold in megabytes. An alert email is sent when free tenan
 | Default Value | 200 |
 | Type | Int32 |
 
-### AlertUnusedStorageLimitInMB
+### AlertUnusedStorageLimitInGB
 
-Unused-storage alert threshold in megabytes. An alert email is sent when unused licensed storage (storage assigned but not consumed by any site) rises above this limit, indicating storage that could be reclaimed.
+
 
 | Property | Value |
 | --- | --- |
