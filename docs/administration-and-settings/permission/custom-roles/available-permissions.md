@@ -158,6 +158,7 @@ Individual information panels/tabs shown on [Device Details](../../../ugd-manage
 | Permission                                | Requires | Description                                                           |
 | ----------------------------------------- | -------- | --------------------------------------------------------------------- |
 | `CanSeeDeviceSecurityInformation`         | —        | See a device's security state, especially device compliance.          |
+| `CanSeeDeviceCompliancePolicies`          | —        | See the detailed device compliance policies and their evaluation on the Compliance tab of a device's details. |
 | `CanSeeDeviceExtendedSecurityInformation` | —        | See extended security info from Defender for Endpoint (if available). |
 | `CanSeeDeviceSecurityRecommendations`     | —        | See Microsoft Security Center recommendations for a device.           |
 | `CanSeeDeviceSecurityVulnerabilities`     | —        | See Microsoft Security Center vulnerabilities for a device.           |
