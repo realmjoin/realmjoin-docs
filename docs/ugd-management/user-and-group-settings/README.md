@@ -23,7 +23,13 @@ Default setting values can be defined at different scopes. The broadest scope is
 
 The built-in RealmJoin group "RealmJoin - All Users" can be used to override tenant-wide defaults across all users. Settings assigned to a real user or group scope will in turn override both of these, as individual group and user assignments carry the highest priority.
 
-The resulting priority order is: tenant-wide client config < RealmJoin - All Users < any user or group scope.
+The resulting priority order is: tenant-wide client config < RealmJoin - All Users < group scope < user scope.
+
+If the same setting is assigned to several of the user's groups, one of those group values is applied; assign a setting to a single group per user to keep the result predictable. A setting assigned directly to the user always overrides any group value.
+
+{% hint style="info" %}
+Settings are resolved for the signed-in user only. Unlike [package assignments](../../application-management/packages/package-deployment.md#assignment-priority-and-conflicts), group memberships of the device are not evaluated for settings, and there are no Exclude or Uninstall semantics — a setting is either assigned at a scope or it is not.
+{% endhint %}
 
 Example:
 

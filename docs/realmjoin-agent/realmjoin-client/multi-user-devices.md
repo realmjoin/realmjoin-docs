@@ -57,6 +57,8 @@ Packages are **assigned directly to devices** (e.g. put a shared device in corre
 Please ask RJ support, if **device assignment feature** is active in your tenant.
 {% endhint %}
 
+If the device and the signed-in user are assigned to different groups of the same package (e.g. the device is in the Uninstall or Exclude group while the user is in the Main group), the assignments are resolved deterministically. See [Assignment priority and conflicts](../../application-management/packages/package-deployment.md#assignment-priority-and-conflicts) for the exact order.
+
 #### Option B: Assign Packages to DEM Users
 
 Packages can alternatively be **assigned directly to the DEM user account**. Secondary users will automatically inherit assigned software. For this, a DEM account per use-case might be useful.
