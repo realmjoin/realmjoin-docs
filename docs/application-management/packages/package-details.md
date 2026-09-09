@@ -64,7 +64,7 @@ This tab will show the long description, license and technical help information 
 
 #### Assignments and Deployment Status
 
-Use these tables to assign additional groups and check the deployment status of apps for devices and/or users.<br>
+Use these tables to assign additional groups and check the deployment status of apps for devices and/or users. If a device and its user end up in conflicting groups of the same package, see [Assignment priority and conflicts](package-deployment.md#assignment-priority-and-conflicts) for how this is resolved.<br>
 
 <figure><img src="../../.gitbook/assets/image (365).png" alt=""><figcaption></figcaption></figure>
 
