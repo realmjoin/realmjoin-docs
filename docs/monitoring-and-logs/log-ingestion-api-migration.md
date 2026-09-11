@@ -121,7 +121,7 @@ Grant-RJUpdateComplianceWorkspaceAccess -WorkspaceId "<WorkspaceId>" 6>&1
 
 * The first lines install or update the RealmJoin module and import it.
 * `Set-RJLogAnalyticsWorkspace` performs the actual migration and registers the result with RealmJoin using the `-Token`.
-* `Grant-RJUpdateComplianceWorkspaceAccess` only appears if you have configured an [Update Compliance workspace](log-analytics.md#windows-update-for-business-reports-integration). It grants RealmJoin *Log Analytics Reader* on that workspace so Windows Update data keeps working without your own app registration.
+* `Grant-RJUpdateComplianceWorkspaceAccess` only appears if you have configured an [Update Compliance workspace](log-analytics.md#windows-update-for-business-reports). It grants RealmJoin *Log Analytics Reader* on that workspace so Windows Update data keeps working without your own app registration.
 
 {% hint style="warning" %}
 Make sure `-ResourceGroupName`, `-WorkspaceName` and `-SubscriptionId` are present and point at your **existing** workspace. If `-WorkspaceName` is missing, the module creates a **new** workspace instead of migrating the existing one, and your old and new logs end up in different places. Add the missing parameter manually if needed.

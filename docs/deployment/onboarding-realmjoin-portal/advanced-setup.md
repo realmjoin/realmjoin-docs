@@ -20,15 +20,17 @@ The module is published on the [PowerShell Gallery](https://www.powershellgaller
 ## Prerequisites
 
 {% hint style="info" %}
-The required Microsoft Graph PowerShell modules are installed automatically the first time you run a command.
+The required Azure PowerShell modules (`Az.Accounts`, `Az.Resources`, `Az.Automation`) are installed automatically in the versions the module pins, for the current user, the first time you run a command.
 {% endhint %}
 
-* **PowerShell 5.1** or later
-* Sign in as a **Global Administrator** of your Entra ID tenant when prompted
-* The following Microsoft Graph permissions are needed to create the service principals and assign permissions:
-  * `Organization.Read.All`
-  * `Application.ReadWrite.All`
-  * `AppRoleAssignment.ReadWrite.All`
+* **PowerShell 5.1** or later (Windows PowerShell or PowerShell 7)
+* An account that can **create service principals and grant application permissions** in Microsoft Entra ID — for example *Global Administrator* or *Privileged Role Administrator*
+* Sign-in happens through `Connect-AzAccount`, which uses the **Azure PowerShell** first-party application. Tenants that restrict user consent may need an administrator to grant admin consent to that application first.
+* Access to the [PowerShell Gallery](https://www.powershellgallery.com/packages/RealmJoin) to install the module
+
+{% hint style="info" %}
+Since version 2.0, the module signs in with the **Azure PowerShell** application and the `Az` modules. Earlier versions used the Microsoft Graph PowerShell application instead — if your tenant only consented to that one, consent to the Azure PowerShell application is needed once.
+{% endhint %}
 
 ## Recommended Setup
 
@@ -47,13 +49,15 @@ To add all features or individual features, see [Other Commands](advanced-setup.
 {% step %}
 #### Open PowerShell on Windows/Mac
 
-We recommend installing and running the RealmJoin PowerShell module on your device's PowerShell rather than Azure CloudShell.
+We recommend installing and running the RealmJoin PowerShell module in a **freshly opened** PowerShell session on your own device rather than in Azure Cloud Shell. The module requires exact versions of the `Az.*` modules; if a different version is already loaded in the session — which is typically the case in Cloud Shell — it stops with a version conflict that cannot be resolved without opening a new session.
+
+An elevated ("Run as administrator") session is not required: modules are installed with `-Scope CurrentUser`.
 {% endstep %}
 
 {% step %}
 #### Copy and Run the RealmJoin Onboarding Script
 
-The script will prompt you to authenticate with Microsoft Graph. Sign in with your Global Administrator.
+The script will prompt you to sign in to Azure. Use an account that can create service principals and grant application permissions, for example your Global Administrator.
 
 ```powershell
 Install-Module -Force -Name RealmJoin
@@ -82,16 +86,16 @@ Once finished, the script will launch the RealmJoin Portal
 
 ### Interactive Setup
 
-For a guided, menu-driven experience:
+For a guided, menu-driven experience covering tenant setup, configuration changes, the Log Analytics workspace and the Automation Account:
 
 ```powershell
-Show-RJInteractiveSetup 6>&1
+Show-RJInteractiveSetup
 ```
 
 To review the available features before configuring anything:
 
 ```powershell
-Show-RJFeatureInfo 6>&1
+Show-RJFeatureInfo
 ```
 
 ### Custom Configuration
@@ -158,9 +162,18 @@ Update-RJTenant -ReadOnly 6>&1
 Update-RJTenant -AddFeatures @('SecurityFeatures') -WhatIf 6>&1
 ```
 
+### Azure Resources
+
+The module also deploys the companion Azure resources RealmJoin uses. These are not Graph permission features and are not selected with `-Features`:
+
+* `Set-RJLogAnalyticsWorkspace` — deploys the Log Analytics workspace with its custom tables and Data Collection Rules, see [Connecting Azure Log Analytics Workspace](../../monitoring-and-logs/log-analytics.md)
+* `Set-RJAutomationAccount` — deploys the RealmJoin Automation Account with a managed identity and the permissions it needs, see [Connecting Azure Automation](../../automation/connecting-azure-automation/)
+
+Both commands are generated with the matching parameters and an onboarding token on the relevant settings page in the RealmJoin Portal.
+
 ## Available Features
 
-Use these feature names with the `-Features`, `-AddFeatures`, and `-RemoveFeatures` parameters. Mandatory features are always enabled. The default configuration (`New-RJTenant` without parameters) enables every feature except **Client**.
+Use these feature names with the `-Features`, `-AddFeatures`, and `-RemoveFeatures` parameters. Mandatory features are always enabled. The default configuration (`New-RJTenant` without parameters) enables the features marked below; **SecurityFeatures** and **Client** have to be selected explicitly.
 
 | Feature              | Description                                                                | Default |
 | -------------------- | -------------------------------------------------------------------------- | :-----: |
@@ -170,20 +183,38 @@ Use these feature names with the `-Features`, `-AddFeatures`, and `-RemoveFeatur
 | `Autopilot`          | View Windows Autopilot deployment profiles and status                      | ☑️ |
 | `DeviceIntuneActions`| Execute privileged device actions (sync, restart, wipe, etc.)              | ☑️ |
 | `DeviceHealthScript` | Manage and deploy PowerShell remediation scripts to devices                | ☑️ |
+| `BitLockerRecoveryKeys` | View BitLocker recovery keys for managed devices                        | ☑️ |
+| `WindowsDeviceUpdateEnrollment` | Manage Windows Device Updates enrollment                        | ☑️ |
 | `SecurityFeatures`   | Advanced threat protection and security analytics (requires MDE licenses)  |    |
 | `Client`             | RealmJoin Agent — client application for device management                 |    |
 
 ## Troubleshooting
 
 {% hint style="warning" %}
-**"Insufficient permissions"** — Ensure the account you sign in with is a Global Administrator and can consent to the Microsoft Graph permissions listed under [Prerequisites](advanced-setup.md#prerequisites).
+**"Insufficient privileges"** — creating service principals and granting application permissions requires an appropriately privileged account, for example *Global Administrator* or *Privileged Role Administrator*. See [Prerequisites](advanced-setup.md#prerequisites).
+{% endhint %}
+
+{% hint style="warning" %}
+**"Need admin approval" or a consent error during sign-in** — sign-in uses the **Azure PowerShell** first-party application. If your tenant restricts user consent, an administrator has to grant admin consent to that application once.
+{% endhint %}
+
+{% hint style="warning" %}
+**"RealmJoin module is outdated - execution cannot proceed"** — every command verifies once per session that you are running the latest published version. Install the current version, then close the session and open a new one:
+
+```powershell
+Install-Module -Name RealmJoin -Force -Scope CurrentUser
+```
+{% endhint %}
+
+{% hint style="warning" %}
+**A module version conflict is reported** — an `Az.*` module in a version other than the one the module pins is already loaded. This cannot be fixed in the running session: close PowerShell, open a new session and run the command again.
 {% endhint %}
 
 If the module cannot be found, confirm the PowerShell Gallery is available and reinstall:
 
 ```powershell
-Get-PSRepository 6>&1
-Install-Module -Name RealmJoin -Force 6>&1
+Get-PSRepository
+Install-Module -Name RealmJoin -Force -Scope CurrentUser
 ```
 
 ### Getting Help
