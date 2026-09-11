@@ -61,6 +61,7 @@
 ## Automation
 
 * [Connecting Azure Automation](automation/connecting-azure-automation/README.md)
+  * [Switching to the RealmJoin managed app](automation/connecting-azure-automation/managed-app-migration.md)
   * [Runbook Management App Permissions](automation/connecting-azure-automation/required-permissions.md)
   * [Runbook Execution Requirements](automation/connecting-azure-automation/azure-ad-roles-and-permissions.md)
 * [Runbooks](automation/runbooks/README.md)
