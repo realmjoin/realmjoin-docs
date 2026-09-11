@@ -13,6 +13,10 @@ RealmJoin Portal can display possible issues with Windows updates like [Windows 
 
 Also, RealmJoin Portal will use Log Analytics to store Audit Log information and archive Runbook execution data past the default limits of Azure Automation (currently 30 days).
 
+{% hint style="warning" %}
+The setup described on this page uses the Azure Monitor **HTTP Data Collector API**, which Microsoft is retiring. If Log Analytics is already configured for your tenant, switch to the DCR-based Logs Ingestion API — see [Migrating to the Log Ingestion API](log-ingestion-api-migration.md).
+{% endhint %}
+
 ## Components
 
 ### Azure App Registration
