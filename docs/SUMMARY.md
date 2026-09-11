@@ -316,6 +316,7 @@
 ## Monitoring & Logs
 
 * [Connecting Azure Log Analytics Workspace](monitoring-and-logs/log-analytics.md)
+* [Migrating to the Log Ingestion API](monitoring-and-logs/log-ingestion-api-migration.md)
 * [Audit Log](monitoring-and-logs/audit-log.md)
 
 ## Developer Reference <a href="#dev-reference" id="dev-reference"></a>

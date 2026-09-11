@@ -1,163 +1,249 @@
 ---
 type: Monitoring & Logs
 description: >-
-  Connect an Azure Log Analytics workspace to RealmJoin Portal to surface
-  Windows Update issues and store audit and runbook data.
+  Connect an Azure Log Analytics workspace to RealmJoin Portal with the
+  RealmJoin PowerShell module to store audit, operational and runbook logs in
+  your own tenant.
 ---
 
 # Connecting Azure Log Analytics Workspace
 
 ## Overview
 
-RealmJoin Portal can display possible issues with Windows updates like [Windows Update SafeGuard Holds](https://docs.microsoft.com/en-us/windows/deployment/update/safeguard-holds) by integrating with [Windows Update for Business Reports](https://learn.microsoft.com/en-us/windows/deployment/update/wufb-reports-overview).
+RealmJoin Portal can use a Log Analytics workspace in your own Azure subscription to store
 
-Also, RealmJoin Portal will use Log Analytics to store Audit Log information and archive Runbook execution data past the default limits of Azure Automation (currently 30 days).
+* its **audit log** — every action performed in the Portal, see [Audit Log](audit-log.md)
+* its **operational logs**
+* **runbook logs**, archived beyond the maximum retention of Azure Automation (currently 30 days)
+
+Additionally, RealmJoin can read [Windows Update for Business Reports](https://learn.microsoft.com/en-us/windows/deployment/update/wufb-reports-overview) data from a Log Analytics workspace to display possible issues with Windows updates, such as [Windows Update Safeguard Holds](https://docs.microsoft.com/en-us/windows/deployment/update/safeguard-holds), on the [device's details page](../ugd-management/user-list/device-details.md). See [Windows Update for Business Reports](log-analytics.md#windows-update-for-business-reports).
+
+The workspace is set up with the [RealmJoin PowerShell module](../deployment/onboarding-realmjoin-portal/advanced-setup.md). The Portal generates a ready-to-copy command for you — there is nothing to fill in by hand.
+
+{% hint style="info" %}
+Is Log Analytics already configured for your tenant and using the deprecated Data Collector API? Then follow [Migrating to the Log Ingestion API](log-ingestion-api-migration.md) instead — it reuses your existing workspace and keeps your existing logs.
+{% endhint %}
 
 ## Components
 
-### Azure App Registration
+RealmJoin writes its logs through the Azure Monitor **Logs Ingestion API**, based on [Data Collection Rules (DCRs)](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/data-collection-rule-overview) and Microsoft Entra ID authentication. Running the setup command creates:
 
-RealmJoin will interact with both Log Analytics workspaces via an [Entra ID application registration](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals).
+* The **RealmJoin Azure Resources** service principal in your Entra ID tenant (if it does not exist yet)
+* A **Log Analytics workspace** in the resource group you choose — or your existing workspace, if you name one
+* Three custom tables in that workspace: `RJAuditLogs_CL`, `RJOperationalLogs_CL`, `RJRunbookLogs_CL`
+* One Data Collection Rule per table (`dcr-rj-aud-logs-*`, `dcr-rj-op-logs-*`, `dcr-rj-rb-logs-*`), each with its own direct ingestion endpoint
+* Exactly two kinds of role assignment for RealmJoin, and nothing beyond them:
+  * **Log Analytics Reader** on the workspace, so the Portal can query your logs
+  * **Monitoring Metrics Publisher** on each of the three Data Collection Rules, so RealmJoin can write to them
 
-{% hint style="info" %}
-You can reuse the App Registration "RealmJoin Runbook Management" which is created when [onboarding runbooks](../automation/connecting-azure-automation/).
+RealmJoin receives no other permission in your subscription. No app registration, no client secret and no workspace shared key are involved. The deployment is idempotent — re-running the same command is safe and only applies what is missing.
+
+## Prerequisites
+
+### In the RealmJoin Portal
+
+* A role that grants access to the Settings area (`CanReadSettingsDetails`, see [Available Permissions](../administration-and-settings/permission/custom-roles/available-permissions.md)). The settings page generates the setup command including a short-lived onboarding token.
+
+### In Azure
+
+* An Azure subscription and an **existing resource group** to deploy into — the module does not create the resource group
+* Optionally an existing Log Analytics workspace. If you do not name one, a workspace is created for you in the region of the resource group.
+
+### On the machine running PowerShell
+
+* **PowerShell 5.1** or later (Windows PowerShell or PowerShell 7)
+* Access to the [PowerShell Gallery](https://www.powershellgallery.com/packages/RealmJoin) to install the RealmJoin module
+* The `Az.Accounts`, `Az.Resources` and `Az.Automation` modules — the RealmJoin module installs them in the pinned versions automatically, for the current user
+
+### Permissions of the account you sign in with
+
+* **Microsoft Entra ID:** permission to create service principals, for example *Application Administrator*, *Cloud Application Administrator* or *Global Administrator*. Only needed the first time, when the RealmJoin Azure Resources service principal does not exist yet.
+* **Azure subscription:** permission to deploy into the resource group **and** to create role assignments on it — for example *Owner*, or *Contributor* combined with *User Access Administrator* / *Role Based Access Control Administrator*.
+* Sign-in happens through `Connect-AzAccount`, which uses the **Azure PowerShell** first-party application. Tenants that restrict user consent may need to grant admin consent to that application first.
+
+{% hint style="warning" %}
+Run the command in a **freshly opened, local** PowerShell session and avoid **Azure Cloud Shell**. The RealmJoin module requires exact versions of the `Az.*` modules. If a different version is already loaded in the session — which is typically the case in Cloud Shell — the module stops with a version conflict that can only be resolved by opening a new session.
 {% endhint %}
-
-This app will be authenticated using a ClientId and ClientSecret. Using a certificate or Managed Identity is currently not supported.
-
-Please grant the app "**Monitoring Reader**" permissions on the Log Analytics accounts used for [Windows Update for Business Reports Integration](log-analytics.md#windows-update-for-business-reports-integration) and "**Monitoring Contributor**" for the [RealmJoin Audit logs](log-analytics.md#realmjoin-audit-logs) Log Analytics account.
-
-RealmJoin will also use the [Customer Workspace Key](log-analytics.md#customer-workspace-key) to write data directly into [RealmJoin Audit Logs](log-analytics.md#realmjoin-audit-logs).
-
-### Windows Update for Business Reports Integration
-
-[Windows Update for Business Reports](https://learn.microsoft.com/en-us/windows/deployment/update/wufb-reports-overview) needs to be configured in your environment in order to leverage this feature. It will write update-related events into an [Azure Log Analytics Workspace](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview). RealmJoin can read the events from this Log Analytics Workspace and display them on the[ device's details page](../ugd-management/user-list/device-details.md).
-
-{% hint style="info" %}
-You can use the same Log Analytics Account for both [Windows Update for Business Reports](https://learn.microsoft.com/en-us/windows/deployment/update/wufb-reports-overview) and [RealmJoin Audit Logs](log-analytics.md#realmjoin-audit-logs). Please assign "**Monitoring Contributor**" permissions in this case.
-{% endhint %}
-
-### RealmJoin Audit Logs
-
-RealmJoin can use a Log Analytics workspace to store its own audit logs as well as archive runbook logs after the maximum retention in Azure Automation (currently 30 days).
-
-Please be aware, in order to store logs for longer than 30 days, you will need to modify the [workspace's default data retention](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive?tabs=portal-1%2Cportal-2), which is also set to 30 days by default.
 
 ## Setup
 
-### Part 1 - Authentication using Azure App Registration
+{% stepper %}
+{% step %}
+#### Prepare the resource group
 
-1. In the Azure Portal, navigate to Microsoft Entra ID > Manage > App Registrations.
-2. Select the All Applications tab.
-3. Choose your next step.
+In the Azure Portal, create or pick the resource group that should hold the workspace. Note its name, and the ID of the subscription it lives in.
 
-{% tabs %}
-{% tab title="Existing Runbook Integration" %}
-If you have already [integrated with Azure Runbooks](../automation/connecting-azure-automation/), you can re-use your existing App Registration.
+If you want to use an **existing** Log Analytics workspace, note its name as well.
+{% endstep %}
 
-1. Select the "RealmJoin Runbooks Management" App Registration.
-2. Navigate to Manage > Certificates & Secrets.
-3. Select the "Client Secrets" tab.
-4. Create a new client secret.
-   * Set description and expiration according to your internal naming and security policies.
-{% endtab %}
+{% step %}
+#### Copy the command from the RealmJoin Portal
 
-{% tab title="New App Registration" %}
-If you have not integrated runbooks or prefer a separate app registration, do the following:
+In the RealmJoin Portal, navigate to **Settings → Log Analytics** ([https://portal.realmjoin.com/settings/log-analytics-configuration](https://portal.realmjoin.com/settings/log-analytics-configuration)).
 
-1. Select "New Registration"
-2.  Provide a Name<br>
+The page states that Log Analytics is managed via the RealmJoin PowerShell module and shows a command block. Use the **Copy** button to copy it.
 
-    <figure><img src="../.gitbook/assets/image (330).png" alt=""><figcaption></figcaption></figure>
-3. Register the application
-4. Select the application
-5. Navigate to Manage > Certificates & Secrets
-6. Select the "Client Secrets" tab
-7. Create a new client secret
-   * Set description and expiration according to your internal naming and security policies
-{% endtab %}
-{% endtabs %}
+```powershell
+$latest = [version](Find-Module RealmJoin -Repository PSGallery -ErrorAction Stop).Version
+if (-not (Get-Module -ListAvailable RealmJoin | Where-Object Version -ge $latest)) {
+    Install-Module RealmJoin -Force -AllowClobber -ErrorAction Stop
+}
+Import-Module RealmJoin -Force
+Set-RJLogAnalyticsWorkspace -Token "<Token>" 6>&1
+```
 
-4. Securely note down the secret value to use in [Part 5](log-analytics.md#part-4-connecting-realmjoin-and-azure-log-analytics-workspace).
+The first lines install or update the RealmJoin module and import it. `Set-RJLogAnalyticsWorkspace` performs the deployment and registers the result with RealmJoin using the `-Token`.
+
+{% hint style="info" %}
+**About `6>&1`:** these commands report their progress on PowerShell's Information stream. The `6>&1` redirection displays that output in the console — without it you will not see any progress messages.
+{% endhint %}
+{% endstep %}
+
+{% step %}
+#### Add the target parameters
+
+`Set-RJLogAnalyticsWorkspace` needs to know where to deploy. Complete the last line before running it:
+
+```powershell
+Set-RJLogAnalyticsWorkspace -ResourceGroupName "rg-realmjoin" -SubscriptionId "<SubscriptionId>" -Token "<Token>" 6>&1
+```
+
+* `-ResourceGroupName` is required. If you leave it out, PowerShell prompts you for it.
+* `-SubscriptionId` is optional — without it, the subscription of your current Azure context is used, and you are asked to choose if several are available.
+* `-WorkspaceName` is optional. Pass it to use an **existing** workspace; otherwise a new one is created with a generated name.
+{% endstep %}
+
+{% step %}
+#### Run the command
+
+Paste the block into a new PowerShell session and run it. The token is valid for roughly an hour — if it has expired, reload the settings page and copy the command again.
+
+You will be prompted to sign in with `Connect-AzAccount`. If your account has access to several tenants or subscriptions, the module asks you to choose.
+
+The deployment then reports every resource as it is created: the service principal, the workspace, the custom tables, the Data Collection Rules and the role assignments. A single run usually takes a few minutes.
+
+{% hint style="info" %}
+Want to see what would happen first? Append `-WhatIf` for an Azure Resource Manager What-If preview. Note that signing in and installing the `Az` modules still happens, because the preview needs both.
+{% endhint %}
+{% endstep %}
+
+{% step %}
+#### Verify in the Portal
+
+Return to **Settings → Log Analytics** and select **Refresh**.
+
+The page now shows subscription, resource group, workspace name, customer workspace ID and tenant ID as read-only fields — these settings are maintained by the PowerShell module from now on. Under **Advanced** you can review the endpoints, rule names and stream names of the three Data Collection Rules.
+
+Select **Check for configuration problems** to verify that all required Azure permissions are in place on the workspace and on each Data Collection Rule.
+
+Afterwards, open the [Audit Log](audit-log.md) or the [Runbook Logs](../automation/runbooks/runbook-logs/) and confirm that entries appear. Azure needs a few minutes to make newly created custom tables available.
+{% endstep %}
+{% endstepper %}
+
+## Data retention
 
 {% hint style="warning" %}
-Navigating away from the Certificates & Secrets page will cause Azure to obfuscate the secret. The secret will not be retrievable and a new secret will need to be created.
+To keep logs for longer than 30 days, adjust the [workspace's data retention](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive?tabs=portal-1%2Cportal-2) in Azure. Both the workspace default and the Azure Automation retention are 30 days.
 {% endhint %}
 
-### Part 2 - Creating a Log Analytics Workspace
+## Keeping the schema up to date
 
-1. In the Azure Portal, navigate to Log Analytics Workspace
-2. Select Create
-3. Provide a Resource Group, Name and Region as required
-4. Navigate to the "Overview" tab
-5. Note the following for [Part 5](log-analytics.md#part-5-connecting-realmjoin-and-azure-log-analytics-workspace)
-   1. Resource Group Name
-   2. Workspace Name
-   3. Workspace ID
+If RealmJoin extends the log schema in a future release, the settings page shows a notice that the deployed Log Analytics schema is out of date, along with the command to update it. That is the **same** `Set-RJLogAnalyticsWorkspace` command — run it again and the tables and rules are updated in place.
 
-### Part 3 - Enabling Windows Update for Business Reports
+## Windows Update for Business Reports
+
+[Windows Update for Business Reports](https://learn.microsoft.com/en-us/windows/deployment/update/wufb-reports-overview) (formerly Update Compliance) writes update-related events into a Log Analytics workspace. RealmJoin can read those events and display them on the [device's details page](../ugd-management/user-list/device-details.md).
+
+This is independent of the workspace RealmJoin writes its own logs to. You can point RealmJoin at the same workspace or at a separate one.
+
+{% stepper %}
+{% step %}
+#### Enable Windows Update for Business Reports in Azure
 
 1. In the Azure Portal, navigate to Monitor > Workbooks
 2.  Search for "Windows Update for Business reports"<br>
 
     <figure><img src="../.gitbook/assets/image (332).png" alt=""><figcaption></figcaption></figure>
-3. Set your Subscription and the Workspace previously create. If a separate Workspace is preferred for RealmJoin logs and Windows Update for Business reports, create a separate Workspace and link instead.\
+3. Set your Subscription and the Workspace that should receive the data.\
    ![](<../.gitbook/assets/image (333).png>)
 4. Save Settings
 
 {% hint style="warning" %}
-Windows Update for Business reports may take up to 24 hours to apply
+Windows Update for Business reports may take up to 24 hours to apply.
+{% endhint %}
+{% endstep %}
+
+{% step %}
+#### Note the workspace ID
+
+Open the workspace in the Azure Portal and copy the **Workspace ID** (a GUID) from its Overview page.
+{% endstep %}
+
+{% step %}
+#### Enter the workspace ID in the RealmJoin Portal
+
+Navigate to **Settings → Update Compliance**, enter the workspace ID and select **Save**. Leave the field empty to disable Safeguard Hold reporting for this tenant.
+{% endstep %}
+
+{% step %}
+#### Grant RealmJoin read access
+
+After saving, the page shows a command block. It grants the RealmJoin Azure Resources service principal **Log Analytics Reader** on that workspace — nothing else is deployed or changed:
+
+```powershell
+Grant-RJUpdateComplianceWorkspaceAccess -WorkspaceId "<WorkspaceId>" 6>&1
+```
+
+If the workspace lives in a different subscription than your current Azure context, add `-SubscriptionId "<SubscriptionId>"`.
+
+Creating this role assignment requires permission to manage access on the workspace, for example *Owner* or *User Access Administrator*.
+{% endstep %}
+{% endstepper %}
+
+## Legacy setup (Data Collector API)
+
+{% hint style="danger" %}
+The setup below uses the Azure Monitor **HTTP Data Collector API**, which Microsoft ends support for on **14 September 2026**. It is documented only for reference on tenants that were configured this way in the past. Do not use it for new configurations — follow the [Setup](log-analytics.md#setup) above, or [migrate an existing configuration](log-ingestion-api-migration.md).
 {% endhint %}
 
-### Part 4 - Azure Permissions
+<details>
 
-1. Navigate to the subscription your Log Analytics Workspace resides in
-2. Select Access Control (IAM)
-3. Add a role assignment
-4.  Provide your App Registration with Monitoring Contributor permissions<br>
+<summary>Show the legacy setup</summary>
 
-    <figure><img src="../.gitbook/assets/image (331).png" alt=""><figcaption></figcaption></figure>
-5. Review and Save the role assignment
+On this path, RealmJoin authenticated with a customer-owned Entra ID app registration and the workspace's shared key, and wrote into the tables `AuditLogs_CL`, `OperationalLogs_CL` and `RunbookLogs_CL`.
 
-### Part 5 - Connecting RealmJoin and Azure Log Analytics Workspace
+**Part 1 — Authentication using an Azure app registration**
 
-<figure><img src="../.gitbook/assets/image (289).png" alt=""><figcaption><p>Log Analytics Settings Page</p></figcaption></figure>
+1. In the Azure Portal, navigate to Microsoft Entra ID > Manage > App Registrations.
+2. Select the All Applications tab.
+3. Either re-use the "RealmJoin Runbooks Management" app registration created when [onboarding runbooks](../automation/connecting-azure-automation/), or select "New Registration" and register a new application.
+4. On the application, navigate to Manage > Certificates & Secrets, select the "Client Secrets" tab and create a new client secret. Set description and expiration according to your internal naming and security policies.
+5. Securely note down the secret value — navigating away from the page causes Azure to obfuscate it, and a new secret has to be created.
 
-1. In the RealmJoin Portal, navigate to Settings ![](<../.gitbook/assets/image (334).png>) > Log Analytics
-2.  Fill in the fields:\
-    Tenant Details
+**Part 2 — Creating a Log Analytics workspace**
 
-    *   **TenantId:** Please provide your Entra ID's tenant ID. Find this in the Entra ID Overview page<br>
+1. In the Azure Portal, navigate to Log Analytics Workspace and select Create.
+2. Provide a resource group, name and region as required.
+3. On the "Overview" tab, note the resource group name, workspace name and workspace ID.
 
-        <figure><img src="../.gitbook/assets/image (337).png" alt=""><figcaption></figcaption></figure>
+**Part 3 — Azure permissions**
 
-    Azure App Registration Details
+1. Navigate to the subscription your Log Analytics workspace resides in.
+2. Select Access Control (IAM) and add a role assignment.
+3. Grant your app registration **Monitoring Contributor** on the workspace used for RealmJoin logs, and **Monitoring Reader** on a workspace used only for Windows Update for Business Reports.
+4. Review and save the role assignment.
 
-    *   **ClientId:** RealmJoin will interact with the LogAnalytics workspace via an [Azure App Registration](log-analytics.md#azure-app-registration). Please provide the app's ClientId/AppId and Secret, so that RealmJoin can authenticate.<br>
+**Part 4 — Connecting RealmJoin and the workspace**
 
-        <figure><img src="../.gitbook/assets/image (340).png" alt=""><figcaption></figcaption></figure>
-    *   **ClientSecret:** Used with the ClientId to provide access to RealmJoin. This is the secret made in [Part 1](log-analytics.md#part-1-authentication-using-azure-app-registration).<br>
+In the RealmJoin Portal, navigate to Settings > Log Analytics and fill in the fields:
 
-        <figure><img src="../.gitbook/assets/image (341).png" alt=""><figcaption></figcaption></figure>
+* **TenantId** — your Entra ID tenant ID, from the Entra ID Overview page
+* **ClientId** and **ClientSecret** — the app registration from Part 1
+* **Update Compliance Workspace Id** — the workspace ID of the Windows Update for Business Reports workspace
+* **Subscription ID**, **Resource Group** and **Workspace Name** — of the workspace from Part 2
+* **Customer Workspace Id** — the workspace ID of the workspace storing RealmJoin audit and runbook log data
+* **Customer Workspace Key** — the workspace's "Primary Key", which allows RealmJoin to write data. It can be retrieved with the [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/monitor/log-analytics/workspace?view=azure-cli-latest#az-monitor-log-analytics-workspace-get-shared-keys) (`az monitor log-analytics workspace get-shared-keys --resource-group MyResourceGroup --workspace-name MyWorkspace`) or with [PowerShell](https://learn.microsoft.com/en-us/powershell/module/az.operationalinsights/get-azoperationalinsightsworkspacesharedkey?view=azps-14.6.0) (`Get-AzOperationalInsightsWorkspaceSharedKey -ResourceGroupName "MyResourceGroup" -Name "MyWorkspace"`).
 
-    Windows Update for Business Workspace Details
+Press **Save** after filling out all fields. The system gives you feedback if everything worked.
 
-    * **Update Compliance Workspace Id:** Please provide the [Windows Update for Business Reports](log-analytics.md#windows-update-for-business-reports-integration) Log Analytics Workspace's ID from which to collect data.
-
-    Workspace Details
-
-    * **Subscription ID:** Please provide the Subscription ID from the [RealmJoin Audit Logs](log-analytics.md#realmjoin-audit-logs) Log Analytics account. The subscription ID is viewable in the Subscription Overview page.
-    * **Resource Group**: Please provide the Resource Group Name from the [RealmJoin Audit Logs](log-analytics.md#realmjoin-audit-logs) Log Analytics account.
-    * **Workspace Name:** Please provide the Workspace Name from the [RealmJoin Audit Logs](log-analytics.md#realmjoin-audit-logs) Log Analytics account.
-    *   **Customer Workspace Id:** Please provide / create a Log Analytics workspace to store [RealmJoin audit log and runbook log data](log-analytics.md#realmjoin-audit-logs).<br>
-
-        <figure><img src="../.gitbook/assets/image (339).png" alt=""><figcaption></figcaption></figure>
-    * **Customer Workspace Key:** RealmJoin will act as an agent to Log Analytics. Please provide the "Primary Key" to this workspace, as to allow writing data to the workspace.
-      * "The Primary Key" can be obtained via different methods:
-        * [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/monitor/log-analytics/workspace?view=azure-cli-latest#az-monitor-log-analytics-workspace-get-shared-keys):\
-          `az monitor log-analytics workspace get-shared-keys --resource-group MyResourceGroup --workspace-name MyWorkspace`
-        * [PowerShell](https://learn.microsoft.com/en-us/powershell/module/az.operationalinsights/get-azoperationalinsightsworkspacesharedkey?view=azps-14.6.0):\
-          `Get-AzOperationalInsightsWorkspaceSharedKey -ResourceGroupName "MyResourceGroup" -Name "MyWorkspace"`
-        * [RestAPI](https://learn.microsoft.com/en-us/rest/api/loganalytics/shared-keys/get-shared-keys?view=rest-loganalytics-2025-07-01\&tabs=HTTP):\
-          `POST https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/sharedKeys?api-version=2025-07-01`
-3. Press **Save** after filling out all fields. The system will give you feedback if everything worked.
+</details>
