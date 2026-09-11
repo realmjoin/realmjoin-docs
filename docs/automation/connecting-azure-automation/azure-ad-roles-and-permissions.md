@@ -114,7 +114,20 @@ Please grant the following SharePoint API Permissions to the managed identity
 
 Granting permissions to Managed Identities can currently not be done using Azure Portal. We recommend using MS Graph / PowerShell scripting for this.&#x20;
 
-You can find an example for this process [here](https://github.com/Workplace-Foundation/approle-and-directoryrole-granter).
+{% hint style="info" %}
+`Set-RJAutomationAccount` from the RealmJoin PowerShell module — see [Connecting Azure Automation](./) — already assigns the **API permissions** it bundles for Microsoft Graph, Exchange Online, Defender and SharePoint when it sets up or updates the Automation Account.
+
+It does **not** assign the **Entra ID roles** listed above, and its bundled permission set is maintained separately from this page, which is generated from the [runbooks repository](https://github.com/realmjoin/realmjoin-runbooks). Use the scripts below for the Entra ID roles, and to add any API permission a runbook needs that the module does not cover.
+{% endhint %}
+
+You can find an example for this process [here](https://github.com/Workplace-Foundation/approle-and-directoryrole-granter). The JSON files it expects are published in the [runbooks repository](https://github.com/realmjoin/realmjoin-runbooks/tree/production/docs/other/json):
+
+```powershell
+. .\GrantAppPermToEntApp.ps1 -enterpriseAppObjId "<ManagedIdentityObjectId>" -permissionsTemplate .\AllRealmJoinRunbooks_collected_permissions.json
+. .\AssignAzureADRoleToEntApp.ps1 -objectId "<ManagedIdentityObjectId>" -rolesTemplate .\AllRealmJoinRunbooks_collected_rbacroles.json
+```
+
+The managed identity's object ID is shown in the Azure Portal on the Automation Account under Account Settings > Identity.
 
 ### Azure Resource Permissions
 
