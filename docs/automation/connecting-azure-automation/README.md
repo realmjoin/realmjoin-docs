@@ -170,8 +170,6 @@ The setup below creates a **RealmJoin Runbook Management** app registration with
 
 <summary>Show the legacy setup</summary>
 
-{% embed url="https://www.youtube.com/watch?v=Ijp9XnE8UuA" %}
-
 On this path, the Automation Account was created by hand in the Azure Portal, its permissions were assigned with two external scripts, and RealmJoin authenticated with a per-tenant app registration and client secret.
 
 **Part 1 — Create an Azure Automation Account**
