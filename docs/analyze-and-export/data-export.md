@@ -148,6 +148,42 @@ Exports Windows software found on devices that was **not** installed via RealmJo
 | Installations    | Total number of installations found                                          |
 | Intune App Match | Whether the product could be matched to an assigned Intune app (best-effort) |
 
+#### Package Usage
+
+Exports the last use of **one** package per device, taken from each device's most recent software report. This is the standard way to find unused software for license optimisation. Devices that never used the package come first, followed by the oldest use first.
+
+**Usage:** pick the software through the typeahead (e.g. `chrome`). The portal immediately reports whether usage data can be determined for that package:
+
+* _Usage matching available: last usage and usage count can be reported._
+* _No usage matching for this package: "Last Used" and "Usage Count" will stay empty._ – the export still lists the devices with the package installed, but without usage data.
+
+**Mode:** the dropdown decides which installations are considered:
+
+* **RealmJoin installs** – only installations RealmJoin performed itself. A clean cut on the managed base: the devices where RealmJoin deployed this package.
+* **Win32 inventory** – everything in Programs and Features that the software pattern recognises, including copies installed outside RealmJoin. Choose this for software with its own updater (browsers, Teams, Zoom): the inventory reflects the version actually on the device, while the RealmJoin record still shows the version RealmJoin installed.
+
+**Unused ≥ N days:** only devices that have not used the package for at least that many days – or never – are listed. Leave the field empty to list all devices. The devices hidden by the cutoff are counted on a separate **Summary** sheet in the workbook, together with the package, mode, cutoff date and the number of devices with software report data.
+
+{% hint style="info" %}
+Usage data comes from the RealmJoin Agent. Without the agent, _Last Used_ and _Usage Count_ stay empty. Usage is tracked by matching program executions to the package's software pattern, so it can be incomplete for packages whose executables are not (yet) known to the pattern.
+{% endhint %}
+
+| Column           | Description                                                                           |
+| ---------------- | ------------------------------------------------------------------------------------- |
+| Device Name      | Name of the device                                                                    |
+| Device ID        | Entra ID (Azure AD) device identifier                                                 |
+| Operating System | Installed operating system                                                            |
+| Software         | Software name(s) as recognised by the software pattern                                |
+| Package ID       | Unique package identifier                                                             |
+| Type             | Installation source(s), e.g. `Craft`, `Choco`, `IntuneWin` or `Windows: Programs`     |
+| Version          | Installed version(s) found on the device                                              |
+| Last Used        | Timestamp of the most recent use across all users of the device; empty if never used |
+| Usage Count      | Number of recorded executions, summed over all users of the device                    |
+| Users            | Number of distinct users on the device with this package in their report              |
+| Device Last Seen | Timestamp of the device's last activity                                               |
+| Compliant        | Compliance state                                                                      |
+| Enabled          | Whether the device is enabled                                                         |
+
 {% hint style="info" %}
 The data in these exports is sourced from the RealmJoin agent and Intune and combined into the individual reports. Future iterations may include additional information; changes will be posted in the changelog and reflected in this documentation.
 {% endhint %}
