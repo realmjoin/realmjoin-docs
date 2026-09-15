@@ -62,6 +62,17 @@ You can use the following variables:
 * **$modifier** - either "included" or "excluded" (Assignment vs. Exception)
 * **$groupName** - (only in description) Name of the Managed Group
 
+## Managed App Priority Cascade
+
+The _App Config_ card also contains the tenant-wide switch **Classic priority cascade for managed apps**. It decides which assignment wins when a user or device is a member of both the Main (Required) and the Available group of a managed package:
+
+* **Off** (default) - managed cascade: Available wins over Main (uninstall > update > preview > available > mandatory).
+* **On** - classic cascade: Main wins over Available (uninstall > update > preview > mandatory > available).
+
+Changing the switch asks for confirmation and takes effect immediately for every user and every managed package that has no per-package override. Individual packages can deviate from the tenant default via the _Priority cascade_ setting in their [Expert Settings](../application-management/packages/package-settings.md#expert-settings).
+
+See [Assignment priority and conflicts](../application-management/packages/package-deployment.md#assignment-priority-and-conflicts) for the full evaluation order, including Exclude and Uninstall.
+
 ## Client Configuration
 
 With this tenant setting you can configure the timespan in which the RealmJoin Agent detects the primary user.
