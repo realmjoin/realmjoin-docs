@@ -17,17 +17,19 @@ The goal of this cast is to ensure that every RealmJoin user – especially thos
 * **Share Field Experience:** We bring in "RealmJoin Champions" and Workplace experts from our team to discuss best practices.
 * **Solve Problems:** We address frequently asked questions and common challenges directly in the episodes.
 
-The vodcast is hosted by Dr. Moritz Pohl of our product team, featuring rotating guests from our RealmJoin and Microsoft Intune departments.
+The vodcast is hosted by Dr. Moritz Pohl of our product team, featuring rotating guests from our RealmJoin and Microsoft Intune departments. Besides the regular episodes, **Special** editions take a hands-on look at a single topic.
 
 ***
 
-#### Episode Overview
+## Episode Overview
 
-<table><thead><tr><th width="105">Episode</th><th width="115">Title</th><th width="198">Key Topics</th><th width="202">Guest</th><th>Link</th></tr></thead><tbody><tr><td>1</td><td>RealmJoin: What's New</td><td>Product Wrap-up, vNext Portal, macOS Support, Managed App Subscriptions</td><td>Steffen Schwerdtfeger, Cloud Architect and RealmJoin Champion</td><td><a href="https://www.youtube.com/watch?v=pm-VfgOB1kc">Watch on YouTube</a></td></tr><tr><td>2</td><td>RealmJoin: Self-Service update</td><td>New self-service App Catalog, extended data export, ARM, FAQ</td><td>Jonas Heckmann, Cloud Engineer and RJ team member</td><td><a href="https://www.youtube.com/watch?v=y2NJ8AuRBkA">Watch on YouTube</a></td></tr></tbody></table>
+<table><thead><tr><th width="105">Episode</th><th width="115">Title</th><th width="198">Key Topics</th><th width="202">Guest</th><th>Link</th></tr></thead><tbody><tr><td>1</td><td>RealmJoin: What's New</td><td>Product Wrap-up, vNext Portal, macOS Support, Managed App Subscriptions</td><td>Steffen Schwerdtfeger, Cloud Architect and RealmJoin Champion</td><td><a href="https://www.youtube.com/watch?v=pm-VfgOB1kc">Watch on YouTube</a></td></tr><tr><td>2</td><td>RealmJoin: Self-Service update</td><td>New self-service App Catalog, extended data export, ARM, FAQ</td><td>Jonas Heckmann, Cloud Engineer and RJ team member</td><td><a href="https://www.youtube.com/watch?v=y2NJ8AuRBkA">Watch on YouTube</a></td></tr><tr><td>Special 1</td><td>Onboarding a RealmJoin Tenant in Minutes</td><td>Tenant onboarding with the PowerShell module, Quick vs. Advanced Setup, optional features, Log Analytics, Runbooks</td><td>Jonas Heckmann, Cloud Engineer and RJ team member</td><td><a href="https://www.youtube.com/watch?v=HN3It3v7zko">Watch on YouTube</a></td></tr></tbody></table>
 
 ***
 
-#### Episode 1: Wrap-up & What's New [![Watch on YouTube](https://img.shields.io/badge/YouTube-Watch-red?style=flat-square\&logo=youtube)](https://www.youtube.com/watch?v=pm-VfgOB1kc)
+## Episode 1: Wrap-up & What's New
+
+{% embed url="https://www.youtube.com/watch?v=pm-VfgOB1kc" %}
 
 In this kick-off episode, we take a deep dive into the evolution of RealmJoin over the last 12 to 18 months. We discuss how the product has transitioned from a specialized patch management tool to a comprehensive "Companion to Intune."
 
@@ -47,9 +49,11 @@ In this kick-off episode, we take a deep dive into the evolution of RealmJoin ov
 
 ***
 
-#### Episode 2: RealmJoin Self-Service update [![Watch on YouTube](https://img.shields.io/badge/YouTube-Watch-red?style=flat-square\&logo=youtube)](https://www.youtube.com/watch?v=y2NJ8AuRBkA)
+## Episode 2: RealmJoin Self-Service update
 
-In our second episode, Moritz  is joined by **Jonas Heckmann (Cloud Engineer & RealmJoin Core Team)** to shift the focus to user empowerment, data accessibility, and platform compatibility. They dive into key updates including the brand-new user self-service app catalog, extended reporting downloads for better analytics, and a detailed look at native ARM support.
+{% embed url="https://www.youtube.com/watch?v=y2NJ8AuRBkA" %}
+
+In our second episode, Moritz is joined by **Jonas Heckmann (Cloud Engineer & RealmJoin Core Team)** to shift the focus to user empowerment, data accessibility, and platform compatibility. They dive into key updates including the brand-new user self-service app catalog, extended reporting downloads for better analytics, and a detailed look at native ARM support.
 
 **Key Highlights & Timestamps:**
 
@@ -59,5 +63,28 @@ In our second episode, Moritz  is joined by **Jonas Heckmann (Cloud Engineer & R
 * [**00:13:40**](https://www.youtube.com/watch?v=y2NJ8AuRBkA\&t=820s) **Native ARM Support:** Addressing current compatibility and native architecture support.
 
 **Watch the Full Episode:** [RealmJoin Self-Service update: App Catalog, Reporting & ARM Support](https://www.youtube.com/watch?v=y2NJ8AuRBkA)
+
+***
+
+## Special: Onboarding a RealmJoin Tenant in Minutes
+
+{% embed url="https://www.youtube.com/watch?v=HN3It3v7zko" %}
+
+In the first Special edition, Moritz and **Jonas Heckmann (Cloud Engineer & RealmJoin Core Team)** show how quickly a new RealmJoin tenant – for a lab or a production environment – is set up with the new RealmJoin PowerShell module. Starting from the website consent flow, they walk through the tenant enrollment, add optional features and connect Azure resources for Log Analytics and Runbooks, ending with a tenant that is fully ready to use.
+
+**Key Highlights & Timestamps:**
+
+* [**00:00:03**](https://www.youtube.com/watch?v=HN3It3v7zko\&t=3s) **Introduction:** Kick-off of the Special edition and the focus of this episode: onboarding RealmJoin the easy way.
+* [**00:00:51**](https://www.youtube.com/watch?v=HN3It3v7zko\&t=51s) **Website & Consent Flow:** Getting started from the official website with basic contact data – no presales ticket required – and granting the initial base permissions.
+* [**00:01:30**](https://www.youtube.com/watch?v=HN3It3v7zko\&t=90s) **Quick Setup vs. Advanced Setup:** The one-step deployment for test environments versus the recommended [Advanced Setup](../deployment/onboarding-realmjoin-portal/advanced-setup.md) via the RealmJoin PowerShell module.
+* [**00:01:54**](https://www.youtube.com/watch?v=HN3It3v7zko\&t=114s) **Tenant Onboarding with the PowerShell Module:** Installing the module, starting the enrollment with a token and assigning the recommended default permissions (including the required Global Admin rights and enterprise app registrations).
+* [**00:03:26**](https://www.youtube.com/watch?v=HN3It3v7zko\&t=206s) **Optional Features & Interactive Setup:** Adding optional features such as agent deployment and security reporting for clients through the interactive PowerShell setup.
+* [**00:05:31**](https://www.youtube.com/watch?v=HN3It3v7zko\&t=331s) **Onboarding Azure Resources:** Optionally connecting a [Log Analytics Workspace](../monitoring-and-logs/log-analytics.md), including data collection rules, service principal creation and linking it to the portal via token.
+* [**00:08:12**](https://www.youtube.com/watch?v=HN3It3v7zko\&t=492s) **Runbooks Setup:** Automated creation of an Azure Automation account for [RealmJoin Runbooks](../automation/connecting-azure-automation/README.md) through the PowerShell module.
+* [**00:08:54**](https://www.youtube.com/watch?v=HN3It3v7zko\&t=534s) **Wrap-up & Outlook:** The tenant is fully operational, onboarding takes only a few minutes and is free of charge for test and proof-of-concept environments.
+
+**Watch the Full Episode:** [RealmJoin Unlocked Special Ep. 1: Onboarding a RealmJoin Tenant in Minutes](https://www.youtube.com/watch?v=HN3It3v7zko)
+
+***
 
 > **Get Involved:** For questions regarding the topics mentioned in our podcast, please reach out to our support team at support@realmjoin.com or visit our [feedback portal](https://feedback.realmjoin.com).
