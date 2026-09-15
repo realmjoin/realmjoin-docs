@@ -91,6 +91,20 @@ Effectively, the prioritization order is (high to low):
 
 \[Exclude] - Uninstall - \[Update] - Preview - Available - Required
 
+#### Managed and classic priority cascade
+
+The order above is the default **managed cascade**, in which an Available assignment wins over a Main (Required) assignment. If you prefer the opposite — a user or device that is in both the Main and the Available group gets the package installed as mandatory — switch to the **classic cascade**:
+
+* **Managed cascade** (default): \[Exclude] - Uninstall - \[Update] - Preview - **Available** - **Required**
+* **Classic cascade**: \[Exclude] - Uninstall - \[Update] - Preview - **Required** - **Available**
+
+The cascade can be set on two levels:
+
+* **Tenant-wide** — in Settings > General > App Config, enable _Classic priority cascade for managed apps_. Changing the switch asks for confirmation and takes effect immediately for every user and every package that has no per-package override. See [Managed App Priority Cascade](../../administration-and-settings/general.md#managed-app-priority-cascade).
+* **Per package** — in the package's [Expert Settings](package-settings.md#expert-settings), the _Priority cascade_ setting overrides the tenant default for that package only: _Use tenant default_ (recommended), _Managed cascade_ or _Classic cascade_.
+
+The switch only affects managed packages and only the ranking of Main against Available. Exclude, Uninstall, Update and Preview keep their position, and Basic packages always install as mandatory when any of their assignments is Required.
+
 {% hint style="info" %}
 Device group assignments are only evaluated if device assignment is enabled for your tenant. Please ask RJ support, if the device assignment feature is active in your tenant. Without it, group memberships of the device — including Exclude and Uninstall groups — are not taken into account.
 
