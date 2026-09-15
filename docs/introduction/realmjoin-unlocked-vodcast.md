@@ -8,7 +8,7 @@ description: >-
 
 # RealmJoin Unlocked Vodcast
 
-RealmJoin Unlocked is our video podcast, hosted by Dr. Moritz Pohl of our product team with rotating guests from our RealmJoin and Microsoft Intune departments. It is made for every RealmJoin user – especially those without dedicated consulting – to unlock the full potential of the product. Regular episodes cover what is new; **Special** editions take a hands-on look at a single topic.
+RealmJoin Unlocked is our video podcast, hosted by Dr. Moritz Pohl of our Products team with rotating guests from our RealmJoin and Microsoft Intune departments. It is made for every RealmJoin user – especially those without dedicated consulting – to unlock the full potential of the product. Regular episodes cover what is new; **Special** editions take a hands-on look at a single topic.
 
 * **Introduce New Features:** Stay up to date with the latest developments in the RealmJoin ecosystem.
 * **Drive Value:** Explain how specific functions provide real-world benefits to your IT operations.
