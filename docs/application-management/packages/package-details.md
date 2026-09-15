@@ -62,6 +62,29 @@ The following tabs are available:
 
 This tab will show the long description, license and technical help information of a package.
 
+#### Update
+
+If the Package Store offers a newer version than the one deployed in your environment, the _Update_ section shows the available actions. For managed packages these are _Apply latest update to main_, _Start latest update with preview_, _Apply preview to main_ and _Apply update to preview_; Basic packages only offer _Apply update_. See [Version and Preview](package-management.md#version-and-preview) for the staged update procedure.
+
+**Choose another version**
+
+By default, an update always targets the latest version in the Package Store. If you want to skip a version or need a specific one, click _Choose another version_ below the update buttons. A dropdown lists the eligible versions, the latest one marked with "(latest)"; select one and confirm with _Update_. For managed packages there is one row per target: _Main_, _Preview_ (start a preview) and _Update preview_ (move an existing preview).
+
+The option is only shown when all of the following apply:
+
+* The package was subscribed from the Package Store and an update is available (the _Update_ section is visible).
+* No update or other operation is currently running for this package.
+* The Package Store holds at least **two** versions newer than the version currently deployed in that slot (Main or Preview). With only one newer version, the regular update button already targets it.
+* For _Main_: **Automate Main Channel** is off. For _Preview_: **Automate Preview Channel** is off (see [Automation](package-settings.md#automation)). Updating an already running preview is not affected by automation.
+* You hold the `CanSubscribeApp` and `CanUpgradeApp` [permissions](../../administration-and-settings/permission/custom-roles/available-permissions.md).
+* For _Main_, at least one Main group must be assigned; for _Preview_, the preview group must exist.
+
+{% hint style="warning" %}
+**Downgrades are not possible.** The dropdown only lists versions newer than the one currently deployed, and the backend rejects any update that targets an older version. To deploy an older version, open that version's entry in the Package Store — the [Versions tab](package-store/package-store-details.md#versions) links every changelog row to its store entry — and subscribe from there. Since each package ID can only be subscribed once, this requires removing the existing subscription first.
+
+Independent of the assigned version, the RealmJoin Agent will not replace a newer version that is already installed on a device unless the client policy [Allow downgrade of packages](../../ugd-management/user-and-group-settings/additional-settings.md#softwarepackaging.autoupgradecandowngrade) is set. As with any version change, existing installations only follow the new version if [Auto upgrade](package-settings.md#expert-settings) is enabled for the package.
+{% endhint %}
+
 #### Assignments and Deployment Status
 
 Use these tables to assign additional groups and check the deployment status of apps for devices and/or users. If a device and its user end up in conflicting groups of the same package, see [Assignment priority and conflicts](package-deployment.md#assignment-priority-and-conflicts) for how this is resolved.<br>

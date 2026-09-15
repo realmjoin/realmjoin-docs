@@ -40,4 +40,6 @@ If a newer version of a managed package exists, you can subscribe to the new ver
 
 The package list shows you the version information of the main package, the preview package (if available) as well as the version number of the package currently available in the package store.
 
+Updates always target the latest store version unless you pick a specific newer one on the package's detail page, see [Choose another version](package-details.md#update). Downgrading a subscribed package is not possible.
+
 If _Update Automation_ is activated, the desired update timeframe is displayed in the column **Automation**. A value of "ASAP" means, the package is due for updating.
