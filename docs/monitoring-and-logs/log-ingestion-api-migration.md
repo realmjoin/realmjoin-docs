@@ -69,7 +69,7 @@ RealmJoin receives no other permission in your subscription. The deployment is i
 
 ### On the machine running PowerShell
 
-* **PowerShell 5.1** or later (Windows PowerShell or PowerShell 7)
+* **PowerShell 7** or later — Windows PowerShell 5.1 is not supported
 * Access to the [PowerShell Gallery](https://www.powershellgallery.com/packages/RealmJoin) to install the RealmJoin module
 * The `Az.Accounts`, `Az.Resources` and `Az.Automation` modules — the RealmJoin module installs them in the pinned versions automatically, for the current user
 
