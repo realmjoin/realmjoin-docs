@@ -361,12 +361,21 @@ function Get-PortalOptionRows {
             if ($null -eq $option -or $option -is [string]) {
                 continue
             }
-            if (-not $option.PSObject.Properties['Display']) {
+            # Mirror the portal's ParameterSelectOption: the value is ParameterValue (canonical),
+            # Value (alias) or Id; Display falls back to the value when it is not set.
+            $optionValue = $null
+            foreach ($valueKey in @('ParameterValue', 'Value', 'Id')) {
+                if ($option.PSObject.Properties[$valueKey] -and $null -ne $option.$valueKey) {
+                    $optionValue = $option.$valueKey
+                    break
+                }
+            }
+            $optionDisplay = if ($option.PSObject.Properties['Display'] -and -not [string]::IsNullOrWhiteSpace([string]$option.Display)) { [string]$option.Display } elseif ($null -ne $optionValue) { [string]$optionValue } else { $null }
+            if ($null -eq $optionDisplay) {
                 continue
             }
-            $optionValue = if ($option.PSObject.Properties['Value']) { $option.Value } else { $null }
             $optionRows += [PSCustomObject]@{
-                Display = [string]$option.Display
+                Display = $optionDisplay
                 Value   = $optionValue
             }
         }
