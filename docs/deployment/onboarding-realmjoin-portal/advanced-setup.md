@@ -24,7 +24,7 @@ The required Azure PowerShell modules (`Az.Accounts`, `Az.Resources`, `Az.Automa
 {% endhint %}
 
 * **PowerShell 5.1** or later (Windows PowerShell or PowerShell 7)
-* An account that can **create service principals and grant application permissions** in Microsoft Entra ID — for example *Global Administrator* or *Privileged Role Administrator*
+* An account that can **create service principals and grant application permissions** in Microsoft Entra ID — for example _Global Administrator_ or _Privileged Role Administrator_
 * Sign-in happens through `Connect-AzAccount`, which uses the **Azure PowerShell** first-party application. Tenants that restrict user consent may need an administrator to grant admin consent to that application first.
 * Access to the [PowerShell Gallery](https://www.powershellgallery.com/packages/RealmJoin) to install the module
 
@@ -69,8 +69,6 @@ Complete-RJTenantOnboarding -Token 1234ABCD 6>&1
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/Snipaste_2026-01-27_12-00-54.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Snipaste_2026-01-28_18-16-31.png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -175,23 +173,23 @@ Both commands are generated with the matching parameters and an onboarding token
 
 Use these feature names with the `-Features`, `-AddFeatures`, and `-RemoveFeatures` parameters. Mandatory features are always enabled. The default configuration (`New-RJTenant` without parameters) enables the features marked below; **SecurityFeatures** and **Client** have to be selected explicitly.
 
-| Feature              | Description                                                                | Default |
-| -------------------- | -------------------------------------------------------------------------- | :-----: |
-| `RealmJoinPortal`    | Core portal functionality for user self-service and admin interaction (mandatory) | ☑️ |
-| `IntuneLAPS`         | Retrieve and manage local admin passwords via Intune LAPS                  | ☑️ |
-| `ShowSignin`         | Display user sign-in history and audit logs                                | ☑️ |
-| `Autopilot`          | View Windows Autopilot deployment profiles and status                      | ☑️ |
-| `DeviceIntuneActions`| Execute privileged device actions (sync, restart, wipe, etc.)              | ☑️ |
-| `DeviceHealthScript` | Manage and deploy PowerShell remediation scripts to devices                | ☑️ |
-| `BitLockerRecoveryKeys` | View BitLocker recovery keys for managed devices                        | ☑️ |
-| `WindowsDeviceUpdateEnrollment` | Manage Windows Device Updates enrollment                        | ☑️ |
-| `SecurityFeatures`   | Advanced threat protection and security analytics (requires MDE licenses)  |    |
-| `Client`             | RealmJoin Agent — client application for device management                 |    |
+| Feature                         | Description                                                                       | Default |
+| ------------------------------- | --------------------------------------------------------------------------------- | :-----: |
+| `RealmJoinPortal`               | Core portal functionality for user self-service and admin interaction (mandatory) |    ☑️   |
+| `IntuneLAPS`                    | Retrieve and manage local admin passwords via Intune LAPS                         |    ☑️   |
+| `ShowSignin`                    | Display user sign-in history and audit logs                                       |    ☑️   |
+| `Autopilot`                     | View Windows Autopilot deployment profiles and status                             |    ☑️   |
+| `DeviceIntuneActions`           | Execute privileged device actions (sync, restart, wipe, etc.)                     |    ☑️   |
+| `DeviceHealthScript`            | Manage and deploy PowerShell remediation scripts to devices                       |    ☑️   |
+| `BitLockerRecoveryKeys`         | View BitLocker recovery keys for managed devices                                  |    ☑️   |
+| `WindowsDeviceUpdateEnrollment` | Manage Windows Device Updates enrollment                                          |    ☑️   |
+| `SecurityFeatures`              | Advanced threat protection and security analytics (requires MDE licenses)         |         |
+| `Client`                        | RealmJoin Agent — client application for device management                        |         |
 
 ## Troubleshooting
 
 {% hint style="warning" %}
-**"Insufficient privileges"** — creating service principals and granting application permissions requires an appropriately privileged account, for example *Global Administrator* or *Privileged Role Administrator*. See [Prerequisites](advanced-setup.md#prerequisites).
+**"Insufficient privileges"** — creating service principals and granting application permissions requires an appropriately privileged account, for example _Global Administrator_ or _Privileged Role Administrator_. See [Prerequisites](advanced-setup.md#prerequisites).
 {% endhint %}
 
 {% hint style="warning" %}
