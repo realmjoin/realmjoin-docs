@@ -109,7 +109,7 @@ New-RJTenant 6>&1
 #### Minimal Features (only mandatory features)
 
 ```powershell
-New-RJTenant -Features @() 6>&1
+New-RJTenant -Features @('RealmJoinPortal') 6>&1
 ```
 
 #### Full Feature Set
