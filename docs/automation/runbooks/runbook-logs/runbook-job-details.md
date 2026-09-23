@@ -23,7 +23,17 @@ On the right, you will find multiple tabs, representing:
 
 This will show a live feed of the runbooks output. In contrast to Azure Automation, output of a runbook is readable in real time.
 
-Using "Copy to Clipboard" you can copy the full output to use it e.g. in a service/ITIL ticket system.
+If the job emitted tables, the console shows them in a compressed form by default, so that status lines stay readable. Use "Show full output" to switch to the complete, untruncated text and "Show compressed tables" to switch back.
+
+Using "Copy to Clipboard" you can copy the full output to use it e.g. in a service/ITIL ticket system. This always copies the full output, regardless of which view is shown.
+
+### Output Data
+
+This renders the objects the runbook emitted as sortable, filterable tables, so that long values such as GUIDs stay fully readable instead of being truncated by the PowerShell console formatter. Each table can be exported to Excel or CSV.
+
+Output Data is available for live runs only — for archived jobs, use the **Console** tab.
+
+See [Runbook Output Data](../../../dev-reference/runbook-output-data.md) for how to work with the tables, and for what a runbook has to do so that its results show up here.
 
 ### Input
 
