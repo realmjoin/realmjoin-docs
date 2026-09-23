@@ -329,6 +329,7 @@
   * [Get-RjRbBrandingMailParams](dev-reference/report-functions/get-rjrbbrandingmailparams.md)
   * [Publish-RjRbFilesToStorageContainer](dev-reference/report-functions/publish-rjrbfilestostoragecontainer.md)
   * [Export-RjRbXlsx](dev-reference/report-functions/export-rjrbxlsx.md)
+* [Runbook Output Data](dev-reference/runbook-output-data.md)
 * [Interacting with Runbooks](dev-reference/interacting-with-runbooks.md)
 * [Simulating a Runbook Environment](dev-reference/simulating-a-runbook-environment.md)
 * [Local Admin Password Management](dev-reference/local-admin-password-management.md)
