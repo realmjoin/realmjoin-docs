@@ -33,6 +33,16 @@ A few permissions are marked **Reserved**. They can be selected in the editor bu
 | `CanEditOrganizationFeatures` | `CanReadOrganizationFeatures` | Enable or disable RealmJoin features for the tenant.                                                    |
 | `CanEditTenantLaMetricSecret` | —                             | Manage the secret for the [LaMetric Time](../../third-party-integrations/lametric-time.md) integration. |
 
+## Partner / MSP
+
+{% hint style="warning" %}
+**Partner tenants only.** These permissions are available only in a parent tenant that RealmJoin support has registered as a partner tenant (see [Tenant Switcher](../../msp-and-advanced-features.md#tenant-switcher)). In any other tenant, the editor rejects them as not allowed.
+{% endhint %}
+
+| Permission                    | Requires | Description                                                                                                                                                                                                                                                                                         |
+| ----------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `CanAdministerTenantPartners` | —        | Use the [Tenant Switcher](../../msp-and-advanced-features.md#custom-role-permissions) to switch into all daughter tenants of the parent tenant. In a daughter tenant, the user keeps the pre-defined role they have in the parent tenant. Also grants partner administrator rights, for example managing templates. |
+
 ## App Management
 
 | Permission                                                                                                 | Requires                      | Description                                                                                                                                                                                                                                                                             |
