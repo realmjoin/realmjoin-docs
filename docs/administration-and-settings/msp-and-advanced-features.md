@@ -48,7 +48,50 @@ By default, only RealmJoin administrators can use the tenant switcher feature. H
 * **Software Requester**: Users who create and manage application packages without full admin rights
 * **1st Level Support**: Help desk staff who need limited access to troubleshoot user issues
 
-For detailed information on configuring custom roles, see the [Custom Roles documentation](https://docs.realmjoin.com/realmjoin-settings/permission/custom-roles).
+For detailed information on configuring custom roles, see the [Custom Roles documentation](permission/custom-roles/).
+
+#### Required permission: `CanAdministerTenantPartners`
+
+Access to the tenant switcher is granted by the custom role permission **`CanAdministerTenantPartners`**. Assign it in the custom roles of the **parent tenant**. Users who hold it can open the tenant switcher and switch into every daughter tenant that is connected to the parent tenant.
+
+In the daughter tenant, these users keep the **pre-defined role they have in the parent tenant** (for example Supporter, Advanced Supporter or Auditor). The tenant switcher only gives them access to the daughter tenant. It does not give them admin rights there. This lets you give support staff access to all customer tenants with exactly the permissions they already have at home, without making them RealmJoin administrators.
+
+{% hint style="info" %}
+**Prerequisites**
+
+* [Custom Roles](permission/custom-roles/) must be enabled in the parent tenant.
+* The parent tenant must be registered as a partner tenant in the RealmJoin backend. Otherwise the custom roles editor rejects `CanAdministerTenantPartners` as not allowed. This registration is done by RealmJoin support.
+{% endhint %}
+
+**Example: 1st Level Support across all customer tenants**
+
+Your help desk staff are members of the Entra group `RJ-Support` in the parent tenant. This group is configured as a **Supporter** group in the parent tenant's RealmJoin role settings. To let them switch into the customer tenants, add the following rule to the custom roles of the parent tenant:
+
+```json
+{
+  "Rules": [
+    {
+      "Name": "Support: Tenant Switcher",
+      "Description": "Allows the support team to switch into all daughter tenants with their Supporter permissions.",
+      "Groups": [
+        "5d3c1a2b-8e4f-4a6b-9c7d-2e1f0a9b8c7d"
+      ],
+      "Permissions": [
+        "CanAdministerTenantPartners"
+      ]
+    }
+  ]
+}
+```
+
+Replace the group ID with the object ID of your `RJ-Support` group. After the users sign in again, they see the tenant switcher in the header bar. In every daughter tenant they work with Supporter permissions, just like in the parent tenant.
+
+Things to consider:
+
+* **Only pre-defined roles carry over.** Other custom role permissions of the parent tenant do not apply in the daughter tenants. To grant additional permissions inside a daughter tenant, define a custom role in that daughter tenant.
+* **A pre-defined role is still needed.** A user who holds only `CanAdministerTenantPartners` and has no pre-defined role in the parent tenant can switch tenants, but has no administrative permissions in the daughter tenants.
+* **The permission also grants partner administrator rights.** For example, holders can manage templates (edit, delete, change packages and tokens). Assign it only to people who are allowed to do that.
+* **Changes apply at the next sign-in.** Users who are already signed in must reload the portal or sign in again after the custom role has been saved.
 
 **Note**: Some permissions require RealmJoin staff assistance to configure. Contact support if you need help setting up custom roles with restricted permissions.
 
