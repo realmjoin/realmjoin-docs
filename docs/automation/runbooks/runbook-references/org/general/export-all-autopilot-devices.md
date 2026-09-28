@@ -46,8 +46,8 @@ rjgit-org_general_export-all-autopilot-devices
 
 | Portal option | Value |
 | --- | --- |
-| Export to a CSV file |  |
-| List in Console |  |
+| Export to a CSV file | true |
+| List in Console | false |
 
 ### ContainerName
 

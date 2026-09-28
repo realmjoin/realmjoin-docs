@@ -380,8 +380,8 @@ If enabled, the report is sent via email with CSV and Excel (xlsx) attachments. 
 
 | Portal option | Value |
 | --- | --- |
-| Yes - send the report via email |  |
-| No - do not send an email |  |
+| Yes - send the report via email | true |
+| No - do not send an email | false |
 
 ### EmailTo
 
@@ -481,9 +481,9 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 
 | Portal option | Value |
 | --- | --- |
-| CSV & XLSX |  |
-| CSV only |  |
-| XLSX only |  |
+| CSV & XLSX | CSV & XLSX |
+| CSV only | CSV only |
+| XLSX only | XLSX only |
 
 ### CreateDownloadLink
 
@@ -500,8 +500,8 @@ If enabled, the report files are uploaded to an Azure Storage Account and time-l
 
 | Portal option | Value |
 | --- | --- |
-| Yes - upload the report and return download links |  |
-| No - do not create download links |  |
+| Yes - upload the report and return download links | true |
+| No - do not create download links | false |
 
 ### ContainerName
 

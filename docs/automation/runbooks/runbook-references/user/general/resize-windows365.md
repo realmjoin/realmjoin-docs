@@ -103,8 +103,8 @@ New Windows 365 license group name to assign for the resized Cloud PC.
 
 | Portal option | Value |
 | --- | --- |
-| Do not send an Email. |  |
-| Send an Email. |  |
+| Do not send an Email. | false |
+| Send an Email. | true |
 
 ### fromMailAddress
 

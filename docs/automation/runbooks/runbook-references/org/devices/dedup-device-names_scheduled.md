@@ -90,10 +90,10 @@ Restricts which devices are evaluated for duplicate detection and renaming. All 
 
 | Portal option | Value |
 | --- | --- |
-| All Platforms |  |
-| Windows only |  |
-| macOS only |  |
-| Other (Android, iOS, ChromeOS) |  |
+| All Platforms | All |
+| Windows only | Windows |
+| macOS only | MacOS |
+| Other (Android, iOS, ChromeOS) | Other |
 
 
 

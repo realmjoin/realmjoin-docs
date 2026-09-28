@@ -195,8 +195,8 @@ When enabled, removes never-enrolled Autopilot devices (devices that never conta
 
 | Portal option | Value |
 | --- | --- |
-| Yes - remove aged never-enrolled devices |  |
-| No |  |
+| Yes - remove aged never-enrolled devices | true |
+| No | false |
 
 ### NeverEnrolledAgeDays
 
@@ -305,9 +305,9 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 
 | Portal option | Value |
 | --- | --- |
-| CSV & XLSX |  |
-| CSV only |  |
-| XLSX only |  |
+| CSV & XLSX | CSV & XLSX |
+| CSV only | CSV only |
+| XLSX only | XLSX only |
 
 ### CreateDownloadLink
 

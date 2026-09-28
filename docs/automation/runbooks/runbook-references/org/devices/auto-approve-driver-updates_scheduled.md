@@ -185,9 +185,9 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 
 | Portal option | Value |
 | --- | --- |
-| CSV & XLSX |  |
-| CSV only |  |
-| XLSX only |  |
+| CSV & XLSX | CSV & XLSX |
+| CSV only | CSV only |
+| XLSX only | XLSX only |
 
 ### CreateDownloadLink
 

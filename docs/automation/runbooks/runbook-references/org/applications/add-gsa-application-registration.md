@@ -106,8 +106,8 @@ The type of GSA application to create. Options: "nonwebapp" (Enterprise App) or 
 
 | Portal option | Value |
 | --- | --- |
-| Enterprise App |  |
-| Quick Access App |  |
+| Enterprise App | nonwebapp |
+| Quick Access App | quickaccessapp |
 
 ### connectorGroup
 
@@ -168,9 +168,9 @@ The network protocol to use. Options: "tcp", "udp", or "tcp,udp". Default is "tc
 
 | Portal option | Value |
 | --- | --- |
-| TCP |  |
-| UDP |  |
-| TCP,UDP |  |
+| TCP | tcp |
+| UDP | udp |
+| TCP,UDP | tcp,udp |
 
 
 

@@ -49,9 +49,9 @@ rjgit-org_general_add-or-remove-safeLinks-exclusion
 
 | Portal option | Value |
 | --- | --- |
-| Add URL Pattern to Policy |  |
-| Remove URL Pattern from Policy |  |
-| List all existing policies and settings |  |
+| Add URL Pattern to Policy | 0 |
+| Remove URL Pattern from Policy | 1 |
+| List all existing policies and settings | 2 |
 
 ### LinkPattern
 

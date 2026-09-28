@@ -251,9 +251,9 @@ File format for the generated report: CSV only, CSV & XLSX (both files), or XLSX
 
 | Portal option | Value |
 | --- | --- |
-| CSV & XLSX |  |
-| CSV only |  |
-| XLSX only |  |
+| CSV & XLSX | CSV & XLSX |
+| CSV only | CSV only |
+| XLSX only | XLSX only |
 
 
 

@@ -135,8 +135,8 @@ If set to true, the script will remove the FullAccess permission. If false, it w
 
 | Portal option | Value |
 | --- | --- |
-| Grant access |  |
-| Remove access |  |
+| Grant access | false |
+| Remove access | true |
 
 ### AutoMapping
 

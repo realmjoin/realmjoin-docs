@@ -84,8 +84,8 @@ Display name of the Windows 365 license group used to identify the Cloud PC.
 
 | Portal option | Value |
 | --- | --- |
-| Do not send an Email. |  |
-| Send an Email. |  |
+| Do not send an Email. | false |
+| Send an Email. | true |
 
 ### fromMailAddress
 

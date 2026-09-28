@@ -59,8 +59,8 @@ If set to true, inactivity is based on last Intune sync; otherwise it is based o
 
 | Portal option | Value |
 | --- | --- |
-| Show by Last Intune Sync |  |
-| Show by Last Login |  |
+| Show by Last Intune Sync | true |
+| Show by Last Login | false |
 
 ### ExportToFile
 
@@ -76,8 +76,8 @@ If set to true, exports the results to a CSV file in Azure Storage.
 
 | Portal option | Value |
 | --- | --- |
-| Export to a CSV file |  |
-| List in Console |  |
+| Export to a CSV file | true |
+| List in Console | false |
 
 ### ContainerName
 

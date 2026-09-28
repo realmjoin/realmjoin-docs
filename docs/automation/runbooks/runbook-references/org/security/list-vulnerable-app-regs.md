@@ -44,8 +44,8 @@ rjgit-org_security_list-vulnerable-app-regs
 
 | Portal option | Value |
 | --- | --- |
-| Export to a CSV file |  |
-| List in Console |  |
+| Export to a CSV file | true |
+| List in Console | false |
 
 ### ContainerName
 

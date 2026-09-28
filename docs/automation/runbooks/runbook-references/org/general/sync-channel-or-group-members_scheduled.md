@@ -153,9 +153,9 @@ copies the source group members into the shared channel.
 
 | Portal option | Value |
 | --- | --- |
-| Shared Channel members -> security group |  |
-| Group members -> group |  |
-| Group members -> Shared Channel |  |
+| Shared Channel members -> security group | SharedChannelToGroup |
+| Group members -> group | GroupToGroup |
+| Group members -> Shared Channel | GroupToSharedChannel |
 
 ### TeamId
 
@@ -268,8 +268,8 @@ this on reveals the recipient address and report file format fields.
 
 | Portal option | Value |
 | --- | --- |
-| Yes - send the report via email |  |
-| No - do not send an email |  |
+| Yes - send the report via email | true |
+| No - do not send an email | false |
 
 ### EmailTo
 
@@ -370,9 +370,9 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 
 | Portal option | Value |
 | --- | --- |
-| CSV & XLSX |  |
-| CSV only |  |
-| XLSX only |  |
+| CSV & XLSX | CSV & XLSX |
+| CSV only | CSV only |
+| XLSX only | XLSX only |
 
 ### CreateDownloadLink
 
@@ -390,8 +390,8 @@ returned (and included in the email report if that is also enabled).
 
 | Portal option | Value |
 | --- | --- |
-| Yes - upload report and return a download link |  |
-| No - do not create a download link |  |
+| Yes - upload report and return a download link | true |
+| No - do not create a download link | false |
 
 ### ContainerName
 

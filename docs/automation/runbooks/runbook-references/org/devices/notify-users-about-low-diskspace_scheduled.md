@@ -199,8 +199,8 @@ Determines how low disk space is detected, either by a fixed amount of free spac
 
 | Portal option | Value |
 | --- | --- |
-| Free space below a fixed size (GB) |  |
-| Free space below a percentage of the disk size (%) |  |
+| Free space below a fixed size (GB) | Free space in GB |
+| Free space below a percentage of the disk size (%) | Free space in percent |
 
 ### FreeSpaceThresholdGB
 
@@ -240,8 +240,8 @@ Selects which devices trigger a notification: every device below the threshold (
 
 | Portal option | Value |
 | --- | --- |
-| Warning and Critical - every device below the threshold |  |
-| Critical only - devices below half of the threshold |  |
+| Warning and Critical - every device below the threshold | Warning and Critical |
+| Critical only - devices below half of the threshold | Critical only |
 
 ### Windows
 

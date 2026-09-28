@@ -60,8 +60,8 @@ Select whether to enable out-of-office notifications or disable existing out-of-
 
 | Portal option | Value |
 | --- | --- |
-| Enable Out-of-Office |  |
-| Disable Out-of-Office |  |
+| Enable Out-of-Office | false |
+| Disable Out-of-Office | true |
 
 ### Start
 

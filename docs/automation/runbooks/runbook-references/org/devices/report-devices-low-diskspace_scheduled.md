@@ -130,8 +130,8 @@ Determines how low disk space is detected, either by a fixed amount of free spac
 
 | Portal option | Value |
 | --- | --- |
-| Free space below a fixed size (GB) |  |
-| Free space below a percentage of the disk size (%) |  |
+| Free space below a fixed size (GB) | Free space in GB |
+| Free space below a percentage of the disk size (%) | Free space in percent |
 
 ### FreeSpaceThresholdGB
 
@@ -308,9 +308,9 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 
 | Portal option | Value |
 | --- | --- |
-| CSV & XLSX |  |
-| CSV only |  |
-| XLSX only |  |
+| CSV & XLSX | CSV & XLSX |
+| CSV only | CSV only |
+| XLSX only | XLSX only |
 
 ### CreateDownloadLink
 

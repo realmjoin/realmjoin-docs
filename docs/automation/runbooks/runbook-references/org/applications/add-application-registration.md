@@ -66,11 +66,11 @@ Used for UI selection only. Determines which redirect URI type to configure - No
 
 | Portal option | Value |
 | --- | --- |
-| None |  |
-| Web |  |
-| SAML |  |
-| Public client/native (mobile & desktop) |  |
-| Single-page application (SPA) |  |
+| None | None |
+| Web | Web |
+| SAML | SAML |
+| Public client/native (mobile & desktop) | PublicClient |
+| Single-page application (SPA) | SPA |
 
 ### signInAudience
 

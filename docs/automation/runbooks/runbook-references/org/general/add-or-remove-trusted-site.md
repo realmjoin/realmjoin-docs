@@ -47,9 +47,9 @@ Action to execute: add, remove, or list policies.
 
 | Portal option | Value |
 | --- | --- |
-| Add URL to Trusted Sites |  |
-| Remove URL from Trusted Sites |  |
-| List/Print all Trusted Sites Policies |  |
+| Add URL to Trusted Sites | 0 |
+| Remove URL from Trusted Sites | 1 |
+| List/Print all Trusted Sites Policies | 2 |
 
 ### Url
 

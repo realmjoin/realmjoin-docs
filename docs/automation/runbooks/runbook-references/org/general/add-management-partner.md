@@ -43,8 +43,8 @@ Choice of action to perform: list existing PALs or add a new PAL.
 
 | Portal option | Value |
 | --- | --- |
-| List current PALs |  |
-| Add a PAL |  |
+| List current PALs | 0 |
+| Add a PAL | 1 |
 
 ### PartnerId
 
