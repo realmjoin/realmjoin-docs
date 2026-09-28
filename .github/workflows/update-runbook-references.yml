@@ -5,13 +5,21 @@ on:
   schedule:
     - cron: '0 2 * * *'  # Daily at 02:00 UTC
 
-permissions:
-  contents: write
+permissions: {}
+
+# Never run two syncs at once; queue instead of cancelling so an in-flight push is not interrupted
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   update-runbook-docs:
     name: 🔄 Generate Runbook Documentation
     runs-on: ubuntu-latest
+    # Dedicated environment scoping the deploy key and Teams webhook secrets
+    environment: runbook-docs
+    permissions:
+      contents: read  # checkout and GitHub API reads (releases); the push uses the deploy key, not GITHUB_TOKEN
 
     steps:
       - name: 📥 Checkout Documentation Repository
