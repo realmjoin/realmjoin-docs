@@ -80,6 +80,10 @@ Make sure `-AutomationAccountName` is present and names your **existing** accoun
 Paste the block into a new PowerShell session and run it. The token is valid for roughly an hour — if it has expired, reload the settings page and copy the command again.
 
 You will be prompted to sign in with `Connect-AzAccount`. The deployment then reports every resource and role assignment as it is applied; anything that already exists is detected and skipped.
+
+{% hint style="info" %}
+**Signing out afterwards:** the Azure sign-in stays active after the command has finished. Once you are done, run `Disconnect-AzAccount` to sign out of the existing session.
+{% endhint %}
 {% endstep %}
 
 {% step %}
