@@ -17,14 +17,15 @@ jobs:
       - name: 📥 Checkout Documentation Repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ssh-key: ${{ secrets.update_runbook_references }}
-          
+          persist-credentials: false
+
       - name: 📥 Checkout RealmJoin Runbooks Repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: realmjoin/realmjoin-runbooks
           ref: production
           path: runbooks-repo
+          persist-credentials: false
 
       - name: 📁 Prepare Output Directory
         shell: pwsh
@@ -130,6 +131,8 @@ jobs:
           Write-Host "✅ SUMMARY.md updated"
 
       - name: 📤 Commit and Push Changes
+        env:
+          DEPLOY_KEY: ${{ secrets.update_runbook_references }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -146,7 +149,14 @@ jobs:
             git commit -m "docs: update runbook references from realmjoin/realmjoin-runbooks
 
             Generated from realmjoin/realmjoin-runbooks@$(cd runbooks-repo && git rev-parse --short HEAD)"
-            git push
+
+            # Checkout does not persist credentials, so load the deploy key only for the push
+            eval "$(ssh-agent -s)" > /dev/null
+            trap 'ssh-agent -k > /dev/null' EXIT
+            ssh-add - <<< "$DEPLOY_KEY"
+            echo "github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl" > "$RUNNER_TEMP/github_known_hosts"
+            GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=$RUNNER_TEMP/github_known_hosts -o StrictHostKeyChecking=yes" \
+              git push "git@github.com:${GITHUB_REPOSITORY}.git" "HEAD:${GITHUB_REF}"
             echo "✅ Changes committed and pushed"
           fi
 
