@@ -63,8 +63,8 @@ The function has two parameter sets:
 | Parameter | Type | Parameter set | Description |
 |---|---|---|---|
 | `InputObject` | `object[]` | `SingleSheet` | The rows to export (array of objects; also accepted via pipeline). Column order follows the property order of the first object. Dictionaries/hashtables are converted to objects. |
-| `WorksheetName` | `string` | `SingleSheet` | Name of the single worksheet. Default: `Report`. |
-| `Worksheets` | `IDictionary` | `MultiSheet` | Ordered dictionary of worksheet name → rows, e.g. `([ordered]@{ 'Summary' = $summary; 'Details' = $details })`. Must contain at least one entry. |
+| `WorksheetName` | `string` | `SingleSheet` | Name of the single worksheet, at most 31 characters (see [Worksheet names](#worksheet-names)). Default: `Report`. |
+| `Worksheets` | `IDictionary` | `MultiSheet` | Ordered dictionary of worksheet name → rows, e.g. `([ordered]@{ 'Summary' = $summary; 'Details' = $details })`. Must contain at least one entry. Keys are worksheet names, at most 31 characters each (see [Worksheet names](#worksheet-names)). |
 
 ### Optional — Content & formatting
 
@@ -175,6 +175,10 @@ See [Send-RjRbReportEmail](send-rjrbreportemail.md) and [Publish-RjRbFilesToStor
 ### Worksheet names
 
 Worksheet names are sanitized to comply with Excel's rules: invalid characters (`[ ] : * ? / \`) are replaced, names are truncated to 31 characters, empty names become `Sheet<n>`, and duplicates get a `_2`, `_3`, … suffix.
+
+{% hint style="warning" %}
+**Keep worksheet names at most 31 characters.** This applies to `-WorksheetName` and to the keys of `-Worksheets`, including values inserted at runtime. Longer names are truncated silently, which can cut off the meaningful part of the name or make two names identical (the second then gets a `_2` suffix). Choose short, meaningful names without `\ / ? * [ ] :`, and use the same name as the matching table title in the runbook's [Output Data](../runbook-output-data.md#naming-a-table) tab, where Export to Excel fails for titles longer than 31 characters.
+{% endhint %}
 
 ### Column headers
 
