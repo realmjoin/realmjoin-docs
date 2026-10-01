@@ -454,7 +454,13 @@ WebLinks
 Currently only LAPS is supported
 {% endhint %}
 
-Assign this setting to the groups of the **device owners** you want to protect. It then restricts which administrators may use LAPS on the devices of those users.
+Assign this setting to the groups of the **device owners** you want to protect. It then restricts which administrators may use [LAPS](../../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/) on the devices of those users.
+
+The setting can also be assigned to **device groups**. This needs the tenant feature _Apply Restrict.LAPS from device groups_. The feature is enabled for all tenants onboarded from Portal version 2026.40. For existing tenants, contact RealmJoin support to enable it. When enabled, the rules from the groups of the device owner and the groups of the device itself are merged.
+
+{% hint style="warning" %}
+Before enabling the feature for an existing tenant, check your device groups for existing `Restrict.LAPS` settings. Until now these settings had no effect. As soon as the feature is enabled, they apply and may remove LAPS access for some administrators.
+{% endhint %}
 
 **Key**\
 Restrict.LAPS
@@ -486,6 +492,14 @@ The lists are inclusive: as soon as at least one list is filled, only administra
 
 Membership in a group listed under `Deny` always denies access, regardless of the other lists. Global admins are never restricted.
 {% endhint %}
+
+Each role is checked against its own list. An administrator only gets the LAPS access of the roles whose list contains one of their groups. For example, an administrator who is both Admin and Supporter, but is only a member of a group listed under `Supporter`, gets Supporter access on these devices, not Admin access.
+
+{% hint style="info" %}
+Before Portal version 2026.40, being listed for any one role was enough to get the access of the administrator's highest role.
+{% endhint %}
+
+Custom roles with one of the LAPS permissions (`CanUseDeviceLapsAsAdvancedSupporter`, `CanSeeDeviceLapsAsAuditor`, `CanUseDeviceLapsAsSupporter`) are checked against the list of the matching role: `AdvancedSupporter`, `Auditor` or `Supporter`. See [Who can access LAPS accounts](../../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/#who-can-access-laps-accounts).
 
 ### Various Toggles
 

@@ -194,6 +194,40 @@ Use the RealmJoin Portal to access the passwords.<br>
 
 <figure><img src="../../../.gitbook/assets/image (315).png" alt=""><figcaption></figcaption></figure>
 
+### Who can access LAPS accounts
+
+What a portal user may do with the LAPS accounts of a device depends on their RealmJoin role:
+
+| Role                         | Emergency account | Support account               | Privileged account            |
+| ---------------------------- | ----------------- | ----------------------------- | ----------------------------- |
+| Admin, Advanced Supporter    | Read password     | Read password, request access | Read password, request access |
+| Auditor                      | See account only  | See account only              | See account only              |
+| Supporter                    | Read password     | Read password, request access | —                             |
+
+Users who hold several roles get the combined access of these roles.
+
+{% hint style="info" %}
+On devices without a primary user, only Global Admins and Admins can access LAPS accounts.
+{% endhint %}
+
+#### Custom roles
+
+[Custom roles](../../../administration-and-settings/permission/custom-roles/) can give LAPS access with the following permissions. Each permission gives exactly the LAPS access of the matching built-in role from the table above. It does not give any other permission of that role.
+
+| Permission                            | LAPS access like   |
+| ------------------------------------- | ------------------ |
+| `CanUseDeviceLapsAsAdvancedSupporter` | Advanced Supporter |
+| `CanSeeDeviceLapsAsAuditor`           | Auditor            |
+| `CanUseDeviceLapsAsSupporter`         | Supporter          |
+
+For [access restrictions](./#restricting-access), a user with one of these permissions counts as a user with the matching role. For example, a user with `CanUseDeviceLapsAsSupporter` must be in one of the groups listed under `Supporter`.
+
+### Restricting access
+
+Use the `Restrict.LAPS` setting to limit which portal users can access the LAPS accounts of specific devices, for example the devices of your executives. See [Access Restrictions](../../../ugd-management/user-and-group-settings/additional-settings.md#access-restrictions) for details.
+
+The _LAPS_ section of a device in the RealmJoin Portal shows which LAPS roles you hold and which of them `Restrict.LAPS` permits for that device.
+
 ## Enable self-service
 
 Users may access accounts created on their _own_ devices (they are "PrimaryUser") when enabled using the _RealmJoin Portal_ starting with version `2022.5.1`. To enable, define a setting using the key `Allow.SelfLAPS`. This setting may be defined on groups and users. As with all settings prefixed with `Allow.*` they are AND-joined across the user and all of their groups.
