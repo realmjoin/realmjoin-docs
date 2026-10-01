@@ -7,7 +7,18 @@ description: >-
 
 # Android Apps (Managed Google Play)
 
-The RealmJoin Portal can add Android apps from **Managed Google Play** to your Intune tenant and deploy them with the same RealmJoin-managed groups you know from Windows and macOS packages.
+The RealmJoin Portal brings **Android** to your app management. You can now deploy Android apps from **Managed Google Play** next to your Windows and macOS packages, in the same portal and with the same RealmJoin-managed groups.
+
+Doing this by hand in Intune takes several steps: approve the app in Managed Google Play, wait for the sync, create groups and set up the assignments. With RealmJoin it takes one: **paste a Google Play link**. RealmJoin approves the app, syncs it into Intune, creates the Required, Available and Uninstall groups and assigns them for you. A few minutes later the app is ready to roll out.
+
+From then on, Android apps are handled like every other managed package:
+
+* **One place for every platform.** Your support and admin staff work with Windows, macOS and Android apps in the same portal, without switching to the Intune admin center.
+* **Familiar assignments.** Add users or devices to the app's groups from the app page, exactly as for Windows and macOS packages.
+* **Always up to date.** Google Play delivers updates automatically, so there is no version maintenance on your side.
+* **Built-in safety checks.** RealmJoin checks that the app exists on Google Play and is not already in your tenant before anything is created.
+
+## How Android apps differ
 
 Android apps work differently from the rest of the [Package Store](package-store/):
 
