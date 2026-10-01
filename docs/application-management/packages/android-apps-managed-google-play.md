@@ -118,7 +118,7 @@ The feature requires **Intune deployment** to be active for your tenant as well.
 
 In the RealmJoin Portal, open the [Package Store](package-store/) and select **Android** in the OS filter. The filter only appears once the feature is activated.
 
-<!-- Screenshot: Package Store with the Android OS filter selected (see issue #327) -->
+<figure><img src="../../.gitbook/assets/android-mgp-store-filter.png" alt="Android OS filter in the Package Store"><figcaption><p>Android OS filter in the Package Store</p></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -129,16 +129,16 @@ Find the app on [Google Play](https://play.google.com/store/apps) and copy the l
 `https://play.google.com/store/apps/details?id=com.microsoft.teams`
 
 Pasting only the package name (`com.microsoft.teams`) works as well.
-
-<!-- Screenshot: Microsoft Teams on Google Play (see issue #327) -->
 {% endstep %}
 
 {% step %}
 ### Paste the link and subscribe
 
-Paste the link into the **Google Play link** field and select **Use Intune (managed)**. RealmJoin checks that the app exists on Google Play and that it is not already subscribed in your tenant, then opens the app's subscription page. Confirm the subscription there; there is nothing else to configure.
+Paste the link into the **Google Play link** field and select **Use Intune (managed)**. RealmJoin checks that the app exists on Google Play and that it is not already subscribed in your tenant, then opens the app's subscription page. Select **Continue** to start the subscription; there is nothing else to configure.
 
-<!-- Screenshot: Google Play link pasted in the Android Package Store (see issue #327) -->
+<figure><img src="../../.gitbook/assets/android-mgp-paste-link.png" alt="Google Play link pasted. If the app already exists, the portal links to it instead"><figcaption><p>Google Play link pasted. If the app already exists, the portal links to it instead</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/android-mgp-subscribe.png" alt="Subscription page of a Managed Google Play app"><figcaption><p>Subscription page of a Managed Google Play app</p></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -150,11 +150,15 @@ RealmJoin now processes the subscription in the background and shows its progres
 2. RealmJoin waits until the app appears in Intune. This can take a few minutes.
 3. The deployment groups are created and assigned to the app.
 
-<!-- Screenshot: Subscription in progress (see issue #327) -->
+<figure><img src="../../.gitbook/assets/android-mgp-progress.png" alt="Subscription in progress"><figcaption><p>Subscription in progress</p></figcaption></figure>
 
-When it is done, the app shows up under **Apps** like any other Intune managed app.
+When it is done, the app page shows the created groups and assignments.
 
-<!-- Screenshots: Subscribed app overview and assignments (see issue #327) -->
+<figure><img src="../../.gitbook/assets/android-mgp-app-overview.png" alt="Subscribed app with its RealmJoin-managed groups"><figcaption><p>Subscribed app with its RealmJoin-managed groups</p></figcaption></figure>
+
+The app is also listed under **Packages**; set the **Platform** filter to **Android** to show only Android apps.
+
+<!-- Screenshot: Packages list filtered to Android -->
 {% endstep %}
 {% endstepper %}
 
