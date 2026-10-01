@@ -158,7 +158,7 @@ When it is done, the app page shows the created groups and assignments.
 
 The app is also listed under **Packages**; set the **Platform** filter to **Android** to show only Android apps.
 
-<!-- Screenshot: Packages list filtered to Android -->
+<figure><img src="../../.gitbook/assets/android-mgp-packages-list.png" alt="Packages list filtered to Android"><figcaption><p>Packages list filtered to Android</p></figcaption></figure>
 {% endstep %}
 {% endstepper %}
 
