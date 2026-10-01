@@ -50,6 +50,7 @@
   * [Package Management Overview](application-management/packages/package-management.md)
   * [Package Configuration and Assignments](application-management/packages/package-deployment.md)
   * [Update Group](application-management/packages/update-group.md)
+  * [Android Apps (Managed Google Play)](application-management/packages/android-apps-managed-google-play.md)
   * [Package Details](application-management/packages/package-details.md)
   * [Package Settings](application-management/packages/package-settings.md)
   * [Packaging Requests](application-management/packages/packaging-requests/README.md)

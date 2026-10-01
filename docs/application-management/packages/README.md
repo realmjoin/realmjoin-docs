@@ -21,6 +21,10 @@ RealmJoin Packages are ready‑to‑use software packages provided through the R
 [package-deployment.md](package-deployment.md)
 {% endcontent-ref %}
 
+{% content-ref url="android-apps-managed-google-play.md" %}
+[android-apps-managed-google-play.md](android-apps-managed-google-play.md)
+{% endcontent-ref %}
+
 {% content-ref url="package-details.md" %}
 [package-details.md](package-details.md)
 {% endcontent-ref %}
