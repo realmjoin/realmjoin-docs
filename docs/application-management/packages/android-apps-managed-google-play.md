@@ -32,16 +32,16 @@ This is done once per tenant by an Intune Administrator or Global Administrator.
 
 1. Open the [Microsoft Intune admin center](https://intune.microsoft.com).
 2. Go to **Devices → Enrollment → Android → Prerequisites → Managed Google Play**.
-3. Tick **I agree** and select **Launch Google to connect now**.
+3. Tick **I agree** and select **Connect to Google now**.
 4. Sign in with the Google account that should own your Managed Google Play enterprise and complete the wizard.
 
-<!-- Screenshot: Intune > Devices > Enrollment > Android > Prerequisites > Managed Google Play (see issue c4a8-issues-products-realmjoin-internal#327) -->
+<figure><img src="../../.gitbook/assets/android-mgp-intune-connect.webp" alt="Managed Google Play under Devices > Enrollment > Android in Intune"><figcaption><p>Managed Google Play under Devices → Enrollment → Android (connected, status Setup)</p></figcaption></figure>
 
 {% hint style="warning" %}
 **Tenant administration → Connectors and tokens → Managed Google Play** only shows the connection status and the scope tag for synced apps. It no longer offers the option to connect a Google account.
 {% endhint %}
 
-After connecting, the status on **Tenant administration → Connectors and tokens → Managed Google Play** must no longer show **Not provisioned**.
+After connecting, the status shows **Setup** together with the linked account. On **Tenant administration → Connectors and tokens → Managed Google Play** the status must no longer show **Not provisioned**.
 
 If you use a scope tag on that page, make sure the admins working with Android apps are assigned to it. Otherwise they cannot see the synced apps in Intune.
 {% endstep %}
