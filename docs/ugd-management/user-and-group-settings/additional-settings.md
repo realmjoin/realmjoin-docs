@@ -451,7 +451,7 @@ WebLinks
 ### Access Restrictions
 
 {% hint style="info" %}
-Currently only LAPS is supported
+Currently only [RealmJoin LAPS](../../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/) is supported. Access to Intune-managed Windows LAPS is controlled by the custom role permissions `CanSeeDeviceIntuneManagedLapsStatus` and `CanRotateIntuneManagedDeviceLocalCredentials` and is not affected by this setting.
 {% endhint %}
 
 Assign this setting to the groups of the **device owners** you want to protect. It then restricts which administrators may use [LAPS](../../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/) on the devices of those users.
