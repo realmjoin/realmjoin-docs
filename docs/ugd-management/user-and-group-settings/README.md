@@ -29,6 +29,8 @@ If the same setting is assigned to several of the user's groups, one of those gr
 
 {% hint style="info" %}
 Settings are resolved for the signed-in user only. Unlike [package assignments](../../application-management/packages/package-deployment.md#assignment-priority-and-conflicts), group memberships of the device are not evaluated for settings, and there are no Exclude or Uninstall semantics — a setting is either assigned at a scope or it is not.
+
+The only exception is [`Restrict.LAPS`](additional-settings.md#access-restrictions), which can also be read from device groups when the tenant feature for it is enabled.
 {% endhint %}
 
 Example:
