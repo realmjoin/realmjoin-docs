@@ -69,7 +69,7 @@ A cell holding a nested object or array is not flattened into unreadable text:
 
 ### Export
 
-Each table has its own **Export to Excel** (`.xlsx`) and **Export to CSV** buttons. Exports honour the active filter — only matching rows are written — and use the table title as the file name.
+Each table has its own **Export to Excel** (`.xlsx`) and **Export to CSV** buttons. Exports honour the active filter — only matching rows are written — and use the table title as the file name. Export to Excel also uses the title as the worksheet name and fails for titles longer than 31 characters, see [Naming a table](#naming-a-table).
 
 Exporting from the portal covers the ad-hoc case. For report files that a runbook is supposed to deliver on its own — as a mail attachment or as a download link — build them in the runbook instead, with [Export-RjRbXlsx](report-functions/export-rjrbxlsx.md) and the delivery helpers.
 
@@ -166,6 +166,12 @@ Write-Output $compliant
 [PSCustomObject]@{ RjTableTitle = 'Non-compliant devices' }
 Write-Output $nonCompliant
 ```
+
+{% hint style="warning" %}
+**Keep table titles at most 31 characters.** **Export to Excel** uses the table title as the worksheet name, and Excel accepts only names of 1 to 31 characters that contain none of `\ / ? * [ ] :` and do not start or end with an apostrophe. A longer title such as `Disabled users with a shared mailbox` (36 characters) makes the export fail with *"An error occurred while loading the data: sheetName 'Disabled users with a shared mailbox' is invalid - character count MUST be greater than or equal to 1 and less than or equal to 31"*.
+
+The limit includes values inserted at runtime, such as a group name or a date. Choose short, meaningful titles, and when the runbook also writes an Excel file with [Export-RjRbXlsx](report-functions/export-rjrbxlsx.md#worksheet-names), use the same name for the table and the matching worksheet.
+{% endhint %}
 
 ## Behavior & Limitations
 
