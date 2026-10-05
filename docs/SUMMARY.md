@@ -1,6 +1,6 @@
 # Table of contents
 
-* [RealmJoin Documentation](README.md)
+* [RealmJoin Documentation](README.md "Welcome")
 * [Overview](overview.md)
 
 ## Introduction
