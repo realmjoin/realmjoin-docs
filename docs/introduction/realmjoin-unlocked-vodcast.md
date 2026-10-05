@@ -15,7 +15,33 @@ RealmJoin Unlocked is our video podcast, hosted by Dr. Moritz Pohl of our Produc
 * **Share Field Experience:** We bring in "RealmJoin Champions" and Workplace experts from our team to discuss best practices.
 * **Solve Problems:** We address frequently asked questions and common challenges directly in the episodes.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Special</strong></td><td><strong>Onboarding a RealmJoin Tenant in Minutes</strong></td><td>Tenant onboarding with the PowerShell module, Quick vs. Advanced Setup, optional features, Log Analytics, Runbooks.<br><em>With Jonas Heckmann</em></td><td></td><td><a href="realmjoin-unlocked-vodcast.md#special-1">#special-1</a></td></tr><tr><td><strong>Episode 2</strong></td><td><strong>RealmJoin: Self-Service update</strong></td><td>New self-service App Catalog, extended data export, ARM, FAQ.<br><em>With Jonas Heckmann</em></td><td></td><td><a href="realmjoin-unlocked-vodcast.md#episode-2">#episode-2</a></td></tr><tr><td><strong>Episode 1</strong></td><td><strong>RealmJoin: What's New</strong></td><td>Product wrap-up, vNext Portal, macOS support, Managed App Subscriptions.<br><em>With Steffen Schwerdtfeger</em></td><td></td><td><a href="realmjoin-unlocked-vodcast.md#episode-1">#episode-1</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Episode 3</strong></td><td><strong>Native Runtime, Tenant Config, Shadow IT Export</strong></td><td>Native Runtime, agent &amp; App Catalog updates, LAPS self-healing, tenant defaults, Shadow IT and usage exports.<br><em>With Jonas Heckmann</em></td><td></td><td><a href="realmjoin-unlocked-vodcast.md#episode-3">#episode-3</a></td></tr><tr><td><strong>Special</strong></td><td><strong>Onboarding a RealmJoin Tenant in Minutes</strong></td><td>Tenant onboarding with the PowerShell module, Quick vs. Advanced Setup, optional features, Log Analytics, Runbooks.<br><em>With Jonas Heckmann</em></td><td></td><td><a href="realmjoin-unlocked-vodcast.md#special-1">#special-1</a></td></tr><tr><td><strong>Episode 2</strong></td><td><strong>RealmJoin: Self-Service update</strong></td><td>New self-service App Catalog, extended data export, ARM, FAQ.<br><em>With Jonas Heckmann</em></td><td></td><td><a href="realmjoin-unlocked-vodcast.md#episode-2">#episode-2</a></td></tr><tr><td><strong>Episode 1</strong></td><td><strong>RealmJoin: What's New</strong></td><td>Product wrap-up, vNext Portal, macOS support, Managed App Subscriptions.<br><em>With Steffen Schwerdtfeger</em></td><td></td><td><a href="realmjoin-unlocked-vodcast.md#episode-1">#episode-1</a></td></tr></tbody></table>
+
+***
+
+## Episode 3: Native Runtime, Tenant Config, Shadow IT Export <a href="#episode-3" id="episode-3"></a>
+
+{% embed url="https://www.youtube.com/watch?v=JZUEf6HBwQI" %}
+
+Moritz is joined once again by **Jonas Heckmann (Cloud Engineer & RealmJoin Core Team)** to discuss a major batch of portal and agent updates. They dive into the transition from the legacy engine to a self-developed Native Runtime, new quality-of-life enhancements for end users and administrators, tenant-wide baseline configurations, and new analytics exports for license management and security.
+
+<details>
+
+<summary>Chapters</summary>
+
+* [**00:00:03**](https://www.youtube.com/watch?v=JZUEf6HBwQI\&t=3s) **Introduction:** Moritz welcomes Jonas back to highlight the transition from recent beta releases into the latest stable release.
+* [**00:01:21**](https://www.youtube.com/watch?v=JZUEf6HBwQI\&t=81s) **Release Channels & Cascading Settings:** Overview of the Canary, Beta and Stable update channels alongside RealmJoin's cascading [settings](../ugd-management/user-and-group-settings/README.md) framework (tenant, group and user level).
+* [**00:02:47**](https://www.youtube.com/watch?v=JZUEf6HBwQI\&t=167s) **Native Runtime & CDN Optimization:** Replacing the legacy engine with a self-developed Native Runtime – seamless in-place migration, better download algorithms and integrated CDN security.
+* [**00:07:00**](https://www.youtube.com/watch?v=JZUEf6HBwQI\&t=420s) **Agent & Enrollment Enhancements:** Channel assignments that apply directly during the initial ESP enrollment, improved authentication stability and simplified agent version management.
+* [**00:08:43**](https://www.youtube.com/watch?v=JZUEf6HBwQI\&t=523s) **App Catalog & User Interface:** Customizable shortcuts, catalog rebranding, queued installations and one-click debug log exports.
+* [**00:12:52**](https://www.youtube.com/watch?v=JZUEf6HBwQI\&t=772s) **RealmJoin LAPS Self-Healing:** Automated background retries and self-healing for [local admin password](../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/README.md) credentials and the [Key Vault](../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/keyvault.md) sync.
+* [**00:15:12**](https://www.youtube.com/watch?v=JZUEf6HBwQI\&t=912s) **Tenant Default Configuration:** Establishing tenant-wide configuration baselines in the portal, with group and user overrides where needed.
+* [**00:17:37**](https://www.youtube.com/watch?v=JZUEf6HBwQI\&t=1057s) **Device Management & Portal QoL:** BitLocker / FileVault secret rotation directly from the portal, alongside [hybrid](../automation/runbooks/hybrid-runbook-worker.md) execution and [scheduled runbook reporting](../automation/runbooks/runbook-report-settings.md).
+* [**00:20:28**](https://www.youtube.com/watch?v=JZUEf6HBwQI\&t=1228s) **Log Analytics & Runbook Migration:** Moving to Azure Data Collection Rules (DCR) and multi-tenant app registrations for [Log Analytics](../monitoring-and-logs/log-analytics.md), with guided PowerShell migration paths.
+* [**00:23:27**](https://www.youtube.com/watch?v=JZUEf6HBwQI\&t=1407s) **Shadow IT & Usage Reporting:** Exporting detailed analytics to identify unmanaged applications on endpoints and tracking software usage to optimize license costs.
+* [**00:27:22**](https://www.youtube.com/watch?v=JZUEf6HBwQI\&t=1642s) **Conclusion & Next Steps:** Final summary, how to opt into new features via support, and closing remarks.
+
+</details>
 
 ***
 
