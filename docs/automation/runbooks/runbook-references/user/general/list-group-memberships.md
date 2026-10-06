@@ -1,10 +1,10 @@
 ---
 title: List Group Memberships
-description: List group memberships for this user
+description: List the group memberships of this user
 ---
 
 ## Description
-Lists group memberships for this user and supports filtering by group type, membership type, role-assignable status, Teams enablement, source, and writeback status. Outputs the results as CSV-formatted text.
+Lists the groups this user is a member of, with filters for group type, membership type, role assignability, Teams, source and writeback. The result is shown as CSV text. The report can be sent by email or provided as a download link.
 
 ## Setup regarding email sending
 
@@ -59,7 +59,7 @@ rjgit-user_general_list-group-memberships
 ## Parameters
 ### UserName
 
-User principal name of the target user.
+User principal name of the user the runbook acts on. Set by the portal from the selected user.
 
 | Property | Value |
 | --- | --- |
@@ -70,7 +70,7 @@ User principal name of the target user.
 
 ### GroupType
 
-Filter by group type: Security (security permissions only), M365 (Microsoft 365 groups with mailbox), or All (default).
+Security groups only, Microsoft 365 groups only, or all groups.
 
 | Property | Value |
 | --- | --- |
@@ -80,7 +80,7 @@ Filter by group type: Security (security permissions only), M365 (Microsoft 365 
 
 ### MembershipType
 
-Filter by membership type: Assigned (manually added members), Dynamic (rule-based membership), or All (default).
+Assigned memberships, dynamic memberships, or all.
 
 | Property | Value |
 | --- | --- |
@@ -90,7 +90,7 @@ Filter by membership type: Assigned (manually added members), Dynamic (rule-base
 
 ### RoleAssignable
 
-Filter groups that can be assigned to Azure AD roles: Yes (role-assignable only) or NotSet (all groups, default).
+Yes limits the list to groups that can be assigned Entra ID roles.
 
 | Property | Value |
 | --- | --- |
@@ -100,7 +100,7 @@ Filter groups that can be assigned to Azure AD roles: Yes (role-assignable only)
 
 ### TeamsEnabled
 
-Filter groups with Microsoft Teams functionality: Yes (Teams-enabled only) or NotSet (all groups, default).
+Yes limits the list to groups that back a Microsoft Teams team.
 
 | Property | Value |
 | --- | --- |
@@ -110,7 +110,7 @@ Filter groups with Microsoft Teams functionality: Yes (Teams-enabled only) or No
 
 ### Source
 
-Filter by group origin: Cloud (Azure AD only), OnPrem (synchronized from on-premises AD), or All (default).
+Cloud-only groups, groups synchronized from on-premises Active Directory, or all.
 
 | Property | Value |
 | --- | --- |
@@ -120,7 +120,7 @@ Filter by group origin: Cloud (Azure AD only), OnPrem (synchronized from on-prem
 
 ### WritebackEnabled
 
-Filter groups by writeback enablement.
+Groups with writeback to on-premises Active Directory, groups without, or all.
 
 | Property | Value |
 | --- | --- |
@@ -130,14 +130,14 @@ Filter groups by writeback enablement.
 
 ### SendMail
 
-If enabled, the report is sent via email with the selected report file format(s) attached. Toggling this on reveals the recipient address and report file format fields.
+Send the report to the recipient email address.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Send the report via email? |
+| Portal display name | Send the report by email? |
 
 **Portal options**
 
@@ -148,19 +148,19 @@ If enabled, the report is sent via email with the selected report file format(s)
 
 ### EmailTo
 
-Recipient address or multiple comma-separated addresses for the email report. Only used when SendMail is enabled.
+Send the report to these addresses. Separate several with commas; each recipient gets a separate email.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Recipient Email Address(es) |
+| Portal display name | Recipient email address(es) |
 | Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailFrom
 
-The sender email address. This needs to be configured in the runbook customization.
+Sender address of the report email. Taken from the tenant setting RJReport.EmailSender.
 
 | Property | Value |
 | --- | --- |
@@ -171,8 +171,7 @@ The sender email address. This needs to be configured in the runbook customizati
 
 ### BrandingHeaderImageUrl
 
-Optional public HTTPS URL of a custom header image (PNG/JPEG/GIF, max. 200 KB) for the report email.
-Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, the default RealmJoin header graphic is used.
+Header image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.HeaderImageUrl; the default RealmJoin header is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -183,8 +182,7 @@ Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, th
 
 ### BrandingFooterImageUrl
 
-Optional public HTTPS URL of a custom footer image (PNG/JPEG/GIF, max. 200 KB) for the report email.
-Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, the default RealmJoin footer graphic is used.
+Footer image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.FooterImageUrl; the default RealmJoin footer is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -195,8 +193,7 @@ Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, th
 
 ### BrandingFooterLink
 
-Optional URL the footer image links to. Sourced from the RJReport.Branding.FooterLink tenant setting.
-When empty, the default link (https://www.realmjoin.com) is used.
+Link behind the footer image of the report email. Taken from the tenant setting RJReport.Branding.FooterLink; realmjoin.com is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -207,8 +204,7 @@ When empty, the default link (https://www.realmjoin.com) is used.
 
 ### BrandingAccentColor
 
-Optional accent color override (6-digit hex, e.g. '#0052cc') for the report email template.
-Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or invalid, the default RealmJoin accent color is used.
+Accent color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.AccentColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |
@@ -219,8 +215,7 @@ Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or inv
 
 ### BrandingTextColor
 
-Optional text color override (6-digit hex) for the report email template.
-Sourced from the RJReport.Branding.TextColor tenant setting. When empty or invalid, the default RealmJoin text color is used.
+Text color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.TextColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |
@@ -231,7 +226,7 @@ Sourced from the RJReport.Branding.TextColor tenant setting. When empty or inval
 
 ### ReportFileFormat
 
-Controls which report file formats are generated and delivered: "CSV only", "CSV & XLSX" (default) or "XLSX only".
+Deliver the report as CSV, as an Excel workbook, or both.
 
 | Property | Value |
 | --- | --- |
@@ -251,14 +246,14 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 
 ### CreateDownloadLink
 
-If enabled, the report files (CSV and Excel) are uploaded to an Azure Storage Account and time-limited download links are returned in the output.
+Also upload the report and return a download link that expires after a few days.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Create a file download link (upload report to storage)? |
+| Portal display name | Create a download link? |
 
 **Portal options**
 
@@ -269,7 +264,7 @@ If enabled, the report files (CSV and Excel) are uploaded to an Azure Storage Ac
 
 ### ContainerName
 
-Storage container name used for the upload.
+Storage container the report files are uploaded to. Set per runbook.
 
 | Property | Value |
 | --- | --- |
@@ -280,7 +275,7 @@ Storage container name used for the upload.
 
 ### ResourceGroupName
 
-Resource group that contains the storage account.
+Resource group of the storage account for report uploads. Taken from the tenant setting RJReport.StorageAccount.ResourceGroup.
 
 | Property | Value |
 | --- | --- |
@@ -291,7 +286,7 @@ Resource group that contains the storage account.
 
 ### StorageAccountName
 
-Storage account name used for the upload.
+Storage account for report uploads. Taken from the tenant setting RJReport.StorageAccount.StorageAccountName.
 
 | Property | Value |
 | --- | --- |
@@ -302,7 +297,7 @@ Storage account name used for the upload.
 
 ### LinkExpiryDays
 
-Number of days until the generated download link expires.
+Number of days a download link stays valid. Taken from the tenant setting RJReport.StorageAccount.LinkExpiryDays.
 
 | Property | Value |
 | --- | --- |

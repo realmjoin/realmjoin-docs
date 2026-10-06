@@ -84,7 +84,9 @@ Please grant the following Graph API-Permissions to the managed identity
 * `RoleManagement.Read.All`
 * `RoleManagement.Read.Directory`
 * `ServiceHealth.Read.All`
+* `Sites.Read.All`
 * `Team.Create`
+* `Team.ReadBasic.All`
 * `TeamMember.ReadWrite.All`
 * `TeamSettings.ReadWrite.All`
 * `User.ReadWrite.All`

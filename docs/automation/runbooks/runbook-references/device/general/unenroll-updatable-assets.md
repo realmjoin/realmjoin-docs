@@ -1,10 +1,10 @@
 ---
 title: Unenroll Updatable Assets
-description: Unenroll device from Windows Update for Business.
+description: Unenroll this device from Windows Update for Business
 ---
 
 ## Description
-This script unenrolls devices from Windows Update for Business.
+Removes this device from Windows Update for Business for the chosen update category. Choosing all removes the device as an updatable asset altogether, so Intune no longer manages driver, feature or quality updates for it through the deployment service.
 
 ## Location
 Device → General → Unenroll Updatable Assets
@@ -32,7 +32,7 @@ rjgit-device_general_unenroll-updatable-assets
 ## Parameters
 ### DeviceId
 
-DeviceId of the device to unenroll.
+Entra ID device ID of the device the runbook acts on. Set by the portal from the selected device.
 
 | Property | Value |
 | --- | --- |
@@ -43,13 +43,14 @@ DeviceId of the device to unenroll.
 
 ### UpdateCategory
 
-Category of updates to unenroll from. Possible values are: driver, feature, quality or all (delete).
+Update category to unenroll the device from. Choosing all removes the device from Windows Update for Business entirely.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value | all |
 | Type | String |
+| Portal display name | Update category |
 
 
 

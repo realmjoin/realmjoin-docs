@@ -1,10 +1,10 @@
 ---
 title: Revoke Or Restore Access
-description: Revoke or restore user access
+description: Block this user's sign-in and sessions, or restore access
 ---
 
 ## Description
-Blocks or re-enables a user account and optionally revokes active sign-in sessions. This can be used during incident response to immediately invalidate user tokens.
+Blocks this user from signing in and ends the current sessions, so stolen tokens stop working immediately, for example during an incident. Re-enable user lifts the block again; ended sessions are not restored.
 
 ## Location
 User → Security → Revoke Or Restore Access
@@ -36,7 +36,7 @@ rjgit-user_security_revoke-or-restore-access
 ## Parameters
 ### UserName
 
-User principal name of the target user.
+User principal name of the user the runbook acts on. Set by the portal from the selected user.
 
 | Property | Value |
 | --- | --- |
@@ -47,7 +47,7 @@ User principal name of the target user.
 
 ### Revoke
 
-"(Re-)Enable User" (final value: $false) or "Revoke Access" (final value: $true) can be selected as action to perform. If set to true, the runbook will block the user from signing in and revoke active sessions. If set to false, it will re-enable the user account.
+Revoke access blocks sign-in and ends the sessions. Re-enable user lets the user sign in again.
 
 | Property | Value |
 | --- | --- |
@@ -60,8 +60,8 @@ User principal name of the target user.
 
 | Portal option | Value |
 | --- | --- |
-| (Re-)Enable User | false |
-| Revoke Access | true |
+| Re-enable user | false |
+| Revoke access | true |
 
 
 

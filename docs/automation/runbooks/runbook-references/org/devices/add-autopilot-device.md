@@ -1,11 +1,10 @@
 ---
 title: Add Autopilot Device
-description: Import a Windows device into Windows Autopilot
+description: Register a Windows device in Windows Autopilot
 ---
 
 ## Description
-This runbook imports a Windows device into Windows Autopilot using the device serial number and hardware hash.
-It can optionally wait for the import job to finish and supports tagging during import.
+Registers a Windows device in Windows Autopilot from its serial number and hardware hash, as collected with Get-WindowsAutopilotInfo. Optionally a group tag is set during the import and the runbook waits until the import has finished.
 
 ## Location
 Organization → Devices → Add Autopilot Device
@@ -35,29 +34,29 @@ rjgit-org_devices_add-autopilot-device
 ## Parameters
 ### SerialNumber
 
-Device serial number as returned by Get-WindowsAutopilotInfo.
+Serial number of the device as reported by Get-WindowsAutopilotInfo.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | 'Device Serial Number' from Get-WindowsAutopilotInfo |
+| Portal display name | Serial number |
 
 ### HardwareIdentifier
 
-Device hardware hash as returned by Get-WindowsAutopilotInfo.
+Hardware hash of the device as reported by Get-WindowsAutopilotInfo.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | 'Hardware Hash' from Get-WindowsAutopilotInfo |
+| Portal display name | Hardware hash |
 
 ### AssignedUser
 
-Optional user to assign to the Autopilot device.
+User to assign during the import. Microsoft no longer accepts this, so leave it empty.
 
 | Property | Value |
 | --- | --- |
@@ -69,25 +68,25 @@ Optional user to assign to the Autopilot device.
 
 ### Wait
 
-If set to true, the runbook waits until the import job completes.
+Keeps the runbook running until Autopilot has processed the import, so the result shows in the output.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
-| Portal display name | Wait for job to finish |
+| Portal display name | Wait for the import to finish? |
 
 ### GroupTag
 
-Optional group tag to apply to the imported device.
+Group tag to set on the device, for example to steer it into an Autopilot profile. Leave empty for none.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Group tag (optional) |
+| Portal display name | Group tag |
 
 
 

@@ -1,12 +1,10 @@
 ---
 title: Rename Group
-description: Rename a group.
+description: Rename this group or change its description
 ---
 
 ## Description
-This runbook updates a group's DisplayName, MailNickname, and Description.
-It does not change the group's email addresses.
-Provide only the fields you want to update; empty values are ignored.
+Updates the display name, the mail nickname and the description of this group. Fill in only the fields you want to change; empty fields are left as they are. The group's email addresses do not change.
 
 ## Location
 Group → General → Rename Group
@@ -34,7 +32,7 @@ rjgit-group_general_rename-group
 ## Parameters
 ### GroupId
 
-Object ID of the group to update.
+Object ID of the group the runbook acts on. Set by the portal from the selected group.
 
 | Property | Value |
 | --- | --- |
@@ -45,36 +43,36 @@ Object ID of the group to update.
 
 ### DisplayName
 
-New display name for the group.
+New name of the group, for a team also the team name. Leave empty to keep the current name.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | New DisplayName / Team Name |
+| Portal display name | New display name |
 
 ### MailNickname
 
-New mail nickname (alias) for the group.
+New alias (mail nickname) of the group. The existing email addresses stay. Leave empty to keep the current alias.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | New MailNickname |
+| Portal display name | New mail nickname |
 
 ### Description
 
-New description for the group.
+New description shown for the group. Leave empty to keep the current one.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | New Description |
+| Portal display name | New description |
 
 
 

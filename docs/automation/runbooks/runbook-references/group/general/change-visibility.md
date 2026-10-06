@@ -1,12 +1,10 @@
 ---
 title: Change Visibility
-description: Change a group's visibility
+description: Make this group public or private
 ---
 
 ## Description
-This runbook changes the visibility of a Microsoft 365 group between Private and Public.
-Set the Public switch to make the group public; otherwise it will be set to private.
-This does not change group membership, owners, or email addresses.
+Switches this Microsoft 365 group between public and private. Public groups can be found and joined by anyone in the organization, private groups only by their members. Membership, owners and email addresses stay as they are.
 
 ## Location
 Group → General → Change Visibility
@@ -34,7 +32,7 @@ rjgit-group_general_change-visibility
 ## Parameters
 ### GroupID
 
-Object ID of the target group.
+Object ID of the group the runbook acts on. Set by the portal from the selected group.
 
 | Property | Value |
 | --- | --- |
@@ -45,14 +43,14 @@ Object ID of the target group.
 
 ### Public
 
-"Make group private" (final value: $false) or "Make group public" (final value: $true) can be selected as action to perform.
+Public groups can be found and joined by anyone in the organization, private groups only by their members.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Set Group visibility |
+| Portal display name | Visibility |
 
 **Portal options**
 

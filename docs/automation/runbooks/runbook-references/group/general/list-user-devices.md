@@ -1,12 +1,10 @@
 ---
 title: List User Devices
-description: List devices owned by group members.
+description: List the devices registered to this group's members
 ---
 
 ## Description
-This runbook enumerates the users in a group and lists their registered devices.
-Optionally, it can add the discovered devices to a specified device group.
-Use this to create or maintain a device group based on group member ownership.
+Lists the devices registered to the users in this group. Optionally the found devices are added to a device group of your choice. Devices are only added to that group, never removed.
 
 ## Location
 Group → General → List User Devices
@@ -19,18 +17,18 @@ rjgit-group_general_list-user-devices
 
 | Property | Value |
 | --- | --- |
-| Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
+| Version | 1.1.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | no |
 
 ## Permissions
 
 ### Application permissions
 - **Type**: Microsoft Graph
-  - Group.Read.All
-    - *Enumerates the group's user members to know whose devices to list*
   - Device.Read.All
     - *Reads each member's registered devices via /users/{id}/registeredDevices*
+  - Group.Read.All
+    - *Enumerates the group's user members to know whose devices to list*
   - GroupMember.ReadWrite.All *(optional — feature: Move devices to group)*
     - *Adds the found devices to the target group*
 
@@ -38,27 +36,29 @@ rjgit-group_general_list-user-devices
 ## Parameters
 ### GroupID
 
-Object ID of the group whose members will be evaluated.
+Object ID of the group the runbook acts on. Set by the portal from the selected group.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### moveGroup
 
-If set to true, the discovered devices are added to the target device group.
+Whether the found devices are added to the chosen device group. Set by the "Action" choice.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### targetgroup
 
-Object ID of the target device group that receives the devices when moveGroup is enabled.
+Group the found devices are added to. Only used when "Action" adds the devices.
 
 | Property | Value |
 | --- | --- |

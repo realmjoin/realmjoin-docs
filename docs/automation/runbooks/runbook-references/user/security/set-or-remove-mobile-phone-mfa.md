@@ -1,10 +1,10 @@
 ---
 title: Set Or Remove Mobile Phone MFA
-description: Set or remove a user's mobile phone MFA method
+description: Set or remove the mobile phone MFA method of this user
 ---
 
 ## Description
-Adds, updates, or removes the user's mobile phone authentication method. This runbook manages phone numbers as regular MFA factors (call/text verification). Important: The Microsoft Graph phoneMethods API does not offer a way to add a phone number as "MFA only" without triggering an automatic SMS Sign-In registration attempt. If the user is enabled by the tenant's Authentication Methods Policy for SMS Sign-In, Graph will automatically try to register the number for SMS Sign-In after creating or updating the phone method. If the number is already used by another user for SMS Sign-In, Graph returns a 409 Conflict with error code "phoneNumberNotUnique". However, the phone method itself (for regular MFA) is typically created or updated successfully despite this error. The smsSignInState property is read-only and cannot be controlled via the create/update request. SMS Sign-In can only be explicitly managed via the separate enableSmsSignIn and disableSmsSignIn endpoints. This runbook verifies the actual state after such errors and reports success if the MFA method was assigned, with a warning about the SMS Sign-In conflict. If the assignment truly failed, it searches for the user holding the number.
+Adds or updates the mobile phone of this user as an MFA method for calls and text messages, or removes it. Optionally the user gets an email about the change. When the tenant allows SMS sign-in, Microsoft also tries to register the number for it. A number already used by someone else then produces a warning; the MFA method is usually still set, and the runbook checks and reports the real state. Details on that conflict are in the runbook documentation (docs.realmjoin.com).
 
 ## Activate user notification
 
@@ -72,6 +72,12 @@ When these settings are not configured, the default RealmJoin graphics and color
 
 Setup instructions and image requirements: [Email branding](https://docs.realmjoin.com/automation/runbooks/runbook-report-settings#email-branding-optional).
 
+## SMS sign-in conflicts
+
+The Microsoft Graph phone methods API offers no way to add a phone number as an MFA-only method without Microsoft also attempting to register it for SMS sign-in. When the user is enabled for SMS sign-in by the tenant's authentication methods policy, Graph tries that registration right after the phone method is created or updated. If another user already uses the number for SMS sign-in, Graph answers with a `409 Conflict` and the error code `phoneNumberNotUnique`, although the phone method for regular MFA is usually created or updated anyway.
+
+The `smsSignInState` property is read-only and cannot be set in the create or update request; SMS sign-in can only be switched explicitly through the separate `enableSmsSignIn` and `disableSmsSignIn` endpoints. The runbook therefore checks the real state after such an error and reports success with a warning when the MFA method was assigned. If the assignment really failed, it looks up the user who holds the number and names them in the output.
+
 
 ## Location
 User → Security → Set Or Remove Mobile Phone MFA
@@ -87,13 +93,6 @@ rjgit-user_security_set-or-remove-mobile-phone-MFA
 | Version | 2.3.0 |
 | Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | no |
-
-## Notes
-Permissions (managed identity, application):
-- UserAuthenticationMethod.ReadWrite.All - manage phone authentication methods
-- User.Read.All                           - resolve target user
-- Organization.Read.All                  - read tenant display name for the email body
-- Mail.Send                              - only required when NotifyUser is enabled
 
 ## Permissions
 
@@ -114,7 +113,7 @@ Permissions (managed identity, application):
 ## Parameters
 ### UserId
 
-Object ID of the target user.
+Object ID of the user the runbook acts on. Set by the portal from the selected user.
 
 | Property | Value |
 | --- | --- |
@@ -125,48 +124,47 @@ Object ID of the target user.
 
 ### phoneNumber
 
-Mobile phone number in international E.164 format (e.g., +491701234567).
+Number in E.164 format such as +491701234567.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Mobile Phone Number |
+| Portal display name | Mobile phone number |
 
 ### Remove
 
-"Set/Update Mobile Phone MFA Method" (final value: $false) or "Remove Mobile Phone MFA Method" (final value: $true) can be selected as action to perform. If set to true, the runbook will remove the mobile phone MFA method for the user. If set to false, it will add or update the mobile phone MFA method with the provided phone number.
+Add or update stores the number as the MFA method for calls and text messages. Remove deletes it.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Add or Remove Mobile Phone MFA Method |
+| Portal display name | Action |
 
 **Portal options**
 
 | Portal option | Value |
 | --- | --- |
-| Add this number as Mobile Phone MFA factor | false |
-| Remove this number / mobile phone MFA factor | true |
+| Add or update this number as MFA method | false |
+| Remove the mobile phone MFA method | true |
 
 ### NotifyUser
 
-When enabled, sends a notification email to the target user informing them that their mobile phone MFA method was added or removed by an administrator. Default is disabled.
+Whether the user is emailed about the change. Preset in the runbook customization.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Notify user via email |
 | Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailFrom
 
-Sender email address for the optional notification mail. Sourced from the RealmJoin tenant setting RJReport.EmailSender.
+Sender address of the notification email. Taken from the tenant setting RJReport.EmailSender.
 
 | Property | Value |
 | --- | --- |
@@ -177,8 +175,7 @@ Sender email address for the optional notification mail. Sourced from the RealmJ
 
 ### BrandingHeaderImageUrl
 
-Optional public HTTPS URL of a custom header image (PNG/JPEG/GIF, max. 200 KB) for the report email.
-Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, the default RealmJoin header graphic is used.
+Header image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.HeaderImageUrl; the default RealmJoin header is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -189,8 +186,7 @@ Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, th
 
 ### BrandingFooterImageUrl
 
-Optional public HTTPS URL of a custom footer image (PNG/JPEG/GIF, max. 200 KB) for the report email.
-Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, the default RealmJoin footer graphic is used.
+Footer image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.FooterImageUrl; the default RealmJoin footer is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -201,8 +197,7 @@ Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, th
 
 ### BrandingFooterLink
 
-Optional URL the footer image links to. Sourced from the RJReport.Branding.FooterLink tenant setting.
-When empty, the default link (https://www.realmjoin.com) is used.
+Link behind the footer image of the report email. Taken from the tenant setting RJReport.Branding.FooterLink; realmjoin.com is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -213,8 +208,7 @@ When empty, the default link (https://www.realmjoin.com) is used.
 
 ### BrandingAccentColor
 
-Optional accent color override (6-digit hex, e.g. '#0052cc') for the report email template.
-Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or invalid, the default RealmJoin accent color is used.
+Accent color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.AccentColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |
@@ -225,8 +219,7 @@ Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or inv
 
 ### BrandingTextColor
 
-Optional text color override (6-digit hex) for the report email template.
-Sourced from the RJReport.Branding.TextColor tenant setting. When empty or invalid, the default RealmJoin text color is used.
+Text color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.TextColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |
@@ -237,7 +230,7 @@ Sourced from the RJReport.Branding.TextColor tenant setting. When empty or inval
 
 ### ServiceDeskDisplayName
 
-Service Desk display name for user contact information (optional). Sourced from the RealmJoin tenant setting RJReport.ServiceDesk_DisplayName.
+Service desk name shown in the email. Taken from the tenant setting RJReport.ServiceDesk_DisplayName.
 
 | Property | Value |
 | --- | --- |
@@ -248,7 +241,7 @@ Service Desk display name for user contact information (optional). Sourced from 
 
 ### ServiceDeskEmail
 
-Service Desk email address for user contact information (optional). Sourced from the RealmJoin tenant setting RJReport.ServiceDesk_EMail.
+Service desk email address shown in the email. Taken from the tenant setting RJReport.ServiceDesk_EMail.
 
 | Property | Value |
 | --- | --- |
@@ -259,7 +252,7 @@ Service Desk email address for user contact information (optional). Sourced from
 
 ### ServiceDeskPhone
 
-Service Desk phone number for user contact information (optional). Sourced from the RealmJoin tenant setting RJReport.ServiceDesk_Phone.
+Service desk phone number shown in the email. Taken from the tenant setting RJReport.ServiceDesk_Phone.
 
 | Property | Value |
 | --- | --- |
@@ -270,7 +263,7 @@ Service Desk phone number for user contact information (optional). Sourced from 
 
 ### ServiceDeskPortalUrl
 
-Service Desk portal URL for user contact information, rendered as a clickable link (optional). Sourced from the RealmJoin tenant setting RJReport.ServiceDesk_PortalUrl.
+Link to the service desk portal shown in the email. Taken from the tenant setting RJReport.ServiceDesk_PortalUrl.
 
 | Property | Value |
 | --- | --- |
@@ -281,7 +274,7 @@ Service Desk portal URL for user contact information, rendered as a clickable li
 
 ### ServiceDeskTicketUrl
 
-Direct link to the Service Desk ticket related to this request, rendered as a clickable link (optional). Empty by default, so no ticket link is added.
+Link to the ticket for this request, shown in the email. Preset per run or in the runbook customization; empty means no link.
 
 | Property | Value |
 | --- | --- |
@@ -292,7 +285,7 @@ Direct link to the Service Desk ticket related to this request, rendered as a cl
 
 ### LanguageOverride
 
-Overrides the language used for the notification email. Accepted values are 'DE' (German) or 'EN' (English). If left empty, the language is determined automatically based on the target user's usage location.
+Forces the email language, DE or EN. Empty picks the language from the user's usage location. Preset in the runbook customization.
 
 | Property | Value |
 | --- | --- |

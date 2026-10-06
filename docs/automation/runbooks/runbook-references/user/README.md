@@ -9,6 +9,9 @@ Here you can find all User Runbooks along with the available subcategories.
 <a name='user-avd'></a>
 ## AVD
   - [User Signout](avd/user-signout.md)
+<a name='user-collab'></a>
+## Collab
+  - [Pre Provision Onedrive](collab/pre-provision-onedrive.md)
 <a name='user-general'></a>
 ## General
   - [Assign Groups By Template](general/assign-groups-by-template.md)

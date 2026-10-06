@@ -1,6 +1,6 @@
 ---
 title: Add Primary Users Of Devices To Group (Scheduled)
-description: Sync primary users of Intune managed devices by platform into an Entra ID group
+description: Keep a group in sync with the primary users of Intune devices
 ---
 
 {% hint style="info" %}
@@ -8,7 +8,23 @@ This is a scheduled runbook. It is designed to run on a recurring schedule rathe
 {% endhint %}
 
 ## Description
-This runbook collects the primary users of all Intune managed devices matching the selected platform(s) and synchronizes them into a target Entra ID group. Users no longer assigned as primary user on any matching device are removed from the group. An optional include group restricts which users are eligible, and an optional exclude group prevents specific users from being added or keeps them removed. A report-only mode allows previewing the proposed changes via email (email body shows at most 10 users per list, complete lists attached as CSV and/or XLSX file) without making any modifications.
+Collects the primary users of all Intune devices of the chosen platforms and keeps an Entra ID group in sync with them. Users without a matching device are removed unless removal is turned off. An include group limits which users are eligible, an exclude group blocks users. A report-only mode previews the changes by email without applying anything.
+
+## Common use cases
+
+- Keeping a distribution or Conditional Access target group aligned with "who currently has a managed device", filtered by platform, by an advanced OData filter or by an include/exclude group scope.
+- Validating a new or changed filter or scope before it is allowed to write to a production group.
+
+A daily schedule is recommended.
+
+## Report-only mode for pilots and testing
+
+Enable `ReportOnly` to compute the same add/remove diff a real run would produce, without applying any change to the group. Instead, a Markdown preview email listing the affected users by UPN is sent to `EmailTo`: each list (would be added, would be removed) shows at most 10 users in the mail body, with a "... and N more" pointer when a list is longer, and the complete lists are attached as report file(s) in the format chosen by `ReportFileFormat`. Run once in this mode after changing the platform selection, `AdvancedFilter` or the include/exclude groups, review the preview, then disable `ReportOnly` to let the sync apply.
+
+## Parameter interactions
+
+- `AdvancedFilter`, when set, replaces the Windows/macOS/iOS/Android platform selection entirely rather than combining with it.
+- `RemoveUsersWhenNoDeviceMatch` controls both the real run and the `ReportOnly` preview: when disabled, no users are removed in either case, so the preview always reflects what a real run would do.
 
 ## Setup regarding email sending
 
@@ -46,33 +62,6 @@ rjgit-org_general_add-primary-users-of-devices-to-group_scheduled
 | Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | yes |
 
-## Notes
-Runbook Type: Scheduled (recommended: daily)
-
-Common Use Cases:
-- Keeping a distribution or Conditional Access target group aligned with "who currently has a
-  managed device", filtered by platform, an advanced OData filter, or an include/exclude group scope.
-- Validating a new or changed filter/scope before it is allowed to write to a production group.
-
-Pilot and Testing Options:
-- Enable ReportOnly to compute the same add/remove diff a real run would produce, without applying
-  any change to the group. A Markdown preview email listing the affected users (by UPN) is sent to
-  EmailTo instead; each list (would be added / would be removed) shows at most 10 users in the mail
-  body, with a "... and N more" pointer when a list is longer, and the complete lists are attached
-  as report file(s) in the format chosen by ReportFileFormat. Run once in this mode after changing
-  the platform selection, AdvancedFilter, or the include/exclude groups, review the preview, then
-  disable ReportOnly to let the sync apply.
-
-Parameter Interactions:
-- AdvancedFilter, when set, replaces the Windows/MacOS/iOS/Android platform selection entirely
-  rather than combining with it.
-- RemoveUsersWhenNoDeviceMatch controls both the real run and the ReportOnly preview: when disabled,
-  no users are removed in either case, so the preview always reflects what a real run would do.
-
-Prerequisites:
-- EmailFrom requires the RJReport.EmailSender tenant setting to be configured; this is only needed
-  when ReportOnly is used to send the preview email.
-
 ## Permissions
 
 ### Application permissions
@@ -90,119 +79,119 @@ Prerequisites:
 ## Parameters
 ### TargetGroupId
 
-The Entra ID group to synchronize primary users into. Members of this group will be managed exclusively by this runbook.
+Group that receives the primary users. Its membership is managed by this runbook alone.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Target Group (sync primary users into) |
+| Portal display name | Target group |
 
 ### Windows
 
-Include primary users of Windows devices. (OData Filter used "operatingSystem eq 'Windows'")
+Includes the primary users of Windows devices.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Include Windows Devices |
+| Portal display name | Include Windows devices? |
 
 ### MacOS
 
-Include primary users of macOS devices. (OData Filter used "operatingSystem eq 'macOS'")
+Includes the primary users of macOS devices.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Include macOS Devices |
+| Portal display name | Include macOS devices? |
 
 ### iOS
 
-Include primary users of iOS and iPadOS devices. (OData Filter used "operatingSystem eq 'iOS'")
+Includes the primary users of iOS and iPadOS devices.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Include iOS Devices |
+| Portal display name | Include iOS devices? |
 
 ### Android
 
-Include primary users of Android devices. (OData Filter used "operatingSystem eq 'Android'")
+Includes the primary users of Android devices.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Include Android Devices |
+| Portal display name | Include Android devices? |
 
 ### AdvancedFilter
 
-Optional. Custom OData filter to apply when retrieving devices. Overrides the platform-based filters if provided. Example: startsWith(deviceName,'FWP-') and operatingSystem eq 'Windows' .
+OData filter for the devices instead of the platform switches, for example startsWith(deviceName,'FWP-') and operatingSystem eq 'Windows'.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Custom filter (overrides OS selection) |
+| Portal display name | Custom filter |
 
 ### RemoveUsersWhenNoDeviceMatch
 
-When enabled (default), users who no longer have a primary device matching the selected platform(s) are removed from the target group. Disable to add-only mode — existing members are never removed.
+Removes users from the target group when they are no longer primary user of a matching device. Turn off to only ever add.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
-| Portal display name | Remove users who no longer have a matching device |
+| Portal display name | Remove users without a matching device? |
 
 ### IncludeGroupId
 
-Optional. Only users who are members of this group are eligible to be added to the target group. Leave empty to consider all primary users.
+Only members of this group can be added to the target group.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Include users from group (optional) |
+| Portal display name | Include users from group |
 | Hidden in portal | yes (preset via runbook customization) |
 
 ### ExcludeGroupId
 
-Optional. Users who are members of this group will not be added and will be removed from the target group if already present.
+Members of this group are never added and are removed if present.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Exclude users from group (optional) |
+| Portal display name | Exclude users from group |
 | Hidden in portal | yes (preset via runbook customization) |
 
 ### ReportOnly
 
-If set to true, the script computes what would change but applies no modifications. The proposed changes are sent to the EmailTo recipient in a preview email showing at most 10 users per list in the body, with complete lists attached as CSV and/or XLSX file(s) per ReportFileFormat. If false, the runbook applies all changes immediately.
+Previews the changes without applying them. The preview goes by email, with the first 10 users per list in the body and the complete lists attached.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Report only (preview changes, apply nothing) |
+| Portal display name | Report only? |
 
 ### EmailFrom
 
-The sender email address for report-only preview emails. This needs to be configured in the runbook customization.
+Sender address of the report email. Taken from the tenant setting RJReport.EmailSender.
 
 | Property | Value |
 | --- | --- |
@@ -213,7 +202,7 @@ The sender email address for report-only preview emails. This needs to be config
 
 ### BrandingHeaderImageUrl
 
-URL of a custom header image for report emails. Configured as a tenant setting; leave empty to use the default RealmJoin branding.
+Header image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.HeaderImageUrl; the default RealmJoin header is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -224,7 +213,7 @@ URL of a custom header image for report emails. Configured as a tenant setting; 
 
 ### BrandingFooterImageUrl
 
-URL of a custom footer image for report emails. Configured as a tenant setting; leave empty to use the default RealmJoin branding.
+Footer image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.FooterImageUrl; the default RealmJoin footer is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -235,7 +224,7 @@ URL of a custom footer image for report emails. Configured as a tenant setting; 
 
 ### BrandingFooterLink
 
-Link target applied to the footer image in report emails, for example the company website. Configured as a tenant setting; leave empty to use the default RealmJoin branding.
+Link behind the footer image of the report email. Taken from the tenant setting RJReport.Branding.FooterLink; realmjoin.com is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -246,7 +235,7 @@ Link target applied to the footer image in report emails, for example the compan
 
 ### BrandingAccentColor
 
-Accent color used for headings and highlights in report emails. Configured as a tenant setting; leave empty to use the default RealmJoin branding.
+Accent color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.AccentColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |
@@ -257,7 +246,7 @@ Accent color used for headings and highlights in report emails. Configured as a 
 
 ### BrandingTextColor
 
-Body text color used in report emails. Configured as a tenant setting; leave empty to use the default RealmJoin branding.
+Text color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.TextColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |
@@ -268,25 +257,25 @@ Body text color used in report emails. Configured as a tenant setting; leave emp
 
 ### EmailTo
 
-Recipient email address for the report-only preview email. The email shows at most 10 users per list in the body, with complete lists attached as CSV and/or XLSX file(s) per ReportFileFormat. Only used when ReportOnly is set to true.
+Address the preview goes to. Only used in report-only mode.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Send preview report to (only used when Report only is enabled) |
+| Portal display name | Send preview report to |
 
 ### ReportFileFormat
 
-File format of the report attached to the report-only preview email. The attachments contain the complete lists of users that would be added or removed, while the email body shows at most 10 users per list. Only used when ReportOnly is enabled and EmailTo is set.
+Attach the complete lists as CSV, as an Excel workbook, or both. Only used in report-only mode.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | CSV & XLSX |
 | Type | String |
-| Portal display name | Preview report file format (only used when Report only is enabled) |
+| Portal display name | Preview report file format |
 
 **Portal options**
 

@@ -1,10 +1,10 @@
 ---
 title: Enroll Updatable Assets
-description: Enroll device into Windows Update for Business
+description: Enroll this device in Windows Update for Business
 ---
 
 ## Description
-This script enrolls a device into Windows Update for Business by registering it as an updatable asset for the specified update category.
+Registers this device as an updatable asset in Windows Update for Business for the chosen update category, so Intune can manage driver, feature or quality updates for it. All enrolls it in driver, feature and quality updates.
 
 ## Location
 Device → General → Enroll Updatable Assets
@@ -32,7 +32,7 @@ rjgit-device_general_enroll-updatable-assets
 ## Parameters
 ### DeviceId
 
-DeviceId of the device to enroll.
+Entra ID device ID of the device the runbook acts on. Set by the portal from the selected device.
 
 | Property | Value |
 | --- | --- |
@@ -43,13 +43,14 @@ DeviceId of the device to enroll.
 
 ### UpdateCategory
 
-Category of updates to enroll into. Possible values are: Driver, Feature, Quality or All. Selecting All will enroll the device into all three categories sequentially.
+Update category to enroll the device in. All enrolls it in driver, feature and quality updates.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value | Feature |
 | Type | String |
+| Portal display name | Update category |
 
 
 

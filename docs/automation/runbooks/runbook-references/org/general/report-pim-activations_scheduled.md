@@ -1,6 +1,6 @@
 ---
 title: Report Pim Activations (Scheduled)
-description: Scheduled report on PIM activations
+description: Report the PIM role activations of the last month by email
 ---
 
 {% hint style="info" %}
@@ -8,8 +8,7 @@ This is a scheduled runbook. It is designed to run on a recurring schedule rathe
 {% endhint %}
 
 ## Description
-This runbook queries Microsoft Entra ID audit logs for recent PIM activations.
-It builds an report and sends it via email.
+Reads the Entra ID audit log for Privileged Identity Management role activations of the last month and sends them as an email report, so privileged access can be reviewed regularly. Nothing is changed.
 
 ## Location
 Organization → General → Report Pim Activations (Scheduled)
@@ -39,23 +38,25 @@ rjgit-org_general_report-pim-activations_scheduled
 ## Parameters
 ### sendAlertTo
 
-Recipient email address for the report.
+Gets the monthly PIM activation report.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | support@glueckkanja.com |
 | Type | String |
+| Portal display name | Report recipient |
 
 ### sendAlertFrom
 
-Sender mailbox UPN used to send the report email.
+User in the tenant the report is sent as; needs a mailbox.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | runbook@glueckkanja.com |
 | Type | String |
+| Portal display name | Report sender |
 
 
 

@@ -1,6 +1,6 @@
 ---
 title: Monitor Service Health (Scheduled)
-description: Alert by email on newly announced Microsoft 365 Service Health issues
+description: Alert by email about new Microsoft 365 service health issues
 ---
 
 {% hint style="info" %}
@@ -8,7 +8,23 @@ This is a scheduled runbook. It is designed to run on a recurring schedule rathe
 {% endhint %}
 
 ## Description
-Queries the Microsoft 365 Service Health issues feed on a schedule and identifies issues whose first Service Health post falls within a configurable lookback window, since Microsoft frequently back-dates the official start time and filtering on that alone would miss alerts. Optionally narrows monitoring to a chosen set of services and sends one alert email per newly detected issue, with the subject naming the tenant and the issue title. All issue details are carried in the email body; the runbook produces no report files.
+Checks the Microsoft 365 service health feed for issues that Microsoft announced within the chosen number of hours. Each new issue is sent as a separate alert email, with the tenant and issue title in the subject and all details in the body. Monitoring can be limited to certain services, and advisories and already resolved issues can be included. No report files are created.
+
+## Common use cases
+
+- Schedule the runbook to run at or slightly more often than `LookbackHours` to catch every new Service Health issue exactly once.
+- Set `Services` to a comma-separated list of service names or short ids (matched case-insensitively) to monitor only specific services, such as Exchange Online or Teams; leave it empty to monitor all services.
+- Leave `IncludeAdvisories` and `IncludeResolvedIssues` at their default of `false` for the lowest-noise setup, which alerts only on unresolved incidents; set either to `true` to also surface advisories or issues Microsoft has already marked as resolved.
+
+## Parameter interactions
+
+- An issue counts as newly announced when its first Service Health post falls inside the `LookbackHours` window (falling back to `startDateTime` if the issue has no posts), not by `lastModifiedDateTime` alone. This avoids missing back-dated issues while preventing re-alerts on every status update of an ongoing incident.
+- The runbook keeps no state between runs, so a failed or skipped run means those alerts are never sent unless `LookbackHours` is temporarily widened for a catch-up run.
+- One email is sent per new issue, so a busy Service Health day can produce several emails per run.
+
+## Run output
+
+Every run writes a summary of the filter stages and the list of new issues, including whether the alert email for each issue was sent, to the **Output Data** tab of the job. No report files are created.
 
 ## Setup regarding email sending
 
@@ -42,81 +58,70 @@ rjgit-org_general_monitor-service-health_scheduled
 
 | Property | Value |
 | --- | --- |
-| Version | 1.3.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.38.0) |
+| Version | 1.4.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | yes |
-
-## Notes
-Common Use Cases:
-- Schedule the runbook to run at or slightly more often than LookbackHours to catch every new Service Health issue exactly once.
-- Set Services to a comma-separated list of service names or short ids (matched case-insensitively) to monitor only specific services, such as Exchange Online or Teams; leave it empty to monitor all services.
-- Leave IncludeAdvisories and IncludeResolvedIssues at their default of $false for the lowest-noise setup, which alerts only on unresolved incidents; set either to $true to also surface advisories or issues Microsoft has already marked resolved.
-
-Parameter Interactions:
-- An issue counts as newly announced when its first Service Health post falls inside the LookbackHours window (falling back to startDateTime if the issue has no posts) - not by lastModifiedDateTime alone. This avoids missing back-dated issues while preventing re-alerts on every status update of an ongoing incident.
-- The runbook keeps no state between runs, so a failed or skipped run means those alerts are never sent unless LookbackHours is temporarily widened for a catch-up run.
-- One email is sent per new issue, so a busy Service Health day can produce several emails per run.
 
 ## Permissions
 
 ### Application permissions
 - **Type**: Microsoft Graph
-  - Mail.Send *(optional — feature: Email report)*
-    - *Sends one alert email per newly detected issue via Send-RjReportEmail when EmailTo is configured*
   - Organization.Read.All
     - *Reads /organization to put the tenant name into the alert email subject and footer*
   - ServiceHealth.Read.All
     - *Reads /admin/serviceAnnouncement healthOverviews and issues to detect newly announced service health issues*
+  - Mail.Send *(optional — feature: Email report)*
+    - *Sends one alert email per newly detected issue via Send-RjRbReportEmail when EmailTo is configured*
 
 
 ## Parameters
 ### Services
 
-Comma-separated list of Microsoft 365 service names to monitor, for example Microsoft Intune, Microsoft Entra, Exchange Online. Leave empty to monitor all services. Matching is case-insensitive against both the service display name and its short id, so Intune matches Microsoft Intune. Valid names can be found on the Microsoft 365 admin center service health page.
+Services to watch, separated by commas, for example Microsoft Intune, Microsoft Entra, Exchange Online. Leave empty for all services. Short names such as Intune work too.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Services to Monitor (comma-separated, leave empty for all) |
+| Portal display name | Services to monitor |
 
 ### LookbackHours
 
-How many hours back to look for newly announced issues. Set this to the same interval as the runbook schedule, for example 24 for a daily schedule, so that no issue is missed and none is alerted on twice.
+How many hours back to look for newly announced issues, 1 to 168. Use the same interval as the schedule, for example 24 for a daily run, so nothing is missed or alerted twice.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | 24 |
 | Type | Int32 |
-| Portal display name | Lookback Window (hours 1 - 168) - match to schedule interval |
+| Portal display name | Lookback window (hours) |
 
 ### IncludeAdvisories
 
-If set to false, only incidents raise an alert. If set to true, advisories are alerted on as well.
+Also alerts on advisories, not only on incidents.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Include Advisories (not just Incidents) |
+| Portal display name | Include advisories? |
 
 ### IncludeResolvedIssues
 
-If set to false, issues that Microsoft has already marked as resolved by the time the runbook runs are skipped. If set to true, resolved issues are still reported.
+Also alerts on issues Microsoft has already resolved by the time the runbook runs.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Include Already-Resolved Issues |
+| Portal display name | Include resolved issues? |
 
 ### EmailFrom
 
-The sender email address used for the per-issue alert emails. This needs to be configured in the runbook customization.
+Sender address of the alert email. Taken from the tenant setting RJReport.EmailSender.
 
 | Property | Value |
 | --- | --- |
@@ -127,8 +132,7 @@ The sender email address used for the per-issue alert emails. This needs to be c
 
 ### BrandingHeaderImageUrl
 
-Optional public HTTPS URL of a custom header image (PNG/JPEG/GIF, max. 200 KB) for the alert emails.
-Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, the default RealmJoin header graphic is used.
+Header image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.HeaderImageUrl; the default RealmJoin header is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -139,8 +143,7 @@ Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, th
 
 ### BrandingFooterImageUrl
 
-Optional public HTTPS URL of a custom footer image (PNG/JPEG/GIF, max. 200 KB) for the alert emails.
-Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, the default RealmJoin footer graphic is used.
+Footer image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.FooterImageUrl; the default RealmJoin footer is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -151,8 +154,7 @@ Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, th
 
 ### BrandingFooterLink
 
-Optional URL the footer image links to. Sourced from the RJReport.Branding.FooterLink tenant setting.
-When empty, the default link (https://www.realmjoin.com) is used.
+Link behind the footer image of the report email. Taken from the tenant setting RJReport.Branding.FooterLink; realmjoin.com is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -163,8 +165,7 @@ When empty, the default link (https://www.realmjoin.com) is used.
 
 ### BrandingAccentColor
 
-Optional accent color override (6-digit hex, e.g. '#0052cc') for the report email template.
-Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or invalid, the default RealmJoin accent color is used.
+Accent color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.AccentColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |
@@ -175,8 +176,7 @@ Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or inv
 
 ### BrandingTextColor
 
-Optional text color override (6-digit hex) for the report email template.
-Sourced from the RJReport.Branding.TextColor tenant setting. When empty or invalid, the default RealmJoin text color is used.
+Text color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.TextColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |
@@ -187,14 +187,14 @@ Sourced from the RJReport.Branding.TextColor tenant setting. When empty or inval
 
 ### EmailTo
 
-Comma-separated list of recipient email addresses for the per-issue alert emails. At least one valid recipient is required.
+Addresses that receive the alert emails, separated by commas. At least one is required.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Alert Email Recipient Email Address(es) |
+| Portal display name | Recipient email address(es) |
 
 
 

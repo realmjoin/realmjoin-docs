@@ -1,10 +1,10 @@
 ---
 title: Check Defender Status
-description: Check a device's presence and risk status in Entra ID and Microsoft Defender for Endpoint
+description: Check this device in Entra ID and Defender for Endpoint
 ---
 
 ## Description
-This runbook compares a device between Entra ID and Microsoft Defender for Endpoint based on its Entra device ID. It reports whether the device exists in each service, returns key properties like onboarding and health state, and evaluates the Defender risk score to flag elevated risk.
+Looks up this device in Entra ID and in Microsoft Defender for Endpoint. It shows whether the device exists in each, its onboarding and health state in Defender, and its Defender risk score. A medium or high risk score is flagged. Nothing is changed.
 
 ## Location
 Device → Security → Check Defender Status
@@ -35,7 +35,7 @@ rjgit-device_security_check-defender-status
 ## Parameters
 ### DeviceId
 
-The Entra device ID of the target device.
+Entra ID device ID of the device the runbook acts on. Set by the portal from the selected device.
 
 | Property | Value |
 | --- | --- |

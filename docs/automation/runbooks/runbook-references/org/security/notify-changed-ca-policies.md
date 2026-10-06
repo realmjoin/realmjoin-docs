@@ -1,10 +1,10 @@
 ---
 title: Notify Changed CA Policies
-description: Send notification email if Conditional Access policies have been created or modified in the last 24 hours.
+description: Alert by email about Conditional Access policy changes
 ---
 
 ## Description
-Checks Conditional Access policies for changes in the last 24 hours and sends an email with a text attachment listing the changed policies. If no changes are detected, no email is sent.
+Checks which Conditional Access policies were created or changed within the last 24 hours and sends an email with the list attached. Without changes, no email is sent. Nothing is changed in the tenant.
 
 ## Location
 Organization → Security → Notify Changed CA Policies
@@ -36,25 +36,25 @@ rjgit-org_security_notify-changed-CA-Policies
 ## Parameters
 ### From
 
-Sender email address used to send the notification.
+User in the tenant the alert is sent as; needs a mailbox.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Sender Mail Address |
+| Portal display name | Alert sender |
 
 ### To
 
-Recipient email address for the notification.
+Gets the email with the list of changed policies.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Recipient Mail Address |
+| Portal display name | Alert recipient |
 
 
 

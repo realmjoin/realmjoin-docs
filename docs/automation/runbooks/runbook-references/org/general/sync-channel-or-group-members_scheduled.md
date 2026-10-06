@@ -1,6 +1,6 @@
 ---
 title: Sync Channel Or Group Members (Scheduled)
-description: Sync members between a Teams Shared Channel or a group and an Entra security group
+description: Mirror members between a Teams shared channel and a group
 ---
 
 {% hint style="info" %}
@@ -8,16 +8,7 @@ This is a scheduled runbook. It is designed to run on a recurring schedule rathe
 {% endhint %}
 
 ## Description
-This scheduled runbook mirrors the membership of a source object into a target object in one
-direction per run. It supports syncing Teams Shared Channel members into a security group, syncing
-the members of one group into another group (for example a Microsoft 365 group into a security group
-or vice versa) and syncing group members into a Teams Shared Channel. Adding missing members is always
-performed, while removing members that only exist in the target is optional and controlled by a
-parameter. Guest handling and whether channel removals also remove the host team membership are
-configurable, and the runbook can optionally send an email report and upload the results as a
-time-limited download link. The ReportFileFormat parameter controls which report file formats are
-generated and delivered (CSV only, CSV & XLSX, or XLSX only). When the CSV attachment exceeds the
-email size limit and "CSV & XLSX" is selected, the email falls back to the Excel workbook alone.
+Copies the members of a source into a target on every run. The source and target can be a shared channel and a security group, two groups, or a group and a shared channel. Missing members are always added; members that exist only in the target are removed only when asked. A dry run shows the changes without applying them, and the report can be sent by email or provided as a download link. Details on the options are in the runbook documentation (docs.realmjoin.com).
 
 ## How it works
 
@@ -69,7 +60,7 @@ Set `WhatIfMode` to log what would change without writing anything.
 
 ### Reporting (optional, both default off)
 
-- **`SendEmailReport`** sends a RealmJoin-branded email (via `Send-RjReportEmail`) with run statistics and
+- **`SendEmailReport`** sends a RealmJoin-branded email (via `Send-RjRbReportEmail`) with run statistics and
   a CSV attachment listing every individual change. The sender is taken from the `RJReport.EmailSender`
   setting.
 - **`CreateDownloadLink`** uploads the same CSV to a storage account and returns a time-limited SAS
@@ -138,28 +129,26 @@ rjgit-org_general_sync-channel-or-group-members_scheduled
 ## Parameters
 ### Direction
 
-Selects what is synced into what. SharedChannelToGroup copies shared channel members into the target
-group, GroupToGroup copies the source group members into the target group, and GroupToSharedChannel
-copies the source group members into the shared channel.
+What is copied where: shared channel members into the target group, source group members into the target group, or source group members into the shared channel.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | What should be synced |
+| Portal display name | Direction |
 
 **Portal options**
 
 | Portal option | Value |
 | --- | --- |
-| Shared Channel members -> security group | SharedChannelToGroup |
-| Group members -> group | GroupToGroup |
-| Group members -> Shared Channel | GroupToSharedChannel |
+| Shared channel members to security group | SharedChannelToGroup |
+| Group members to group | GroupToGroup |
+| Group members to shared channel | GroupToSharedChannel |
 
 ### TeamId
 
-Object id of the team that hosts the shared channel. Only used for the shared channel directions.
+Team that hosts the shared channel. Needed for the shared channel directions only.
 
 | Property | Value |
 | --- | --- |
@@ -170,19 +159,18 @@ Object id of the team that hosts the shared channel. Only used for the shared ch
 
 ### ChannelName
 
-Exact display name of the shared channel inside the selected team. Only used for the shared channel
-directions.
+Exact name of the shared channel in that team. Needed for the shared channel directions only.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Shared channel display name |
+| Portal display name | Shared channel name |
 
 ### SourceGroupId
 
-Object id of the source group whose members are copied. Used for the group source directions.
+Group whose members are copied. Needed when the source is a group.
 
 | Property | Value |
 | --- | --- |
@@ -194,7 +182,7 @@ Object id of the source group whose members are copied. Used for the group sourc
 
 ### TargetGroupId
 
-Object id of the target security group that receives the members. Used for the group target directions.
+Security group that receives the members. Needed when the target is a group.
 
 | Property | Value |
 | --- | --- |
@@ -205,64 +193,59 @@ Object id of the target security group that receives the members. Used for the g
 
 ### RemoveExtraMembers
 
-When enabled, members that exist only in the target and not in the source are removed so the target
-mirrors the source. When disabled (default), the runbook only adds missing members.
+Also removes members that exist only in the target, so it mirrors the source exactly. Otherwise members are only added.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Remove members that only exist in the target (mirror source) |
+| Portal display name | Remove members missing in the source? |
 
 ### IncludeGuests
 
-When enabled, guest users are included in the sync and may be added or removed. When disabled (default),
-guests are skipped and are never added or removed.
+Also adds and removes guest users. Otherwise guests are left untouched on both sides.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Include guest users |
+| Portal display name | Include guest users? |
 
 ### RemoveFromTeam
 
-Only relevant for GroupToSharedChannel. When enabled, removing a member from the shared channel also
-removes that user from the host team membership. When disabled (default), only the channel membership
-is removed.
+When a member is removed from the shared channel, also removes them from the host team. Only applies when a group is copied into a shared channel.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | On channel removal, also remove the user from the host team |
+| Portal display name | Also remove from the host team? |
 | Hidden in portal | yes (preset via runbook customization) |
 
 ### WhatIfMode
 
-When enabled, the runbook only logs the changes it would make without writing anything.
+Only logs what would change without writing anything.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Dry run (log only, no changes) |
+| Portal display name | Dry run? |
 
 ### SendEmailReport
 
-When enabled, a RealmJoin-branded email report is sent via Send-RjReportEmail after the run. Toggling
-this on reveals the recipient address and report file format fields.
+Send the report to the recipient email address.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Send email report |
+| Portal display name | Send email report? |
 
 **Portal options**
 
@@ -273,19 +256,19 @@ this on reveals the recipient address and report file format fields.
 
 ### EmailTo
 
-Recipient email address(es) for the report (comma-separated). Only used when SendEmailReport is enabled.
+Send the report to these addresses. Separate several with commas; each recipient gets a separate email.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Send report to (email address(es)) |
+| Portal display name | Recipient email address(es) |
 | Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailFrom
 
-Sender mailbox for the report. Bound to the org Setting RJReport.EmailSender.
+Sender address of the report email. Taken from the tenant setting RJReport.EmailSender.
 
 | Property | Value |
 | --- | --- |
@@ -296,8 +279,7 @@ Sender mailbox for the report. Bound to the org Setting RJReport.EmailSender.
 
 ### BrandingHeaderImageUrl
 
-Optional public HTTPS URL of a custom header image (PNG/JPEG/GIF, max. 200 KB) for the report email.
-Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, the default RealmJoin header graphic is used.
+Header image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.HeaderImageUrl; the default RealmJoin header is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -308,8 +290,7 @@ Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, th
 
 ### BrandingFooterImageUrl
 
-Optional public HTTPS URL of a custom footer image (PNG/JPEG/GIF, max. 200 KB) for the report email.
-Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, the default RealmJoin footer graphic is used.
+Footer image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.FooterImageUrl; the default RealmJoin footer is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -320,8 +301,7 @@ Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, th
 
 ### BrandingFooterLink
 
-Optional URL the footer image links to. Sourced from the RJReport.Branding.FooterLink tenant setting.
-When empty, the default link (https://www.realmjoin.com) is used.
+Link behind the footer image of the report email. Taken from the tenant setting RJReport.Branding.FooterLink; realmjoin.com is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -332,8 +312,7 @@ When empty, the default link (https://www.realmjoin.com) is used.
 
 ### BrandingAccentColor
 
-Optional accent color override (6-digit hex, e.g. '#0052cc') for the report email template.
-Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or invalid, the default RealmJoin accent color is used.
+Accent color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.AccentColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |
@@ -344,8 +323,7 @@ Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or inv
 
 ### BrandingTextColor
 
-Optional text color override (6-digit hex) for the report email template.
-Sourced from the RJReport.Branding.TextColor tenant setting. When empty or invalid, the default RealmJoin text color is used.
+Text color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.TextColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |
@@ -356,7 +334,7 @@ Sourced from the RJReport.Branding.TextColor tenant setting. When empty or inval
 
 ### ReportFileFormat
 
-Controls which report file formats are generated and delivered: "CSV only", "CSV & XLSX" (default) or "XLSX only".
+Deliver the report as CSV, as an Excel workbook, or both.
 
 | Property | Value |
 | --- | --- |
@@ -376,15 +354,14 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 
 ### CreateDownloadLink
 
-When enabled, the report file(s) are uploaded to a storage account and time-limited download links are
-returned (and included in the email report if that is also enabled).
+Also upload the report and return a download link that expires after a few days.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Create a report download link (upload report to storage) |
+| Portal display name | Create a download link? |
 
 **Portal options**
 
@@ -395,7 +372,7 @@ returned (and included in the email report if that is also enabled).
 
 ### ContainerName
 
-Storage container used for the upload. Configured per runbook.
+Storage container the report files are uploaded to. Set per runbook.
 
 | Property | Value |
 | --- | --- |
@@ -406,7 +383,7 @@ Storage container used for the upload. Configured per runbook.
 
 ### ResourceGroupName
 
-Resource group that contains the storage account. Bound to RJReport.StorageAccount.ResourceGroup.
+Resource group of the storage account for report uploads. Taken from the tenant setting RJReport.StorageAccount.ResourceGroup.
 
 | Property | Value |
 | --- | --- |
@@ -417,7 +394,7 @@ Resource group that contains the storage account. Bound to RJReport.StorageAccou
 
 ### StorageAccountName
 
-Storage account used for the upload. Bound to RJReport.StorageAccount.StorageAccountName.
+Storage account for report uploads. Taken from the tenant setting RJReport.StorageAccount.StorageAccountName.
 
 | Property | Value |
 | --- | --- |
@@ -428,7 +405,7 @@ Storage account used for the upload. Bound to RJReport.StorageAccount.StorageAcc
 
 ### LinkExpiryDays
 
-Days until the generated download link expires. Bound to RJReport.StorageAccount.LinkExpiryDays.
+Number of days a download link stays valid. Taken from the tenant setting RJReport.StorageAccount.LinkExpiryDays.
 
 | Property | Value |
 | --- | --- |

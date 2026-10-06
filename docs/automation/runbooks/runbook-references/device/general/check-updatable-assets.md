@@ -1,10 +1,10 @@
 ---
 title: Check Updatable Assets
-description: Check if a device is onboarded to Windows Update for Business
+description: Check whether this device is enrolled in Windows Update for Business
 ---
 
 ## Description
-This script checks if single device is onboarded to Windows Update for Business
+Shows whether this device is registered as an updatable asset in the Windows Update for Business deployment service. Nothing is changed on the device.
 
 ## Location
 Device → General → Check Updatable Assets
@@ -34,7 +34,7 @@ rjgit-device_general_check-updatable-assets
 ## Parameters
 ### DeviceId
 
-DeviceId of the device to check.
+Entra ID device ID of the device the runbook acts on. Set by the portal from the selected device.
 
 | Property | Value |
 | --- | --- |

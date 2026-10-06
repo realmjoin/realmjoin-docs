@@ -1,10 +1,10 @@
 ---
 title: Get Teams User Info
-description: Get Microsoft Teams voice status for a user
+description: Show the Teams voice setup of this user
 ---
 
 ## Description
-Retrieves voice-related status information for a Teams user such as phone number assignment, call forwarding settings, voicemail configuration, and policy assignments. The output is intended for troubleshooting and validation.
+Shows the telephony setup of this user in Teams: the assigned phone number, call forwarding, voicemail, the assigned voice policies and call queue membership. Nothing is changed.
 
 ## Location
 User → Phone → Get Teams User Info
@@ -17,7 +17,7 @@ rjgit-user_phone_get-teams-user-info
 
 | Property | Value |
 | --- | --- |
-| Version | 1.0.2 |
+| Version | 1.0.3 |
 | Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>MicrosoftTeams (>= 7.9.0) |
 | Schedulable | no |
 
@@ -36,7 +36,7 @@ rjgit-user_phone_get-teams-user-info
 ## Parameters
 ### UserName
 
-User principal name of the target user.
+User principal name of the user the runbook acts on. Set by the portal from the selected user.
 
 | Property | Value |
 | --- | --- |

@@ -1,11 +1,10 @@
 ---
 title: Delegate Send On Behalf
-description: Delegate SendOnBehalf permissions for the user's mailbox
+description: Grant or remove Send on Behalf permission on this user's mailbox
 ---
 
 ## Description
-Grants or removes SendOnBehalf permissions for a delegate on the user's mailbox. Outputs the resulting SendOnBehalf trustees after applying the change.
-This allows the delegate to send emails on behalf of the mailbox owner.
+Lets another person send email on behalf of this user, so recipients see the delegate's name with "on behalf of" this user, or removes that permission again. The resulting list of trustees is shown after the change.
 
 ## Location
 User → Mail → Delegate Send On Behalf
@@ -18,7 +17,7 @@ rjgit-user_mail_delegate-send-on-behalf
 
 | Property | Value |
 | --- | --- |
-| Version | 1.0.1 |
+| Version | 1.0.2 |
 | Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
@@ -37,7 +36,7 @@ rjgit-user_mail_delegate-send-on-behalf
 ## Parameters
 ### UserName
 
-User principal name of the mailbox.
+User principal name of the user the runbook acts on. Set by the portal from the selected user.
 
 | Property | Value |
 | --- | --- |
@@ -48,7 +47,7 @@ User principal name of the mailbox.
 
 ### delegateTo
 
-User principal name of the delegate.
+Person who gets or loses the Send on Behalf permission.
 
 | Property | Value |
 | --- | --- |
@@ -58,7 +57,7 @@ User principal name of the delegate.
 
 ### Remove
 
-If set to true, removes the delegation instead of granting it.
+Whether the permission is removed instead of granted. Set by the "Action" choice.
 
 | Property | Value |
 | --- | --- |

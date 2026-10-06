@@ -58,6 +58,10 @@ Filter on OS type. Default filter is _Windows_, to access macOS packages, select
 
 macOS packages are only available for provisioning via Intune.
 
+#### Android Apps
+
+If Android app deployment is activated for your tenant, the OS filter also offers _Android_. Android apps are not part of the RealmJoin catalogue; they are added from Managed Google Play by pasting a Google Play link. See [Android Apps (Managed Google Play)](../android-apps-managed-google-play.md).
+
 #### Unlisted Package
 
 This section is only available for selected ADM accounts. If you can see it, you know what it is.

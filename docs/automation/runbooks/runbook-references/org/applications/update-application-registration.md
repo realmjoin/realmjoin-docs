@@ -1,12 +1,10 @@
 ---
 title: Update Application Registration
-description: Update an application registration in Azure AD
+description: Update redirect URIs, SAML and sign-in settings of an app registration
 ---
 
 ## Description
-This runbook updates an existing application registration and its related configuration in Microsoft Entra ID.
-It compares the current settings with the requested parameters and applies only the necessary updates.
-Use it to manage redirect URIs, SAML settings, visibility, assignment requirements, and token issuance behavior.
+Changes the configuration of an existing application registration in Entra ID: redirect URIs, SAML sign-in, visibility in My Apps, user assignment and implicit grant. Only settings that differ from the current ones are written. The application is selected by its client ID.
 
 ## Location
 Organization → Applications → Update Application Registration
@@ -40,7 +38,7 @@ rjgit-org_applications_update-application-registration
 ## Parameters
 ### ClientId
 
-The application client ID (appId) of the application registration to update.
+Client ID (appId) of the application registration to update.
 
 | Property | Value |
 | --- | --- |
@@ -50,14 +48,14 @@ The application client ID (appId) of the application registration to update.
 
 ### RedirectURI
 
-Used for UI selection only. Determines which redirect URI type to configure.
+Type of sign-in to set up: none, a web redirect URI, SAML, a public client (mobile and desktop) or a single-page application. The matching fields appear once you choose.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Redirect URI (Optional) |
+| Portal display name | Sign-in type |
 
 **Portal options**
 
@@ -71,40 +69,40 @@ Used for UI selection only. Determines which redirect URI type to configure.
 
 ### webRedirectURI
 
-Redirect URI or URIs for web applications. Multiple values can be separated by semicolons.
+Redirect URI of a web application, for example https://myapp.com/auth. Separate several with semicolons.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Web Redirect URI e.g. https://myapp.com/auth (semicolon-separated for multiple) |
+| Portal display name | Web redirect URI |
 
 ### publicClientRedirectURI
 
-Redirect URI or URIs for public client/native applications. Multiple values can be separated by semicolons.
+Redirect URI of a mobile or desktop client, for example myapp://auth. Separate several with semicolons.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Public client/native Redirect URI e.g. myapp://auth (semicolon-separated for multiple) |
+| Portal display name | Public client redirect URI |
 
 ### spaRedirectURI
 
-Redirect URI or URIs for single-page applications. Multiple values can be separated by semicolons.
+Redirect URI of a single-page application, for example https://myapp.com. Separate several with semicolons.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Single-page application (SPA) Redirect URI e.g. https://myapp.com (semicolon-separated for multiple) |
+| Portal display name | SPA redirect URI |
 
 ### EnableSAML
 
-If set to true, SAML-based authentication is configured on the service principal.
+Whether SAML sign-in is configured. Set by the "Redirect URI" choice.
 
 | Property | Value |
 | --- | --- |
@@ -114,122 +112,128 @@ If set to true, SAML-based authentication is configured on the service principal
 
 ### SAMLReplyURL
 
-The SAML reply URL.
+Where the SAML response is sent (assertion consumer service URL).
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | SAML reply URL |
 
 ### SAMLSignOnURL
 
-The SAML sign-on URL.
+URL where users start the sign-in to the application.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | SAML sign-on URL |
 
 ### SAMLLogoutURL
 
-The SAML logout URL.
+URL the application uses to sign users out.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | SAML logout URL |
 
 ### SAMLIdentifier
 
-The SAML identifier (Entity ID).
+Identifier of the application in SAML (entity ID).
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | SAML identifier (entity ID) |
 
 ### SAMLRelayState
 
-The SAML relay state parameter.
+Value the application receives back after sign-in, for example to return to a page.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | SAML relay state |
 
 ### SAMLExpiryNotificationEmail
 
-Email address for SAML certificate expiry notifications.
+Email address that is notified before the SAML signing certificate expires.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Certificate expiry notification email |
 
 ### isApplicationVisible
 
-Determines whether the application is visible in the My Apps portal.
+Lists the application in the users' My Apps portal.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
-| Portal display name | Application visible in My Apps portal |
+| Portal display name | Show in My Apps? |
 
 ### UserAssignmentRequired
 
-Determines whether user assignment is required for the application.
+Only assigned users can use the application. An access group is created for the assignment.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | User assignment required |
+| Portal display name | Require user assignment? |
 
 ### groupAssignmentPrefix
 
-Prefix for the automatically created assignment group.
+Text put in front of the access group name. Only used when user assignment is required.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | col - Entra - users - |
 | Type | String |
-| Portal display name | Group assignment prefix (Only necessary when User assignment required) |
+| Portal display name | Access group prefix |
 
 ### implicitGrantAccessTokens
 
-Enable implicit grant flow for access tokens.
+Lets the application receive access tokens through the implicit flow. Needed only for older single-page apps.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Enable implicit grant for access tokens |
+| Portal display name | Implicit grant for access tokens? |
 
 ### implicitGrantIDTokens
 
-Enable implicit grant flow for ID tokens.
+Lets the application receive ID tokens through the implicit flow.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Enable implicit grant for ID tokens |
+| Portal display name | Implicit grant for ID tokens? |
 
 ### disableImplicitGrant
 
-If set to true, disables implicit grant issuance regardless of other settings.
+Switches implicit grant off for both token types, regardless of "Implicit grant for access tokens?" and "Implicit grant for ID tokens?".
 
 | Property | Value |
 | --- | --- |

@@ -13,7 +13,7 @@ Local Administrator Password Solution (LAPS) will solve the issue of using ident
 
 With RealmJoin it is possible to manage secure and individualized administrative accounts, either for local support or remote support on a large scale. RealmJoin saves encrypted passwords in Azure Key Vault within the customer's tenant and stores audit logs of every access to these credentials.
 
-RealmJoin's API allows you to request a "Support Account" (local admin) for a given device in your tenant. See [RealmJoin's Swagger description](https://customer-api.realmjoin.com/swagger/index.html) to see which operations are currently supported in detail. Using LAPS with RealmJoin requires the deployment of the RealmJoin Windows Client.
+RealmJoin's API allows you to request a "Support Account" (local admin) for a given device in your tenant. See [RealmJoin's API reference](https://customer-api.realmjoin.com/scalar/v1) to see which operations are currently supported in detail. Using LAPS with RealmJoin requires the deployment of the RealmJoin Windows Client.
 
 It is assumed you have correctly set up LAPS in your environment and deployed the RealmJoin Windows Client on your devices. Also, make sure to [authenticate ](realmjoin-api/authentication.md)every request against RealmJoin's API using an appropriate http Authorization header.
 

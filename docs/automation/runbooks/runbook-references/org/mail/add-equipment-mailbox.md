@@ -1,10 +1,10 @@
 ---
 title: Add Equipment Mailbox
-description: Create an equipment mailbox
+description: Create an equipment mailbox with optional booking delegates
 ---
 
 ## Description
-Creates an Exchange Online equipment mailbox and optionally configures delegate access and calendar processing. If requested, the associated Entra ID user account is disabled after creation.
+Creates an equipment mailbox in Exchange Online, for example for a projector or a pool car, so it can be booked in meeting requests. Without booking delegates the equipment accepts requests automatically when it is free. With booking delegates every request waits for their approval; they get no access to the mailbox itself. The user account behind the mailbox can be disabled.
 
 ## Location
 Organization → Mail → Add Equipment Mailbox
@@ -17,8 +17,8 @@ rjgit-org_mail_add-equipment-mailbox
 
 | Property | Value |
 | --- | --- |
-| Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>ExchangeOnlineManagement (>= 3.9.2) |
+| Version | 2.0.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,10 +26,10 @@ rjgit-org_mail_add-equipment-mailbox
 ### Application permissions
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp
-    - *Creates the equipment mailbox and configures delegation and calendar processing in the app-only Exchange Online session*
+    - *Creates the equipment mailbox and sets its calendar processing and booking delegates in the app-only Exchange Online session*
 - **Type**: Microsoft Graph
   - User.ReadWrite.All *(optional — feature: Disable user account)*
-    - *Disables the mailbox's user account via PATCH /users/{id} when DisableUser is enabled (default on)*
+    - *Reads the mailbox's user account and blocks its sign-in via PATCH /users/{id} when DisableUser is on (default)*
 
 ### RBAC roles
 - Exchange Administrator
@@ -39,66 +39,46 @@ rjgit-org_mail_add-equipment-mailbox
 ## Parameters
 ### MailboxName
 
-Alias (mail nickname) for the equipment mailbox.
+Alias of the mailbox, which becomes the part of the email address in front of the @ sign.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Alias |
 
 ### DisplayName
 
-Optional display name for the equipment mailbox.
+Name shown in the address book. Leave empty to use the alias.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Display name |
 
 ### DelegateTo
 
-Optional user who receives delegated access to the mailbox.
+Users who approve or decline every booking request for the equipment. Leave empty to accept requests automatically when the equipment is free.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
-| Type | String |
-
-### AutoAccept
-
-If set to true, meeting requests are automatically accepted.
-
-| Property | Value |
-| --- | --- |
-| Required | false |
-| Default Value | False |
-| Type | Boolean |
-| Portal display name | Automatically accept meeting requests |
-
-### AutoMapping
-
-If set to true, the mailbox is automatically mapped in Outlook for the delegate.
-
-| Property | Value |
-| --- | --- |
-| Required | false |
-| Default Value | False |
-| Type | Boolean |
-| Portal display name | Automatically map mailbox in Outlook |
+| Type | String[] |
 
 ### DisableUser
 
-If set to true, the associated Entra ID user account is disabled.
+Blocks sign-in for the user account behind the mailbox. Booking keeps working.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
-| Portal display name | Disable AAD User |
+| Portal display name | Block sign-in for the mailbox account? |
 
 
 

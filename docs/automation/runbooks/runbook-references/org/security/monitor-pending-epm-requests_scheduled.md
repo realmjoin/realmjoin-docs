@@ -1,6 +1,6 @@
 ---
 title: Monitor Pending EPM Requests (Scheduled)
-description: Monitor and report pending Endpoint Privilege Management (EPM) elevation requests
+description: Alert by email about pending EPM elevation requests
 ---
 
 {% hint style="info" %}
@@ -8,12 +8,24 @@ This is a scheduled runbook. It is designed to run on a recurring schedule rathe
 {% endhint %}
 
 ## Description
-Queries Microsoft Intune for pending EPM elevation requests and sends an email report.
-Email is only sent when there are pending requests.
-Optionally includes detailed information about each request in a table and report file attachments.
-The report files can also be uploaded to an Azure Storage Account, returning time-limited download links.
-The ReportFileFormat parameter controls which file formats are generated and delivered (CSV only, CSV & XLSX, or XLSX only).
-When the CSV attachment exceeds the email size limit and "CSV & XLSX" is selected, the email falls back to the Excel workbook alone.
+Checks Intune for Endpoint Privilege Management elevation requests that are still waiting for a decision and sends an email when there are any, so approvers do not miss them. The email can carry a table with the request details and the report files. The report can be sent by email or provided as a download link.
+
+## Endpoint Privilege Management context
+
+- Endpoint Privilege Management (EPM) allows users to request temporary admin rights for specific applications.
+- Pending requests require manual review and approval by security admins.
+- Requests expire automatically if they are not reviewed within the configured timeframe.
+- A timely review is critical for user productivity and for the security posture.
+
+## Scheduling
+
+An hourly schedule is recommended.
+
+## Email behaviour
+
+- Emails are sent individually to each recipient.
+- No email is sent when there are no pending requests.
+- Report file attachments (see `ReportFileFormat`) are only included when `DetailedReport` is enabled.
 
 ## Setup regarding email sending
 
@@ -51,20 +63,6 @@ rjgit-org_security_monitor-pending-EPM-requests_scheduled
 | Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.5.2) |
 | Schedulable | yes |
 
-## Notes
-Runbook Type: Scheduled (recommended: hourly or every 1 hours)
-
-Endpoint Privilege Management (EPM) Context:
-- EPM allows users to request temporary admin rights for specific applications
-- Pending requests require manual review and approval by security admins
-- Requests expire automatically if not reviewed within the configured timeframe
-- Timely review is critical for user productivity and security posture
-
-Email Behavior:
-- Emails are sent individually to each recipient
-- No email is sent when there are zero pending requests
-- Report file attachments (see ReportFileFormat) are only included when DetailedReport is enabled
-
 ## Permissions
 
 ### Application permissions
@@ -78,31 +76,29 @@ Email Behavior:
 ## Parameters
 ### DetailedReport
 
-When enabled, includes detailed request information in a table and as report file attachment(s).
-When disabled, only provides a summary count of pending requests.
+Adds a table with every pending request and attaches the report files. Otherwise the email only states how many requests are pending.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Include detailed request information |
+| Portal display name | Include request details? |
 
 ### EmailTo
 
-Can be a single address or multiple comma-separated addresses (string).
-The function sends individual emails to each recipient for privacy reasons.
+Send the report to these addresses. Separate several with commas; each recipient gets a separate email.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Recipient Email Address(es) |
+| Portal display name | Recipient email address(es) |
 
 ### EmailFrom
 
-The sender email address. This needs to be configured in the runbook customization.
+Sender address of the report email. Taken from the tenant setting RJReport.EmailSender.
 
 | Property | Value |
 | --- | --- |
@@ -113,8 +109,7 @@ The sender email address. This needs to be configured in the runbook customizati
 
 ### BrandingHeaderImageUrl
 
-Optional public HTTPS URL of a custom header image (PNG/JPEG/GIF, max. 200 KB) for the report email.
-Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, the default RealmJoin header graphic is used.
+Header image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.HeaderImageUrl; the default RealmJoin header is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -125,8 +120,7 @@ Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, th
 
 ### BrandingFooterImageUrl
 
-Optional public HTTPS URL of a custom footer image (PNG/JPEG/GIF, max. 200 KB) for the report email.
-Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, the default RealmJoin footer graphic is used.
+Footer image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.FooterImageUrl; the default RealmJoin footer is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -137,8 +131,7 @@ Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, th
 
 ### BrandingFooterLink
 
-Optional URL the footer image links to. Sourced from the RJReport.Branding.FooterLink tenant setting.
-When empty, the default link (https://www.realmjoin.com) is used.
+Link behind the footer image of the report email. Taken from the tenant setting RJReport.Branding.FooterLink; realmjoin.com is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -149,8 +142,7 @@ When empty, the default link (https://www.realmjoin.com) is used.
 
 ### BrandingAccentColor
 
-Optional accent color override (6-digit hex, e.g. '#0052cc') for the report email template.
-Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or invalid, the default RealmJoin accent color is used.
+Accent color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.AccentColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |
@@ -161,8 +153,7 @@ Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or inv
 
 ### BrandingTextColor
 
-Optional text color override (6-digit hex) for the report email template.
-Sourced from the RJReport.Branding.TextColor tenant setting. When empty or invalid, the default RealmJoin text color is used.
+Text color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.TextColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |
@@ -173,7 +164,7 @@ Sourced from the RJReport.Branding.TextColor tenant setting. When empty or inval
 
 ### ReportFileFormat
 
-Controls which report file formats are generated and delivered: "CSV only", "CSV & XLSX" (default) or "XLSX only".
+Deliver the report as CSV, as an Excel workbook, or both.
 
 | Property | Value |
 | --- | --- |
@@ -192,14 +183,14 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 
 ### CreateDownloadLink
 
-If enabled, the report files are uploaded to an Azure Storage Account and time-limited download links are returned. Disabled by default.
+Also upload the report and return a download link that expires after a few days.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Create a file download link (upload report to storage)? |
+| Portal display name | Create a download link? |
 
 **Portal options**
 
@@ -210,7 +201,7 @@ If enabled, the report files are uploaded to an Azure Storage Account and time-l
 
 ### ContainerName
 
-Storage container name used for the upload. Configured per runbook (not a global RJReport setting).
+Storage container the report files are uploaded to. Set per runbook.
 
 | Property | Value |
 | --- | --- |
@@ -221,7 +212,7 @@ Storage container name used for the upload. Configured per runbook (not a global
 
 ### ResourceGroupName
 
-Resource group that contains the storage account. Sourced from the RJReport tenant settings.
+Resource group of the storage account for report uploads. Taken from the tenant setting RJReport.StorageAccount.ResourceGroup.
 
 | Property | Value |
 | --- | --- |
@@ -232,7 +223,7 @@ Resource group that contains the storage account. Sourced from the RJReport tena
 
 ### StorageAccountName
 
-Storage account name used for the upload. Sourced from the RJReport tenant settings.
+Storage account for report uploads. Taken from the tenant setting RJReport.StorageAccount.StorageAccountName.
 
 | Property | Value |
 | --- | --- |
@@ -243,7 +234,7 @@ Storage account name used for the upload. Sourced from the RJReport tenant setti
 
 ### LinkExpiryDays
 
-Number of days until the generated download link expires. Sourced from the RJReport tenant settings.
+Number of days a download link stays valid. Taken from the tenant setting RJReport.StorageAccount.LinkExpiryDays.
 
 | Property | Value |
 | --- | --- |

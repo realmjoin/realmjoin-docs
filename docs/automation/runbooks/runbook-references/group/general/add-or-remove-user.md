@@ -1,12 +1,10 @@
 ---
 title: Add Or Remove User
-description: Add or remove a group member
+description: Add a user to this group or remove one
 ---
 
 ## Description
-This runbook adds a user to a group or removes a user from a group.
-It supports Microsoft Entra ID groups and Exchange Online distribution or mail-enabled security groups.
-Use the Remove switch to remove the user instead of adding the user.
+Adds a user as a member of this group or removes an existing member. Works for Microsoft Entra ID groups as well as Exchange Online distribution and mail-enabled security groups.
 
 ## Location
 Group → General → Add Or Remove User
@@ -19,7 +17,7 @@ rjgit-group_general_add-or-remove-user
 
 | Property | Value |
 | --- | --- |
-| Version | 1.0.1 |
+| Version | 1.0.3 |
 | Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
@@ -45,7 +43,7 @@ rjgit-group_general_add-or-remove-user
 ## Parameters
 ### GroupID
 
-Object ID of the target group.
+Object ID of the group the runbook acts on. Set by the portal from the selected group.
 
 | Property | Value |
 | --- | --- |
@@ -56,7 +54,7 @@ Object ID of the target group.
 
 ### UserId
 
-Object ID of the user to add or remove.
+User who is added to or removed from the group.
 
 | Property | Value |
 | --- | --- |
@@ -66,21 +64,21 @@ Object ID of the user to add or remove.
 
 ### Remove
 
-"Add User to Group" (final value: $false) or "Remove User from Group" (final value: $true) can be selected as action to perform. If set to true, the runbook will remove the user from the group. If set to false, it will add the user to the group.
+Add makes the user a member. Remove takes the membership away.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Add or Remove User |
+| Portal display name | Action |
 
 **Portal options**
 
 | Portal option | Value |
 | --- | --- |
-| Add User as member | false |
-| Remove User as member | true |
+| Add user as member | false |
+| Remove user as member | true |
 
 
 

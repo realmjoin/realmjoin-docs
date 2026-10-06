@@ -1,11 +1,10 @@
 ---
 title: Add Device Via Corporate Identifier
-description: Import a device into Intune via corporate identifier
+description: Register a device in Intune by its corporate identifier
 ---
 
 ## Description
-This runbook imports a device into Intune using a corporate identifier such as serial number or IMEI.
-It can overwrite existing entries and optionally stores a description for the imported identity.
+Adds a device to Intune's list of corporate identifiers, such as a serial number or IMEI, so it counts as corporate-owned when it enrolls. An existing entry for the same identifier can be overwritten, and a description can be stored with it.
 
 ## Location
 Organization → Devices → Add Device Via Corporate Identifier
@@ -33,13 +32,14 @@ rjgit-org_devices_add-device-via-corporate-identifier
 ## Parameters
 ### CorpIdentifierType
 
-Identifier type to use for import.
+Serial number for most devices, IMEI for cellular devices.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value | serialNumber |
 | Type | String |
+| Portal display name | Identifier type |
 
 **Portal options**
 
@@ -50,34 +50,36 @@ Identifier type to use for import.
 
 ### CorpIdentifier
 
-Identifier value to import.
+Value of the chosen identifier, exactly as printed on or reported by the device.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Corporate Identifier Value |
+| Portal display name | Identifier |
 
 ### DeviceDescripton
 
-Optional description stored for the imported identity.
+Free text stored with the identifier, for example the device model or its owner.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Description |
 
 ### OverwriteExistingEntry
 
-If set to true, an existing entry for the same identifier will be overwritten.
+Replaces an entry that already exists for the same identifier.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Overwrite an existing entry? |
 
 
 

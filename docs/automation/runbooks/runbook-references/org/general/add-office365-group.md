@@ -1,11 +1,10 @@
 ---
 title: Add Office365 Group
-description: Create an Office 365 group and SharePoint site, optionally create a (Teams) team.
+description: Create a Microsoft 365 group, optionally with a team
 ---
 
 ## Description
-This runbook creates a Microsoft 365 group and provisions the related SharePoint site.
-It can optionally promote the group to a Microsoft Teams team after creation.
+Creates a Microsoft 365 group with its SharePoint site and, on request, turns it into a Microsoft Teams team. Visibility, mail and security settings and up to two owners can be set. A team without an owner gets the caller as owner.
 
 ## Location
 Organization → General → Add Office365 Group
@@ -39,46 +38,47 @@ rjgit-org_general_add-office365-group
 ## Parameters
 ### MailNickname
 
-Mail nickname used for group creation.
+Alias of the group, used for its email address and SharePoint URL.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Mail nickname |
 
 ### DisplayName
 
-Optional display name. If empty, MailNickname is used.
+Name shown for the group. Leave empty to use the mail nickname.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | DisplayName - will use MailNickname if left empty |
+| Portal display name | Display name |
 
 ### CreateTeam
 
-Choose to "Only create a SharePoint Site" (final value: $false) or "Create a Team (and SharePoint Site)" (final value: $true). A team needs an owner, so if CreateTeam is set to true and no owner is specified, the runbook will set the caller as the owner.
+Creates only the group with its SharePoint site, or also a Microsoft Teams team on top of it.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Create a Teams Team |
+| Portal display name | Create a Teams team? |
 
 **Portal options**
 
 | Portal option | Value |
 | --- | --- |
-| Only create a SharePoint Site | false |
-| Create a Team (and SharePoint Site) | true |
+| Only the group with its SharePoint site | false |
+| Also a Microsoft Teams team | true |
 
 ### Private
 
-Choose the group visibility: "Public" (final value: $false) or "Private" (final value: $true).
+Public groups can be found and joined by anyone in the organization, private groups only by their members.
 
 | Property | Value |
 | --- | --- |
@@ -96,27 +96,29 @@ Choose the group visibility: "Public" (final value: $false) or "Private" (final 
 
 ### MailEnabled
 
-If set to true, the group is mail-enabled.
+Gives the group a mailbox and email address.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Mail-enabled? |
 
 ### SecurityEnabled
 
-If set to true, the group is security-enabled.
+Lets the group be used for permissions and access assignments.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Security-enabled? |
 
 ### Owner
 
-Optional owner of the group.
+Owner of the group. Leave empty for none; a team then gets the caller as owner.
 
 | Property | Value |
 | --- | --- |
@@ -126,7 +128,7 @@ Optional owner of the group.
 
 ### Owner2
 
-Optional second owner of the group.
+Additional owner. Leave empty for none.
 
 | Property | Value |
 | --- | --- |

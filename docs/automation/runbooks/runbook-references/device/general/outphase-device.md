@@ -1,12 +1,10 @@
 ---
 title: Outphase Device
-description: Remove/Outphase a windows device
+description: Wipe this Windows device and clean up Intune, Autopilot and Entra ID
 ---
 
 ## Description
-Remove/Outphase a windows device. You can choose if you want to wipe the device and/or delete it from Intune and AutoPilot.
-Optionally, the device can be tagged in Microsoft Defender for Endpoint to mark it as excluded from remediation.
-NOTE: The Exclusion Tag is applied to the device, but it only appears in the Defender portal's "Tags" filter once it has been created once via the portal (Device > Manage tags > "Create new tag").
+Takes this Windows device out of service. You choose whether the device is wiped or only deleted from Intune, and whether it leaves the Autopilot database. Its Entra ID object can be deleted, disabled or kept. Optionally the device is tagged in Microsoft Defender for Endpoint so rules that use the tag can exclude it from automated remediation. A wipe removes all user and enrollment data from the device and cannot be undone.
 
 ## Microsoft Defender for Endpoint exclusion tag
 
@@ -66,7 +64,7 @@ rjgit-device_general_outphase-device
 ## Parameters
 ### DeviceId
 
-The device ID of the target device.
+Entra ID device ID of the device the runbook acts on. Set by the portal from the selected device.
 
 | Property | Value |
 | --- | --- |
@@ -77,14 +75,14 @@ The device ID of the target device.
 
 ### intuneAction
 
-Determines the Intune action to perform (wipe, delete, or none).
+Completely wipe erases all user and enrollment data on the device. Delete from Intune only removes the device record, for devices that are already wiped or destroyed. Do not wipe or remove leaves Intune untouched.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | 2 |
 | Type | Int32 |
-| Portal display name | Wipe this device? |
+| Portal display name | Intune action |
 
 **Portal options**
 
@@ -96,26 +94,26 @@ Determines the Intune action to perform (wipe, delete, or none).
 
 ### aadAction
 
-Determines the Entra ID (Azure AD) action to perform (delete, disable, or none).
+Delete removes the device object from Entra ID, Disable keeps it but blocks sign-ins from the device, and Keep leaves Entra ID untouched.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | 2 |
 | Type | Int32 |
-| Portal display name | Delete device from EntraID? |
+| Portal display name | Entra ID object |
 
 **Portal options**
 
 | Portal option | Value |
 | --- | --- |
-| Delete device in EntraID | 2 |
-| Disable device in EntraID | 1 |
-| Do not delete EntraID device / do not care | 0 |
+| Delete device in Entra ID | 2 |
+| Disable device in Entra ID | 1 |
+| Keep the Entra ID device | 0 |
 
 ### wipeDevice
 
-If set to true, triggers a wipe action in Intune.
+Legacy switch kept for compatibility. The choice under "Intune action" decides whether the device is wiped.
 
 | Property | Value |
 | --- | --- |
@@ -126,7 +124,7 @@ If set to true, triggers a wipe action in Intune.
 
 ### removeIntuneDevice
 
-If set to true, deletes the Intune device object.
+Legacy switch kept for compatibility. The choice under "Intune action" decides whether the Intune record is deleted.
 
 | Property | Value |
 | --- | --- |
@@ -137,25 +135,25 @@ If set to true, deletes the Intune device object.
 
 ### removeAutopilotDevice
 
-"Delete device from AutoPilot database?" (final value: true) or "Keep device / do not care" (final value: false) can be selected as action to perform. If set to true, the runbook will delete the device from the AutoPilot database, which also allows the device to leave the tenant. If set to false, the device will remain in the AutoPilot database and can be re-assigned to another user/device in the tenant.
+Removing the device from the Autopilot database lets it leave the tenant and be registered elsewhere. Keeping it allows a later redeployment in this tenant.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
-| Portal display name | Delete device from AutoPilot database? |
+| Portal display name | Delete device from Autopilot database? |
 
 **Portal options**
 
 | Portal option | Value |
 | --- | --- |
-| Remove the device from AutoPilot (the device can leave the tenant) | true |
-| Keep device / do not care | false |
+| Remove from Autopilot (the device can leave the tenant) | true |
+| Keep the device in Autopilot | false |
 
 ### removeAADDevice
 
-"Delete device from EntraID?" (final value: true) or "Keep device / do not care" (final value: false) can be selected as action to perform. If set to true, the runbook will delete the device object from Entra ID (Azure AD). If set to false, the device object will remain in Entra ID (Azure AD).
+Legacy switch kept for compatibility. The choice under "Entra ID object" decides whether the Entra ID object is deleted.
 
 | Property | Value |
 | --- | --- |
@@ -166,7 +164,7 @@ If set to true, deletes the Intune device object.
 
 ### disableAADDevice
 
-"Disable device in EntraID?" (final value: true) or "Keep device / do not care" (final value: false) can be selected as action to perform. If set to true, the runbook will disable the device object in Entra ID (Azure AD). If set to false, the device object will remain enabled in Entra ID (Azure AD).
+Legacy switch kept for compatibility. The choice under "Entra ID object" decides whether the Entra ID object is disabled.
 
 | Property | Value |
 | --- | --- |
@@ -177,14 +175,14 @@ If set to true, deletes the Intune device object.
 
 ### excludeFromDefender
 
-If set to true, the device will be tagged in Microsoft Defender for Endpoint with the specified exclusion tag. If set to false, the Defender step will be skipped entirely.
+Tags the device in Microsoft Defender for Endpoint with the exclusion tag so rules that use the tag can exclude it from automated remediation. Skip leaves Defender untouched.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Exclude device from Defender for Endpoint? |
+| Portal display name | Tag as excluded in Defender for Endpoint? |
 
 **Portal options**
 
@@ -195,14 +193,14 @@ If set to true, the device will be tagged in Microsoft Defender for Endpoint wit
 
 ### defenderExclusionTag
 
-The tag that will be added to the device in Microsoft Defender for Endpoint to mark it as excluded. Defaults to "ExcludeFromRemediation".
+Tag name written to the device in Defender for Endpoint, for use in your exclusion rules.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | ExcludeFromRemediation |
 | Type | String |
-| Portal display name | Defender Exclusion Tag |
+| Portal display name | Defender exclusion tag |
 
 
 

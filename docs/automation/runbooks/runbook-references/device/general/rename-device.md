@@ -1,10 +1,10 @@
 ---
 title: Rename Device
-description: Rename a device.
+description: Rename this device in Intune and Autopilot
 ---
 
 ## Description
-Rename a device (in Intune and Autopilot).
+Gives this device a new name in Intune and in its Windows Autopilot record. Before anything is changed, the name is checked against the Windows computer name rules. It may have up to 15 letters, digits and hyphens, must start and end with a letter or digit, and cannot be digits only.
 
 ## Location
 Device → General → Rename Device
@@ -38,7 +38,7 @@ rjgit-device_general_rename-device
 ## Parameters
 ### DeviceId
 
-The device ID of the target device.
+Entra ID device ID of the device the runbook acts on. Set by the portal from the selected device.
 
 | Property | Value |
 | --- | --- |
@@ -49,13 +49,14 @@ The device ID of the target device.
 
 ### NewDeviceName
 
-The new device name to set. This runbook validates the name against common Windows hostname constraints.
+Up to 15 letters, digits and hyphens, starting and ending with a letter or digit, not digits only.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | New device name |
 
 
 

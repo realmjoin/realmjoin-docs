@@ -4,7 +4,7 @@ description: List or export all Windows Autopilot devices
 ---
 
 ## Description
-Lists all Windows Autopilot devices and optionally exports them to a CSV file in Azure Storage. If exporting is enabled, the runbook uploads the report and returns a time-limited SAS (download) link.
+Lists every Windows Autopilot registration with its details, either in the run output or as a CSV file uploaded to an Azure Storage account with a time-limited download link. Nothing is changed.
 
 ## Location
 Organization → General → Export All Autopilot Devices
@@ -34,7 +34,7 @@ rjgit-org_general_export-all-autopilot-devices
 ## Parameters
 ### ExportToFile
 
-"List in Console" (final value: $false) or "Export to a CSV file" (final value: $true) can be selected as action to perform.
+List in the run output, or export to a CSV file with a download link.
 
 | Property | Value |
 | --- | --- |
@@ -47,57 +47,62 @@ rjgit-org_general_export-all-autopilot-devices
 | Portal option | Value |
 | --- | --- |
 | Export to a CSV file | true |
-| List in Console | false |
+| List in the run output | false |
 
 ### ContainerName
 
-Name of the Azure Storage container to upload the CSV report to.
+Storage container the CSV file is uploaded to. Taken from the tenant setting IntuneDevicesReport.Container.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
-Name of the Azure Resource Group containing the Storage Account.
+Resource group of the storage account. Taken from the tenant setting IntuneDevicesReport.ResourceGroup.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
-Name of the Azure Storage Account used for upload.
+Storage account for the export. Taken from the tenant setting IntuneDevicesReport.StorageAccount.Name.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountLocation
 
-Azure region for the Storage Account if it needs to be created.
+Azure region used when the storage account has to be created. Taken from the tenant setting IntuneDevicesReport.StorageAccount.Location.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountSku
 
-SKU name for the Storage Account if it needs to be created.
+Performance tier used when the storage account has to be created. Taken from the tenant setting IntuneDevicesReport.StorageAccount.Sku.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

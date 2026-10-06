@@ -1,11 +1,10 @@
 ---
 title: List Group License Assignment Errors
-description: Report groups that have license assignment errors
+description: List groups whose license assignments have errors
 ---
 
 ## Description
-This runbook searches for Entra ID groups that have members with license assignment errors.
-It prints the affected group names and object IDs.
+Finds the Entra ID groups with members whose group-based license assignment failed and lists their names and object IDs. Nothing is changed.
 
 ## Location
 Organization → General → List Group License Assignment Errors

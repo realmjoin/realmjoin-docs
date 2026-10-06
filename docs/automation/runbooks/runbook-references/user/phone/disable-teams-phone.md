@@ -1,10 +1,10 @@
 ---
 title: Disable Teams Phone
-description: Microsoft Teams telephony offboarding
+description: Remove Teams phone number and voice policies from this user
 ---
 
 ## Description
-Removes the assigned phone number and clears selected Teams voice policies for a Teams-enabled user. This fullfills the telephony offboarding scenarios.
+Takes the assigned phone number away from this user and clears the Teams voice policies, so the user can no longer make or receive phone calls through Teams.
 
 ## Location
 User → Phone → Disable Teams Phone
@@ -36,7 +36,7 @@ rjgit-user_phone_disable-teams-phone
 ## Parameters
 ### UserName
 
-User which should be cleared. Could be filled with the user picker in the UI.
+User principal name of the user the runbook acts on. Set by the portal from the selected user.
 
 | Property | Value |
 | --- | --- |

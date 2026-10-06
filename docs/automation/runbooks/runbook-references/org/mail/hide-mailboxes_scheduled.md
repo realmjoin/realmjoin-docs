@@ -1,6 +1,6 @@
 ---
 title: Hide Mailboxes (Scheduled)
-description: Hide or unhide special mailboxes in the Global Address List
+description: Hide or show all Bookings calendars in the address book
 ---
 
 {% hint style="info" %}
@@ -8,7 +8,7 @@ This is a scheduled runbook. It is designed to run on a recurring schedule rathe
 {% endhint %}
 
 ## Description
-Hides or unhides special mailboxes in the Global Address List, currently intended for Bookings calendars. The runbook updates all scheduling mailboxes accordingly.
+Hides every Microsoft Bookings calendar mailbox from the global address list, or shows them again, on each run. New Bookings calendars are covered automatically the next time the runbook runs.
 
 ## Location
 Organization → Mail → Hide Mailboxes (Scheduled)
@@ -21,7 +21,7 @@ rjgit-org_mail_hide-mailboxes_scheduled
 
 | Property | Value |
 | --- | --- |
-| Version | 1.0.2 |
+| Version | 1.0.3 |
 | Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | yes |
 
@@ -40,13 +40,14 @@ rjgit-org_mail_hide-mailboxes_scheduled
 ## Parameters
 ### HideBookingCalendars
 
-If set to true, booking calendars are hidden from address lists.
+Hidden calendars cannot be found in Outlook or the address book; turn off to list them again.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Hide Bookings calendars? |
 
 
 

@@ -1,11 +1,10 @@
 ---
 title: Delete Application Registration
-description: Delete an application registration from Azure AD
+description: Delete an application registration and its service principal
 ---
 
 ## Description
-This runbook deletes an application registration and its associated service principal from Microsoft Entra ID.
-It verifies that the application exists before deletion and performs a best-effort cleanup of groups assigned during provisioning.
+Deletes an application registration from Entra ID together with its service principal. Every group assigned to the application is deleted as well, including groups shared with other applications. Applications that still sign users in stop working immediately.
 
 ## Location
 Organization → Applications → Delete Application Registration
@@ -39,13 +38,14 @@ rjgit-org_applications_delete-application-registration
 ## Parameters
 ### ClientId
 
-The application client ID (appId) of the application registration to delete.
+Client ID (appId) of the application registration to delete.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Application (client) ID |
 
 
 

@@ -77,6 +77,10 @@ Complete-RJTenantOnboarding -Token 1234ABCD 6>&1
 Once finished, the script will launch the RealmJoin Portal
 
 <figure><img src="../../.gitbook/assets/Snipaste_2026-01-27_12-18-57.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+**Signing out afterwards:** the Azure sign-in stays active after the command has finished. Once you are done, run `Disconnect-AzAccount` to sign out of the existing session.
+{% endhint %}
 {% endstep %}
 {% endstepper %}
 

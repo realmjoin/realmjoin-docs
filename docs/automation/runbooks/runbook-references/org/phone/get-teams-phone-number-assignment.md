@@ -4,10 +4,11 @@ description: Check whether a phone number is assigned in Microsoft Teams
 ---
 
 ## Description
-Looks up whether a given phone number is assigned to a user in Microsoft Teams. If the phone number is assigned, information about the user and relevant voice policies is returned.
+Looks up whether a phone number is assigned to a user in Microsoft Teams. If it is, the user and their voice policies are shown in the Output Data tab. Nothing is changed.
 
 ## Additional documentation
-If a Teams user is found for the phone number, the following details are displayed:
+If a Teams user is found for the phone number, the following details are shown in the Output Data tab, table "Phone number assignment":
+- Phone number
 - Display name
 - User principal name
 - Account type
@@ -28,7 +29,7 @@ rjgit-org_phone_get-teams-phone-number-assignment
 
 | Property | Value |
 | --- | --- |
-| Version | 1.0.1 |
+| Version | 1.1.0 |
 | Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>MicrosoftTeams (>= 7.9.0) |
 | Schedulable | no |
 
@@ -47,14 +48,14 @@ rjgit-org_phone_get-teams-phone-number-assignment
 ## Parameters
 ### PhoneNumber
 
-The phone number must be in E.164 format. Example: +49321987654 or +49321987654;ext=123. It must start with a '+' followed by the country code and subscriber number, with an optional ';ext=' followed by the extension number, without spaces or special characters.
+Number in international format without spaces, for example +49321987654, optionally with an extension as +49321987654;ext=123.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Phone number to check |
+| Portal display name | Phone number |
 
 
 

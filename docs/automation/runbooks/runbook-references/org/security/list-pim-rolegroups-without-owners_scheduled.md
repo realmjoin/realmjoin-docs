@@ -1,6 +1,6 @@
 ---
 title: List Pim Rolegroups Without Owners (Scheduled)
-description: List role-assignable groups with eligible role assignments but without owners
+description: Alert on PIM role groups that have no owner
 ---
 
 {% hint style="info" %}
@@ -8,7 +8,7 @@ This is a scheduled runbook. It is designed to run on a recurring schedule rathe
 {% endhint %}
 
 ## Description
-Finds role-assignable groups that have PIM eligible role assignments but no owners assigned. Optionally sends an email alert containing the group names.
+Finds role-assignable groups that hold eligible PIM role assignments but have no owner, so nobody is responsible for their membership. The group names are listed and can be sent by email. Nothing is changed.
 
 ## Location
 Organization → Security → List Pim Rolegroups Without Owners (Scheduled)
@@ -42,35 +42,36 @@ rjgit-org_security_list-pim-rolegroups-without-owners_scheduled
 ## Parameters
 ### SendEmailIfFound
 
-If set to true, sends an email when matching groups are found.
+Sends an email with the group names when such groups are found.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Send an email when groups are found? |
 
 ### From
 
-Sender email address used to send the alert.
+User in the tenant the alert is sent as; needs a mailbox.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | reports@contoso.com |
 | Type | String |
-| Portal display name | Sender mail address |
+| Portal display name | Alert sender |
 
 ### To
 
-Recipient email address for the alert.
+Gets the email with the group names.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | support@glueckkanja-gab.com |
 | Type | String |
-| Portal display name | Send mail to |
+| Portal display name | Alert recipient |
 
 
 

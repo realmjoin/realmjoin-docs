@@ -1,11 +1,10 @@
 ---
 title: Export Policy Report
-description: Create a report of tenant policies from Intune and Entra ID.
+description: Export Intune and Entra ID policies as a Markdown report
 ---
 
 ## Description
-This runbook exports configuration policies from Intune and Entra ID and writes the results to a Markdown report.
-It can optionally export raw JSON and create downloadable links for exported artifacts.
+Collects the configuration policies from Intune and Entra ID and writes them into one Markdown report, for documentation or review. The raw policy definitions can be exported as JSON as well. The files can be uploaded to an Azure Storage account with time-limited download links. Nothing is changed.
 
 ## Location
 Organization → General → Export Policy Report
@@ -40,7 +39,7 @@ Azure Storage Account: Contributor role on the Storage Account used for exportin
 ## Parameters
 ### produceLinks
 
-If set to true, creates links for exported artifacts based on settings.
+Uploads the report files to the storage account configured in the tenant settings and returns download links.
 
 | Property | Value |
 | --- | --- |
@@ -50,7 +49,7 @@ If set to true, creates links for exported artifacts based on settings.
 
 ### exportJson
 
-If set to true, also exports raw JSON policy payloads.
+Also exports the raw policy definitions as JSON files.
 
 | Property | Value |
 | --- | --- |
@@ -60,7 +59,7 @@ If set to true, also exports raw JSON policy payloads.
 
 ### renderLatexPagebreaks
 
-If set to true, adds LaTeX page breaks to the generated Markdown.
+Adds LaTeX page breaks to the Markdown, so each policy starts on a new page when the Markdown is converted to PDF.
 
 | Property | Value |
 | --- | --- |
@@ -70,53 +69,58 @@ If set to true, adds LaTeX page breaks to the generated Markdown.
 
 ### ContainerName
 
-Storage container name used for uploads.
+Storage container the report files are uploaded to. Taken from the tenant setting TenantPolicyReport.Container.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | rjrb-licensing-report-v2 |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
-Resource group that contains the storage account.
+Resource group of the storage account. Taken from the tenant setting TenantPolicyReport.ResourceGroup.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
-Storage account name used for uploads.
+Storage account for the export. Taken from the tenant setting TenantPolicyReport.StorageAccount.Name.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountLocation
 
-Azure region for the storage account.
+Azure region used when the storage account has to be created. Taken from the tenant setting TenantPolicyReport.StorageAccount.Location.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountSku
 
-Storage account SKU.
+Performance tier used when the storage account has to be created. Taken from the tenant setting TenantPolicyReport.StorageAccount.Sku.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

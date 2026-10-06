@@ -1,6 +1,6 @@
 ---
 title: Notify Users About Stale Devices (Scheduled)
-description: Notify primary users about their stale devices via email
+description: Email users about devices they have not used for a while
 ---
 
 {% hint style="info" %}
@@ -8,7 +8,16 @@ This is a scheduled runbook. It is designed to run on a recurring schedule rathe
 {% endhint %}
 
 ## Description
-Identifies devices that haven't been active for a specified number of days and sends personalized email notifications to the primary users of those devices. The email contains device information and action steps for the user. Optionally filter users by including or excluding specific groups. Three optional routing targets are available: a global override recipient that redirects ALL notifications (for testing and piloting), a dedicated recipient for users whose UPN matches a name pattern (e.g. Device Enrollment Manager accounts), and a dedicated recipient that receives one combined email for stale devices without a primary user.
+Finds Intune devices that have not been active for a given number of days. Each primary user gets an email listing their stale devices and what to do about them. Users can be included or excluded by group. Emails can be redirected: all of them to an override address for tests, or those of accounts matching a name pattern to a dedicated recipient. Stale devices without a primary user can be collected into one combined email.
+
+## Common use cases
+
+- Automated user reminders about inactive devices to encourage regular device check-ins
+- Proactive device lifecycle management by alerting users before devices are retired
+- Security and compliance by ensuring users are aware of all devices registered to them
+- Staged notifications via the `MaxDays` parameter, for example a first reminder at 30 days and a final notice at 60 days
+- User scope filtering to target specific departments or to exclude service accounts
+- Central handling of devices without a primary user or owned by Device Enrollment Manager accounts (for example `DEM-*`) via dedicated recipients
 
 ## Setup regarding email sending
 
@@ -29,6 +38,10 @@ The report email honors the optional `RJReport.Branding.*` tenant settings:
 When these settings are not configured, the default RealmJoin graphics and colors are used. An image that cannot be downloaded or validated, or an invalid color value, never prevents the report email – the corresponding default is used instead.
 
 Setup instructions and image requirements: [Email branding](https://docs.realmjoin.com/automation/runbooks/runbook-report-settings#email-branding-optional).
+
+### Service Desk contact information
+
+The optional `RJReport.ServiceDesk_DisplayName`, `RJReport.ServiceDesk_EMail`, `RJReport.ServiceDesk_Phone` and `RJReport.ServiceDesk_PortalUrl` tenant settings add a contact block to the end of every notification email. `ServiceDeskTicketUrl` can additionally link to a ticket.
 
 ## Mail Template Language Selection
 
@@ -115,27 +128,6 @@ rjgit-org_devices_notify-users-about-stale-devices_scheduled
 | Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | yes |
 
-## Notes
-This runbook automatically sends personalized email notifications to users who have devices that haven't synced for a specified number of days.
-The email is sent directly to the primary user's email address and includes detailed information about each inactive device.
-
-Prerequisites:
-- EmailFrom parameter must be configured in runbook customization (RJReport.EmailSender setting)
-- Optional: Service Desk contact information can be configured (ServiceDesk_DisplayName, ServiceDesk_EMail, ServiceDesk_Phone, ServiceDesk_PortalUrl)
-
-Common Use Cases:
-- Automated user reminders about inactive devices to encourage regular device check-ins
-- Proactive device lifecycle management by alerting users before devices are retired
-- Security and compliance by ensuring users are aware of all devices registered to them
-- Using MaxDays parameter for staged notifications (e.g., first reminder at 30 days, final notice at 60 days)
-- User scope filtering to target specific departments or exclude service accounts
-- Centrally handling devices without a primary user or owned by Device Enrollment Manager (e.g. DEM-*) accounts via dedicated recipients
-
-Pilot and Testing Options:
-- Use OverrideEmailRecipient parameter to send all notifications to a test mailbox instead of end users
-- Perfect for validating email content and testing filters before rolling out to production
-- Send notifications to ticket systems or shared mailboxes for centralized handling
-
 ## Permissions
 
 ### Application permissions
@@ -153,73 +145,73 @@ Pilot and Testing Options:
 ## Parameters
 ### Days
 
-Number of days without activity to be considered stale (minimum threshold).
+Devices inactive for at least this many days count as stale.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | 30 |
 | Type | Int32 |
-| Portal display name | Minimum Days Without Activity |
+| Portal display name | Days without activity |
 
 ### MaxDays
 
-Optional maximum number of days without activity. If set, only devices inactive between Days and MaxDays will be included.
+Only devices inactive for at most this many days are included. Leave empty for no upper limit.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | Int32 |
-| Portal display name | (Optional) Maximum Days Without Activity |
+| Portal display name | Maximum days without activity |
 
 ### Windows
 
-Include Windows devices in the results.
+Includes Windows devices.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
-| Portal display name | Include Windows Devices |
+| Portal display name | Include Windows devices? |
 
 ### MacOS
 
-Include macOS devices in the results.
+Includes macOS devices.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
-| Portal display name | Include macOS Devices |
+| Portal display name | Include macOS devices? |
 
 ### iOS
 
-Include iOS devices in the results.
+Includes iOS and iPadOS devices.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
-| Portal display name | Include iOS Devices |
+| Portal display name | Include iOS devices? |
 
 ### Android
 
-Include Android devices in the results.
+Includes Android devices.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
-| Portal display name | Include Android Devices |
+| Portal display name | Include Android devices? |
 
 ### EmailFrom
 
-The sender email address. This needs to be configured in the runbook customization.
+Sender address of the notification email. Taken from the tenant setting RJReport.EmailSender.
 
 | Property | Value |
 | --- | --- |
@@ -230,8 +222,7 @@ The sender email address. This needs to be configured in the runbook customizati
 
 ### BrandingHeaderImageUrl
 
-Optional public HTTPS URL of a custom header image (PNG/JPEG/GIF, max. 200 KB) for the report email.
-Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, the default RealmJoin header graphic is used.
+Header image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.HeaderImageUrl; the default RealmJoin header is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -242,8 +233,7 @@ Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, th
 
 ### BrandingFooterImageUrl
 
-Optional public HTTPS URL of a custom footer image (PNG/JPEG/GIF, max. 200 KB) for the report email.
-Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, the default RealmJoin footer graphic is used.
+Footer image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.FooterImageUrl; the default RealmJoin footer is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -254,8 +244,7 @@ Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, th
 
 ### BrandingFooterLink
 
-Optional URL the footer image links to. Sourced from the RJReport.Branding.FooterLink tenant setting.
-When empty, the default link (https://www.realmjoin.com) is used.
+Link behind the footer image of the report email. Taken from the tenant setting RJReport.Branding.FooterLink; realmjoin.com is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -266,8 +255,7 @@ When empty, the default link (https://www.realmjoin.com) is used.
 
 ### BrandingAccentColor
 
-Optional accent color override (6-digit hex, e.g. '#0052cc') for the report email template.
-Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or invalid, the default RealmJoin accent color is used.
+Accent color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.AccentColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |
@@ -278,8 +266,7 @@ Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or inv
 
 ### BrandingTextColor
 
-Optional text color override (6-digit hex) for the report email template.
-Sourced from the RJReport.Branding.TextColor tenant setting. When empty or invalid, the default RealmJoin text color is used.
+Text color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.TextColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |
@@ -290,7 +277,7 @@ Sourced from the RJReport.Branding.TextColor tenant setting. When empty or inval
 
 ### ServiceDeskDisplayName
 
-Service Desk display name for user contact information (optional).
+Service desk name shown in the email. Taken from the tenant setting RJReport.ServiceDesk_DisplayName.
 
 | Property | Value |
 | --- | --- |
@@ -301,7 +288,7 @@ Service Desk display name for user contact information (optional).
 
 ### ServiceDeskEmail
 
-Service Desk email address for user contact information (optional).
+Service desk email address shown in the email. Taken from the tenant setting RJReport.ServiceDesk_EMail.
 
 | Property | Value |
 | --- | --- |
@@ -312,7 +299,7 @@ Service Desk email address for user contact information (optional).
 
 ### ServiceDeskPhone
 
-Service Desk phone number for user contact information (optional).
+Service desk phone number shown in the email. Taken from the tenant setting RJReport.ServiceDesk_Phone.
 
 | Property | Value |
 | --- | --- |
@@ -323,7 +310,7 @@ Service Desk phone number for user contact information (optional).
 
 ### ServiceDeskPortalUrl
 
-Service Desk portal URL for user contact information, rendered as a clickable link (optional).
+Link to the service desk portal shown in the email. Taken from the tenant setting RJReport.ServiceDesk_PortalUrl.
 
 | Property | Value |
 | --- | --- |
@@ -334,7 +321,7 @@ Service Desk portal URL for user contact information, rendered as a clickable li
 
 ### ServiceDeskTicketUrl
 
-Direct link to a Service Desk ticket, rendered as a clickable link (optional). Empty by default, so no ticket link is added.
+Link to the service desk ticket shown in the email. Leave empty for no link.
 
 | Property | Value |
 | --- | --- |
@@ -345,143 +332,141 @@ Direct link to a Service Desk ticket, rendered as a clickable link (optional). E
 
 ### UseUserScope
 
-Enable user scope filtering to include or exclude users based on group membership.
+Whether users are filtered by group membership. Set by the "Filter users by group?" choice.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Use User Scope Filtering |
 | Hidden in portal | yes (preset via runbook customization) |
 
 ### IncludeUserGroup
 
-Only send emails to users who are members of this group. Requires UseUserScope to be enabled.
+Only users in this group are notified.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Users to include (Group) |
+| Portal display name | Include users from group |
 | Hidden in portal | yes (preset via runbook customization) |
 
 ### ExcludeUserGroup
 
-Do not send emails to users who are members of this group. Requires UseUserScope to be enabled.
+Users in this group are not notified.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Users to exclude (Group) |
+| Portal display name | Exclude users from group |
 | Hidden in portal | yes (preset via runbook customization) |
 
 ### OverrideEmailRecipient
 
-Optional: Global override - when set, ALL notifications (user notifications, pattern-routed notifications and the combined email for devices without a primary user) are sent to this address instead of their normal recipients. Can be comma-separated for multiple recipients. Perfect for testing and piloting, or for routing everything to a ticket system. If left empty, the normal routing applies.
+Sends every email, including pattern-routed ones and the combined email, to these addresses instead of the normal recipients. For tests, pilots or a ticket system.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Redirect * ALL * Emails to Override Recipient(s) |
+| Portal display name | Redirect all emails to |
 
 ### OverrideUserNamePattern
 
-Optional wildcard pattern(s) matched against the primary user UPN (comma-separated, e.g. 'DEM-*,KIOSK-*', case-insensitive). Notifications of matching users are redirected to UserNamePatternEmailRecipient; all other users are mailed directly. Not evaluated separately while the global override (OverrideEmailRecipient) is active, since all notifications are redirected anyway.
+Wildcard patterns for user names, separated by commas, for example DEM-*,KIOSK-*. Emails of matching users go to the "Recipient for pattern-matched users" instead.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | (Optional) Primary User Name Pattern - redirect matching users (e.g. 'DEM-*') |
+| Portal display name | Primary user name pattern |
 
 ### UserNamePatternEmailRecipient
 
-Email address(es) that receive the notifications of users matching OverrideUserNamePattern. Can be comma-separated. Required when OverrideUserNamePattern is set, unless OverrideEmailRecipient is set.
+Addresses that receive the emails of users matching the pattern, separated by commas. Required when a pattern is set and no override is active.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Recipient(s) for Pattern-Matched Users |
+| Portal display name | Recipient for pattern-matched users |
 
 ### SendNoPrimaryUserDevicesToOverride
 
-If enabled, stale devices without a primary user are collected into one combined email to NoPrimaryUserEmailRecipient (or to OverrideEmailRecipient while the global override is active). Does not change how user notifications are routed. Devices without a primary user bypass user scope filtering.
+Collects stale devices that have no primary user into one combined email to the "Recipient for devices without primary user". Those devices ignore the user filter.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Send Devices without Primary User as Combined Email |
 | Hidden in portal | yes (preset via runbook customization) |
 
 ### NoPrimaryUserEmailRecipient
 
-Email address(es) that receive the combined email for stale devices without a primary user. Can be comma-separated. Required when SendNoPrimaryUserDevicesToOverride is enabled, unless OverrideEmailRecipient is set.
+Addresses for the combined email, separated by commas. Required when the combined email is enabled and no override is set.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Recipient(s) for Devices without Primary User |
+| Portal display name | Recipient for devices without primary user |
 | Hidden in portal | yes (preset via runbook customization) |
 
 ### MailTemplateLanguage
 
-Select which email template to use: EN (English, default), DE (German), or Custom (from Runbook Customizations).
+English, German, or the custom template from the runbook customization; English is used where the custom template is empty.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | EN |
 | Type | String |
-| Portal display name | Mail Template |
+| Portal display name | Mail template |
 | Hidden in portal | yes (preset via runbook customization) |
 
 ### CustomMailTemplateSubject
 
-Custom email subject line (only used when MailTemplateLanguage is set to 'Custom').
+Subject of the email when the custom template is used.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Custom: Email Subject |
+| Portal display name | Custom: email subject |
 | Hidden in portal | yes (preset via runbook customization) |
 
 ### CustomMailTemplateBeforeDeviceDetails
 
-Custom text to display before the device list (only used when MailTemplateLanguage is set to 'Custom'). Supports Markdown formatting.
+Text above the device list when the custom template is used. Markdown is allowed.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Custom: Text Before Device List |
+| Portal display name | Custom: text before device list |
 | Hidden in portal | yes (preset via runbook customization) |
 
 ### CustomMailTemplateAfterDeviceDetails
 
-Custom text to display after the device list (only used when MailTemplateLanguage is set to 'Custom'). Supports Markdown formatting.
+Text below the device list when the custom template is used. Markdown is allowed.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Custom: Text After Device List |
+| Portal display name | Custom: text after device list |
 | Hidden in portal | yes (preset via runbook customization) |
 
 

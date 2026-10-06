@@ -125,6 +125,10 @@ The deployment then reports every resource as it is created: the service princip
 {% hint style="info" %}
 Want to see what would happen first? Append `-WhatIf` for an Azure Resource Manager What-If preview. Note that signing in and installing the `Az` modules still happens, because the preview needs both.
 {% endhint %}
+
+{% hint style="info" %}
+**Signing out afterwards:** the Azure sign-in stays active after the command has finished. Once you are done, run `Disconnect-AzAccount` to sign out of the existing session.
+{% endhint %}
 {% endstep %}
 
 {% step %}

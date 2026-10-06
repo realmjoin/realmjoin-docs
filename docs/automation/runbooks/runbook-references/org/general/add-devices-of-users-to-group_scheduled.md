@@ -1,6 +1,6 @@
 ---
 title: Add Devices Of Users To Group (Scheduled)
-description: Sync devices of users in a specific group to another device group
+description: Add the devices of a user group's members to a device group
 ---
 
 {% hint style="info" %}
@@ -8,8 +8,7 @@ This is a scheduled runbook. It is designed to run on a recurring schedule rathe
 {% endhint %}
 
 ## Description
-This runbook reads accounts from a specified users group and adds their devices to a specified device group.
-It can filter devices by operating system and keeps the target group in sync.
+Adds the devices of all users in a user group to a device group on every run, so device-based policies can follow user membership. Devices already in the group are skipped, and nothing is removed.
 
 ## Location
 Organization → General → Add Devices Of Users To Group (Scheduled)
@@ -41,91 +40,91 @@ rjgit-org_general_add-devices-of-users-to-group_scheduled
 ## Parameters
 ### UserGroup
 
-Name or object ID of the users group, to which the target users belong.
+Name or object ID of the group whose members' devices are collected.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Name or Object ID of the Users Group |
+| Portal display name | User group |
 
 ### DeviceGroup
 
-Name or object ID of the device group, to which the devices should be added.
+Name or object ID of the group the devices are added to.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Name or Object ID of the Devices Group |
+| Portal display name | Device group |
 
 ### IncludeWindowsDevice
 
-If set to true, includes Windows devices in the target device group.
+Includes Windows devices.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Include Windows Devices (Default: False) |
+| Portal display name | Include Windows devices? |
 
 ### IncludeMacOSDevice
 
-If set to true, includes macOS devices in the target device group.
+Includes macOS devices.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Include MacOS-Devices (Default: False) |
+| Portal display name | Include macOS devices? |
 
 ### IncludeLinuxDevice
 
-If set to true, includes Linux devices in the target device group.
+Includes Linux devices.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Include Linux Devices (Default: False) |
+| Portal display name | Include Linux devices? |
 
 ### IncludeAndroidDevice
 
-If set to true, includes Android devices in the target device group.
+Includes Android devices.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Include Android Devices (Default: False) |
+| Portal display name | Include Android devices? |
 
 ### IncludeIOSDevice
 
-If set to true, includes iOS devices in the target device group.
+Includes iOS devices.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Include iOS-Devices (Default: False) |
+| Portal display name | Include iOS devices? |
 
 ### IncludeIPadOSDevice
 
-If set to true, includes iPadOS devices.
+Includes iPadOS devices.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Include iPadOS-Devices (Default: False) |
+| Portal display name | Include iPadOS devices? |
 
 
 

@@ -1,11 +1,10 @@
 ---
 title: Add Security Group
-description: Create a Microsoft Entra ID security group
+description: Create a security group in Entra ID
 ---
 
 ## Description
-This runbook creates a Microsoft Entra ID security group with membership type Assigned.
-It validates the group name and optionally sets an owner during creation.
+Creates a security group in Entra ID with assigned membership, so it can be used for permissions and access assignments. Names that contain a blocked word or are already in use are rejected. An owner can be set right away.
 
 ## Location
 Organization → General → Add Security Group
@@ -35,36 +34,36 @@ rjgit-org_general_add-security-group
 ## Parameters
 ### GroupName
 
-Display name of the security group to create.
+Name shown in Entra ID. Must be unique and must not contain a blocked word.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Name of the security group |
+| Portal display name | Group name |
 
 ### GroupDescription
 
-Optional description for the security group.
+Short text that explains what the group is for. Leave empty for none.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Description of this security group |
+| Portal display name | Description |
 
 ### Owner
 
-Optional owner to assign to the group.
+User who becomes owner of the group. Leave empty for no owner.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Owner (optional) |
+| Portal display name | Owner |
 
 
 

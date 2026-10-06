@@ -1,10 +1,10 @@
 ---
 title: List Information Protection Labels
-description: List Microsoft Information Protection labels
+description: List the sensitivity labels of the tenant with their IDs
 ---
 
 ## Description
-Retrieves all available Microsoft Information Protection labels in the tenant. This can be used to get the label IDs for use in other runbooks, e.g. for auto-labeling based on sensitivity.
+Lists the Microsoft Purview Information Protection sensitivity labels of the tenant with their IDs, for example to pick the label ID needed by other runbooks. Nothing is changed.
 
 ## Location
 Organization → Security → List Information Protection Labels
@@ -17,8 +17,8 @@ rjgit-org_security_list-information-protection-labels
 
 | Property | Value |
 | --- | --- |
-| Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
+| Version | 1.1.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | no |
 
 ## Permissions

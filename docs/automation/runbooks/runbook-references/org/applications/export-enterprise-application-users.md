@@ -1,14 +1,10 @@
 ---
 title: Export Enterprise Application Users
-description: Export a report of all (enterprise) application owners and users
+description: Export the owners and users of all enterprise applications
 ---
 
 ## Description
-This runbook exports a report of enterprise applications (or all service principals) including owners and assigned users or groups.
-By default, the generated report files are uploaded to an Azure Storage Account and time-limited download links are returned.
-Optionally, the report can be sent via email with CSV and/or Excel (xlsx) attachments.
-The ReportFileFormat parameter controls which file formats are generated and delivered (CSV only, CSV & XLSX, or XLSX only).
-When the CSV attachment exceeds the email size limit and "CSV & XLSX" is selected, the email falls back to the Excel workbook alone.
+Lists all enterprise applications, or all service principals, with their owners and the users and groups assigned to them, for reviews and audits. Nothing is changed. The report can be sent by email or provided as a download link.
 
 ## Setup regarding email sending
 
@@ -64,7 +60,7 @@ Azure IaaS: - Contributor - access on subscription or resource group used for th
 ## Parameters
 ### entAppsOnly
 
-Determines whether to export only enterprise applications (final value: true) or all service principals/applications (final value: false).
+Enterprise applications only, or every service principal in the tenant.
 
 | Property | Value |
 | --- | --- |
@@ -82,7 +78,7 @@ Determines whether to export only enterprise applications (final value: true) or
 
 ### ReportFileFormat
 
-Controls which report file formats are generated and delivered: "CSV only", "CSV & XLSX" (default) or "XLSX only".
+Deliver the report as CSV, as an Excel workbook, or both.
 
 | Property | Value |
 | --- | --- |
@@ -101,14 +97,14 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 
 ### CreateDownloadLink
 
-If enabled, the report files are uploaded to an Azure Storage Account and time-limited download links are returned. Enabled by default.
+Also upload the report and return a download link that expires after a few days.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
-| Portal display name | Create a file download link (upload report to storage)? |
+| Portal display name | Create a download link? |
 
 **Portal options**
 
@@ -119,47 +115,51 @@ If enabled, the report files are uploaded to an Azure Storage Account and time-l
 
 ### ContainerName
 
-Storage container name used for the upload.
+Storage container the report files are uploaded to. Taken from the tenant setting EntAppsReport.Container.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
-Resource group that contains the storage account.
+Resource group of the storage account for report uploads. Taken from the tenant setting EntAppsReport.ResourceGroup.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
-Storage account name used for the upload.
+Storage account for report uploads. Taken from the tenant setting EntAppsReport.StorageAccount.Name.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### LinkExpiryDays
 
-Number of days until the generated download link expires.
+Number of days a download link stays valid. Taken from the tenant setting EntAppsReport.LinkExpiryDays.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | 6 |
 | Type | Int32 |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailFrom
 
-The sender email address. This needs to be configured in the runbook customization.
+Sender address of the report email. Taken from the tenant setting RJReport.EmailSender.
 
 | Property | Value |
 | --- | --- |
@@ -170,8 +170,7 @@ The sender email address. This needs to be configured in the runbook customizati
 
 ### BrandingHeaderImageUrl
 
-Optional public HTTPS URL of a custom header image (PNG/JPEG/GIF, max. 200 KB) for the report email.
-Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, the default RealmJoin header graphic is used.
+Header image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.HeaderImageUrl; the default RealmJoin header is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -182,8 +181,7 @@ Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, th
 
 ### BrandingFooterImageUrl
 
-Optional public HTTPS URL of a custom footer image (PNG/JPEG/GIF, max. 200 KB) for the report email.
-Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, the default RealmJoin footer graphic is used.
+Footer image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.FooterImageUrl; the default RealmJoin footer is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -194,8 +192,7 @@ Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, th
 
 ### BrandingFooterLink
 
-Optional URL the footer image links to. Sourced from the RJReport.Branding.FooterLink tenant setting.
-When empty, the default link (https://www.realmjoin.com) is used.
+Link behind the footer image of the report email. Taken from the tenant setting RJReport.Branding.FooterLink; realmjoin.com is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -206,8 +203,7 @@ When empty, the default link (https://www.realmjoin.com) is used.
 
 ### BrandingAccentColor
 
-Optional accent color override (6-digit hex, e.g. '#0052cc') for the report email template.
-Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or invalid, the default RealmJoin accent color is used.
+Accent color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.AccentColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |
@@ -218,8 +214,7 @@ Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or inv
 
 ### BrandingTextColor
 
-Optional text color override (6-digit hex) for the report email template.
-Sourced from the RJReport.Branding.TextColor tenant setting. When empty or invalid, the default RealmJoin text color is used.
+Text color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.TextColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |
@@ -230,16 +225,14 @@ Sourced from the RJReport.Branding.TextColor tenant setting. When empty or inval
 
 ### EmailTo
 
-If specified, an email with the report will be sent to the provided address(es).
-Can be a single address or multiple comma-separated addresses (string).
-The function sends individual emails to each recipient for privacy reasons.
+Send the report to these addresses. Separate several with commas; each recipient gets a separate email.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Recipient Email Address(es) |
+| Portal display name | Recipient email address(es) |
 
 
 

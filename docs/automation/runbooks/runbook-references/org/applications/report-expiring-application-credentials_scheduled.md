@@ -1,6 +1,6 @@
 ---
 title: Report Expiring Application Credentials (Scheduled)
-description: List expiry date of all Application Registration credentials
+description: Report expiring client secrets and certificates of app registrations
 ---
 
 {% hint style="info" %}
@@ -8,17 +8,32 @@ This is a scheduled runbook. It is designed to run on a recurring schedule rathe
 {% endhint %}
 
 ## Description
-This runbook lists the expiry dates of application registration credentials, including client secrets and certificates.
-It can optionally filter by application IDs and can limit output to credentials that are about to expire.
+Lists the client secrets and certificates of application registrations with their expiry dates. The list can be limited to credentials that expire within a chosen number of days and to certain applications. The results also appear as tables in the Output Data tab of the run. Nothing is changed. The report can be sent by email or provided as a download link.
 
-Optionally, the report can be sent via email with CSV and/or Excel (xlsx) attachments.
-The report files can also be uploaded to an Azure Storage Account, returning time-limited download links.
-The ReportFileFormat parameter controls which file formats are generated and delivered (CSV only, CSV & XLSX, or XLSX only).
-When the CSV attachment exceeds the email size limit and "CSV & XLSX" is selected, the email falls back to the Excel workbook alone.
+## Credential status
+
+Every credential gets a status from the days left until it expires:
+
+- **Expired** - the end date has passed (only listed when all credentials are listed)
+- **Critical** - expires within 7 days
+- **Warning** - expires within *Days before expiry* when only expiring credentials are listed, within 30 days when all credentials are listed
+- **Valid** - expires later than that (only listed when all credentials are listed)
+
+With *List only credentials about to expire*, already expired credentials are left out. *Days before expiry* is not used when all credentials are listed.
+
+## Report delivery
+
+Report files are only generated when a delivery method is selected via the **Report delivery** option (email and/or download link). With *Output Data only* selected, the results are read directly in the Output Data tab of the RealmJoin portal: a summary table plus one table per status (*Expired credentials*, *Critical credentials*, *Warning credentials*, *Valid credentials*), each of which can also be exported to Excel. The report files contain all columns. Email delivery and download link generation are independent and can be combined.
+
+For the download link, the report files are uploaded to the Azure storage account configured in the `RJReport.StorageAccount.*` tenant settings, and time-limited SAS download links are returned. The storage upload authenticates with the Automation account's managed identity; that identity needs the **Storage Account Contributor** RBAC role on the target storage account (this is an Azure RBAC assignment, not a Graph application permission).
+
+When no credential matches the filters, no file is created. If email delivery is selected, the email is still sent, without attachments.
+
+Schedules that were created before the **Report delivery** option existed keep sending their email: a stored recipient alone still enables the email for them. When such a schedule is opened for editing, the option shows *Output Data only*; select the delivery again before saving, otherwise the schedule stops sending the report.
 
 ## Setup regarding email sending
 
-Sending an email report is optional and only happens when a recipient (`EmailTo`) is provided. The sender address is taken from the `RJReport.EmailSender` tenant setting.
+Sending an email report is optional and only happens when *Also email the report* or *Also email & download link* is selected as **Report delivery**; a recipient is then required. The sender address is taken from the `RJReport.EmailSender` tenant setting.
 
 This runbook sends emails using the Microsoft Graph API. To send emails via Graph API, you need to configure an existing email address in the runbook customization.
 
@@ -28,11 +43,11 @@ See the [RealmJoin Report Settings documentation](https://docs.realmjoin.com/aut
 
 The report email honors the optional `RJReport.Branding.*` tenant settings:
 
-- **Header and footer image** – public HTTPS URLs, PNG/JPEG/GIF, max. 200 KB each
-- **Footer link** – target of the footer image
-- **Accent and text color** – 6-digit hex values, e.g. `#0052cc`
+- **Header and footer image** - public HTTPS URLs, PNG/JPEG/GIF, max. 200 KB each
+- **Footer link** - target of the footer image
+- **Accent and text color** - 6-digit hex values, e.g. `#0052cc`
 
-When these settings are not configured, the default RealmJoin graphics and colors are used. An image that cannot be downloaded or validated, or an invalid color value, never prevents the report email – the corresponding default is used instead.
+When these settings are not configured, the default RealmJoin graphics and colors are used. An image that cannot be downloaded or validated, or an invalid color value, never prevents the report email - the corresponding default is used instead.
 
 Setup instructions and image requirements: [Email branding](https://docs.realmjoin.com/automation/runbooks/runbook-report-settings#email-branding-optional).
 
@@ -48,7 +63,7 @@ rjgit-org_applications_report-expiring-application-credentials_scheduled
 
 | Property | Value |
 | --- | --- |
-| Version | 1.3.0 |
+| Version | 1.5.0 |
 | Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.5.2) |
 | Schedulable | yes |
 
@@ -59,22 +74,25 @@ rjgit-org_applications_report-expiring-application-credentials_scheduled
   - Application.Read.All
     - *Reads all app registrations to evaluate certificate and secret expiry dates*
   - Mail.Send *(optional — feature: Email report)*
-    - *Sends the report email via Send-RjReportEmail when EmailTo is configured*
-  - Organization.Read.All
-    - *Reads /organization for the tenant name and id in the report*
+    - *Sends the report email via Send-RjRbReportEmail when email delivery is selected*
+  - Organization.Read.All *(optional — feature: Email report)*
+    - *Reads the tenant display name for the email subject and body*
+
+### Permission notes
+Azure Storage Account: 'Storage Account Contributor' role for the Automation Account's managed identity on the target storage account - the upload retrieves the account keys via listKeys (only required for the download link options)
 
 
 ## Parameters
 ### listOnlyExpiring
 
-If only credentials that are about to expire within the specified number of days should be listed, select "List only credentials about to expire" (final value: true).
-If you want to list all credentials regardless of their expiry date, select "List all credentials" (final value: false).
+Only credentials that expire within "Days before expiry", or all credentials including expired ones.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Which credentials? |
 
 **Portal options**
 
@@ -85,37 +103,37 @@ If you want to list all credentials regardless of their expiry date, select "Lis
 
 ### Days
 
-The number of days before a credential expires to consider it "about to expire".
+Credentials that expire within this many days count as about to expire. Not used when all credentials are listed.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | 30 |
 | Type | Int32 |
-| Portal display name | Days before credential expiry |
+| Portal display name | Days before expiry |
 
 ### CredentialType
 
-Filter by credential type: "Both" (default), "ClientSecrets", or "Certificates".
+Client secrets, certificates, or both.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | Both |
 | Type | String |
-| Portal display name | Credential Type Filter |
+| Portal display name | Credential type |
 
 **Portal options**
 
 | Portal option | Value |
 | --- | --- |
-| Client Secrets and Certificates | Both |
-| Only Client Secrets | ClientSecrets |
-| Only Certificates | Certificates |
+| Client secrets and certificates | Both |
+| Client secrets only | ClientSecrets |
+| Certificates only | Certificates |
 
 ### ApplicationIds
 
-Optional - comma-separated list of Application IDs to filter the credentials.
+Limits the report to these application (client) IDs, separated by commas. Leave empty for all applications.
 
 | Property | Value |
 | --- | --- |
@@ -126,7 +144,7 @@ Optional - comma-separated list of Application IDs to filter the credentials.
 
 ### ReportFileFormat
 
-Controls which report file formats are generated and delivered: "CSV only", "CSV & XLSX" (default) or "XLSX only".
+Deliver the report as CSV, as an Excel workbook, or both.
 
 | Property | Value |
 | --- | --- |
@@ -134,6 +152,7 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 | Default Value | CSV & XLSX |
 | Type | String |
 | Portal display name | Report file format |
+| Hidden in portal | yes (preset via runbook customization) |
 
 **Portal options**
 
@@ -145,25 +164,19 @@ Controls which report file formats are generated and delivered: "CSV only", "CSV
 
 ### CreateDownloadLink
 
-If enabled, the report files are uploaded to an Azure Storage Account and time-limited download links are returned. Disabled by default.
+Also upload the report and return a download link that expires after a few days.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Create a file download link (upload report to storage)? |
-
-**Portal options**
-
-| Portal option | Value |
-| --- | --- |
-| Yes - upload report and return a download link | true |
-| No - do not create a download link | false |
+| Portal display name | Create a download link? |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ContainerName
 
-Storage container name used for the upload. Configured per runbook (not a global RJReport setting).
+Storage container the report files are uploaded to. Set per runbook.
 
 | Property | Value |
 | --- | --- |
@@ -174,7 +187,7 @@ Storage container name used for the upload. Configured per runbook (not a global
 
 ### ResourceGroupName
 
-Resource group that contains the storage account. Sourced from the RJReport tenant settings.
+Resource group of the storage account for report uploads. Taken from the tenant setting RJReport.StorageAccount.ResourceGroup.
 
 | Property | Value |
 | --- | --- |
@@ -185,7 +198,7 @@ Resource group that contains the storage account. Sourced from the RJReport tena
 
 ### StorageAccountName
 
-Storage account name used for the upload. Sourced from the RJReport tenant settings.
+Storage account for report uploads. Taken from the tenant setting RJReport.StorageAccount.StorageAccountName.
 
 | Property | Value |
 | --- | --- |
@@ -196,7 +209,7 @@ Storage account name used for the upload. Sourced from the RJReport tenant setti
 
 ### LinkExpiryDays
 
-Number of days until the generated download link expires. Sourced from the RJReport tenant settings.
+Number of days a download link stays valid. Taken from the tenant setting RJReport.StorageAccount.LinkExpiryDays.
 
 | Property | Value |
 | --- | --- |
@@ -205,22 +218,33 @@ Number of days until the generated download link expires. Sourced from the RJRep
 | Type | Int32 |
 | Hidden in portal | yes (preset via runbook customization) |
 
+### SendEmailReport
+
+Send the report to the recipient email address.
+
+| Property | Value |
+| --- | --- |
+| Required | false |
+| Default Value | False |
+| Type | Boolean |
+| Portal display name | Send the report by email? |
+| Hidden in portal | yes (preset via runbook customization) |
+
 ### EmailTo
 
-If specified, an email with the report will be sent to the provided address(es).
-Can be a single address or multiple comma-separated addresses (string).
-The function sends individual emails to each recipient for privacy reasons.
+Send the report to these addresses. Separate several with commas; each recipient gets a separate email.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Recipient Email Address(es) |
+| Portal display name | Recipient email address(es) |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### EmailFrom
 
-The sender email address. This needs to be configured in the runbook customization.
+Sender address of the report email. Taken from the tenant setting RJReport.EmailSender.
 
 | Property | Value |
 | --- | --- |
@@ -231,8 +255,7 @@ The sender email address. This needs to be configured in the runbook customizati
 
 ### BrandingHeaderImageUrl
 
-Optional public HTTPS URL of a custom header image (PNG/JPEG/GIF, max. 200 KB) for the report email.
-Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, the default RealmJoin header graphic is used.
+Header image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.HeaderImageUrl; the default RealmJoin header is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -243,8 +266,7 @@ Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, th
 
 ### BrandingFooterImageUrl
 
-Optional public HTTPS URL of a custom footer image (PNG/JPEG/GIF, max. 200 KB) for the report email.
-Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, the default RealmJoin footer graphic is used.
+Footer image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.FooterImageUrl; the default RealmJoin footer is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -255,8 +277,7 @@ Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, th
 
 ### BrandingFooterLink
 
-Optional URL the footer image links to. Sourced from the RJReport.Branding.FooterLink tenant setting.
-When empty, the default link (https://www.realmjoin.com) is used.
+Link behind the footer image of the report email. Taken from the tenant setting RJReport.Branding.FooterLink; realmjoin.com is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -267,8 +288,7 @@ When empty, the default link (https://www.realmjoin.com) is used.
 
 ### BrandingAccentColor
 
-Optional accent color override (6-digit hex, e.g. '#0052cc') for the report email template.
-Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or invalid, the default RealmJoin accent color is used.
+Accent color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.AccentColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |
@@ -279,8 +299,7 @@ Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or inv
 
 ### BrandingTextColor
 
-Optional text color override (6-digit hex) for the report email template.
-Sourced from the RJReport.Branding.TextColor tenant setting. When empty or invalid, the default RealmJoin text color is used.
+Text color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.TextColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |

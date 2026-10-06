@@ -1,10 +1,10 @@
 ---
 title: Find SMS Auth Phone Number
-description: Find the user associated with a specific SMS-based authentication phone number
+description: Find the user who holds an SMS sign-in phone number
 ---
 
 ## Description
-This runbook searches for which user has a specific phone number registered with SMS Sign-In enabled in Microsoft Entra ID. Unlike regular phone MFA methods, SMS Sign-In numbers must be unique across the tenant. If a number is reserved for SMS Sign-In by one user, assigning it to another user will fail with a "phoneNumberNotUnique" error. Regular phone MFA methods do not enforce uniqueness. This runbook helps administrators identify which user holds a specific SMS Sign-In number for troubleshooting and remediation.
+Finds the user who has a given phone number registered for SMS sign-in in Entra ID. Such numbers must be unique in the tenant, so registering the same number for another user fails until the first registration is removed. Nothing is changed.
 
 ## Location
 Organization → Security → Find SMS Auth Phone Number
@@ -36,14 +36,14 @@ rjgit-org_security_find-SMS-auth-phone-number
 ## Parameters
 ### PhoneNumber
 
-Phone number to search for in E.164 format (e.g., +492349876543). The number must start with a "+" followed by the country code and subscriber number.
+Number in international format without spaces, for example +492349876543.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Phone Number (E.164 format) |
+| Portal display name | Phone number |
 
 
 

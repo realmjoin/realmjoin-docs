@@ -1,10 +1,10 @@
 ---
 title: Add Room Mailbox
-description: Create a room mailbox resource
+description: Create a room mailbox with optional booking delegates
 ---
 
 ## Description
-Creates an Exchange Online room mailbox and optionally configures delegation and calendar processing. If requested, the associated Entra ID user account is disabled after creation.
+Creates a room mailbox in Exchange Online so the room can be booked in meeting requests. Without booking delegates the room accepts requests automatically when it is free. With booking delegates every request waits for their approval; they get no access to the mailbox itself. The user account behind the mailbox can be disabled so nobody signs in with it.
 
 ## Location
 Organization → Mail → Add Room Mailbox
@@ -17,8 +17,8 @@ rjgit-org_mail_add-room-mailbox
 
 | Property | Value |
 | --- | --- |
-| Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>ExchangeOnlineManagement (>= 3.9.2) |
+| Version | 2.0.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
 ## Permissions
@@ -26,10 +26,10 @@ rjgit-org_mail_add-room-mailbox
 ### Application permissions
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp
-    - *Creates the room mailbox and configures delegation and calendar processing in the app-only Exchange Online session*
+    - *Creates the room mailbox and sets its calendar processing and booking delegates in the app-only Exchange Online session*
 - **Type**: Microsoft Graph
   - User.ReadWrite.All *(optional — feature: Disable user account)*
-    - *Disables the mailbox's user account via PATCH /users/{id} when DisableUser is enabled (default on)*
+    - *Reads the mailbox's user account and blocks its sign-in via PATCH /users/{id} when DisableUser is on (default)*
 
 ### RBAC roles
 - Exchange Administrator
@@ -39,73 +39,57 @@ rjgit-org_mail_add-room-mailbox
 ## Parameters
 ### MailboxName
 
-Alias (mail nickname) for the room mailbox.
+Alias of the mailbox, which becomes the part of the email address in front of the @ sign.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Alias |
 
 ### DisplayName
 
-Optional display name for the room mailbox.
+Name shown in the address book and the room finder. Leave empty to use the alias.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Display name |
 
 ### DelegateTo
 
-Optional user who receives delegated access to the mailbox.
+Users who approve or decline every booking request for the room. Leave empty to accept requests automatically when the room is free.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
-| Type | String |
+| Type | String[] |
 
 ### Capacity
 
-Optional room capacity in number of people.
+How many people fit in the room. Shown in the room finder. Leave at 0 to set no capacity.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | 0 |
 | Type | Int32 |
-
-### AutoAccept
-
-If set to true, meeting requests are automatically accepted.
-
-| Property | Value |
-| --- | --- |
-| Required | false |
-| Default Value | False |
-| Type | Boolean |
-
-### AutoMapping
-
-If set to true, the mailbox is automatically mapped in Outlook for the delegate.
-
-| Property | Value |
-| --- | --- |
-| Required | false |
-| Default Value | False |
-| Type | Boolean |
+| Portal display name | Room capacity (people) |
 
 ### DisableUser
 
-If set to true, the associated Entra ID user account is disabled.
+Blocks sign-in for the user account behind the mailbox. Booking keeps working.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Block sign-in for the mailbox account? |
 
 
 

@@ -1,10 +1,30 @@
 ---
 title: Reprovision Windows365
-description: Reprovision a Windows 365 Cloud PC
+description: Reprovision the Windows 365 Cloud PC of this user
 ---
 
 ## Description
-Triggers a reprovision action for an existing Windows 365 Cloud PC without assigning a new instance. Optionally notifies the user when reprovisioning starts.
+Reprovisions the existing Windows 365 Cloud PC of this user. The Cloud PC is rebuilt from scratch with the same license, so everything stored on it is lost; the user keeps the assignment. Optionally the user gets an email when the reprovisioning starts.
+
+## Offer the license groups as a dropdown
+
+The license group is a text field by default. Offer the license groups of your tenant as a dropdown via runbook customization:
+
+```json
+"rjgit-user_general_reprovision-windows365": {
+    "Parameters": {
+        "licWin365GroupName": {
+            "SelectSimple": {
+                "lic - Windows 365 Enterprise - 2 vCPU 4 GB 128 GB": "lic - Windows 365 Enterprise - 2 vCPU 4 GB 128 GB",
+                "lic - Windows 365 Enterprise - 2 vCPU 4 GB 256 GB": "lic - Windows 365 Enterprise - 2 vCPU 4 GB 256 GB"
+            }
+        }
+    }
+}
+```
+
+For more information on how to customize runbooks, please refer to the [Runbook Customization Guide](https://docs.realmjoin.com/automation/runbooks/runbook-customization).
+
 
 ## Location
 User → General → Reprovision Windows365
@@ -42,7 +62,7 @@ rjgit-user_general_reprovision-windows365
 ## Parameters
 ### UserName
 
-User principal name of the target user.
+User principal name of the user the runbook acts on. Set by the portal from the selected user.
 
 | Property | Value |
 | --- | --- |
@@ -53,72 +73,72 @@ User principal name of the target user.
 
 ### licWin365GroupName
 
-Display name of the Windows 365 license group used to identify the Cloud PC.
+License group of the Cloud PC to reprovision. Type the group name, or pick it when your runbook customization offers a list.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value | lic - Windows 365 Enterprise - 2 vCPU 4 GB 128 GB |
 | Type | String |
-| Portal display name | Select the Windows 365 license to be used for reprovisioning |
-
-**Portal options**
-
-| Portal option | Value |
-| --- | --- |
-| lic - Windows 365 Enterprise - 2 vCPU 4 GB 128 GB | lic - Windows 365 Enterprise - 2 vCPU 4 GB 128 GB |
-| lic - Windows 365 Enterprise - 2 vCPU 4 GB 256 GB | lic - Windows 365 Enterprise - 2 vCPU 4 GB 256 GB |
+| Portal display name | Windows 365 license of the Cloud PC |
 
 ### sendMailWhenReprovisioning
 
-"Do not send an Email." (final value: $false) or "Send an Email." (final value: $true) can be selected as action to perform. If set to true, an email notification will be sent to the user when Cloud PC reprovisioning has begun.
+Sends the user an email as soon as the reprovisioning has begun.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Notify user when CloudPC reprovisioning has begun? |
+| Portal display name | Notify the user when reprovisioning starts? |
 
 **Portal options**
 
 | Portal option | Value |
 | --- | --- |
-| Do not send an Email. | false |
-| Send an Email. | true |
+| Do not send an email | false |
+| Send an email | true |
 
 ### fromMailAddress
 
-Mailbox used to send the notification email.
+Mailbox the notification email is sent from.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | reports@contoso.com |
 | Type | String |
-| Portal display name | (Shared) Mailbox to send mail from:  |
+| Portal display name | Sender mailbox |
 
 ### customizeMail
 
-If set to true, uses a custom email body.
+Replaces the standard notification text with your own message.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Would you like to customize the mail sent to the user? |
+| Portal display name | Customize the notification email? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Use the standard email | false |
+| Use a custom message | true |
 
 ### customMailMessage
 
-Custom message body used for the notification email.
+Text of the notification email.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | Insert Custom Message here. (Capped at 3000 characters) |
 | Type | String |
-| Portal display name | Custom message to be sent to the user. |
+| Portal display name | Custom message |
 
 
 

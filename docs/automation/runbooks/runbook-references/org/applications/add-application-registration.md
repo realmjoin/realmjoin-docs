@@ -1,12 +1,10 @@
 ---
 title: Add Application Registration
-description: Add an application registration to Azure AD
+description: Create an application registration in Entra ID
 ---
 
 ## Description
-This runbook creates a new application registration in Microsoft Entra ID and optionally configures redirect URIs and SAML settings.
-It validates the submitted parameters, prevents duplicate app creation, and writes verbose logs for troubleshooting.
-Use it to standardize application registration setup, including visibility and assignment-related options.
+Creates a new application registration in Entra ID. Optionally it also configures redirect URIs for web, SPA or public clients, SAML sign-in, visibility in My Apps, user assignment with an access group, and implicit grant. Duplicate names are refused and the inputs are checked before anything is created.
 
 ## Location
 Organization → Applications → Add Application Registration
@@ -42,25 +40,25 @@ rjgit-org_applications_add-application-registration
 ## Parameters
 ### ApplicationName
 
-The display name of the application registration to create.
+Display name of the new application registration.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Application Name |
+| Portal display name | Application name |
 
 ### RedirectURI
 
-Used for UI selection only. Determines which redirect URI type to configure - None, Web, SPA, or Public Client
+Type of sign-in to set up: none, a web redirect URI, SAML, a public client (mobile and desktop) or a single-page application. The matching fields appear once you choose.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Redirect URI (Optional) |
+| Portal display name | Sign-in type |
 
 **Portal options**
 
@@ -74,7 +72,7 @@ Used for UI selection only. Determines which redirect URI type to configure - No
 
 ### signInAudience
 
-Specifies who can use the application. Defaults to "AzureADMyOrg" (single tenant).
+Who may sign in to the application. Preset to accounts in this tenant only (AzureADMyOrg).
 
 | Property | Value |
 | --- | --- |
@@ -85,40 +83,40 @@ Specifies who can use the application. Defaults to "AzureADMyOrg" (single tenant
 
 ### webRedirectURI
 
-Redirect URI or URIs for web applications. Multiple values can be separated by semicolons.
+Redirect URI of a web application, for example https://myapp.com/auth. Separate several with semicolons.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Web Redirect URI e.g. https://myapp.com/auth (semicolon-separated for multiple) |
+| Portal display name | Web redirect URI |
 
 ### spaRedirectURI
 
-Redirect URI or URIs for single-page applications. Multiple values can be separated by semicolons.
+Redirect URI of a single-page application, for example https://myapp.com. Separate several with semicolons.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Single-page application (SPA) Redirect URI e.g. https://myapp.com (semicolon-separated for multiple) |
+| Portal display name | SPA redirect URI |
 
 ### publicClientRedirectURI
 
-Redirect URI or URIs for public client/native applications. Multiple values can be separated by semicolons.
+Redirect URI of a mobile or desktop client, for example myapp://auth. Separate several with semicolons.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Public client/native Redirect URI e.g. myapp://auth (semicolon-separated for multiple) |
+| Portal display name | Public client redirect URI |
 
 ### EnableSAML
 
-If set to true, SAML-based authentication is configured for the application. If enabled, additional SAML-related parameters become required.
+Whether SAML sign-in is configured. Set by the "Redirect URI" choice.
 
 | Property | Value |
 | --- | --- |
@@ -128,7 +126,7 @@ If set to true, SAML-based authentication is configured for the application. If 
 
 ### SAMLReplyURL
 
-The reply URL for SAML-based authentication
+Where the SAML response is sent (assertion consumer service URL).
 
 | Property | Value |
 | --- | --- |
@@ -138,7 +136,7 @@ The reply URL for SAML-based authentication
 
 ### SAMLSignOnURL
 
-The sign-on URL for SAML authentication.
+URL where users start the sign-in to the application.
 
 | Property | Value |
 | --- | --- |
@@ -148,7 +146,7 @@ The sign-on URL for SAML authentication.
 
 ### SAMLLogoutURL
 
-The logout URL for SAML authentication.
+URL the application uses to sign users out.
 
 | Property | Value |
 | --- | --- |
@@ -158,7 +156,7 @@ The logout URL for SAML authentication.
 
 ### SAMLIdentifier
 
-The SAML identifier (Entity ID). If not specified, defaults to "urn:app:{AppId}".
+Identifier of the application in SAML (entity ID). Leave empty to use urn:app: followed by the client ID.
 
 | Property | Value |
 | --- | --- |
@@ -168,7 +166,7 @@ The SAML identifier (Entity ID). If not specified, defaults to "urn:app:{AppId}"
 
 ### SAMLRelayState
 
-The SAML relay state parameter for maintaining application state during authentication.
+Value the application receives back after sign-in, for example to return to a page.
 
 | Property | Value |
 | --- | --- |
@@ -178,7 +176,7 @@ The SAML relay state parameter for maintaining application state during authenti
 
 ### SAMLExpiryNotificationEmail
 
-Email address to receive notifications when the SAML token signing certificate is about to expire.
+Email address that is notified before the SAML signing certificate expires.
 
 | Property | Value |
 | --- | --- |
@@ -188,7 +186,7 @@ Email address to receive notifications when the SAML token signing certificate i
 
 ### SAMLCertificateLifeYears
 
-Lifetime of the SAML token signing certificate in years. Default is 3 years.
+How many years the SAML signing certificate stays valid.
 
 | Property | Value |
 | --- | --- |
@@ -198,58 +196,58 @@ Lifetime of the SAML token signing certificate in years. Default is 3 years.
 
 ### isApplicationVisible
 
-Determines whether the application is visible in the My Apps portal. Default is true.
+Lists the application in the users' My Apps portal.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
-| Portal display name | Application visible in My Apps portal |
+| Portal display name | Show in My Apps? |
 
 ### UserAssignmentRequired
 
-Determines whether users must be assigned to the application before accessing it. When enabled, an EntraID group is created for user assignment. Default is false.
+Only assigned users can use the application. An access group is created for the assignment.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | User assignment required |
+| Portal display name | Require user assignment? |
 
 ### groupAssignmentPrefix
 
-Prefix for the automatically created EntraID group when UserAssignmentRequired is enabled. Default is "col - Entra - users - ".
+Text put in front of the access group name. Only used when user assignment is required.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | col - Entra - users - |
 | Type | String |
-| Portal display name | Group assignment prefix (Only necessary when User assignment required) |
+| Portal display name | Access group prefix |
 
 ### implicitGrantAccessTokens
 
-Enable implicit grant flow for access tokens. Default is false.
+Lets the application receive access tokens through the implicit flow. Needed only for older single-page apps.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Enable implicit grant for access tokens |
+| Portal display name | Implicit grant for access tokens? |
 
 ### implicitGrantIDTokens
 
-Enable implicit grant flow for ID tokens. Default is false.
+Lets the application receive ID tokens through the implicit flow.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Enable implicit grant for ID tokens |
+| Portal display name | Implicit grant for ID tokens? |
 
 
 
