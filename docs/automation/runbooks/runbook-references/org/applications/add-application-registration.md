@@ -4,7 +4,7 @@ description: Create an application registration in Entra ID
 ---
 
 ## Description
-Creates a new application registration in Entra ID. Optionally it also configures redirect URIs for web, SPA or public clients, SAML sign-in, visibility in My Apps, user assignment with an access group, and implicit grant. Duplicate names are refused and the inputs are checked before anything is created.
+Creates a new application registration in Entra ID. Optionally it also configures redirect URIs for web, SPA or public clients, SAML sign-in, visibility in My Apps, user assignment with an access group, and implicit grant. Duplicate names are refused and the inputs are checked before anything is created
 
 ## Location
 Organization → Applications → Add Application Registration
