@@ -1,12 +1,10 @@
 ---
 title: List Owners
-description: List all owners of an Office 365 group.
+description: List the owners of this group
 ---
 
 ## Description
-This runbook retrieves and lists the owners of the specified group.
-It uses Microsoft Graph to query the group and its owners and outputs the results as a table.
-Use this to quickly review ownership assignments.
+Shows the owners of this group as a table. Nothing is changed.
 
 ## Location
 Group → General → List Owners
@@ -19,8 +17,8 @@ rjgit-group_general_list-owners
 
 | Property | Value |
 | --- | --- |
-| Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
+| Version | 1.1.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | no |
 
 ## Permissions
@@ -36,7 +34,7 @@ rjgit-group_general_list-owners
 ## Parameters
 ### GroupID
 
-Object ID of the target group.
+Object ID of the group the runbook acts on. Set by the portal from the selected group.
 
 | Property | Value |
 | --- | --- |

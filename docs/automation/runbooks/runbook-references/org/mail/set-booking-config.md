@@ -1,10 +1,10 @@
 ---
 title: Set Booking Config
-description: Configure Microsoft Bookings settings for the organization
+description: Configure the Microsoft Bookings settings of the tenant
 ---
 
 ## Description
-Configures Microsoft Bookings settings at the organization level using Exchange Online organization configuration. The runbook can optionally create an OWA mailbox policy for Bookings creators and disable Bookings in the default OWA policy.
+Sets the tenant-wide Microsoft Bookings settings in Exchange Online, such as whether Bookings is on, what customers may enter and how booking pages are named. Optionally an Outlook web policy for Bookings creators is created and Bookings is turned off in the default policy, so only members of that policy can create booking pages.
 
 ## Location
 Organization → Mail → Set Booking Config
@@ -36,193 +36,212 @@ rjgit-org_mail_set-booking-config
 ## Parameters
 ### BookingsEnabled
 
-If set to true, Microsoft Bookings is enabled for the organization.
+Turns Microsoft Bookings on for the tenant.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Enable Bookings? |
 
 ### BookingsAuthEnabled
 
-If set to true, Bookings uses authentication.
+Customers must sign in before they can book.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Require sign-in to book? |
 
 ### BookingsSocialSharingRestricted
 
-If set to true, social sharing is restricted.
+Removes the social sharing options from booking pages.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Hide social sharing? |
 
 ### BookingsExposureOfStaffDetailsRestricted
 
-If set to true, exposure of staff details is restricted.
+Keeps staff details such as email addresses off the booking pages.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Hide staff details? |
 
 ### BookingsMembershipApprovalRequired
 
-If set to true, membership approval is required.
+Staff must approve before they are added to a booking page.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Require staff approval? |
 
 ### BookingsSmsMicrosoftEnabled
 
-If set to true, Microsoft SMS notifications are enabled.
+Customers can get SMS notifications about their bookings.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Allow SMS notifications? |
 
 ### BookingsSearchEngineIndexDisabled
 
-If set to true, search engine indexing is disabled.
+Keeps booking pages out of search engine results.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Hide from search engines? |
 
 ### BookingsAddressEntryRestricted
 
-If set to true, address entry is restricted.
+Customers cannot enter their address when booking.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Block address entry? |
 
 ### BookingsCreationOfCustomQuestionsRestricted
 
-If set to true, creation of custom questions is restricted.
+Staff cannot add custom questions to booking forms.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Block custom questions? |
 
 ### BookingsNotesEntryRestricted
 
-If set to true, notes entry is restricted.
+Customers cannot add notes when booking.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Block notes entry? |
 
 ### BookingsPhoneNumberEntryRestricted
 
-If set to true, phone number entry is restricted.
+Customers cannot enter their phone number when booking.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Block phone number entry? |
 
 ### BookingsNamingPolicyEnabled
 
-If set to true, naming policies are enabled.
+Applies the prefix, suffix and blocked words rules to new booking page names.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Enable naming policy? |
 
 ### BookingsBlockedWordsEnabled
 
-If set to true, blocked words are enabled for naming policies.
+Rejects booking page names that contain a word from the blocked words list of the Microsoft 365 groups naming policy.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Enable blocked words? |
 
 ### BookingsNamingPolicyPrefixEnabled
 
-If set to true, the naming policy prefix is enabled.
+Adds the prefix to every new booking page name.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Add prefix? |
 
 ### BookingsNamingPolicyPrefix
 
-Prefix applied by the naming policy.
+Text put in front of new booking page names.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | Booking- |
 | Type | String |
+| Portal display name | Prefix |
 
 ### BookingsNamingPolicySuffixEnabled
 
-If set to true, the naming policy suffix is enabled.
+Adds the suffix to every new booking page name.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Add suffix? |
 
 ### BookingsNamingPolicySuffix
 
-Suffix applied by the naming policy.
+Text appended to new booking page names.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Suffix |
 
 ### CreateOwaPolicy
 
-If set to true, an OWA mailbox policy for Bookings creators is created if missing.
+Creates the Outlook web policy for Bookings creators if it is missing and turns off Bookings in the default policy.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Create Outlook web policy for creators? |
 
 ### OwaPolicyName
 
-Name of the OWA mailbox policy to create or use for Bookings creators.
+Name of the Outlook web policy for Bookings creators.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | BookingsCreators |
 | Type | String |
+| Portal display name | Outlook web policy name |
 
 
 

@@ -1,6 +1,6 @@
 ---
 title: Export Cloudpc Usage (Scheduled)
-description: Write daily Windows 365 utilization data to Azure Table Storage
+description: Write daily Windows 365 usage data to an Azure table
 ---
 
 {% hint style="info" %}
@@ -8,7 +8,7 @@ This is a scheduled runbook. It is designed to run on a recurring schedule rathe
 {% endhint %}
 
 ## Description
-Collects Windows 365 Cloud PC remote connection usage for the last full day and writes it to an Azure Table. The runbook creates the table if needed and merges records per tenant and timestamp.
+Collects how the Windows 365 Cloud PCs were used, based on the remote connection reports of the chosen number of past days. The figures are written to an Azure Table so they can be tracked over time. The table is created when missing, and records for the same day are updated rather than duplicated.
 
 ## Location
 Organization → General → Export Cloudpc Usage (Scheduled)
@@ -41,43 +41,47 @@ Azure IaaS: `Contributor` role on the Azure Storage Account used for storing Clo
 ## Parameters
 ### Table
 
-Name of the Azure Table Storage table to write to.
+Table in the storage account the usage data is written to. Created when it does not exist yet.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | CloudPCUsageV2 |
 | Type | String |
+| Portal display name | Table name |
 
 ### ResourceGroupName
 
-Name of the Azure Resource Group containing the Storage Account.
+Resource group that holds the storage account.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Resource group |
 
 ### StorageAccountName
 
-Name of the Azure Storage Account hosting the table.
+Storage account that holds the table.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Storage account |
 
 ### Days
 
-Number of days to look back when collecting usage data.
+Usage of the past this many days is collected; days already in the table are updated, not added again.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | 2 |
 | Type | Int32 |
+| Portal display name | Days to look back |
 
 
 

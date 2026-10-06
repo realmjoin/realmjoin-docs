@@ -1,11 +1,10 @@
 ---
 title: Delegate Send As
-description: Delegate SendAs permissions for other user on his/her mailbox or remove existing delegation
+description: Grant or remove Send As permission on this user's mailbox
 ---
 
 ## Description
-Grants or removes SendAs permissions for a delegate on a mailbox in Exchange Online. The current permissions are shown before and after applying the change.
-This allows the delegate to send emails as if they were the mailbox owner.
+Lets another person send email as this user, so messages appear to come from this mailbox, or removes that permission again. The permissions are shown before and after the change.
 
 ## Location
 User → Mail → Delegate Send As
@@ -37,7 +36,7 @@ rjgit-user_mail_delegate-send-as
 ## Parameters
 ### UserName
 
-User principal name of the mailbox.
+User principal name of the user the runbook acts on. Set by the portal from the selected user.
 
 | Property | Value |
 | --- | --- |
@@ -48,7 +47,7 @@ User principal name of the mailbox.
 
 ### delegateTo
 
-User principal name of the delegate.
+Person who gets or loses the Send As permission.
 
 | Property | Value |
 | --- | --- |
@@ -58,7 +57,7 @@ User principal name of the delegate.
 
 ### Remove
 
-If set to true, removes the delegation instead of granting it.
+Whether the permission is removed instead of granted. Set by the "Action" choice.
 
 | Property | Value |
 | --- | --- |

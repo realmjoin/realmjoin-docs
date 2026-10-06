@@ -1,10 +1,10 @@
 ---
 title: Add Defender Indicator
-description: Create a new Microsoft Defender for Endpoint indicator
+description: Add an allow or block indicator to Defender for Endpoint
 ---
 
 ## Description
-Creates a new indicator in Microsoft Defender for Endpoint to allow or block a specific file hash, certificate thumbprint, IP, domain, or URL. The indicator action can generate alerts automatically for audit or alert-and-block actions.
+Creates a custom indicator in Microsoft Defender for Endpoint that allows, warns about, audits or blocks a file hash, certificate thumbprint, IP address, domain or URL on all onboarded devices. An alert can be raised whenever the indicator matches.
 
 ## Location
 Organization → Security → Add Defender Indicator
@@ -32,60 +32,63 @@ rjgit-org_security_add-defender-indicator
 ## Parameters
 ### IndicatorValue
 
-Value of the indicator, such as a hash, thumbprint, IP address, domain name, or URL.
+The hash, thumbprint, IP address, domain name or URL the indicator applies to. Must match the indicator type.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Indicator value |
 
 ### IndicatorType
 
-Type of the indicator value.
+File hash (SHA-256, SHA-1 or MD5), certificate thumbprint, IP address, domain name or URL. The value must be of this type.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value | FileSha256 |
 | Type | String |
-| Portal display name | IndicatorType |
+| Portal display name | Indicator type |
 
 **Portal options**
 
 | Portal option | Value |
 | --- | --- |
-| File Sha256 | FileSha256 |
-| File Sha1 | FileSha1 |
-| File Md5 | FileMd5 |
-| Certificate Thumbprint | CertificateThumbprint |
-| Ip Address | IpAddress |
-| Domain Name | DomainName |
-| Url | Url |
+| File hash (SHA-256) | FileSha256 |
+| File hash (SHA-1) | FileSha1 |
+| File hash (MD5) | FileMd5 |
+| Certificate thumbprint | CertificateThumbprint |
+| IP address | IpAddress |
+| Domain name | DomainName |
+| URL | Url |
 
 ### Title
 
-Title of the indicator entry.
+Short name shown for the indicator in the Defender portal.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Title |
 
 ### Description
 
-Description of the indicator entry.
+Why the indicator exists. Shown in the Defender portal and in alerts.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Description |
 
 ### Action
 
-Action applied to the indicator.
+What Defender does on a match: Allow, Warn, Audit, Block, Block and remediate, or Alert and block.
 
 | Property | Value |
 | --- | --- |
@@ -102,13 +105,13 @@ Action applied to the indicator.
 | Warn | Warn |
 | Block | Block |
 | Audit | Audit |
-| Block And Remediate | BlockAndRemediate |
-| Alert And Block | AlertAndBlock |
-| Allowed | Allowed |
+| Block and remediate | BlockAndRemediate |
+| Alert and block | AlertAndBlock |
+| Allow | Allowed |
 
 ### Severity
 
-Severity used for the indicator.
+Severity of the alerts raised for this indicator.
 
 | Property | Value |
 | --- | --- |
@@ -128,13 +131,14 @@ Severity used for the indicator.
 
 ### GenerateAlert
 
-If set to true, an alert is generated when the indicator matches.
+Raises an alert in the Defender portal each time the indicator matches.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Raise an alert on match? |
 
 
 

@@ -1,10 +1,10 @@
 ---
 title: List Room Mailbox Configuration
-description: List room mailbox configuration
+description: Show the booking configuration of this room mailbox
 ---
 
 ## Description
-Reads room metadata and lists calendar processing settings. This helps validate room resource configuration and booking behavior.
+Shows the room details and the calendar processing settings of this room mailbox, such as how booking requests are handled. It also lists the resource delegates who approve requests and the users and groups that may book the room directly or only request it. Nothing is changed.
 
 ## Location
 User → Mail → List Room Mailbox Configuration
@@ -17,8 +17,8 @@ rjgit-user_mail_list-room-mailbox-configuration
 
 | Property | Value |
 | --- | --- |
-| Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>ExchangeOnlineManagement (>= 3.9.2) |
+| Version | 1.1.0 |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
 ## Permissions
@@ -28,10 +28,10 @@ rjgit-user_mail_list-room-mailbox-configuration
   - Place.Read.All
     - *Reads the room's place metadata via /places/{mail}/microsoft.graph.room*
   - User.Read.All
-    - *Resolves the room mailbox's address and nickname via /users/{UserName}*
+    - *Resolves the mail address of the room mailbox via /users/{UserName}*
 - **Type**: Office 365 Exchange Online
   - Exchange.ManageAsApp
-    - *Runs Get-CalendarProcessing in the app-only Exchange Online session*
+    - *Runs Get-CalendarProcessing and resolves the delegates and booking policy entries with Get-Recipient in the app-only Exchange Online session*
 
 ### RBAC roles
 - Exchange Administrator
@@ -41,7 +41,7 @@ rjgit-user_mail_list-room-mailbox-configuration
 ## Parameters
 ### UserName
 
-User principal name of the room mailbox.
+User principal name of the room mailbox the runbook acts on. Set by the portal from the selected user.
 
 | Property | Value |
 | --- | --- |

@@ -1,10 +1,10 @@
 ---
 title: List Vulnerable App Regs
-description: List app registrations potentially vulnerable to CVE-2021-42306
+description: List app registrations possibly affected by CVE-2021-42306
 ---
 
 ## Description
-Lists Azure AD app registrations that may be affected by CVE-2021-42306 by inspecting stored key credentials. Optionally exports the findings to a CSV file in Azure Storage.
+Checks the key credentials of every app registration in Entra ID for signs of CVE-2021-42306, where private key material was stored in the credential by mistake. App registrations that may be affected are listed. The result can be shown in the run output or exported as a CSV file to an Azure Storage account. Nothing is changed.
 
 ## Location
 Organization → Security → List Vulnerable App Regs
@@ -32,7 +32,7 @@ rjgit-org_security_list-vulnerable-app-regs
 ## Parameters
 ### ExportToFile
 
-"List in Console" (final value: $false) or "Export to a CSV file" (final value: $true) can be selected as action to perform. The export saves the findings to a CSV file in Azure Storage.
+List in the run output, or export to a CSV file in the storage account configured in the tenant settings.
 
 | Property | Value |
 | --- | --- |
@@ -45,57 +45,62 @@ rjgit-org_security_list-vulnerable-app-regs
 | Portal option | Value |
 | --- | --- |
 | Export to a CSV file | true |
-| List in Console | false |
+| List in the run output | false |
 
 ### ContainerName
 
-Name of the Azure Storage container to upload the CSV report to.
+Storage container the report files are uploaded to. Taken from the tenant setting VulnAppRegExport.Container.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
-Name of the Azure Resource Group containing the Storage Account.
+Resource group of the storage account. Taken from the tenant setting VulnAppRegExport.ResourceGroup.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
-Name of the Azure Storage Account used for upload.
+Storage account for the export. Taken from the tenant setting VulnAppRegExport.StorageAccount.Name.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountLocation
 
-Azure region for the Storage Account if it needs to be created.
+Azure region used when the storage account has to be created. Taken from the tenant setting VulnAppRegExport.StorageAccount.Location.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountSku
 
-SKU name for the Storage Account if it needs to be created.
+Performance tier used when the storage account has to be created. Taken from the tenant setting VulnAppRegExport.StorageAccount.Sku.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

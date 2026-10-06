@@ -1,11 +1,10 @@
 ---
 title: Set Teams Phone
-description: Assign a phone number to a Microsoft Teams enabled user, enable calling and Grant specific Microsoft Teams policies.
+description: Assign a phone number and voice policies to this user
 ---
 
 ## Description
-Assign a phone number to a Microsoft Teams enabled user, enable calling and Grant specific Microsoft Teams policies.
-If the policy name of a policy is left blank, the corresponding policy will not be changed. To clear the policies assignment, the value "Global (Org Wide Default)" has to be entered.
+Assigns a phone number to this Teams user and optionally sets the voice routing policy, dial plan, calling policy and IP phone policy. Only the policies you fill in are changed. Enter Global (Org Wide Default) to remove an assignment and fall back to the tenant default.
 
 ## Location
 User → Phone → Set Teams Phone
@@ -37,7 +36,7 @@ rjgit-user_phone_set-teams-phone
 ## Parameters
 ### UserName
 
-User principal name of the target user.
+User principal name of the user the runbook acts on. Set by the portal from the selected user.
 
 | Property | Value |
 | --- | --- |
@@ -48,58 +47,58 @@ User principal name of the target user.
 
 ### PhoneNumber
 
-Phone number which should be assigned to the user. The number must be in E.164 format (e.g. +49123456789).
+Number to assign, in E.164 format such as +49123456789.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Phone number to assign (E.164 Format - Example:+49123987654 |
+| Portal display name | Phone number (E.164, e.g. +49123987654) |
 
 ### OnlineVoiceRoutingPolicy
 
-Name of the Online Voice Routing Policy to assign. If the policy name is left blank, the corresponding policy will not be changed. To clear the policies assignment, the value "Global (Org Wide Default)" has to be entered.
+Voice routing policy to assign. Leave empty to keep the current one, or enter Global (Org Wide Default) to reset it.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Microsoft Teams Online Voice Routing Policy Name |
+| Portal display name | Online voice routing policy |
 
 ### TenantDialPlan
 
-Name of the Tenant Dial Plan to assign. If the policy name is left blank, the corresponding policy will not be changed. To clear the policies assignment, the value "Global (Org Wide Default)" has to be entered.
+Dial plan to assign. Leave empty to keep the current one, or enter Global (Org Wide Default) to reset it.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Microsoft Teams DialPlan Name |
+| Portal display name | Tenant dial plan |
 
 ### TeamsCallingPolicy
 
-Name of the Teams Calling Policy to assign. If the policy name is left blank, the corresponding policy will not be changed. To clear the policies assignment, the value "Global (Org Wide Default)" has to be entered.
+Calling policy to assign. Leave empty to keep the current one, or enter Global (Org Wide Default) to reset it.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Microsoft Teams Calling Policy Name |
+| Portal display name | Calling policy |
 
 ### TeamsIPPhonePolicy
 
-Name of the Teams IP Phone Policy to assign. If the policy name is left blank, the corresponding policy will not be changed. To clear the policies assignment, the value "Global (Org Wide Default)" has to be entered.
+IP phone policy to assign, typically for common area phones. Leave empty to keep the current one, or enter Global (Org Wide Default) to reset it.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Microsoft Teams IP Phone Policy Name (a.o. for Common Area Phone Users) |
+| Portal display name | IP phone policy |
 
 
 

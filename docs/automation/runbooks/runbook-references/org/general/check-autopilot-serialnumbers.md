@@ -1,11 +1,10 @@
 ---
 title: Check Autopilot Serialnumbers
-description: Check if given serial numbers are present in Autopilot
+description: Check which serial numbers are registered in Autopilot
 ---
 
 ## Description
-This runbook checks whether Windows Autopilot device identities exist for the provided serial numbers.
-It returns the serial numbers found and lists any missing serial numbers.
+Checks for a list of serial numbers whether a Windows Autopilot registration exists and reports which were found and which are missing. Nothing is changed.
 
 ## Location
 Organization → General → Check Autopilot Serialnumbers
@@ -33,14 +32,14 @@ rjgit-org_general_check-autopilot-serialnumbers
 ## Parameters
 ### SerialNumbers
 
-Serial numbers of the devices, separated by commas.
+Serial numbers to check, separated by commas.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Serial numbers of the devices (comma-separated) |
+| Portal display name | Serial numbers |
 
 
 

@@ -10,6 +10,7 @@ On this overview page you can find all Device Runbooks in the Security subcatego
 
 - [Check Defender Status](check-defender-status.md)
 - [Enable Or Disable Device](enable-or-disable-device.md)
+- [Enable Or Disable Lost Mode](enable-or-disable-lost-mode.md)
 - [Isolate Or Release Device](isolate-or-release-device.md)
 - [Reset Mobile Device Pin](reset-mobile-device-pin.md)
 - [Restrict Or Release Code Execution](restrict-or-release-code-execution.md)

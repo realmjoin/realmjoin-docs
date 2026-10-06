@@ -1,6 +1,6 @@
 ---
 title: Check Aad Sync Status (Scheduled)
-description: Check last Azure AD Connect sync status
+description: Check the last Entra Connect sync and alert when it is off
 ---
 
 {% hint style="info" %}
@@ -8,8 +8,7 @@ This is a scheduled runbook. It is designed to run on a recurring schedule rathe
 {% endhint %}
 
 ## Description
-This runbook checks whether on-premises directory synchronization is enabled and when the last sync happened.
-It can send an email alert if synchronization is not enabled.
+Checks whether directory synchronization from on-premises Active Directory is enabled in the tenant. If it is not, an alert email is sent.
 
 ## Location
 Organization → General → Check Aad Sync Status (Scheduled)
@@ -39,23 +38,25 @@ rjgit-org_general_check-aad-sync-status_scheduled
 ## Parameters
 ### sendAlertTo
 
-Email address to send the report to.
+Gets the alert email when directory synchronization is found disabled.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | support@glueckkanja.com |
 | Type | String |
+| Portal display name | Alert recipient |
 
 ### sendAlertFrom
 
-Sender mailbox used for sending the report.
+User in the tenant the alert is sent as; needs a mailbox.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | runbooks@glueckkanja.com |
 | Type | String |
+| Portal display name | Alert sender |
 
 
 

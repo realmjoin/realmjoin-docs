@@ -1,10 +1,10 @@
 ---
 title: Reset Password
-description: Reset a user's password
+description: Set a new password for this user
 ---
 
 ## Description
-Resets the password for a user in Microsoft Entra ID and optionally enables the account first. The user can be forced to change the password at the next sign-in. This runbook is useful for helpdesk scenarios where a technician needs to reset a user's password and ensure that the user updates it upon next login.
+Sets a new password for this user in Entra ID and shows it in the output. A disabled account can be enabled first, and the user can be made to choose their own password at the next sign-in.
 
 ## Location
 User → Security → Reset Password
@@ -31,7 +31,7 @@ rjgit-user_security_reset-password
 ## Parameters
 ### UserName
 
-User principal name of the target user.
+User principal name of the user the runbook acts on. Set by the portal from the selected user.
 
 | Property | Value |
 | --- | --- |
@@ -42,23 +42,25 @@ User principal name of the target user.
 
 ### EnableUserIfNeeded
 
-If set to true, enables the user account before resetting the password.
+Enables a disabled account before the password is set.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Enable the account if disabled? |
 
 ### ForceChangePasswordNextSignIn
 
-If set to true, forces the user to change the password at the next sign-in.
+Makes the user choose their own password at the next sign-in.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Require a new password at next sign-in? |
 
 
 

@@ -1,10 +1,10 @@
 ---
 title: List Inactive Devices
-description: List or export inactive devices with no recent logon or Intune sync
+description: List devices with no recent sign-in or Intune sync
 ---
 
 ## Description
-Collects devices based on either last interactive sign-in or last Intune sync date and lists them in the console. Optionally exports the results to a CSV file in Azure Storage.
+Lists the devices whose last Intune sync, or whose last sign-in recorded in Entra ID, is older than the chosen number of days. The result can be shown in the run output or exported as a CSV file to an Azure Storage account. Nothing is changed.
 
 ## Location
 Organization → Security → List Inactive Devices
@@ -36,7 +36,7 @@ rjgit-org_security_list-inactive-devices
 ## Parameters
 ### Days
 
-Number of days without sync or sign-in used to consider a device inactive.
+Devices with no sync or sign-in for at least this many days are listed.
 
 | Property | Value |
 | --- | --- |
@@ -46,88 +46,94 @@ Number of days without sync or sign-in used to consider a device inactive.
 
 ### Sync
 
-If set to true, inactivity is based on last Intune sync; otherwise it is based on last interactive sign-in.
+Last Intune sync looks at managed devices and their last check-in; Last sign-in looks at Entra ID device objects and their approximate last sign-in date.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
-| Portal display name | Last Login or Last Intune Sync |
+| Portal display name | Measure inactivity by |
 
 **Portal options**
 
 | Portal option | Value |
 | --- | --- |
-| Show by Last Intune Sync | true |
-| Show by Last Login | false |
+| Last Intune sync | true |
+| Last sign-in | false |
 
 ### ExportToFile
 
-If set to true, exports the results to a CSV file in Azure Storage.
+List in the run output, or export to a CSV file in the storage account configured in the tenant settings.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Output |
 
 **Portal options**
 
 | Portal option | Value |
 | --- | --- |
 | Export to a CSV file | true |
-| List in Console | false |
+| List in the run output | false |
 
 ### ContainerName
 
-Name of the Azure Storage container to upload the CSV report to.
+Storage container the report files are uploaded to. Taken from the tenant setting InactiveDevices.Container.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
-Name of the Azure Resource Group containing the Storage Account.
+Resource group of the storage account. Taken from the tenant setting InactiveDevices.ResourceGroup.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
-Name of the Azure Storage Account used for upload.
+Storage account for the export. Taken from the tenant setting InactiveDevices.StorageAccount.Name.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountLocation
 
-Azure region for the Storage Account if it needs to be created.
+Azure region used when the storage account has to be created. Taken from the tenant setting InactiveDevices.StorageAccount.Location.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountSku
 
-SKU name for the Storage Account if it needs to be created.
+Performance tier used when the storage account has to be created. Taken from the tenant setting InactiveDevices.StorageAccount.Sku.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 

@@ -1,11 +1,10 @@
 ---
 title: Show Laps Password
-description: Show a local admin password for a device.
+description: Show the local admin password of this device
 ---
 
 ## Description
-This runbook retrieves and displays the most recent Windows LAPS local administrator password that is backed up for the specified device.
-Use it for break-glass troubleshooting and rotate the password after use.
+Shows the most recent Windows LAPS password of the local administrator account that is backed up for this device. Use it for break-glass troubleshooting and rotate the password afterwards. Looking it up changes nothing on the device.
 
 ## Location
 Device → Security → Show Laps Password
@@ -33,7 +32,7 @@ rjgit-device_security_show-laps-password
 ## Parameters
 ### DeviceId
 
-The device ID of the target device.
+Entra ID device ID of the device the runbook acts on. Set by the portal from the selected device.
 
 | Property | Value |
 | --- | --- |

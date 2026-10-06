@@ -1,11 +1,38 @@
 ---
 title: Resize Windows365
-description: Resize an existing Windows 365 Cloud PC for a user
+description: Resize the Windows 365 Cloud PC of this user
 ---
 
 ## Description
-Resizes a Windows 365 Cloud PC by removing the current assignment and provisioning a new size using a different license group.
-WARNING: This operation deprovisions and reprovisions the Cloud PC and local data may be lost.
+Moves the Windows 365 Cloud PC of this user to a different size by removing the current license assignment and provisioning a new Cloud PC with the new license. The old Cloud PC is deprovisioned, so data stored only on it is lost; ask the user to back up first. Optionally the user gets an email when the new Cloud PC is ready.
+
+## Offer the license groups as dropdowns
+
+Both license fields are text fields by default. Offer the license groups of your tenant as dropdowns via runbook customization (the same list for the current and the new license):
+
+```json
+"rjgit-user_general_resize-windows365": {
+    "Parameters": {
+        "currentLicWin365GroupName": {
+            "SelectSimple": {
+                "lic - Windows 365 Enterprise - 2 vCPU 4 GB 128 GB": "lic - Windows 365 Enterprise - 2 vCPU 4 GB 128 GB",
+                "lic - Windows 365 Enterprise - 2 vCPU 4 GB 256 GB": "lic - Windows 365 Enterprise - 2 vCPU 4 GB 256 GB"
+            }
+        },
+        "newLicWin365GroupName": {
+            "SelectSimple": {
+                "lic - Windows 365 Enterprise - 2 vCPU 4 GB 128 GB": "lic - Windows 365 Enterprise - 2 vCPU 4 GB 128 GB",
+                "lic - Windows 365 Enterprise - 2 vCPU 4 GB 256 GB": "lic - Windows 365 Enterprise - 2 vCPU 4 GB 256 GB"
+            }
+        }
+    }
+}
+```
+
+The resize runs the *Unassign Windows 365* and *Assign Windows 365* runbooks in sequence; their Azure Automation names are preset in the hidden parameters `unassignRunbook` and `assignRunbook`.
+
+For more information on how to customize runbooks, please refer to the [Runbook Customization Guide](https://docs.realmjoin.com/automation/runbooks/runbook-customization).
+
 
 ## Location
 User → General → Resize Windows365
@@ -43,7 +70,7 @@ rjgit-user_general_resize-windows365
 ## Parameters
 ### UserName
 
-User principal name of the target user.
+User principal name of the user the runbook acts on. Set by the portal from the selected user.
 
 | Property | Value |
 | --- | --- |
@@ -54,94 +81,87 @@ User principal name of the target user.
 
 ### currentLicWin365GroupName
 
-Current Windows 365 license group name used by the Cloud PC.
+License group the user is removed from; the Cloud PC behind it is deprovisioned.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value | lic - Windows 365 Enterprise - 2 vCPU 4 GB 128 GB |
 | Type | String |
-| Portal display name | The to-be-resized Cloud PC uses the following Windows365 license:  |
-
-**Portal options**
-
-| Portal option | Value |
-| --- | --- |
-| lic - Windows 365 Enterprise - 2 vCPU 4 GB 128 GB | lic - Windows 365 Enterprise - 2 vCPU 4 GB 128 GB |
-| lic - Windows 365 Enterprise - 2 vCPU 4 GB 256 GB | lic - Windows 365 Enterprise - 2 vCPU 4 GB 256 GB |
+| Portal display name | Current Windows 365 license |
 
 ### newLicWin365GroupName
 
-New Windows 365 license group name to assign for the resized Cloud PC.
+License group that provides the new size. Must differ from the current one.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value | lic - Windows 365 Enterprise - 2 vCPU 4 GB 256 GB |
 | Type | String |
-| Portal display name | Resizing to following license:  |
-
-**Portal options**
-
-| Portal option | Value |
-| --- | --- |
-| lic - Windows 365 Enterprise - 2 vCPU 4 GB 128 GB | lic - Windows 365 Enterprise - 2 vCPU 4 GB 128 GB |
-| lic - Windows 365 Enterprise - 2 vCPU 4 GB 256 GB | lic - Windows 365 Enterprise - 2 vCPU 4 GB 256 GB |
+| Portal display name | New Windows 365 license |
 
 ### sendMailWhenDoneResizing
 
-"Do not send an Email." (final value: $false) or "Send an Email." (final value: $true) can be selected as action to perform. If set to true, an email notification will be sent to the user when Cloud PC resizing has finished.
+Sends the user an email once the new Cloud PC is ready.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Notify User once the Cloud PC has finished resizing? |
+| Portal display name | Notify the user when the resize is done? |
 
 **Portal options**
 
 | Portal option | Value |
 | --- | --- |
-| Do not send an Email. | false |
-| Send an Email. | true |
+| Do not send an email | false |
+| Send an email | true |
 
 ### fromMailAddress
 
-Mailbox used to send the notification email.
+Mailbox the notification email is sent from.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | reports@contoso.com |
 | Type | String |
-| Portal display name | (Shared) Mailbox to send mail from:  |
+| Portal display name | Sender mailbox |
 
 ### customizeMail
 
-If set to true, uses a custom email body.
+Replaces the standard notification text with your own message.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Would you like to customize the mail sent to the user? |
+| Portal display name | Customize the notification email? |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Use the standard email | false |
+| Use a custom message | true |
 
 ### customMailMessage
 
-Custom message body used for the notification email.
+Text of the notification email.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | Insert Custom Message here. (Capped at 3000 characters) |
 | Type | String |
-| Portal display name | Custom message to be sent to the user. |
+| Portal display name | Custom message |
 
 ### cfgProvisioningGroupPrefix
 
-Prefix used to detect provisioning-related configuration groups.
+Name prefix that identifies provisioning policy groups. Preset in the runbook customization.
 
 | Property | Value |
 | --- | --- |
@@ -152,7 +172,7 @@ Prefix used to detect provisioning-related configuration groups.
 
 ### cfgUserSettingsGroupPrefix
 
-Prefix used to detect user-settings-related configuration groups.
+Name prefix that identifies user settings policy groups. Preset in the runbook customization.
 
 | Property | Value |
 | --- | --- |
@@ -163,7 +183,7 @@ Prefix used to detect user-settings-related configuration groups.
 
 ### unassignRunbook
 
-Name of the runbook used to remove the current Windows 365 assignment.
+Name of the runbook that removes the current assignment. Preset in the runbook customization.
 
 | Property | Value |
 | --- | --- |
@@ -174,7 +194,7 @@ Name of the runbook used to remove the current Windows 365 assignment.
 
 ### assignRunbook
 
-Name of the runbook used to assign the new Windows 365 configuration.
+Name of the runbook that assigns the new size. Preset in the runbook customization.
 
 | Property | Value |
 | --- | --- |
@@ -185,7 +205,7 @@ Name of the runbook used to assign the new Windows 365 configuration.
 
 ### skipGracePeriod
 
-If set to true, ends the old Cloud PC grace period immediately.
+Deletes the old Cloud PC right away instead of after the 7-day grace period.
 
 | Property | Value |
 | --- | --- |

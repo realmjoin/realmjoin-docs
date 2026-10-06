@@ -1,10 +1,10 @@
 ---
 title: Create Temporary Access Pass
-description: Create a temporary access pass for a user
+description: Create a Temporary Access Pass for this user
 ---
 
 ## Description
-Creates a new Temporary Access Pass (TAP) authentication method for a user in Microsoft Entra ID. Existing TAPs for the user are removed before creating a new one. Optionally sends a notification email to the user's primary email address informing them about the newly created TAP. The email language is automatically determined by the user's usage location.
+Creates a Temporary Access Pass (TAP) for this user, so they can sign in and set up their authentication methods without a password. Any existing pass is removed first and the new pass is shown in the runbook output. Optionally the user gets an email with the pass, in German for usage location DE and otherwise in English.
 
 ## Activate user notification
 
@@ -100,7 +100,7 @@ rjgit-user_security_create-temporary-access-pass
 ## Parameters
 ### UserName
 
-User principal name of the target user.
+User principal name of the user the runbook acts on. Set by the portal from the selected user.
 
 | Property | Value |
 | --- | --- |
@@ -111,7 +111,7 @@ User principal name of the target user.
 
 ### LifetimeInMinutes
 
-Lifetime of the temporary access pass in minutes. Valid values are between 60 and 480 minutes (1-8 hours).
+How long the pass stays valid, between 60 and 480 minutes.
 
 | Property | Value |
 | --- | --- |
@@ -121,7 +121,7 @@ Lifetime of the temporary access pass in minutes. Valid values are between 60 an
 
 ### OneTimeUseOnly
 
-If set to true, the pass can be used only once.
+A one-time pass works for a single sign-in; otherwise it can be reused until it expires.
 
 | Property | Value |
 | --- | --- |
@@ -131,7 +131,7 @@ If set to true, the pass can be used only once.
 
 ### NotifyUser
 
-If enabled, sends a notification email to the user's primary email address about the newly created TAP.
+Whether the user is emailed the new pass. Preset in the runbook customization.
 
 | Property | Value |
 | --- | --- |
@@ -142,7 +142,7 @@ If enabled, sends a notification email to the user's primary email address about
 
 ### EmailFrom
 
-The sender email address. This needs to be configured in the runbook customization.
+Sender address of the notification email. Taken from the tenant setting RJReport.EmailSender.
 
 | Property | Value |
 | --- | --- |
@@ -153,8 +153,7 @@ The sender email address. This needs to be configured in the runbook customizati
 
 ### BrandingHeaderImageUrl
 
-Optional public HTTPS URL of a custom header image (PNG/JPEG/GIF, max. 200 KB) for the report email.
-Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, the default RealmJoin header graphic is used.
+Header image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.HeaderImageUrl; the default RealmJoin header is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -165,8 +164,7 @@ Sourced from the RJReport.Branding.HeaderImageUrl tenant setting. When empty, th
 
 ### BrandingFooterImageUrl
 
-Optional public HTTPS URL of a custom footer image (PNG/JPEG/GIF, max. 200 KB) for the report email.
-Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, the default RealmJoin footer graphic is used.
+Footer image of the report email (HTTPS URL, PNG/JPEG/GIF, max 200 KB). Taken from the tenant setting RJReport.Branding.FooterImageUrl; the default RealmJoin footer is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -177,8 +175,7 @@ Sourced from the RJReport.Branding.FooterImageUrl tenant setting. When empty, th
 
 ### BrandingFooterLink
 
-Optional URL the footer image links to. Sourced from the RJReport.Branding.FooterLink tenant setting.
-When empty, the default link (https://www.realmjoin.com) is used.
+Link behind the footer image of the report email. Taken from the tenant setting RJReport.Branding.FooterLink; realmjoin.com is used when empty.
 
 | Property | Value |
 | --- | --- |
@@ -189,8 +186,7 @@ When empty, the default link (https://www.realmjoin.com) is used.
 
 ### BrandingAccentColor
 
-Optional accent color override (6-digit hex, e.g. '#0052cc') for the report email template.
-Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or invalid, the default RealmJoin accent color is used.
+Accent color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.AccentColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |
@@ -201,8 +197,7 @@ Sourced from the RJReport.Branding.AccentColor tenant setting. When empty or inv
 
 ### BrandingTextColor
 
-Optional text color override (6-digit hex) for the report email template.
-Sourced from the RJReport.Branding.TextColor tenant setting. When empty or invalid, the default RealmJoin text color is used.
+Text color of the report email as a 6-digit hex value. Taken from the tenant setting RJReport.Branding.TextColor; the RealmJoin default is used when empty or invalid.
 
 | Property | Value |
 | --- | --- |
@@ -213,7 +208,7 @@ Sourced from the RJReport.Branding.TextColor tenant setting. When empty or inval
 
 ### ServiceDeskDisplayName
 
-Service Desk display name for user contact information (optional).
+Service desk name shown in the email. Taken from the tenant setting RJReport.ServiceDesk_DisplayName.
 
 | Property | Value |
 | --- | --- |
@@ -224,7 +219,7 @@ Service Desk display name for user contact information (optional).
 
 ### ServiceDeskEmail
 
-Service Desk email address for user contact information (optional).
+Service desk email address shown in the email. Taken from the tenant setting RJReport.ServiceDesk_EMail.
 
 | Property | Value |
 | --- | --- |
@@ -235,7 +230,7 @@ Service Desk email address for user contact information (optional).
 
 ### ServiceDeskPhone
 
-Service Desk phone number for user contact information (optional).
+Service desk phone number shown in the email. Taken from the tenant setting RJReport.ServiceDesk_Phone.
 
 | Property | Value |
 | --- | --- |
@@ -246,7 +241,7 @@ Service Desk phone number for user contact information (optional).
 
 ### ServiceDeskPortalUrl
 
-Service Desk portal URL for user contact information, rendered as a clickable link (optional).
+Link to the service desk portal shown in the email. Taken from the tenant setting RJReport.ServiceDesk_PortalUrl.
 
 | Property | Value |
 | --- | --- |
@@ -257,7 +252,7 @@ Service Desk portal URL for user contact information, rendered as a clickable li
 
 ### ServiceDeskTicketUrl
 
-Direct link to the Service Desk ticket related to this request, rendered as a clickable link (optional). Empty by default, so no ticket link is added.
+Link to the ticket for this request, shown in the email. Preset per run or in the runbook customization; empty means no link.
 
 | Property | Value |
 | --- | --- |

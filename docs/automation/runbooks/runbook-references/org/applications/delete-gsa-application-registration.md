@@ -1,24 +1,10 @@
 ---
 title: Delete GSA Application Registration
-description: Delete a GSA application registration from Azure AD including associated objects
+description: Delete a Global Secure Access application and its access group
 ---
 
 ## Description
-This runbook deletes a Global Secure Access application registration created by the
-"add-gsa-application-registration" runbook, including everything provisioned with it:
-the application (and thereby its service principal, application segments and connector
-group assignment) and the security group created by the naming scheme.
-
-The naming scheme group is identified via the groups assigned to the application whose
-display name matches the admin-defined group prefix. If the group was created but never
-assigned (partial provisioning), a best-effort lookup by naming scheme is performed.
-
-Safety measures:
-- The runbook verifies the application is actually a GSA / App Proxy application
-  (onPremisesPublishing) before deleting anything.
-- By default only security group(s) matching the naming scheme are deleted. Other
-  groups assigned to the application are listed but NOT deleted, as they may be
-  shared with other applications. Set deleteAllAssignedGroups to change this.
+Deletes a Global Secure Access application that was created with the Add GSA Application Registration runbook. Its service principal, application segments, connector group assignment and the access group that follows the naming scheme go with it. Before deleting anything it checks that the application really is a GSA or App Proxy application. Other groups assigned to the application are only listed, unless you choose to delete them too.
 
 ## Location
 Organization → Applications → Delete GSA Application Registration
@@ -48,20 +34,18 @@ rjgit-org_applications_delete-GSA-application-registration
 ## Parameters
 ### applicationName
 
-The full display name of the GSA application to delete, e.g. "GSA-MyApp".
+Full display name of the application, for example GSA-MyApp.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Application Name (full display name, e.g. GSA-MyApp) |
+| Portal display name | Application name |
 
 ### groupPrefix
 
-Prefix of the security group naming scheme, used to identify the group(s) to delete.
-Must match the groupPrefix of the add-gsa-application-registration runbook.
-Default: "App - Entra - GSA - ".
+Prefix of the access group's naming scheme, the same as in the add runbook. Usually preset in the runbook customization.
 
 | Property | Value |
 | --- | --- |
@@ -72,7 +56,7 @@ Default: "App - Entra - GSA - ".
 
 ### groupSuffix
 
-Optional suffix of the security group naming scheme. Default: empty.
+Suffix of the access group's naming scheme, if one was used.
 
 | Property | Value |
 | --- | --- |
@@ -83,15 +67,14 @@ Optional suffix of the security group naming scheme. Default: empty.
 
 ### deleteAllAssignedGroups
 
-If true, ALL groups assigned to the application are deleted, not only the naming scheme group(s).
-Use with care - assigned groups may be shared with other applications. Default: false.
+Also deletes every other group assigned to the application. Careful, such groups may be shared with other applications.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Also delete ALL other groups assigned to the application (careful - groups may be shared) |
+| Portal display name | Delete all assigned groups? |
 
 
 

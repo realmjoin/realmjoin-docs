@@ -1,12 +1,10 @@
 ---
 title: Add Or Remove Nested Group
-description: Add/remove a nested group to/from a group
+description: Add a nested group to this group or remove it
 ---
 
 ## Description
-This runbook adds a nested group to a target group or removes an existing nesting.
-It supports Microsoft Entra ID groups and Exchange Online distribution or mail-enabled security groups.
-Use the Remove switch to remove the nested group instead of adding it.
+Adds another group as a member of this group, or removes that nesting again. Works for Microsoft Entra ID groups as well as Exchange Online distribution and mail-enabled security groups.
 
 ## Location
 Group → General → Add Or Remove Nested Group
@@ -19,7 +17,7 @@ rjgit-group_general_add-or-remove-nested-group
 
 | Property | Value |
 | --- | --- |
-| Version | 1.0.1 |
+| Version | 1.0.3 |
 | Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
 | Schedulable | no |
 
@@ -43,7 +41,7 @@ rjgit-group_general_add-or-remove-nested-group
 ## Parameters
 ### GroupID
 
-Object ID of the target group.
+Object ID of the group the runbook acts on. Set by the portal from the selected group.
 
 | Property | Value |
 | --- | --- |
@@ -54,7 +52,7 @@ Object ID of the target group.
 
 ### NestedGroupID
 
-Object ID of the group to add as a nested member.
+Group that becomes a member of this group, or stops being one.
 
 | Property | Value |
 | --- | --- |
@@ -64,14 +62,21 @@ Object ID of the group to add as a nested member.
 
 ### Remove
 
-Set to true to remove the nested group membership, or false to add it.
+Add makes the chosen group a member of this group. Remove takes an existing nesting away.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Remove this group |
+| Portal display name | Action |
+
+**Portal options**
+
+| Portal option | Value |
+| --- | --- |
+| Add nested group | false |
+| Remove nested group | true |
 
 
 

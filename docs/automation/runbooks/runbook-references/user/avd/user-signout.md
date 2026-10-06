@@ -1,11 +1,10 @@
 ---
 title: User Signout
-description: Removes (Signs Out) a specific User from their AVD Session.
+description: Sign this user out of their AVD sessions
 ---
 
 ## Description
-This Runbooks looks for active User Sessions in all AVD Hostpools of a tenant and removes forces a Sign-Out of the user.
-The SubscriptionIds value must be defined in the runbooks customization.
+Finds the Azure Virtual Desktop sessions of this user, active or disconnected, in all host pools of the configured subscriptions and signs the user out of them. Unsaved work in those sessions is lost.
 
 ## Location
 User → AVD → User Signout
@@ -31,7 +30,7 @@ Azure: Desktop Virtualization Host Pool Contributor on Subscription which contai
 ## Parameters
 ### UserName
 
-The username (UPN) of the user to sign out from their AVD session. Hidden in UI.
+User principal name of the user the runbook acts on. Set by the portal from the selected user.
 
 | Property | Value |
 | --- | --- |
@@ -42,7 +41,7 @@ The username (UPN) of the user to sign out from their AVD session. Hidden in UI.
 
 ### SubscriptionIds
 
-Array of Azure subscription IDs where the AVD resources are located. Retrieved from AVD.SubscriptionIds setting (Customization). Hidden in UI.
+Azure subscriptions that hold the AVD host pools. Taken from the tenant setting AVD.SubscriptionIds.
 
 | Property | Value |
 | --- | --- |

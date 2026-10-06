@@ -1,10 +1,10 @@
 ---
 title: List Expiring Role Assignments
-description: List Azure AD role assignments expiring within a given number of days
+description: List Entra ID role assignments that expire soon
 ---
 
 ## Description
-Lists active and PIM-eligible Azure AD role assignments that expire within a specified number of days. The output includes role name, principal, and expiration date.
+Lists the active and PIM eligible Entra ID role assignments that expire within the chosen number of days, so they can be renewed in time. Each entry shows the role, the principal and the expiry date. Nothing is changed.
 
 ## Location
 Organization → Security → List Expiring Role Assignments
@@ -34,14 +34,14 @@ rjgit-org_security_list-expiring-role-assignments
 ## Parameters
 ### Days
 
-Maximum number of days until expiry.
+Assignments that expire within this many days are listed.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | 30 |
 | Type | Int32 |
-| Portal display name | Maximum days before expiry |
+| Portal display name | Expiring within (days) |
 
 
 

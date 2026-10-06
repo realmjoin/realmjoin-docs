@@ -1,10 +1,23 @@
 ---
 title: Check Onedrive Status
-description: Check the status of a user's OneDrive
+description: Check whether a user's OneDrive is active, locked or deleted
 ---
 
 ## Description
-Connects to the SharePoint admin center using the managed identity and retrieves the status of the specified user's personal site (OneDrive). Reports whether the site is active or archived, its lock state, and whether it resides in the tenant recycle bin. The runbook is read-only and makes no changes to the site or its state.
+Looks up the personal OneDrive site of a user and reports whether it is active or archived, whether it is locked, and whether it sits in the tenant recycle bin. Works for users whose account has already been deleted, as their OneDrive may still be in the recycle bin. Nothing is changed.
+
+## Common use cases
+
+- Check whether an active user's OneDrive is provisioned and, if so, whether it is locked or archived.
+- Check whether a deleted user's OneDrive still exists in the tenant recycle bin, and when it is scheduled to be purged.
+
+## Parameter behaviour
+
+- `UserPrincipalName` accepts the UPN of an already deleted account, not only of active users. This is intentional: a user picker cannot select a deleted account, so the parameter is free text rather than a picker.
+- For a deleted user, the recycle bin lookup matches on the deleted site's `SiteOwnerEmail`. A missing value or a prior UPN rename can cause a false "Not found" result.
+
+The runbook is strictly read-only and makes no changes to the tenant.
+
 
 ## Location
 Organization → Collab → Check Onedrive Status
@@ -17,28 +30,9 @@ rjgit-org_collab_check-onedrive-status
 
 | Property | Value |
 | --- | --- |
-| Version | 1.4.0 |
+| Version | 1.5.0 |
 | Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>PnP.PowerShell (>= 3.4.1) |
 | Schedulable | no |
-
-## Notes
-Common Use Cases:
-- Check whether an active user's OneDrive is provisioned, and if so, whether it is locked
-  or archived.
-- Check whether a deleted user's OneDrive still exists in the tenant recycle bin, and when
-  it is scheduled to be purged.
-
-Parameter Interactions:
-- UserPrincipalName accepts the UPN of an already-deleted account, not only active users.
-  This is intentional: a user picker cannot select a deleted account, so the parameter is
-  free text rather than a picker.
-- For a deleted user, recycle bin matching relies on the deleted site's SiteOwnerEmail; a
-  missing value or a prior UPN rename can cause a false "Not found" result.
-
-This runbook is strictly read-only and makes no changes to the tenant.
-
-Requires -Modules @{ModuleName = "RealmJoin.RunbookHelper"; ModuleVersion = "0.8.9" }
-Requires -Modules @{ModuleName = "PnP.PowerShell"; ModuleVersion = "3.4.1" }
 
 ## Permissions
 
@@ -54,14 +48,14 @@ SharePoint Online: grant 'Sites.FullControl.All' application permission on the O
 ## Parameters
 ### UserPrincipalName
 
-User principal name of the user whose OneDrive status should be checked. This parameter accepts the UPN of a user whose account has already been deleted, as deleted users' OneDrive sites may still exist in the tenant recycle bin.
+User principal name of the user whose OneDrive is checked. Deleted users are accepted.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | User Principal Name (UPN) |
+| Portal display name | User principal name |
 
 
 

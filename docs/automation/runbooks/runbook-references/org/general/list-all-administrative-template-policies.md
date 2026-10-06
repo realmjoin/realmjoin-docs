@@ -1,11 +1,10 @@
 ---
 title: List All Administrative Template Policies
-description: List all Administrative Template policies and their assignments
+description: List administrative template policies with their assignments
 ---
 
 ## Description
-This runbook retrieves all Administrative Template policies from Intune.
-It lists each policy and shows its current assignments.
+Lists every administrative template policy in Intune and shows the current assignments of each one. Nothing is changed.
 
 ## Location
 Organization → General → List All Administrative Template Policies

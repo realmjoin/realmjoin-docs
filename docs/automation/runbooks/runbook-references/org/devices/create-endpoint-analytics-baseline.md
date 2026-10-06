@@ -1,10 +1,10 @@
 ---
 title: Create Endpoint Analytics Baseline
-description: Creates Endpoint Analytics baselines in Microsoft Intune with a specified naming schema.
+description: Create an Endpoint Analytics baseline with a naming schema
 ---
 
 ## Description
-This runbook creates new Endpoint Analytics baselines in Intune using a customizable naming schema. Endpoint Analytics baselines allow organizations to measure and track device performance metrics over time. The naming schema can include placeholders that will be replaced with contextual values during baseline creation.
+Creates a new Endpoint Analytics baseline in Intune, named after a schema with placeholders such as the current date, so baselines can be created regularly and compared over time. Intune allows at most 20 baselines; the oldest can be removed automatically when the limit is reached.
 
 ## Location
 Organization → Devices → Create Endpoint Analytics Baseline
@@ -32,25 +32,25 @@ rjgit-org_devices_create-endpoint-analytics-baseline
 ## Parameters
 ### BaselineNamingSchema
 
-The naming schema to use for the Endpoint Analytics baseline. Can include placeholders like {Date}, {DateTime}, {Month}, {Year}, or other tokens that will be replaced during creation. Example: "EA-Baseline-{Year}-{Month}" or "Analytics-{Date}".
+Name pattern with placeholders such as {Year}, {Month}, {Date} or {DateTime}, for example EA-Baseline-{Year}-{Month}.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Baseline Naming Schema |
+| Portal display name | Baseline naming schema |
 
 ### RemoveOldestBaseline
 
-When enabled (default), automatically removes the oldest baseline if the maximum limit of 20 baselines is reached. Set to false to prevent automatic deletion and fail the runbook when the limit is reached.
+Deletes the oldest baseline when 20 already exist. Turn off to stop with an error instead.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
-| Portal display name | Remove Oldest Baseline When Limit Reached |
+| Portal display name | Remove the oldest baseline at the limit? |
 
 
 

@@ -1,12 +1,21 @@
 ---
 title: Invite External Guest Users
-description: Invite external guest users to the organization
+description: Invite an external person as a guest user
 ---
 
 ## Description
-This runbook invites an external user as a guest user in Microsoft Entra ID.
-Optional profile properties such as given name, surname, company name, usage location, manager, and sponsor can be set after the invitation is accepted.
-The invited user can optionally be added to a specified group.
+Sends a Microsoft Entra ID guest invitation to an external email address. Optionally the guest is added to a group, and profile details such as name, company, usage location, manager and sponsor are set on the guest account right away. The invitation email and the landing page can be customized.
+
+## Common use cases
+
+- Basic guest invite: provide only the email address and the display name; all profile and group parameters can be left blank.
+- Full onboarding: supply all optional fields to set profile properties, assign a manager and a sponsor, and add the guest to a group in a single run.
+
+## Parameter interactions
+
+- Profile properties (`givenName`, `surname`, `companyName`, `usageLocation`) are applied only when they are not empty; omitting them skips the update call entirely.
+- Manager assignment, sponsor assignment and group membership each require their respective parameters; all of them are skipped silently when not provided.
+
 
 ## Location
 Organization → General → Invite External Guest Users
@@ -23,15 +32,6 @@ rjgit-org_general_Invite-external-guest-users
 | Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
 | Schedulable | no |
 
-## Notes
-Common Use Cases:
-- Basic guest invite: provide only the email address and display name; all profile and group parameters can be left blank
-- Full onboarding: supply all optional fields to set profile properties, assign a manager/sponsor, and add to a group in a single run
-
-Parameter Interactions:
-- Profile properties (givenName, surname, companyName, usageLocation) are applied only when non-empty; omitting them skips the PATCH call entirely
-- Manager and sponsor assignment and group membership each require their respective parameters; all are silently skipped when not provided
-
 ## Permissions
 
 ### Application permissions
@@ -47,7 +47,7 @@ Parameter Interactions:
 ## Parameters
 ### InvitedUserEmail
 
-Email address of the guest user to invite.
+Email address of the person to invite.
 
 | Property | Value |
 | --- | --- |
@@ -57,7 +57,7 @@ Email address of the guest user to invite.
 
 ### InvitedUserDisplayName
 
-Display name of the guest user.
+Name shown for the guest in the directory.
 
 | Property | Value |
 | --- | --- |
@@ -67,7 +67,7 @@ Display name of the guest user.
 
 ### GroupId
 
-The object ID of the group to add the guest user to. If not specified, the user will not be added to any group.
+Group the guest is added to. Preset in the runbook customization; empty means none.
 
 | Property | Value |
 | --- | --- |
@@ -77,7 +77,7 @@ The object ID of the group to add the guest user to. If not specified, the user 
 
 ### GivenName
 
-Given name (first name) of the guest user.
+First name of the guest.
 
 | Property | Value |
 | --- | --- |
@@ -87,7 +87,7 @@ Given name (first name) of the guest user.
 
 ### Surname
 
-Surname (last name) of the guest user.
+Last name of the guest.
 
 | Property | Value |
 | --- | --- |
@@ -97,7 +97,7 @@ Surname (last name) of the guest user.
 
 ### CompanyName
 
-Company name of the guest user.
+Company the guest works for.
 
 | Property | Value |
 | --- | --- |
@@ -107,7 +107,7 @@ Company name of the guest user.
 
 ### ManagerName
 
-Manager to assign to the guest user. Select a user from the directory.
+User who becomes the guest's manager.
 
 | Property | Value |
 | --- | --- |
@@ -117,7 +117,7 @@ Manager to assign to the guest user. Select a user from the directory.
 
 ### SponsorName
 
-Sponsor to assign to the guest user. Select a user from the directory.
+User recorded as the guest's sponsor.
 
 | Property | Value |
 | --- | --- |
@@ -127,7 +127,7 @@ Sponsor to assign to the guest user. Select a user from the directory.
 
 ### CustomizeInvitation
 
-Enable to customize the invitation message and redirect URL.
+Shows fields for an own invitation message and redirect URL.
 
 | Property | Value |
 | --- | --- |
@@ -137,7 +137,7 @@ Enable to customize the invitation message and redirect URL.
 
 ### InvitationMessage
 
-Custom message body to include in the invitation email. Only used when CustomizeInvitation is enabled.
+Text included in the invitation email.
 
 | Property | Value |
 | --- | --- |
@@ -147,7 +147,7 @@ Custom message body to include in the invitation email. Only used when Customize
 
 ### InviteRedirectUrl
 
-Custom URL the user is redirected to after accepting the invitation. Only used when CustomizeInvitation is enabled.
+Page the guest lands on after accepting, for example a SharePoint site.
 
 | Property | Value |
 | --- | --- |
@@ -157,7 +157,7 @@ Custom URL the user is redirected to after accepting the invitation. Only used w
 
 ### UsageLocation
 
-ISO 3166-1 alpha-2 country code for the usage location of the guest user (e.g. "US", "DE").
+Two-letter country code, for example US or DE, needed before licenses can be assigned.
 
 | Property | Value |
 | --- | --- |

@@ -1,10 +1,10 @@
 ---
 title: Assign Or Unassign License
-description: Assign or remove a license for a user via group membership
+description: Assign or remove a license for this user via a license group
 ---
 
 ## Description
-Adds or removes a user to a dedicated license assignment group to control license allocation. The license group must match the configured naming convention.
+Adds this user to a license assignment group or removes the user from it, which assigns or removes the license the group carries.
 
 ## Location
 User → General → Assign Or Unassign License
@@ -36,7 +36,7 @@ rjgit-user_general_assign-or-unassign-license
 ## Parameters
 ### UserName
 
-User principal name of the target user.
+User principal name of the user the runbook acts on. Set by the portal from the selected user.
 
 | Property | Value |
 | --- | --- |
@@ -47,7 +47,7 @@ User principal name of the target user.
 
 ### GroupID_License
 
-Object ID of the license assignment group.
+Group that carries the license. Only groups whose name starts with LIC_ are offered.
 
 | Property | Value |
 | --- | --- |
@@ -57,21 +57,21 @@ Object ID of the license assignment group.
 
 ### Remove
 
-"Assign the license to the user" (final value: $false) or "Remove the license from the user" (final value: $true) can be selected as action to perform.
+Assign adds the user to the group. Remove takes the user out of it.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
-| Portal display name | Assign or Remove License |
+| Portal display name | Action |
 
 **Portal options**
 
 | Portal option | Value |
 | --- | --- |
-| Assign License to User | false |
-| Remove License from User | true |
+| Assign license to user | false |
+| Remove license from user | true |
 
 
 

@@ -1,11 +1,10 @@
 ---
 title: Grant Teams User Policies
-description: Grant Microsoft Teams policies to a Microsoft Teams enabled user
+description: Assign Teams voice and meeting policies to this user
 ---
 
 ## Description
-Assigns selected Teams policies for a Teams-enabled user. Policies are only changed when a value is provided, and assignments can be cleared by using the value "Global (Org Wide Default)".
-It allows to assign the following policies: Online Voice Routing Policy, Tenant Dial Plan, Teams Calling Policy, Teams IP Phone Policy, Online Voicemail Policy, Teams Meeting Policy and Teams Meeting Broadcast Policy (Live Event Policy).
+Assigns Teams policies to this user: voice routing, dial plan, calling, IP phone, voicemail, meeting and live event policies. Only the policies you fill in are changed. Enter Global (Org Wide Default) to remove an assignment and fall back to the tenant default.
 
 ## Location
 User → Phone → Grant Teams User Policies
@@ -37,7 +36,7 @@ rjgit-user_phone_grant-teams-user-policies
 ## Parameters
 ### UserName
 
-User principal name of the target user.
+User principal name of the user the runbook acts on. Set by the portal from the selected user.
 
 | Property | Value |
 | --- | --- |
@@ -48,80 +47,80 @@ User principal name of the target user.
 
 ### OnlineVoiceRoutingPolicy
 
-Microsoft Teams Online Voice Routing Policy Name. If the policy name is left blank, the corresponding policy will not be changed. To clear the policies assignment, the value "Global (Org Wide Default)" has to be entered.
+Voice routing policy to assign. Leave empty to keep the current one, or enter Global (Org Wide Default) to reset it.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Microsoft Teams Online Voice Routing Policy Name |
+| Portal display name | Online voice routing policy |
 
 ### TenantDialPlan
 
-Microsoft Teams Tenant Dial Plan Name. If the policy name is left blank, the corresponding policy will not be changed. To clear the policies assignment, the value "Global (Org Wide Default)" has to be entered.
+Dial plan to assign. Leave empty to keep the current one, or enter Global (Org Wide Default) to reset it.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Microsoft Teams DialPlan Name |
+| Portal display name | Tenant dial plan |
 
 ### TeamsCallingPolicy
 
-Microsoft Teams Calling Policy Name. If the policy name is left blank, the corresponding policy will not be changed. To clear the policies assignment, the value "Global (Org Wide Default)" has to be entered.
+Calling policy to assign. Leave empty to keep the current one, or enter Global (Org Wide Default) to reset it.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Microsoft Teams Calling Policy Name |
+| Portal display name | Calling policy |
 
 ### TeamsIPPhonePolicy
 
-Microsoft Teams IP Phone Policy Name. If the policy name is left blank, the corresponding policy will not be changed. To clear the policies assignment, the value "Global (Org Wide Default)" has to be entered. This is typically used for Common Area Phone users.
+IP phone policy to assign, typically for common area phones. Leave empty to keep the current one, or enter Global (Org Wide Default) to reset it.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Microsoft Teams IP-Phone Policy Name (a.o. for Common Area Phone Users) |
+| Portal display name | IP phone policy |
 
 ### OnlineVoicemailPolicy
 
-Microsoft Teams Online Voicemail Policy Name. If the policy name is left blank, the corresponding policy will not be changed. To clear the policies assignment, the value "Global (Org Wide Default)" has to be entered.
+Voicemail policy to assign. Leave empty to keep the current one, or enter Global (Org Wide Default) to reset it.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Microsoft Teams Online Voicemail Policy Name |
+| Portal display name | Voicemail policy |
 
 ### TeamsMeetingPolicy
 
-Microsoft Teams Meeting Policy Name. If the policy name is left blank, the corresponding policy will not be changed. To clear the policies assignment, the value "Global (Org Wide Default)" has to be entered.
+Meeting policy to assign. Leave empty to keep the current one, or enter Global (Org Wide Default) to reset it.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Microsoft Teams Meeting Policy Name |
+| Portal display name | Meeting policy |
 
 ### TeamsMeetingBroadcastPolicy
 
-Microsoft Teams Meeting Broadcast Policy Name. If the policy name is left blank, the corresponding policy will not be changed. To clear the policies assignment, the value "Global (Org Wide Default)" has to be entered.
+Live event (meeting broadcast) policy to assign. Leave empty to keep the current one, or enter Global (Org Wide Default) to reset it.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Microsoft Teams Meeting Broadcast Policy Name (Live Event Policy) |
+| Portal display name | Live event policy |
 
 
 

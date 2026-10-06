@@ -1,10 +1,10 @@
 ---
 title: Remove Group
-description: Remove a group. For Microsoft 365 groups, also the associated resources (Teams, SharePoint site) will be removed.
+description: Delete this group and its Microsoft 365 resources
 ---
 
 ## Description
-This runbook deletes the specified group, which for Microsoft 365 groups means, that it also deletes the associated resources such as the Teams Team and the SharePoint Site.
+Deletes this group. For a Microsoft 365 group this also removes the Teams team and the SharePoint site that belong to it, including their content. The group and its content can be restored from the deleted groups for 30 days, after that they are gone.
 
 ## Location
 Group → General → Remove Group
@@ -32,7 +32,7 @@ rjgit-group_general_remove-group
 ## Parameters
 ### GroupId
 
-Object ID of the group to delete.
+Object ID of the group the runbook acts on. Set by the portal from the selected group.
 
 | Property | Value |
 | --- | --- |

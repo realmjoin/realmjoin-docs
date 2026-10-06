@@ -1,11 +1,10 @@
 ---
 title: Assign Owa Mailbox Policy
-description: Assign an OWA mailbox policy to a user
+description: Assign an Outlook on the web policy to this user's mailbox
 ---
 
 ## Description
-Assigns an OWA mailbox policy to a mailbox in Exchange Online.
-This can be used to enable or restrict features such as the ability to use email signatures in OWA or to enable the Bookings add-in for users who create Bookings appointments.
+Assigns an Outlook on the web (OWA) mailbox policy to the mailbox of this user. Policies switch features on or off, for example email signatures in the web client or the Bookings add-in for people who create Bookings appointments. Get current assignment shows the policy in place without changing it.
 
 ## Location
 User → Mail → Assign Owa Mailbox Policy
@@ -37,7 +36,7 @@ rjgit-user_mail_assign-owa-mailbox-policy
 ## Parameters
 ### UserName
 
-User principal name of the target mailbox.
+User principal name of the user the runbook acts on. Set by the portal from the selected user.
 
 | Property | Value |
 | --- | --- |
@@ -48,13 +47,14 @@ User principal name of the target mailbox.
 
 ### OwaPolicyName
 
-Name of the OWA mailbox policy to assign.
+Policy to assign. Get current assignment only shows which policy the mailbox has today.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value | OwaMailboxPolicy-Default |
 | Type | String |
+| Portal display name | Policy |
 
 **Portal options**
 

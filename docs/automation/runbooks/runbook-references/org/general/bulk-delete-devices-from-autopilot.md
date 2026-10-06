@@ -1,11 +1,10 @@
 ---
 title: Bulk Delete Devices From Autopilot
-description: Bulk delete Autopilot objects by serial number
+description: Delete several Autopilot registrations by serial number
 ---
 
 ## Description
-This runbook deletes Windows Autopilot device identities based on a comma-separated list of serial numbers.
-It searches for each serial number and deletes the matching Autopilot object if found.
+Removes the Windows Autopilot registrations of the devices with the given serial numbers, for example before a device is handed to another tenant or disposed of. Serial numbers that are not found are reported and skipped.
 
 ## Location
 Organization → General → Bulk Delete Devices From Autopilot
@@ -33,14 +32,14 @@ rjgit-org_general_bulk-delete-devices-from-autopilot
 ## Parameters
 ### SerialNumbers
 
-Comma-separated list of serial numbers to delete from Autopilot.
+Serial numbers of the devices to remove, separated by commas.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Comma separated serial numbers |
+| Portal display name | Serial numbers |
 
 
 

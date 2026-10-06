@@ -1,10 +1,10 @@
 ---
 title: Add Or Remove Teams Mailcontact
-description: Create/Remove a contact, to allow pretty email addresses for Teams channels.
+description: Give a Teams channel a friendly email address or remove it
 ---
 
 ## Description
-Creates or updates a mail contact so a desired email address relays to the real Teams channel email address. The runbook can also remove the desired relay address again.
+Creates a mail contact that forwards a friendly email address to the long address Teams generates for a channel. People can then email the channel with an address they can remember. The same runbook removes the friendly address again.
 
 ## Location
 Organization → Mail → Add Or Remove Teams Mailcontact
@@ -36,38 +36,40 @@ rjgit-org_mail_add-or-remove-teams-mailContact
 ## Parameters
 ### RealAddress
 
-Enter the address created by MS Teams for a channel
+Email address that Teams generated for the channel.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Channel email address |
 
 ### DesiredAddress
 
-Desired email address that should relay to the real address.
+Friendly address that should forward to the channel.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
+| Portal display name | Friendly email address |
 
 ### DisplayName
 
-Optional display name for the contact in the address book.
+Name shown for the contact in the address book. Leave empty to use the part of the friendly address before the @ sign.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Name in Address Book |
+| Portal display name | Name in the address book |
 
 ### Remove
 
-"Relay the desired address to the real address" (final value: $false) or "Stop the relay and remove desired address" (final value: $true) can be selected as action to perform.
+Set up the friendly address creates the mail contact; Remove the friendly address deletes it again.
 
 | Property | Value |
 | --- | --- |
@@ -80,8 +82,8 @@ Optional display name for the contact in the address book.
 
 | Portal option | Value |
 | --- | --- |
-| Relay the desired address to the real address | false |
-| Stop the relay and remove desired address | true |
+| Set up the friendly address | false |
+| Remove the friendly address | true |
 
 
 

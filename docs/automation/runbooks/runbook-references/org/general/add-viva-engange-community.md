@@ -1,11 +1,10 @@
 ---
 title: Add Viva Engange Community
-description: Create a Viva Engage (Yammer) community
+description: Create a Viva Engage community with owners
 ---
 
 ## Description
-This runbook creates a Viva Engage community via the Yammer REST API using a stored developer token.
-It can optionally assign owners and remove the initial API user from the resulting Microsoft 365 group.
+Creates a Viva Engage (Yammer) community with the given name, visibility and directory listing, and adds the named owners. The API user that creates the community can be removed from the resulting Microsoft 365 group once another owner exists.
 
 ## Location
 Organization → General → Add Viva Engange Community
@@ -37,54 +36,58 @@ rjgit-org_general_add-viva-engange-community
 ## Parameters
 ### CommunityName
 
-Name of the community to create. Maximum length is 264 characters.
+Name of the community, up to 264 characters.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value | Sample Community |
 | Type | String |
+| Portal display name | Community name |
 
 ### CommunityPrivate
 
-If set to true, the community is created as private.
+A private community is visible only to its members.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | False |
 | Type | Boolean |
+| Portal display name | Private community? |
 
 ### CommunityShowInDirectory
 
-If set to true, the community is visible in the directory.
+Lists the community in the Viva Engage directory so people can find it.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
+| Portal display name | Show in directory? |
 
 ### CommunityOwners
 
-Comma-separated list of owner UPNs to add to the community.
+Sign-in names of the owners, separated by commas.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Portal display name | Owners |
 
 ### removeCreatorFromGroup
 
-If set to true, removes the initial API user from the group when at least one other owner exists.
+Takes the API user that created the community out of the group, as long as at least one other owner exists.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | True |
 | Type | Boolean |
-| Portal display name | Remove initial API user/owner from group |
+| Portal display name | Remove the API user from the group? |
 
 
 

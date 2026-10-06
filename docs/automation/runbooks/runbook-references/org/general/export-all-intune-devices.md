@@ -1,10 +1,10 @@
 ---
 title: Export All Intune Devices
-description: Export a list of all Intune devices and where they are registered
+description: Export all Intune devices with their primary users' usage location
 ---
 
 ## Description
-Exports all Intune managed devices and enriches them with selected owner metadata such as usage location. The report is uploaded as a CSV file to an Azure Storage container.
+Exports every Intune managed device together with details of its primary user, such as the usage location, as a CSV file to an Azure Storage account. Optionally only devices whose primary user is in a given group are exported. Nothing is changed.
 
 ## Location
 Organization → General → Export All Intune Devices
@@ -36,74 +36,80 @@ rjgit-org_general_export-all-intune-devices
 ## Parameters
 ### ContainerName
 
-Name of the Azure Storage container to upload the CSV report to.
+Storage container the CSV file is uploaded to. Taken from the tenant setting IntuneDevicesReport.Container.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
-Name of the Azure Resource Group containing the Storage Account.
+Resource group of the storage account. Taken from the tenant setting IntuneDevicesReport.ResourceGroup.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
-Name of the Azure Storage Account used for upload.
+Storage account for the export. Taken from the tenant setting IntuneDevicesReport.StorageAccount.Name.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountLocation
 
-Azure region for the Storage Account if it needs to be created.
+Azure region used when the storage account has to be created. Taken from the tenant setting IntuneDevicesReport.StorageAccount.Location.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountSku
 
-SKU name for the Storage Account if it needs to be created.
+Performance tier used when the storage account has to be created. Taken from the tenant setting IntuneDevicesReport.StorageAccount.Sku.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### SubscriptionId
 
-Optional Azure Subscription Id to set the context for Storage Account operations.
+Azure subscription that holds the storage account. Taken from the tenant setting IntuneDevicesReport.SubscriptionId.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### FilterGroupID
 
-Group filter. When specified, only devices whose primary owner is a member of this group are exported.
+Only devices whose primary user is in this group. Leave empty for all devices.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Optional - Group Filter |
+| Portal display name | Limit to primary users in group |
 
 
 

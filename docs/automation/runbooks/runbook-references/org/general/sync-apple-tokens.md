@@ -1,10 +1,10 @@
 ---
 title: Sync Apple Tokens
-description: Sync Apple Enrollment Program Tokens and VPP Tokens with Intune
+description: Sync Apple enrollment and VPP tokens with Intune
 ---
 
 ## Description
-This runbook triggers synchronization of Apple tokens in Microsoft Intune. It can sync Apple Enrollment Program (ADE) tokens, Volume Purchase Program (VPP) tokens, or both. The sync ensures that Intune has the latest information from Apple Business Manager regarding device enrollments and app licenses.
+Triggers a sync of the Apple tokens in Intune, so device enrollments from Apple Business Manager and app licenses from the Volume Purchase Program are up to date. Either token type or both can be synced.
 
 ## Location
 Organization → General → Sync Apple Tokens
@@ -34,14 +34,14 @@ rjgit-org_general_sync-apple-tokens
 ## Parameters
 ### SyncType
 
-Select which token type(s) to synchronize with Apple Business Manager.
+Sync the Enrollment Program tokens, the VPP tokens, or both.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value | Both |
 | Type | String |
-| Portal display name | Sync Type |
+| Portal display name | Tokens to sync |
 
 **Portal options**
 

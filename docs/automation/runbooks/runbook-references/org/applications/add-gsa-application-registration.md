@@ -1,18 +1,10 @@
 ---
 title: Add GSA Application Registration
-description: Add a GSA application registration to Azure AD
+description: Create a Global Secure Access application with its access group
 ---
 
 ## Description
-This script creates a new Global Secure Access Application registration in Azure Active Directory (Entra ID) with comprehensive configuration options.
-
-In addition to the application, a security group for managing access to the application is created (naming scheme configurable
-via Runbook Customization) and assigned to the application's service principal.
-
-If the application already exists, the runbook runs in update mode: app creation is skipped and only the segment /
-group / assignment steps are performed. All lookups (e.g. connector group) are validated BEFORE anything is created.
-If a later step fails anyway, objects created in this run (application, group) are rolled back and removed.
-Pre-existing objects (update mode) are never removed.
+Creates a Global Secure Access (GSA) application in Entra ID with its application segment (destination, ports, protocol) and connector group, plus a security group that controls who may use it. If the application already exists, only the segment, group and assignment are updated. Everything is validated before anything is created, and objects created in a failed run are removed again.
 
 ## Location
 Organization → Applications → Add GSA Application Registration
@@ -46,43 +38,40 @@ rjgit-org_applications_add-GSA-application-registration
 ## Parameters
 ### name
 
-The base name of the Global Secure Access application to create. The final application name is built as "<prefix> <name>".
+Base name of the application. The final name is prefix plus name, for example GSA-MyApp.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Application Name (Must be unique) |
+| Portal display name | Application name |
 
 ### prefix
 
-Prefix added to the application name. A space is inserted between prefix and name unless the prefix ends
-with "-", "_" or a space. Example: prefix "GSA-" + name "MyApp" results in application "GSA-MyApp".
+Text put in front of the name. A space is inserted unless the prefix ends with a hyphen, underscore or space.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Application Name Prefix |
+| Portal display name | Application name prefix |
 
 ### groupPrefix
 
-Prefix for the security group name. The group name is built as "<groupPrefix><name><groupSuffix>" -
-independent of the application prefix. Example: groupPrefix "App - Entra - GSA - " + name "MyApp"
-results in group "App - Entra - GSA - MyApp". Default: "App - Entra - GSA - ".
+Text put in front of the access group name, independent of the application prefix. Usually preset in the runbook customization.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | App - Entra - GSA - |
 | Type | String |
-| Portal display name | Group name prefix (admin-defined, change via Runbook Customization) |
+| Portal display name | Group name prefix |
 
 ### groupSuffix
 
-Optional suffix for the security group name, e.g. " (users)". Default: empty.
+Text appended to the access group name, for example " (users)". Leave empty for none.
 
 | Property | Value |
 | --- | --- |
@@ -93,14 +82,14 @@ Optional suffix for the security group name, e.g. " (users)". Default: empty.
 
 ### applicationType
 
-The type of GSA application to create. Options: "nonwebapp" (Enterprise App) or "quickaccessapp" (Quick Access App).
+Enterprise App creates a new GSA application. Quick Access App adds the segment to the tenant's existing Quick Access app instead.
 
 | Property | Value |
 | --- | --- |
 | Required | true |
 | Default Value |  |
 | Type | String |
-| Portal display name | Application Type (Unique) |
+| Portal display name | Application type |
 
 **Portal options**
 
@@ -111,29 +100,29 @@ The type of GSA application to create. Options: "nonwebapp" (Enterprise App) or 
 
 ### connectorGroup
 
-The connectorGroup to be used for the application. Must be defined in the Runbook Customization.
+Connector group that publishes the application. The available groups are set up in the runbook customization.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Connector Group (Please define your connector groups in the Runbook Customization) |
+| Portal display name | Connector group |
 
 ### destinationHost
 
-The destination host or IP range for the application. Supports formats: FQDN (example.com), single IP (192.168.0.1), CIDR notation (192.168.0.1/24), or IP range (192.168.0.1..192.168.0.20).
+Where the application lives: a host name (example.com), a single IP (192.168.0.1), a CIDR range (192.168.0.1/24) or an IP range (192.168.0.1..192.168.0.20).
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Destination Host or Range: example.com / 192.168.0.1 / 192.168.0.1/24 / 192.168.0.1..192.168.0.20 |
+| Portal display name | Destination host or range |
 
 ### destinationType
 
-The type of destination specified. Options: "fqdn", "ip", "ipRangeCidr", or "ipRange". Hidden in UI as it's automatically determined from destinationHost format.
+Kind of destination, derived automatically from the format of the destination host.
 
 | Property | Value |
 | --- | --- |
@@ -144,18 +133,18 @@ The type of destination specified. Options: "fqdn", "ip", "ipRangeCidr", or "ipR
 
 ### ports
 
-The port(s) to configure for the application. Supports single port (443), multiple ports (80,443), or port range (8000-8080).
+Ports to publish: a single port (443), several (80,443) or a range (8000-8080).
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
-| Portal display name | Ports (e.g., 443 or 80,443 or 8000-8080) |
+| Portal display name | Ports |
 
 ### protocol
 
-The network protocol to use. Options: "tcp", "udp", or "tcp,udp". Default is "tcp".
+TCP, UDP or both.
 
 | Property | Value |
 | --- | --- |

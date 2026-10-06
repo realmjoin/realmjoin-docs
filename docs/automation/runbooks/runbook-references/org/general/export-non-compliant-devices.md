@@ -1,11 +1,10 @@
 ---
 title: Export Non Compliant Devices
-description: Export non-compliant Intune devices and settings
+description: Export non-compliant Intune devices with their failing settings
 ---
 
 ## Description
-This runbook queries Intune for non-compliant and in-grace-period devices and retrieves detailed policy and setting compliance data.
-It can export the results to CSV with SAS (download) links.
+Lists the Intune devices that are non-compliant or in a grace period, together with the policies and the individual settings that fail on each of them. The results can be exported as CSV files to an Azure Storage account with time-limited download links. Nothing is changed.
 
 ## Location
 Organization → General → Export Non Compliant Devices
@@ -38,7 +37,7 @@ Azure IaaS: Access to create/manage Azure Storage resources if producing links
 ## Parameters
 ### produceLinks
 
-If set to true, uploads artifacts and produces SAS (download) links when storage settings are available.
+Uploads the CSV files to the storage account configured in the tenant settings and returns download links.
 
 | Property | Value |
 | --- | --- |
@@ -48,63 +47,69 @@ If set to true, uploads artifacts and produces SAS (download) links when storage
 
 ### ContainerName
 
-Storage container name used for uploads.
+Storage container the report files are uploaded to. Taken from the tenant setting IntuneDevicesReport.Container.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value | rjrb-device-compliance-report-v2 |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### ResourceGroupName
 
-Resource group that contains the storage account.
+Resource group of the storage account. Taken from the tenant setting IntuneDevicesReport.ResourceGroup.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountName
 
-Storage account name used for uploads.
+Storage account for the export. Taken from the tenant setting IntuneDevicesReport.StorageAccount.Name.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountLocation
 
-Azure region for the storage account.
+Azure region used when the storage account has to be created. Taken from the tenant setting IntuneDevicesReport.StorageAccount.Location.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### StorageAccountSku
 
-Storage account SKU.
+Performance tier used when the storage account has to be created. Taken from the tenant setting IntuneDevicesReport.StorageAccount.Sku.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 ### SubscriptionId
 
-Azure subscription ID used for storage operations.
+Azure subscription that holds the storage account. Taken from the tenant setting IntuneDevicesReport.SubscriptionId.
 
 | Property | Value |
 | --- | --- |
 | Required | false |
 | Default Value |  |
 | Type | String |
+| Hidden in portal | yes (preset via runbook customization) |
 
 
 
