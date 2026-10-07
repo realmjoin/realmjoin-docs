@@ -135,7 +135,7 @@ Code paths use environment-based customer context for separation.
 
 ### We are committed to high security standards
 
-* Our development and our operations team is ISO 27001 certified.
+* Our development and our operations team is [ISO 27001 certified](security-and-privacy.md#id-1.-is-glueckkanja-iso-27001-certified).
 * We work with latest cloud development tools (e.g. GitHub) and code is stored in secured repositories.
 * We are committed to state-of-the-art development, built and operations methodologies (e.g. CI/CD).
 * Our team members use Entra ID identities and are required to use multifactor authentication.
@@ -158,6 +158,17 @@ To maintain high availability of RealmJoin, several key strategies are implement
 * **Regular Updates and Patches**: Routine maintenance and updates are applied to fix vulnerabilities and improve performance, ensuring the platform remains secure and efficient.
 * **Monitoring and Alerts**: Continuous monitoring of system health and automated alerts for any issues that could impact service availability.
 * **Recovery Plans**: We have implemented several layers of recovery measures: We can recover the main system state within the last few weeks because our databases have point-in-time recovery. In addition, in the unlikely event of a complete system failure, the main RealmJoin services can be recovered using an IaC approach (Terraform), which significantly reduces recovery time.
+
+## Compliance <a href="#user-content-gdpr-and-data-residency" id="user-content-gdpr-and-data-residency"></a>
+
+### 1. Is glueckkanja ISO 27001 certified?
+
+Yes. The Information Security Management System (ISMS) of glueckkanja AG is certified according to **ISO/IEC 27001:2022**. The scope of the certification covers:
+
+* Product Development
+* Managed Services
+
+You can view the current certificate [here](https://www.glueckkanja.com/documents/general/gk-ISO27001Certificate-en.pdf).
 
 ## GDPR and Data-residency
 
