@@ -16,12 +16,12 @@ Since cleverbridge operates a local entity in the US, cleverbridge Inc., certain
 
 ## Pricing Model
 
-RealmJoin is offered as an **annual subscription plan** with different [User Segments](cleverbridge.md#user-segments). The correct **user segment** is either&#x20;
+RealmJoin is offered as an **annual subscription plan** with different [User Segments](cleverbridge.md#user-segments). The correct **user segment** is either
 
 * pre-selected in case we provide a quotation or order link to you, or
 * must be manually selected during checkout:
 
-<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
 ## Payment Options
 
@@ -36,7 +36,7 @@ If you require invoice-based payments, please [contact us](mailto:sales@realmjoi
 cleverbridge allows you to transact in a variety of currencies. The currency is automatically selected based on the location of your browser's IP address. If you would like to transact in a different currency, you can do so by selecting your preferred currency in the top right corner of the quotation or checkout site.
 
 {% hint style="info" %}
-The reference currency for RealmJoin is Euro (EUR). The forex rate cleverbridge applies when converting to other currencies is not in our control. Please note, that once an order for a subscription is placed **and** as long as **automatic renewal** is **enabled**, the forex rate is guaranteed for future renewals, i.e. cleverbridge absorbs the forex risk.&#x20;
+The reference currency for RealmJoin is Euro (EUR). The forex rate cleverbridge applies when converting to other currencies is not in our control. Please note, that once an order for a subscription is placed **and** as long as **automatic renewal** is **enabled**, the forex rate is guaranteed for future renewals, i.e. cleverbridge absorbs the forex risk.
 {% endhint %}
 
 ## Plan Overview
@@ -44,7 +44,7 @@ The reference currency for RealmJoin is Euro (EUR). The forex rate cleverbridge 
 Subscriptions for RealmJoin are available based on an **monthly** and **annual** renewal interval.
 
 {% hint style="info" %}
-The annual plan is discounted by 10% in comparison to the monthly plan (calculated over the period of 12 months).&#x20;
+The annual plan is discounted by 10% in comparison to the monthly plan (calculated over the period of 12 months).
 {% endhint %}
 
 | **Plan**                         | **Renewal Interval** |
@@ -56,7 +56,7 @@ The annual plan is discounted by 10% in comparison to the monthly plan (calculat
 
 The following user segments are available for both, monthly and annual plans.
 
-<table data-header-hidden><thead><tr><th width="286.83723958333337"></th><th></th><th></th></tr></thead><tbody><tr><td><strong>User Segment</strong></td><td><strong>Minimum Total Users</strong></td><td><strong>Maximum Total Users</strong></td></tr><tr><td>RealmJoin Enterprise or Apps 1000 (M/Y) </td><td>1000</td><td>2499</td></tr><tr><td>RealmJoin Enterprise or Apps 2500 (M/Y) </td><td>2500</td><td>4999</td></tr><tr><td>RealmJoin Enterprise or Apps 5000 (M/Y) </td><td>5000</td><td>9999</td></tr><tr><td>RealmJoin Enterprise or Apps 10.000 (M/Y) </td><td>10000</td><td>unlimited</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="286.83723958333337"></th><th></th><th></th></tr></thead><tbody><tr><td><strong>User Segment</strong></td><td><strong>Minimum Total Users</strong></td><td><strong>Maximum Total Users</strong></td></tr><tr><td>RealmJoin Enterprise or Apps 1000 (M/Y)</td><td>1000</td><td>2499</td></tr><tr><td>RealmJoin Enterprise or Apps 2500 (M/Y)</td><td>2500</td><td>4999</td></tr><tr><td>RealmJoin Enterprise or Apps 5000 (M/Y)</td><td>5000</td><td>9999</td></tr><tr><td>RealmJoin Enterprise or Apps 10.000 (M/Y)</td><td>10000</td><td>unlimited</td></tr></tbody></table>
 
 ## Subscription Management
 
@@ -94,7 +94,7 @@ The Mid-term Upgrade option is **available until 15 days before** your subscript
 
 If you would like to upgrade your user count, you can do so any time during the current subscription cycle by navigating to the subscription's [self-management portal](cleverbridge.md#self-management-portal) leveraging the mid-term upgrade option.
 
-With the mid-term upgrade, additional users will be&#x20;
+With the mid-term upgrade, additional users will be
 
 * billed **Pro Rata Temporis**, and
 * **co-termed** with the existing users,
@@ -108,7 +108,7 @@ To perform a mid-term upgrade,
 
 <figure><img src="../../.gitbook/assets/2026-08-13 15_33_28-Greenshot.png" alt=""><figcaption></figcaption></figure>
 
-* Select the correct [user segment](cleverbridge.md#user-segments), and provide the new **total** number of users. The website will display the&#x20;
+* Select the correct [user segment](cleverbridge.md#user-segments), and provide the new **total** number of users. The website will display the
   * upgrade price (**Upgrade price today**), and
   * the next regular renewal price assuming the new total user count (**Renewal price on ...**)
 
@@ -125,7 +125,7 @@ both **including VAT**.
 #### Early Renewal Upgrade
 
 {% hint style="info" %}
-The Early Renewal Upgrade flow is **available from 15 days before** your subscription is set to renew.&#x20;
+The Early Renewal Upgrade flow is **available from 15 days before** your subscription is set to renew.
 {% endhint %}
 
 If you would like to upgrade your user count as part of the next regular renewal, you can do so by navigating to the subscription's [self-management portal](cleverbridge.md#self-management-portal) leveraging the early renewal upgrade flow.
@@ -177,13 +177,13 @@ In case you would like to test RealmJoin, please [request your onboarding via ou
 
 ## FAQs <a href="#faqs" id="faqs"></a>
 
-### How to request a quote for RealmJoin?&#xD; <a href="#how-to-request-a-quote-for-scepman-or-a-solution-bundle" id="how-to-request-a-quote-for-scepman-or-a-solution-bundle"></a>
+### How to request a quote for RealmJoin? <a href="#how-to-request-a-quote-for-scepman-or-a-solution-bundle" id="how-to-request-a-quote-for-scepman-or-a-solution-bundle"></a>
 
 {% hint style="info" %}
 Quotes are valid for 14 days.
 {% endhint %}
 
-To request a quote for RealmJoin,&#x20;
+To request a quote for RealmJoin,
 
 * Get in [contact with us](mailto:sales@realmjoin.com) and request a quote link.
 * Once we have sent the quote link to you,
@@ -209,7 +209,7 @@ To convert a quote into an order
 * Scroll down and locate the **Place order** button. Click it.
 * Choose your preferred payment method amongst the available **Payment Options**.
 * Click **Next**, review your data and confirm the purchase by clicking **Buy now**.
-* The <mark style="background-color:$warning;">SCEPman License Key</mark> _<mark style="background-color:$warning;">(wie muss das bei RealmJoin heißen?)</mark>_ will be generated instantaneously and sent to you via the delivery email.
+* This triggers us to configure your RealmJoin tenant. We will inform you via email with all relevant information on the next steps once the tenant is available for you. This won't take any longer than one business day.
 
 ### For what inquiries should I contact cleverbridge directly?
 
