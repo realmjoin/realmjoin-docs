@@ -57,8 +57,8 @@ RealmJoin receives no other permission in your subscription. No app registration
 
 ### Permissions of the account you sign in with
 
-* **Microsoft Entra ID:** permission to create service principals, for example *Application Administrator*, *Cloud Application Administrator* or *Global Administrator*. Only needed the first time, when the RealmJoin Azure Resources service principal does not exist yet.
-* **Azure subscription:** permission to deploy into the resource group **and** to create role assignments on it — for example *Owner*, or *Contributor* combined with *User Access Administrator* / *Role Based Access Control Administrator*.
+* **Microsoft Entra ID:** permission to create service principals, for example _Application Administrator_, _Cloud Application Administrator_ or _Global Administrator_. Only needed the first time, when the RealmJoin Azure Resources service principal does not exist yet.
+* **Azure subscription:** permission to deploy into the resource group **and** to create role assignments on it — for example _Owner_, or _Contributor_ combined with _User Access Administrator_ / _Role Based Access Control Administrator_.
 * Sign-in happens through `Connect-AzAccount`, which uses the **Azure PowerShell** first-party application. Tenants that restrict user consent may need to grant admin consent to that application first.
 
 {% hint style="warning" %}
@@ -110,7 +110,7 @@ Set-RJLogAnalyticsWorkspace -ResourceGroupName "rg-realmjoin" -SubscriptionId "<
 
 * `-ResourceGroupName` is required. If you leave it out, PowerShell prompts you for it.
 * `-SubscriptionId` is optional — without it, the subscription of your current Azure context is used, and you are asked to choose if several are available.
-* `-WorkspaceName` is optional. Pass it to use an **existing** workspace; otherwise a new one is created with a generated name.
+* `-WorkspaceName` is optional. Pass it to define the name of a new workspace or to use an **existing** workspace; otherwise a new one is created with a generated name.
 {% endstep %}
 
 {% step %}
@@ -200,7 +200,7 @@ Grant-RJUpdateComplianceWorkspaceAccess -WorkspaceId "<WorkspaceId>" 6>&1
 
 If the workspace lives in a different subscription than your current Azure context, add `-SubscriptionId "<SubscriptionId>"`.
 
-Creating this role assignment requires permission to manage access on the workspace, for example *Owner* or *User Access Administrator*.
+Creating this role assignment requires permission to manage access on the workspace, for example _Owner_ or _User Access Administrator_.
 {% endstep %}
 {% endstepper %}
 

@@ -58,8 +58,8 @@ The managed identity's **Entra ID directory roles** — Intune Administrator, Ex
 
 ### Permissions of the account you sign in with
 
-* **Microsoft Entra ID:** permission to create service principals **and to grant application permissions** — the setup assigns Graph, Exchange, Defender and SharePoint app roles to the managed identity. In practice this means *Global Administrator* or *Privileged Role Administrator*.
-* **Azure subscription:** permission to deploy into the resource group **and** to create role assignments on it — for example *Owner*, or *Contributor* combined with *User Access Administrator* / *Role Based Access Control Administrator*.
+* **Microsoft Entra ID:** permission to create service principals **and to grant application permissions** — the setup assigns Graph, Exchange, Defender and SharePoint app roles to the managed identity. In practice this means _Global Administrator_ or _Privileged Role Administrator_.
+* **Azure subscription:** permission to deploy into the resource group **and** to create role assignments on it — for example _Owner_, or _Contributor_ combined with _User Access Administrator_ / _Role Based Access Control Administrator_.
 * Sign-in happens through `Connect-AzAccount`, which uses the **Azure PowerShell** first-party application. Tenants that restrict user consent may need to grant admin consent to that application first.
 
 {% hint style="warning" %}
@@ -109,7 +109,7 @@ Set-RJAutomationAccount -ResourceGroupName "rg-realmjoin" -SubscriptionId "<Subs
 
 * `-ResourceGroupName` is required. If you leave it out, PowerShell prompts you for it.
 * `-SubscriptionId` is optional — without it, the subscription of your current Azure context is used, and you are asked to choose if several are available.
-* `-AutomationAccountName` is optional. Pass it to use an **existing** Automation Account; otherwise a new one is created with a generated name.
+* `-AutomationAccountName` is optional. Pass it to define the name of a new Automation Account or to use an **existing** Account; otherwise a new one is created with a generated name.
 
 {% hint style="warning" %}
 Pointing the command at an existing Automation Account also asserts the settings RealmJoin expects on it: a system-assigned managed identity, the Basic SKU and public network access. Check whether that matches your requirements before reusing an account.
