@@ -65,7 +65,7 @@ rjgit-org_collab_report-sharepoint-tenant-storage_scheduled
 | Property | Value |
 | --- | --- |
 | Version | 1.5.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>PnP.PowerShell (>= 3.4.1) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.41.2)<br>PnP.PowerShell (>= 3.4.1) |
 | Schedulable | yes |
 
 ## Permissions

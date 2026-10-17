@@ -241,7 +241,7 @@ Each category contains multiple runbooks that are further divided into subcatego
 ### Collab
 | Runbook Name | Synopsis |
 | --- | --- |
-| [Pre Provision Onedrive](user/collab/pre-provision-onedrive.md) | Pre-provision the OneDrive of a user |
+| [Pre Provision Onedrive](user/collab/pre-provision-onedrive.md) | Request the OneDrive of this user before the first sign-in |
 
 <a name='user-general'></a>
 ### General

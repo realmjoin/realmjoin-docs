@@ -77,7 +77,7 @@ rjgit-device_security_enable-or-disable-lost-mode
 | Property | Value |
 | --- | --- |
 | Version | 1.0.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.41.2) |
 | Schedulable | no |
 
 ## Permissions

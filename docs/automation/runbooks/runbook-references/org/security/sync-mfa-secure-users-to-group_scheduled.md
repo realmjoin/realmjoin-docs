@@ -183,7 +183,7 @@ rjgit-org_security_sync-MFA-secure-users-to-group_scheduled
 | Property | Value |
 | --- | --- |
 | Version | 1.5.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.39.0)<br>Az.Accounts (>= 5.5.2) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.41.2)<br>Az.Accounts (>= 5.5.2) |
 | Schedulable | yes |
 
 ## Permissions

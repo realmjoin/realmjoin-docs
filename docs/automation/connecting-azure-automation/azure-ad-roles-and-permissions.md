@@ -21,7 +21,7 @@ The shared runbooks available on [GitHub](https://github.com/realmjoin/realmjoin
 | `Az.ManagementPartner` | 0.8.0 |
 | `Az.Storage` | 9.7.2 |
 | `ExchangeOnlineManagement` | 3.9.2 |
-| `Microsoft.Graph.Authentication` | 2.39.0 |
+| `Microsoft.Graph.Authentication` | 2.41.2 |
 | `MicrosoftTeams` | 7.9.0 |
 | `PnP.PowerShell` | 3.4.1 |
 | `RealmJoin.RunbookHelper` | 0.8.9 |
