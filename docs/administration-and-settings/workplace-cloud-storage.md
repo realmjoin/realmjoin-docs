@@ -133,6 +133,14 @@ Do **not upload sensitive files** as they become reachable via public URLs.
 
 <figure><img src="../.gitbook/assets/image (302).png" alt=""><figcaption></figcaption></figure>
 
+### File Size
+
+RealmJoin does not enforce a fixed maximum size for individual uploads. However, files uploaded via RealmJoin Portal are transferred through your browser session and processed in a single step, so this upload is intended for small files such as background images, configuration files or public certificates. The limits of Azure Blob Storage itself are far beyond this and do not apply in practice.
+
+{% hint style="info" %}
+For large files (e.g. several hundred MB), upload them directly to the corresponding container of your storage account, for example via the Azure Portal or Azure Storage Explorer. RealmJoin lists all files of the container, so these files are displayed in RealmJoin with their public URLs as well.
+{% endhint %}
+
 ## Outlook Signatures
 
 This feature allows you to add templates for Outlook signatures. In conjunction with a RealmJoin software package (Windows only) the desired template is downloaded to your managed clients and added to Outlook Desktop. In addition, you can add variables in the template that are replaced with user properties (like name, email, job title or phone number).
