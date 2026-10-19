@@ -40,7 +40,6 @@ For packages deployed via the RealmJoin Agent, you can also overwrite the packag
 <figure><img src="../../.gitbook/assets/edit-short-description.png" alt="Edit short description dialog"><figcaption><p>Editing the short description of an existing package</p></figcaption></figure>
 
 * Use the edit button next to **Description** to open the editor. The package's own description is shown below the text field for reference.
-
 * A custom description can be up to 1000 characters long.
 * While a custom description is set, the package shows a **Customized** badge next to **Description**, and the App Catalog shows your text instead of the package's description.
 * Use **Reset to package default** (or save an empty text) to go back to the package's description. Saving the unchanged package description does not create a custom description, so the package keeps following future description changes of the package.
