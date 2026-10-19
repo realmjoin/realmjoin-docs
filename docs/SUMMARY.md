@@ -290,6 +290,7 @@
 ## RealmJoin Agent
 
 * [Deploying the Agent](realmjoin-agent/installation.md)
+* [Uninstalling and Reinstalling the Agent](realmjoin-agent/uninstall-and-reinstall.md)
 * [Recommended Packages](realmjoin-agent/recommended-packages.md)
 * [Features](realmjoin-agent/realmjoin-client/README.md)
   * [Local Admin Password Solution (LAPS)](realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/README.md)
