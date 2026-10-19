@@ -76,6 +76,7 @@ The landing page for device details. It provides:
 The App Catalog serves as a modern, web-based replacement for the legacy RealmJoin tray menu.
 
 * **Visual Interface:** A clean, grid-based layout of all software packages assigned as available to the user/device.
+* **Descriptions:** Each package shows its short description. Admins can replace the description shipped with the package with a custom, user-friendly text per tenant, see [Package Details](../../application-management/packages/package-details.md#short-description).
 * **User Actions:**
   * **Install:** Initiate a new software installation.
   * **Update:** Upgrade an existing application to the latest available version.

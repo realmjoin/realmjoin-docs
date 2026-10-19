@@ -70,6 +70,12 @@ The total of categories can be managed from the _App Categories_ tab in the gene
 
 <figure><img src="../../../.gitbook/assets/image (388).png" alt=""><figcaption><p>All categories available in the tenant</p></figcaption></figure>
 
+## Short Description
+
+When subscribing to a package for RealmJoin deployment, you can also adjust its **Short description**. This is the description users see in the [App Catalog](../../../realmjoin-agent/client-menu/self-service-portal.md#app-catalog-tab). The field is prefilled with the package's description; replace it with a text that tells your users what the package is for (up to 1000 characters).
+
+Only a changed text is stored as a custom description. If you leave the field unchanged or clear it, the package keeps using its own description. You can change or reset the short description later on the [package details page](../package-details.md#short-description).
+
 ## Multiple package subscriptions
 
 ### Craft Packages (Suffix Configuration or #-Notation)

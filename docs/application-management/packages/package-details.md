@@ -31,6 +31,18 @@ Every package detail page will show an overview of the core properties like the 
 
 You can use the edit button next to the package's name to give a package a custom display name relevant to your users. For packages hosted in Intune, this will also rename the package's display name in Intune. This will not break the relationship with the [package store entry](package-store/package-store-details.md) for packages sourced from the [package store](package-store/).
 
+#### Short Description
+
+For packages deployed via the RealmJoin Agent, you can also overwrite the package's **Short Description**, which is the text users see for the package in the [App Catalog](../../realmjoin-agent/client-menu/self-service-portal.md#app-catalog-tab). The description shipped with the package is written from a packaging perspective and often explains its technical background. A custom description lets you tell users what the package means for them, e.g. _"Connects the printer on the 2nd floor of office building 5"_ for a printer mapping package.
+
+* Use the edit button next to **Description** to open the editor. The package's own description is shown below the text field for reference.
+* A custom description can be up to 1000 characters long.
+* While a custom description is set, the package shows a **Customized** badge next to **Description**, and the App Catalog shows your text instead of the package's description.
+* Use **Reset to package default** (or save an empty text) to go back to the package's description. Saving the unchanged package description does not create a custom description, so the package keeps following future description changes of the package.
+* The custom description applies to your tenant only and is kept when a managed package is updated to a new version. The package's long description is not affected.
+
+Editing the short description requires the `CanEditAppDisplayName` [permission](../../administration-and-settings/permission/custom-roles/available-permissions.md).
+
 ![Package Name and Status](<../../.gitbook/assets/image (131).png>)
 
 ### Status Fields
