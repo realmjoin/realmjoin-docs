@@ -31,6 +31,12 @@ We strongly recommend deploying the **Reset or Clear BranchCache** Remediation S
 By using this method the above mentioned BranchCache issues will proactively be detected and automatically remediated (if possible).
 {% endhint %}
 
+## Chocolatey temp folder growing
+
+Installer files for Chocolatey packages are downloaded to `C:\Windows\Temp\chocolatey\<package-id>\<version>\` and are not removed after the installation. This applies to both the classic Chocolatey engine and the [Native Choco Runtime](../../../realmjoin-agent/realmjoin-client/native-choco-runtime.md). Over time, the folder can take up a considerable amount of disk space.
+
+If you want this folder cleaned up automatically, deploy the **Chocolatey temp folder clean-up** Remediation Script from the [Remediation Scripts](../../../automation/remediation-scripts.md) section of the RealmJoin Portal. It removes package version folders older than 7 days.
+
 ## Missing / wrong Package arguments <a href="#user-content-missing-wrong-package-arguments" id="user-content-missing-wrong-package-arguments"></a>
 
 1. Check the `chocolatey.log` file for the value(s) of `packageParameters` in the section `RJAppDeployToolkit: Resulting Variables`
