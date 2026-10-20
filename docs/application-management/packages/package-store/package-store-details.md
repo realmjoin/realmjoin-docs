@@ -68,7 +68,7 @@ Click **Submit** to start the subscription. The page shows the progress until th
 
 ### App categories
 
-The available categories are managed in the [App Categories](../../../administration-and-settings/settings.md#app-categories) tab of the portal settings. The same list is used for the RealmJoin group name and the Intune categories.
+The available categories are managed under **Settings** > **App Categories** (see [App Categories](../../../administration-and-settings/app-categories.md)). The same list is used for the RealmJoin group name and the Intune categories.
 
 <figure><img src="../../../.gitbook/assets/image (388).png" alt=""><figcaption><p>All categories available in the tenant</p></figcaption></figure>
 
