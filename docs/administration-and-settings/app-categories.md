@@ -7,21 +7,25 @@ description: >-
 
 # App Categories
 
-App categories group your packages so users can find them more easily. RealmJoin Portal keeps one list of categories per tenant and uses it for both deployment methods:
+App categories determine under which heading end users see a package. RealmJoin Portal keeps one category list per tenant and uses it for both deployment methods:
 
 * **RealmJoin deployment:** the category is the package's **Group name**. Users see the package under this group in the [RealmJoin Tray](../realmjoin-agent/client-menu/realmjoin-tray.md) menu. Each package has exactly one group name; packages without one appear under **Other**.
-* **Intune deployment:** the categories are the Intune app categories of the app. Users can sort and filter by them in the Company Portal. An Intune app can have several categories.
+* **Intune deployment:** the categories are Intune app categories (`mobileAppCategory` in Microsoft Graph) assigned to the app. The Company Portal uses them to filter apps. An Intune app can have several categories.
 
 You manage the list under **Settings** > **App Categories**.
 
 ## Where the list comes from
 
-The list shows the categories stored for your tenant together with all app categories that exist in Intune, so a category created directly in Intune appears here as well.
+The list is the union of the categories stored for the tenant in RealmJoin and all app categories in the tenant's Intune, compared case-insensitively. A category created directly in Intune therefore appears here as well.
 
-When the list is opened for the first time and is still empty, RealmJoin Portal fills it from the group names of your existing RealmJoin packages, the Package Store categories and the app categories in Intune.
+If no categories are stored for the tenant yet, RealmJoin Portal fills the list the first time it is loaded, from:
+
+* the group names of the tenant's RealmJoin packages,
+* the Package Store categories (only if the tenant already has RealmJoin packages),
+* the app categories in Intune.
 
 {% hint style="info" %}
-Reading and changing Intune app categories requires the Graph permission `DeviceManagementApps.ReadWrite.All`. Without it, the list contains only the categories stored in RealmJoin.
+Intune app categories are read and written with the Graph permission `DeviceManagementApps.ReadWrite.All`. Without it, the list contains only the categories stored in RealmJoin and deleting a category fails. Renaming needs the permission when Intune deployment is enabled for the tenant.
 {% endhint %}
 
 ## Add a category
@@ -40,31 +44,33 @@ Select **New Category**, enter a name (up to 127 characters) and select **Submit
 {% endstep %}
 {% endstepper %}
 
-Names are not case-sensitive: you cannot add a category that only differs in upper and lower case from an existing one.
+Names are compared case-insensitively: you cannot add a category that differs from an existing one only in upper and lower case.
 
-A new category is first added to the RealmJoin list only. RealmJoin creates the matching Intune app category the first time you assign the category to an Intune app.
+A new category is stored in RealmJoin only. The matching Intune app category is created the first time the category is assigned to an Intune app.
 
 ## Rename a category
 
-Select **Rename** next to the category, enter the new name and select **Submit**. The new name is applied everywhere the category is used:
+Select **Rename** next to the category, enter the new name and select **Submit**. RealmJoin Portal changes the name in this order:
 
-* the group name of every RealmJoin package that uses it,
-* the matching Intune app category, so all Intune apps that use it follow automatically,
-* the category list in RealmJoin Portal.
+1. The matching Intune app category, if Intune deployment is enabled for the tenant. Intune apps reference the category by ID, so their category assignments stay intact.
+2. The group name of every RealmJoin package that uses the category.
+3. The category list stored in RealmJoin.
 
-The rename is refused if a category with the new name already exists, or if the category is one of the built-in Intune categories. Every rename is recorded in the [Audit Log](../monitoring-and-logs/audit-log.md).
+The three stores are not updated in one transaction. If a step fails, the old name stays in the list; renaming it again completes the remaining steps.
+
+The rename is refused if a category with the new name already exists, or if the category is a built-in Intune category (one of the defaults Intune creates, which cannot be changed). Every rename is written to the [Audit Log](../monitoring-and-logs/audit-log.md) together with the number of RealmJoin packages changed.
 
 ## Delete a category
 
-Select **Delete** next to the category and confirm with **Confirm Delete**. The category is removed from RealmJoin Portal and from Intune.
+Select **Delete** next to the category and confirm with **Confirm Delete**. The category is removed from the list stored in RealmJoin and, if it exists there, from Intune.
 
 A category can only be deleted while no package uses it. The deletion is refused if
 
 * a RealmJoin package uses the category as its group name, or
 * an Intune app has the category assigned, or
-* the category is one of the built-in Intune categories.
+* the category is a built-in Intune category.
 
-If a package still uses the category, the message names it. To delete the category anyway, first assign a different category to these packages, or [rename](#rename-a-category) the category instead.
+If a package still uses the category, the message names the first package found. Assign a different category to all packages that use it before deleting it, or [rename](#rename-a-category) the category instead.
 
 ## Assign categories to packages
 
@@ -80,7 +86,7 @@ When you subscribe to a package from the [Package Store](../application-manageme
 Open the [package details](../application-management/packages/package-details.md) and select **Expert settings**:
 
 * **RealmJoin package:** choose the **Group name**. See [Expert Settings](../application-management/packages/package-settings.md#expert-settings) for the other settings in this dialog.
-* **Intune app:** add or remove **Categories**. If a selected category does not exist in Intune yet, RealmJoin creates it when you save.
+* **Intune app:** add or remove **Categories**. A selected category that does not exist in Intune yet is created there when you save.
 
 ## Permissions
 
