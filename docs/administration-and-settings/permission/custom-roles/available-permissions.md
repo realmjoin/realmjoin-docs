@@ -133,7 +133,7 @@ Actions and operations on devices from [Device Details](../../../ugd-management/
 | `CanReadDeviceTable`                           | —        | See the list of all [Entra ID devices](../../../ugd-management/user-list/).                                                           |
 | `CanReadDeviceDetails`                         | —        | Inspect an individual [device's details](../../../ugd-management/user-list/device-details.md).                                        |
 | `CanSyncDevice`                                | —        | Trigger an Intune sync for a managed Windows device.                                                                                  |
-| `CanScanDevice`                                | —        | Trigger a Defender for Endpoint scan for a Windows device.                                                                            |
+| `CanScanDevice`                                | —        | Trigger a Microsoft Defender Antivirus quick scan via Intune for an Intune-managed Windows device.                                     |
 | `CanRequestDeviceLogs`                         | —        | Trigger collection of "Extended Logs" for a device via RealmJoin Client.                                                              |
 | `CanChangeRealmJoinPrimaryUser`                | —        | Assign a different primary user in RealmJoin.                                                                                         |
 | `CanRotateIntuneManagedDeviceLocalCredentials` | —        | Rotate the Intune-managed local administrator (Windows LAPS) credentials of a device.                                                 |
@@ -172,10 +172,10 @@ Individual information panels/tabs shown on [Device Details](../../../ugd-manage
 | ----------------------------------------- | -------- | --------------------------------------------------------------------- |
 | `CanSeeDeviceSecurityInformation`         | —        | See a device's security state, especially device compliance.          |
 | `CanSeeDeviceCompliancePolicies`          | —        | See the detailed device compliance policies and their evaluation on the Compliance tab of a device's details. |
-| `CanSeeDeviceExtendedSecurityInformation` | —        | See extended security info from Defender for Endpoint (if available). |
-| `CanSeeDeviceSecurityRecommendations`     | —        | See Microsoft Security Center recommendations for a device.           |
-| `CanSeeDeviceSecurityVulnerabilities`     | —        | See Microsoft Security Center vulnerabilities for a device.           |
-| `CanSeeDeviceSecurityAlerts`              | —        | See security alerts for a device.                                     |
+| `CanSeeDeviceExtendedSecurityInformation` | —        | See a device's [Defender for Endpoint](../../../ugd-management/defender-integration.md) security information (onboarding, health, exposure level, risk score). |
+| `CanSeeDeviceSecurityRecommendations`     | —        | See [Defender for Endpoint](../../../ugd-management/defender-integration.md) security recommendations for a device. |
+| `CanSeeDeviceSecurityVulnerabilities`     | —        | See [Defender for Endpoint](../../../ugd-management/defender-integration.md) vulnerabilities for a device. |
+| `CanSeeDeviceSecurityAlerts`              | —        | See [Defender for Endpoint](../../../ugd-management/defender-integration.md) security alerts for a device. |
 | `CanSeeBitLockerKeys`                     | —        | View a device's BitLocker recovery keys.                              |
 | `CanSeeRecoveryKeys`                      | —        | View a device's disk-encryption recovery keys (BitLocker/FileVault).  |
 
