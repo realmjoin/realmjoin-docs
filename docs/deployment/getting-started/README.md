@@ -105,7 +105,7 @@ Open the **Package Store**, subscribe to an application, choose the deployment m
 {% step %}
 #### Explore your users, groups and devices
 
-RealmJoin correlates Entra ID, Intune, Autopilot, Defender and sign-in data into one view per object. Look up a user or device you know and find your way around the portal.
+The user, group and device pages combine Entra ID, Intune, Autopilot, Defender and sign-in data for each object. Open a known user or device to check that the data from your tenant arrives.
 
 {% content-ref url="../../introduction/navigation.md" %}
 [navigation.md](../../introduction/navigation.md)

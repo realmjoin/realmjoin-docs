@@ -94,9 +94,9 @@ This also enables integrations such as Windows Update for Business reporting.
 {% step %}
 #### Connect Azure Automation
 
-Connect Azure Automation to enable runbooks and remediation scripts.
+Connect an Azure Automation Account to run RealmJoin runbooks. The runbooks execute in your Automation Account under its managed identity, which holds the Graph and Entra ID permissions they need. The RealmJoin PowerShell module creates the account; the RealmJoin Portal generates the command in **Settings → Runbooks**.
 
-These features automate recurring administrative tasks, reduce manual effort, and improve traceability.
+Remediation scripts do not need Azure Automation: they are Intune remediations and are covered by the portal permissions.
 
 {% content-ref url="../../automation/connecting-azure-automation/" %}
 [connecting-azure-automation](../../automation/connecting-azure-automation/)
@@ -106,7 +106,7 @@ These features automate recurring administrative tasks, reduce manual effort, an
 {% step %}
 #### Set up the RealmJoin Agent
 
-Install the RealmJoin Agent on Windows devices to unlock agent-based features such as application lifecycle management, RealmJoin ESP, LAPS, notifications, AnyDesk integration, audit tasks, and compliance checks. The RealmJoin Client app has to be activated first (see above).
+Install the RealmJoin Agent on Windows devices to use the agent-based features: application lifecycle management, RealmJoin ESP, LAPS, notifications, AnyDesk integration, audit tasks, and compliance checks. The RealmJoin Client app has to be activated first (see above).
 
 Deploy the agent through Intune from the Package Store and add it to your Enrollment Status Page. The agent's behaviour is configured centrally with RealmJoin policies in the user and group settings.
 
@@ -145,7 +145,7 @@ If you do not need these add-ons, continue to the next step.
 {% step %}
 #### Deploy Packages
 
-RealmJoin Portal provides and maintains a large library of ready-to-use packages for Windows and macOS.
+The Package Store contains packages for Windows and macOS that RealmJoin builds and updates.
 
 When deploying packages, first decide whether the application should be delivered through **Microsoft Intune** or through the **RealmJoin Agent**. This depends on your deployment model and whether you want to use agent-based features.
 
@@ -175,7 +175,7 @@ A typical rollout is: import package → configure assignments → test with pil
 {% step %}
 #### Configure optional platform features
 
-After the core setup is complete, you can enable additional features for daily operations.
+The following features are independent of each other. Set up the ones you need.
 
 **Workplace Cloud Storage** connects an Azure Storage Account to the RealmJoin Portal. Once connected, administrators can:
 
@@ -187,13 +187,13 @@ After the core setup is complete, you can enable additional features for daily o
 [workplace-cloud-storage.md](../../administration-and-settings/workplace-cloud-storage.md)
 {% endcontent-ref %}
 
-**Self Service Forms** are a convenient way to collect structured data from users. This can be used to let users report incidents or indicate changes, like the need for a new workplace setup in an office.
+**Self Service Forms** collect structured input from users, for example incident reports or requests for a new workplace setup.
 
 {% content-ref url="../../administration-and-settings/self-service-forms.md" %}
 [self-service-forms.md](../../administration-and-settings/self-service-forms.md)
 {% endcontent-ref %}
 
-**Group namespaces** assist the RealmJoin Portal in sorting groups into different categories based off a specified prefix. The RealmJoin Portal includes default group namespaces, however additional namespaces may be added.
+**Group namespaces** sort groups into categories by name prefix. RealmJoin ships default namespaces; you can add your own.
 
 {% content-ref url="../../administration-and-settings/groups.md" %}
 [groups.md](../../administration-and-settings/groups.md)
