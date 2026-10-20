@@ -77,4 +77,4 @@ For RealmJoin, BranchCache is **enabled by default** on CDN and client side.
 3. The client uses the content information for **peer discovery**: it sends a multicast query ("Does anyone have content ID XYZ?"), and any peer holding the requested segment responds directly via unicast.
 4. The content is transferred from peers as chunks. If the requested software is available on several devices, the load is balanced between them.
 
-For more details see Microsoft Learn: [BranchCache](https://learn.microsoft.com/en-us/windows-server/networking/branchcache/branchcache)
+For what RealmJoin's BranchCache stack does on the device (prefetching, hash verification, transfer statistics), see [BranchCache](../../realmjoin-agent/realmjoin-client/branchcache.md). For more details see Microsoft Learn: [BranchCache](https://learn.microsoft.com/en-us/windows-server/networking/branchcache/branchcache)
