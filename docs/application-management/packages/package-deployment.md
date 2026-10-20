@@ -18,7 +18,7 @@ Packages subscribed as managed come with RealmJoin-managed Entra ID groups, one 
 
 <figure><img src="../../.gitbook/assets/image (345).png" alt=""><figcaption><p>Managed groups of a package</p></figcaption></figure>
 
-By default the groups are named `app - <platform> - <app name>` for Main, with a suffix such as `(preview)`, `(available)`, `(uninstall)` or `(update)` for the other types. The naming scheme can be changed in the [group naming settings](../../administration-and-settings/general.md#group-naming-scheme).
+By default the groups are named `app - <platform> - <app name>` (e.g. `app - Win - Igor Pavlov 7-Zip`) for Main, with a suffix such as `(preview)`, `(available)`, `(uninstall)` or `(update)` for the other types. The naming scheme can be changed in the [group naming settings](../../administration-and-settings/general.md#group-naming-scheme).
 
 {% hint style="info" %}
 We recommend managed subscriptions. Only managed packages support the Preview stage and [update automation](package-updates.md#automation).

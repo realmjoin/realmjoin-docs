@@ -47,8 +47,12 @@ You can use the following variables:
 * **$vendor** - Name of the software vendor (if available)
 * **$product** - Name of the software title
 * **$appName** - Full name (vendor and product) of the software
+* **$version** - Version of the package
+* **$platform** - Platform of the package: `Win`, `macOS` or `Android`
 * **$modifier** - either nothing, "available", "preview", "uninstall" or "update"
 * **$groupName** - (only in description) Name of the Managed Group
+
+If no template is set, RealmJoin uses `app - $platform - $appName ($modifier)`. Empty brackets are removed, so the Main group has no suffix.
 
 ### Remediation Scripts
 
