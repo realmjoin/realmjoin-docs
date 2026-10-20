@@ -15,7 +15,7 @@ Tenants that connected Azure Automation before the PowerShell-based onboarding u
 Newly onboarded tenants no longer do this: RealmJoin uses its own **multi-tenant application**, which is granted Contributor on your Automation Account and nothing else. You can switch an existing configuration over with the [RealmJoin PowerShell module](../../deployment/onboarding-realmjoin-portal/advanced-setup.md).
 
 {% hint style="info" %}
-There is no deadline here. Unlike the [Log Analytics migration](../../monitoring-and-logs/log-ingestion-api-migration.md), nothing is being retired by Microsoft — the legacy path keeps working. Switch when it suits you.
+Switching to the managed app is recommended. The legacy configuration currently remains supported; this may change in the future, and affected customers will be informed separately.
 {% endhint %}
 
 ### Why switch
@@ -23,7 +23,7 @@ There is no deadline here. Unlike the [Log Analytics migration](../../monitoring
 * **No client secret to rotate.** The per-tenant secret expires and has to be renewed; when it does expire, runbook sync and runbook execution stop until someone notices. The managed app has no secret on your side.
 * **No app registration to maintain** in your tenant.
 * **Narrower scope.** The legacy service principal was typically given Contributor on the whole resource group. The managed app is granted Contributor on the Automation Account only.
-* Your Automation Account, its managed identity, its permissions and your runbooks all stay exactly as they are.
+* The Automation Account (name and resource group), its system-assigned managed identity with its object ID, the Entra ID roles and app permissions assigned to that identity, and the imported runbooks are kept.
 
 ## What the switch changes
 
@@ -57,6 +57,8 @@ The same as for a new setup — see [Prerequisites](./#prerequisites) on the onb
 In the RealmJoin Portal, go to **Settings → Runbooks** ([https://portal.realmjoin.com/settings/runbooks-configuration](https://portal.realmjoin.com/settings/runbooks-configuration)).
 
 The page shows the notice **"Switch to the RealmJoin managed app"** together with a ready-to-copy command block. Use the **Copy** button to copy it.
+
+<figure><img src="../../.gitbook/assets/managed-app-migration-notice.png" alt="Settings → Runbooks with the notice &#x22;Switch to the RealmJoin managed app&#x22; and the pre-filled Set-RJAutomationAccount command"><figcaption><p>Migration notice and command in Settings → Runbooks</p></figcaption></figure>
 
 The command is pre-filled with your current resource group, Automation Account name and subscription:
 
@@ -92,6 +94,8 @@ You will be prompted to sign in with `Connect-AzAccount`. The deployment then re
 Return to **Settings → Runbooks** and select **Refresh**.
 
 The migration notice is gone, and the page now shows **Runbook sync settings** with the branch and the Hybrid Runbook Worker options, plus a read-only **Azure connection** section. Client ID and client secret are no longer part of the configuration.
+
+<figure><img src="../../.gitbook/assets/managed-app-migration-verified.png" alt="Settings → Runbooks after the switch, with Runbook sync settings and the read-only Azure connection section"><figcaption><p>Runbook configuration after the switch</p></figcaption></figure>
 
 Check that the branch is the one you want, then run a runbook to confirm that execution still works.
 {% endstep %}
