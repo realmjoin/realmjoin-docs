@@ -64,7 +64,7 @@ A few permissions are marked **Reserved**. They can be selected in the editor bu
 | `CanSubscribeApp`                                                                                          | `CanReadPackageStoreDetails`  | Subscribe to an offering from the [Package Store](../../../application-management/packages/package-store/).                                                                                                                                                                             |
 | `CanDeleteApp`                                                                                             | Package details access        | Delete an app from [Package Management](../../../application-management/packages/package-management.md). Does not remove it from the store or uninstall existing deployments.                                                                                                           |
 | `CanSeeSoftwareSecurityVulnerabilities`                                                                    | —                             | See known security vulnerabilities for software.                                                                                                                                                                                                                                        |
-| `CanSeeIntuneAppJson`, `CanSeeIntuneAppStoreJson`, `CanSeeRealmJoinAppJson`, `CanSeeRealmJoinAppStoreJson` | —                             | See diagnostic JSON for a package in [Package Store](../../../application-management/packages/package-store/) or [Package Management](../../../application-management/packages/package-management.md). Only shown when _Show advanced info_ is enabled in [Settings](../../general.md). |
+| `CanSeeIntuneAppJson`, `CanSeeIntuneAppStoreJson`, `CanSeeRealmJoinAppJson`, `CanSeeRealmJoinAppStoreJson` | —                             | See diagnostic JSON for a package in [Package Store](../../../application-management/packages/package-store/) or [Package Management](../../../application-management/packages/package-management.md). Only shown when _Show advanced info_ is enabled in [Settings](../../general.md#show-advanced-info). |
 
 ## Package Store
 
@@ -105,7 +105,7 @@ A few permissions are marked **Reserved**. They can be selected in the editor bu
 | `CanChangeRealmJoinUserSettings`                   | `CanSeeRealmJoinUserSettings` | Add, modify or delete the RealmJoin Client settings assigned to a user.                                               |
 | `CanReadUserSettingTable`                          | —                             | See the list of [user settings](../../../ugd-management/user-and-group-settings/) across all users.                   |
 | `CanReadUserSettingDetails`                        | —                             | **Reserved** — registered but not currently surfaced in the Portal.                                                   |
-| `CanSeeUserJsonAzureAD`, `CanSeeUserJsonRealmJoin` | `CanReadUserDetails`          | See diagnostic JSON tabs for a user. Only shown when _Show advanced info_ is enabled in [Settings](../../general.md). |
+| `CanSeeUserJsonAzureAD`, `CanSeeUserJsonRealmJoin` | `CanReadUserDetails`          | See diagnostic JSON tabs for a user. Only shown when _Show advanced info_ is enabled in [Settings](../../general.md#show-advanced-info). |
 | `CanSeeUserSignIns`                                | `CanReadUserDetails`          | See Microsoft Entra sign-in information for a user.                                                                   |
 
 ## Group Management
@@ -121,7 +121,7 @@ A few permissions are marked **Reserved**. They can be selected in the editor bu
 | `CanChangeRealmJoinGroupSettings`                    | `CanSeeRealmJoinGroupSettings` | Add, modify or delete the RealmJoin Client settings assigned to a group.                                          |
 | `CanReadGroupSettingTable`                           | —                              | See the list of [group settings](../../../ugd-management/user-and-group-settings/) across all groups.             |
 | `CanReadGroupSettingDetails`                         | —                              | **Reserved** — registered but not currently surfaced in the Portal.                                               |
-| `CanSeeGroupJsonAzureAD`, `CanSeeGroupJsonRealmJoin` | `CanReadGroupDetails`          | See diagnostic JSON for a group. Only shown when _Show advanced info_ is enabled in [Settings](../../general.md). |
+| `CanSeeGroupJsonAzureAD`, `CanSeeGroupJsonRealmJoin` | `CanReadGroupDetails`          | See diagnostic JSON for a group. Only shown when _Show advanced info_ is enabled in [Settings](../../general.md#show-advanced-info). |
 | `CanSeeOwnGroups`                                    | —                              | Allow a (non-external) user to see the groups and teams they are a member of.                                     |
 
 ## Device Management
@@ -164,7 +164,7 @@ Individual information panels/tabs shown on [Device Details](../../../ugd-manage
 | `CanSeeDeviceExternalLinks`                                                                                                          | —        | See links to Intune, Microsoft Entra, etc. for a device.                                                                                  |
 | `CanSeeUserAppCatalog`                                                                                                               | —        | See the App Catalog tab for a Windows device.                                                                                             |
 | `CanEndUserSeeDeviceStorageInformation`                                                                                              | —        | Allow an end user to see storage information for their own device.                                                                        |
-| `CanSeeDeviceJsonAtp`, `CanSeeDeviceJsonAutopilot`, `CanSeeDeviceJsonAzureAD`, `CanSeeDeviceJsonIntune`, `CanSeeDeviceJsonRealmJoin` | —        | See diagnostic JSON tabs for a device. Only shown when _Show advanced info_ is enabled in [Settings](../../general.md).                   |
+| `CanSeeDeviceJsonAtp`, `CanSeeDeviceJsonAutopilot`, `CanSeeDeviceJsonAzureAD`, `CanSeeDeviceJsonIntune`, `CanSeeDeviceJsonRealmJoin` | —        | See diagnostic JSON tabs for a device. Only shown when _Show advanced info_ is enabled in [Settings](../../general.md#show-advanced-info).                   |
 
 ## Device Security
 
@@ -184,7 +184,7 @@ Individual information panels/tabs shown on [Device Details](../../../ugd-manage
 | Permission                      | Requires | Description                                                                                                        |
 | ------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
 | `CanReadOrganizationDetails`    | —        | See the [Organization details](../../../ugd-management/organization-details.md).                                   |
-| `CanSeeOrganizationJsonAzureAD` | —        | See organization diagnostic JSON. Only shown when _Show advanced info_ is enabled in [Settings](../../general.md). |
+| `CanSeeOrganizationJsonAzureAD` | —        | See organization diagnostic JSON. Only shown when _Show advanced info_ is enabled in [Settings](../../general.md#show-advanced-info). |
 
 ## Self Service Forms
 

@@ -1,8 +1,8 @@
 ---
 type: RealmJoin Settings
 description: >-
-  General RealmJoin settings, including runbook sync from the public repository
-  and package automation defaults.
+  General RealmJoin settings, including runbook sync, portal UI options such as
+  the tenant banner logo, package automation defaults and update notifications.
 ---
 
 # General
@@ -14,6 +14,41 @@ If you configure [Process Automation / Runbooks](../automation/runbooks/) in you
 ![](<../.gitbook/assets/image (84).png>)
 
 This will make sure, you have the current state of our runbooks, incl. bugfixes and new functionality. If needed, this will also install needed PowerShell modules in your Azure Automation Account.
+
+## UI Config
+
+The _UI Config_ card changes how RealmJoin Portal looks and behaves for all users of your tenant.
+
+### Show advanced info
+
+When enabled, RealmJoin Portal shows additional technical information to users with the **Admin**, **Auditor** or **Advanced Supporter** role (and to Entra ID Global Administrators). This adds diagnostic views to the detail pages, for example:
+
+* the raw Entra ID, Intune, Autopilot, Defender and RealmJoin data of a device,
+* the raw Entra ID and RealmJoin data and the sign-in data of a user,
+* the raw data of groups, packages and your organization.
+
+The setting is off by default. The views are controlled by the `CanSee...Json` permissions and `CanSeeUserSignIns`, see [Available Permissions](permission/custom-roles/available-permissions.md).
+
+### Tenant banner logo
+
+RealmJoin Portal can show your company logo in the toolbar at the top of every page and on the [Organization Details](../ugd-management/organization-details.md) page. Choose where the logo appears:
+
+| Option                       | Toolbar | Organization page |
+| ---------------------------- | ------- | ----------------- |
+| Toolbar + Organization page  | ✓       | ✓                 |
+| Toolbar only                 | ✓       | –                 |
+| Organization page only       | –       | ✓                 |
+| Toolbar only, white backdrop | ✓       | –                 |
+| Both, white backdrop         | ✓       | ✓                 |
+| No banner                    | –       | –                 |
+
+_Toolbar + Organization page_ is the default. The toolbar has a dark background, so the two _white backdrop_ options put the logo on a white area in the toolbar. Use them if your logo is hard to read on a dark background. The white backdrop only applies to the toolbar.
+
+The logo is the **Banner logo** from your tenant's [Entra ID company branding](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-customize-branding) (default sign-in experience). RealmJoin does not store a logo of its own. To change the logo, upload a new banner logo in the Entra admin center under **Company branding**.
+
+{% hint style="info" %}
+If no banner logo is configured in your Entra ID company branding, no logo is shown and the previews on the card show a placeholder. RealmJoin Portal caches the logo for up to one hour, so a new banner logo can take that long to appear.
+{% endhint %}
 
 ## Package Automation Defaults
 
@@ -61,6 +96,25 @@ You can use the following variables:
 * **$healthScriptName** - Name of the Managed Remediation Script
 * **$modifier** - either "included" or "excluded" (Assignment vs. Exception)
 * **$groupName** - (only in description) Name of the Managed Group
+
+## Additional Update Notifications
+
+RealmJoin sends notification emails about packages sourced from the [Package Store](../application-management/packages/package-store/) when
+
+* a new version of the package is available in the Package Store,
+* a new version is ready to be deployed manually, or
+* an automatic deployment of a new version is planned (see [Package Automation Defaults](#package-automation-defaults)).
+
+In the field **Send additional update notifications to …** on the _App Config_ card, you can enter email addresses that receive these notifications for **every** package in your tenant. Separate multiple addresses with semicolons, e.g. `foo@example.com; bar@example.com`.
+
+This complements the [Technical Application Owners](../application-management/packages/package-settings.md#technical-application-owners) (TAO) of a package:
+
+* **Technical Application Owners** are set per package and only receive notifications for that package, and only if notifications are enabled in the package's Config.
+* **Additional update notification recipients** are set tenant-wide and receive the notifications for all packages, independent of the TAO settings.
+
+{% hint style="info" %}
+Invalid email addresses are dropped when saving, so check the field after saving. The list holds roughly 200 characters in total. For more recipients, use a distribution list or shared mailbox.
+{% endhint %}
 
 ## Managed App Priority Cascade
 
