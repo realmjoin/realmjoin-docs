@@ -17,17 +17,21 @@ This will make sure, you have the current state of our runbooks, incl. bugfixes 
 
 ## UI Config
 
-The _UI Config_ card changes how RealmJoin Portal looks and behaves for all users of your tenant.
+The _UI Config_ card holds tenant-wide display settings of RealmJoin Portal. They apply to every user of the tenant. Changing them requires the `CanChangeTenantSettings` permission.
 
 ### Show advanced info
 
-When enabled, RealmJoin Portal shows additional technical information to users with the **Admin**, **Auditor** or **Advanced Supporter** role (and to Entra ID Global Administrators). This adds diagnostic views to the detail pages, for example:
+Off by default. When enabled, the detail pages get additional tabs with the raw JSON objects RealmJoin reads from Graph and from its own database:
 
-* the raw Entra ID, Intune, Autopilot, Defender and RealmJoin data of a device,
-* the raw Entra ID and RealmJoin data and the sign-in data of a user,
-* the raw data of groups, packages and your organization.
+| Detail page  | Additional tabs                                    |
+| ------------ | -------------------------------------------------- |
+| Device       | Entra ID, Intune, Autopilot, Defender, RealmJoin   |
+| User         | Entra ID, Sign-ins, RealmJoin                      |
+| Group        | Entra ID, RealmJoin                                |
+| Package      | Intune app, RealmJoin app, Package Store entry     |
+| Organization | Entra ID                                           |
 
-The setting is off by default. The views are controlled by the `CanSee...Json` permissions and `CanSeeUserSignIns`, see [Available Permissions](permission/custom-roles/available-permissions.md).
+The tabs are only shown to users with the **Admin**, **Auditor** or **Advanced Supporter** role and to Entra ID Global Administrators. The underlying permissions are the `CanSee...Json` permissions and `CanSeeUserSignIns`, see [Available Permissions](permission/custom-roles/available-permissions.md).
 
 ### Tenant banner logo
 
@@ -42,12 +46,12 @@ RealmJoin Portal can show your company logo in the toolbar at the top of every p
 | Both, white backdrop         | ✓       | ✓                 |
 | No banner                    | –       | –                 |
 
-_Toolbar + Organization page_ is the default. The toolbar has a dark background, so the two _white backdrop_ options put the logo on a white area in the toolbar. Use them if your logo is hard to read on a dark background. The white backdrop only applies to the toolbar.
+_Toolbar + Organization page_ is the default. The toolbar has a dark background. The two _white backdrop_ options render the logo in the toolbar on a white background, for logos that are not readable on dark backgrounds. On the Organization Details page the logo is always shown without backdrop.
 
-The logo is the **Banner logo** from your tenant's [Entra ID company branding](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-customize-branding) (default sign-in experience). RealmJoin does not store a logo of its own. To change the logo, upload a new banner logo in the Entra admin center under **Company branding**.
+The logo is the **Banner logo** of the default sign-in experience in your tenant's [Entra ID company branding](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-customize-branding). RealmJoin Portal reads it from Graph (`GET /organization/{tenantId}/branding/localizations/default/bannerLogo`) and does not store a copy. Banner logos of language-specific localizations are not used. To change the logo, upload a new banner logo in the Entra admin center under **Company branding**.
 
 {% hint style="info" %}
-If no banner logo is configured in your Entra ID company branding, no logo is shown and the previews on the card show a placeholder. RealmJoin Portal caches the logo for up to one hour, so a new banner logo can take that long to appear.
+If the default sign-in experience has no banner logo, no logo is shown and the previews on the card show a placeholder. RealmJoin Portal caches the logo for one hour, so a changed banner logo can take up to one hour to appear.
 {% endhint %}
 
 ## Package Automation Defaults
@@ -99,13 +103,13 @@ You can use the following variables:
 
 ## Additional Update Notifications
 
-RealmJoin sends notification emails about packages sourced from the [Package Store](../application-management/packages/package-store/) when
+For packages sourced from the [Package Store](../application-management/packages/package-store/), the RealmJoin backend regularly compares the deployed versions with the Package Store and sends an email per package when its status changes:
 
-* a new version of the package is available in the Package Store,
-* a new version is ready to be deployed manually, or
-* an automatic deployment of a new version is planned (see [Package Automation Defaults](#package-automation-defaults)).
+* **New version available** - a newer version of the package was published in the Package Store.
+* **Manual deployment** - an upgrade action (update Main, update Preview, create Preview or move Preview to Main) is available and has to be triggered manually.
+* **Planned deployment** - [package automation](#package-automation-defaults) has scheduled an upgrade action. The email contains the action and the scheduled time.
 
-In the field **Send additional update notifications to …** on the _App Config_ card, you can enter email addresses that receive these notifications for **every** package in your tenant. Separate multiple addresses with semicolons, e.g. `foo@example.com; bar@example.com`.
+The field **Send additional update notifications to …** on the _App Config_ card takes email addresses that receive these emails for **every** package in the tenant. Separate multiple addresses with semicolons, e.g. `foo@example.com; bar@example.com`.
 
 This complements the [Technical Application Owners](../application-management/packages/package-settings.md#technical-application-owners) (TAO) of a package:
 
@@ -113,7 +117,7 @@ This complements the [Technical Application Owners](../application-management/pa
 * **Additional update notification recipients** are set tenant-wide and receive the notifications for all packages, independent of the TAO settings.
 
 {% hint style="info" %}
-Invalid email addresses are dropped when saving, so check the field after saving. The list holds roughly 200 characters in total. For more recipients, use a distribution list or shared mailbox.
+Invalid email addresses are dropped without an error when saving, so check the field after saving. The addresses are stored as a JSON array with a maximum length of 200 characters. For more recipients, use a distribution list.
 {% endhint %}
 
 ## Managed App Priority Cascade
