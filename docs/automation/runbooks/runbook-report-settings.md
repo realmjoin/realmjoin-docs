@@ -132,7 +132,11 @@ Reporting runbooks that support this delivery channel can upload their output to
 
 ### Prerequisites
 
-An existing Azure Storage Account is required. The Automation Account's managed identity (or the service principal used by the runbooks) needs at least **Storage Blob Data Contributor** permissions on the Storage Account or its resource group.
+An existing Azure Storage Account is required. The Automation Account's managed identity (or the service principal used by the runbooks) needs the built-in Azure RBAC role **Reader and Data Access**, assigned directly on the Storage Account.
+
+The upload retrieves the storage account key via `listKeys` and uses it to create the container, upload the files and sign the SAS download links. **Reader and Data Access** is the smallest built-in role that includes this action. **Storage Account Contributor** works as well, but additionally allows managing and deleting the Storage Account. **Storage Blob Data Contributor** is not sufficient, as it does not include `listKeys`.
+
+> **Note:** The account key grants access to all data in the Storage Account. Use a dedicated Storage Account for reports and assign the role on the Storage Account, not on its resource group. Shared key access must be allowed on the Storage Account (`allowSharedKeyAccess` must not be `false`, for example through the Azure Policy "Storage accounts should prevent shared key access"), otherwise the upload fails.
 
 ### Configuration
 

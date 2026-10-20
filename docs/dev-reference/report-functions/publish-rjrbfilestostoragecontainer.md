@@ -27,14 +27,16 @@ An existing Azure Storage Account (general-purpose v2 recommended) is required. 
 
 ### Azure RBAC on the storage account
 
-The Automation Account's managed identity (or the service principal used by the runbook) needs the following permissions on the storage account or its resource group:
+The Automation Account's managed identity (or the service principal used by the runbook) needs the following permissions on the storage account:
 
 | Action | Required for |
 | --- | --- |
 | `Microsoft.Storage/storageAccounts/read` | Reading the storage account |
 | `Microsoft.Storage/storageAccounts/listKeys/action` | Retrieving the account key used for SharedKey signing and SAS generation |
 
-The built-in role **Storage Account Contributor** covers both. **Storage Blob Data Contributor** alone is *not* sufficient because the function signs requests with the account key rather than using AAD-backed blob operations.
+Assign the built-in role **Reader and Data Access** on the storage account: it is the smallest built-in role that covers both. Container creation, upload and SAS generation are authorized with the account key and need no further Azure RBAC permissions. **Storage Account Contributor** works as well, but additionally allows managing and deleting the storage account. **Storage Blob Data Contributor** alone is *not* sufficient because the function signs requests with the account key rather than using AAD-backed blob operations.
+
+Because the function authenticates with the account key, shared key access must be allowed on the storage account (`allowSharedKeyAccess` must not be `false`). The key grants access to all data in the storage account, so a dedicated storage account for reports is recommended.
 
 ### Module connectivity
 
@@ -233,7 +235,7 @@ The container is created with a `PUT …?restype=container` request:
 
 - **HTTP 201** — container created.
 - **HTTP 409** — container already exists; treated as success.
-- **Any other status** — the function throws `Container creation failed (<status>): <body>`.
+- **Any other status** — the function throws `Container creation failed (<status>): <body>`. An HTTP 403 with `KeyBasedAuthenticationNotPermitted` means that shared key access is disabled on the storage account.
 
 ### Upload failures
 
