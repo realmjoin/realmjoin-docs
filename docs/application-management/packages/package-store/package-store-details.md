@@ -49,20 +49,12 @@ We recommend RealmJoin driven deployment, as it offers more options and manageab
 
 ## App Categories
 
-The name and group name/category can now be customized when subscribing to a new package. This feature allows for better organization and easier access to applications within both RealmJoin and Intune environments.
+When subscribing to a package, you can change its display name and set its category:
 
-**RealmJoin Deployment**
+* **RealmJoin deployment:** select one **Group name**. The RealmJoin Tray menu lists the package under this group.
+* **Intune deployment:** select one or more **Categories**. They are assigned to the Intune app as Intune app categories and are used by the Company Portal to filter apps.
 
-* **Display**: The application will be displayed under the chosen Group Name in the RealmJoin Tray Menu.
-* **Customization**: The appropriate Group name should be selected during the subscription process to ensure the application is categorized correctly.
-
-**Intune Deployment**
-
-* **Display**: The application will be displayed under the chosen category in Intune and in the Company Portal for assigned users.
-* **Customization**:
-  * Multiple categories can be selected for an application.
-  * Categories can be edited afterwards in the "Expert Settings" of each package.
-  * Categories can be managed under the settings of the portal to ensure they align with organizational needs.
+Both can be changed later in the package's **Expert settings**.
 
 <figure><img src="../../../.gitbook/assets/image (389).png" alt=""><figcaption><p>Configuration of Category/Group Name during the subscription process</p></figcaption></figure>
 
