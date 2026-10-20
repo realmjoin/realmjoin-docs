@@ -21,7 +21,7 @@ Packages subscribed as managed come with RealmJoin-managed Entra ID groups, one 
 By default the groups are named `app - <platform> - <app name>` for Main, with a suffix such as `(preview)`, `(available)`, `(uninstall)` or `(update)` for the other types. The naming scheme can be changed in the [group naming settings](../../administration-and-settings/general.md#group-naming-scheme).
 
 {% hint style="info" %}
-Managed packages are the preferred way to deploy software to your users. You can combine it with automated package updates and lifecycle to ensure your users receive latest features and patches.
+We recommend managed subscriptions. Only managed packages support the Preview stage and [update automation](package-updates.md#automation).
 {% endhint %}
 
 ### Managed groups
@@ -76,7 +76,7 @@ This option should only be used in specific cases and is not intended to be used
 
 The Exclude assignment of groups is used to ensure that users in the assigned exclude group are not managed within the package managed groups. It will not remove users from managed groups within the same package. Instead, it makes sure that certain packages are never assigned to the same user simultaneously.
 
-For example, you can use the Exclude function to prevent a user, assigned to a 64-bit Adobe Reader package group, from also receiving the 32-bit version. Simply assign the used 64-bit package group as an exclude to the 32-bit package.
+For example, you can use the Exclude function to prevent a user, assigned to a 64-bit Adobe Reader package group, from also receiving the 32-bit version. Assign the 64-bit package group as an Exclude group to the 32-bit package.
 
 {% hint style="warning" %}
 Exclude is evaluated before anything else. If the signed-in user _or_ the device is a member of an Exclude group of a package, no other assignment of that package is evaluated at all — not Main, Available, Preview, Update, a direct user assignment, and **not Uninstall** either. The package is simply ignored on that device: it is neither installed nor uninstalled. See [Assignment priority](package-deployment.md#assignment-priority-and-conflicts).

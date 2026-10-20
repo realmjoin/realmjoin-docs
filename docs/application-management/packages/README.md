@@ -8,7 +8,7 @@ description: >-
 
 # Packages
 
-RealmJoin Packages are ready‑to‑use software packages provided through the RealmJoin Portal, offering a large, continuously maintained catalogue of Windows and macOS applications that can be easily deployed via the **RealmJoin Client** or **Microsoft Intune**. Android apps from Managed Google Play can be managed in the same place.
+RealmJoin Packages are software packages for Windows and macOS that RealmJoin builds and maintains. You subscribe to them in the RealmJoin Portal and deploy them via the **RealmJoin Agent** or **Microsoft Intune**. Android apps from Managed Google Play are managed on the same pages.
 
 This page explains the terms used throughout this section. The pages below follow the lifecycle of a package: find it in the store, subscribe to it, assign it, and keep it up to date.
 

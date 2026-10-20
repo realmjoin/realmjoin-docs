@@ -9,7 +9,7 @@ description: >-
 
 Managed apps deployed via Intune as **Available** are installed on demand by users from the Company Portal. Intune does not push newer versions to devices that already have such an app installed — an **Available** assignment only ever offers the *current* version to devices that do not have the app yet. As a result, Available‑deployed apps are **not kept up to date natively**.
 
-The optional **Update Group** closes this gap. When enabled per package, RealmJoin detects existing installations and temporarily brings them up to date by assigning the affected devices as **Required (Mandatory)** — without changing the package's normal **Available** assignment.
+The optional **Update Group** handles this case. When enabled per package, RealmJoin detects existing installations and temporarily brings them up to date by assigning the affected devices as **Required (Mandatory)** — without changing the package's normal **Available** assignment.
 
 {% hint style="info" %}
 The Update Group can be enabled for both Intune‑managed and RealmJoin Agent‑managed packages. It is most relevant for **Intune Available** apps, since the RealmJoin Agent already keeps Available packages up to date on its own (see [Auto upgrade](package-settings.md#expert-settings)).

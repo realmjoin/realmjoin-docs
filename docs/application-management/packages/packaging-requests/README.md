@@ -10,11 +10,9 @@ description: >-
 
 ## Architecture (Win11 & macOS)
 
-The RealmJoin Packaging Factory is currently optimized for Windows 11 application requests, delivering robust and reliable packaging services across the Windows ecosystem. Full macOS support is in active development and will add hundreds of ready‑to‑use macOS applications to the RealmJoin Store, enabling a more complete cross‑platform experience.
+The RealmJoin Packaging Factory packages applications for Windows 11.
 
-macOS packages are currently in preview as we continue refining the macOS packaging pipeline. We accept macOS application requests on a best‑effort basis, though processing times and availability may vary during this development phase. Our team will handle these requests as effectively as possible within the current framework.
-
-We appreciate your patience as we work toward delivering the same level of excellence for macOS that our Windows 11 users currently enjoy.
+macOS packaging is in preview. macOS requests are accepted on a best‑effort basis; processing times and availability may vary.
 
 ### Custom vs Generic Packaging
 
@@ -42,7 +40,7 @@ If an application is not available in the RealmJoin Store, it can be requested f
 * **Application binaries** - After clicking **Open Request**, upload the binaries and click **Upload all files**. Binaries must always be uploaded for new packages; a download URL may be added for reference but is **not** sufficient. If there are multiple files, please use a zip container.
 
 {% hint style="info" %}
-When you start a new package request, the form now highlights existing packages that match your input, helping you spot software that is already available in the RealmJoin Store and avoid duplicate requests.
+When you enter a package name, the form lists existing Package Store packages that match it, so you can check whether the software is already available before requesting it.
 {% endhint %}
 
 <figure><img src="../../../.gitbook/assets/26-02-09-10_06_07_msedge.png" alt=""><figcaption><p>RealmJoin packaging request form for new requests.</p></figcaption></figure>

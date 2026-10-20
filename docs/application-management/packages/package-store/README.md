@@ -12,7 +12,7 @@ description: >-
 
 <figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption><p>The RealmJoin Package Store</p></figcaption></figure>
 
-RealmJoin Portal provides and maintains a large library of ready-to-use packages, easily deployable using either the RealmJoin Client or Intune. The store also holds the custom and organic packages built for your organization.
+The Package Store lists all packages your tenant can subscribe to: the generic packages RealmJoin provides for all customers, plus the custom and organic packages built for your organization. Each package can be deployed via the RealmJoin Agent or Intune.
 
 ## Browse the store
 
