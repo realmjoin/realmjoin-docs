@@ -17,7 +17,7 @@ This will make sure, you have the current state of our runbooks, incl. bugfixes 
 
 ## Package Automation Defaults
 
-If you source packages from RealmJoin's [Package Store](../application-management/packages/package-store/), you can use [automation ](../application-management/packages/package-details.md#automation)to keep these packages always up to date.
+If you source packages from RealmJoin's [Package Store](../application-management/packages/package-store/), you can use [automation ](../application-management/packages/package-updates.md#automation)to keep these packages always up to date.
 
 ![Automation defaults for a package](<../.gitbook/assets/image (199).png>)
 
@@ -30,11 +30,11 @@ The settings are:
 * **AutoDeployAtNight** - Schedule automatic deployment during night time
 * **Select target timezone** - If you use AutoDeployAtNight, use this Time Zone to indicate when "at night" is.
 
-See [Package Details](../application-management/packages/package-details.md#automation) for more information on Package Automation.
+See [Package Updates and Automation](../application-management/packages/package-updates.md#automation) for more information on Package Automation.
 
 ## Group Naming Scheme
 
-RealmJoin Portal can dynamically create and manage Entra groups for features like [package assignment](../application-management/packages/package-details.md#assignments) and [remediation script assignment](../automation/remediation-scripts.md#assignment).
+RealmJoin Portal can dynamically create and manage Entra groups for features like [package assignment](../application-management/packages/package-deployment.md) and [remediation script assignment](../automation/remediation-scripts.md#assignment).
 
 ### App / Package Deployment
 
@@ -47,7 +47,7 @@ You can use the following variables:
 * **$vendor** - Name of the software vendor (if available)
 * **$product** - Name of the software title
 * **$appName** - Full name (vendor and product) of the software
-* **$modifier** - either nothing, "available", "preview" or "uninstall"
+* **$modifier** - either nothing, "available", "preview", "uninstall" or "update"
 * **$groupName** - (only in description) Name of the Managed Group
 
 ### Remediation Scripts

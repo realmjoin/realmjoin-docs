@@ -1,28 +1,36 @@
 ---
 type: Application Management
 description: >-
-  RealmJoin package subscriptions and assignment types such as Main (Required)
-  and Available, for deploying software via RealmJoin or Intune, and how
-  conflicting user and device assignments are prioritized.
+  Assign RealmJoin packages to users and devices through managed groups such as
+  Main (Required) and Available, how conflicting assignments are prioritized,
+  and how to convert basic subscriptions to managed.
 ---
 
-# Package Configuration and Assignments
+# Package Assignments
 
 {% embed url="https://www.youtube.com/watch?v=BdF3rvMbjFs" %}
 
+Assignments decide which users and devices receive a package and how. You manage them in the **Assignments** section on the Overview tab of the [package details page](package-details.md). How you assign depends on whether the package was subscribed as [managed or basic](./#managed-and-basic-subscriptions).
+
 ## Managed Subscription
 
-Packages subscribed as managed come with managed user groups. There are different types of groups available that can be chosen based on your scenario.
+Packages subscribed as managed come with RealmJoin-managed Entra ID groups, one per assignment type. You assign users and devices by making them members of the group that fits your scenario. The groups can be managed from both the RealmJoin Portal and Microsoft Entra ID.
+
+<figure><img src="../../.gitbook/assets/image (345).png" alt=""><figcaption><p>Managed groups of a package</p></figcaption></figure>
+
+By default the groups are named `app - <platform> - <app name>` for Main, with a suffix such as `(preview)`, `(available)`, `(uninstall)` or `(update)` for the other types. The naming scheme can be changed in the [group naming settings](../../administration-and-settings/general.md#group-naming-scheme).
 
 {% hint style="info" %}
 Managed packages are the preferred way to deploy software to your users. You can combine it with automated package updates and lifecycle to ensure your users receive latest features and patches.
 {% endhint %}
 
-### **Main (Required)**
+### Managed groups
+
+#### **Main (Required)**
 
 RealmJoin or Intune will automatically install the application. These applications are mandatory and both solutions will continuously attempt to install the application, if not found on the device.
 
-### **Available**
+#### **Available**
 
 {% tabs %}
 {% tab title="RealmJoin" %}
@@ -38,31 +46,33 @@ The application will appear in Company Portal -> Apps and will require the user 
 {% endtab %}
 {% endtabs %}
 
-### Preview
+#### Preview
 
-Users and devices in the Preview group will receive the latest version of the package before the other groups. Preview settings are configurable through the [Automation tab](package-details.md#automation).
+Users and devices in the Preview group receive a new version of the package before the other groups, see [Staged updates with preview](package-updates.md#staged-updates-with-preview).
 
-### Uninstall
+#### Uninstall
 
-RealmJoin or Intune will uninstall the package from the assigned users and devices. Adding a user or device to the Uninstall group will remove them from all other groups.
+RealmJoin or Intune will uninstall the package from the assigned users and devices.
+
+For RealmJoin deployment, only Choco packages get an Uninstall group; Craft packages have none.
 
 An Uninstall assignment takes precedence over Main and Available assignments, no matter on which level it is made: a device in the Uninstall group leads to the package being uninstalled even if the signed-in user is in the Main group, and vice versa. Only an [Exclude](package-deployment.md#exclude) assignment ranks higher, see [Assignment priority](package-deployment.md#assignment-priority-and-conflicts).
 
-### Update
+#### Update
 
 The Update group is created on demand and automatically onboards loose installations of a software title into management, so that new versions — including security patches — also reach those devices. It is the mechanism that keeps Intune **Available** apps up to date, by temporarily assigning outdated devices as **Required**.
 
 For details, see [Update Group](update-group.md).
 
-### Exclude
+#### Exclude
 
-Needs to be explicitly activated through "More" > "Exclude assignments" (like shown in the [picture below](package-deployment.md#enable-additional-and-restore-default-groups)). Users and devices in the specified group will be excluded from assignments all over the package and associated managed groups.
+Needs to be explicitly activated through **More** > **Exclude assignments** (see [Enable additional and restore default groups](package-deployment.md#enable-additional-and-restore-default-groups)). Users and devices in the specified group will be excluded from assignments all over the package and associated managed groups.
 
 {% hint style="info" %}
 This option should only be used in specific cases and is not intended to be used to manage assignment conflicts. You should always manage assignments with clear user to group assignments, without the need of using an exclude mechanic. We strongly advise against multi-layer assignment constructs.
 {% endhint %}
 
-#### Usage
+**Usage**
 
 The Exclude assignment of groups is used to ensure that users in the assigned exclude group are not managed within the package managed groups. It will not remove users from managed groups within the same package. Instead, it makes sure that certain packages are never assigned to the same user simultaneously.
 
@@ -115,42 +125,108 @@ An Exclude or Uninstall assignment is ignored if the assignment itself is filter
 The rules above describe how the RealmJoin Agent resolves assignments. For packages deployed via Intune, the same groups are assigned to the Intune app and Intune applies its own conflict resolution. In particular, Intune does not support excluding a device group from a user group assignment or vice versa. Refer to the [Microsoft documentation on app assignment conflicts](https://learn.microsoft.com/en-us/intune/intune-service/apps/apps-deploy#how-conflicts-between-app-intents-are-resolved) for details.
 {% endhint %}
 
-### Enable additional and restore default groups
-
-<figure><img src="../../.gitbook/assets/image (393).png" alt=""><figcaption></figcaption></figure>
-
-Via the "More"-Button you can activate the optional update group, manage exclude assignments and also restore the default managed groups in case they were deleted.
-
-### Changing Assignments
+### Assign and move members
 
 {% hint style="warning" %}
 Users and devices should only be in one RealmJoin managed group at any given time.
 {% endhint %}
 
-Users and devices can easily be moved across groups using the _Managed users_ function.
+The **Managed members** list shows all users and devices in the package's managed groups, with the group they are in.
 
-<figure><img src="../../.gitbook/assets/image (353).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (353).png" alt=""><figcaption><p>Managed members</p></figcaption></figure>
 
-Selecting Main, Preview, Available and Uninstall will add the user to the chosen group and remove the user from all other groups relevant to the package.
+* **Assign** adds users or devices to the Main group.
+* **Move to: \[main] \[preview] \[available] \[uninstall]** moves a member from its current group to the selected one.
+* The remove icon removes a member from its group.
+* Members of nested groups are shown as _indirect (nested)_ and can only be changed in the nested group.
 
-Selecting Assign will add users to the Main group by default.
+To copy many members at once, e.g. from an existing group, use **More** > **Bulk Operations** on the managed group's own page.
+
+### Enable additional and restore default groups
+
+<figure><img src="../../.gitbook/assets/image (393).png" alt=""><figcaption></figcaption></figure>
+
+The **More** button of the **Direct groups** list offers:
+
+* **Enable update group** / **Disable update group** - See [Update Group](update-group.md).
+* **Exclude assignments** - Assign an [Exclude](#exclude) group.
+* **Restore default groups** - Recreate managed groups that were deleted.
 
 ## Basic Subscription (Legacy)
 
-Basic packages do not have any associated Microsoft Entra groups. You will have to manually assign groups, devices or users.
+Basic packages do not have any associated Microsoft Entra groups. Use **Assign** in the **Direct groups** or **Direct users** list to assign groups, devices or users manually.
 
-Groups, devices and users that are assigned to a Basic package will be assigned as Available by default and can be changed using the \[change settings] button.
+New assignments of a Basic package are Available by default. Use the **\[settings]** link of an assignment to change this, see [Assignment settings](#assignment-settings).
 
 <figure><img src="../../.gitbook/assets/image (355).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (356).png" alt=""><figcaption></figcaption></figure>
 
-#### Migrating from Basic to Managed subscriptions
+### Migrating from Basic to Managed
 
-To migrate a legacy basic package subscription to the standard managed format, the RealmJoin Portal provides a built-in conversion function. In the assigned groups section of the basic subscribed application package, the "Convert to Managed App" option is available behind the "More" button.
+RealmJoin Basic packages can be converted to managed. The conversion is not available for Intune Basic packages and for packages marked as _Pre-release_.
 
-This feature creates the default managed subscription groups, in which the legacy users can be added vial bulk operation or nesting.
+{% stepper %}
+{% step %}
+### Convert the package
 
-<figure><img src="../../.gitbook/assets/image (421).png" alt=""><figcaption><p>Preparation to migrate a basic app to a managed app</p></figcaption></figure>
+Open the Basic RealmJoin package and select **More** > **Convert to managed app** in the **Direct groups** list. The conversion starts immediately.
 
-<figure><img src="../../.gitbook/assets/image (422).png" alt=""><figcaption><p>Result of the migration process</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (357).png" alt=""><figcaption><p>Identifying Basic packages in the package list</p></figcaption></figure>
+
+RealmJoin then:
+
+* creates the default managed groups and applies your tenant's [automation defaults](package-updates.md#automation),
+* nests the previously assigned groups into the matching managed group: Required groups into Main, Available into Available, Uninstall into Uninstall,
+* adds directly assigned users to the matching managed group.
+
+Settings made to the Basic assignments are adopted by the managed groups.
+
+{% columns %}
+{% column %}
+<figure><img src="../../.gitbook/assets/image (363).png" alt=""><figcaption><p>Before migration</p></figcaption></figure>
+{% endcolumn %}
+
+{% column %}
+<figure><img src="../../.gitbook/assets/image (364).png" alt=""><figcaption><p>After migration</p></figcaption></figure>
+{% endcolumn %}
+{% endcolumns %}
+{% endstep %}
+
+{% step %}
+### Combine with a preview package (if offered)
+
+If a Pre-release package of the same version exists, the dialog **Combine with preview app** opens. Select the package to use as the new preview, or choose **Continue without**.
+{% endstep %}
+
+{% step %}
+### Optional: pull members into the managed groups
+
+To replace the nested groups with direct members, open a managed group and select **More** > **Pull members up**. Select the nested group, choose **Remove assignment** to remove the nested group afterwards or **Keep assignment** to keep it, and click **Execute**.
+
+<figure><img src="../../.gitbook/assets/image (362).png" alt=""><figcaption><p>Pull members up</p></figcaption></figure>
+{% endstep %}
+{% endstepper %}
+
+{% hint style="warning" %}
+* **Exclude assignments are not converted.** They are removed during the conversion. Re-create them on the managed package via **More** > **Exclude assignments** if needed.
+* The conversion is blocked if users of this package are also assigned to another Basic subscription of the same package. Resolve the overlap first.
+{% endhint %}
+
+## Assignment settings
+
+Each assignment in the **Direct groups** and **Direct users** lists has a **\[settings]** link. It opens the **Assignment settings**, which override the package's [expert settings](package-settings.md#expert-settings) for this one assignment. Viewing them requires `CanSeeAppAssignmentSettings`, changing them `CanChangeAppAssignmentSettings`.
+
+{% tabs %}
+{% tab title="RealmJoin packages" %}
+* **Hidden** - Hides the package from the user's list.
+* **Mandatory** - Installs the package as Required instead of Available. Not available for managed packages, whose assignment type follows the managed group.
+* **Auto upgrade**, **Only in VDI / Ignore in VDI**, **Only on hybrid-joined devices / Ignore on hybrid-joined devices**, **Ignore on private devices**, **Deployment rate**, **Main app restrictions** and **User part restrictions** - Same as the [expert settings](package-settings.md#expert-settings) of the package, for this assignment only. Settings left unset follow the package.
+* **Arguments** - Installation arguments for this assignment, e.g. a different language.
+{% endtab %}
+
+{% tab title="Intune packages" %}
+* **Mandatory** - Assigns the app as Required instead of Available. Not available for managed packages.
+* **Update priority** - Android apps only. How Managed Google Play updates the app: **Default**, **Postponed** or **Priority**.
+{% endtab %}
+{% endtabs %}

@@ -2,44 +2,51 @@
 type: Application Management
 description: >-
   RealmJoin Package Management lists all packages across RealmJoin and Microsoft
-  Intune to filter, search, sort, and manage version updates.
+  Intune to filter, search, sort, and spot pending updates and failed installs.
 ---
 
 # Package Management Overview
 
-Package Management shows all packages that currently exist in your environment across RealmJoin and Microsoft Intune.
+Package Management (_Packages_ in the portal navigation) shows all packages that currently exist in your environment across RealmJoin and Microsoft Intune.
 
 <figure><img src="../../.gitbook/assets/image (159).png" alt=""><figcaption><p>Package Management List</p></figcaption></figure>
 
-Clicking on the name of a package will redirect you to the package's [details page](package-details.md).
+Clicking on the name of a package opens the package's [details page](package-details.md).
 
 ## Filters
 
-* **All** - Show all packages across RealmJoin and Intune, including mobile packages and Windows Store packages
-* **Supported** - Show only packages handled by RealmJoin (RealmJoin Client + Intune)
-* **RealmJoin** - Show only RealmJoin packages deployed via RealmJoin Client
-* **Intune** - Show only RealmJoin packages deployed via Microsoft Intune
-* **Updates only** - Limit the view to packages from the package store where there exists a newer version of the package in the store.
-* **Automation only** - Limit the view to packages from the package store where automatic deployment of newer versions is configured.
+**Platform** - Limit the list to **Win**, **Mac** or **Android** packages, or show **Any**.
 
-## Search and Sort
+**Source:**
 
-The package list allows you to search for any package in your organization by any visible field, incl. name, version and platform.
+* **All** - All packages across RealmJoin and Intune, including Intune apps that were not created by RealmJoin, such as mobile apps and Microsoft Store apps.
+* **RealmJoin** - Only packages deployed via the RealmJoin Agent.
+* **Intune** - All Intune apps, whether created by RealmJoin or not.
+* **Supported** (default) - Only packages handled by RealmJoin: RealmJoin Agent packages and the Intune apps created by RealmJoin.
 
-The search supports real-time / as-you-type incremental search. The search results will update instantly as you type.
+**Toggles:**
 
-You can sort the current search result or the full list by any of the fields, by clicking on the fields name.
+* **Updates only** - Only packages from the Package Store for which a newer version exists in the store.
+* **Automation only** - Only packages from the Package Store with [update automation](package-updates.md#automation) configured.
+* **Failures only** - Only packages with failed installations.
 
-## Version and Preview
+The toggles become available once the package list has been fully loaded.
 
-RealmJoin supports a staged update procedure for software packages.
+## Columns
 
-If a newer version of a managed package exists, you can subscribe to the new version of a package as **Preview**. This will create a separate instance of the package with the new version and allows you to assign this package preview to a pilot user group for testing.
+* **Name** - The display name of the package.
+* **Main** - The version currently deployed to the Main group.
+* **Preview** - The version currently in [preview](package-updates.md#staged-updates-with-preview), if any.
+* **Update** - The latest version available in the Package Store, if it is newer.
+* **Automation** - The [automation](package-updates.md#automation) state. Shows when the next automated update is due, or **ASAP** if it is due now. Without a pending update it shows which channels are automated: **fully**, **main only** or **preview only**.
+* **Install** - A bar showing how many devices have the package installed, not installed, pending or failed.
+* **Coordinator** - How the package is deployed: **RealmJoin (managed)**, **RealmJoin (basic)**, **Intune (managed)**, **Intune (basic)** or **Intune (unmanaged)** for Intune apps not created by RealmJoin.
+* **Platform** - The platform of the package.
 
-<figure><img src="../../.gitbook/assets/image (94).png" alt=""><figcaption><p>List of Updates</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (94).png" alt=""><figcaption><p>List of updates</p></figcaption></figure>
 
-The package list shows you the version information of the main package, the preview package (if available) as well as the version number of the package currently available in the package store.
+## Search, sort and export
 
-Updates always target the latest store version unless you pick a specific newer one on the package's detail page, see [Choose another version](package-details.md#update). Downgrading a subscribed package is not possible.
+The search box searches the list by any visible field, incl. name, version and platform. The results update as you type.
 
-If _Update Automation_ is activated, the desired update timeframe is displayed in the column **Automation**. A value of "ASAP" means, the package is due for updating.
+Click a column header to sort by that column. Use the export button next to the search box to download the current list.

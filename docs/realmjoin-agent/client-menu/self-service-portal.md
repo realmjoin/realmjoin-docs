@@ -134,7 +134,7 @@ Users can request new application packages that is not yet in the official catal
 
 * **Permission-Based:** This option only appears if the user has been granted the necessary permissions in the RealmJoin backend.
 
-[Learn more about Packaging Requests](https://docs.realmjoin.com/app-management/packages/packaging-requests)
+[Learn more about Packaging Requests](../../application-management/packages/packaging-requests/)
 
 <figure><img src="../../.gitbook/assets/image (418).png" alt=""><figcaption><p>Package request form</p></figcaption></figure>
 

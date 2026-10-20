@@ -183,7 +183,7 @@ RealmJoin creates three Entra ID groups per Android app and assigns them in Intu
 | `app - Android - Microsoft Teams (available)` | Available         | Users can install the app from the managed Play Store. |
 | `app - Android - Microsoft Teams (uninstall)` | Uninstall         | The app is removed from the device.                   |
 
-Add users or devices to these groups from the app's page in the RealmJoin Portal, the same way as for other packages (see [Package Configuration and Assignments](package-deployment.md)). Android apps get no Preview or Update group, because Google Play delivers updates.
+Add users or devices to these groups from the app's page in the RealmJoin Portal, the same way as for other packages (see [Package Assignments](package-deployment.md)). Android apps get no Preview or Update group, because Google Play delivers updates.
 
 ## Troubleshooting
 
