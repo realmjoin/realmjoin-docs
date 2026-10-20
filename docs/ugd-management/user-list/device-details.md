@@ -39,7 +39,7 @@ The left section of the Device Details page shows the device name, model and man
 
 ### Status Information
 
-The core properties include some glanceable information about the status of a device object. Some statuses are presented via icons that are either blue (active / present), orange (warning) or red (inactive / missing). Hover over an icon to see its meaning.
+The status of the device is shown as icons and tags. Icons are blue (active / present), orange (warning) or red (inactive / missing). Hover over an icon to see its meaning.
 
 <img src="../../.gitbook/assets/image (251).png" alt="" data-size="original">Endpoint Management active
 
@@ -59,7 +59,7 @@ WHfB Biometric used (Windows) - The last sign-in used Windows Hello for Business
 
 ![](<../../.gitbook/assets/image (263).png>) **Last activity** - Last seen activity / Last contact. Shown in orange if the device has not been active for more than 7 days.
 
-Other bits of information are presented as tags:
+Tags:
 
 * Entra - This device is Entra ID Joined
 * TPM2 - TPM2 is present and enabled
@@ -171,7 +171,7 @@ The two solutions are complementary. The table below summarizes the differences:
 | Platforms                     | Windows (and macOS)                                       | Windows and macOS                             |
 
 {% hint style="info" %}
-RealmJoin LAPS is the more capable option — multiple account types, on-demand support accounts, forced rotations and your own Key Vault as the store. The **Intune LAPS integration** is aimed at tenants that already rely on Microsoft's native LAPS and simply want to retrieve those credentials without leaving the Portal.
+RealmJoin LAPS supports multiple account types, on-demand support accounts and forced rotations, and stores the credentials in your own Key Vault. The **Intune LAPS integration** only reads the credential that Microsoft's native LAPS has backed up, so support staff do not need the Intune or Entra admin center for it.
 {% endhint %}
 
 #### RealmJoin LAPS (agent-based)
@@ -180,7 +180,7 @@ When combined with the [RealmJoin Client](../../realmjoin-agent/realmjoin-client
 
 ![LAPS management](<../../.gitbook/assets/image (250).png>)
 
-By default, a local admin emergency account is created on a windows client. This account is useable even if network connectivity to the client fails. This is kind of a last resort.
+By default, a local admin emergency account is created on a windows client. This account is usable even if the client has no network connectivity, and is meant for emergencies only.
 
 It is recommended to use a "Support Account". When clicking "**Request**", a job is created/queued and RealmJoin Client will create an on-demand local admin account next time it syncs to the backend. This can take up to 30 minutes or alternatively a "Sync this device" can be triggered on the client to speed up the process. RealmJoin Portal will show state of "Requested" until the account is created and automatically switches to a view similiar to the Emergency Account when ready:
 
@@ -196,7 +196,7 @@ See the [LAPS documentation](../../realmjoin-agent/realmjoin-client/local-admin-
 
 If you manage local administrator passwords with Microsoft's native **LAPS** — deployed through an Intune [account protection policy](https://learn.microsoft.com/intune/device-security/laps/deploy-policy) that backs the credential up to Microsoft Entra ID — RealmJoin Portal can read those credentials for you, so support staff don't have to switch to the Intune or Entra admin center.
 
-Unlike RealmJoin LAPS, this integration does **not** require the RealmJoin Client. The Portal simply reads whatever LAPS has already backed up, via Microsoft Graph.
+Unlike RealmJoin LAPS, this integration does **not** require the RealmJoin Client. The Portal reads the credential that LAPS has backed up, via Microsoft Graph.
 
 When the prerequisites below are met, an **Intune Local Admin Management** section appears on the device details page. It lists:
 
@@ -223,7 +223,7 @@ Credentials can only be shown when LAPS backs the account up to **Microsoft Entr
   * `DeviceLocalCredential.Read.All` – read Windows LAPS credentials.
   * `DeviceManagementManagedDevices.PrivilegedOperations.All` – read macOS LAPS credentials **and** rotate passwords (this scope is also required to rotate a Windows password).
 
-If a device isn't Entra/Intune managed, or the Graph permissions aren't consented, the Intune Local Admin Management section simply doesn't appear.
+If a device isn't Entra/Intune managed, or the Graph permissions aren't consented, the Intune Local Admin Management section is not shown.
 
 **Who can view and rotate**
 

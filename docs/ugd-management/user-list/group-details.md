@@ -25,7 +25,7 @@ The category "groups" includes:
 
 ### **Object Properties**
 
-Every group details page shows an overview of the core properties on the left side of the screen in a glanceable way. This part will not scroll and is always visible in any tab:
+The left side of the page shows the group's core properties. It does not scroll and stays visible in every tab:
 
 * **Name** - If you are allowed to, use the pencil icon next to the name to rename the group. The name is changed in Entra ID and is limited to 120 characters.
 * **Created** - When the group was created
@@ -37,7 +37,7 @@ Every group details page shows an overview of the core properties on the left si
 
 ### Status information
 
-The core properties include some glanceable information about the status of a group object:
+Badges show the type and state of the group:
 
 * **RealmJoin** - The group name matches one of the RealmJoin group prefixes configured for your tenant (for example `lic -`, `app -` or `cfg -`)
 * **Unified** - A Office365 group or Team group
@@ -49,7 +49,7 @@ The core properties include some glanceable information about the status of a gr
 * **Dynamic** - Members are chosen via a membership rule, typically to group devices
 * **Protected** - A RealmJoin built-in group such as "RealmJoin - All Users". It cannot be deleted and its members cannot be bulk-changed.
 
-Be aware of the different types of groups accross Entra ID and Exchange Online. A group is either a "**Security**" or a "**Unified**" group. Also, some groups like "**Security**" groups that are "**Mail enabled**" (like Distribution groups) can only be managed via Exchange Online, not Entra ID.
+Be aware of the different types of groups across Entra ID and Exchange Online. A group is either a "**Security**" or a "**Unified**" group. Also, some groups like "**Security**" groups that are "**Mail enabled**" (like Distribution groups) can only be managed via Exchange Online, not Entra ID.
 
 If a group was deleted in Entra ID but RealmJoin still knows it, the page says _This group no longer exists in Entra ID._
 
@@ -162,4 +162,4 @@ If you are allowed to delete the group, a confirmation dialogue will pop up upon
 
 ![](<../../.gitbook/assets/image (151).png>)
 
-Pressing "Yes" will delete the group from Entra ID. This is of course also able to delete Exchange based objects like Distribution lists, or Microsoft 365 groups and teams. RealmJoin also removes the group from its app assignments.
+Pressing "Yes" will delete the group from Entra ID. This also deletes Exchange-based objects like Distribution lists, or Microsoft 365 groups and teams. RealmJoin also removes the group from its app assignments.

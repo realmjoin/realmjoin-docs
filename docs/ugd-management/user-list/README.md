@@ -8,10 +8,10 @@ description: >-
 # User, Group and Device Lists
 
 {% embed url="https://www.youtube.com/watch?v=IlIEnhoaaIA" %}
-Brand new video tutorial
+Video tutorial (shows an older version of the lists)
 {% endembed %}
 
-Selecting the Users, Groups or Devices tab offers administrators a simple way to search or review users, groups and devices in their environment. Clicking the name of a user, group or device object will lead you to the respective object's details page.
+Selecting the Users, Groups or Devices tab lists the users, groups and devices of your tenant. Click the name of an object to open its details page.
 
 <figure><img src="../../.gitbook/assets/image (213).png" alt=""><figcaption><p>User List</p></figcaption></figure>
 

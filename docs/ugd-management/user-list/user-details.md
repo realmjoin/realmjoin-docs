@@ -22,7 +22,7 @@ Which tabs, sections and actions you see depends on your [role](../../administra
 
 ### Status information
 
-The User Summary includes some glanceable information about the status of a user object:
+Badges and dates show the state of the user object:
 
 * **Enabled** / **Disabled** - Whether the user can sign in. A disabled user also shows the note _Disabled in Azure AD_ at the bottom of the summary.
 * **Member** - The user is a native user in this tenant/organization
@@ -133,7 +133,7 @@ Please see [Available Settings](../user-and-group-settings/additional-settings.m
 
 ## Roles & Policies Tab <a href="#roles-and-policies" id="roles-and-policies"></a>
 
-Shows which RealmJoin Portal permissions this user has, which helps when a user cannot see or do something in the Portal.
+Shows the RealmJoin Portal roles and permissions this user has. Use it to find out why a user cannot see or do something in the Portal.
 
 * **RealmJoin Roles** - The [RealmJoin roles](../../administration-and-settings/permission/pre-defined-roles.md) the user holds and how each is **Assigned via**: a group, an Entra ID role or an app role.
 * **Policies** - Each [permission](../../administration-and-settings/permission/custom-roles/available-permissions.md) with its **Status** (_Active_ or _Inactive_) and the roles it is **Granted via**. A _Custom Role_ badge marks permissions from a custom role, and _Blocked by condition_ marks permissions whose conditions are not met. Turn off **Only active** to also see inactive permissions.
