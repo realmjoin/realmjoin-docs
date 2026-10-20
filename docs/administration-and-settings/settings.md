@@ -49,4 +49,4 @@ Create additional RealmJoin Portal roles to catch use-cases that the standard pe
 
 ### App Categories
 
-Create and manage Intune app categories.
+Add, rename and delete the categories that group packages in the RealmJoin Tray and the Intune Company Portal. See [App Categories](app-categories.md).

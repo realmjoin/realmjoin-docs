@@ -83,10 +83,10 @@ A few permissions are marked **Reserved**. They can be selected in the editor bu
 
 ## App Categories
 
-| Permission             | Requires               | Description                                    |
-| ---------------------- | ---------------------- | ---------------------------------------------- |
-| `CanReadAppCategories` | —                      | View the tenant's Intune app categories.       |
-| `CanEditAppCategories` | `CanReadAppCategories` | Create, edit and delete Intune app categories. |
+| Permission             | Requires               | Description                                                  |
+| ---------------------- | ---------------------- | ------------------------------------------------------------ |
+| `CanReadAppCategories` | —                      | View the tenant's [app categories](../../app-categories.md). |
+| `CanEditAppCategories` | `CanReadAppCategories` | Add, rename and delete app categories.                       |
 
 ## Software Report
 

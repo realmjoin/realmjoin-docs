@@ -319,6 +319,7 @@
   * [Implementing Privileged Identity Management (PIM) with RealmJoin Portal](administration-and-settings/permission/implementing-privileged-identity-management-pim-with-realmjoin-portal.md)
 * [Group Namespaces](administration-and-settings/groups.md)
 * [Workplace Cloud Storage](administration-and-settings/workplace-cloud-storage.md)
+* [App Categories](administration-and-settings/app-categories.md)
 * [Self Service Forms](administration-and-settings/self-service-forms.md)
 * [MSP & Advanced Features](administration-and-settings/msp-and-advanced-features.md)
 * [Third-party integrations](administration-and-settings/third-party-integrations/README.md)

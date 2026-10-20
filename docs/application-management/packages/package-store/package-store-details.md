@@ -66,7 +66,7 @@ The name and group name/category can now be customized when subscribing to a new
 
 <figure><img src="../../../.gitbook/assets/image (389).png" alt=""><figcaption><p>Configuration of Category/Group Name during the subscription process</p></figcaption></figure>
 
-The total of categories can be managed from the _App Categories_ tab in the general settings section in the RealmJoin portal.
+The categories of your tenant are managed under **Settings** > **App Categories**. See [App Categories](../../../administration-and-settings/app-categories.md).
 
 <figure><img src="../../../.gitbook/assets/image (388).png" alt=""><figcaption><p>All categories available in the tenant</p></figcaption></figure>
 
