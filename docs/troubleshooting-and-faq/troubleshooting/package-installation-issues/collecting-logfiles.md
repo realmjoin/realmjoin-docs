@@ -33,7 +33,7 @@ The sync can be forced from the client by running `Sync this device` from the Re
 
 1. Open the [RealmJoin Portal](https://portal.realmjoin.com)
 2. Search for the affected device and open the device page.
-3. On the `Overview` tab, search for the section `Extended Logs`
+3. At the bottom of the device summary on the left, find the `Request Logs` button.
 4. Click on the `Request Logs` button.
 5. Wait until the logs are availble, if the client is online the maximum wait time is around 30 minutes.
 6. Click the download button left to the `Request Logs` button to download the ZIP file containing the logs.

@@ -107,6 +107,7 @@ A few permissions are marked **Reserved**. They can be selected in the editor bu
 | `CanReadUserSettingDetails`                        | —                             | **Reserved** — registered but not currently surfaced in the Portal.                                                   |
 | `CanSeeUserJsonAzureAD`, `CanSeeUserJsonRealmJoin` | `CanReadUserDetails`          | See diagnostic JSON tabs for a user. Only shown when _Show advanced info_ is enabled in [Settings](../../general.md). |
 | `CanSeeUserSignIns`                                | `CanReadUserDetails`          | See Microsoft Entra sign-in information for a user.                                                                   |
+| `CanSeeUserRolesAndPolicies`                       | `CanReadUserDetails`          | See the [Roles & Policies tab](../../../ugd-management/user-list/user-details.md#roles-and-policies) of a user: the user's RealmJoin roles and effective permissions. |
 
 ## Group Management
 
