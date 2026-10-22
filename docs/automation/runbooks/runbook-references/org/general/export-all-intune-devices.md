@@ -18,7 +18,7 @@ rjgit-org_general_export-all-intune-devices
 | Property | Value |
 | --- | --- |
 | Version | 1.1.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Az.Accounts (>= 5.5.2) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.10)<br>Az.Accounts (>= 5.5.2) |
 | Schedulable | no |
 
 ## Permissions

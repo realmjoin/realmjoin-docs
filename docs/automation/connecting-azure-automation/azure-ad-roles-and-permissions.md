@@ -24,7 +24,7 @@ The shared runbooks available on [GitHub](https://github.com/realmjoin/realmjoin
 | `Microsoft.Graph.Authentication` | 2.41.2 |
 | `MicrosoftTeams` | 7.9.0 |
 | `PnP.PowerShell` | 3.4.1 |
-| `RealmJoin.RunbookHelper` | 0.8.9 |
+| `RealmJoin.RunbookHelper` | 0.8.10 |
 
 RealmJoin Portal will automatically import and install these modules if referenced from inside a runbook. This import will also honor specified minimum versions for modules.
 

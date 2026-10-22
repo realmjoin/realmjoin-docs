@@ -18,7 +18,7 @@ rjgit-org_applications_update-application-registration
 | Property | Value |
 | --- | --- |
 | Version | 1.1.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.10) |
 | Schedulable | no |
 
 ## Permissions

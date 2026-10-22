@@ -22,7 +22,7 @@ rjgit-org_mail_hide-mailboxes_scheduled
 | Property | Value |
 | --- | --- |
 | Version | 1.0.3 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>ExchangeOnlineManagement (>= 3.9.2) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.10)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | yes |
 
 ## Permissions

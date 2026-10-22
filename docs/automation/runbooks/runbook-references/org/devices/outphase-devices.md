@@ -37,7 +37,7 @@ rjgit-org_devices_outphase-devices
 | Property | Value |
 | --- | --- |
 | Version | 1.2.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.10) |
 | Schedulable | no |
 
 ## Permissions

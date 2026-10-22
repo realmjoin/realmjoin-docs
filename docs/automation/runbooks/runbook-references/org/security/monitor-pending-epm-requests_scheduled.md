@@ -60,7 +60,7 @@ rjgit-org_security_monitor-pending-EPM-requests_scheduled
 | Property | Value |
 | --- | --- |
 | Version | 1.3.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.41.2)<br>Az.Accounts (>= 5.5.2) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.10)<br>Microsoft.Graph.Authentication (>= 2.41.2)<br>Az.Accounts (>= 5.5.2) |
 | Schedulable | yes |
 
 ## Permissions

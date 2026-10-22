@@ -24,7 +24,7 @@ rjgit-org_collab_list-sharepoint-sitecollection-permission
 | Property | Value |
 | --- | --- |
 | Version | 1.2.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>PnP.PowerShell (>= 3.4.1) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.10)<br>PnP.PowerShell (>= 3.4.1) |
 | Schedulable | no |
 
 ## Permissions
