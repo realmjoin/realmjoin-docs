@@ -159,7 +159,7 @@ To maintain high availability of RealmJoin, several key strategies are implement
 * **Monitoring and Alerts**: Continuous monitoring of system health and automated alerts for any issues that could impact service availability.
 * **Recovery Plans**: We have implemented several layers of recovery measures: We can recover the main system state within the last few weeks because our databases have point-in-time recovery. In addition, in the unlikely event of a complete system failure, the main RealmJoin services can be recovered using an IaC approach (Terraform), which significantly reduces recovery time.
 
-## Compliance <a href="#user-content-gdpr-and-data-residency" id="user-content-gdpr-and-data-residency"></a>
+## Compliance <a href="#compliance" id="compliance"></a>
 
 ### 1. Is glueckkanja ISO 27001 certified?
 
