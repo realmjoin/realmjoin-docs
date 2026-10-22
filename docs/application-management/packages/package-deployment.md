@@ -72,6 +72,22 @@ For example, you can use the Exclude function to prevent a user, assigned to a 6
 Exclude is evaluated before anything else. If the signed-in user _or_ the device is a member of an Exclude group of a package, no other assignment of that package is evaluated at all — not Main, Available, Preview, Update, a direct user assignment, and **not Uninstall** either. The package is simply ignored on that device: it is neither installed nor uninstalled. See [Assignment priority](package-deployment.md#assignment-priority-and-conflicts).
 {% endhint %}
 
+#### Exclude assignments for Intune apps
+
+Intune apps can be excluded from groups as well. On the app's detail page, open "More" > "Exclude assignments" in the _Direct groups_ list, choose the intent the group should be excluded from (**Required**, **Available** or **Uninstall**) and add the group. RealmJoin creates a native Intune exclusion, so the group shows up under _Excluded groups_ of that intent in the Intune admin center as well. The option is available for every Intune app, whether it is subscribed as managed or not.
+
+Exclusions are listed together with the other assignments in _Direct groups_. Removing an exclusion only removes it for that intent; exclusions of the same group for other intents stay in place. Adding and removing exclusions is recorded in the audit log.
+
+Intune, not RealmJoin, evaluates these exclusions:
+
+* **Per intent** — an exclusion only applies to the intent it was created for. Excluding a group from _Required_ does not hide the app from the Company Portal if the group is also assigned as _Available_.
+* **Exclusion wins** — within the same intent, an excluded group takes precedence over included groups, including _All users_ and _All devices_ assignments. A group cannot be included and excluded for the same intent at the same time, so the picker only lists groups that have no assignment for the selected intent yet.
+* **Same group type** — exclude user groups from user-targeted assignments and device groups from device-targeted assignments. Intune does not support excluding device groups from user assignments or vice versa.
+* **No uninstall** — an exclusion only stops the assignment. The app stays installed on devices that already have it; use an _Uninstall_ assignment to remove it.
+* **Main app only** — exclusions are created on the main Intune app. During a managed update, the preview app keeps its own assignments.
+
+Changes reach devices with their next Intune check-in. See the [Microsoft documentation on app assignments](https://learn.microsoft.com/en-us/intune/intune-service/apps/apps-deploy) for details.
+
 ### Assignment priority and conflicts
 
 Managed packages can be assigned to users (via user groups or directly) and to devices (via device groups, see [Assign Packages to Devices](../../realmjoin-agent/realmjoin-client/multi-user-devices.md#option-a-assign-packages-to-devices)). Because a device and its signed-in user can end up in different groups of the same package, the RealmJoin backend resolves conflicts deterministically when it renders the configuration for a device.
@@ -112,7 +128,7 @@ An Exclude or Uninstall assignment is ignored if the assignment itself is filter
 {% endhint %}
 
 {% hint style="warning" %}
-The rules above describe how the RealmJoin Agent resolves assignments. For packages deployed via Intune, the same groups are assigned to the Intune app and Intune applies its own conflict resolution. In particular, Intune does not support excluding a device group from a user group assignment or vice versa. Refer to the [Microsoft documentation on app assignment conflicts](https://learn.microsoft.com/en-us/intune/intune-service/apps/apps-deploy#how-conflicts-between-app-intents-are-resolved) for details.
+The rules above describe how the RealmJoin Agent resolves assignments. For packages deployed via Intune, the same groups are assigned to the Intune app and Intune applies its own conflict resolution. In particular, Intune does not support excluding a device group from a user group assignment or vice versa, see [Exclude assignments for Intune apps](package-deployment.md#exclude-assignments-for-intune-apps). Refer to the [Microsoft documentation on app assignment conflicts](https://learn.microsoft.com/en-us/intune/intune-service/apps/apps-deploy#how-conflicts-between-app-intents-are-resolved) for details.
 {% endhint %}
 
 ### Enable additional and restore default groups

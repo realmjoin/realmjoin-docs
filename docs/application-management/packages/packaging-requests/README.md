@@ -32,6 +32,10 @@ We invite customers to share their evaluation on whether an application can be p
 
 Three different PACKaaS requests are currently available: new package, update existing package and [organic packages](organic-packages.md).
 
+{% hint style="warning" %}
+**Plan ahead:** We highly recommend raising new package and update requests at least **14 days before the planned rollout** of the application or update. This leaves time for packaging and for your [testing](application-package-testing.md). There is no priority line for packaging requests, see [Packaging Delivery Time](../../../legal/support.md#packaging-delivery-time).
+{% endhint %}
+
 ### New Packages
 
 If an application is not available in the RealmJoin Store, it can be requested for packaging via the RealmJoin Packaging Factory. A valid PACKaaS request must include:
