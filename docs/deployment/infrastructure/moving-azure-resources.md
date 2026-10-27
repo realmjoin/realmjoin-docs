@@ -2,8 +2,8 @@
 type: Deployment Guide
 description: >-
   Recommendations for moving the Azure resources connected to RealmJoin — Key
-  Vault, Log Analytics workspace, Automation Account, Workplace Cloud Storage
-  and Application Insights — to another Azure subscription.
+  Vault, Log Analytics workspace, Automation Account and Workplace Cloud
+  Storage — to another Azure subscription.
 ---
 
 # Moving Azure Resources to Another Subscription
@@ -22,7 +22,6 @@ Use the Azure **Move → Move to another subscription** function for every resou
 | [Log Analytics workspace](#log-analytics-workspace)                                                        | Audit log, operational and runbook logs   | Run `Set-RJLogAnalyticsWorkspace` again with the new target  |
 | [Automation Account](#automation-account-runbooks)                                                         | Runbooks                                  | Run `Set-RJAutomationAccount` again with the new target      |
 | [Storage account](#workplace-cloud-storage)                                                                | Workplace Cloud Storage                   | Nothing in RealmJoin — verify only                           |
-| [Application Insights](#application-insights-laps-auditing)                                                | LAPS auditing (if configured)             | Nothing in RealmJoin — verify only                           |
 
 ## General Considerations
 
@@ -108,13 +107,6 @@ RealmJoin connects to the storage account with its connection string, which cont
 
 1. Move the storage account to the target resource group.
 2. Verify: upload a test file in RealmJoin Portal under **Organization → Other Files**. If an error occurs, copy the connection string again from **Storage account → Access keys** and save it under **Settings → Workplace cloud storage** (see [Workplace Cloud Storage](../../administration-and-settings/workplace-cloud-storage.md#create-storage-account)).
-
-## Application Insights (LAPS Auditing)
-
-Only relevant if you connected [Application Insights](../../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/application-insights.md) for LAPS auditing. RealmJoin stores the instrumentation key, which does not change during a move.
-
-1. Move the Application Insights resource. For a workspace-based resource, Microsoft notes that data sent before the move remains queryable through the underlying Log Analytics workspace.
-2. Verify: display a LAPS password in RealmJoin Portal and check that the event *Local Admin Password accessed* appears in Application Insights.
 
 ## Checklist
 
