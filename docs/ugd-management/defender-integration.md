@@ -60,6 +60,8 @@ The **A/V up to date** shield next to it is not part of this integration. It is 
 
 A summary of the device's Defender record:
 
+<figure><img src="../.gitbook/assets/defender-endpoint-security-information.png" alt="Endpoint Security Information section on the device details page"><figcaption><p>Endpoint Security Information</p></figcaption></figure>
+
 | Field              | Meaning                                                                                                                                                                 |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Onboarding**     | Defender onboarding state, for example _Onboarded_, _CanBeOnboarded_ or _Unsupported_. Anything other than _Onboarded_ is highlighted.                                  |
