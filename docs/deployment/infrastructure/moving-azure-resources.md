@@ -42,11 +42,8 @@ RealmJoin only stores the DNS name of the Key Vault. The name stays the same dur
 **Do not replace the Key Vault with a new one.** LAPS passwords are encrypted with the `realmjoin-master` certificate, whose private key is not exportable. A new vault gets a new certificate, and existing passwords can no longer be decrypted. Key Vault backups can only be restored within the same subscription, so they are no alternative. Recreating the vault means recreating all LAPS accounts on all devices.
 {% endhint %}
 
-1. Check the permission model under **Key Vault → Access configuration**:
-   * **Vault access policy** (as described in [KeyVault](../../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/keyvault.md)): the access policies move with the vault — nothing to do.
-   * **Azure role-based access control**: note the roles of the **RealmJoin** service principal on the vault and assign them again after the move.
-2. Move the vault: **Key Vault → Overview → Move → Move to another subscription**. A vault used for VM disk encryption cannot be moved.
-3. Verify: the certificate `realmjoin-master` still exists, and LAPS passwords can still be displayed in RealmJoin Portal for a few devices.
+1. Move the vault: **Key Vault → Overview → Move → Move to another subscription**. The access policies (see [KeyVault](../../realmjoin-agent/realmjoin-client/local-admin-password-solution-laps/keyvault.md)) move with the vault, so there is nothing to reconfigure. A vault used for VM disk encryption cannot be moved.
+2. Verify: the certificate `realmjoin-master` still exists, and LAPS passwords can still be displayed in RealmJoin Portal for a few devices.
 
 During the move, Azure only blocks management operations. Reading and writing secrets keeps working.
 
@@ -60,15 +57,21 @@ Between the end of the move and the reconnection below, RealmJoin cannot write l
 
 1. Before the move, remove solutions or a linked Automation Account from the workspace, if there are any — Azure does not move a workspace with linked services.
 2. Move the workspace: **Log Analytics workspace → Overview → Subscription: change**. Do not select the Data Collection Rules (`dcr-rj-*`). The move can take a while.
-3. In RealmJoin Portal, open **Settings → Log Analytics** and copy the setup command.
-4. **Replace the subscription ID and resource group** in the command with the new values. Keep the workspace name — without it, a new workspace would be created.
+3. Generate a script token in RealmJoin Portal under **Organization → Features** ([https://portal.realmjoin.com/organization/features](https://portal.realmjoin.com/organization/features)) with **Generate script token**. This requires permission to edit organization features, and the token is only valid for a limited time.
+4. Run the following command in a freshly opened, local PowerShell session — not in Azure Cloud Shell. Use the **new** subscription ID and resource group and the **existing** workspace name; without the workspace name, a new workspace would be created.
 
    ```powershell
-   Set-RJLogAnalyticsWorkspace -ResourceGroupName "<new resource group>" -WorkspaceName "<existing workspace name>" -SubscriptionId "<new subscription ID>" -Token "<Token>" 6>&1
+   $latest = [version](Find-Module RealmJoin -Repository PSGallery -ErrorAction Stop).Version
+   if (-not (Get-Module -ListAvailable RealmJoin | Where-Object Version -ge $latest)) {
+       Install-Module RealmJoin -Force -AllowClobber -ErrorAction Stop
+   }
+   Import-Module RealmJoin -Force
+   Set-RJLogAnalyticsWorkspace -ResourceGroupName "<new resource group>" -WorkspaceName "<existing workspace name>" -SubscriptionId "<new subscription ID>" -Token "<script token>" 6>&1
    ```
-5. Run the command as described in [Connecting Azure Log Analytics Workspace](../../monitoring-and-logs/log-analytics.md#setup). It leaves the existing workspace and its data untouched, creates new Data Collection Rules in the workspace's region, assigns the required roles and registers the new values with RealmJoin.
-6. In **Settings → Log Analytics**, select **Refresh** and **Check for configuration problems**. Then check that new entries appear in the [Audit Log](../../monitoring-and-logs/audit-log.md).
-7. Delete the old Data Collection Rules in the old subscription.
+
+   The command leaves the existing workspace and its data untouched, creates new Data Collection Rules in the workspace's region, assigns the required roles and registers the new values with RealmJoin. The Azure and PowerShell prerequisites are the same as for the initial setup, see [Connecting Azure Log Analytics Workspace](../../monitoring-and-logs/log-analytics.md#prerequisites).
+5. In **Settings → Log Analytics**, select **Refresh** and **Check for configuration problems**. Then check that new entries appear in the [Audit Log](../../monitoring-and-logs/audit-log.md).
+6. Delete the old Data Collection Rules in the old subscription.
 
 {% hint style="info" %}
 **Still using the workspace ID and shared key?** Azure regenerates the workspace keys during a move, so logging stops immediately. Run the setup command as described above — it also switches your tenant to the Log Ingestion API (see [Migrating to the Log Ingestion API](../../monitoring-and-logs/log-ingestion-api-migration.md)).
@@ -89,12 +92,19 @@ The target resource group **must be in the same region** as the Automation Accou
 1. Note the object ID of the managed identity (**Automation Account → Account Settings → Identity**).
 2. If the Automation Account is linked to a Log Analytics workspace (for example for Update Management or Change Tracking), remove these features and unlink the workspace first, as described by [Microsoft](https://learn.microsoft.com/en-us/azure/automation/how-to/move-account).
 3. Move the Automation Account to the target resource group.
-4. In RealmJoin Portal, open **Settings → Runbooks** and copy the setup command. **Replace the subscription ID and resource group** with the new values and keep the Automation Account name.
+4. Generate a script token as described for the [Log Analytics workspace](#log-analytics-workspace) (step 3).
+5. Run the following command in a freshly opened, local PowerShell session. Use the **new** subscription ID and resource group and the **existing** Automation Account name.
 
    ```powershell
-   Set-RJAutomationAccount -ResourceGroupName "<new resource group>" -AutomationAccountName "<existing account name>" -SubscriptionId "<new subscription ID>" -Token "<Token>" 6>&1
+   $latest = [version](Find-Module RealmJoin -Repository PSGallery -ErrorAction Stop).Version
+   if (-not (Get-Module -ListAvailable RealmJoin | Where-Object Version -ge $latest)) {
+       Install-Module RealmJoin -Force -AllowClobber -ErrorAction Stop
+   }
+   Import-Module RealmJoin -Force
+   Set-RJAutomationAccount -ResourceGroupName "<new resource group>" -AutomationAccountName "<existing account name>" -SubscriptionId "<new subscription ID>" -Token "<script token>" 6>&1
    ```
-5. Run the command as described in [Connecting Azure Automation](../../automation/connecting-azure-automation/README.md#setup). It assigns the role for RealmJoin on the account again and registers the new values with RealmJoin.
+
+   The command assigns the role for RealmJoin on the account again and registers the new values with RealmJoin. The Azure and PowerShell prerequisites are the same as for the initial setup, see [Connecting Azure Automation](../../automation/connecting-azure-automation/README.md#prerequisites).
 6. Verify:
    * The object ID of the managed identity is unchanged. If it has changed, grant its [roles and permissions](../../automation/connecting-azure-automation/azure-ad-roles-and-permissions.md#granting-roles-and-permissions) again.
    * **Settings → Runbooks → Refresh** shows the new values and the runbook sync completes.
@@ -107,14 +117,3 @@ RealmJoin connects to the storage account with its connection string, which cont
 
 1. Move the storage account to the target resource group.
 2. Verify: upload a test file in RealmJoin Portal under **Organization → Other Files**. If an error occurs, copy the connection string again from **Storage account → Access keys** and save it under **Settings → Workplace cloud storage** (see [Workplace Cloud Storage](../../administration-and-settings/workplace-cloud-storage.md#create-storage-account)).
-
-## Checklist
-
-* [ ] Old and new subscription belong to the same Entra ID tenant
-* [ ] Target resource groups are in the same region as the resources
-* [ ] Resource locks removed, Azure Policies of the target subscription checked
-* [ ] Key Vault: LAPS passwords can be displayed
-* [ ] Log Analytics: setup command run with the new values, configuration check passes, audit log entries appear
-* [ ] Automation Account: setup command run with the new values, runbook sync completes, test runbook succeeds
-* [ ] Workplace Cloud Storage: test upload succeeds
-* [ ] Old Data Collection Rules and orphaned role assignments removed, resource locks restored
