@@ -18,7 +18,7 @@ rjgit-group_mail_show-or-hide-in-address-book
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | ExchangeOnlineManagement (>= 3.9.2)<br>RealmJoin.RunbookHelper (>= 0.8.9) |
+| Required modules | ExchangeOnlineManagement (>= 3.9.2)<br>RealmJoin.RunbookHelper (>= 0.8.10) |
 | Schedulable | no |
 
 ## Permissions

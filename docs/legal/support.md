@@ -53,6 +53,8 @@ The Support Response Time is defined as the duration between the report of an in
 
 The Packaging Delivery Time starts with the arrival of the software package request. The Delivery Time is counted within the [support hours](support.md#support-hours) as the period during which an employee is actively working on a software package. The Delivery Time is paused in case of queries or similar to the customer. The end of the Delivery Time is reached when the software package is created or otherwise classified as fulfilled. If larger quantities of packaging requests (e.g. large lists during customer onboardings, mass release cycles) are received, the Delivery Time may no longer be met.
 
+There is no priority line for packaging requests. We highly recommend raising requests at least 14 days before the planned rollout of an application or update to leave time for packaging and testing.
+
 ## Service level
 
 ### Service hours

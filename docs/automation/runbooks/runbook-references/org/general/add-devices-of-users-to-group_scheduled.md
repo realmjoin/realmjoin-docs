@@ -22,7 +22,7 @@ rjgit-org_general_add-devices-of-users-to-group_scheduled
 | Property | Value |
 | --- | --- |
 | Version | 1.1.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.10) |
 | Schedulable | yes |
 
 ## Permissions

@@ -18,7 +18,7 @@ rjgit-org_general_add-or-remove-safeLinks-exclusion
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | ExchangeOnlineManagement (>= 3.9.2)<br>RealmJoin.RunbookHelper (>= 0.8.9) |
+| Required modules | ExchangeOnlineManagement (>= 3.9.2)<br>RealmJoin.RunbookHelper (>= 0.8.10) |
 | Schedulable | no |
 
 ## Permissions

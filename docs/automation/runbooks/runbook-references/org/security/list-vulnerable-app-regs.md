@@ -18,7 +18,7 @@ rjgit-org_security_list-vulnerable-app-regs
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Az.Storage (>= 9.7.2) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.10)<br>Az.Storage (>= 9.7.2) |
 | Schedulable | no |
 
 ## Permissions

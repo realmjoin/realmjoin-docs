@@ -57,7 +57,7 @@ rjgit-org_phone_add-or-remove-call-queue-authorized-users
 | Property | Value |
 | --- | --- |
 | Version | 1.0.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>MicrosoftTeams (>= 7.9.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.10)<br>MicrosoftTeams (>= 7.9.0) |
 | Schedulable | no |
 
 ## Permissions

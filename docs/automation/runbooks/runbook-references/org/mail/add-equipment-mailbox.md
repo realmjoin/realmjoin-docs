@@ -18,7 +18,7 @@ rjgit-org_mail_add-equipment-mailbox
 | Property | Value |
 | --- | --- |
 | Version | 2.0.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.41.2)<br>ExchangeOnlineManagement (>= 3.9.2) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.10)<br>Microsoft.Graph.Authentication (>= 2.41.2)<br>ExchangeOnlineManagement (>= 3.9.2) |
 | Schedulable | no |
 
 ## Permissions

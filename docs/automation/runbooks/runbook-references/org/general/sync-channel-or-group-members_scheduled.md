@@ -68,7 +68,7 @@ Set `WhatIfMode` to log what would change without writing anything.
   is taken from the `RJReport.StorageAccount.*` settings.
 
 The storage upload authenticates with the Automation account's managed identity; that identity needs the
-**Storage Account Contributor** RBAC role on the target storage account (this is an Azure RBAC
+**Reader and Data Access** RBAC role on the target storage account (this is an Azure RBAC
 assignment, not a Graph application permission).
 
 ### Scheduling
@@ -101,7 +101,7 @@ rjgit-org_general_sync-channel-or-group-members_scheduled
 | Property | Value |
 | --- | --- |
 | Version | 1.3.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.41.2)<br>Az.Accounts (>= 5.5.2) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.10)<br>Microsoft.Graph.Authentication (>= 2.41.2)<br>Az.Accounts (>= 5.5.2) |
 | Schedulable | yes |
 
 ## Permissions

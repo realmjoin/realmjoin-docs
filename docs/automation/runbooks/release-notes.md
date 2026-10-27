@@ -7,7 +7,20 @@ layout:
 
 Stay up to date with the latest changes to the RealmJoin Runbooks. Runbook updates are typically published here in monthly release cycles.
 
-## v2026.10.01
+## v2026.10.02
+
+> This patch release fixes report uploads and download links for report files with spaces or umlauts in their name.
+
+---
+
+### General Changes
+
+**RealmJoin.RunbookHelper module raised to 0.8.10.** All 183 runbooks now require version 0.8.10 (previously 0.8.9). The new version encodes file names in storage uploads and download links (SAS links), so report files with spaces or umlauts in their name are uploaded and their download links open; this takes effect in the 29 runbooks that upload report files to a storage account or create a download link.
+
+## Previous releases
+
+<details>
+<summary><strong>v2026.10.01</strong></summary>
 
 > This patch release fixes the Microsoft Graph connection in the RJ-PowerShell-7.4 runtime environment: all runbooks that use Microsoft Graph now require a module version that connects there.
 
@@ -17,7 +30,7 @@ Stay up to date with the latest changes to the RealmJoin Runbooks. Runbook updat
 
 **Microsoft Graph module raised to 2.41.2.** Versions 2.41.0 and 2.41.1 of `Microsoft.Graph.Authentication` require .NET 10 and fail to connect to Microsoft Graph in the RJ-PowerShell-7.4 runtime environment. All 65 runbooks that use Microsoft Graph now require version 2.41.2 (previously 2.39.0), which connects reliably there. Note: if the runtime environment contains other `Microsoft.Graph.*` modules, for example for your own runbooks, raise them to 2.41.2 as well.
 
-## Previous releases
+</details>
 
 <details>
 <summary><strong>v2026.10</strong></summary>

@@ -18,7 +18,7 @@ rjgit-user_phone_get-teams-user-info
 | Property | Value |
 | --- | --- |
 | Version | 1.0.3 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>MicrosoftTeams (>= 7.9.0) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.10)<br>MicrosoftTeams (>= 7.9.0) |
 | Schedulable | no |
 
 ## Permissions
