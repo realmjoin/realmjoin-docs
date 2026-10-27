@@ -18,6 +18,24 @@ The left side shows the device's core properties and stays visible in every tab.
 Which tabs, sections and actions you see depends on your [role](../../administration-and-settings/permission/pre-defined-roles.md) or [custom role permissions](../../administration-and-settings/permission/custom-roles/available-permissions.md#device-management), on the device's platform and on the data available for it (for example whether it is managed by Intune, onboarded to Defender or runs the [RealmJoin Client](../../realmjoin-agent/realmjoin-client/)). Sections without data are hidden.
 {% endhint %}
 
+## Tabs
+
+The tab bar above the right side holds the following tabs. A tab only appears when its condition is met and you hold the listed [permission](../../administration-and-settings/permission/custom-roles/available-permissions.md#device-management).
+
+| Tab | Shown when | Permission |
+| --- | --- | --- |
+| [Overview](device-details.md#overview-tab) | Always | — |
+| [Safeguard hold](device-details.md#safeguard-hold) | Windows devices, when a [Log Analytics workspace](../../monitoring-and-logs/log-analytics.md) is configured for the tenant | `CanSeeDeviceSafeguardHold` |
+| [Warranty](device-details.md#warranty) | Physical devices, when the warranty feature is enabled for the tenant | `CanSeeWarranty` |
+| [Runbooks](device-details.md#runbooks) | Always | `CanSeeRunbooks` |
+| [Remediation](device-details.md#remediation) | Always; content only for devices managed by Intune | `CanSeeRemediationScripts` |
+| [Remediation Audit](device-details.md#remediation-audit) | Always; content only for devices managed by Intune | `CanSeeRemediationScripts` |
+| [Compliance](device-details.md#compliance) | Devices managed by Intune | `CanSeeDeviceCompliancePolicies` |
+| [App Catalog](device-details.md#app-catalog) | Windows devices running the RealmJoin Client | `CanSeeUserAppCatalog` |
+| [Recovery Keys](device-details.md#recovery-keys) | Windows and macOS devices | `CanSeeBitLockerKeys` or `CanSeeRecoveryKeys` |
+
+The raw data tabs at the end of the bar are described under [RAW data sources](device-details.md#raw-data-sources).
+
 ## Device Summary
 
 ### **Object Properties**
@@ -83,11 +101,15 @@ Below the properties, RealmJoin Portal points out conditions that need attention
 
 The buttons at the bottom of the device summary trigger actions on the device:
 
-* **Sync** - Asks Intune to sync the device. If you are a user of this device yourself, it also starts a RealmJoin sync on the device you are working on.
+* **Sync** - Requests a sync, depending on the device and on who you are:
+  * For devices managed by Intune, it asks Intune to sync the device (requires the `CanSyncDevice` permission).
+  * If you are a user of this device yourself, it also starts a RealmJoin Client software sync on the computer you are working on.
+
+  A notification tells you which sync was requested (_Intune sync requested_, _Client sync requested_ or _Sync requested_ for both). The button is hidden when neither applies.
 * **Defender Scan** - Triggers a Microsoft Defender quick scan via Intune. Click it a second time to confirm.
 * **Request Logs** - Instructs the RealmJoin Client to upload extended diagnostic logs as a ZIP file the next time it is online. When the logs are available, use the download button next to it. On devices with multiple users, you can select the user to collect logs for. See [Collecting log files](../../troubleshooting-and-faq/troubleshooting/package-installation-issues/collecting-logfiles.md).
 
-Sync and Defender Scan require the device to be managed by Intune.
+Defender Scan requires the device to be managed by Intune.
 
 ## Overview Tab
 
@@ -284,11 +306,13 @@ Shown in red when the device identity stored by RealmJoin no longer matches the 
 
 ## Safeguard hold
 
-Shows the [Windows Update Safeguard Holds](https://learn.microsoft.com/en-us/windows/deployment/update/safeguard-holds) that currently block a feature update on this Windows device, with their ID and description. The data comes from Windows Update for Business Reports, so this tab is only available when a workspace is configured under **Settings → Update Compliance**. See [Windows Update for Business Reports](../../monitoring-and-logs/log-analytics.md#windows-update-for-business-reports).
+Shows the [Windows Update Safeguard Holds](https://learn.microsoft.com/en-us/windows/deployment/update/safeguard-holds) that currently block a feature update on this Windows device, with their ID and description, or _No safeguard holds found_.
+
+The tab appears on Windows devices once a [Log Analytics workspace](../../monitoring-and-logs/log-analytics.md) is connected to the tenant and you hold the `CanSeeDeviceSafeguardHold` permission. The holds themselves come from Windows Update for Business Reports, so the tab only shows data when that workspace is also entered under **Settings → Update Compliance**; otherwise it shows an error. See [Windows Update for Business Reports](../../monitoring-and-logs/log-analytics.md#windows-update-for-business-reports).
 
 ## Warranty
 
-Use the **Warranty** tab to display information like remaining vendor warranty time for **supported vendors/devices.**
+The **Warranty** tab queries the manufacturer's warranty API with the device's serial number and shows the product name, shipment or purchase date and country, followed by each warranty entitlement with its start and end date, the remaining days and whether it is active.
 
 {% hint style="success" %}
 Currently supported vendors: Apple, Dell, Fujitsu, HP, Huawei, Lenovo and Microsoft
@@ -300,7 +324,7 @@ Currently supported vendors: Apple, Dell, Fujitsu, HP, Huawei, Lenovo and Micros
 We rely on the information provided by the vendors through their APIs. We do not guarantee the accuracy of this information.
 {% endhint %}
 
-Depending on the API used, a captcha might be displayed before requesting/displaying warranty information.
+For Apple and Huawei devices, the vendor API requires you to solve a captcha before the warranty information is loaded.
 
 ## Runbooks
 
@@ -310,7 +334,9 @@ Depending on the API used, a captcha might be displayed before requesting/displa
 
 Lists the [remediation scripts](../../automation/remediation-scripts.md) of your tenant, grouped by category, with their publisher, version and dates. Use **Check Detection Code** and **Check Remediation Code** to review a script.
 
-If you are allowed to run remediation scripts, **New Run** runs the script on this device right away (Intune on-demand remediation). The device must be managed by Intune.
+With the `CanRunRemediationScripts` permission, **New Run** runs the script on this device right away (Intune on-demand remediation).
+
+The tab requires the `CanSeeRemediationScripts` permission and only shows content for devices managed by Intune.
 
 ## Remediation Audit
 
@@ -318,6 +344,8 @@ Shows what remediation activity Intune recorded for this device:
 
 * **Remote Actions** - Remote actions requested for the device, who requested them and their state
 * **Script States** - For each remediation script that ran on the device: the detection and remediation state, the script output and errors before and after remediation, and when it last ran
+
+Same permission as the **Remediation** tab.
 
 ## Compliance
 
