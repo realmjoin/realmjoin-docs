@@ -31,6 +31,7 @@
   * [User Details](ugd-management/user-list/user-details.md)
   * [Group Details](ugd-management/user-list/group-details.md)
   * [Device Details](ugd-management/user-list/device-details.md)
+* [Defender for Endpoint Integration](ugd-management/defender-integration.md)
 * [User and Group Settings](ugd-management/user-and-group-settings/README.md)
   * [Available RealmJoin Policies](ugd-management/user-and-group-settings/additional-settings.md)
 
