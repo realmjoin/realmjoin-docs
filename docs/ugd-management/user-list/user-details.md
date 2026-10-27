@@ -18,7 +18,7 @@ Which tabs, sections and actions you see depends on your [role](../../administra
 
 ## User Summary
 
-![](<../../.gitbook/assets/image (196).png>)
+<figure><img src="../../.gitbook/assets/ugd-user-summary.png" alt="User summary with badges, creation date and directory properties"><figcaption><p>User summary</p></figcaption></figure>
 
 ### Status information
 
@@ -28,8 +28,8 @@ Badges and dates show the state of the user object:
 * **Member** - The user is a native user in this tenant/organization
 * **Guest** - This is an external user from a different organization
 * **DE/US**... - Two letter code designating the user's [usage location](https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/licensing-groups-resolve-problems#usage-location-isnt-allowed) which is relevant for licensing.
-* ![](<../../.gitbook/assets/image (189).png>) **Created** - Object creation date
-* ![](<../../.gitbook/assets/image (263).png>) **Last activity** - The user's most recent sign-in
+* **Created** - Object creation date
+* **Last activity** - The user's most recent sign-in (shown only if the user has signed in)
 
 ### Properties
 
@@ -134,6 +134,8 @@ Please see [Available Settings](../user-and-group-settings/additional-settings.m
 ## Roles & Policies Tab <a href="#roles-and-policies" id="roles-and-policies"></a>
 
 Shows the RealmJoin Portal roles and permissions this user has. Use it to find out why a user cannot see or do something in the Portal.
+
+<figure><img src="../../.gitbook/assets/ugd-user-roles-policies.png" alt="Roles and Policies tab with RealmJoin roles and policies"><figcaption><p>Roles & Policies tab</p></figcaption></figure>
 
 * **RealmJoin Roles** - The [RealmJoin roles](../../administration-and-settings/permission/pre-defined-roles.md) the user holds and how each is **Assigned via**: a group, an Entra ID role or an app role.
 * **Policies** - Each [permission](../../administration-and-settings/permission/custom-roles/available-permissions.md) with its **Status** (_Active_ or _Inactive_) and the roles it is **Granted via**. A _Custom Role_ badge marks permissions from a custom role, and _Blocked by condition_ marks permissions whose conditions are not met. Turn off **Only active** to also see inactive permissions.

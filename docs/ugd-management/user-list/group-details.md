@@ -7,8 +7,6 @@ description: >-
 
 # Group Details
 
-![Application management group](<../../.gitbook/assets/image (123).png>)
-
 This page shows you details regarding a single group.
 
 {% hint style="info" %}
@@ -24,6 +22,8 @@ The category "groups" includes:
 * Microsoft Office365 groups and teams
 
 ### **Object Properties**
+
+<figure><img src="../../.gitbook/assets/ugd-group-summary.png" alt="Group summary of an app assignment group"><figcaption><p>Group summary</p></figcaption></figure>
 
 The left side of the page shows the group's core properties. It does not scroll and stays visible in every tab:
 
@@ -65,7 +65,7 @@ On Entra ID groups ("Non-mail enabled security" and "Unified") with static membe
 
 Please use a [runbook](../../automation/runbooks/) to change owners of a group or to change memberships to Exchange Online groups, like Distribution Groups.
 
-![Members of a group](<../../.gitbook/assets/image (225).png>)
+<figure><img src="../../.gitbook/assets/ugd-group-members-more.png" alt="Direct members list with the More menu opened"><figcaption><p>Members with the More menu</p></figcaption></figure>
 
 #### Adding Members
 
@@ -91,6 +91,8 @@ Open **More** below the member list and select **Bulk operation** to copy member
 * **Remove members (except)** - Remove all members of the source group from this group
 
 Click **Load** to load the source group's members, then **Execute**. When the operation is done, use **Download log** to get a CSV file of all changes.
+
+<figure><img src="../../.gitbook/assets/ugd-group-bulk-change-members.png" alt="Bulk change members dialog with a source group selected"><figcaption><p>Bulk change members</p></figcaption></figure>
 
 #### Pull members up
 

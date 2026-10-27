@@ -13,12 +13,6 @@ Video tutorial (shows an older version of the lists)
 
 Selecting the Users, Groups or Devices tab lists the users, groups and devices of your tenant. Click the name of an object to open its details page.
 
-<figure><img src="../../.gitbook/assets/image (213).png" alt=""><figcaption><p>User List</p></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/image (318).png" alt=""><figcaption><p>Group List</p></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/image (319).png" alt=""><figcaption><p>Device List</p></figcaption></figure>
-
 ### Object Types
 
 User, Group and Device object types are separated in the same manner as Entra ID:
@@ -70,7 +64,7 @@ You can use the filters above the list to limit search results to specific User,
 
 {% tabs %}
 {% tab title="Users" %}
-<figure><img src="../../.gitbook/assets/image (204).png" alt=""><figcaption><p>User Filters</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ugd-user-list.png" alt="User list with filters and advanced search footer"><figcaption><p>User List</p></figcaption></figure>
 
 **Account state**
 
@@ -88,7 +82,7 @@ The list shows each user's name, UPN, object ID, creation date, job title, city,
 {% endtab %}
 
 {% tab title="Groups" %}
-<figure><img src="../../.gitbook/assets/image (156).png" alt=""><figcaption><p>Group Filters</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ugd-group-list.png" alt="Group list with filters"><figcaption><p>Group List</p></figcaption></figure>
 
 **Only RealmJoin**
 
@@ -126,7 +120,7 @@ The list shows the group's type badges (**S**ecurity / **U**nified, **S**tatic /
 {% endtab %}
 
 {% tab title="Devices" %}
-<figure><img src="../../.gitbook/assets/image (135).png" alt=""><figcaption><p>Device Filters</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ugd-device-list.png" alt="Device list with filters"><figcaption><p>Device List</p></figcaption></figure>
 
 **Type**
 

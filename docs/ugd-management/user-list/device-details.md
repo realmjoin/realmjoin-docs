@@ -10,7 +10,7 @@ description: >-
 
 This page provides information about the device you’ve selected from the [Device List](./).
 
-<figure><img src="../../.gitbook/assets/image (186).png" alt=""><figcaption><p>Device Details</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ugd-device-details.png" alt="Device details page of a Windows device with the Overview tab"><figcaption><p>Device details with the Overview tab</p></figcaption></figure>
 
 The left side shows the device's core properties and stays visible in every tab. The right side shows the selected tab, by default the **Overview** tab.
 
@@ -39,25 +39,24 @@ The left section of the Device Details page shows the device name, model and man
 
 ### Status Information
 
-The status of the device is shown as icons and tags. Icons are blue (active / present), orange (warning) or red (inactive / missing). Hover over an icon to see its meaning.
+The status of the device is shown as tags, dates and icons. Icons are blue (active / present), orange (warning) or red (inactive / missing). Hover over an icon to see its meaning.
 
-<img src="../../.gitbook/assets/image (251).png" alt="" data-size="original">Endpoint Management active
+<figure><img src="../../.gitbook/assets/ugd-device-status.png" alt="Tags, dates and status icons of a Windows device"><figcaption><p>Tags, dates and status icons</p></figcaption></figure>
 
-![](<../../.gitbook/assets/image (278).png>)Disk Encryption enabled
+Dates, from left to right:
 
-![](<../../.gitbook/assets/image (222).png>)Defender MDE enabled (onboarded to Microsoft Defender for Endpoint)
+* **Created** - When the device object was created in Entra ID
+* **Last reboot** - When Windows was last started (requires the RealmJoin Client)
+* **Last activity** - Last seen activity / last contact. Shown in orange if the device has not been active for more than 7 days.
 
-![](<../../.gitbook/assets/image (201).png>)A/V up to date (Windows)
+Icons, from left to right:
 
-![](<../../.gitbook/assets/image (253).png>)Compliant device. Orange means the device is compliant only because it is in its grace period. If you can see the [Compliance](device-details.md#compliance) tab, click the icon to open it.
-
-WHfB Biometric used (Windows) - The last sign-in used Windows Hello for Business with fingerprint or face recognition.
-
-![](<../../.gitbook/assets/image (189).png>) **Created** - When the object was created
-
-**Last reboot** - When Windows was last started (requires the RealmJoin Client)
-
-![](<../../.gitbook/assets/image (263).png>) **Last activity** - Last seen activity / Last contact. Shown in orange if the device has not been active for more than 7 days.
+* **Endpoint Management** - The device is managed by Intune
+* **Disk Encryption** - The device's disk is encrypted
+* **Defender MDE** - The device is onboarded to Microsoft Defender for Endpoint (shown when the [Defender for Endpoint integration](../defender-integration.md) is enabled)
+* **AV up-to-date** - All antivirus products report current signatures (Windows; shown when the Defender for Endpoint integration is enabled)
+* **Compliant Device** - Intune reports the device as compliant. Orange means the device is compliant only because it is in its grace period. If you can see the [Compliance](device-details.md#compliance) tab, click the icon to open it.
+* **WHfB Biometric** - The last sign-in used Windows Hello for Business with fingerprint or face recognition (Windows). Orange means it did not.
 
 Tags:
 
@@ -126,7 +125,7 @@ For devices running the [RealmJoin Client](../../realmjoin-agent/realmjoin-clien
 
 ### Endpoint Security Information
 
-For devices onboarded to Microsoft Defender for Endpoint: **Onboarding** and **Health Status**, **Exposure Level**, **Risk Score**, **Agent Version**, **RBAC Group** (the Defender device group), **First Seen** and **Last Seen**.
+For devices onboarded to Microsoft Defender for Endpoint: **Onboarding** and **Health Status**, **Exposure Level**, **Risk Score**, **Agent Version**, **RBAC Group** (the Defender device group), **First Seen** and **Last Seen**. The **Sections** list calls this section _Extended Security Information_. See [Defender for Endpoint integration](../defender-integration.md).
 
 ### Autopilot Information
 
@@ -324,15 +323,23 @@ Shows what remediation activity Intune recorded for this device:
 
 For devices managed by Intune: each compliance policy that applies to the device, with its **Status**, the user it was evaluated for (or _Device assignment_) and the **Last Contact**. Click a policy name to see the result of each of its settings on this device, with non-compliant settings listed first.
 
+<figure><img src="../../.gitbook/assets/ugd-device-compliance.png" alt="Compliance tab with one compliance policy"><figcaption><p>Compliance tab</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/ugd-device-compliance-settings.png" alt="Setting results of a compliance policy on this device"><figcaption><p>Setting results of a policy</p></figcaption></figure>
+
 ## App Catalog
 
-For Windows devices running the RealmJoin Client: the [App Catalog](../../realmjoin-agent/client-menu/self-service-portal.md#app-catalog-tab) as the user of this device sees it. Search the apps or filter them, for example by _Installed_ or _Update Available_.
+For Windows devices running the RealmJoin Client: the [App Catalog](../../realmjoin-agent/client-menu/self-service-portal.md#app-catalog-tab) as the user of this device sees it. Search the apps or filter them by state (_Installed_, _Update Available_, _Installable_, _Re-Installable_) or category.
+
+<figure><img src="../../.gitbook/assets/ugd-device-app-catalog.png" alt="App Catalog tab of a Windows device"><figcaption><p>App Catalog tab</p></figcaption></figure>
 
 If you are a user of this device yourself, you can install, update, re-install or uninstall apps from here. Otherwise the catalog is read-only.
 
 ## Recovery Keys
 
-For encrypted Windows and macOS devices, RealmJoin Portal can work with the disk-encryption recovery key — **BitLocker** on Windows and **FileVault** on macOS.
+The **Recovery Keys** tab shows the disk-encryption recovery key of Windows (**BitLocker**) and macOS (**FileVault**) devices.
+
+<figure><img src="../../.gitbook/assets/ugd-device-recovery-keys.png" alt="Recovery Keys tab of a Windows device with a masked BitLocker key"><figcaption><p>Recovery Keys tab (Windows)</p></figcaption></figure>
 
 * **Windows** - The BitLocker recovery keys stored in Entra ID, with the volume type, key ID and creation date.
 * **macOS** - The FileVault recovery key escrowed in Intune.
