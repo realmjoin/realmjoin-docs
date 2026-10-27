@@ -19,6 +19,7 @@
 * [Infrastructure Considerations](deployment/infrastructure/README.md)
   * [Limiting the Scope of RealmJoin Portal](deployment/infrastructure/limiting-the-scope-of-realmjoin-portal.md)
   * [AVD Templates](deployment/infrastructure/avd-templates.md)
+  * [Moving Azure Resources to Another Subscription](deployment/infrastructure/moving-azure-resources.md)
 * [Architecture Overview](deployment/architecture-overview.md)
 
 ## User, Group & Device Management <a href="#ugd-management" id="ugd-management"></a>
