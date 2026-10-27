@@ -10,7 +10,7 @@ description: >-
 RealmJoin Agent is an optional component that you can use alongside RealmJoin Portal on Windows 10/11 clients. It enables additional features such as:
 
 * [RealmJoin ESP](realmjoin-esp.md)
-* [RealmJoin Application / Configuration Deployment and Lifecycle](../../application-management/packages/package-store/package-store-details.md#realmjoin-deployment)
+* [RealmJoin Application / Configuration Deployment and Lifecycle](../../application-management/deployment-methods.md)
 * [Local Admin Password Solution (LAPS)](local-admin-password-solution-laps/)
 * [Notifications](showing-notifications.md)
 * [Native Choco Runtime](native-choco-runtime.md)

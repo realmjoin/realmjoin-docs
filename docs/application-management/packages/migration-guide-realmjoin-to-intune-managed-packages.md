@@ -7,15 +7,19 @@ description: >-
 
 # Migration Guide: RealmJoin to Intune Managed Packages
 
-### Important Strategic Recommendation
+{% hint style="warning" %}
+We recommend staying with RealmJoin managed packages. Several package options are only available with the RealmJoin Agent, see [Deployment Methods](../deployment-methods.md#feature-comparison). Do not run RealmJoin and Intune managed packages in parallel for the same package or package family; use one deployment method per package to avoid conflicting installations.
 
-**We currently recommend continuing to use RealmJoin managed packages instead of transitioning to Intune managed packages.** The RealmJoin agent provides significantly more features and greater flexibility for package management. Additionally, we highly recommend against running both RealmJoin and Intune managed packages in parallel for the same package or package family. Strategically, your organization should standardize on a single management mechanism across your environment to ensure consistency, reduce complexity, and avoid conflicts.
-
-This migration guide is provided for organizations that have made the strategic decision to transition to Intune managed packages. Please thoroughly evaluate your requirements and consult with your RealmJoin solution architect before proceeding with this migration.
+Consult your RealmJoin solution architect before starting this migration.
+{% endhint %}
 
 ### Key Concept
 
-Detection fingerprints remain consistent throughout the migration process. This means that Intune managed packages will recognize and properly handle devices that previously had RealmJoin managed package instances installed, ensuring continuity of deployment and inventory tracking.
+The RealmJoin and the Intune version of a package use the same detection fingerprint. The Intune package therefore detects installations made by the RealmJoin package as installed:
+
+* Detection rules do not need to be reconfigured.
+* Devices that already have the software are not reinstalled.
+* Inventory and reporting continue across the switch.
 
 ### Migration Process
 
@@ -57,17 +61,6 @@ Transfer users from the RealmJoin managed package to the Intune managed package 
 <div><figure><img src="../../.gitbook/assets/25-10-21-11_28_41_msedge.png" alt="Selecting the bulk operation feature to copy all users from a existing group"><figcaption><p>Selecting the bulk operation feature to copy all users from a existing group</p></figcaption></figure> <figure><img src="../../.gitbook/assets/25-10-21-11_28_58_msedge.png" alt="Execution of the bulk operation. Users are added to the new group, a log is available for your reference."><figcaption><p>Execution of the bulk operation. Users are added to the new group, a log is available for your reference.</p></figcaption></figure></div>
 
 
-
-### Detection Fingerprint Consistency
-
-An important advantage of this migration approach is that detection fingerprints remain unchanged. The same fingerprint configuration used by the RealmJoin managed package will function seamlessly with the Intune managed package.
-
-**Implications:**
-
-* No need to reconfigure detection rules or fingerprints
-* Existing inventory and deployment history remains valid
-* Devices that previously received the RealmJoin package version will be correctly identified when transitioning to the Intune version
-* Audit trails and compliance reporting remain accurate across the transition
 
 ### Post-Migration Verification
 

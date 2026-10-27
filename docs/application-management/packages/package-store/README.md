@@ -2,70 +2,94 @@
 type: Application Management
 description: >-
   The RealmJoin Package Store is a maintained library of ready-to-use packages
-  deployable via RealmJoin Client or Intune.
+  deployable via RealmJoin Client or Intune. Browse, filter and inspect packages
+  before subscribing.
 ---
 
 # Package Store
 
 {% embed url="https://www.youtube.com/watch?v=QYBx9yto560" %}
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption><p>The RealmJoin application store</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/pkg-store-list.png" alt="Package Store with featured apps, type and OS filters"><figcaption><p>The RealmJoin Package Store</p></figcaption></figure>
 
-RealmJoin Portal provides and maintains a large library of ready-to-use packages, easily deployable using either the RealmJoin Client or Intune.
+The Package Store lists all packages your tenant can subscribe to: the generic packages RealmJoin provides for all customers, plus the custom and organic packages built for your organization. Each package can be deployed via the RealmJoin Agent or Intune.
 
-### Categories
+## Browse the store
 
-Packages are sorted into categories to simplify searching. The categories are displayed as tags on the package. Example categories are **Tools**, **Office**, **Driver**
+### Filters
 
-### Search
-
-You can use the search bar at the top to search for a package by:
-
-* **Display name** - e.g. "7-Zip"
-* **Category** - like "Tools" or "Office"
-* **Description** - like "7-Zip is a free and open-source file archiver"
-* **Package ID** - e.g. "generic-7zip" (visible via [Package Details](package-store-details.md))
-
-The search updates results instantly as you type.
-
-### Package Types
-
-Every package falls in at least one of the following categories. The banner on the right side of a package is color-coded accordingly.
+Two filter groups narrow down the list. Each shows one option at a time.
 
 <figure><img src="../../../.gitbook/assets/image (384).png" alt=""><figcaption><p>Package type filter</p></figcaption></figure>
 
-#### Generic Packages
+**Package type** (see [Package kinds](../#package-kinds)):
 
-If an application package is created without any customer-specific configuration hard-coded inside, it is created as generic package. Generic packages are available to all customers the same, and if possible, generic packages will be created as maintained packages.
+* **Generic** (default) - Packages available to all customers.
+* **Custom** - Packages built specifically for your organization.
+* **Organic** - Packages built automatically from your uploaded `.zip` files.
+* **Unlisted** - Only shown to tenant administrators. Lists your custom and organic packages that are not listed in the store, see [Listing and unlisting packages](./#listing-and-unlisting-packages).
 
-This package is available for provisioning via RealmJoin Agent & Intune / [Package Management](../package-management.md).
+**Operating system:**
 
-#### Custom Package
+* **Windows** (default)
+* **MacOS** - macOS packages can only be deployed via Intune.
+* **Android** - Only shown if Android app deployment is activated for your tenant. Android apps are not part of the RealmJoin catalogue; they are added from Managed Google Play by pasting a Google Play link. See [Android Apps (Managed Google Play)](../android-apps-managed-google-play.md).
 
-In contrast to the former types of packages, this kind of package is not globally available to all customers. In most cases this is a custom software package created specifically for your environment.
+### Search
 
-This package is available for provisioning via RealmJoin Agent & Intune / [Package Management](../package-management.md).
+The search bar above the list searches by:
 
-#### Organic Package
+* **Display name** - e.g. "7-Zip"
+* **Category** - e.g. "Tools" or "Office". Categories are shown as tags on each package.
+* **Description** - e.g. "free and open-source file archiver"
+* **Package ID** - e.g. "generic-7zip". The ID is matched from its start.
+* **Unique TVM ID** - The software's ID in the Microsoft Defender software inventory, matched from its start.
 
-In contrast to the former types of packages, this kind of package is not globally available to all customers. In most cases this is a custom software package created specifically for your environment.
+The results update as you type. The placeholder shows how many packages your tenant can access; on a [limited catalogue](../#full-and-limited-catalogue) it shows the number of free packages next to the total.
 
-This package is available for provisioning via RealmJoin Agent & Intune / [Package Management](../package-management.md).
+## Package Store details
 
-#### macOS Packages
+<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption><p>Package Store details page</p></figcaption></figure>
 
-Filter on OS type. Default filter is _Windows_, to access macOS packages, select _macOS_. This filter works in conjunction with the _generic/custom/organic/unlisted_ filter.
+Clicking a package opens its store entry. The store entry describes the package as RealmJoin provides it. Once you subscribe, your tenant's instance has its own [details page](../package-details.md).
 
-macOS packages are only available for provisioning via Intune.
+### Package properties
 
-#### Android Apps
+The left side of the page always shows the core properties of the package:
 
-If Android app deployment is activated for your tenant, the OS filter also offers _Android_. Android apps are not part of the RealmJoin catalogue; they are added from Managed Google Play by pasting a Google Play link. See [Android Apps (Managed Google Play)](../android-apps-managed-google-play.md).
+* **Display name**, **publisher** and **description**
+* The [package badges](../#package-badges), such as _Generic_ and _Maintained_
+* **Package ID** ("Unique RJ ID"), e.g. `generic-7zip`
+* **Platform**, **package type** (e.g. Choco or Craft for Windows, PKG or DMG for macOS) and **architectures**
+* **Download size** and **install size**
+* **Version**, **last update** and the update comment
+* **Unique TVM ID** - If available, a link to the software's entry in the [Microsoft Defender software inventory (TVM)](https://security.microsoft.com/software-inventory/applications). There you can check for known security issues and outdated versions of this software in your organization. An appropriate license from Microsoft is needed to access TVM.
+* **In RealmJoin as** / **In Intune as** - If you already subscribed to the package, a link to your subscription in [Package Management](../package-management.md).
 
-#### Unlisted Package
+![Available Version vs Provisioned Package](<../../../.gitbook/assets/image (267).png>)
 
-This section is only available for selected ADM accounts. If you can see it, you know what it is.
+### Overview tab
 
-### Full vs. Limited Catalogue of Packages
+<figure><img src="../../../.gitbook/assets/image (343).png" alt=""><figcaption><p>Overview tab</p></figcaption></figure>
 
-If you recently self-onboarded into RealmJoin or do not have a subscription/licensing agreement yet, the list of software packages will be limited to a free-to-use subset of packages. Please [contact us](../../../legal/support.md) to enable the full catalogue of packages for your organization.
+The Overview tab is split into these sections:
+
+* **Readme** - The long description of the package.
+* **Subscribe** - The buttons to subscribe to the package, see [Subscribing to a Package](package-store-details.md).
+* **Technical Help** - If the package provides it, the supported [arguments](../package-settings.md#arguments) and other requirements.
+
+### Versions tab
+
+The Versions tab is the package's changelog. It shows when the package has been updated in RealmJoin's repository plus a short description of changes.
+
+Each version in the changelog links to its own Package Store entry. Subscribing from such an entry provisions exactly that version, which is the only way to deploy a version older than the current one. An already subscribed package cannot be downgraded, see [Package Updates](../package-updates.md#downgrades).
+
+<figure><img src="../../../.gitbook/assets/image (344).png" alt=""><figcaption><p>Package changelog</p></figcaption></figure>
+
+## Listing and unlisting packages
+
+Custom and organic packages can be unlisted, for example to keep an outdated organic package from being subscribed again. At the bottom of the left side, the store entry shows whether it is **Listed in Store** or **Not listed in Store**. Tenant administrators can switch this with **Unlist now** or **List now**.
+
+<figure><img src="../../../.gitbook/assets/image (392).png" alt=""><figcaption><p>Unlist now</p></figcaption></figure>
+
+Unlisted packages no longer appear under _Custom_ or _Organic_. Tenant administrators still find them under the **Unlisted** filter and can list them again.
