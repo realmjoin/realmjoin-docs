@@ -10,7 +10,7 @@ description: >-
 
 {% embed url="https://www.youtube.com/watch?v=QYBx9yto560" %}
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption><p>The RealmJoin Package Store</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/pkg-store-list.png" alt="Package Store with featured apps, type and OS filters"><figcaption><p>The RealmJoin Package Store</p></figcaption></figure>
 
 The Package Store lists all packages your tenant can subscribe to: the generic packages RealmJoin provides for all customers, plus the custom and organic packages built for your organization. Each package can be deployed via the RealmJoin Agent or Intune.
 

@@ -74,13 +74,21 @@ The Overview tab is split into sections, listed in the sidebar on the right:
 * **Readme** - The long description of the package.
 * **Update** - Shown when the Package Store offers a newer version. See [Update a package manually](package-updates.md#update-a-package-manually).
 * **Assignments** - The groups, users and devices the package is assigned to. See [Package Assignments](package-deployment.md).
-* **Install status** - How many devices have the package installed, failed to install it or have another version, with a breakdown of the exit codes.
+* **Install status** - How many devices have the package installed, failed to install it or have another version, with a breakdown of the exit codes (RealmJoin) or Intune error codes (Intune), see below.
 * **Dependent Packages** - Packages that list this package in their [_Depends on_](package-settings.md#expert-settings) setting.
 * **Technical Help** - If the package provides it, the supported [arguments](package-settings.md#arguments) and other requirements.
 * **Vulnerabilities** - Known security vulnerabilities of the software, if available.
 * **Usage** - The spread of versions across your devices, see below.
 
 For Intune packages, the tab additionally shows the **Device status** and **User status** reported by Intune, separately for the main and the preview app.
+
+#### Install status
+
+For RealmJoin packages, the section is based on the data reported by the RealmJoin Agent and shows the number of devices with the package installed, failed or in another version, plus the exit codes of failed installations.
+
+For Intune packages, the section is based on the Intune install status and shows when it was collected. It lists the number of devices and users per state (**Installed**, **Failed**, **Pending**, **Not installed**, **Not applicable**) and a table of the Intune error codes of failed installations with their description and the number of affected devices. Each error code links to its explanation. The **Device status** list below shows the state per device and user.
+
+<figure><img src="../../.gitbook/assets/pkg-install-status.png" alt="Install status and device status of an Intune package"><figcaption><p>Install status and device status of an Intune package</p></figcaption></figure>
 
 #### Usage
 

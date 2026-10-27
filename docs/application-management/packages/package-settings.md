@@ -93,6 +93,8 @@ User settings within application packages are treated as a set dependency.
 {% endtab %}
 
 {% tab title="Intune packages" %}
+<figure><img src="../../.gitbook/assets/pkg-expert-settings-intune.png" alt="Expert settings dialog of an Intune Windows app"><figcaption><p>Expert settings of an Intune Windows app</p></figcaption></figure>
+
 <table><thead><tr><th width="200">Setting</th><th>Explanation</th></tr></thead><tbody><tr><td>Auto upgrade</td><td><strong>Automatically upgrades</strong> existing installations when a newer version is assigned. Intune only updates <strong>Required</strong> assignments. To keep <strong>Available</strong> apps up to date, enable the <a href="update-group.md">Update Group</a>.</td></tr><tr><td>Featured app</td><td>Shows the app as a featured app in the Company Portal.</td></tr><tr><td>Allow available uninstall</td><td>Windows only. Allows users to uninstall the app from the Company Portal when it is assigned as Available.</td></tr><tr><td>Installation time required (mins)</td><td>Windows only. The maximum run time of the installation.</td></tr><tr><td>Pre-install script / Post-install script</td><td>macOS PKG apps only. Shell scripts that run before the installation or after a successful installation. Leave empty to use the package default, if any.</td></tr><tr><td>Categories</td><td>The categories under which the app appears in the Company Portal. Only shown if your tenant has <a href="package-store/package-store-details.md#app-categories">app categories</a>.</td></tr></tbody></table>
 {% endtab %}
 {% endtabs %}

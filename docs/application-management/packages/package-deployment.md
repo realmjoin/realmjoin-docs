@@ -149,7 +149,7 @@ Users and devices should only be in one RealmJoin managed group at any given tim
 
 The **Managed members** list shows all users and devices in the package's managed groups, with the group they are in.
 
-<figure><img src="../../.gitbook/assets/image (353).png" alt=""><figcaption><p>Managed members</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/pkg-managed-members.png" alt="Managed members list with Move to links and a nested member"><figcaption><p>Managed members</p></figcaption></figure>
 
 * **Assign** adds users or devices to the Main group.
 * **Move to: \[main] \[preview] \[available] \[uninstall]** moves a member from its current group to the selected one.
@@ -235,6 +235,8 @@ Each assignment in the **Direct groups** and **Direct users** lists has a **\[se
 
 {% tabs %}
 {% tab title="RealmJoin packages" %}
+<figure><img src="../../.gitbook/assets/pkg-assignment-settings.png" alt="Assignment settings dialog of a RealmJoin package"><figcaption><p>Assignment settings of a RealmJoin package</p></figcaption></figure>
+
 * **Hidden** - Hides the package from the user's list.
 * **Mandatory** - Installs the package as Required instead of Available. Not available for managed packages, whose assignment type follows the managed group.
 * **Auto upgrade**, **Only in VDI / Ignore in VDI**, **Only on hybrid-joined devices / Ignore on hybrid-joined devices**, **Ignore on private devices**, **Deployment rate**, **Main app restrictions** and **User part restrictions** - Same as the [expert settings](package-settings.md#expert-settings) of the package, for this assignment only. Settings left unset follow the package.

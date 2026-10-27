@@ -41,6 +41,8 @@ Updating requires the `CanSubscribeApp` and `CanUpgradeApp` [permissions](../../
 
 By default, an update always targets the latest version in the Package Store. If you want to skip a version or need a specific one, click _Choose another version_ below the update buttons. A dropdown lists the eligible versions, the latest one marked with "(latest)"; select one and confirm with _Update_. For managed packages there is one row per target: _Main_, _Preview_ (start a preview) and _Update preview_ (move an existing preview).
 
+<figure><img src="../../.gitbook/assets/pkg-update-choose-version.png" alt="Update section with Choose another version expanded"><figcaption><p>Choose another version</p></figcaption></figure>
+
 The option is only shown when all of the following apply:
 
 * The package was subscribed from the Package Store and an update is available (the _Update_ section is visible).

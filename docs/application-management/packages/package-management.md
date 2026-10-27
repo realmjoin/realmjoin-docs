@@ -9,7 +9,7 @@ description: >-
 
 Package Management (_Packages_ in the portal navigation) shows all packages that currently exist in your environment across RealmJoin and Microsoft Intune.
 
-<figure><img src="../../.gitbook/assets/image (159).png" alt=""><figcaption><p>Package Management List</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/pkg-package-list.png" alt="Package Management list with filters and columns"><figcaption><p>Package Management list</p></figcaption></figure>
 
 Clicking on the name of a package opens the package's [details page](package-details.md).
 
@@ -42,8 +42,6 @@ The toggles become available once the package list has been fully loaded.
 * **Install** - A bar showing how many devices have the package installed, not installed, pending or failed.
 * **Coordinator** - How the package is deployed: **RealmJoin (managed)**, **RealmJoin (basic)**, **Intune (managed)**, **Intune (basic)** or **Intune (unmanaged)** for Intune apps not created by RealmJoin.
 * **Platform** - The platform of the package.
-
-<figure><img src="../../.gitbook/assets/image (94).png" alt=""><figcaption><p>List of updates</p></figcaption></figure>
 
 ## Search, sort and export
 
