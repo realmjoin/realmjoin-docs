@@ -18,7 +18,7 @@ rjgit-device_AVD_toggle-drain-mode
 | Property | Value |
 | --- | --- |
 | Version | 1.0.1 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Az.DesktopVirtualization (>= 6.0.0)<br>Az.Accounts (>= 5.5.2) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.10)<br>Az.DesktopVirtualization (>= 6.0.0)<br>Az.Accounts (>= 5.5.2) |
 | Schedulable | no |
 
 ## Permissions

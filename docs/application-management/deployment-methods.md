@@ -8,7 +8,7 @@ description: >-
 
 # Deployment Methods: RealmJoin Agent vs. Intune
 
-Nearly every package in the [Package Store](packages/package-store/) can be deployed to your Windows devices in one of two ways. You choose the method per package when you [subscribe](packages/package-store/package-store-details.md#subscription) to it, and you manage assignments the same way afterwards through [managed groups](packages/package-deployment.md).
+Nearly every package in the [Package Store](packages/package-store/) can be deployed to your Windows devices in one of two ways. You choose the method per package when you [subscribe](packages/package-store/package-store-details.md) to it, and you manage assignments the same way afterwards through [managed groups](packages/package-deployment.md).
 
 * **Intune deployment** – the package is pushed to your tenant as an `intunewin` app and delivered by Microsoft Intune and the Intune Management Extension, surfacing to users in the Company Portal.
 * **RealmJoin deployment** – the package is installed by the [RealmJoin Agent](../realmjoin-agent/realmjoin-client/) running on the device, surfacing to users in the [RealmJoin Tray](../realmjoin-agent/client-menu/realmjoin-tray.md) and [Self Service Portal](../realmjoin-agent/client-menu/self-service-portal.md).
@@ -73,7 +73,7 @@ The [**Update group**](packages/update-group.md) dynamically discovers copies of
 
 ### Configurations, not just applications
 
-Beyond application installers, RealmJoin deployment handles **craft/configuration packages** — such as printer or network-drive mappings — and lets you subscribe the same craft package multiple times using a [suffix](packages/package-store/package-store-details.md#craft-packages-suffix-configuration-or-notation), so a user can receive several distinct configurations of the same package.
+Beyond application installers, RealmJoin deployment handles **craft/configuration packages** — such as printer or network-drive mappings — and lets you subscribe the same craft package multiple times using a [suffix](packages/package-store/package-store-details.md#craft-packages-suffix), so a user can receive several distinct configurations of the same package.
 
 ### A polished end-user experience
 

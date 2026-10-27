@@ -18,7 +18,7 @@ rjgit-org_general_add-security-group
 | Property | Value |
 | --- | --- |
 | Version | 1.0.2 |
-| Required modules | Microsoft.Graph.Authentication (>= 2.41.2)<br>RealmJoin.RunbookHelper (>= 0.8.9) |
+| Required modules | Microsoft.Graph.Authentication (>= 2.41.2)<br>RealmJoin.RunbookHelper (>= 0.8.10) |
 | Schedulable | no |
 
 ## Permissions

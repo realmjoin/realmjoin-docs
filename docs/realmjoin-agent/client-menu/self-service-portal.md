@@ -101,7 +101,7 @@ For the first installation in each active session on the device, a confirmation 
 {% endhint %}
 
 {% hint style="info" %}
-To automatically allow RealmJoin portal triggering RJ agent from Microsoft Edge (hides dialog "This site is trying to open..."), you can use the following policy: [Define a list of protocols that can launch an external application from listed origins without prompting the user](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-browser-policies/autolaunchprotocolsfromorigins)
+To let the RealmJoin portal trigger the RealmJoin agent from Microsoft Edge without the dialog "This site is trying to open...", allow the `realmjoin` protocol with the Edge policy [`AutoLaunchProtocolsFromOrigins`](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-browser-policies/autolaunchprotocolsfromorigins). Either add it to the profile your tenant already uses for this policy, or let the RealmJoin agent set it with [`Policies.EdgeAllowRealmJoinProtocol`](../../ugd-management/user-and-group-settings/additional-settings.md#edge-protocol-prompt-for-the-app-catalog), never both.
 
 ```
 [ { "allowed_origins": [ "realmjoin.com" ], "protocol": "realmjoin" } ]
@@ -134,7 +134,7 @@ Users can request new application packages that is not yet in the official catal
 
 * **Permission-Based:** This option only appears if the user has been granted the necessary permissions in the RealmJoin backend.
 
-[Learn more about Packaging Requests](https://docs.realmjoin.com/app-management/packages/packaging-requests)
+[Learn more about Packaging Requests](../../application-management/packages/packaging-requests/)
 
 <figure><img src="../../.gitbook/assets/image (418).png" alt=""><figcaption><p>Package request form</p></figcaption></figure>
 

@@ -10,49 +10,50 @@ description: >-
 
 ## Architecture (Win11 & macOS)
 
-The RealmJoin Packaging Factory is currently optimized for Windows 11 application requests, delivering robust and reliable packaging services across the Windows ecosystem. Full macOS support is in active development and will add hundreds of ready‑to‑use macOS applications to the RealmJoin Store, enabling a more complete cross‑platform experience.
+The RealmJoin Packaging Factory packages applications for Windows 11.
 
-macOS packages are currently in preview as we continue refining the macOS packaging pipeline. We accept macOS application requests on a best‑effort basis, though processing times and availability may vary during this development phase. Our team will handle these requests as effectively as possible within the current framework.
-
-We appreciate your patience as we work toward delivering the same level of excellence for macOS that our Windows 11 users currently enjoy.
+macOS packaging is in preview. macOS requests are accepted on a best‑effort basis; processing times and availability may vary.
 
 ### Custom vs Generic Packaging
 
-#### Generic Packages in RealmJoin
+We aim to create packages as **generic** as possible: unmodified vendor installers without customer-specific alterations, available to all customers in the Package Store. All settings are then configured in the RealmJoin Portal after subscribing.
 
-We aim to create packages as **generic** as possible. This allows all settings to be configured via the RealmJoin portal post-app subscription. Our **generic** packages feature unmodified installers provided by vendors, without any customer-specific alterations. These packages are accessible to all customers in the RealmJoin store.
+**Custom** packages are used for modified installers, including those customized by the vendor for the customer, such as SAP, or for customer-developed apps and similar cases. They are only visible in the _Custom_ section of your Package Store. See [Package kinds](../#package-kinds).
 
-#### Custom Packages in RealmJoin
-
-**Custom** packages are exclusively available for customers in their **custom** section of the RealmJoin **Package Store**. The **custom** namespaces are used for modified installers, including those customized by the vendor for the customer, such as SAP, or for customer-developed apps and similar cases.
-
-We invite customers to share their evaluation on whether an application can be packaged as _generic_ or requires a _custom_ package, however, the final decision is made by the RealmJoin Packaging Factory. Note that _custom_ packages incur additional costs.
+We invite customers to share their evaluation on whether an application can be packaged as _generic_ or requires a _custom_ package, however, the final decision is made by the RealmJoin Packaging Factory. Custom packaging is an add-on and incurs additional costs; if it is not part of your plan, the _Custom_ option in the request form is disabled.
 
 ## Request Types
 
-Three different PACKaaS requests are currently available: new package, update existing package and [organic packages](organic-packages.md).
+Requests are submitted on the **New Packaging Request** tab of _Request Package_ in the RealmJoin Portal. Your previous requests are listed on the **Request History** tab.
+
+Three request types are available: **New Package**, **Update Package** and **New Organic Package** (see [Organic Packages](organic-packages.md)). New Package and Update Package require the `CanRequestSoftwarePaas` [permission](../../../administration-and-settings/permission/custom-roles/available-permissions.md#software-requests), New Organic Package requires `CanRequestSoftwareOrganic`. Before submitting, confirm that you have reviewed this documentation.
+
+{% hint style="warning" %}
+**Plan ahead:** We highly recommend raising new package and update requests at least **14 days before the planned rollout** of the application or update. This leaves time for packaging and for your [testing](application-package-testing.md). There is no priority line for packaging requests, see [Packaging Delivery Time](../../../legal/support.md#packaging-delivery-time).
+{% endhint %}
 
 ### New Packages
 
 If an application is not available in the RealmJoin Store, it can be requested for packaging via the RealmJoin Packaging Factory. A valid PACKaaS request must include:
 
-* **Application binaries**, which must always be uploaded for regular packaging requests (a download URL may be added for reference but is **not** sufficient). If there are multiple files, please use a zip container.&#x20;
-* **Documentation** describing all required configuration switches as command‑line parameters, registry keys, configuration files, or similar (screenshots are not accepted; PACKaaS does not include Scripting‑as‑a‑Service). Silent/unattended installation commands are always required.
-* **Packaging type selection**, specifying whether the application should be created as a _generic_ package (when no customer‑specific data is included) or as a _custom_ package (additional fees may apply). The Packaging Factory may change a request from generic to custom if justified; for example, when customer‑specific details are identified during processing. Customers will be informed of such changes before the request is completed.
-* **Contact email address**, which may differ from the currently authenticated user’s email.
-* **Installation parameters**, which may be entered directly in the request instead of embedding them in the ZIP file.
-* **Optional description**, a free‑text field for any additional context you want to pass to the Packaging Factory.
-* **Use of “skip upload”**, which is allowed only when updating or adding parameters to an existing package—binaries must still be provided for all standard packaging requests.
+* **Package Type** - _Generic_ (when no customer‑specific data is included) or _Custom_ (additional fees apply). The Packaging Factory may change a request from generic to custom if justified, for example when customer‑specific details are identified during processing. Customers will be informed of such changes before the request is completed.
+* **Package Name**, **Vendor** and **Version**.
+* **Override Reply Address** - The email address that receives all communication about the request. It may differ from the signed-in user's address and is required if your account has no mailbox.
+* **Installation Parameters and Configurations** - All required configuration switches as command‑line parameters, registry keys, configuration files, or similar (up to 2047 characters; longer instructions can be added as files to the upload). Silent/unattended installation commands are always required. Screenshots are not accepted; PACKaaS does not include Scripting‑as‑a‑Service.
+* **Description** (optional) - Any additional context you want to pass to the Packaging Factory.
+* **Application binaries** - After clicking **Open Request**, upload the binaries and click **Upload all files**. Binaries must always be uploaded for new packages; a download URL may be added for reference but is **not** sufficient. If there are multiple files, please use a zip container.
 
 {% hint style="info" %}
-When you start a new package request, the form now highlights existing packages that match your input, helping you spot software that is already available in the RealmJoin Store and avoid duplicate requests.
+When you enter a package name, the form lists existing Package Store packages that match it, so you can check whether the software is already available before requesting it.
 {% endhint %}
 
 <figure><img src="../../../.gitbook/assets/26-02-09-10_06_07_msedge.png" alt=""><figcaption><p>RealmJoin packaging request form for new requests.</p></figcaption></figure>
 
 ### Package Updates
 
-If an application is required in a newer version than the one available in the RealmJoin Store, the same processes and requirements apply as new package requests. When the updated binary behaves identically to the existing version, command‑line parameters may be omitted from the request. A dropdown list is available showing all packages currently subscribed to within the tenant, and update requests can only be submitted for those subscribed packages.
+If an application is required in a newer version than the one available in the RealmJoin Store, the same processes and requirements apply as for new package requests. Select the package from the dropdown, which lists the packages subscribed in your tenant; update requests can only be submitted for those packages. Enter the **New Version** and the **Installation Parameters and Configurations**. If the parameters have not changed, refer to the previous version's parameters.
+
+**Skip Upload** is only available for update requests, e.g. when you only add parameters to an existing package.
 
 <figure><img src="../../../.gitbook/assets/26-02-09-10_07_45_msedge.png" alt=""><figcaption><p>RealmJoin package request form for package updates.</p></figcaption></figure>
 
@@ -66,9 +67,8 @@ Note: Additional switches, new parameters or configuration files for an existing
 Please note that:
 
 * all update and new package requests necessitate the provision of both binaries and documentation detailing the required command line parameters. Silent/unattended installation parameters are not optional and **must** be provided.
-* if an update request does not entail changes from the previous version, the submission of new parameters is not required but need to be referred.
-* the request creates a ticket. All communication will be handled in this ticket, and it will only be sent to the account that created it. **If this account does not have any active mailbox, the requester will not get any information.** The request form allows to set a new reply address in case an ADM account without mailbox is used to create the text. Once the ticket is created, the reply address can not and will not be changed.
-* the software requester role can be assigned to any user group in the tenant, therefore, an ADM account may not be required.
+* the request creates a ticket. All communication will be handled in this ticket and is only sent to the reply address. If your account has no mailbox, the form asks for a reply address with an active mailbox. Once the ticket is created, the reply address can not and will not be changed.
+* the [Software Requester](../../../administration-and-settings/permission/pre-defined-roles.md#software-requester-permissions) role can be assigned to any user group in the tenant, therefore, an ADM account may not be required.
 * organic packages and PACKaaS might be not available right away, please get in touch with support@realmjoin.com if a feature is missing
-* any incomplete request will be rejeceted.
+* any incomplete request will be rejected.
 {% endhint %}

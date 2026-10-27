@@ -187,7 +187,7 @@ Use these feature names with the `-Features`, `-AddFeatures`, and `-RemoveFeatur
 | `DeviceHealthScript`            | Manage and deploy PowerShell remediation scripts to devices                       |    ☑️   |
 | `BitLockerRecoveryKeys`         | View BitLocker recovery keys for managed devices                                  |    ☑️   |
 | `WindowsDeviceUpdateEnrollment` | Manage Windows Device Updates enrollment                                          |    ☑️   |
-| `SecurityFeatures`              | Advanced threat protection and security analytics (requires MDE licenses)         |         |
+| `SecurityFeatures`              | [Defender for Endpoint integration](../../ugd-management/defender-integration.md) on device pages (requires MDE licenses) |         |
 | `Client`                        | RealmJoin Agent — client application for device management                        |         |
 
 ## Troubleshooting

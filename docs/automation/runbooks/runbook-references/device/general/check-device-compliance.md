@@ -39,7 +39,7 @@ rjgit-device_general_check-device-compliance
 | Property | Value |
 | --- | --- |
 | Version | 1.2.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.41.2) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.10)<br>Microsoft.Graph.Authentication (>= 2.41.2) |
 | Schedulable | no |
 
 ## Permissions

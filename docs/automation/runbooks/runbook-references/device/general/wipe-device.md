@@ -109,7 +109,7 @@ rjgit-device_general_wipe-device
 | Property | Value |
 | --- | --- |
 | Version | 1.1.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.10) |
 | Schedulable | no |
 
 ## Permissions

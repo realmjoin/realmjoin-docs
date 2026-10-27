@@ -12,7 +12,7 @@ description: >-
 **Maintained Packages**
 
 * **Regular Updates**: These packages are consistently monitored by the RealmJoin Packaging Factory.
-* **Update Process**: After rigorous checks, updates are published in the store.
+* **Update Process**: New versions are tested (see [Application Package Testing](application-package-testing.md)) and then published in the store.
 * **Support Options**: If updates are missing, customers can open a support ticket to address this.
 
 **Unmaintained Packages**

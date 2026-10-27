@@ -1,167 +1,97 @@
 ---
 type: Application Management
 description: >-
-  Subscribe to RealmJoin Package Store packages as managed or basic and deploy
-  them via Intune or the RealmJoin agent.
+  Subscribe to a RealmJoin Package Store package as managed or basic, for
+  deployment via the RealmJoin Agent or Intune, and configure its name,
+  description and category.
 ---
 
-# Package Subscription Options
+# Subscribing to a Package
 
 {% embed url="https://www.youtube.com/watch?v=QYBx9yto560" %}
 Video tutorial
 {% endembed %}
 
-<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption><p>Package Store details page</p></figcaption></figure>
-
-## Subscription
-
-<figure><img src="../../../.gitbook/assets/image (383).png" alt=""><figcaption><p>Subscribe Buttons</p></figcaption></figure>
-
-Packages will either be pushed directly to Intune as intunewin packages or deployed using the RealmJoin agent on the device (recommended).
-
-## Subscription Type
-
-Packages can be subscribed as _managed_ or _basic_.
-
-* _Basic_ packages are available for assignment to groups or users and do not offer additional features.
-* _Managed_ packages allow RealmJoin to handle group creation and assignment.\
-  The backend automatically creates a fixed set of groups, including preview and uninstall groups, and package assignments can only be made to these groups. Find more about managed groups [here](https://docs.realmjoin.com/app-management/packages/package-deployment#managed-deployment)
-
-<figure><img src="../../../.gitbook/assets/image (345).png" alt=""><figcaption><p>Application Groups</p></figcaption></figure>
-
-The created Entra ID groups can be managed from both the RealmJoin Portal and Microsoft Entra ID.
-
-## Package Types
-
-Nearly all packages from the RealmJoin store can either be subscribed for RealmJoin Agent or Intune driven deployment.
-
-### RealmJoin Deployment
-
-RealmJoin driven deployment relies on the RealmJoin agent installed on the device. Using a modified Chocolatey engine and PowerShell, all code and installation commands are executed directly on the device. Binaries are downloaded during the installation.
-
-### Intune Deployment
-
-The Intune driven deployment pushes the intunewin version of the package directly into the tenant. It can be managed either from the RealmJoin portal or in Intune directly. The intunewin packages contain all binaries as well as a PowerShell based deploy kit.
+Subscribing adds a package from the [Package Store](./) to your tenant. Afterwards it appears in [Package Management](../package-management.md) and can be [assigned](../package-deployment.md) to users and devices.
 
 {% hint style="info" %}
-We recommend RealmJoin driven deployment, as it offers more options and manageability.
+No license is acquired with the subscription. You are solely responsible for any licensing agreements with the vendor of the software.
 {% endhint %}
 
-## App Categories
+## Choose deployment method and subscription type
 
-The name and group name/category can now be customized when subscribing to a new package. This feature allows for better organization and easier access to applications within both RealmJoin and Intune environments.
+<figure><img src="../../../.gitbook/assets/image (383).png" alt=""><figcaption><p>Subscribe buttons</p></figcaption></figure>
 
-**RealmJoin Deployment**
+The **Subscribe** section on the Overview tab of a store entry offers up to four buttons, depending on the deployment methods enabled for your tenant:
 
-* **Display**: The application will be displayed under the chosen Group Name in the RealmJoin Tray Menu.
-* **Customization**: The appropriate Group name should be selected during the subscription process to ensure the application is categorized correctly.
+* **Use RealmJoin (managed)** - recommended
+* **Use RealmJoin (basic)**
+* **Use Intune (managed)**
+* **Use Intune (basic)**
 
-**Intune Deployment**
+The first part decides the [deployment method](../../deployment-methods.md): the RealmJoin Agent or an `intunewin` app in Intune. The second part decides the subscription type: **managed** packages come with RealmJoin-managed Entra ID groups, **basic** packages are assigned manually. See [Managed and basic subscriptions](../#managed-and-basic-subscriptions).
 
-* **Display**: The application will be displayed under the chosen category in Intune and in the Company Portal for assigned users.
-* **Customization**:
-  * Multiple categories can be selected for an application.
-  * Categories can be edited afterwards in the "Expert Settings" of each package.
-  * Categories can be managed under the settings of the portal to ensure they align with organizational needs.
+If no button is shown, no deployment method is enabled for this package in your tenant. Please contact support to subscribe to it.
 
-<figure><img src="../../../.gitbook/assets/image (389).png" alt=""><figcaption><p>Configuration of Category/Group Name during the subscription process</p></figcaption></figure>
+## Configure the subscription
 
-The total of categories can be managed from the _App Categories_ tab in the general settings section in the RealmJoin portal.
+{% stepper %}
+{% step %}
+### Review the package
 
-<figure><img src="../../../.gitbook/assets/image (388).png" alt=""><figcaption><p>All categories available in the tenant</p></figcaption></figure>
+The button opens a preview of the package as it will appear in your tenant. Craft packages show the [suffix](#craft-packages-suffix) here.
+{% endstep %}
 
-## Short Description
+{% step %}
+### Click Continue
 
-When subscribing to a package for RealmJoin deployment, you can also adjust its **Short description**. This is the description users see in the [App Catalog](../../../realmjoin-agent/client-menu/self-service-portal.md#app-catalog-tab). The field is prefilled with the package's description; replace it with a text that tells your users what the package is for (up to 1000 characters).
+The dialog **Please configure the app subscription** opens.
+{% endstep %}
+
+{% step %}
+### Adjust the settings and submit
+
+<figure><img src="../../../.gitbook/assets/image (389).png" alt=""><figcaption><p>Configuring the category/group name during subscription</p></figcaption></figure>
+
+* **App display name** - The name under which the app appears to users, up to 120 characters. It must be unique among your RealmJoin and Intune apps; if the name is already taken, the dialog links the existing app.
+* **Short description** - RealmJoin deployment only. The description users see in the [App Catalog](../../../realmjoin-agent/client-menu/self-service-portal.md#app-catalog-tab), up to 1000 characters. The field is prefilled with the package's description; replace it with a text that tells your users what the package is for. Only a changed text is stored as a custom description. You can change or reset it later on the [package details page](../package-details.md#short-description).
+* **Group name** (RealmJoin) - The category under which the app appears in the RealmJoin Tray menu.
+* **Categories** (Intune) - One or more categories under which the app appears in Intune and the Company Portal.
+
+App display name and short description require the `CanEditAppDisplayName` [permission](../../../administration-and-settings/permission/custom-roles/available-permissions.md). Group name and categories are only shown if your tenant has app categories.
+
+Click **Submit** to start the subscription. The page shows the progress until the package is created in your tenant.
+{% endstep %}
+{% endstepper %}
 
 <figure><img src="../../../.gitbook/assets/app-subscription-short-description.png" alt="App subscription dialog with short description field"><figcaption><p>Short description in the app subscription dialog</p></figcaption></figure>
 
-Only a changed text is stored as a custom description. If you leave the field unchanged or clear it, the package keeps using its own description. You can change or reset the short description later on the [package details page](../package-details.md#short-description).
+### App categories
 
-## Multiple package subscriptions
+The available categories are managed in the [App Categories](../../../administration-and-settings/settings.md#app-categories) tab of the portal settings. The same list is used for the RealmJoin group name and the Intune categories.
 
-### Craft Packages (Suffix Configuration or #-Notation)
+<figure><img src="../../../.gitbook/assets/image (388).png" alt=""><figcaption><p>All categories available in the tenant</p></figcaption></figure>
 
-Sometimes it is necessary to have multiple subscriptions of one craft package. Those craft packages are often used for configurations like printer or network drive mapping and need to be subscribed and assigned multiple times to users because there are multiple printer or network drives to be mapped. Therefore it is important to have a suffix, because RealmJoin only accepts every package ID once. The suffix is modifying the unique ID from "this-id" to "this-id#\[your-suffix]".
+You can change the category later in the package's [Expert Settings](../package-settings.md#expert-settings).
 
-While subscribing to a craft package from the store, a suffix is automatically added to the ID of the package. If you want to edit the ID, you can simply click on "Set suffix" next to the orange dialog box showing the pre-defined ID.
+## Multiple subscriptions of one package
+
+### Craft packages (suffix)
+
+Craft packages are often used for configurations such as printer or network drive mappings, which need to be subscribed and assigned multiple times. Because RealmJoin accepts every package ID only once, each subscription of a craft package gets a suffix that turns the ID `this-id` into `this-id#suffix`.
+
+If you do not set a suffix, a random one is used and the page shows the resulting ID. To choose your own suffix, click **Set suffix** before continuing. A suffix may contain letters, digits, `-` and `_`.
 
 <figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-The suffix is only available for RealmJoin Deployment since it is not necessary for Intune Deployment!
+The suffix is only available for RealmJoin deployment.
 {% endhint %}
 
-### Choco Packages
+### Choco and Intune packages
 
-If you need multiple configurations of an application, e.g. "Microsoft 365 Apps for Enterprise", you can subscribe it multiple times and change the name during the subscription process, i.e. "Microsoft 365 Apps for Enterprise - DE", which will be reflected in the managed package groups created by RealmJoin.
+If you need multiple configurations of an application, e.g. "Microsoft 365 Apps for Enterprise" in different languages, subscribe to it multiple times and give each subscription its own **App display name**, e.g. "Microsoft 365 Apps for Enterprise - DE". The name is reflected in the managed groups RealmJoin creates.
 
 {% hint style="danger" %}
-**Suffixes are not required—and therefore not available—for these types of packages, as each user can only be assigned and install a single instance of an application with a specific configuration at any given time. This limitation ensures that identical Chocolatey or IntuneWin applications, which share the same unique identifier, cannot be deployed to the same user more than once. Attempting to assign multiple copies of the same app with the same ID will result in conflicts and is not supported.**
+Suffixes are not available for these packages. Subscriptions of the same Chocolatey or `intunewin` package share the same identifier, so a user can only have one of them installed at a time. Do not assign multiple subscriptions of the same package to the same user; this results in conflicts and is not supported.
 {% endhint %}
-
-You can change the name by choosing your package and subscription type and before hitting continue clicking next to the name in the top left corner to adjust it.
-
-## Package Properties
-
-### Core Properties
-
-Every package's details page will show an overview of the core properties such as the package's **Display Name**, **Description** and **Package ID** ("Unique RJ ID") on the left side of the screen. This part will not scroll and be always visible in any tab.
-
-### Status Fields
-
-Also displayed on the left side of the screen are four status fields for a package, displayed as tags below the package name and publisher name.
-
-![](<../../../.gitbook/assets/image (137).png>)
-
-These fields are binary - they are set to one of two possible values. The text of each field changes accordingly. Some of the fields are also color-coded for easier glanceability.
-
-* **Maintained / Unmaintained:** RealmJoin will provide new versions / updates of maintained packages on a regular basis.\
-  Automatic package management can be applied to keep the software delivered by these packages permanently up-to-date in your environment.
-* **Generic / Custom:** Generic packages are available to all customers / environments. Custom packages are not globally available to all customers. In most cases this is a custom software package created specifically for your environment.
-* **Billable / Non-Billable:** Provisioning of this package will count towards your package usage quota - if you have one. Currently all publicly available packages are billable.
-* **Free to Use / Needs License:** Does this software need a commercial license to be used?
-
-### MS Security Center Software Inventory (TVM) entry
-
-If available, a link to this software title's [MS Security Center Software Inventory (TVM)](https://security.microsoft.com/software-inventory/applications)'s entry will be displayed. There you can check for known security issues and outdated versions of this software in your organization.
-
-![An Application's TVM Entry](<../../../.gitbook/assets/image (129).png>)
-
-An appropriate license from Microsoft is needed to access TVM.
-
-This page allows to examine your current security posture, incl. installed versions and distribution on devices as well as security recommendations regarding this software title.
-
-### Version
-
-![Available Version vs Provisioned Package](<../../../.gitbook/assets/image (267).png>)
-
-Also displayed on the left side of the screen is the version of the software package.
-
-If you already provisioned the package to your environment, a link to the provisioned package in [Package Management](../package-management.md) will be displayed. The link will show the name and version of the provisioned package.
-
-## Tabs
-
-The right side of the screen shows the contents of the current tab.
-
-The following tabs are available:
-
-### Overview / Subscribe
-
-<figure><img src="../../../.gitbook/assets/image (343).png" alt=""><figcaption><p>Overview and Provisioning</p></figcaption></figure>
-
-#### Title, Description and other info
-
-This tab will show the long description, license and technical help information of a package.
-
-#### Subscribe / Provisioning
-
-This tab also shows the Subscribe-Buttons for this package. See [Subscribe to Package](../package-deployment.md).
-
-### Versions
-
-The package's changelog shows when the packages has been updated in RealmJoin's repository plus a short description of changes.
-
-Each version in the changelog links to its own Package Store entry. Subscribing from such an entry provisions exactly that version, which is the only way to deploy a version older than the current one — an already subscribed package cannot be downgraded (see [Update](../package-details.md#update)).
-
-<figure><img src="../../../.gitbook/assets/image (344).png" alt=""><figcaption><p>App Package Changelog</p></figcaption></figure>
