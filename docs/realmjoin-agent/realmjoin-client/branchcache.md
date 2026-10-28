@@ -77,7 +77,14 @@ On request, RealmJoin can disable BranchCache for your tenant on the CDN side. T
 
 ## Checking BranchCache on a device
 
-* **RealmJoin Portal.** The [device details](../../ugd-management/user-list/device-details.md) show the BranchCache mode of a device, or, for devices in distributed mode, the bytes retrieved from the local cache and from peers instead of the WAN. The values are cumulative Windows BranchCache counters reported by the agent.
-* **On the device.** `Get-BCStatus` in an elevated PowerShell shows the current client mode and the size of the local cache. The RealmJoin [log files](../../troubleshooting-and-faq/troubleshooting/package-installation-issues/logfiles-structure.md) contain the prefetch decisions (lines starting with `Prefetch`) and the BranchCache performance counters after each package installation.
+### In the RealmJoin Portal
+
+The [device details](../../ugd-management/user-list/device-details.md) show the BranchCache data the agent reports for a device. The **BranchCache Savings** field in the overview shows the bytes retrieved from the local cache and from peers instead of the WAN; for devices that are not in distributed mode it shows the mode instead. The **BranchCache** section lists the mode, the local cache size, the cache hit ratio, the bytes retrieved from the cache and from the server, the total bytes retrieved, the bytes served to peers, and the number of complete and partial segments. The values are cumulative Windows BranchCache performance counters.
+
+<figure><img src="../../.gitbook/assets/branchcache-device-details.png" alt="BranchCache Savings field and BranchCache section in the device details"><figcaption><p>BranchCache data of a device in distributed cache mode</p></figcaption></figure>
+
+### On the device
+
+`Get-BCStatus` in an elevated PowerShell shows the current client mode and the size of the local cache. The RealmJoin [log files](../../troubleshooting-and-faq/troubleshooting/package-installation-issues/logfiles-structure.md) contain the prefetch decisions (lines starting with `Prefetch`) and the BranchCache performance counters after each package installation.
 
 For BranchCache errors during package downloads (for example `There is not enough space on the disk` or a hash mismatch), see [Fixes for common issues](../../troubleshooting-and-faq/troubleshooting/package-installation-issues/fixes-for-common-issues.md#branchcache-issues).
