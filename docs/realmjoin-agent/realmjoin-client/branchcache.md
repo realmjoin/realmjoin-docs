@@ -53,12 +53,12 @@ Delivery Optimization (DO) is the Windows peer-to-peer technology for Microsoft 
 
 <table><thead><tr><th width="220"></th><th>Delivery Optimization</th><th>BranchCache</th></tr></thead><tbody><tr><td>Content</td><td>Windows Update, Microsoft Store, Microsoft 365 Apps, Intune apps</td><td>RealmJoin packages from the RealmJoin CDN</td></tr><tr><td>Configured by</td><td>Intune or group policy; the RealmJoin Agent sets the group ID</td><td>The RealmJoin Agent (<code>BranchCache.Mode</code>)</td></tr></tbody></table>
 
-The agent sets the Delivery Optimization group ID of each device (`DOGroupId` under `HKLM\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization`) to an ID derived from the IP and MAC address of the device's default gateway. Devices behind the same gateway therefore end up in the same DO group and share Microsoft content with each other. If no default gateway is found, the agent uses a random ID.
+The agent sets the Delivery Optimization group ID of each device to an ID derived from the device's default gateway. Devices behind the same gateway therefore end up in the same DO group and share Microsoft content with each other. If no default gateway is found, the agent uses a random ID.
 
 ## Requirements
 
 * **Devices.** Windows 10 and Windows 11 with the RealmJoin Agent. The agent does not use BranchCache on Windows 365 Cloud PCs.
-* **Peer traffic.** Devices must be able to reach each other directly. Do not separate them into different VLANs or subnets and do not block peer traffic with client or device isolation. With the Windows defaults, BranchCache uses WS-Discovery (UDP 3702, multicast) for peer discovery and HTTP (TCP 80) for content retrieval between devices. If a firewall policy blocks this traffic, allow the Windows Firewall rule groups **BranchCache - Peer Discovery (Uses WSD)** and **BranchCache - Content Retrieval (Uses HTTP)**.
+* **Peer traffic.** Devices must be able to reach each other directly. Do not separate them into different VLANs or subnets and do not block peer traffic with client or device isolation. Microsoft lists the ports and firewall rules for distributed cache mode on Microsoft Learn: [Configure firewall rules to allow BranchCache traffic](https://learn.microsoft.com/en-us/windows-server/networking/branchcache/deploy/configure-firewall-rules-for-non-domain-members-to-allow-branchcache-traffic).
 * **Distributed cache mode only.** Hosted Cache Mode (a dedicated Windows Server configured via the "Configure Hosted Cache Servers" policy) is not supported.
 
 Endpoints, proxy guidance and the other network requirements are listed in [Infrastructure Considerations](../../deployment/infrastructure/#branchcache-and-device-isolation).
