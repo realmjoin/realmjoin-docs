@@ -14,6 +14,7 @@ RealmJoin Agent is an optional component that you can use alongside RealmJoin Po
 * [Local Admin Password Solution (LAPS)](local-admin-password-solution-laps/)
 * [Notifications](showing-notifications.md)
 * [Native Choco Runtime](native-choco-runtime.md)
+* [BranchCache](branchcache.md) (peer-to-peer distribution of package content)
 * [AnyDesk Integration](anydesk-integration/)
 * Audit tasks (collecting device/client information)
 * [Advanced Telemetry](advanced-telemetry.md)

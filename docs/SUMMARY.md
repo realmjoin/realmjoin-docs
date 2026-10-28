@@ -303,6 +303,7 @@
   * [RealmJoin App Notification](realmjoin-agent/realmjoin-client/deploy-apps.md)
   * [Notifications](realmjoin-agent/realmjoin-client/showing-notifications.md)
   * [Native Choco Runtime](realmjoin-agent/realmjoin-client/native-choco-runtime.md)
+  * [BranchCache](realmjoin-agent/realmjoin-client/branchcache.md)
   * [AnyDesk Integration](realmjoin-agent/realmjoin-client/anydesk-integration/README.md)
     * [AnyDesk configuration](realmjoin-agent/realmjoin-client/anydesk-integration/customer-tasks.md)
   * [Advanced Telemetry](realmjoin-agent/realmjoin-client/advanced-telemetry.md)
