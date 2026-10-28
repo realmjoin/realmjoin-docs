@@ -334,6 +334,8 @@ For Apple and Huawei devices, the vendor API requires you to solve a captcha bef
 
 Lists the [remediation scripts](../../automation/remediation-scripts.md) of your tenant, grouped by category, with their publisher, version and dates. Use **Check Detection Code** and **Check Remediation Code** to review a script.
 
+<figure><img src="../../.gitbook/assets/ugd-device-remediation.png" alt="Remediation tab with the remediation scripts grouped by category"><figcaption><p>Remediation tab</p></figcaption></figure>
+
 With the `CanRunRemediationScripts` permission, **New Run** runs the script on this device right away (Intune on-demand remediation).
 
 The tab requires the `CanSeeRemediationScripts` permission and only shows content for devices managed by Intune.
@@ -341,6 +343,8 @@ The tab requires the `CanSeeRemediationScripts` permission and only shows conten
 ## Remediation Audit
 
 Shows what remediation activity Intune recorded for this device:
+
+<figure><img src="../../.gitbook/assets/ugd-device-remediation-audit.png" alt="Remediation Audit tab with the Remote Actions and Script States tables"><figcaption><p>Remediation Audit tab</p></figcaption></figure>
 
 * **Remote Actions** - Remote actions requested for the device, who requested them and their state
 * **Script States** - For each remediation script that ran on the device: the detection and remediation state, the script output and errors before and after remediation, and when it last ran
