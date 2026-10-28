@@ -79,7 +79,7 @@ On request, RealmJoin can disable BranchCache for your tenant on the CDN side. T
 
 ### In the RealmJoin Portal
 
-The [device details](../../ugd-management/user-list/device-details.md) show the BranchCache data the agent reports for a device. The **BranchCache Savings** field in the overview shows the bytes retrieved from the local cache and from peers instead of the WAN; for devices that are not in distributed mode it shows the mode instead. The **BranchCache** section lists the mode, the local cache size, the cache hit ratio, the bytes retrieved from the cache and from the server, the total bytes retrieved, the bytes served to peers, and the number of complete and partial segments. The values are cumulative Windows BranchCache performance counters.
+The [device details](../../ugd-management/user-list/device-details.md#branchcache) show the BranchCache data the agent reports for a device. The **BranchCache Savings** field in the overview shows the bytes retrieved from the local cache and from peers instead of the WAN; for devices that are not in distributed mode it shows the mode instead. The **BranchCache** section lists the mode, the local cache size, the cache hit ratio, the bytes retrieved from the cache and from the server, the total bytes retrieved, the bytes served to peers, and the number of complete and partial segments. The values are cumulative Windows BranchCache performance counters.
 
 <figure><img src="../../.gitbook/assets/branchcache-device-details.png" alt="BranchCache Savings field and BranchCache section in the device details"><figcaption><p>BranchCache data of a device in distributed cache mode</p></figcaption></figure>
 
