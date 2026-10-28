@@ -18,7 +18,7 @@ BranchCache is enabled by default on the RealmJoin CDN and on new RealmJoin Agen
 ## Components
 
 * **CDN.** The RealmJoin CDN (`cdn.realmjoin.com`) serves package content BranchCache-ready: with each file it provides the content information (segment hashes) that clients use to locate the content on peers and to verify it.
-* **Client library.** The agent ships the matching BranchCache client library and plugs it into its HTTP stack as a message handler. All package downloads of the agent go through it: Chocolatey (`winchoco`) packages, IntuneWin packages delivered by RealmJoin, craft packages, and the downloads a package script makes during installation (`Get-ChocolateyWebFile`), with both the classic Chocolatey engine and the [Native Choco Runtime](native-choco-runtime.md).
+* **Client library.** The agent ships the matching BranchCache client library and plugs it into its HTTP stack as a message handler. All package downloads of the agent go through it: Chocolatey (`winchoco`) packages, craft packages, and the downloads a package script makes during installation (`Get-ChocolateyWebFile`), with both the classic Chocolatey engine and the [Native Choco Runtime](native-choco-runtime.md).
 * **Windows BranchCache service.** Caching and peer exchange are done by the Windows BranchCache service (`PeerDistSvc`) in **distributed cache mode**.
 
 ## Download flow
@@ -43,7 +43,7 @@ Prefetching is architecture-aware. Many packages contain separate installers for
 * the files that match the device's architecture plus files without an architecture token, if at least one file name carries a token,
 * nothing, if the package contains several files and none of them carries a token. The content is then downloaded at install time.
 
-Prefetching is skipped on metered connections. IntuneWin packages are not prefetched; they are downloaded at install time, also through BranchCache.
+Prefetching is skipped on metered connections.
 
 In a site rollout, the first device to prefetch a package pulls it from the CDN; the other devices retrieve it from that device or from other peers that already hold it.
 
