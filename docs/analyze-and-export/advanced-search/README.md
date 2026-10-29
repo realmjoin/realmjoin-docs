@@ -1,15 +1,14 @@
 ---
 type: Analyze & Export
-description: Experience nearly load-free access to your data
+description: Search and filter the Users, Groups, Devices and Packages tables with column filters and operators
 ---
 
 # Advanced Search
 
-RealmJoin introduces a revamped search mechanism that enables real-time access to tenant data. This enhancement ensures efficient performance even for tenants with a large volume of user, device, and group objects.
+Advanced Search runs your search against a cached copy of the table's data held by the RealmJoin Portal instead of querying Microsoft Graph for every search. This keeps searches fast in tenants with many objects and allows column filters, operators and sorting across the whole list.
 
-{% hint style="success" %}
-The Advanced Search experience is available for the Users-, Groups-, Devices- & Packages-Table.\
-Check out the Use Cases subpage for examples that help you get more value from your tenant data.
+{% hint style="info" %}
+Advanced Search is available in the Users, Groups, Devices and Packages tables. Operators and all searchable columns are described in [Advanced Search Syntax](advanced-search-syntax.md).
 {% endhint %}
 
 Tables can be searched using the _basic_ or the _advanced_ search feature.
@@ -26,57 +25,15 @@ Basic Search is always available as a fallback when Advanced Search is not. It a
 
 ### Advanced Search
 
-RealmJoin's advanced search feature uses caching and tokenization, making searches fast and reliable, and supports Unicode characters like Ø. This tokenization enables partial name searches, so a query like "Ma Mu" can locate a user named "Maren Müller".
+Advanced Search splits text into words (tokens) and matches the beginning of each word. Unicode characters like Ø are supported. This enables partial name searches, so a query like "Ma Mu" can locate a user named "Maren Müller".
 
-Additionally, information not displayed in the table is also searchable, like post-codes or UPN.
+Additionally, information not displayed in the table is also searchable, like the UPN or, with a column-specific search, the postal code.
 
-<figure><img src="../../.gitbook/assets/image (380).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/advanced-search-users-column-filter.png" alt="Users table filtered with the Advanced Search query dept:Sales"><figcaption><p>Users table filtered with the column filter <code>dept:Sales</code></p></figcaption></figure>
 
 {% hint style="warning" %}
 Please make sure to only use the "Reload-Button" in the top right corner if you are missing very recently added information from Entra / Intune.
 {% endhint %}
-
-### Advanced Search Syntax Overview
-
-Advanced Search allows querying across available table values using a flexible and powerful syntax. Below are the key features and rules:
-
-{% hint style="success" %}
-Click [here](advanced-search-syntax.md) for more examples and sample use cases
-{% endhint %}
-
-* **Tokenized Search**:\
-  Search terms are automatically tokenized to improve matching accuracy. For example, typing `lu sk` will match names like **Luke Skywalker**. The search always uses a **starts-with** approach rather than a full-text or "contains" search. This means a search for `walk` would **not** return **Skywalker**.
-* **Logical AND**:\
-  All filters are combined using logical **AND**. Every condition must be met.\
-  Example: `Luke Skywalker country:france` searches for Luke Skywalker where the **country** starts with "france".
-* **Column-specific Search**:\
-  Use `column:` to search within a specific column.\
-  Example: `country:france` searches for entries where the **country** starts with "france".
-* **Operators**:
-  * `:` → **startsWith** search\
-    Example: `name:jo` matches "John", "Joanna", etc.
-  * `=` → **equals** search\
-    Example: `city=Stuttgart` matches exactly "Stuttgart"
-  * `!=` or `!:` → **negation**\
-    Example: `city!=Stuttgart`or `city!:Stuttgart` excludes "Suttgart"
-* **Special Behavior**:
-  * **Umlaut substitution**:\
-    Umlauts are normalized (e.g., **Björn** can be found by searching for **Bjorn**).
-  * **Unicode support**:\
-    Unicode characters are supported in search terms.
-  * **Brackets () are ignored** in startsWith searches.
-  * **Empty value search**:
-    * `zip:""` searches for empty values
-    * `zip:` searches for any value
-* **Supported Columns**:
-  * Aliases for column names may exist and are listed in brackets
-  * User table:
-    * `name, upn, language (lang), jobtitle (job), city, country, zip (plz), enabled, department (dept)`
-      * `enabled:` → accepts `true` or `false` (`enabled:true`)
-  * Groups table
-    * `name`
-  * Device table
-    * `name, operatingsystem (os), manufacturer (manu), model`
 
 ### FAQ
 
