@@ -105,8 +105,8 @@ Learn more: [Custom Roles](permission/custom-roles/README.md), [Available Permis
 
 ## App Categories
 
-Create and manage Intune app categories. You can choose these categories when you subscribe to a package.
+The tenant's list of app categories. A RealmJoin package uses one of them as its group name in the RealmJoin Tray, an Intune app can have several as Intune app categories. Add, rename and delete categories here.
 
 Only shown with the `CanReadAppCategories` permission. Editing requires `CanEditAppCategories`.
 
-Learn more: [App Categories](../application-management/packages/package-store/package-store-details.md#app-categories)
+Learn more: [App Categories](app-categories.md)
