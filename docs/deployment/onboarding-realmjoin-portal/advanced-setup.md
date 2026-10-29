@@ -28,6 +28,8 @@ The required Azure PowerShell modules (`Az.Accounts`, `Az.Resources`, `Az.Automa
 * Sign-in happens through `Connect-AzAccount`, which uses the **Azure PowerShell** first-party application. Tenants that restrict user consent may need an administrator to grant admin consent to that application first.
 * Access to the [PowerShell Gallery](https://www.powershellgallery.com/packages/RealmJoin) to install the module
 
+An Azure subscription is only needed for the Azure resources (`Set-RJLogAnalyticsWorkspace`, `Set-RJAutomationAccount`). `New-RJTenant` and `Update-RJTenant` work in a tenant without any subscription; sign in to it with `Connect-AzAccount -Tenant <tenant-id>` first.
+
 {% hint style="info" %}
 Since version 2.0, the module signs in with the **Azure PowerShell** application and the `Az` modules. Earlier versions used the Microsoft Graph PowerShell application instead — if your tenant only consented to that one, consent to the Azure PowerShell application is needed once.
 {% endhint %}
@@ -49,7 +51,7 @@ To add all features or individual features, see [Other Commands](advanced-setup.
 {% step %}
 #### Open PowerShell on Windows/Mac
 
-We recommend installing and running the RealmJoin PowerShell module in a **freshly opened** PowerShell session on your own device rather than in Azure Cloud Shell. The module requires exact versions of the `Az.*` modules; if a different version is already loaded in the session — which is typically the case in Cloud Shell — it stops with a version conflict that cannot be resolved without opening a new session.
+We recommend installing and running the RealmJoin PowerShell module in a **freshly opened** PowerShell session on your own device rather than in Azure Cloud Shell. The module requires a fixed minor version line of each `Az.*` module (`Az.Accounts` 5.5.x, `Az.Resources` 10.2.x, `Az.Automation` 1.12.x); if a different version is already loaded in the session — which is typically the case in Cloud Shell — it stops with a version conflict that cannot be resolved without opening a new session.
 
 An elevated ("Run as administrator") session is not required: modules are installed with `-Scope CurrentUser`.
 {% endstep %}
@@ -104,7 +106,7 @@ Show-RJFeatureInfo
 
 #### Default Features
 
-Enables the mandatory core portal functionality plus the default optional features (everything except the RealmJoin Client):
+Enables the mandatory core portal functionality plus the default optional features (all except `Client`, `SecurityFeatures` and `AndroidApps`):
 
 ```powershell
 New-RJTenant 6>&1
@@ -139,6 +141,11 @@ New-RJTenant -Features @('RealmJoinPortal', 'IntuneLAPS', 'Autopilot') 6>&1
 ### Updating Existing Configuration
 
 `Update-RJTenant` adjusts an already-configured tenant. The alias `Complete-RJTenantOnboarding` can be used interchangeably with `Update-RJTenant`.
+
+* Without `-Features`, `-All`, `-AddFeatures` or `-RemoveFeatures`, the features already configured in the tenant are kept and the default features are added. Nothing is removed.
+* `-Features` replaces the configuration: configured features that are not in the list are removed, including their service principal. An empty list is rejected.
+* `-AddFeatures` and `-RemoveFeatures` change only the named features.
+* Every run also removes legacy RealmJoin applications from the tenant, see [Switching from Quick Setup](advanced-setup.md#switching-from-quick-setup).
 
 #### Add New Features
 
@@ -175,7 +182,7 @@ Both commands are generated with the matching parameters and an onboarding token
 
 ## Available Features
 
-Use these feature names with the `-Features`, `-AddFeatures`, and `-RemoveFeatures` parameters. Mandatory features are always enabled. The default configuration (`New-RJTenant` without parameters) enables the features marked below; **SecurityFeatures** and **Client** have to be selected explicitly.
+Use these feature names with the `-Features`, `-AddFeatures`, and `-RemoveFeatures` parameters. Mandatory features are always enabled. The default configuration (`New-RJTenant` without parameters) enables the features marked below; **SecurityFeatures**, **Client** and **AndroidApps** have to be selected explicitly.
 
 | Feature                         | Description                                                                       | Default |
 | ------------------------------- | --------------------------------------------------------------------------------- | :-----: |
@@ -189,6 +196,19 @@ Use these feature names with the `-Features`, `-AddFeatures`, and `-RemoveFeatur
 | `WindowsDeviceUpdateEnrollment` | Manage Windows Device Updates enrollment                                          |    ☑️   |
 | `SecurityFeatures`              | [Defender for Endpoint integration](../../ugd-management/defender-integration.md) on device pages (requires MDE licenses) |         |
 | `Client`                        | RealmJoin Agent — client application for device management                        |         |
+| `AndroidApps`                   | [Android app deployment](../../application-management/packages/android-apps-managed-google-play.md) through Managed Google Play (`DeviceManagementConfiguration.ReadWrite.All`) |         |
+
+## Switching from Quick Setup
+
+A tenant onboarded with Quick Setup uses the **RealmJoin Portal - Core Features** app registration, which holds all portal permissions. To move it to Advanced Setup, go to **Organization → Features** in the RealmJoin Portal and select **Go to advanced mode** on the **Advanced setup** card. The portal then shows the onboarding command with a token, as described under [Recommended Setup](advanced-setup.md#recommended-setup).
+
+<figure><img src="../../.gitbook/assets/organization-features-advanced-setup-switch.png" alt="Advanced setup card on the Organization Features page"><figcaption><p>Advanced setup card for tenants on Quick Setup</p></figcaption></figure>
+
+When the command runs, the module creates the service principals for the selected features and removes the **RealmJoin Portal - Core Features** app registration as a legacy application. Once the new permissions are in place, the portal switches the tenant to Advanced Setup.
+
+{% hint style="warning" %}
+The switch is one-way. After the Core Features app registration has been removed, permissions are managed with the RealmJoin PowerShell module only.
+{% endhint %}
 
 ## Troubleshooting
 

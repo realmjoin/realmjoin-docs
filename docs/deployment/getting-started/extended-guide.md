@@ -48,7 +48,7 @@ Onboarding onto the RealmJoin Portal establishes the initial connection to Realm
 Two features are not part of the initial consent and have to be activated explicitly:
 
 * **RealmJoin Client app** — required for the RealmJoin Agent: software deployments through the agent, the tray icon and client telemetry.
-* **Security features** — Microsoft Defender for Endpoint integration. Requires an existing MDE subscription.
+* **Security features** — [Microsoft Defender for Endpoint integration](../../ugd-management/defender-integration.md). Requires an existing MDE subscription.
 
 With **Quick Setup**, select **Activate** on the corresponding card on the [features page](https://portal.realmjoin.com/organization/features) of the RealmJoin Portal. With **Advanced Setup**, add the features with the RealmJoin PowerShell module:
 

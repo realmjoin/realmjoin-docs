@@ -38,7 +38,7 @@ The nominated email will receive important updates and portal notifications.
 * **Quick Setup** grants all core and optional RealmJoin Portal permissions with a single admin consent.
 * **Advanced Setup** lets you select the granted permissions individually with the RealmJoin PowerShell module. Choose it if your organization has special compliance needs or requires maximum control over granted permissions.
 
-You can switch from Quick Setup to Advanced Setup later; the switch is one-way. In both setup types, the RealmJoin Client app (required for the RealmJoin Agent) and the security features (Microsoft Defender for Endpoint) are activated separately on the [features page](https://portal.realmjoin.com/organization/features). See [Getting Started](../getting-started/#decision-1-quick-setup-or-advanced-setup) for a side-by-side comparison.
+You can [switch from Quick Setup to Advanced Setup](advanced-setup.md#switching-from-quick-setup) later; the switch is one-way. In both setup types, the RealmJoin Client app (required for the RealmJoin Agent) and the security features (Microsoft Defender for Endpoint) are activated separately on the [features page](https://portal.realmjoin.com/organization/features). See [Getting Started](../getting-started/#decision-1-quick-setup-or-advanced-setup) for a side-by-side comparison.
 
 <figure><img src="../../.gitbook/assets/Snipaste_2026-01-21_15-07-54.png" alt=""><figcaption></figcaption></figure>
 {% endstep %}

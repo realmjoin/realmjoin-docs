@@ -35,7 +35,7 @@ You choose the setup type when you onboard the RealmJoin Portal.
 The RealmJoin Agent client app and the Microsoft Defender for Endpoint security features are activated separately in both setup types, on the [features page](https://portal.realmjoin.com/organization/features) of the RealmJoin Portal.
 
 {% hint style="info" %}
-A tenant onboarded with Quick Setup can move to Advanced Setup later. The reverse is not possible.
+A tenant onboarded with Quick Setup can move to Advanced Setup later, see [Switching from Quick Setup](../onboarding-realmjoin-portal/advanced-setup.md#switching-from-quick-setup). The reverse is not possible.
 {% endhint %}
 
 ### Decision 2: Intune only, or Intune and the RealmJoin Agent
