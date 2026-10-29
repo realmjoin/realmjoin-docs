@@ -7,6 +7,7 @@ structure:
 redirects:
   # Moved pages
   realmjoin-deployment/navigation: introduction/navigation.md
+  realmjoin-deployment/onboarding-realmjoin-portal/advanced-setup: deployment/onboarding-realmjoin-portal/advanced-setup.md
   other/realmjoin-unlocked-vodcast: introduction/realmjoin-unlocked-vodcast.md
   app-management/software-reporting: analyze-and-export/software-reporting.md
   app-management/avd-templates: deployment/infrastructure/avd-templates.md
