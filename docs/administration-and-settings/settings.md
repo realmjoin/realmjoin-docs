@@ -1,52 +1,112 @@
 ---
 type: RealmJoin Settings
 description: >-
-  Overview of RealmJoin Portal settings for customizing the portal and managing
-  features, permissions, and Microsoft Azure resources.
+  Overview of the RealmJoin Portal settings tabs, what each tab configures, who
+  can see it, and where to find the detailed documentation.
 ---
 
 # Overview
 
-RealmJoin Portal settings allow administrators to customize their experience, manage RealmJoin features and interact with Microsoft Azure resources.
+The **Settings** page in the RealmJoin Portal holds the tenant-wide configuration: Portal roles, defaults for the RealmJoin Agent and for package deployment, and the connections to Azure resources (Azure Automation, Log Analytics, Azure Storage).
 
-## Navigation
+Each area of the settings lives on its own tab. The sections below describe the tabs in the order the Portal shows them and link to the page that covers each one in detail.
 
-### General
+<figure><img src="../.gitbook/assets/settings-tabs.png" alt="Tab bar of the Settings page in the RealmJoin Portal"><figcaption><p>Settings tabs</p></figcaption></figure>
 
-General settings for RealmJoin such as app deployment defaults, app configurations, user interface or Global Agent settings.&#x20;
+{% hint style="info" %}
+Viewing the settings requires the `CanReadSettingsDetails` permission, changing them requires `CanChangeTenantSettings` (see [Available Permissions](permission/custom-roles/available-permissions.md)). Some tabs only appear when the matching feature is enabled for your tenant or when you hold a specific permission. Each section below names that condition.
+{% endhint %}
 
-### Permissions
+## General
 
-Delegate different levels of permissions to users of the RealmJoin Portal (RBAC).
+Tenant-wide defaults that do not need a tab of their own, grouped in cards:
 
-### Groups
+* **Runbook**: sync your runbooks with RealmJoin's public repository.
+* **UI Config**: change the Portal's appearance for all users, for example the tenant banner logo.
+* **Client Configuration**: the timespan in which the RealmJoin Agent detects a device's primary user.
+* **LAPS Configuration**: the expiration time of the RealmJoin LAPS support account.
+* **App and remediation script deployment**: the group naming scheme RealmJoin uses when it creates assignment groups.
+* **Package automation defaults**: whether and when new versions of Package Store packages are deployed automatically.
+* **Multi Admin Approval**: email notifications for runbooks that need a second administrator's approval. Only shown with `CanChangeTenantSettings`.
 
-Configure group prefixes to descriptive names within the RealmJoin Portal.
+Learn more: [General](general.md)
 
-### Log Analytics
+## Permissions
 
-Connect Log Analytics Workspace to RealmJoin for in-depth logging.
+Delegate access to the RealmJoin Portal by assigning Entra ID groups to RealmJoin roles (role-based access control). The tab lists each role together with the Entra ID groups assigned to it.
 
-### Workplace cloud storage
+Learn more: [Roles and Permissions](permission/README.md), [Pre-defined Roles](permission/pre-defined-roles.md)
 
-Manage files within your cloud storage.
+## Groups
 
-### RunBooks
+Define the group name prefixes RealmJoin uses (for example `app` for application assignment groups) and map them to descriptive titles. RealmJoin shows these titles when it refers to the groups. The groups themselves are not renamed.
 
-Connect Azure Automation to automate repetitive tasks with RunBooks.
+Learn more: [Group Namespaces](groups.md)
 
-### RunBook Customizations
+## Client Config
 
-Customize parameters within existing RunBooks.
+The tenant-wide base configuration for the RealmJoin Agent, edited as key/value pairs. These settings have the lowest priority: anything assigned to the "RealmJoin - All Users" group, to a group or to a user overrides them.
 
-### RunBook Permissions
+Only shown with the `CanChangeTenantSettings` permission.
 
-Create granular access permissions for team members using RunBooks.
+<figure><img src="../.gitbook/assets/26-06-10-08_41_29_msedge.png" alt="Client Config tab with the tenant-wide key/value configuration"><figcaption><p>Client Config tab</p></figcaption></figure>
 
-### Custom Roles
+Learn more: [Tenant Default Values](../ugd-management/user-and-group-settings/README.md#tenant-default-values), [Available RealmJoin Policies](../ugd-management/user-and-group-settings/additional-settings.md)
 
-Create additional RealmJoin Portal roles to catch use-cases that the standard permission roles are not covering.
+## Log Analytics
 
-### App Categories
+The Log Analytics workspace RealmJoin writes its logs to. The tab shows the current connection, the setup command for the RealmJoin PowerShell module and, when the deployed schema is outdated, the command to update it.
 
-Create and manage Intune app categories.
+Learn more: [Connecting Azure Log Analytics Workspace](../monitoring-and-logs/log-analytics.md), [Migrating to the Log Ingestion API](../monitoring-and-logs/log-ingestion-api-migration.md)
+
+## Update Compliance
+
+An optional workspace ID for Windows Update for Business Reports (formerly Update Compliance). RealmJoin reads Safeguard Hold events from that workspace and shows them on the device details page. This is independent of the Log Analytics workspace RealmJoin writes its own logs to. Leave the field empty to disable Safeguard Hold reporting for this tenant.
+
+Shown when your tenant uses the Log Ingestion API or has no Log Analytics connection yet. Tenants that still use the legacy Log Analytics connection (Data Collector API) set this workspace ID on the **Log Analytics** tab instead.
+
+<figure><img src="../.gitbook/assets/settings-update-compliance.png" alt="Update Compliance tab with the workspace ID field"><figcaption><p>Update Compliance tab</p></figcaption></figure>
+
+Learn more: [Windows Update for Business Reports](../monitoring-and-logs/log-analytics.md#windows-update-for-business-reports)
+
+## Workplace cloud storage
+
+The connection string of the Azure Storage account behind Workplace Cloud Storage. Use **Reset setup** to run the configuration wizard again.
+
+Only shown when Workplace Cloud Storage is enabled for your tenant.
+
+Learn more: [Workplace Cloud Storage](workplace-cloud-storage.md)
+
+## Runbooks
+
+The Azure Automation account RealmJoin runs runbooks in: tenant, subscription, resource group, automation account, location, the runbook branch to sync and an optional Hybrid Worker group.
+
+Learn more: [Connecting Azure Automation](../automation/connecting-azure-automation/README.md), [Runbooks](../automation/runbooks/README.md)
+
+## Runbook Customizations
+
+A JSON editor to adjust existing runbooks for your tenant: tenant-specific parameters and templates, user pickers or dropdowns, readable parameter descriptions, and hidden UI elements. Settings here override the defaults in the runbook itself.
+
+Learn more: [Runbook Customization](../automation/runbooks/runbook-customization.md)
+
+## Runbook Permissions
+
+A JSON editor to control which users see which runbooks, and to hide runbooks for everyone.
+
+Learn more: [Runbook Permissions](../automation/runbooks/runbook-permissions.md)
+
+## Custom Roles
+
+A JSON editor to define additional RealmJoin Portal roles from individual permissions, in addition to the pre-defined roles.
+
+Only shown when Custom Roles are enabled for your tenant.
+
+Learn more: [Custom Roles](permission/custom-roles/README.md), [Available Permissions](permission/custom-roles/available-permissions.md)
+
+## App Categories
+
+Create and manage Intune app categories. You can choose these categories when you subscribe to a package.
+
+Only shown with the `CanReadAppCategories` permission. Editing requires `CanEditAppCategories`.
+
+Learn more: [App Categories](../application-management/packages/package-store/package-store-details.md#app-categories)

@@ -85,7 +85,7 @@ rjgit-user_security_reset-MFA
 | Property | Value |
 | --- | --- |
 | Version | 1.3.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.10) |
 | Schedulable | no |
 
 ## Permissions

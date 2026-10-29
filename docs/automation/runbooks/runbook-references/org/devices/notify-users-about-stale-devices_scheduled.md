@@ -125,7 +125,7 @@ rjgit-org_devices_notify-users-about-stale-devices_scheduled
 | Property | Value |
 | --- | --- |
 | Version | 1.7.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Microsoft.Graph.Authentication (>= 2.41.2) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.10)<br>Microsoft.Graph.Authentication (>= 2.41.2) |
 | Schedulable | yes |
 
 ## Permissions

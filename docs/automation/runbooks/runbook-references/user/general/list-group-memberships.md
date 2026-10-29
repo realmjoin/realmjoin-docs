@@ -39,7 +39,7 @@ rjgit-user_general_list-group-memberships
 | Property | Value |
 | --- | --- |
 | Version | 1.7.0 |
-| Required modules | RealmJoin.RunbookHelper (>= 0.8.9)<br>Az.Accounts (>= 5.5.2) |
+| Required modules | RealmJoin.RunbookHelper (>= 0.8.10)<br>Az.Accounts (>= 5.5.2) |
 | Schedulable | no |
 
 ## Permissions

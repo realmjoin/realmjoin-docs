@@ -424,6 +424,67 @@ AppCatalog
 * **CreateStartMenuShortcut:** Requires `Enabled: true`. Creates a per-user Start Menu shortcut ("App Catalog") that opens the same page, so it can be found via Start search or pinned to the taskbar.
 * **Ui.DisplayName:** Caption of the App Catalog entry in the RealmJoin tray menu. The same text is also used for the Start Menu shortcut created by `CreateStartMenuShortcut`. Defaults to `"App Catalog"`.
 
+### Edge Protocol Prompt for the App Catalog
+
+The App Catalog runs in a Microsoft Edge app window, and every install link in it is a `realmjoin:` URL. Unless the `realmjoin` protocol is allowed for the portal origin, the first click shows Edge's external protocol dialog ("This site is trying to open…"). The protocol is allowed with the Edge policy [`AutoLaunchProtocolsFromOrigins`](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies#autolaunchprotocolsfromorigins). Either your tenant adds a `realmjoin` entry to the value it already manages, or the RealmJoin agent writes the entry into the user's registry hive.
+
+**Key**\
+Policies.EdgeAllowRealmJoinProtocol
+
+**Value**
+
+```
+true | false
+```
+
+{% hint style="danger" %}
+**Choose one route, never both.** Either your tenant manages `AutoLaunchProtocolsFromOrigins` itself, or RealmJoin does it with this setting. The policy has only one owner per device, and two owners overwrite each other.
+{% endhint %}
+
+#### How Edge evaluates the policy
+
+The policy is a single JSON value per registry hive, under `SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins` in `HKLM` or `HKCU`. It cannot be built up from several sources:
+
+* **Machine beats user, as a whole.** Edge uses the machine value instead of the user value; the two lists are never merged. A machine value silently disables everything set per user.
+* **Intune** applies the setting as an ADMX-backed policy (Settings Catalog: _Microsoft Edge > Allow specific sites to launch external protocols_). The MDM client rewrites the whole value on every sync, so anything added by another party is gone after the next check-in.
+* **Two Intune profiles** that configure this setting conflict with each other. The result on the device is not deterministic.
+
+#### Route 1: your tenant manages Edge policies
+
+Add the `realmjoin` protocol to the **one** existing profile that sets `AutoLaunchProtocolsFromOrigins`, in whichever scope (device or user) that profile lives, next to the protocols you already allow:
+
+```json
+[
+  { "protocol": "realmjoin", "allowed_origins": ["realmjoin.com"] },
+  { "protocol": "msteams", "allowed_origins": ["teams.microsoft.com", "teams.cloud.microsoft"] }
+]
+```
+
+Do not create a second profile for it, and do not set `Policies.EdgeAllowRealmJoinProtocol`.
+
+#### Route 2: your tenant does not manage this policy
+
+Set `Policies.EdgeAllowRealmJoinProtocol` to `true`. Only the JSON value `true` opts in. Every time the agent applies its configuration, the RealmJoin service (running as SYSTEM) evaluates the policy for the user the tray runs as:
+
+* **A machine value exists** (for example a device-scope Intune profile or a GPO): nothing is written, because a user value would be ignored anyway. The agent log states whether the machine value already allows the portal.
+* **The user value is managed by MDM**: nothing is written.
+* **Otherwise** the agent merges the portal host into the user's value in `HKCU`. Other protocols and origins already in that value are kept. If the `realmjoin` entry already contains an origin that covers the portal (for example `realmjoin.com`), nothing is written.
+
+Without the opt-in, that is with the key set to `false`, removed, or no `Policies` setting at all, the agent removes its own entries from the user's value again. Uninstalling the agent does the same.
+
+{% hint style="info" %}
+Neither route is required. Without the policy the App Catalog still works: Edge asks once per user, and the user can tick "Always allow" unless your Edge policies hide that checkbox.
+{% endhint %}
+
+#### Writing the `realmjoin` entry correctly
+
+* Edge uses only the **first** entry whose `protocol` matches the URL scheme, compared case-sensitively against the lower-case scheme. A second `realmjoin` entry is ignored, and so is one spelled `RealmJoin`. Put all allowed origins into one `realmjoin` entry.
+* Origins follow Edge's [URL blocklist filter format](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-browser-policies/urlblocklist). The bare host `realmjoin.com` also covers `portal.realmjoin.com`, whereas `.realmjoin.com` (with a leading dot) matches only the exact host `realmjoin.com` and therefore **not** the portal.
+
+{% hint style="info" %}
+To check the result on a device, open `edge://policy` in Edge. It shows the effective value, its scope (machine or user) and whether it was parsed successfully.
+{% endhint %}
+
 ### Weblinks for RealmJoin Tray
 
 The following setting generates a weblink in the tray.
