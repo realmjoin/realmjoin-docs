@@ -29,13 +29,13 @@ You choose the setup type when you onboard the RealmJoin Portal.
 | How                   | One Entra admin consent in the browser                                                               | The RealmJoin PowerShell module creates the service principals and permissions   |
 | Permissions           | All core and optional portal permissions at once (Intune LAPS, Autopilot, device actions, remediation scripts, sign-ins, BitLocker keys and more) | Only the features you select, optionally read-only                               |
 | Effort                | A few clicks                                                                                         | Run and maintain PowerShell commands                                             |
-| Recommended for       | Most organizations, trials and proofs of concept                                                     | Strict compliance requirements or maximum control over every granted permission |
+| Choose it if          | You accept the full permission set of the RealmJoin application                                     | You need to control or restrict every granted permission                         |
 | Switch later          | Can be switched to Advanced Setup later (one-way)                                                    | Cannot be switched back to Quick Setup                                           |
 
 The RealmJoin Agent client app and the Microsoft Defender for Endpoint security features are activated separately in both setup types, on the [features page](https://portal.realmjoin.com/organization/features) of the RealmJoin Portal.
 
 {% hint style="info" %}
-Not sure? Start with **Quick Setup**. You can still move to Advanced Setup later if your compliance requirements change.
+A tenant onboarded with Quick Setup can move to Advanced Setup later. The reverse is not possible.
 {% endhint %}
 
 ### Decision 2: Intune only, or Intune and the RealmJoin Agent
