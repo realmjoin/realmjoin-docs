@@ -55,7 +55,7 @@ The dialog **Please configure the app subscription** opens.
 
 * **App display name** - The name under which the app appears to users, up to 120 characters. It must be unique among your RealmJoin and Intune apps; if the name is already taken, the dialog links the existing app.
 * **Short description** - RealmJoin deployment only. The description users see in the [App Catalog](../../../realmjoin-agent/client-menu/self-service-portal.md#app-catalog-tab), up to 1000 characters. The field is prefilled with the package's description; replace it with a text that tells your users what the package is for. Only a changed text is stored as a custom description. You can change or reset it later on the [package details page](../package-details.md#short-description).
-* **Group name** (RealmJoin) - The category under which the app appears in the RealmJoin Tray menu.
+* **Group name** (RealmJoin) - The category under which the app appears in the RealmJoin Tray menu. The App Catalog's category filter uses it as well.
 * **Categories** (Intune) - One or more categories under which the app appears in Intune and the Company Portal.
 
 App display name and short description require the `CanEditAppDisplayName` [permission](../../../administration-and-settings/permission/custom-roles/available-permissions.md). Group name and categories are only shown if your tenant has app categories.
@@ -70,7 +70,7 @@ Click **Submit** to start the subscription. The page shows the progress until th
 
 The available categories are managed under **Settings** > **App Categories** (see [App Categories](../../../administration-and-settings/app-categories.md)). The same list is used for the RealmJoin group name and the Intune categories.
 
-<figure><img src="../../../.gitbook/assets/image (388).png" alt=""><figcaption><p>All categories available in the tenant</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/settings-app-categories.png" alt="App Categories tab in the RealmJoin Portal settings"><figcaption><p>All categories available in the tenant</p></figcaption></figure>
 
 You can change the category later in the package's [Expert Settings](../package-settings.md#expert-settings).
 
