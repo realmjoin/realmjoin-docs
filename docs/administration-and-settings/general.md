@@ -19,6 +19,8 @@ This will make sure, you have the current state of our runbooks, incl. bugfixes 
 
 The _UI Config_ card holds tenant-wide display settings of RealmJoin Portal. They apply to every user of the tenant. Changing them requires the `CanChangeTenantSettings` permission.
 
+<figure><img src="../.gitbook/assets/settings-general-ui-config.png" alt="UI Config card"><figcaption><p>UI Config card</p></figcaption></figure>
+
 ### Show advanced info
 
 Off by default. When enabled, the detail pages show the raw [data sources](../ugd-management/user-group-device-management.md#data-sources) as JSON, as icons or tabs on the right of the tab bar:
@@ -47,6 +49,10 @@ RealmJoin Portal can show your company logo in the toolbar at the top of every p
 | No banner                    | –       | –                 |
 
 _Toolbar + Organization page_ is the default. The toolbar has a dark background. The two _white backdrop_ options render the logo in the toolbar on a white background, for logos that are not readable on dark backgrounds. On the Organization Details page the logo is always shown without backdrop.
+
+<figure><img src="../.gitbook/assets/settings-general-banner-logo-both.png" alt="Toolbar + Organization page: logo in the toolbar and on the Organization Details page"><figcaption><p>Toolbar + Organization page: logo in the toolbar and on the Organization Details page</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/settings-general-banner-logo-toolbar-white.png" alt="Toolbar only, white backdrop: logo only in the toolbar, on a white background"><figcaption><p>Toolbar only, white backdrop: logo only in the toolbar, on a white background</p></figcaption></figure>
 
 The logo is the **Banner logo** of the default sign-in experience in your tenant's [Entra ID company branding](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-customize-branding). RealmJoin Portal reads it from Graph (`GET /organization/{tenantId}/branding/localizations/default/bannerLogo`) and does not store a copy. Banner logos of language-specific localizations are not used. To change the logo, upload a new banner logo in the Entra admin center under **Company branding**.
 
@@ -114,6 +120,8 @@ For packages sourced from the [Package Store](../application-management/packages
 * **Planned deployment** - [package automation](#package-automation-defaults) has scheduled an upgrade action. The email contains the action and the scheduled time.
 
 The field **Send additional update notifications to …** on the _App Config_ card takes email addresses that receive these emails for **every** package in the tenant. Separate multiple addresses with semicolons, e.g. `foo@example.com; bar@example.com`.
+
+<figure><img src="../.gitbook/assets/settings-general-app-config.png" alt="App Config card with an additional update notification recipient"><figcaption><p>App Config card with an additional update notification recipient</p></figcaption></figure>
 
 This complements the [Technical Application Owners](../application-management/packages/package-settings.md#technical-application-owners) (TAO) of a package:
 
