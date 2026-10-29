@@ -148,4 +148,4 @@ This tab is available to Admins and Auditors.
 
 ## Data Sources
 
-The icons on the right of the tab bar show the raw [data sources](../user-group-device-management.md#data-sources) as JSON: **Entra ID Data**, **Sign-In Data** (the last 10 sign-ins) and **RealmJoin Data**. They are available to Admins, Advanced Supporters and Auditors when _Show advanced info_ is enabled in [Settings](../../administration-and-settings/general.md).
+The icons on the right of the tab bar show the raw [data sources](../user-group-device-management.md#data-sources) as JSON: **Entra ID Data**, **Sign-In Data** (the last 10 sign-ins) and **RealmJoin Data**. They are available to Admins, Advanced Supporters and Auditors when _Show advanced info_ is enabled in [Settings](../../administration-and-settings/general.md#show-advanced-info).

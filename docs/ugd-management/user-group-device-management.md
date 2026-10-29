@@ -46,6 +46,6 @@ RealmJoin offers operators the ability to automate day to day tasks using [Runbo
 
 RealmJoin Portal collects information from multiple sources. You can review the full source information for every object in source-specific tabs and it is presented as JSON data.
 
-Raw source data is available to Admins, Advanced Supporters and Auditors when _Show advanced info_ is enabled in [Settings](../administration-and-settings/general.md).
+Raw source data is available to Admins, Advanced Supporters and Auditors when _Show advanced info_ is enabled in [Settings](../administration-and-settings/general.md#show-advanced-info).
 
 ![Raw JSON Source Data](<../.gitbook/assets/2022-02-07 json source.png>)

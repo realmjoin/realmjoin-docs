@@ -148,7 +148,7 @@ Please see [Available Settings](../user-and-group-settings/additional-settings.m
 
 ## Data Sources
 
-The **RealmJoin** tab and the **Entra ID Data** icon show the raw [data sources](../user-group-device-management.md#data-sources) as JSON. They are available to Admins, Advanced Supporters and Auditors when _Show advanced info_ is enabled in [Settings](../../administration-and-settings/general.md).
+The **RealmJoin** tab and the **Entra ID Data** icon show the raw [data sources](../user-group-device-management.md#data-sources) as JSON. They are available to Admins, Advanced Supporters and Auditors when _Show advanced info_ is enabled in [Settings](../../administration-and-settings/general.md#show-advanced-info).
 
 ## More Actions
 

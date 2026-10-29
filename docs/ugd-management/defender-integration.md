@@ -99,7 +99,7 @@ Under **External Links**, **Security Center** opens the device in the Microsoft 
 
 ### MDE Data tab
 
-The **MDE Data** tab shows the raw Defender device record as JSON, together with the alerts, recommendations, logged-on users, vulnerabilities and software Defender reports for the device. Like the other [data source](user-group-device-management.md#data-sources) tabs, it is only shown when _Show advanced info_ is enabled in [Settings](../administration-and-settings/general.md).
+The **MDE Data** tab shows the raw Defender device record as JSON, together with the alerts, recommendations, logged-on users, vulnerabilities and software Defender reports for the device. Like the other [data source](user-group-device-management.md#data-sources) tabs, it is only shown when _Show advanced info_ is enabled in [Settings](../administration-and-settings/general.md#show-advanced-info).
 
 ## Defender Scan
 
