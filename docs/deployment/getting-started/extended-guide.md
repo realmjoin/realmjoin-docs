@@ -50,15 +50,17 @@ Two features are not part of the initial consent and have to be activated explic
 * **RealmJoin Client app** — required for the RealmJoin Agent: software deployments through the agent, the tray icon and client telemetry.
 * **Security features** — [Microsoft Defender for Endpoint integration](../../ugd-management/defender-integration.md). Requires an existing MDE subscription.
 
-With **Quick Setup**, select **Activate** on the corresponding card on the [features page](https://portal.realmjoin.com/organization/features) of the RealmJoin Portal. With **Advanced Setup**, add the features with the RealmJoin PowerShell module:
-
-```powershell
-Update-RJTenant -AddFeatures @('Client', 'SecurityFeatures') 6>&1
-```
+With **Quick Setup**, select **Activate** on the corresponding card on the [features page](https://portal.realmjoin.com/organization/features) of the RealmJoin Portal:
 
 <figure><img src="../../.gitbook/assets/organization-features-client-app-activate.png" alt="RealmJoin Client app card with Activate button"><figcaption><p>RealmJoin Client app card on the features page</p></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/organization-features-security-activate.png" alt="Security features card with Activate button"><figcaption><p>Security features card on the features page</p></figcaption></figure>
+
+With **Advanced Setup**, add the features with the RealmJoin PowerShell module:
+
+```powershell
+Update-RJTenant -AddFeatures @('Client', 'SecurityFeatures') 6>&1
+```
 
 If you need neither the agent nor the Defender integration, continue to the next step.
 {% endstep %}
