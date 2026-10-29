@@ -56,6 +56,10 @@ With **Quick Setup**, select **Activate** on the corresponding card on the [feat
 Update-RJTenant -AddFeatures @('Client', 'SecurityFeatures') 6>&1
 ```
 
+<figure><img src="../../.gitbook/assets/organization-features-client-app-activate.png" alt="RealmJoin Client app card with Activate button"><figcaption><p>RealmJoin Client app card on the features page</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/organization-features-security-activate.png" alt="Security features card with Activate button"><figcaption><p>Security features card on the features page</p></figcaption></figure>
+
 If you need neither the agent nor the Defender integration, continue to the next step.
 {% endstep %}
 
