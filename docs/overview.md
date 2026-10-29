@@ -84,7 +84,7 @@ RealmJoin's backend runs in Microsoft Azure and connects to your tenant through 
 ## What you need
 
 * A **Microsoft 365 / Entra ID tenant** with **Microsoft Intune** licenses. RealmJoin is licensed per user, based on the Intune user license seats in your tenant - see [Licensing](legal/licensing/).
-* A **Global Administrator** to consent to the RealmJoin applications during [onboarding](deployment/onboarding-realmjoin-portal/). Quick Setup covers core portal functionality; Advanced Setup unlocks the full feature set, including Autopilot, the Agent, privileged device actions, LAPS, audit logs and security features.
+* A **Global Administrator** to consent to the RealmJoin applications during [onboarding](deployment/onboarding-realmjoin-portal/). Quick Setup grants all portal permissions with a single consent; Advanced Setup lets you select them individually with PowerShell.
 * An **Azure subscription** for the resources RealmJoin uses in your own environment: Azure Automation for runbooks, Key Vault for LAPS passwords and Log Analytics for audit and runbook logs. Expected Azure cost is minimal - see the [FAQ](troubleshooting-and-faq/faq.md#what-cost-to-expect-from-azure-resources).
 * Optional: the **RealmJoin Agent** on Windows 10/11 clients for RealmJoin-based app deployment and the Agent-exclusive features. Microsoft Defender for Endpoint features require the corresponding Microsoft license.
 

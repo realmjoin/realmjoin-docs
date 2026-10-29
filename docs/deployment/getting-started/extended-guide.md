@@ -8,12 +8,14 @@ description: >-
 
 # Extended Guide
 
+This guide builds on [Getting Started](./). Make the three decisions described there first, then follow the steps in order and skip the ones your scope does not need.
+
 ## Prerequisites
 
-* [ ] Windows PowerShell
-* [ ] Azure subscription (at least Contributor rights on that subscription)
-* [ ] Azure owner rights (at least on Resource Group level)
-* [ ] Microsoft Entra ID "Global administrator" (Consent to access Graph API)
+* [ ] Microsoft Entra ID "Global Administrator" (consent to the RealmJoin applications)
+* [ ] PowerShell 5.1 or later (Windows PowerShell or PowerShell 7) for the setup commands
+* [ ] Azure subscription with at least Contributor rights, for the Azure resources below
+* [ ] Owner rights (at least on resource group level), to grant the role assignments the setup commands create
 
 ## Azure Resource Overview
 
@@ -29,17 +31,11 @@ description: >-
 {% step %}
 #### Onboard the RealmJoin Portal
 
-Onboarding onto the RealmJoin Portal will establish the initial connection to RealmJoin. Administrators will be able to choose from the Quick or Advanced Setup once complete. This guide continues with the **Advanced Setup** path.
+Onboarding onto the RealmJoin Portal establishes the initial connection to RealmJoin. Choose **Quick Setup** or **Advanced Setup** as described in [Getting Started](./#decision-1-quick-setup-or-advanced-setup). Both cover the full feature set of this guide; Advanced Setup gives you granular control over every permission through the RealmJoin PowerShell module.
 
 {% content-ref url="../onboarding-realmjoin-portal/" %}
 [onboarding-realmjoin-portal](../onboarding-realmjoin-portal/)
 {% endcontent-ref %}
-{% endstep %}
-
-{% step %}
-#### Proceed with the Advanced Setup
-
-Use **Advanced Setup** to deploy RealmJoin with granular permission control. You can add or remove permissions later with the RealmJoin PowerShell module.
 
 {% content-ref url="../onboarding-realmjoin-portal/advanced-setup.md" %}
 [advanced-setup.md](../onboarding-realmjoin-portal/advanced-setup.md)
@@ -47,11 +43,34 @@ Use **Advanced Setup** to deploy RealmJoin with granular permission control. You
 {% endstep %}
 
 {% step %}
+#### Activate the client app and security features
+
+Two features are not part of the initial consent and have to be activated explicitly:
+
+* **RealmJoin Client app** — required for the RealmJoin Agent: software deployments through the agent, the tray icon and client telemetry.
+* **Security features** — [Microsoft Defender for Endpoint integration](../../ugd-management/defender-integration.md). Requires an existing MDE subscription.
+
+With **Quick Setup**, select **Activate** on the corresponding card on the [features page](https://portal.realmjoin.com/organization/features) of the RealmJoin Portal:
+
+<figure><img src="../../.gitbook/assets/organization-features-client-app-activate.png" alt="RealmJoin Client app card with Activate button"><figcaption><p>RealmJoin Client app card on the features page</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/organization-features-security-activate.png" alt="Security features card with Activate button"><figcaption><p>Security features card on the features page</p></figcaption></figure>
+
+With **Advanced Setup**, add the features with the RealmJoin PowerShell module:
+
+```powershell
+Update-RJTenant -AddFeatures @('Client', 'SecurityFeatures') 6>&1
+```
+
+If you need neither the agent nor the Defender integration, continue to the next step.
+{% endstep %}
+
+{% step %}
 #### Establish Group Permissions
 
-Assign RealmJoin access through Entra groups.
+During onboarding, the Entra role _Global Administrator_ becomes a RealmJoin administrator. Assign RealmJoin roles to Entra groups in **Settings → Permissions** so that your administrators and helpdesk staff can work without that role.
 
-Use built-in roles for standard access or create custom roles for stricter control.
+Use the pre-defined roles for standard access, or request custom roles for stricter control.
 
 {% hint style="warning" %}
 Assign permissions carefully. Some roles grant **elevated access** in RealmJoin Portal
@@ -67,14 +86,44 @@ Assign permissions carefully. Some roles grant **elevated access** in RealmJoin 
 {% endstep %}
 
 {% step %}
+#### Connect Azure Log Analytics Workspace
+
+Connect a Log Analytics Workspace to store the RealmJoin [Audit Log](../../monitoring-and-logs/audit-log.md) and archived runbook logs. Connect it early, so that administrative actions are logged from the start.
+
+This also enables integrations such as Windows Update for Business reporting.
+
+{% content-ref url="../../monitoring-and-logs/log-analytics.md" %}
+[log-analytics.md](../../monitoring-and-logs/log-analytics.md)
+{% endcontent-ref %}
+{% endstep %}
+
+{% step %}
+#### Connect Azure Automation
+
+Connect an Azure Automation Account to run RealmJoin runbooks. The runbooks execute in your Automation Account under its managed identity, which holds the Graph and Entra ID permissions they need. The RealmJoin PowerShell module creates the account; the RealmJoin Portal generates the command in **Settings → Runbooks**.
+
+Remediation scripts do not need Azure Automation: they are Intune remediations and are covered by the portal permissions.
+
+{% content-ref url="../../automation/connecting-azure-automation/" %}
+[connecting-azure-automation](../../automation/connecting-azure-automation/)
+{% endcontent-ref %}
+{% endstep %}
+
+{% step %}
 #### Set up the RealmJoin Agent
 
-Install the RealmJoin Agent on Windows devices to unlock agent-based features such as application lifecycle management, RealmJoin ESP, LAPS, notifications, AnyDesk integration, audit tasks, and compliance checks.
+Install the RealmJoin Agent on Windows devices to use the agent-based features: application lifecycle management, RealmJoin ESP, LAPS, notifications, AnyDesk integration, audit tasks, and compliance checks. The RealmJoin Client app has to be activated first (see above).
+
+Deploy the agent through Intune from the Package Store and add it to your Enrollment Status Page. The agent's behaviour is configured centrally with RealmJoin policies in the user and group settings.
 
 If you do not need the agent, continue to the next relevant step.
 
 {% content-ref url="../../realmjoin-agent/installation.md" %}
 [installation.md](../../realmjoin-agent/installation.md)
+{% endcontent-ref %}
+
+{% content-ref url="../../ugd-management/user-and-group-settings/" %}
+[user-and-group-settings](../../ugd-management/user-and-group-settings/)
 {% endcontent-ref %}
 {% endstep %}
 
@@ -100,33 +149,9 @@ If you do not need these add-ons, continue to the next step.
 {% endstep %}
 
 {% step %}
-#### Connect Azure Automation
-
-Connect Azure Automation to enable runbooks and remediation scripts.
-
-These features automate recurring administrative tasks, reduce manual effort, and improve traceability.
-
-{% content-ref url="../../automation/connecting-azure-automation/" %}
-[connecting-azure-automation](../../automation/connecting-azure-automation/)
-{% endcontent-ref %}
-{% endstep %}
-
-{% step %}
-#### Connect Azure Log Analytics Workspace
-
-Connect a Log Analytics Workspace to store RealmJoin audit data and runbook execution logs.
-
-This also enables integrations such as Windows Update for Business reporting.
-
-{% content-ref url="../../monitoring-and-logs/log-analytics.md" %}
-[log-analytics.md](../../monitoring-and-logs/log-analytics.md)
-{% endcontent-ref %}
-{% endstep %}
-
-{% step %}
 #### Deploy Packages
 
-RealmJoin Portal provides and maintains a large library of ready-to-use packages for Windows and macOS.
+The Package Store contains packages for Windows and macOS that RealmJoin builds and updates.
 
 When deploying packages, first decide whether the application should be delivered through **Microsoft Intune** or through the **RealmJoin Agent**. This depends on your deployment model and whether you want to use agent-based features.
 
@@ -156,7 +181,7 @@ A typical rollout is: import package → configure assignments → test with pil
 {% step %}
 #### Configure optional platform features
 
-After the core setup is complete, you can enable additional features for daily operations.
+The following features are independent of each other. Set up the ones you need.
 
 **Workplace Cloud Storage** connects an Azure Storage Account to the RealmJoin Portal. Once connected, administrators can:
 
@@ -168,13 +193,13 @@ After the core setup is complete, you can enable additional features for daily o
 [workplace-cloud-storage.md](../../administration-and-settings/workplace-cloud-storage.md)
 {% endcontent-ref %}
 
-**Self Service Forms** are a convenient way to collect structured data from users. This can be used to let users report incidents or indicate changes, like the need for a new workplace setup in an office.
+**Self Service Forms** collect structured input from users, for example incident reports or requests for a new workplace setup.
 
 {% content-ref url="../../administration-and-settings/self-service-forms.md" %}
 [self-service-forms.md](../../administration-and-settings/self-service-forms.md)
 {% endcontent-ref %}
 
-**Group namespaces** assist the RealmJoin Portal in sorting groups into different categories based off a specified prefix. The RealmJoin Portal includes default group namespaces, however additional namespaces may be added.
+**Group namespaces** sort groups into categories by name prefix. RealmJoin ships default namespaces; you can add your own.
 
 {% content-ref url="../../administration-and-settings/groups.md" %}
 [groups.md](../../administration-and-settings/groups.md)
@@ -187,3 +212,11 @@ The **Software Report** aggregates data from the RealmJoin Agent and Intune to p
 {% endcontent-ref %}
 {% endstep %}
 {% endstepper %}
+
+## Next steps
+
+Your environment is now set up. For day-to-day operations:
+
+* Review administrative actions in the [Audit Log](../../monitoring-and-logs/audit-log.md).
+* Track new features and fixes in the [RealmJoin Changelog](https://feedback.realmjoin.com/).
+* When something does not work as expected, start with the [FAQ](../../troubleshooting-and-faq/faq.md) and [Troubleshooting](../../troubleshooting-and-faq/troubleshooting/), or contact [support](../../legal/support.md).
