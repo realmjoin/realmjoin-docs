@@ -395,7 +395,7 @@ RAW [data sources](../user-group-device-management.md#data-sources) displayed as
 * RealmJoin
 * Windows Device Updates Enrollment
 
-They are available to Admins, Advanced Supporters and Auditors when _Show advanced info_ is enabled in [Settings](../../administration-and-settings/general.md).
+They are available to Admins, Advanced Supporters and Auditors when _Show advanced info_ is enabled in [Settings](../../administration-and-settings/general.md#show-advanced-info).
 
 {% hint style="info" %}
 The RealmJoin state is updated when the agent checks in. Retention is 90 days. If a device is offline for more than 90 days, the state will not be available any more (icon greyed out). If it checks in again, the state will be re-evaluated and displayed after some minutes.

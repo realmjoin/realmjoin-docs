@@ -21,15 +21,15 @@ The _UI Config_ card holds tenant-wide display settings of RealmJoin Portal. The
 
 ### Show advanced info
 
-Off by default. When enabled, the detail pages get additional tabs with the raw JSON objects RealmJoin reads from Graph and from its own database:
+Off by default. When enabled, the detail pages show the raw [data sources](../ugd-management/user-group-device-management.md#data-sources) as JSON, as icons or tabs on the right of the tab bar:
 
-| Detail page  | Additional tabs                                    |
-| ------------ | -------------------------------------------------- |
-| Device       | Entra ID, Intune, Autopilot, Defender, RealmJoin   |
-| User         | Entra ID, Sign-ins, RealmJoin                      |
-| Group        | Entra ID, RealmJoin                                |
-| Package      | Intune app, RealmJoin app, Package Store entry     |
-| Organization | Entra ID                                           |
+| Detail page                                                       | Raw data views                                                  |
+| ----------------------------------------------------------------- | --------------------------------------------------------------- |
+| [Device](../ugd-management/user-list/device-details.md)           | Entra ID Data, Intune Data, Autopilot Data, MDE Data, RealmJoin Data |
+| [User](../ugd-management/user-list/user-details.md)               | Entra ID Data, Sign-In Data, RealmJoin Data                     |
+| [Group](../ugd-management/user-list/group-details.md)             | Entra ID Data, RealmJoin                                        |
+| Package                                                           | Intune app, RealmJoin app and Package Store entry JSON          |
+| [Organization](../ugd-management/organization-details.md)         | Entra ID Data                                                   |
 
 The tabs are only shown to users with the **Admin**, **Auditor** or **Advanced Supporter** role and to Entra ID Global Administrators. The underlying permissions are the `CanSee...Json` permissions and `CanSeeUserSignIns`, see [Available Permissions](permission/custom-roles/available-permissions.md).
 
