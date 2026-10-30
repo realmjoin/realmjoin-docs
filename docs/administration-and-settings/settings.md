@@ -103,6 +103,14 @@ Only shown when Custom Roles are enabled for your tenant.
 
 Learn more: [Custom Roles](permission/custom-roles/README.md), [Available Permissions](permission/custom-roles/available-permissions.md)
 
+## MCP Access
+
+Create and revoke the access tokens MCP clients use to connect to the RealmJoin MCP server. The tab lists all tokens of the tenant with owner, status, expiry and last use. A new token is shown once after creation.
+
+Only shown to users with the RealmJoin Admin role or the Entra ID Global Administrator role (Portal policy `CanAdministerOwnTenant`, not assignable through custom roles), and only when the MCP server is enabled for your tenant.
+
+Learn more: [MCP Server](../dev-reference/mcp-server.md)
+
 ## App Categories
 
 The tenant's list of app categories. A RealmJoin package uses one of them as its group name in the RealmJoin Tray, an Intune app can have several as Intune app categories. Add, rename and delete categories here.
