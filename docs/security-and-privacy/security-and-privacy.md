@@ -211,11 +211,11 @@ No.
 
 ### 3. Do you regularly perform penetration tests?
 
-Not in the form of a classic penetration test of SCEPman. Instead, glueckkanja AG undergoes an annual Red Team assessment by an independent external specialist, which goes beyond a classic penetration test (see [Does glueckkanja have its security tested by external experts?](security-and-privacy.md#id-2.-does-glueckkanja-have-its-security-tested-by-external-experts)).
+Not in the form of a classic penetration test of RealmJoin. Instead, glueckkanja AG undergoes an annual Red Team assessment by an independent external specialist, which goes beyond a classic penetration test (see [Does glueckkanja have its security tested by external experts?](security-and-privacy.md#id-2.-does-glueckkanja-have-its-security-tested-by-external-experts)).
 
-As part of our Secure Development Practices, we employ tools (e.g. static code analysis) that scan the code base for CVEs and other common exploits (including dependencies such as 3rd party libraries) that could impact the security of the endpoints RealmJoin exposes. Before any release, any relevant findings are assessed and remediated, to ensure RealmJoin remains free from any known vulnerabilities.&#x20;
+As part of our Secure Development Practices, we employ tools (e.g. static code analysis) that scan the code base for CVEs and other common exploits (including dependencies such as 3rd party libraries) that could impact the security of the endpoints RealmJoin exposes. Before any release, any relevant findings are assessed and remediated, to ensure RealmJoin remains free from any known vulnerabilities.
 
-We neither perform penetration tests ourselves, nor do we use 3rd party "Penetration Test-as-a-Service" tools. For the former, we see an inherent conflict of interest. For the latter, since typical penetration test services often simply check the exposed endpoints against CVEs and other known exploits, we do not see any added value to the checks we already perform using static code analysis.&#x20;
+We neither perform penetration tests ourselves, nor do we use 3rd party "Penetration Test-as-a-Service" tools. For the former, we see an inherent conflict of interest. For the latter, since typical penetration test services often simply check the exposed endpoints against CVEs and other known exploits, we do not see any added value to the checks we already perform using static code analysis.
 
 Instead, we rely on a holistic approach: In 2026, an independent Red Team simulated a realistic, advanced attack on glueckkanja AG, explicitly including attack paths into customer environments and supply chain attacks. Rather than testing isolated endpoints, this assessment evaluates complete attack paths across our organization, which we consider far more meaningful for the security of our customers. We repeat this assessment annually.
 
