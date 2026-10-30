@@ -75,7 +75,7 @@ The Overview tab is split into sections, listed in the sidebar on the right:
 * **Update** - Shown when the Package Store offers a newer version. See [Update a package manually](package-updates.md#update-a-package-manually).
 * **Assignments** - The groups, users and devices the package is assigned to. See [Package Assignments](package-deployment.md).
 * **Install status** - How many devices have the package installed, failed to install it or have another version, with a breakdown of the exit codes (RealmJoin) or Intune error codes (Intune), see below.
-* **Dependent Packages** - Packages that list this package in their [_Depends on_](package-settings.md#expert-settings) setting.
+* **Dependent Packages** - The packages entered in this package's [_Depends on_](package-settings.md#dependencies-and-installation-order) setting that exist in your tenant, each linked to its package page. Shown only if at least one entry matches.
 * **Technical Help** - If the package provides it, the supported [arguments](package-settings.md#arguments) and other requirements.
 * **Vulnerabilities** - Known security vulnerabilities of the software, if available.
 * **Usage** - The spread of versions across your devices, see below.
