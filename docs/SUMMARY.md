@@ -338,6 +338,7 @@
 
 * [RealmJoin API](dev-reference/realmjoin-api/README.md)
   * [Authentication](dev-reference/realmjoin-api/authentication.md)
+* [MCP Server](dev-reference/mcp-server.md)
 * [Report Functions](dev-reference/report-functions/README.md)
   * [Send-RjRbReportEmail](dev-reference/report-functions/send-rjrbreportemail.md)
   * [Get-RjRbBrandingMailParams](dev-reference/report-functions/get-rjrbbrandingmailparams.md)
